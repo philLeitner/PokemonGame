@@ -27,10 +27,14 @@ public class GameService
     public bool DatenGeladen { get; private set; }
     public string LadeStatus { get; private set; } = "Initialisiere...";
     public bool HatSpeicherstand { get; private set; } = false;
+    public SpielEinstellungen Einstellungen { get; private set; } = new();
+    // Spiel gilt als abgeschlossen wenn der Spieler mindestens 8 Orden hat
+    // (kann später auf alle Orden + Elite Vier + Rivale erweitert werden)
+    public bool SpielAbgeschlossen => Spieler.Orden.Count >= 8;
 
-    // ── Events ───────────────────────────────────────────────────────────────
+    // ── Events ───────────────────────────────────────────────────────────────────────────
     public event Action? OnChange;
-    private void Notify() => OnChange?.Invoke();
+    public void Notify() => OnChange?.Invoke();
 
     public GameService(HttpClient http, LocalStorageService ls)
     {
@@ -130,7 +134,21 @@ public class GameService
     public void ZuStarterWahl() { Phase = SpielPhase.StarterWahl; Notify(); }
     public void ZuWeltkarte() { Phase = SpielPhase.Weltkarte; Notify(); }
     public void ZuMapEditor() { Phase = SpielPhase.MapEditor; Notify(); }
-
+    public void ZuEinstellungen() { Phase = SpielPhase.Einstellungen; Notify(); }
+    public void ZuZähneShop() { Phase = SpielPhase.ZähneShop; Notify(); }
+    public void EinstellungenSpeichern() { Notify(); }
+    public string UpgradeKaufen(ZähneUpgrade upgrade)
+    {
+        var info = MonsterKampf.Data.ZähneUpgradeDaten.Get(upgrade);
+        if (info == null) return "❌ Upgrade nicht gefunden.";
+        if (Spieler.ZähneWallet.HatUpgrade(upgrade)) return "⚠️ Upgrade bereits gekauft.";
+        if (!Spieler.ZähneWallet.KannBezahlen(info.Kosten))
+            return $"❌ Nicht genug Zähne! Kosten: {info.Kosten}, Verfügbar: {Spieler.ZähneWallet.VerfügbareZähne}";
+        Spieler.ZähneWallet.Ausgeben(info.Kosten);
+        Spieler.ZähneWallet.GekaufteUpgrades.Add(upgrade);
+        Notify();
+        return $"✅ {info.Emoji} {info.Name} gekauft!";
+    }
     // ── Spiel starten ────────────────────────────────────────────────────────
     public void SpielStarten(string spielerName)
     {

@@ -1,0 +1,180 @@
+@page "/einstellungen"
+@using MonsterKampf.Models
+@using MonsterKampf.Services
+@using MonsterKampf.Data
+@inject GameService Game
+
+@* ══════════════════════════════════════════════════════════════════════════════
+   EINSTELLUNGEN & RELIKTE
+   Design: Dark game UI, 3-column layout, toggle buttons, Relikte cards
+══════════════════════════════════════════════════════════════════════════════ *@
+
+<div class="settings-screen">
+    <div class="settings-header">
+        <h1>⚙️ Einstellungen & Relikte</h1>
+        <p class="settings-subtitle">Passe dein Spielerlebnis an. Relikte sind freiwillige Handicaps – dafür bekommst du 🦷 Zähne!</p>
+    </div>
+
+    <div class="settings-body">
+
+        @* ── Karten-Modus ─────────────────────────────────────────────────── *@
+        <div class="settings-section">
+            <h3>🗺️ Karten-Modus</h3>
+            <div class="option-row">
+                <button class="opt-btn @(Game.Einstellungen.KartenModus == MapModus.AlleRegionen ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.KartenModus = MapModus.AlleRegionen; Game.Notify(); }">
+                    🌍 Alle Regionen
+                </button>
+                <button class="opt-btn @(Game.Einstellungen.KartenModus == MapModus.EineRegion ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.KartenModus = MapModus.EineRegion; Game.Notify(); }">
+                    📍 Nur eine Region
+                </button>
+            </div>
+            @if (Game.Einstellungen.KartenModus == MapModus.EineRegion)
+            {
+                <div class="gen-select-row">
+                    @for (int g = 1; g <= 8; g++)
+                    {
+                        int gen = g;
+                        <button class="gen-btn @(Game.Einstellungen.RegionAuswahl == gen ? "active" : "")"
+                                @onclick="() => { Game.Einstellungen.RegionAuswahl = gen; Game.Notify(); }">
+                            Gen @gen
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+
+        @* ── Starter-Optionen ─────────────────────────────────────────────── *@
+        <div class="settings-section">
+            <h3>🥚 Starter-Optionen</h3>
+            <div class="option-row">
+                <button class="opt-btn @(Game.Einstellungen.StarterModus == StarterModus.Wählen ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.StarterModus = StarterModus.Wählen; Game.Notify(); }">
+                    👆 Selbst wählen
+                </button>
+                <button class="opt-btn @(Game.Einstellungen.StarterModus == StarterModus.Zufällig ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.StarterModus = StarterModus.Zufällig; Game.Notify(); }">
+                    🎲 Zufällig
+                </button>
+            </div>
+            <div class="gen-select-row">
+                <span class="gen-label">Starter-Region:</span>
+                <button class="gen-btn @(Game.Einstellungen.StarterRegion == 0 ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.StarterRegion = 0; Game.Notify(); }">
+                    Alle
+                </button>
+                @for (int g = 1; g <= 8; g++)
+                {
+                    int gen = g;
+                    <button class="gen-btn @(Game.Einstellungen.StarterRegion == gen ? "active" : "")"
+                            @onclick="() => { Game.Einstellungen.StarterRegion = gen; Game.Notify(); }">
+                        Gen @gen
+                    </button>
+                }
+            </div>
+        </div>
+
+        @* ── Wilde Monster ────────────────────────────────────────────────── *@
+        <div class="settings-section">
+            <h3>🌿 Wilde Monster</h3>
+            <div class="option-row">
+                <button class="opt-btn @(Game.Einstellungen.WildModus == WildMonsterModus.RouteGenau ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.RouteGenau; Game.Notify(); }">
+                    📍 Route-genau
+                </button>
+                <button class="opt-btn @(Game.Einstellungen.WildModus == WildMonsterModus.Zufällig ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.Zufällig; Game.Notify(); }">
+                    🎲 Zufällig (alle Monster)
+                </button>
+            </div>
+        </div>
+
+        @* ── Trainer-Monster ──────────────────────────────────────────────── *@
+        <div class="settings-section">
+            <h3>👥 Trainer-Monster</h3>
+            <div class="option-row">
+                <button class="opt-btn @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.Genau ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.Genau; Game.Notify(); }">
+                    📋 Definierte Teams
+                </button>
+                <button class="opt-btn @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.Zufällig ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.Zufällig; Game.Notify(); }">
+                    🎲 Zufällige Teams
+                </button>
+            </div>
+        </div>
+
+        @* ── Relikte (Handicaps) ──────────────────────────────────────────── *@
+        <div class="settings-section relikte-section">
+            <h3>💀 Relikte <span class="relikt-subtitle">(Handicaps → Zähne verdienen)</span></h3>
+            <div class="relikt-summary">
+                <span>Aktive Relikte: <strong>@Game.Einstellungen.AktiveRelikte.Count</strong></span>
+                <span>🦷 Zähne gesamt: <strong>@Game.Einstellungen.GetGesamtZähne()</strong></span>
+                <span>🎁 Bonus-Upgrades: <strong>@Game.Einstellungen.GetBonusStatUpgrades()</strong></span>
+            </div>
+            <p class="relikt-hinweis">⚠️ Zähne werden erst vergeben wenn du das gesamte Spiel abgeschlossen hast (alle Orden + Elite Vier + Rivale).</p>
+
+            @foreach (var kategorie in MonsterKampf.Data.ReliktDaten.GetKategorien())
+            {
+                <div class="relikt-kategorie">
+                    <h4>@kategorie</h4>
+                    <div class="relikt-grid">
+                        @foreach (var relikt in MonsterKampf.Data.ReliktDaten.GetNachKategorie(kategorie))
+                        {
+                            bool aktiv = Game.Einstellungen.HatRelikt(relikt.Typ);
+                            <div class="relikt-card @(aktiv ? "aktiv" : "")" @onclick="() => ReliktToggle(relikt.Typ)">
+                                <div class="relikt-emoji">@relikt.Emoji</div>
+                                <div class="relikt-info">
+                                    <div class="relikt-name">@relikt.Name</div>
+                                    <div class="relikt-beschreibung">@relikt.Beschreibung</div>
+                                </div>
+                                <div class="relikt-zähne">🦷 @relikt.Zähne</div>
+                                @if (aktiv)
+                                {
+                                    <div class="relikt-check">✓</div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="settings-footer">
+        <button class="btn-settings-back" @onclick="ZurückZuHauptmenü">← Zurück zum Hauptmenü</button>
+        <button class="btn-settings-save" @onclick="EinstellungenSpeichern">💾 Einstellungen speichern</button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(meldung))
+    {
+        <div class="settings-meldung">@meldung</div>
+    }
+</div>
+
+@code {
+    private string meldung = "";
+
+    private void ReliktToggle(ReliktTyp typ)
+    {
+        Game.Einstellungen.ReliktToggle(typ);
+        Game.Notify();
+    }
+
+    private async Task EinstellungenSpeichern()
+    {
+        Game.EinstellungenSpeichern();
+        meldung = "✅ Einstellungen gespeichert!";
+        StateHasChanged();
+        await Task.Delay(2000);
+        meldung = "";
+        StateHasChanged();
+    }
+
+    private void ZurückZuHauptmenü()
+    {
+        Game.ZuHauptmenü();
+    }
+}

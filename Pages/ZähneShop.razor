@@ -1,0 +1,104 @@
+@page "/zaehne-shop"
+@using MonsterKampf.Models
+@using MonsterKampf.Services
+@using MonsterKampf.Data
+@inject GameService Game
+
+@* ══════════════════════════════════════════════════════════════════════════════
+   ZÄHNE-SHOP
+   Design: Dark premium shop UI, category tabs, upgrade cards with cost
+   Nur zugänglich nach Spielabschluss (alle Orden + Elite Vier + Rivale)
+══════════════════════════════════════════════════════════════════════════════ *@
+
+<div class="zaehne-shop">
+    <div class="shop-header">
+        <div class="shop-title-row">
+            <h1>🦷 Zähne-Shop</h1>
+            <div class="zähne-anzeige">
+                <span class="zähne-icon">🦷</span>
+                <span class="zähne-zahl">@Game.Spieler.ZähneWallet.VerfügbareZähne</span>
+                <span class="zähne-label">verfügbar</span>
+            </div>
+        </div>
+        <p class="shop-subtitle">Gib deine verdienten Zähne für mächtige Upgrades aus!</p>
+        <div class="zähne-stats">
+            <span>Gesamt verdient: <strong>@Game.Spieler.ZähneWallet.GesamtZähne 🦷</strong></span>
+            <span>Ausgegeben: <strong>@Game.Spieler.ZähneWallet.AusgegebeneZähne 🦷</strong></span>
+            <span>Bonus-Upgrades verfügbar: <strong>@Game.Spieler.ZähneWallet.BonusStatUpgradesVerfügbar</strong></span>
+        </div>
+    </div>
+
+    @* Kategorie-Tabs *@
+    <div class="shop-tabs">
+        @foreach (var kat in MonsterKampf.Data.ZähneUpgradeDaten.GetKategorien())
+        {
+            <button class="shop-tab @(aktiveKategorie == kat ? "active" : "")"
+                    @onclick="() => aktiveKategorie = kat">
+                @kat
+            </button>
+        }
+    </div>
+
+    @* Upgrade-Karten *@
+    <div class="shop-upgrades">
+        @foreach (var upgrade in MonsterKampf.Data.ZähneUpgradeDaten.GetNachKategorie(aktiveKategorie))
+        {
+            bool kannKaufen = Game.Spieler.ZähneWallet.KannBezahlen(upgrade.Kosten);
+            bool bereitsGekauft = Game.Spieler.ZähneWallet.HatUpgrade(upgrade.Typ);
+            <div class="upgrade-card @(bereitsGekauft ? "gekauft" : "") @(!kannKaufen && !bereitsGekauft ? "zu-teuer" : "")">
+                <div class="upgrade-emoji">@upgrade.Emoji</div>
+                <div class="upgrade-info">
+                    <div class="upgrade-name">@upgrade.Name</div>
+                    <div class="upgrade-beschreibung">@upgrade.Beschreibung</div>
+                </div>
+                <div class="upgrade-rechts">
+                    <div class="upgrade-kosten">🦷 @upgrade.Kosten</div>
+                    @if (bereitsGekauft)
+                    {
+                        <div class="upgrade-status gekauft-badge">✓ Aktiv</div>
+                    }
+                    else if (!kannKaufen)
+                    {
+                        <button class="btn-upgrade disabled" disabled>Zu teuer</button>
+                    }
+                    else
+                    {
+                        <button class="btn-upgrade" @onclick="() => UpgradeKaufen(upgrade.Typ)">Kaufen</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    @* Meldung *@
+    @if (!string.IsNullOrEmpty(meldung))
+    {
+        <div class="shop-meldung @(meldungErfolg ? "erfolg" : "fehler")">@meldung</div>
+    }
+
+    <div class="shop-footer">
+        <button class="btn-shop-back" @onclick="ZurückZuHauptmenü">← Zurück zum Hauptmenü</button>
+    </div>
+</div>
+
+@code {
+    private string aktiveKategorie = "Level";
+    private string meldung = "";
+    private bool meldungErfolg = true;
+
+    private async Task UpgradeKaufen(ZähneUpgrade typ)
+    {
+        string ergebnis = Game.UpgradeKaufen(typ);
+        meldungErfolg = ergebnis.StartsWith("✅");
+        meldung = ergebnis;
+        StateHasChanged();
+        await Task.Delay(2500);
+        meldung = "";
+        StateHasChanged();
+    }
+
+    private void ZurückZuHauptmenü()
+    {
+        Game.ZuHauptmenü();
+    }
+}

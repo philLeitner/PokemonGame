@@ -188,6 +188,7 @@ public class Spieler
     }
 
     public bool AlleOhnmächtig => Team.All(m => m.IstOhnmächtig);
+    public ZähneWallet ZähneWallet { get; set; } = new();
 
     public InventarItem? GetItem(string itemId) => Inventar.FirstOrDefault(i => i.ItemId == itemId);
     public int GetItemMenge(string itemId) => GetItem(itemId)?.Menge ?? 0;
@@ -243,6 +244,11 @@ public class Ort
     public Arena? Arena { get; set; }
     public List<WildBegegnung> WildMonster { get; set; } = new();
     public List<string> Verbindungen { get; set; } = new();
+    // Richtungs-Verbindungen für 3x3 Minimap
+    public string? Nord { get; set; }
+    public string? Süd { get; set; }
+    public string? Ost { get; set; }
+    public string? West { get; set; }
     public List<TrainerKampf> Trainer { get; set; } = new();
     public bool HatMonsterCenter { get; set; } = false;
     public bool HatMarkt { get; set; } = false;
@@ -256,6 +262,9 @@ public class Arena
     public int OrdenNr { get; set; }
     public string Leiter { get; set; } = "";
     public string TypSpezialisierung { get; set; } = "";
+    // Alias für WeltData-Kompatibilität
+    public string Typ { get => TypSpezialisierung; set => TypSpezialisierung = value; }
+    public string? Beschreibung { get; set; }
     public List<MonsterTeamEintrag> Team { get; set; } = new();
 }
 
@@ -276,6 +285,8 @@ public class TrainerKampf
     public List<MonsterTeamEintrag> Team { get; set; } = new();
     public string Dialogvor { get; set; } = "Auf zum Kampf!";
     public string DialogNach { get; set; } = "Gut gekämpft!";
+    public bool MussBesiegt { get; set; } = false; // Pflicht-Trainer: blockiert Weiterreise
+    public string? SperrtRichtung { get; set; } = null; // "Nord", "Süd", "Ost", "West" - welche Richtung gesperrt ist
 }
 
 public class MonsterTeamEintrag
@@ -338,7 +349,9 @@ public enum SpielPhase
     StarterWahl,
     Weltkarte,
     Kampf,
-    MapEditor
+    MapEditor,
+    Einstellungen,
+    ZähneShop
 }
 
 // ─── Speicherstand ────────────────────────────────────────────────────────────
@@ -439,7 +452,7 @@ public class SpielEinstellungen
         int total = 0;
         foreach (var r in AktiveRelikte)
         {
-            var info = ReliktDaten.Get(r);
+            var info = MonsterKampf.Data.ReliktDaten.Get(r);
             if (info != null) total += info.Zähne;
         }
         return total;
@@ -458,6 +471,13 @@ public enum ReliktTyp
     KeinMarkt,              // Kein Markt nutzbar
     NurPokeball,            // Nur einfache Fangbälle
     KeinFliehen,            // Kann nicht aus Kämpfen fliehen
+    KeinFangen,             // Kein Fangen erlaubt
+    NurEigenTyp,            // Nur Attacken des eigenen Typs
+    // Team-Handicaps
+    MaxZweiMonster,         // Max. 2 Monster im Team
+    KeineEntwicklung,       // Keine Entwicklung erlaubt
+    ZufälligesTeam,         // Zufälliges Team bei Neustart
+    NurWildeMonster,        // Nur wilde Monster fangen
     // Level-Handicaps
     LevelKappe20,           // Max. Level 20
     LevelKappe40,           // Max. Level 40
@@ -465,53 +485,24 @@ public enum ReliktTyp
     // Nuzlocke-Varianten
     NuzlockeLeicht,         // Nur 1 Monster pro Route fangen
     NuzlockeHart,           // Ohnmächtiges Monster = verloren
+    Nuzlocke,               // Standard-Nuzlocke
+    NuzlockeEinsFangen,     // Nur erstes Monster pro Route
     // Geld-Handicaps
     WenigerGeld,            // 50% weniger Startgeld
     KeinGeldNachKampf,      // Kein Geld nach Kämpfen
+    // Welt-Handicaps
+    KeinMonsterCenter,      // Kein Monster Center
+    HöhereLevel,            // Alle Gegner 5 Level höher
     // XP-Handicaps
     WenigerXp,              // 50% weniger Erfahrung
     KeinXpTeiler,           // Kein XP-Teiler erlaubt
 }
 
-public class ReliktInfo
-{
-    public ReliktTyp Typ { get; set; }
-    public string Name { get; set; } = "";
-    public string Beschreibung { get; set; } = "";
-    public string Kategorie { get; set; } = "";
-    public int Zähne { get; set; }
-    public string Emoji { get; set; } = "💀";
-}
+// Positional record: new(Typ, Kategorie, Emoji, Name, Beschreibung, Zähne)
+public record ReliktInfo(ReliktTyp Typ, string Kategorie, string Emoji, string Name, string Beschreibung, int Zähne);
 
-public static class ReliktDaten
-{
-    public static readonly List<ReliktInfo> Alle = new()
-    {
-        // Kampf
-        new() { Typ = ReliktTyp.NurEinMonster,    Name = "Einzelkämpfer",      Beschreibung = "Nur 1 Monster im Team erlaubt",           Kategorie = "Kampf",  Zähne = 5,  Emoji = "👤" },
-        new() { Typ = ReliktTyp.KeinHeilen,        Name = "Kein Center",        Beschreibung = "Monster Center kann nicht genutzt werden", Kategorie = "Kampf",  Zähne = 4,  Emoji = "🚫" },
-        new() { Typ = ReliktTyp.KeinMarkt,         Name = "Kein Markt",         Beschreibung = "Markt kann nicht genutzt werden",          Kategorie = "Kampf",  Zähne = 3,  Emoji = "🏪" },
-        new() { Typ = ReliktTyp.NurPokeball,       Name = "Nur Fangball",       Beschreibung = "Nur einfache Fangbälle erlaubt",           Kategorie = "Kampf",  Zähne = 2,  Emoji = "⚪" },
-        new() { Typ = ReliktTyp.KeinFliehen,       Name = "Kein Fliehen",       Beschreibung = "Kann nicht aus Kämpfen fliehen",           Kategorie = "Kampf",  Zähne = 3,  Emoji = "🔒" },
-        // Level
-        new() { Typ = ReliktTyp.LevelKappe20,      Name = "Level-Kappe 20",     Beschreibung = "Monster können max. Level 20 erreichen",   Kategorie = "Level",  Zähne = 6,  Emoji = "📊" },
-        new() { Typ = ReliktTyp.LevelKappe40,      Name = "Level-Kappe 40",     Beschreibung = "Monster können max. Level 40 erreichen",   Kategorie = "Level",  Zähne = 4,  Emoji = "📊" },
-        new() { Typ = ReliktTyp.LevelKappe60,      Name = "Level-Kappe 60",     Beschreibung = "Monster können max. Level 60 erreichen",   Kategorie = "Level",  Zähne = 2,  Emoji = "📊" },
-        // Nuzlocke
-        new() { Typ = ReliktTyp.NuzlockeLeicht,    Name = "Nuzlocke (leicht)",  Beschreibung = "Nur 1 Monster pro Route fangen",           Kategorie = "Nuzlocke", Zähne = 4, Emoji = "🎯" },
-        new() { Typ = ReliktTyp.NuzlockeHart,      Name = "Nuzlocke (hart)",    Beschreibung = "Ohnmächtiges Monster ist dauerhaft weg",   Kategorie = "Nuzlocke", Zähne = 8, Emoji = "💀" },
-        // Geld
-        new() { Typ = ReliktTyp.WenigerGeld,       Name = "Armut",              Beschreibung = "50% weniger Startgeld",                    Kategorie = "Geld",   Zähne = 2,  Emoji = "💸" },
-        new() { Typ = ReliktTyp.KeinGeldNachKampf, Name = "Kein Kampfgeld",     Beschreibung = "Kein Geld nach gewonnenen Kämpfen",        Kategorie = "Geld",   Zähne = 3,  Emoji = "💰" },
-        // XP
-        new() { Typ = ReliktTyp.WenigerXp,         Name = "Weniger XP",         Beschreibung = "50% weniger Erfahrungspunkte",             Kategorie = "XP",     Zähne = 3,  Emoji = "⬇️" },
-        new() { Typ = ReliktTyp.KeinXpTeiler,      Name = "Kein XP-Teiler",     Beschreibung = "XP-Teiler-Upgrades sind gesperrt",         Kategorie = "XP",     Zähne = 2,  Emoji = "❌" },
-    };
-
-    public static ReliktInfo? Get(ReliktTyp typ) => Alle.Find(r => r.Typ == typ);
-    public static List<string> GetKategorien() => Alle.Select(r => r.Kategorie).Distinct().ToList();
-    public static List<ReliktInfo> GetNachKategorie(string kat) => Alle.Where(r => r.Kategorie == kat).ToList();
-}
+// ReliktDaten ist in MonsterKampf.Data (ReliktUndZähneDaten.cs) definiert.
+// Keine doppelte Definition hier.
 
 // ─── Zähne-Wallet & Upgrades ─────────────────────────────────────────────────
 public class ZähneWallet
@@ -540,6 +531,9 @@ public enum ZähneUpgrade
     // Level-Boosts
     LevelBoost25,       // 3 Zähne – 1 Monster +25 Level
     LevelBoost50,       // 5 Zähne – 1 Monster +50 Level
+    LevelBoost5,        // 3 Zähne – Team +5 Level
+    LevelBoost10,       // 6 Zähne – Team +10 Level
+    LevelBoost20,       // 10 Zähne – Team +20 Level
     // Stats
     StatBoostKp,        // 2 Zähne – KP +10%
     StatBoostAngriff,   // 2 Zähne – Angriff +10%
@@ -547,63 +541,33 @@ public enum ZähneUpgrade
     StatBoostSpAngriff, // 2 Zähne – Sp.Angriff +10%
     StatBoostSpVerteidigung, // 2 Zähne – Sp.Verteidigung +10%
     StatBoostInitiative, // 2 Zähne – Initiative +10%
+    KpBoost,            // 3 Zähne – KP +10% (alle)
+    AngriffBoost,       // 3 Zähne – Angriff +10% (alle)
+    VertBoost,          // 3 Zähne – Verteidigung +10% (alle)
+    SpeedBoost,         // 3 Zähne – Speed +10% (alle)
+    AlleStatsBoost,     // 8 Zähne – Alle Stats +10%
     // XP
     MehrXp,             // 4 Zähne – +25% Erfahrung
     XpTeiler,           // 3 Zähne – XP-Teiler (geteilt)
     VollerXpTeiler,     // 6 Zähne – Voller XP-Teiler
+    XpBoost,            // 4 Zähne – XP +50%
     // Fangen
     BessereBallle,      // 2 Zähne – Fangball wirkt wie Superball
     ProfiCatcher,       // 3 Zähne – Superball wirkt wie Hyperball
     LegendärBoost10,    // 3 Zähne – Legendäre +10% Fangchance
     LegendärBoost20,    // 5 Zähne – Legendäre +20% Fangchance
     Meisterball,        // 5 Zähne – 1 Meisterball
+    BessereKugeln,      // 3 Zähne – Alle Kugeln +20% Fangrate
+    MehrTeamSlots,      // 5 Zähne – +2 Team-Slots
     // Geld & Markt
     MehrGeld,           // 2 Zähne – +25% Geld nach Kämpfen
     GünstigerMarkt,     // 3 Zähne – Items 20% billiger
     BessereHeilung,     // 3 Zähne – Tränke heilen 25% mehr
+    GeldBoost,          // 3 Zähne – Geld +50%
     // Team
     ExtraSlot,          // 5 Zähne – +1 Team-Slot (max 6)
+    BonusStatUpgrade,   // 2 Zähne – Bonus-Stat-Upgrade
 }
 
-public static class ZähneUpgradeDaten
-{
-    public record UpgradeInfo(ZähneUpgrade Typ, string Name, string Beschreibung, int Kosten, string Emoji);
-
-    public static readonly List<UpgradeInfo> Alle = new()
-    {
-        new(ZähneUpgrade.LevelBoost25,          "Level-Boost +25",       "1 Monster bekommt +25 Level",                3, "⬆️"),
-        new(ZähneUpgrade.LevelBoost50,          "Level-Boost +50",       "1 Monster bekommt +50 Level",                5, "⬆️"),
-        new(ZähneUpgrade.StatBoostKp,           "KP +10%",               "KP eines Monsters dauerhaft +10%",           2, "❤️"),
-        new(ZähneUpgrade.StatBoostAngriff,      "Angriff +10%",          "Angriff eines Monsters dauerhaft +10%",      2, "⚔️"),
-        new(ZähneUpgrade.StatBoostVerteidigung, "Verteidigung +10%",     "Verteidigung eines Monsters dauerhaft +10%", 2, "🛡️"),
-        new(ZähneUpgrade.StatBoostSpAngriff,    "Sp.Angriff +10%",       "Sp.Angriff eines Monsters dauerhaft +10%",   2, "✨"),
-        new(ZähneUpgrade.StatBoostSpVerteidigung,"Sp.Verteidigung +10%", "Sp.Verteidigung eines Monsters +10%",        2, "🔮"),
-        new(ZähneUpgrade.StatBoostInitiative,   "Initiative +10%",       "Initiative eines Monsters dauerhaft +10%",   2, "💨"),
-        new(ZähneUpgrade.MehrXp,                "Mehr XP",               "+25% Erfahrungspunkte",                      4, "📈"),
-        new(ZähneUpgrade.XpTeiler,              "XP-Teiler",             "Alle Monster bekommen XP (geteilt)",         3, "🔄"),
-        new(ZähneUpgrade.VollerXpTeiler,        "Voller XP-Teiler",      "Alle Monster bekommen volle XP",             6, "🔄"),
-        new(ZähneUpgrade.BessereBallle,         "Bessere Bälle",         "Fangball wirkt wie Superball",               2, "⚪"),
-        new(ZähneUpgrade.ProfiCatcher,          "Profi-Fänger",          "Superball wirkt wie Hyperball",              3, "🎯"),
-        new(ZähneUpgrade.LegendärBoost10,       "+10% Legendär-Chance",  "Legendäre 10% leichter fangen",             3, "⭐"),
-        new(ZähneUpgrade.LegendärBoost20,       "+20% Legendär-Chance",  "Legendäre 20% leichter fangen",             5, "🌟"),
-        new(ZähneUpgrade.Meisterball,           "+1 Meisterball",        "1 Meisterball (100% Fangchance)",            5, "🔵"),
-        new(ZähneUpgrade.MehrGeld,              "Mehr Geld",             "+25% Geld nach Kämpfen",                     2, "💰"),
-        new(ZähneUpgrade.GünstigerMarkt,        "Günstiger Markt",       "Items 20% billiger im Markt",                3, "🏪"),
-        new(ZähneUpgrade.BessereHeilung,        "Stärkere Heilung",      "Tränke heilen 25% mehr HP",                  3, "💊"),
-        new(ZähneUpgrade.ExtraSlot,             "Extra Team-Slot",       "+1 Team-Slot (max. 6 Monster)",              5, "➕"),
-    };
-
-    public static int GetKosten(ZähneUpgrade typ) => Alle.Find(u => u.Typ == typ)?.Kosten ?? 0;
-    public static UpgradeInfo? Get(ZähneUpgrade typ) => Alle.Find(u => u.Typ == typ);
-    public static List<string> GetKategorien() => new() { "Level", "Stats", "XP", "Fangen", "Geld & Markt", "Team" };
-    public static List<UpgradeInfo> GetNachKategorie(string kat) => kat switch
-    {
-        "Level"      => Alle.Where(u => u.Typ is ZähneUpgrade.LevelBoost25 or ZähneUpgrade.LevelBoost50).ToList(),
-        "Stats"      => Alle.Where(u => u.Typ is ZähneUpgrade.StatBoostKp or ZähneUpgrade.StatBoostAngriff or ZähneUpgrade.StatBoostVerteidigung or ZähneUpgrade.StatBoostSpAngriff or ZähneUpgrade.StatBoostSpVerteidigung or ZähneUpgrade.StatBoostInitiative).ToList(),
-        "XP"         => Alle.Where(u => u.Typ is ZähneUpgrade.MehrXp or ZähneUpgrade.XpTeiler or ZähneUpgrade.VollerXpTeiler).ToList(),
-        "Fangen"     => Alle.Where(u => u.Typ is ZähneUpgrade.BessereBallle or ZähneUpgrade.ProfiCatcher or ZähneUpgrade.LegendärBoost10 or ZähneUpgrade.LegendärBoost20 or ZähneUpgrade.Meisterball).ToList(),
-        "Geld & Markt" => Alle.Where(u => u.Typ is ZähneUpgrade.MehrGeld or ZähneUpgrade.GünstigerMarkt or ZähneUpgrade.BessereHeilung).ToList(),
-        "Team"       => Alle.Where(u => u.Typ is ZähneUpgrade.ExtraSlot).ToList(),
-        _            => Alle
-    };
-}
+// ZähneUpgradeDaten und ReliktDaten sind in MonsterKampf.Data (ReliktUndZähneDaten.cs) definiert.
+// Keine doppelte Definition hier.

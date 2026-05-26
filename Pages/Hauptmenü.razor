@@ -20,6 +20,11 @@
                 <button class="btn-laden" @onclick="SpielLaden">📂 Spiel laden</button>
             }
             <button class="btn-editor" @onclick="Game.ZuMapEditor">🗺️ Map-Editor</button>
+            <button class="btn-einstellungen" @onclick="Game.ZuEinstellungen">⚙️ Einstellungen &amp; Relikte</button>
+            @if (Game.SpielAbgeschlossen)
+            {
+                <button class="btn-zaehne" @onclick="Game.ZuZähneShop">🦷 Zähne-Shop</button>
+            }
         </div>
 
         <div class="menu-info">
