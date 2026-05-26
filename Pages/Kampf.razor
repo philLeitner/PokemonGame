@@ -22,6 +22,10 @@
                 <div class="monster-name-zeile">
                     <span class="monster-name">@gegnerMon.Name</span>
                     <span class="monster-level">Lv.@gegnerMon.Level</span>
+                    @if (gegnerMon.Status != "none")
+                    {
+                        <span class="status-badge">@StatusEmoji(gegnerMon.Status)</span>
+                    }
                 </div>
                 <div class="monster-typen">
                     @foreach (var typ in gegnerMon.Typen)
@@ -53,8 +57,12 @@
             </div>
             <div class="monster-info-leiste spieler-leiste">
                 <div class="monster-name-zeile">
-                    <span class="monster-name">@spielerMon.Name</span>
+                    <span class="monster-name">@spielerMon.AngezeigterName</span>
                     <span class="monster-level">Lv.@spielerMon.Level</span>
+                    @if (spielerMon.Status != "none")
+                    {
+                        <span class="status-badge">@StatusEmoji(spielerMon.Status)</span>
+                    }
                 </div>
                 <div class="monster-typen">
                     @foreach (var typ in spielerMon.Typen)
@@ -73,13 +81,18 @@
                     </div>
                     <span class="kp-zahl">@spielerMon.AktuelleKp/@spielerMon.MaxKp</span>
                 </div>
+                <div class="exp-leiste-container">
+                    <div class="exp-leiste">
+                        <div class="exp-fill" style="width: @ExpProzent(spielerMon)%"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Kampf-Log -->
     <div class="kampf-log" @ref="logRef">
-        @foreach (var eintrag in kampf.Log.TakeLast(4))
+        @foreach (var eintrag in kampf.Log.TakeLast(5))
         {
             <p class="log-eintrag">@eintrag</p>
         }
@@ -87,6 +100,7 @@
 
     <!-- Aktions-Bereich -->
     <div class="aktions-bereich">
+
         @if (kampf.Phase == KampfPhase.Beendet)
         {
             <div class="kampf-ergebnis @(kampf.SpielerGewonnen ? "gewonnen" : "verloren")">
@@ -98,6 +112,35 @@
                 <button class="btn-weiter" @onclick="Game.KampfBeenden">Weiter →</button>
             </div>
         }
+        else if (kampf.Phase == KampfPhase.Evolution)
+        {
+            <div class="evolution-panel">
+                <div class="evolution-text">✨ @kampf.EntwickeltSichMonster?.AngezeigterName entwickelt sich...</div>
+                <div class="evolution-arrow">→ @kampf.EntwickeltSichZuName</div>
+            </div>
+        }
+        else if (kampf.Phase == KampfPhase.Fangen)
+        {
+            <div class="warten-anzeige">
+                <p>⚪ Monsterball fliegt...</p>
+                <div class="warten-punkte"><span>.</span><span>.</span><span>.</span></div>
+            </div>
+        }
+        else if (kampf.Phase == KampfPhase.MonsterWechsel)
+        {
+            <div class="wechsel-panel">
+                <p class="wechsel-titel">Wähle dein nächstes Monster:</p>
+                <div class="team-wechsel-liste">
+                    @foreach (var mon in Game.Spieler.Team.Where(m => !m.IstOhnmächtig && m != spielerMon))
+                    {
+                        <button class="btn-team-mon" @onclick="() => ErzwungenesWechseln(mon)">
+                            <span class="team-mon-name">@mon.AngezeigterName</span>
+                            <span class="team-mon-info">Lv.@mon.Level | @mon.AktuelleKp/@mon.MaxKp KP</span>
+                        </button>
+                    }
+                </div>
+            </div>
+        }
         else if (kampf.Phase == KampfPhase.Intro)
         {
             <div class="kampf-intro">
@@ -107,30 +150,132 @@
         }
         else if (kampf.Phase == KampfPhase.SpielerZug)
         {
-            <div class="attacken-grid">
-                @foreach (var attacke in spielerMon.Attacken)
+            @if (aktivesPanel == "haupt")
+            {
+                <!-- Haupt-Menü -->
+                <div class="haupt-menu">
+                    <button class="btn-haupt-aktion btn-attacke" @onclick='() => aktivesPanel = "attacken"'>⚔️ Attacke</button>
+                    <button class="btn-haupt-aktion btn-item" @onclick='() => aktivesPanel = "items"'>🎒 Items</button>
+                    <button class="btn-haupt-aktion btn-wechsel" @onclick='() => aktivesPanel = "wechsel"'>🔄 Wechsel</button>
+                    @if (kampf.KannFangen)
+                    {
+                        <button class="btn-haupt-aktion btn-fangen" @onclick='() => aktivesPanel = "fangen"'>⚪ Fangen</button>
+                    }
+                    @if (kampf.Typ == KampfTyp.Wild)
+                    {
+                        <button class="btn-haupt-aktion btn-fliehen" @onclick="Fliehen">🏃 Fliehen</button>
+                    }
+                </div>
+            }
+            else if (aktivesPanel == "attacken")
+            {
+                <div class="panel-header">
+                    <button class="btn-zurueck" @onclick='() => aktivesPanel = "haupt"'>← Zurück</button>
+                    <span>Attacke wählen:</span>
+                </div>
+                <div class="attacken-grid">
+                    @foreach (var attacke in spielerMon.Attacken)
+                    {
+                        <button class="attacke-btn typ-@attacke.Typ.ToLower()"
+                                style="border-color: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")"
+                                @onclick="() => AttackeAusführen(attacke)"
+                                disabled="@(!attacke.HatAp)">
+                            <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
+                            <span class="attacke-name">@attacke.Name</span>
+                            <span class="attacke-typ-name">@attacke.Typ</span>
+                            <span class="attacke-ap">@attacke.AktuelleAp/@attacke.MaxAp AP</span>
+                            @if (attacke.Staerke.HasValue)
+                            {
+                                <span class="attacke-staerke">⚔️ @attacke.Staerke</span>
+                            }
+                        </button>
+                    }
+                </div>
+            }
+            else if (aktivesPanel == "items")
+            {
+                <div class="panel-header">
+                    <button class="btn-zurueck" @onclick='() => { aktivesPanel = "haupt"; gewähltesItemId = null; }'>← Zurück</button>
+                    <span>@(gewähltesItemId == null ? "Item wählen:" : "Auf wen anwenden?")</span>
+                </div>
+                @if (gewähltesItemId == null)
                 {
-                    <button class="attacke-btn typ-@attacke.Typ.ToLower()"
-                            style="border-color: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")"
-                            @onclick="() => AttackeAusführen(attacke)"
-                            disabled="@(!attacke.HatAp)">
-                        <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
-                        <span class="attacke-name">@attacke.Name</span>
-                        <span class="attacke-typ-name">@attacke.Typ</span>
-                        <span class="attacke-ap">@attacke.AktuelleAp/@attacke.MaxAp AP</span>
-                        @if (attacke.Staerke.HasValue)
-                        {
-                            <span class="attacke-staerke">⚔️ @attacke.Staerke</span>
+                    <div class="item-liste">
+                        @{
+                            var kampfItems = Game.Spieler.Inventar
+                                .Where(i => i.Menge > 0 && i.ItemId != "monsterball" && i.ItemId != "superball" && i.ItemId != "hyperball" && i.ItemId != "meisterball")
+                                .ToList();
                         }
-                    </button>
+                        @if (!kampfItems.Any())
+                        {
+                            <p class="leer-text">Keine Items vorhanden.</p>
+                        }
+                        @foreach (var item in kampfItems)
+                        {
+                            <button class="btn-item-verwenden" @onclick="() => gewähltesItemId = item.ItemId">
+                                <span class="item-emoji">@item.Emoji</span>
+                                <span class="item-name">@item.Name</span>
+                                <span class="item-menge">x@item.Menge</span>
+                            </button>
+                        }
+                    </div>
                 }
-            </div>
-            <div class="kampf-extra-aktionen">
-                @if (kampf.Typ == KampfTyp.Wild)
+                else
                 {
-                    <button class="btn-fliehen" @onclick="Game.KampfFliehen">🏃 Fliehen</button>
+                    <div class="team-wechsel-liste">
+                        @foreach (var mon in Game.Spieler.Team)
+                        {
+                            <button class="btn-team-mon" @onclick="() => ItemAnwenden(mon)">
+                                <span class="team-mon-name">@mon.AngezeigterName</span>
+                                <span class="team-mon-info">Lv.@mon.Level | @mon.AktuelleKp/@mon.MaxKp KP @(mon.Status != "none" ? "| " + StatusEmoji(mon.Status) : "")</span>
+                            </button>
+                        }
+                    </div>
                 }
-            </div>
+            }
+            else if (aktivesPanel == "wechsel")
+            {
+                <div class="panel-header">
+                    <button class="btn-zurueck" @onclick='() => aktivesPanel = "haupt"'>← Zurück</button>
+                    <span>Monster wechseln:</span>
+                </div>
+                <div class="team-wechsel-liste">
+                    @foreach (var mon in Game.Spieler.Team)
+                    {
+                        bool istAktiv = mon == spielerMon;
+                        <button class="btn-team-mon @(istAktiv ? "aktiv-mon" : "") @(mon.IstOhnmächtig ? "ohnmaechtig-mon" : "")"
+                                disabled="@(istAktiv || mon.IstOhnmächtig)"
+                                @onclick="() => WechsleMitGegnerZug(mon)">
+                            <span class="team-mon-name">@mon.AngezeigterName @(istAktiv ? "(aktiv)" : "")</span>
+                            <span class="team-mon-info">Lv.@mon.Level | @mon.AktuelleKp/@mon.MaxKp KP @(mon.IstOhnmächtig ? "💀" : "")</span>
+                        </button>
+                    }
+                </div>
+            }
+            else if (aktivesPanel == "fangen")
+            {
+                <div class="panel-header">
+                    <button class="btn-zurueck" @onclick='() => aktivesPanel = "haupt"'>← Zurück</button>
+                    <span>Ball wählen:</span>
+                </div>
+                <div class="ball-liste">
+                    @foreach (var ball in new[] {
+                        ("monsterball", "⚪", "Monsterball"),
+                        ("superball", "🔵", "Superball"),
+                        ("hyperball", "🟡", "Hyperball"),
+                        ("meisterball", "🟣", "Meisterball")
+                    })
+                    {
+                        int menge = Game.Spieler.GetItemMenge(ball.Item1);
+                        <button class="btn-ball @(menge == 0 ? "kein-ap" : "")"
+                                disabled="@(menge == 0)"
+                                @onclick="() => BallWerfen(ball.Item1)">
+                            <span>@ball.Item2 @ball.Item3</span>
+                            <span class="item-menge">x@menge</span>
+                        </button>
+                    }
+                </div>
+            }
         }
         else if (kampf.Phase == KampfPhase.GegnerZug)
         {
@@ -145,6 +290,8 @@
 
 @code {
     private ElementReference logRef;
+    private string aktivesPanel = "haupt";
+    private string? gewähltesItemId;
 
     protected override void OnInitialized()
     {
@@ -157,11 +304,50 @@
     {
         if (Game.AktuellerKampf != null)
             Game.AktuellerKampf.Phase = KampfPhase.SpielerZug;
+        aktivesPanel = "haupt";
     }
 
     private async Task AttackeAusführen(AttackeInstanz attacke)
     {
+        aktivesPanel = "haupt";
         await Game.AttackeAusführen(attacke);
+    }
+
+    private void ItemAufZielWählen(string itemId)
+    {
+        gewähltesItemId = itemId;
+    }
+
+    private async Task ItemAnwenden(MonsterInstanz ziel)
+    {
+        if (gewähltesItemId == null) return;
+        string id = gewähltesItemId;
+        gewähltesItemId = null;
+        aktivesPanel = "haupt";
+        await Game.ItemImKampfVerwenden(id, ziel);
+    }
+
+    private async Task WechsleMitGegnerZug(MonsterInstanz mon)
+    {
+        aktivesPanel = "haupt";
+        await Game.MonsterWechseln(mon);
+    }
+
+    private async Task ErzwungenesWechseln(MonsterInstanz mon)
+    {
+        await Game.MonsterWechseln(mon);
+    }
+
+    private async Task BallWerfen(string ballId)
+    {
+        aktivesPanel = "haupt";
+        await Game.MonsterFangen(ballId);
+    }
+
+    private async Task Fliehen()
+    {
+        aktivesPanel = "haupt";
+        await Game.KampfFliehen();
     }
 
     private string GetTypEmoji(string typ) =>
@@ -172,4 +358,20 @@
         float pct = mon.MaxKp > 0 ? (float)mon.AktuelleKp / mon.MaxKp : 0;
         return pct > 0.5f ? "kp-gruen" : pct > 0.25f ? "kp-gelb" : "kp-rot";
     }
+
+    private string ExpProzent(MonsterInstanz mon)
+    {
+        int benötigt = Math.Max(1, (mon.Level + 1) * (mon.Level + 1) * 10);
+        return Math.Max(0, Math.Min(100, (int)((float)mon.ErfahrungsPunkte / benötigt * 100))).ToString();
+    }
+
+    private string StatusEmoji(string status) => status switch
+    {
+        "vergiftet" => "☠️",
+        "verbrannt" => "🔥",
+        "gelähmt" => "⚡",
+        "eingeschlafen" => "💤",
+        "eingefroren" => "🧊",
+        _ => ""
+    };
 }

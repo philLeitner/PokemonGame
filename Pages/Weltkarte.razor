@@ -38,6 +38,10 @@
             }
         </div>
 
+        <div class="speichern-buttons">
+            <button class="btn-speichern" @onclick="SpielstandSpeichern">💾 Speichern</button>
+            <button class="btn-laden" @onclick="SpielstandLaden">📂 Laden</button>
+        </div>
         <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
         <button class="btn-editor-klein" @onclick="Game.ZuMapEditor">🗺️ Map-Editor</button>
     </div>
@@ -292,6 +296,18 @@
     {
         marktOffen = false;
         kaufMeldung = "";
+    }
+
+    private async Task SpielstandSpeichern()
+    {
+        await Game.SpielstandSpeichern();
+        meldung = "💾 Spielstand gespeichert!";
+    }
+
+    private async Task SpielstandLaden()
+    {
+        await Game.SpielstandLaden();
+        meldung = "📂 Spielstand geladen!";
     }
 
     private async Task ItemKaufen(ShopItem item)

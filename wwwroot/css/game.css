@@ -892,3 +892,188 @@ body {
   .editor-screen { flex-direction: column; }
   .editor-sidebar { width: 100%; height: auto; }
 }
+
+/* ─── Neue Kampf-UI ─────────────────────────────────────────────────── */
+.haupt-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 8px;
+}
+.btn-haupt-aktion {
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+}
+.btn-haupt-aktion:active { transform: scale(0.96); }
+.btn-attacke  { background: #ef4444; color: white; border-color: #b91c1c; }
+.btn-item     { background: #3b82f6; color: white; border-color: #1d4ed8; }
+.btn-wechsel  { background: #22c55e; color: white; border-color: #15803d; }
+.btn-fangen   { background: #a855f7; color: white; border-color: #7e22ce; }
+.btn-fliehen  { background: #6b7280; color: white; border-color: #374151; }
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    font-weight: bold;
+    color: #e2e8f0;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 6px;
+}
+.btn-zurueck {
+    background: #334155;
+    color: #e2e8f0;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.btn-zurueck:hover { background: #475569; }
+
+.item-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 8px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+.btn-item-verwenden {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #e2e8f0;
+    cursor: pointer;
+    text-align: left;
+}
+.btn-item-verwenden:hover { background: #334155; }
+.item-emoji { font-size: 1.2rem; }
+.item-name  { flex: 1; font-weight: 600; }
+.item-menge { color: #94a3b8; font-size: 0.85rem; }
+.leer-text  { color: #64748b; text-align: center; padding: 16px; }
+
+.team-wechsel-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 8px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+.btn-team-mon {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #e2e8f0;
+    cursor: pointer;
+    text-align: left;
+}
+.btn-team-mon:hover:not(:disabled) { background: #334155; }
+.btn-team-mon:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-team-mon.aktiv-mon { border-color: #22c55e; background: #14532d22; }
+.btn-team-mon.ohnmaechtig-mon { opacity: 0.4; }
+.team-mon-name { font-weight: bold; font-size: 0.95rem; }
+.team-mon-info { font-size: 0.78rem; color: #94a3b8; }
+
+.ball-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 8px;
+}
+.btn-ball {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.btn-ball:hover:not(:disabled) { background: #334155; }
+.btn-ball.kein-ap { opacity: 0.4; cursor: not-allowed; }
+
+.wechsel-panel, .wechsel-titel {
+    padding: 8px;
+    color: #e2e8f0;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.evolution-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+.evolution-text { font-size: 1.1rem; color: #fbbf24; font-weight: bold; }
+.evolution-arrow { font-size: 1.5rem; color: #a78bfa; font-weight: bold; }
+
+.status-badge {
+    font-size: 0.85rem;
+    margin-left: 4px;
+}
+
+.exp-leiste-container { margin-top: 2px; }
+.exp-leiste {
+    height: 4px;
+    background: #1e293b;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.exp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* ─── Speichern/Laden Buttons ─────────────────────────────────────── */
+.speichern-buttons {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.btn-speichern {
+    flex: 1;
+    padding: 8px;
+    background: #059669;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.btn-speichern:hover { background: #047857; }
+.btn-laden {
+    flex: 1;
+    padding: 8px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.btn-laden:hover { background: #1d4ed8; }
