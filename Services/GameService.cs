@@ -214,7 +214,9 @@ public class GameService
 
         var erstesGegnerMonster = ort.Arena.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
-        var spezies = AlleMonster.FirstOrDefault(m => m.Id == erstesGegnerMonster.MonsterId);
+        // Fallback: wenn Monster-ID nicht gefunden, nimm ein zufälliges
+        var spezies = AlleMonster.FirstOrDefault(m => m.Id == erstesGegnerMonster.MonsterId)
+                      ?? AlleMonster[_rng.Next(AlleMonster.Count)];
         if (spezies == null) return;
         var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
 
@@ -419,10 +421,10 @@ public class GameService
     }
 
     // ── Zufällige Begegnung prüfen ────────────────────────────────────────────
+    // Nicht mehr verwendet – Begegnung wird direkt durch Spieler-Klick ausgelöst
     public bool ZufallsBegegnungPrüfen(Ort ort)
     {
-        if (!ort.WildMonster.Any()) return false;
-        return _rng.Next(1, 101) <= 15; // 15% Chance
+        return ort.WildMonster.Any(); // immer true wenn Monster vorhanden
     }
 
     public WildBegegnung? ZufälligesWildMonster(Ort ort)

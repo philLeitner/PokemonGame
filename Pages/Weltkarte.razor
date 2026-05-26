@@ -78,7 +78,12 @@
 
                 <!-- Aktionen -->
                 <div class="ort-aktionen">
-                    @if (ausgewähltOrt.Id != Game.Spieler.AktuellerOrt)
+                    @{
+                        bool istHier = ausgewähltOrt.Id == Game.Spieler.AktuellerOrt;
+                        // Frische Referenz aus der Ort-Liste holen (nicht gecachte Kopie)
+                        var aktuellerOrtRef = Game.AlleOrte.First(o => o.Id == ausgewähltOrt.Id);
+                    }
+                    @if (!istHier)
                     {
                         <button class="btn-reisen" @onclick="ZumOrtReisen">
                             🚶 Nach @ausgewähltOrt.Name reisen
@@ -88,30 +93,31 @@
                     {
                         <span class="aktueller-ort-label">📍 Du bist hier</span>
 
-                        <!-- Wilde Monster -->
-                        @if (ausgewähltOrt.WildMonster.Any())
+                        <!-- Wilde Monster: immer anzeigen wenn vorhanden, Begegnung ist garantiert beim Klick -->
+                        @if (aktuellerOrtRef.WildMonster.Any())
                         {
                             <button class="btn-erkunden" @onclick="ImGrasErkunden">
-                                🌿 Im Gras erkunden
+                                🌿 Im Gras erkunden (@aktuellerOrtRef.WildMonster.Count Monster)
                             </button>
                         }
 
                         <!-- Trainer -->
-                        @foreach (var trainer in ausgewähltOrt.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
+                        @foreach (var trainer in aktuellerOrtRef.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
                         {
-                            <button class="btn-trainer" @onclick="() => TrainerKämpfen(trainer)">
-                                🧑 @trainer.Klasse @trainer.Name herausfordern
+                            var t2 = trainer;
+                            <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
+                                🧑 @t2.Klasse @t2.Name herausfordern
                             </button>
                         }
 
                         <!-- Arena -->
-                        @if (ausgewähltOrt.Arena != null)
+                        @if (aktuellerOrtRef.Arena != null)
                         {
-                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(ausgewähltOrt.Arena.OrdenName);
+                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(aktuellerOrtRef.Arena.OrdenName);
                             <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
-                                    @onclick="() => ArenaKämpfen(ausgewähltOrt)"
+                                    @onclick="() => ArenaKämpfen(aktuellerOrtRef)"
                                     disabled="@bereitsGewonnen">
-                                🏆 @(bereitsGewonnen ? $"✓ {ausgewähltOrt.Arena.OrdenName} erhalten" : $"Arena: {ausgewähltOrt.Arena.Leiter} herausfordern")
+                                🏆 @(bereitsGewonnen ? $"✓ {aktuellerOrtRef.Arena.OrdenName} erhalten" : $"Arena: {aktuellerOrtRef.Arena.Leiter} herausfordern")
                             </button>
                         }
                     }
@@ -179,14 +185,16 @@
     private void ImGrasErkunden()
     {
         if (ausgewähltOrt == null) return;
-        var wild = Game.ZufälligesWildMonster(ausgewähltOrt);
+        // Garantierte Begegnung – kein Zufallswurf, immer ein Monster
+        var ortRef = Game.AlleOrte.First(o => o.Id == ausgewähltOrt.Id);
+        var wild = Game.ZufälligesWildMonster(ortRef);
         if (wild != null)
         {
             Game.WildkampfStarten(wild);
         }
         else
         {
-            meldung = "Kein wildes Monster gefunden...";
+            meldung = "Keine wilden Monster in diesem Gebiet.";
         }
     }
 
