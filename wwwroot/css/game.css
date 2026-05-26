@@ -220,27 +220,44 @@ body {
   background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
 }
 .karte-titel { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; }
+/* Minimap + Location-Info nebeneinander */
+.karte-haupt-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.minimap-container {
+  width: 450px;
+  flex-shrink: 0;
+}
+.location-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .karten-grid {
   display: grid;
-  grid-template-columns: repeat(10, 80px);
-  grid-template-rows: repeat(10, 60px);
-  gap: 4px; margin-bottom: 1.5rem;
+  grid-template-columns: repeat(10, 42px);
+  grid-template-rows: repeat(10, 32px);
+  gap: 3px;
+  margin-bottom: 0;
+  width: 450px;
 }
 .ort-zelle { cursor: pointer; }
 .ort-knopf {
-  width: 76px; height: 56px; border-radius: var(--radius);
+  width: 40px; height: 30px; border-radius: 4px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   border: 2px solid transparent; transition: all 0.2s; position: relative;
 }
 .ort-knopf:hover { transform: scale(1.08); border-color: rgba(255,255,255,0.3); }
 .ort-knopf.aktuell { border-color: #4ecdc4; box-shadow: 0 0 12px rgba(78,205,196,0.5); }
 .ort-knopf.ausgewaehlt { border-color: var(--akzent); box-shadow: 0 0 12px rgba(233,69,96,0.4); }
-.ort-icon { font-size: 1.2rem; }
-.ort-name-klein { font-size: 0.55rem; font-weight: 600; text-align: center; color: rgba(255,255,255,0.9); }
+.ort-icon { font-size: 0.9rem; }
+.ort-name-klein { font-size: 0.42rem; font-weight: 600; text-align: center; color: rgba(255,255,255,0.9); line-height: 1.1; }
 .orden-check { position: absolute; top: -4px; right: -4px; font-size: 0.7rem; }
 .ort-details {
   background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-  border-radius: var(--radius-gross); padding: 1.5rem; max-width: 600px;
+  border-radius: var(--radius-gross); padding: 1.5rem; max-width: 100%;
 }
 .ort-details-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
 .ort-details-header h3 { font-size: 1.3rem; font-weight: 700; }

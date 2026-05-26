@@ -50,7 +50,11 @@
     <div class="karte-bereich">
         <h2 class="karte-titel">🗺️ Weltkarte</h2>
 
-        <!-- Karten-Grid -->
+        <!-- Minimap + Ort-Details nebeneinander -->
+        <div class="karte-haupt-layout">
+
+        <!-- Minimap (450px) -->
+        <div class="minimap-container">
         <div class="karten-grid">
             @foreach (var ort in Game.AlleOrte)
             {
@@ -69,8 +73,10 @@
                 </div>
             }
         </div>
+        </div>
 
-        <!-- Ort-Details -->
+        <!-- Ort-Details (rechts daneben) -->
+        <div class="location-info">
         @if (ausgewähltOrt != null)
         {
             <div class="ort-details">
@@ -162,6 +168,8 @@
                 }
             </div>
         }
+        </div><!-- /location-info -->
+        </div><!-- /karte-haupt-layout -->
     </div>
 </div>
 
