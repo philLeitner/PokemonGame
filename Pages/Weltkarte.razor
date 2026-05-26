@@ -110,6 +110,22 @@
                             </button>
                         }
 
+                        <!-- Monster Center -->
+                        @if (aktuellerOrtRef.HatMonsterCenter)
+                        {
+                            <button class="btn-center" @onclick="MonsterZentrumHeilen">
+                                🏥 Monster Center – Alle Monster heilen
+                            </button>
+                        }
+
+                        <!-- Markt -->
+                        @if (aktuellerOrtRef.HatMarkt)
+                        {
+                            <button class="btn-markt" @onclick="MarktOeffnen">
+                                🏪 Markt – Items kaufen
+                            </button>
+                        }
+
                         <!-- Arena -->
                         @if (aktuellerOrtRef.Arena != null)
                         {
@@ -155,10 +171,58 @@
     </div>
 }
 
+@if (marktOffen && ausgewähltOrt != null)
+{
+    var ortRef = Game.AlleOrte.First(o => o.Id == ausgewähltOrt.Id);
+    <div class="meldung-overlay" @onclick="MarktSchließen">
+        <div class="markt-box" @onclick:stopPropagation="true">
+            <div class="markt-header">
+                <h3>🏪 Markt – @ausgewähltOrt.Name</h3>
+                <span class="markt-geld">💰 @Game.Spieler.Geld Münzen</span>
+                <button class="btn-schliessen" @onclick="MarktSchließen">✕</button>
+            </div>
+            <div class="markt-kategorien">
+                @foreach (var kat in ortRef.MarktAngebot.Select(i => i.Kategorie).Distinct())
+                {
+                    <button class="markt-kat-btn @(aktiveKategorie == kat ? "aktiv" : "")" @onclick="() => aktiveKategorie = kat">@kat</button>
+                }
+                <button class="markt-kat-btn @(aktiveKategorie == "Alle" ? "aktiv" : "")" @onclick='() => aktiveKategorie = "Alle"'>Alle</button>
+            </div>
+            <div class="markt-items">
+                @foreach (var item in ortRef.MarktAngebot.Where(i => aktiveKategorie == "Alle" || i.Kategorie == aktiveKategorie))
+                {
+                    var it = item;
+                    bool kannKaufen = Game.Spieler.Geld >= it.Preis;
+                    <div class="markt-item @(!kannKaufen ? "zu-teuer" : "")">
+                        <span class="item-emoji">@it.Emoji</span>
+                        <div class="item-info">
+                            <span class="item-name">@it.Name</span>
+                            <span class="item-beschreibung">@it.Beschreibung</span>
+                        </div>
+                        <div class="item-kauf">
+                            <span class="item-preis">💰 @it.Preis</span>
+                            <button class="btn-kaufen" @onclick="() => ItemKaufen(it)" disabled="@(!kannKaufen)">
+                                @(kannKaufen ? "Kaufen" : "Zu teuer")
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+            @if (!string.IsNullOrEmpty(kaufMeldung))
+            {
+                <div class="kauf-meldung">@kaufMeldung</div>
+            }
+        </div>
+    </div>
+}
+
 @code {
     private string? ausgewähltOrtId;
     private Ort? ausgewähltOrt;
     private string? meldung;
+    private bool marktOffen = false;
+    private string aktiveKategorie = "Alle";
+    private string kaufMeldung = "";
 
     protected override void OnInitialized()
     {
@@ -211,6 +275,32 @@
     }
 
     private void MeldungSchließen() => meldung = null;
+
+    private void MonsterZentrumHeilen()
+    {
+        meldung = Game.MonsterZentrumHeilen();
+    }
+
+    private void MarktOeffnen()
+    {
+        marktOffen = true;
+        aktiveKategorie = "Alle";
+        kaufMeldung = "";
+    }
+
+    private void MarktSchließen()
+    {
+        marktOffen = false;
+        kaufMeldung = "";
+    }
+
+    private async Task ItemKaufen(ShopItem item)
+    {
+        kaufMeldung = Game.ItemKaufen(item);
+        await Task.Delay(2500);
+        if (kaufMeldung.StartsWith("✅"))
+            kaufMeldung = "";
+    }
 
     private string OrtIcon(Ort ort) => ort.Typ switch
     {

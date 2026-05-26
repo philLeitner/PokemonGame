@@ -440,6 +440,53 @@ public class GameService
         }
         return ort.WildMonster.Last();
     }
+
+    // ── Monster Center ────────────────────────────────────────────────────────
+    /// <summary>Heilt alle Monster im Team: KP voll, Status weg, AP aufgefüllt</summary>
+    public string MonsterZentrumHeilen()
+    {
+        if (!Spieler.Team.Any()) return "Dein Team ist leer.";
+        foreach (var mon in Spieler.Team)
+        {
+            mon.AktuelleKp = mon.MaxKp;
+            mon.Status = "none";
+            foreach (var atk in mon.Attacken)
+                atk.AktuelleAp = atk.MaxAp;
+        }
+        Notify();
+        return $"✅ Alle {Spieler.Team.Count} Monster wurden vollständig geheilt!";
+    }
+
+    // ── Markt ─────────────────────────────────────────────────────────────────
+    /// <summary>Kauft ein Item wenn genug Geld vorhanden. Gibt Ergebnis-Text zurück.</summary>
+    public string ItemKaufen(ShopItem item)
+    {
+        if (Spieler.Geld < item.Preis)
+            return $"❌ Nicht genug Geld! Du brauchst {item.Preis} Münzen, hast aber nur {Spieler.Geld}.";
+
+        Spieler.Geld -= item.Preis;
+
+        // Zum Inventar hinzufügen oder Menge erhöhen
+        var vorhandenes = Spieler.Inventar.FirstOrDefault(i => i.ItemId == item.Id);
+        if (vorhandenes != null)
+        {
+            vorhandenes.Menge++;
+        }
+        else
+        {
+            Spieler.Inventar.Add(new InventarItem
+            {
+                ItemId = item.Id,
+                Name = item.Name,
+                Emoji = item.Emoji,
+                Menge = 1
+            });
+        }
+
+        Notify();
+        return $"✅ {item.Emoji} {item.Name} gekauft! Verbleibendes Geld: {Spieler.Geld} Münzen.";
+    }
+
 }
 
 // ── JSON-Hilfsklassen (für Deserialisierung) ─────────────────────────────────

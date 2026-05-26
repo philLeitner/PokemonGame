@@ -153,7 +153,27 @@ public class Spieler
     public List<MonsterInstanz> Team { get; set; } = new();
     public List<string> BesiegteTrainer { get; set; } = new();
     public string AktuellerOrt { get; set; } = "startstadt";
+    public List<InventarItem> Inventar { get; set; } = new();
     public MonsterInstanz? AktivesMonster => Team.FirstOrDefault(m => !m.IstOhnmächtig);
+}
+
+// ─── Items / Shop ─────────────────────────────────────────────────────────────
+public class ShopItem
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Beschreibung { get; set; } = "";
+    public int Preis { get; set; }
+    public string Emoji { get; set; } = "💊";
+    public string Kategorie { get; set; } = "Heilung";
+}
+
+public class InventarItem
+{
+    public string ItemId { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Emoji { get; set; } = "💊";
+    public int Menge { get; set; }
 }
 
 // ─── Karte / Welt ─────────────────────────────────────────────────────────────
@@ -170,6 +190,9 @@ public class Ort
     public List<WildBegegnung> WildMonster { get; set; } = new();
     public List<string> Verbindungen { get; set; } = new();
     public List<TrainerKampf> Trainer { get; set; } = new();
+    public bool HatMonsterCenter { get; set; } = false;
+    public bool HatMarkt { get; set; } = false;
+    public List<ShopItem> MarktAngebot { get; set; } = new();
 }
 
 public class Arena

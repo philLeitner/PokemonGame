@@ -16,6 +16,22 @@ public static class WeltData
             Id = "startstadt", Name = "Neubeginn", Typ = "stadt", Farbe = "green",
             GridX = 3, GridY = 7,
             Beschreibung = "Deine Heimatstadt. Hier beginnt dein Abenteuer!",
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
+            },
             WildMonster = new(),
             Verbindungen = new() { "route1" }
         },
@@ -52,6 +68,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0054", Level = 12 },
                     new() { MonsterId = "PKM-0007", Level = 14 },
                 }
+            },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
             },
             WildMonster = new(),
             Verbindungen = new() { "route1", "route2", "route3" }
@@ -110,6 +142,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0071", Level = 20 },
                 }
             },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
+            },
             WildMonster = new(),
             Verbindungen = new() { "route2", "route4" }
         },
@@ -141,6 +189,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0077", Level = 25 },
                     new() { MonsterId = "PKM-0004", Level = 28 },
                 }
+            },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
             },
             WildMonster = new(),
             Verbindungen = new() { "feuerberg", "route3", "route5" }
@@ -197,6 +261,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0065", Level = 35 },
                 }
             },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
+            },
             WildMonster = new(),
             Verbindungen = new() { "route4", "route6" }
         },
@@ -215,6 +295,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0026", Level = 35 },
                     new() { MonsterId = "PKM-0082", Level = 38 },
                 }
+            },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
             },
             WildMonster = new(),
             Verbindungen = new() { "route5", "route6", "route7" }
@@ -265,6 +361,22 @@ public static class WeltData
                     new() { MonsterId = "PKM-0148", Level = 48 },
                     new() { MonsterId = "PKM-0149", Level = 52 },
                 }
+            },
+            HatMonsterCenter = true,
+            HatMarkt = true,
+            MarktAngebot = new List<ShopItem>
+            {
+                new() { Id="item-001", Name="Heiltrank",      Beschreibung="Heilt 20 KP eines Monsters.",         Preis=300,  Emoji="🧪", Kategorie="Heilung" },
+                new() { Id="item-002", Name="Supertrank",     Beschreibung="Heilt 50 KP eines Monsters.",         Preis=700,  Emoji="💊", Kategorie="Heilung" },
+                new() { Id="item-003", Name="Hypertrank",     Beschreibung="Heilt 200 KP eines Monsters.",        Preis=1200, Emoji="💉", Kategorie="Heilung" },
+                new() { Id="item-004", Name="Antidot",        Beschreibung="Heilt Vergiftung.",                   Preis=100,  Emoji="🫙", Kategorie="Status"  },
+                new() { Id="item-005", Name="Paralysheiler",  Beschreibung="Heilt Lähmung.",                      Preis=200,  Emoji="⚡", Kategorie="Status"  },
+                new() { Id="item-006", Name="Brandheiler",    Beschreibung="Heilt Verbrennung.",                  Preis=200,  Emoji="🔥", Kategorie="Status"  },
+                new() { Id="item-007", Name="Weckpille",      Beschreibung="Weckt ein schlafendes Monster.",      Preis=250,  Emoji="☕", Kategorie="Status"  },
+                new() { Id="item-008", Name="Auftaupille",    Beschreibung="Taut ein eingefrorenes Monster auf.", Preis=250,  Emoji="🧊", Kategorie="Status"  },
+                new() { Id="item-009", Name="Vollheiler",     Beschreibung="Heilt alle Statuseffekte.",           Preis=600,  Emoji="✨", Kategorie="Status"  },
+                new() { Id="item-010", Name="AP-Trank",       Beschreibung="Füllt AP einer Attacke auf.",        Preis=400,  Emoji="🔋", Kategorie="Kampf"   },
+                new() { Id="item-011", Name="AP-Maximal",     Beschreibung="Füllt alle AP auf.",                  Preis=1500, Emoji="⚡", Kategorie="Kampf"   },
             },
             WildMonster = new(),
             Verbindungen = new() { "route7" }
