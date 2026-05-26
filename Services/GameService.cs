@@ -347,6 +347,13 @@ public class GameService
         Notify();
         await Task.Delay(800);
 
+        // Zuerst prüfen ob Gegner durch Status-Schaden besiegt wurde → Sieg!
+        if (gegnerMon.IstOhnmächtig)
+        {
+            await KampfGewonnen();
+            return;
+        }
+
         if (spielerMon.IstOhnmächtig)
         {
             // Prüfen ob noch andere Monster im Team verfügbar
