@@ -1,0 +1,8282 @@
+[
+  {
+    "id": "MOV-0001",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 98,
+    "ap": 35
+  },
+  {
+    "id": "MOV-0002",
+    "name": "Hammerfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 49,
+    "genauigkeit": 99,
+    "ap": 24
+  },
+  {
+    "id": "MOV-0003",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 13,
+    "genauigkeit": 87,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0004",
+    "name": "Körperstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 20,
+    "genauigkeit": 86,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0005",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 83,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0006",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 39,
+    "genauigkeit": 102,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0007",
+    "name": "Feuerschwung",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 73,
+    "genauigkeit": 102,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0008",
+    "name": "Eiswucht",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 77,
+    "genauigkeit": 101,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0009",
+    "name": "Donnerfaust",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 76,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0010",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 99,
+    "ap": 36
+  },
+  {
+    "id": "MOV-0011",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 55,
+    "genauigkeit": 100,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0012",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 29,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0013",
+    "name": "Lichtsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 98,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0014",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0015",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 50,
+    "genauigkeit": 95,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0016",
+    "name": "Windschwall",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 40,
+    "genauigkeit": 98,
+    "ap": 36
+  },
+  {
+    "id": "MOV-0017",
+    "name": "Flügelfaust",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 98,
+    "ap": 36
+  },
+  {
+    "id": "MOV-0018",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0019",
+    "name": "Flügelwucht",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 95,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0020",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 15,
+    "genauigkeit": 87,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0021",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 73,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0022",
+    "name": "Dornangriff",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 45,
+    "genauigkeit": 98,
+    "ap": 24
+  },
+  {
+    "id": "MOV-0023",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 63,
+    "genauigkeit": 101,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0024",
+    "name": "Kraftwucht",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 31,
+    "genauigkeit": 100,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0025",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 120,
+    "genauigkeit": 75,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0026",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 100,
+    "genauigkeit": 93,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0027",
+    "name": "Hammerfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 87,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0028",
+    "name": "Erdsegen",
+    "typ": "Boden",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0029",
+    "name": "Rammschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 71,
+    "genauigkeit": 100,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0030",
+    "name": "Körperstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 64,
+    "genauigkeit": 100,
+    "ap": 23
+  },
+  {
+    "id": "MOV-0031",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 14,
+    "genauigkeit": 83,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0032",
+    "name": "Körperstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 31,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0033",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 99,
+    "ap": 37
+  },
+  {
+    "id": "MOV-0034",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 85,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0035",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 16,
+    "genauigkeit": 91,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0036",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 90,
+    "genauigkeit": 84,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0037",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 102,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0038",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 101,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0039",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 30
+  },
+  {
+    "id": "MOV-0040",
+    "name": "Giftstoß",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 14,
+    "genauigkeit": 99,
+    "ap": 37
+  },
+  {
+    "id": "MOV-0041",
+    "name": "Insektenschwung",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 26,
+    "genauigkeit": 98,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0042",
+    "name": "Käferprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 23,
+    "genauigkeit": 94,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0043",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0044",
+    "name": "Dunkelwucht",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 58,
+    "genauigkeit": 101,
+    "ap": 26
+  },
+  {
+    "id": "MOV-0045",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 41
+  },
+  {
+    "id": "MOV-0046",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0047",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 55,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0048",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 53,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0049",
+    "name": "Schallwoge",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 92,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0050",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0051",
+    "name": "Giftwirbel",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 40,
+    "genauigkeit": 101,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0052",
+    "name": "Brandflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 41,
+    "genauigkeit": 98,
+    "ap": 25
+  },
+  {
+    "id": "MOV-0053",
+    "name": "Glutschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 92,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0054",
+    "name": "Eisbann",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0055",
+    "name": "Wasserflut",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 40,
+    "genauigkeit": 102,
+    "ap": 27
+  },
+  {
+    "id": "MOV-0056",
+    "name": "Flutwoge",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 109,
+    "genauigkeit": 79,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0057",
+    "name": "Wasserschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0058",
+    "name": "Eisflut",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 88,
+    "genauigkeit": 102,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0059",
+    "name": "Frostflut",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 111,
+    "genauigkeit": 68,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0060",
+    "name": "Psychowoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 65,
+    "genauigkeit": 100,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0061",
+    "name": "Wasserwoge",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 99,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0062",
+    "name": "Frostwirbel",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 98,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0063",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 148,
+    "genauigkeit": 92,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0064",
+    "name": "Flügelwucht",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 34,
+    "genauigkeit": 101,
+    "ap": 37
+  },
+  {
+    "id": "MOV-0065",
+    "name": "Flügelfaust",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0066",
+    "name": "Kraftwucht",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 81,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0067",
+    "name": "Wuchtschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0068",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0069",
+    "name": "Rammfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0070",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 101,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0071",
+    "name": "Rankensturm",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 19,
+    "genauigkeit": 99,
+    "ap": 23
+  },
+  {
+    "id": "MOV-0072",
+    "name": "Pflanzenschwall",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 40,
+    "genauigkeit": 98,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0073",
+    "name": "Blattschutz",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 92,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0074",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0075",
+    "name": "Blattprall",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 54,
+    "genauigkeit": 93,
+    "ap": 23
+  },
+  {
+    "id": "MOV-0076",
+    "name": "Blattflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 118,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0077",
+    "name": "Giftaura",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 73,
+    "ap": 35
+  },
+  {
+    "id": "MOV-0078",
+    "name": "Rankenschutz",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 73,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0079",
+    "name": "Pflanzenschild",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 74,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0080",
+    "name": "Blattwoge",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 121,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0081",
+    "name": "Käfernebel",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 94,
+    "ap": 42
+  },
+  {
+    "id": "MOV-0082",
+    "name": "Drachenwirbel",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0083",
+    "name": "Feuerwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 34,
+    "genauigkeit": 86,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0084",
+    "name": "Donnerflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 39,
+    "genauigkeit": 98,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0085",
+    "name": "Stromflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 91,
+    "genauigkeit": 100,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0086",
+    "name": "Blitzfluch",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 91,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0087",
+    "name": "Donnerwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 108,
+    "genauigkeit": 68,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0088",
+    "name": "Steintritt",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 51,
+    "genauigkeit": 90,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0089",
+    "name": "Staubhieb",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 99,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0090",
+    "name": "Bodenfaust",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 32,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0091",
+    "name": "Erdtritt",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0092",
+    "name": "Giftfluch",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 90,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0093",
+    "name": "Psychoflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 49,
+    "genauigkeit": 98,
+    "ap": 26
+  },
+  {
+    "id": "MOV-0094",
+    "name": "Geistflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 92,
+    "genauigkeit": 98,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0095",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 62,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0096",
+    "name": "Geistbann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 38
+  },
+  {
+    "id": "MOV-0097",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0098",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 39,
+    "genauigkeit": 101,
+    "ap": 31
+  },
+  {
+    "id": "MOV-0099",
+    "name": "Körperstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 21,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0100",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0101",
+    "name": "Geisterwoge",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0102",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0103",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 86,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0104",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0105",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0106",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 31
+  },
+  {
+    "id": "MOV-0107",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0108",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0109",
+    "name": "Geisternebel",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0110",
+    "name": "Schaumschild",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 39
+  },
+  {
+    "id": "MOV-0111",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 38
+  },
+  {
+    "id": "MOV-0112",
+    "name": "Psychoschutz",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0113",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0114",
+    "name": "Eisnebel",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0115",
+    "name": "Geistbann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0116",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0117",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0118",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0119",
+    "name": "Windbann",
+    "typ": "Flug",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0120",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 202,
+    "genauigkeit": 102,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0121",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 77,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0122",
+    "name": "Geisterfaust",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 29,
+    "genauigkeit": 98,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0123",
+    "name": "Giftflut",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 28,
+    "genauigkeit": 69,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0124",
+    "name": "Giftschwall",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 102,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0125",
+    "name": "Erdprall",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 67,
+    "genauigkeit": 87,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0126",
+    "name": "Brandflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 112,
+    "genauigkeit": 83,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0127",
+    "name": "Gischtstoß",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0128",
+    "name": "Flutfaust",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 35,
+    "genauigkeit": 85,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0129",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 60,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0130",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 130,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0131",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 20,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0132",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": 98,
+    "ap": 36
+  },
+  {
+    "id": "MOV-0133",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0134",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 82,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0135",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0136",
+    "name": "Wuchtschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 132,
+    "genauigkeit": 89,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0137",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0138",
+    "name": "Psychowoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 100,
+    "genauigkeit": 98,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0139",
+    "name": "Giftaura",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 90,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0140",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 14,
+    "genauigkeit": 86,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0141",
+    "name": "Insektenschwung",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0142",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 73,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0143",
+    "name": "Sturzangriff",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 140,
+    "genauigkeit": 88,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0144",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0145",
+    "name": "Wassersturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 38,
+    "genauigkeit": 98,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0146",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 69,
+    "genauigkeit": 100,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0147",
+    "name": "Rankenbann",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0148",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0149",
+    "name": "Geistflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0150",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 41
+  },
+  {
+    "id": "MOV-0151",
+    "name": "Giftwolke",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0152",
+    "name": "Schaumprall",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 88,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0153",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 250,
+    "genauigkeit": 98,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0154",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 18,
+    "genauigkeit": 79,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0155",
+    "name": "Bodenschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 49,
+    "genauigkeit": 91,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0156",
+    "name": "Geistschutz",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0157",
+    "name": "Felsstoß",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 77,
+    "genauigkeit": 88,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0158",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 89,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0159",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0160",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 30
+  },
+  {
+    "id": "MOV-0161",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0162",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 91,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0163",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": 100,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0164",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0165",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 50,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0166",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0167",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": 90,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0168",
+    "name": "Dunkelfaust",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 102,
+    "ap": 24
+  },
+  {
+    "id": "MOV-0169",
+    "name": "Insektenfluch",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0170",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0171",
+    "name": "Schattensegen",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0172",
+    "name": "Feuerstoß",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 58,
+    "genauigkeit": 99,
+    "ap": 25
+  },
+  {
+    "id": "MOV-0173",
+    "name": "Schallsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 51,
+    "genauigkeit": 99,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0174",
+    "name": "Schattensegen",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0175",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0176",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0177",
+    "name": "Luftsturm",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 101,
+    "genauigkeit": 94,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0178",
+    "name": "Rankenbann",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0179",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0180",
+    "name": "Schattenbann",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0181",
+    "name": "Eisschwall",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 39,
+    "genauigkeit": 101,
+    "ap": 25
+  },
+  {
+    "id": "MOV-0182",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0183",
+    "name": "Kraftschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 100,
+    "ap": 30
+  },
+  {
+    "id": "MOV-0184",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0185",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0186",
+    "name": "Feenschild",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 73,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0187",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0188",
+    "name": "Giftwolke",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 102,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0189",
+    "name": "Staubwirbel",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 18,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0190",
+    "name": "Wasserschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 66,
+    "genauigkeit": 85,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0191",
+    "name": "Sandschutz",
+    "typ": "Boden",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0192",
+    "name": "Stromschwall",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 122,
+    "genauigkeit": 52,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0193",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 41
+  },
+  {
+    "id": "MOV-0194",
+    "name": "Geisterschutz",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0195",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0196",
+    "name": "Eiswoge",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 55,
+    "genauigkeit": 93,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0197",
+    "name": "Kampfaura",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0198",
+    "name": "Erdtritt",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 27,
+    "genauigkeit": 92,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0199",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0200",
+    "name": "Drachenwucht",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 121,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0201",
+    "name": "Felssegen",
+    "typ": "Stein",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0202",
+    "name": "Pflanzenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 75,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0203",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0204",
+    "name": "Zauberschild",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0205",
+    "name": "Steintritt",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 30,
+    "genauigkeit": 91,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0206",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 42,
+    "genauigkeit": 99,
+    "ap": 39
+  },
+  {
+    "id": "MOV-0207",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 86,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0208",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0209",
+    "name": "Blitzwucht",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 67,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0210",
+    "name": "Käferprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 97,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0211",
+    "name": "Stahlwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 90,
+    "ap": 24
+  },
+  {
+    "id": "MOV-0212",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0213",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0214",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0215",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0216",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0217",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 89,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0218",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0219",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 23
+  },
+  {
+    "id": "MOV-0220",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0221",
+    "name": "Glutpraller",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 97,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0222",
+    "name": "Bodenstoß",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0223",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 100,
+    "genauigkeit": 49,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0224",
+    "name": "Insektenprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 83,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0225",
+    "name": "Drachendunst",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 101,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0226",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 38
+  },
+  {
+    "id": "MOV-0227",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0228",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 42,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0229",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 51,
+    "genauigkeit": 101,
+    "ap": 39
+  },
+  {
+    "id": "MOV-0230",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0231",
+    "name": "Stahltritt",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 76,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0232",
+    "name": "Metallhieb",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 49,
+    "genauigkeit": 97,
+    "ap": 36
+  },
+  {
+    "id": "MOV-0233",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0234",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0235",
+    "name": "Rankensegen",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0236",
+    "name": "Feenbann",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0237",
+    "name": "Lichtsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 101,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0238",
+    "name": "Hammerfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 82,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0239",
+    "name": "Drachenatem",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 41,
+    "genauigkeit": 102,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0240",
+    "name": "Wasserbann",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0241",
+    "name": "Feuerfluch",
+    "typ": "Brennen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0242",
+    "name": "Dunkelfaust",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0243",
+    "name": "Geistschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0244",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0245",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": 102,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0246",
+    "name": "Felsflut",
+    "typ": "Stein",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0247",
+    "name": "Schattenschwall",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 100,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0248",
+    "name": "Psychoflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 120,
+    "genauigkeit": 100,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0249",
+    "name": "Rempelschlag",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 42,
+    "genauigkeit": 98,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0250",
+    "name": "Wassersturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 34,
+    "genauigkeit": 84,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0251",
+    "name": "Schattenwucht",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0252",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0253",
+    "name": "Kraftschwall",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 90,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0254",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0255",
+    "name": "Kraftwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0256",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0257",
+    "name": "Brandflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 96,
+    "genauigkeit": 92,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0258",
+    "name": "Frostfluch",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0259",
+    "name": "Dunkelsegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0260",
+    "name": "Dunkelaura",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0261",
+    "name": "Glutnebel",
+    "typ": "Brennen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 85,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0262",
+    "name": "Schattenbann",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0263",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 72,
+    "genauigkeit": 102,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0264",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 151,
+    "genauigkeit": 99,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0265",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 71,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0266",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0267",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0268",
+    "name": "Stromschutz",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0269",
+    "name": "Dunkelbann",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0270",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0271",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0272",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0273",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0274",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0275",
+    "name": "Pflanzennebel",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0276",
+    "name": "Kraftschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 118,
+    "genauigkeit": 98,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0277",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0278",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0279",
+    "name": "Krafttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0280",
+    "name": "Krafttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 76,
+    "genauigkeit": 100,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0281",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0282",
+    "name": "Dunkelschwung",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 65,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0283",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0284",
+    "name": "Feuersturm",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 150,
+    "genauigkeit": 98,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0285",
+    "name": "Psychoschutz",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0286",
+    "name": "Psychobann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0287",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0288",
+    "name": "Geisterfluch",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0289",
+    "name": "Dunkelschild",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0290",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": 98,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0291",
+    "name": "Wasserstoß",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0292",
+    "name": "Kraftschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 17,
+    "genauigkeit": 99,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0293",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0294",
+    "name": "Insektenpuder",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0295",
+    "name": "Geistschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 93,
+    "genauigkeit": 102,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0296",
+    "name": "Psychosturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 96,
+    "genauigkeit": 100,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0297",
+    "name": "Luftnebel",
+    "typ": "Flug",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0298",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0299",
+    "name": "Feuerschwung",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 84,
+    "genauigkeit": 90,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0300",
+    "name": "Erdaura",
+    "typ": "Boden",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0301",
+    "name": "Frosttritt",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 28,
+    "genauigkeit": 90,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0302",
+    "name": "Blattfaust",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 101,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0303",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0304",
+    "name": "Lichtwoge",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 92,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0305",
+    "name": "Giftklaue",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 50,
+    "genauigkeit": 102,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0306",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 77,
+    "genauigkeit": 93,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0307",
+    "name": "Feuersturm",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 152,
+    "genauigkeit": 91,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0308",
+    "name": "Flutsturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 148,
+    "genauigkeit": 92,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0309",
+    "name": "Stahltritt",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 88,
+    "genauigkeit": 91,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0310",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 28,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0311",
+    "name": "Lichtsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 51,
+    "genauigkeit": 99,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0312",
+    "name": "Blattfluch",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0313",
+    "name": "Schattenschutz",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0314",
+    "name": "Luftsturm",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 62,
+    "genauigkeit": 97,
+    "ap": 26
+  },
+  {
+    "id": "MOV-0315",
+    "name": "Feuerwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 131,
+    "genauigkeit": 91,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0316",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0317",
+    "name": "Steinfaust",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": 94,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0318",
+    "name": "Käferschwall",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 60,
+    "genauigkeit": 101,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0319",
+    "name": "Metallbann",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 86,
+    "ap": 42
+  },
+  {
+    "id": "MOV-0320",
+    "name": "Rankenbann",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 57,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0321",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0322",
+    "name": "Psychoschild",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0323",
+    "name": "Flutsturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 150,
+    "genauigkeit": 99,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0324",
+    "name": "Insektenwirbel",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 74,
+    "genauigkeit": 100,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0325",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0326",
+    "name": "Geistflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0327",
+    "name": "Rempelschlag",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 83,
+    "genauigkeit": 92,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0328",
+    "name": "Bodenstoß",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 33,
+    "genauigkeit": 84,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0329",
+    "name": "Eiswoge",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 31,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0330",
+    "name": "Wasserschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 86,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0331",
+    "name": "Blattpeitsche",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 26,
+    "genauigkeit": 98,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0332",
+    "name": "Windhieb",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0333",
+    "name": "Eiswucht",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 26,
+    "genauigkeit": 99,
+    "ap": 30
+  },
+  {
+    "id": "MOV-0334",
+    "name": "Metallschild",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0335",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0336",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 41
+  },
+  {
+    "id": "MOV-0337",
+    "name": "Drachenwucht",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0338",
+    "name": "Blattschwall",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 151,
+    "genauigkeit": 92,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0339",
+    "name": "Kampfgeist",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0340",
+    "name": "Flügelprall",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 86,
+    "genauigkeit": 85,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0341",
+    "name": "Erdflut",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 55,
+    "genauigkeit": 94,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0342",
+    "name": "Giftklaue",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 49,
+    "genauigkeit": 100,
+    "ap": 23
+  },
+  {
+    "id": "MOV-0343",
+    "name": "Rammtritt",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 99,
+    "ap": 24
+  },
+  {
+    "id": "MOV-0344",
+    "name": "Blitzfaust",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0345",
+    "name": "Rankenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 62,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0346",
+    "name": "Flutschutz",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0347",
+    "name": "Psychobann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0348",
+    "name": "Rankentritt",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 88,
+    "genauigkeit": 99,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0349",
+    "name": "Drachennebel",
+    "typ": "Drache",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0350",
+    "name": "Steinschwung",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 25,
+    "genauigkeit": 89,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0351",
+    "name": "Blitzsturm",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 58,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0352",
+    "name": "Wasserwoge",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 100,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0353",
+    "name": "Metallsturm",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 138,
+    "genauigkeit": 102,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0354",
+    "name": "Geistwoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 139,
+    "genauigkeit": 91,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0355",
+    "name": "Windsegen",
+    "typ": "Flug",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0356",
+    "name": "Psychoschild",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0357",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0358",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 71,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0359",
+    "name": "Kraftschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 100,
+    "genauigkeit": 89,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0360",
+    "name": "Metallwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0361",
+    "name": "Psychobann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0362",
+    "name": "Flutsturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0363",
+    "name": "Rammschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0364",
+    "name": "Rammschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 28,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0365",
+    "name": "Sturzschwung",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 100,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0366",
+    "name": "Windbann",
+    "typ": "Flug",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0367",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0368",
+    "name": "Stahlwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0369",
+    "name": "Insektenprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 72,
+    "genauigkeit": 102,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0370",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 102,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0371",
+    "name": "Schattenstoß",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 51,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0372",
+    "name": "Dunkelfaust",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0373",
+    "name": "Schattenbann",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0374",
+    "name": "Dunkelschwung",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0375",
+    "name": "Gedankensegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0376",
+    "name": "Kraftwoge",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0377",
+    "name": "Psychobann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0378",
+    "name": "Schallwoge",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0379",
+    "name": "Psychoschutz",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0380",
+    "name": "Giftschutz",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0381",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0382",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0383",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0384",
+    "name": "Psychoschild",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0385",
+    "name": "Gedankensegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0386",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0387",
+    "name": "Wuchtschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 138,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0388",
+    "name": "Pflanzennebel",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0389",
+    "name": "Dunkelschwung",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0390",
+    "name": "Giftschutz",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0391",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0392",
+    "name": "Wassernebel",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0393",
+    "name": "Stromschutz",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0394",
+    "name": "Feuerwucht",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 99,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0395",
+    "name": "Kraftschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0396",
+    "name": "Kraftflut",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0397",
+    "name": "Steinsegen",
+    "typ": "Stein",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0398",
+    "name": "Giftprall",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0399",
+    "name": "Dunkelwirbel",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 98,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0400",
+    "name": "Dunkelschwung",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0401",
+    "name": "Wellenschwung",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 92,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0402",
+    "name": "Rankenschwung",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 98,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0403",
+    "name": "Luftsturm",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 73,
+    "genauigkeit": 96,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0404",
+    "name": "Käferwucht",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 100,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0405",
+    "name": "Insektenwirbel",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 88,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0406",
+    "name": "Drachenflut",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 87,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0407",
+    "name": "Drachenpraller",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 73,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0408",
+    "name": "Steinwirbel",
+    "typ": "Stein",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0409",
+    "name": "Rammhieb",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 75,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0410",
+    "name": "Kraftsturm",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": 41,
+    "genauigkeit": 101,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0411",
+    "name": "Kraftflut",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": 121,
+    "genauigkeit": 70,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0412",
+    "name": "Pflanzenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 90,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0413",
+    "name": "Sturzangriff",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 100,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0414",
+    "name": "Staubwirbel",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 91,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0415",
+    "name": "Dunkelsegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0416",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 151,
+    "genauigkeit": 88,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0417",
+    "name": "Dunkelsegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0418",
+    "name": "Metallprall",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 40,
+    "genauigkeit": 98,
+    "ap": 31
+  },
+  {
+    "id": "MOV-0419",
+    "name": "Frostschwung",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0420",
+    "name": "Eisstoß",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 101,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0421",
+    "name": "Geistertritt",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 69,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0422",
+    "name": "Donnerschwung",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 67,
+    "genauigkeit": 96,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0423",
+    "name": "Frostschwung",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 63,
+    "genauigkeit": 94,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0424",
+    "name": "Brandwucht",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 67,
+    "genauigkeit": 94,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0425",
+    "name": "Schattenprall",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 101,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0426",
+    "name": "Erdschwall",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 87,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0427",
+    "name": "Psychoprall",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 69,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0428",
+    "name": "Psychotritt",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 92,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0429",
+    "name": "Stahlwirbel",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 63,
+    "genauigkeit": 84,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0430",
+    "name": "Stahlwirbel",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0431",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 85,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0432",
+    "name": "Windschutz",
+    "typ": "Flug",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0433",
+    "name": "Geistbann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0434",
+    "name": "Drachensturm",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 131,
+    "genauigkeit": 91,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0435",
+    "name": "Donnerwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0436",
+    "name": "Glutflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0437",
+    "name": "Pflanzenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 132,
+    "genauigkeit": 89,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0438",
+    "name": "Pflanzenwucht",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 120,
+    "genauigkeit": 86,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0439",
+    "name": "Felshieb",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 152,
+    "genauigkeit": 90,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0440",
+    "name": "Giftangriff",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0441",
+    "name": "Giftstoß",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 81,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0442",
+    "name": "Metallwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0443",
+    "name": "Metallstoß",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0444",
+    "name": "Felsangriff",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 82,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0445",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0446",
+    "name": "Felsfluch",
+    "typ": "Stein",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0447",
+    "name": "Rankenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0448",
+    "name": "Luftsturm",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 66,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0449",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 98,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0450",
+    "name": "Insektenschwung",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 101,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0451",
+    "name": "Donnerwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 51,
+    "genauigkeit": 88,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0452",
+    "name": "Rankenwucht",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0453",
+    "name": "Nasstritt",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 101,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0454",
+    "name": "Insektenschwung",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 101,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0455",
+    "name": "Käfersegen",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0456",
+    "name": "Käferschutz",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0457",
+    "name": "Steinwucht",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 149,
+    "genauigkeit": 78,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0458",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 35,
+    "genauigkeit": 90,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0459",
+    "name": "Drachenwirbel",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 151,
+    "genauigkeit": 88,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0460",
+    "name": "Drachensturm",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 96,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0461",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0462",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0463",
+    "name": "Glutschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 73,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0464",
+    "name": "Schattenschutz",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 50,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0465",
+    "name": "Rankenwoge",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 118,
+    "genauigkeit": 86,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0466",
+    "name": "Schattenschwall",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 58,
+    "genauigkeit": 101,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0467",
+    "name": "Schattenprall",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 120,
+    "genauigkeit": 98,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0468",
+    "name": "Schattensegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0469",
+    "name": "Steinsegen",
+    "typ": "Stein",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0470",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0471",
+    "name": "Psychoschild",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0472",
+    "name": "Gedankenaura",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0473",
+    "name": "Geistschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0474",
+    "name": "Giftschwall",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 67,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0475",
+    "name": "Stahlschild",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0476",
+    "name": "Käfersegen",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0477",
+    "name": "Psychobann",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0478",
+    "name": "Gedankenkontrolle",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0479",
+    "name": "Felsangriff",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 52,
+    "genauigkeit": 101,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0480",
+    "name": "Rammhieb",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0481",
+    "name": "Brandschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 69,
+    "genauigkeit": 99,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0482",
+    "name": "Giftwirbel",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 95,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0483",
+    "name": "Käferbann",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0484",
+    "name": "Stahlhieb",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0485",
+    "name": "Gedankenschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 122,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0486",
+    "name": "Blitzflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0487",
+    "name": "Schaumschild",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0488",
+    "name": "Brandfaust",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 51,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0489",
+    "name": "Gifthauch",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0490",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 64,
+    "genauigkeit": 101,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0491",
+    "name": "Giftwirbel",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 38,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0492",
+    "name": "Schattenpraller",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 97,
+    "genauigkeit": 100,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0493",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0494",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0495",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0496",
+    "name": "Kraftwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 58,
+    "genauigkeit": 102,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0497",
+    "name": "Schallflut",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 42,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0498",
+    "name": "Kratzschwung",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 69,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0499",
+    "name": "Giftdunst",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 49,
+    "genauigkeit": null,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0500",
+    "name": "Geistwoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 22,
+    "genauigkeit": 100,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0501",
+    "name": "Wuchtfluch",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0502",
+    "name": "Psychoschild",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0503",
+    "name": "Flutschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 101,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0504",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0505",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0506",
+    "name": "Schattensturm",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 64,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0507",
+    "name": "Windstoß",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0508",
+    "name": "Stahlaura",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0509",
+    "name": "Krafttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 92,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0510",
+    "name": "Feuerwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 62,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0511",
+    "name": "Dunkelsegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0512",
+    "name": "Sturzangriff",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 56,
+    "genauigkeit": 100,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0513",
+    "name": "Lähmungsstaub",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0514",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 71,
+    "genauigkeit": 98,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0515",
+    "name": "Kraftsturm",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0516",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0517",
+    "name": "Glutwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 100,
+    "genauigkeit": 48,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0518",
+    "name": "Wassersturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 100,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0519",
+    "name": "Feuerschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0520",
+    "name": "Rankenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0521",
+    "name": "Donnerschwall",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 70,
+    "genauigkeit": 98,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0522",
+    "name": "Käferschwall",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 51,
+    "genauigkeit": 98,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0523",
+    "name": "Erdfaust",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0524",
+    "name": "Frostschwall",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 88,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0525",
+    "name": "Drachenwucht",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": 91,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0526",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 29
+  },
+  {
+    "id": "MOV-0527",
+    "name": "Stromschwall",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 53,
+    "genauigkeit": 93,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0528",
+    "name": "Donnerfaust",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 98,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0529",
+    "name": "Erdschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 97,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0530",
+    "name": "Drachenwucht",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 91,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0531",
+    "name": "Gedankenschwung",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 62,
+    "genauigkeit": 101,
+    "ap": 27
+  },
+  {
+    "id": "MOV-0532",
+    "name": "Rankentritt",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 74,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0533",
+    "name": "Rempelschlag",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 102,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0534",
+    "name": "Flutschwung",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 75,
+    "genauigkeit": 93,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0535",
+    "name": "Glutprall",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0536",
+    "name": "Blattsturm",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 66,
+    "genauigkeit": 89,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0537",
+    "name": "Käferprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 63,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0538",
+    "name": "Pflanzenschild",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0539",
+    "name": "Schattensturm",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 83,
+    "genauigkeit": 96,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0540",
+    "name": "Geistwoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 99,
+    "genauigkeit": 98,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0541",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 23,
+    "genauigkeit": 84,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0542",
+    "name": "Windflut",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 108,
+    "genauigkeit": 68,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0543",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0544",
+    "name": "Metallwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 49,
+    "genauigkeit": 83,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0545",
+    "name": "Glutsturm",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 99,
+    "genauigkeit": 102,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0546",
+    "name": "Kraftschwall",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 119,
+    "genauigkeit": 100,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0547",
+    "name": "Schallsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 77,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0548",
+    "name": "Wuchtsturm",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": 84,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0549",
+    "name": "Eissturm",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 65,
+    "genauigkeit": 94,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0550",
+    "name": "Stromhieb",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 128,
+    "genauigkeit": 84,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0551",
+    "name": "Feuersturm",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 130,
+    "genauigkeit": 84,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0552",
+    "name": "Glutwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0553",
+    "name": "Frostschwung",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 140,
+    "genauigkeit": 88,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0554",
+    "name": "Frostwirbel",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 141,
+    "genauigkeit": 92,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0555",
+    "name": "Schattenschwall",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 53,
+    "genauigkeit": 96,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0556",
+    "name": "Eisschwung",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 85,
+    "genauigkeit": 92,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0557",
+    "name": "Gluthammer",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 178,
+    "genauigkeit": 96,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0558",
+    "name": "Feuersturm",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 99,
+    "genauigkeit": 102,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0559",
+    "name": "Stromtritt",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0560",
+    "name": "Rammfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 93,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0561",
+    "name": "Kampfschild",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0562",
+    "name": "Giftflut",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 121,
+    "genauigkeit": 88,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0563",
+    "name": "Erdaura",
+    "typ": "Boden",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0564",
+    "name": "Insektenfluch",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0565",
+    "name": "Insektenwucht",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 48,
+    "genauigkeit": 100,
+    "ap": 27
+  },
+  {
+    "id": "MOV-0566",
+    "name": "Schattenprall",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 89,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0567",
+    "name": "Schattensegen",
+    "typ": "Geist",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0568",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0569",
+    "name": "Blitzschutz",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 25
+  },
+  {
+    "id": "MOV-0570",
+    "name": "Stromwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 66,
+    "genauigkeit": 102,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0571",
+    "name": "Pflanzennebel",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0572",
+    "name": "Blattprall",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 102,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0573",
+    "name": "Frostwoge",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 68,
+    "genauigkeit": 98,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0574",
+    "name": "Feenwoge",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 39,
+    "genauigkeit": null,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0575",
+    "name": "Dunkelschild",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0576",
+    "name": "Schattenfluch",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0577",
+    "name": "Feenflut",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 50,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0578",
+    "name": "Zaubersegen",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0579",
+    "name": "Feenschutz",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0580",
+    "name": "Pflanzennebel",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0581",
+    "name": "Zaubersegen",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0582",
+    "name": "Lähmungsstoß",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0583",
+    "name": "Zauberwucht",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": 90,
+    "genauigkeit": 90,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0584",
+    "name": "Zauberwoge",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 41,
+    "genauigkeit": 98,
+    "ap": 28
+  },
+  {
+    "id": "MOV-0585",
+    "name": "Feenschwall",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 93,
+    "genauigkeit": 98,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0586",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 138,
+    "genauigkeit": 100,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0587",
+    "name": "Feensegen",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0588",
+    "name": "Metallschutz",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0589",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0590",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0591",
+    "name": "Steintritt",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 95,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0592",
+    "name": "Schaumflut",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 111,
+    "genauigkeit": 95,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0593",
+    "name": "Psychosturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": null,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0594",
+    "name": "Wassersturm",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 17,
+    "genauigkeit": 100,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0595",
+    "name": "Glutflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 73,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0596",
+    "name": "Pflanzensegen",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0597",
+    "name": "Feensegen",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0598",
+    "name": "Donnerbann",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0599",
+    "name": "Giftwolke",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0600",
+    "name": "Käferschild",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0601",
+    "name": "Feenschild",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0602",
+    "name": "Donnerbann",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0603",
+    "name": "Verwirrungsnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0604",
+    "name": "Donnerbann",
+    "typ": "Blitz",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0605",
+    "name": "Feensturm",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0606",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 42
+  },
+  {
+    "id": "MOV-0607",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 42
+  },
+  {
+    "id": "MOV-0608",
+    "name": "Feenschild",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0609",
+    "name": "Blitzschwung",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 20,
+    "genauigkeit": 98,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0610",
+    "name": "Rempelschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 40,
+    "genauigkeit": 100,
+    "ap": 40
+  },
+  {
+    "id": "MOV-0611",
+    "name": "Insektenwoge",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 20,
+    "genauigkeit": 98,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0612",
+    "name": "Krafttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 39,
+    "genauigkeit": 102,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0613",
+    "name": "Luftwoge",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 99,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0614",
+    "name": "Erdschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 88,
+    "genauigkeit": 102,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0615",
+    "name": "Erdtritt",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0616",
+    "name": "Staubhieb",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 90,
+    "genauigkeit": 99,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0617",
+    "name": "Zaubersturm",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 140,
+    "genauigkeit": 90,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0618",
+    "name": "Wasserflut",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 112,
+    "genauigkeit": 83,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0619",
+    "name": "Bodenschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 84,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0620",
+    "name": "Sturzschwung",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 118,
+    "genauigkeit": 98,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0621",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 101,
+    "genauigkeit": null,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0622",
+    "name": "Rammschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0623",
+    "name": "Kraftwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0624",
+    "name": "Rammhieb",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0625",
+    "name": "Kraftschwall",
+    "typ": "Kampf",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0626",
+    "name": "Sturzschwung",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0627",
+    "name": "Luftschwall",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0628",
+    "name": "Giftbiss",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0629",
+    "name": "Giftwoge",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0630",
+    "name": "Erdschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0631",
+    "name": "Erdflut",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0632",
+    "name": "Felsschwung",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0633",
+    "name": "Steinsturm",
+    "typ": "Stein",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0634",
+    "name": "Käferprall",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0635",
+    "name": "Insektensturm",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0636",
+    "name": "Geistertritt",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0637",
+    "name": "Geisterwoge",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0638",
+    "name": "Metallfaust",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0639",
+    "name": "Stahlflut",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0640",
+    "name": "Brandwucht",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0641",
+    "name": "Brandwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0642",
+    "name": "Wellenschwung",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0643",
+    "name": "Schaumschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0644",
+    "name": "Blattpeitsche",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0645",
+    "name": "Blattsturm",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0646",
+    "name": "Blitzwucht",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0647",
+    "name": "Stromwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0648",
+    "name": "Psychotritt",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0649",
+    "name": "Gedankensturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0650",
+    "name": "Eisfaust",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0651",
+    "name": "Frostwoge",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0652",
+    "name": "Drachenfaust",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0653",
+    "name": "Drachensturm",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0654",
+    "name": "Schattentritt",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0655",
+    "name": "Dunkelsturm",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0656",
+    "name": "Zauberprall",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0657",
+    "name": "Zauberschwall",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0658",
+    "name": "Donnerstoß",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 212,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0659",
+    "name": "Staubschutz",
+    "typ": "Boden",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0660",
+    "name": "Käferfaust",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0661",
+    "name": "Giftsegen",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0662",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0663",
+    "name": "Schattenpraller",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 86,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0664",
+    "name": "Wasserwoge",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 92,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0665",
+    "name": "Frosttritt",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 101,
+    "genauigkeit": 91,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0666",
+    "name": "Zauberbann",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0667",
+    "name": "Bodenschwung",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 96,
+    "genauigkeit": 93,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0668",
+    "name": "Blattfluch",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0669",
+    "name": "Dornangriff",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 126,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0670",
+    "name": "Rankenschwung",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 98,
+    "ap": 39
+  },
+  {
+    "id": "MOV-0671",
+    "name": "Heilsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0672",
+    "name": "Giftfluch",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 102,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0673",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 32
+  },
+  {
+    "id": "MOV-0674",
+    "name": "Metallschild",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0675",
+    "name": "Dunkelhieb",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 100,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0676",
+    "name": "Insektenwirbel",
+    "typ": "Käfer",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 100,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0677",
+    "name": "Stahlwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 102,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0678",
+    "name": "Gedankenaura",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0679",
+    "name": "Insektenstoß",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 99,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0680",
+    "name": "Feuerwucht",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": 99,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0681",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 18,
+    "genauigkeit": 99,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0682",
+    "name": "Glutschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 129,
+    "genauigkeit": 99,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0683",
+    "name": "Gedankenaura",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0684",
+    "name": "Metallwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0685",
+    "name": "Giftaura",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0686",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 91,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0687",
+    "name": "Drachenschwall",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 101,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0688",
+    "name": "Dornhieb",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 100,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0689",
+    "name": "Geistsegen",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0690",
+    "name": "Flügelschwung",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 101,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0691",
+    "name": "Drachenschwall",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 110,
+    "genauigkeit": 100,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0692",
+    "name": "Drachenstoß",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 88,
+    "genauigkeit": 100,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0693",
+    "name": "Dunkelschwung",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 58,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0694",
+    "name": "Eisfluch",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0695",
+    "name": "Schattenwucht",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 178,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0696",
+    "name": "Schattentritt",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 180,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0697",
+    "name": "Schaumschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 193,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0698",
+    "name": "Zaubersturm",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0699",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 197,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0700",
+    "name": "Blitzwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 176,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0701",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 212,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0702",
+    "name": "Stärkungssegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0703",
+    "name": "Geistflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 186,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0704",
+    "name": "Feuerwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 149,
+    "genauigkeit": 100,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0705",
+    "name": "Zaubersturm",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 131,
+    "genauigkeit": 92,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0706",
+    "name": "Gedankenschwung",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 83,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0707",
+    "name": "Bodenstoß",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 75,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0708",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 84,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0709",
+    "name": "Felswucht",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 101,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0710",
+    "name": "Wasserwucht",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 87,
+    "genauigkeit": 102,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0711",
+    "name": "Geistschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 160,
+    "genauigkeit": 100,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0712",
+    "name": "Geisterfaust",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 101,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0713",
+    "name": "Metallstoß",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 98,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0714",
+    "name": "Schattenflut",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 98,
+    "genauigkeit": 100,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0715",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0716",
+    "name": "Stromhieb",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 100,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0717",
+    "name": "Feenwirbel",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": 92,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0718",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 120,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0719",
+    "name": "Donnerschwall",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 194,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0720",
+    "name": "Brandwoge",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 150,
+    "genauigkeit": 101,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0721",
+    "name": "Blitzprall",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 98,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0722",
+    "name": "Gedankensturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 101,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0723",
+    "name": "Gedankenflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 199,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0724",
+    "name": "Metallfaust",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 198,
+    "genauigkeit": null,
+    "ap": 2
+  },
+  {
+    "id": "MOV-0725",
+    "name": "Schattenschwall",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 202,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0726",
+    "name": "Zauberfaust",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": 188,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0727",
+    "name": "Felswucht",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 190,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0728",
+    "name": "Drachenflamme",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 184,
+    "genauigkeit": null,
+    "ap": 1
+  },
+  {
+    "id": "MOV-0729",
+    "name": "Stromwucht",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0730",
+    "name": "Schaumwoge",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 99,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0731",
+    "name": "Flügelwucht",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 90,
+    "genauigkeit": 93,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0732",
+    "name": "Donnerwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0733",
+    "name": "Schaumflut",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 62,
+    "genauigkeit": 98,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0734",
+    "name": "Stromflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 62,
+    "genauigkeit": 99,
+    "ap": 22
+  },
+  {
+    "id": "MOV-0735",
+    "name": "Brandwucht",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 99,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0736",
+    "name": "Gedankenflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 79,
+    "genauigkeit": 97,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0737",
+    "name": "Dunkelwirbel",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 93,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0738",
+    "name": "Dornstoß",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 100,
+    "genauigkeit": 89,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0739",
+    "name": "Frostschwall",
+    "typ": "Eis",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 90,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0740",
+    "name": "Zauberflut",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 119,
+    "genauigkeit": 87,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0741",
+    "name": "Anstoß",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0742",
+    "name": "Metallwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0743",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0744",
+    "name": "Drachenschwall",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 101,
+    "genauigkeit": 101,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0745",
+    "name": "Schaumschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0746",
+    "name": "Schattentritt",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 81,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0747",
+    "name": "Kraftsegen",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0748",
+    "name": "Kraftsegen",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0749",
+    "name": "Felsnebel",
+    "typ": "Stein",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0750",
+    "name": "Psychoschutz",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 101,
+    "ap": 20
+  },
+  {
+    "id": "MOV-0751",
+    "name": "Drachenfaust",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 52,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0752",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0753",
+    "name": "Wuchtfluch",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0754",
+    "name": "Stromhieb",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 84,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0755",
+    "name": "Flutwucht",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 87,
+    "genauigkeit": 99,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0756",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0757",
+    "name": "Glutprall",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 101,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0758",
+    "name": "Insektenwucht",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0759",
+    "name": "Blitzprall",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0760",
+    "name": "Rammschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 12,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0761",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 9,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0762",
+    "name": "Geisterklaue",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0763",
+    "name": "Eiswucht",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 9,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0764",
+    "name": "Giftwucht",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 10,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0765",
+    "name": "Wasserstoß",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 10,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0766",
+    "name": "Windstoß",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 9,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0767",
+    "name": "Zauberwucht",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": 10,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0768",
+    "name": "Drachenstoß",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 9,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0769",
+    "name": "Gedankenstoß",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 11,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0770",
+    "name": "Steinfaust",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0771",
+    "name": "Staubwucht",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 8,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0772",
+    "name": "Dunkelhieb",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 9,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0773",
+    "name": "Blattfaust",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 12,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0774",
+    "name": "Metallstoß",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 12,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0775",
+    "name": "Drachenaura",
+    "typ": "Drache",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0776",
+    "name": "Rammfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0777",
+    "name": "Zauberaura",
+    "typ": "Fee",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0778",
+    "name": "Rankentritt",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0779",
+    "name": "Dornstoß",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 36,
+    "genauigkeit": 98,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0780",
+    "name": "Feuerschwung",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 121,
+    "genauigkeit": 92,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0781",
+    "name": "Stahltritt",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 102,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0782",
+    "name": "Stahlprall",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 99,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0783",
+    "name": "Stromwucht",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 111,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0784",
+    "name": "Drachentritt",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 60,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0785",
+    "name": "Dornangriff",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 41,
+    "genauigkeit": 99,
+    "ap": 38
+  },
+  {
+    "id": "MOV-0786",
+    "name": "Blitzflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0787",
+    "name": "Pflanzenschwall",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0788",
+    "name": "Blattprall",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0789",
+    "name": "Zauberschwung",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": 76,
+    "genauigkeit": 101,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0790",
+    "name": "Feenflut",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 91,
+    "genauigkeit": 95,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0791",
+    "name": "Wasserbann",
+    "typ": "Tropfen",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0792",
+    "name": "Schattensegen",
+    "typ": "Dunkel",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0793",
+    "name": "Dunkelwucht",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0794",
+    "name": "Wuchttritt",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 148,
+    "genauigkeit": 102,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0795",
+    "name": "Drachenwirbel",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 159,
+    "genauigkeit": 88,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0796",
+    "name": "Metallschwall",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 142,
+    "genauigkeit": 95,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0797",
+    "name": "Psychosturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0798",
+    "name": "Metallprall",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 129,
+    "genauigkeit": 98,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0799",
+    "name": "Drachentritt",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 23,
+    "genauigkeit": 90,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0800",
+    "name": "Felssturm",
+    "typ": "Stein",
+    "kategorie": "Speziell",
+    "staerke": 118,
+    "genauigkeit": 89,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0801",
+    "name": "Giftnebel",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 90,
+    "genauigkeit": 100,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0802",
+    "name": "Feenflut",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 101,
+    "genauigkeit": 102,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0803",
+    "name": "Pflanzenwucht",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 55,
+    "genauigkeit": 98,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0804",
+    "name": "Blitzflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 70,
+    "genauigkeit": 100,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0805",
+    "name": "Lichtsturm",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 50,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0806",
+    "name": "Insektenschwung",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 91,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0807",
+    "name": "Brandflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 71,
+    "genauigkeit": 101,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0808",
+    "name": "Dunkelklaue",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 74,
+    "genauigkeit": 101,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0809",
+    "name": "Geisterhieb",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 110,
+    "genauigkeit": 92,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0810",
+    "name": "Giftwolke",
+    "typ": "Gift",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": 98,
+    "ap": 41
+  },
+  {
+    "id": "MOV-0811",
+    "name": "Wuchtfluch",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0812",
+    "name": "Wellenschwung",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 61,
+    "genauigkeit": 102,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0813",
+    "name": "Eisstoß",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 22,
+    "genauigkeit": 90,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0814",
+    "name": "Windstoß",
+    "typ": "Flug",
+    "kategorie": "Physisch",
+    "staerke": 38,
+    "genauigkeit": 88,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0815",
+    "name": "Erdflut",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 70,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0816",
+    "name": "Blattaura",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": null,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0817",
+    "name": "Dunkelwucht",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 76,
+    "genauigkeit": 99,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0818",
+    "name": "Flutwucht",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 25,
+    "genauigkeit": 101,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0819",
+    "name": "Donnerflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 92,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0820",
+    "name": "Drachenwirbel",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 150,
+    "genauigkeit": 98,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0821",
+    "name": "Gedankenschwall",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 91,
+    "genauigkeit": 100,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0822",
+    "name": "Dunkelwoge",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 89,
+    "genauigkeit": 98,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0823",
+    "name": "Wuchtschwung",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 92,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0824",
+    "name": "Frosthieb",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 98,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0825",
+    "name": "Schattensturm",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 120,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0826",
+    "name": "Psychosturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 98,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0827",
+    "name": "Gifttritt",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 101,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0828",
+    "name": "Geistschwung",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 70,
+    "genauigkeit": 91,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0829",
+    "name": "Schlafhauch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 2,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0830",
+    "name": "Felsschwung",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 67,
+    "genauigkeit": 90,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0831",
+    "name": "Zauberwoge",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 100,
+    "genauigkeit": 80,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0832",
+    "name": "Gedankensturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 68,
+    "genauigkeit": 88,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0833",
+    "name": "Glutprall",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 121,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0834",
+    "name": "Gischtstoß",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 122,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0835",
+    "name": "Blattwoge",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 150,
+    "genauigkeit": 96,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0836",
+    "name": "Eiswucht",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 85,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0837",
+    "name": "Kampffluch",
+    "typ": "Kampf",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0838",
+    "name": "Staubtritt",
+    "typ": "Boden",
+    "kategorie": "Physisch",
+    "staerke": 119,
+    "genauigkeit": 98,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0839",
+    "name": "Giftklaue",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 101,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0840",
+    "name": "Gedankensturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 100,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0841",
+    "name": "Geistersturm",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 77,
+    "genauigkeit": 102,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0842",
+    "name": "Metallfluch",
+    "typ": "Stahl",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0843",
+    "name": "Rammfaust",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 89,
+    "genauigkeit": 100,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0844",
+    "name": "Schattenwoge",
+    "typ": "Geist",
+    "kategorie": "Speziell",
+    "staerke": 59,
+    "genauigkeit": 98,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0845",
+    "name": "Dunkelfaust",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 64,
+    "genauigkeit": 89,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0846",
+    "name": "Windschwall",
+    "typ": "Flug",
+    "kategorie": "Speziell",
+    "staerke": 98,
+    "genauigkeit": 80,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0847",
+    "name": "Donnerschwall",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 80,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0848",
+    "name": "Erdsturm",
+    "typ": "Boden",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 79,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0849",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0850",
+    "name": "Psychofluch",
+    "typ": "Psycho",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0851",
+    "name": "Lichtwirbel",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0852",
+    "name": "Käfernebel",
+    "typ": "Käfer",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0853",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 118,
+    "genauigkeit": 89,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0854",
+    "name": "Geisterschwung",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 48,
+    "genauigkeit": 101,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0855",
+    "name": "Gedankenwoge",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 82,
+    "genauigkeit": 100,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0856",
+    "name": "Drachenklaue",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 82,
+    "genauigkeit": 102,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0857",
+    "name": "Flutschwung",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 59,
+    "genauigkeit": 101,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0858",
+    "name": "Rankenschutz",
+    "typ": "Blatt",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 13
+  },
+  {
+    "id": "MOV-0859",
+    "name": "Stahlwucht",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0860",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 19,
+    "genauigkeit": 89,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0861",
+    "name": "Eisschwung",
+    "typ": "Eis",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 100,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0862",
+    "name": "Drachenklaue",
+    "typ": "Drache",
+    "kategorie": "Physisch",
+    "staerke": 120,
+    "genauigkeit": 98,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0863",
+    "name": "Heilnebel",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0864",
+    "name": "Steinfaust",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 40,
+    "genauigkeit": 99,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0865",
+    "name": "Gischtstoß",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 32,
+    "genauigkeit": 97,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0866",
+    "name": "Giftwucht",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 32,
+    "genauigkeit": 99,
+    "ap": 17
+  },
+  {
+    "id": "MOV-0867",
+    "name": "Schwächungsfluch",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 2,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0868",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 2,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0869",
+    "name": "Schattenstoß",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 85,
+    "genauigkeit": null,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0870",
+    "name": "Blattprall",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 68,
+    "genauigkeit": null,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0871",
+    "name": "Brandschwall",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 78,
+    "genauigkeit": 98,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0872",
+    "name": "Wasserwucht",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0873",
+    "name": "Prellschlag",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 91,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0874",
+    "name": "Stahlflut",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 121,
+    "genauigkeit": 102,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0875",
+    "name": "Geistfaust",
+    "typ": "Psycho",
+    "kategorie": "Physisch",
+    "staerke": 80,
+    "genauigkeit": 101,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0876",
+    "name": "Flutschwall",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 81,
+    "genauigkeit": 100,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0877",
+    "name": "Schattenwirbel",
+    "typ": "Dunkel",
+    "kategorie": "Speziell",
+    "staerke": 1,
+    "genauigkeit": 88,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0878",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 101,
+    "genauigkeit": 101,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0879",
+    "name": "Blitzflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 101,
+    "genauigkeit": 99,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0880",
+    "name": "Schutzwall",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 2,
+    "genauigkeit": null,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0881",
+    "name": "Eisfluch",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0882",
+    "name": "Schutzschild",
+    "typ": "Normal",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0883",
+    "name": "Frostbann",
+    "typ": "Eis",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": null,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0884",
+    "name": "Insektenwucht",
+    "typ": "Käfer",
+    "kategorie": "Physisch",
+    "staerke": 52,
+    "genauigkeit": 102,
+    "ap": 18
+  },
+  {
+    "id": "MOV-0885",
+    "name": "Blattpeitsche",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 50,
+    "genauigkeit": 99,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0886",
+    "name": "Wasserflut",
+    "typ": "Tropfen",
+    "kategorie": "Speziell",
+    "staerke": 48,
+    "genauigkeit": 100,
+    "ap": 21
+  },
+  {
+    "id": "MOV-0887",
+    "name": "Schlagwucht",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 99,
+    "genauigkeit": 99,
+    "ap": 3
+  },
+  {
+    "id": "MOV-0888",
+    "name": "Geistflut",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 38,
+    "genauigkeit": 100,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0889",
+    "name": "Geisterklaue",
+    "typ": "Geist",
+    "kategorie": "Physisch",
+    "staerke": 52,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0890",
+    "name": "Glutflut",
+    "typ": "Brennen",
+    "kategorie": "Speziell",
+    "staerke": 119,
+    "genauigkeit": 100,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0891",
+    "name": "Feuerstoß",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 90,
+    "genauigkeit": 99,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0892",
+    "name": "Blitzfaust",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 121,
+    "genauigkeit": 102,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0893",
+    "name": "Stahlprall",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 161,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0894",
+    "name": "Schattenstoß",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 1,
+    "genauigkeit": 98,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0895",
+    "name": "Flutwucht",
+    "typ": "Tropfen",
+    "kategorie": "Physisch",
+    "staerke": 72,
+    "genauigkeit": 101,
+    "ap": 19
+  },
+  {
+    "id": "MOV-0896",
+    "name": "Feuerschwung",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 79,
+    "genauigkeit": 102,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0897",
+    "name": "Dunkelhieb",
+    "typ": "Dunkel",
+    "kategorie": "Physisch",
+    "staerke": 78,
+    "genauigkeit": 98,
+    "ap": 10
+  },
+  {
+    "id": "MOV-0898",
+    "name": "Giftklaue",
+    "typ": "Gift",
+    "kategorie": "Physisch",
+    "staerke": 101,
+    "genauigkeit": 102,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0899",
+    "name": "Rammhieb",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 100,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0900",
+    "name": "Feenprall",
+    "typ": "Fee",
+    "kategorie": "Physisch",
+    "staerke": 98,
+    "genauigkeit": 101,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0901",
+    "name": "Kraftschwall",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 140,
+    "genauigkeit": 100,
+    "ap": 6
+  },
+  {
+    "id": "MOV-0902",
+    "name": "Pflanzenflut",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 88,
+    "ap": 16
+  },
+  {
+    "id": "MOV-0903",
+    "name": "Rankenwoge",
+    "typ": "Blatt",
+    "kategorie": "Speziell",
+    "staerke": 58,
+    "genauigkeit": 87,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0904",
+    "name": "Rankenwucht",
+    "typ": "Blatt",
+    "kategorie": "Physisch",
+    "staerke": 99,
+    "genauigkeit": 100,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0905",
+    "name": "Blitzflut",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 130,
+    "genauigkeit": 98,
+    "ap": 11
+  },
+  {
+    "id": "MOV-0906",
+    "name": "Kraftschwall",
+    "typ": "Normal",
+    "kategorie": "Speziell",
+    "staerke": 122,
+    "genauigkeit": 101,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0907",
+    "name": "Drachenhauche",
+    "typ": "Drache",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 102,
+    "ap": 7
+  },
+  {
+    "id": "MOV-0908",
+    "name": "Brandaura",
+    "typ": "Brennen",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": 1,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0909",
+    "name": "Donnerwoge",
+    "typ": "Blitz",
+    "kategorie": "Speziell",
+    "staerke": 71,
+    "genauigkeit": 100,
+    "ap": 5
+  },
+  {
+    "id": "MOV-0910",
+    "name": "Felsstoß",
+    "typ": "Stein",
+    "kategorie": "Physisch",
+    "staerke": 97,
+    "genauigkeit": 100,
+    "ap": 4
+  },
+  {
+    "id": "MOV-0911",
+    "name": "Metallwoge",
+    "typ": "Stahl",
+    "kategorie": "Speziell",
+    "staerke": 49,
+    "genauigkeit": 2,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0912",
+    "name": "Stahlhieb",
+    "typ": "Stahl",
+    "kategorie": "Physisch",
+    "staerke": 1,
+    "genauigkeit": 102,
+    "ap": 8
+  },
+  {
+    "id": "MOV-0913",
+    "name": "Drachenbann",
+    "typ": "Drache",
+    "kategorie": "Status",
+    "staerke": 1,
+    "genauigkeit": 1,
+    "ap": 14
+  },
+  {
+    "id": "MOV-0914",
+    "name": "Feenwoge",
+    "typ": "Fee",
+    "kategorie": "Speziell",
+    "staerke": 80,
+    "genauigkeit": 101,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0915",
+    "name": "Brandfaust",
+    "typ": "Brennen",
+    "kategorie": "Physisch",
+    "staerke": 76,
+    "genauigkeit": 99,
+    "ap": 12
+  },
+  {
+    "id": "MOV-0916",
+    "name": "Donnerstoß",
+    "typ": "Blitz",
+    "kategorie": "Physisch",
+    "staerke": 102,
+    "genauigkeit": 94,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0917",
+    "name": "Gedankensturm",
+    "typ": "Psycho",
+    "kategorie": "Speziell",
+    "staerke": 77,
+    "genauigkeit": 100,
+    "ap": 9
+  },
+  {
+    "id": "MOV-0918",
+    "name": "Wuchtstoß",
+    "typ": "Kampf",
+    "kategorie": "Physisch",
+    "staerke": 66,
+    "genauigkeit": 102,
+    "ap": 15
+  },
+  {
+    "id": "MOV-0919",
+    "name": "Giftsturm",
+    "typ": "Gift",
+    "kategorie": "Speziell",
+    "staerke": 102,
+    "genauigkeit": 100,
+    "ap": 7
+  },
+  {
+    "id": "MOV-10001",
+    "name": "Rammhieb",
+    "typ": "Normal",
+    "kategorie": "Physisch",
+    "staerke": 57,
+    "genauigkeit": 102,
+    "ap": null
+  }
+]

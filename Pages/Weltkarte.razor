@@ -1,0 +1,222 @@
+@inject GameService Game
+@implements IDisposable
+
+<div class="weltkarte-screen">
+    <!-- Linke Sidebar: Spieler-Info -->
+    <div class="sidebar">
+        <div class="spieler-info">
+            <h3>🎮 @Game.Spieler.Name</h3>
+            <p class="geld">💰 @Game.Spieler.Geld Münzen</p>
+            <div class="orden-liste">
+                @foreach (var orden in Game.Spieler.Orden)
+                {
+                    <span class="orden-badge" title="@orden">🏅</span>
+                }
+                @if (!Game.Spieler.Orden.Any())
+                {
+                    <span class="keine-orden">Noch keine Orden</span>
+                }
+            </div>
+        </div>
+
+        <div class="team-liste">
+            <h4>Mein Team</h4>
+            @foreach (var mon in Game.Spieler.Team)
+            {
+                <div class="team-eintrag @(mon.IstOhnmächtig ? "ohnmächtig" : "")">
+                    <span class="team-emoji">@GetTypEmoji(mon.Typen.FirstOrDefault() ?? "")</span>
+                    <div class="team-info">
+                        <span class="team-name">@mon.Name</span>
+                        <span class="team-level">Lv.@mon.Level</span>
+                    </div>
+                    <div class="team-kp-balken">
+                        <div class="kp-fill @KpFarbe(mon)"
+                             style="width: @(mon.MaxKp > 0 ? (mon.AktuelleKp * 100 / mon.MaxKp) : 0)%"></div>
+                    </div>
+                    <span class="team-kp-text">@mon.AktuelleKp/@mon.MaxKp</span>
+                </div>
+            }
+        </div>
+
+        <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
+        <button class="btn-editor-klein" @onclick="Game.ZuMapEditor">🗺️ Map-Editor</button>
+    </div>
+
+    <!-- Hauptbereich: Karte + Ort-Details -->
+    <div class="karte-bereich">
+        <h2 class="karte-titel">🗺️ Weltkarte</h2>
+
+        <!-- Karten-Grid -->
+        <div class="karten-grid">
+            @foreach (var ort in Game.AlleOrte)
+            {
+                <div class="ort-zelle"
+                     style="grid-column: @(ort.GridX + 1); grid-row: @(ort.GridY + 1);"
+                     @onclick="() => OrtAuswählen(ort)">
+                    <div class="ort-knopf @(ort.Id == Game.Spieler.AktuellerOrt ? "aktuell" : "") @(ort.Id == ausgewähltOrtId ? "ausgewaehlt" : "")"
+                         style="background: @WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
+                        <span class="ort-icon">@OrtIcon(ort)</span>
+                        <span class="ort-name-klein">@ort.Name</span>
+                        @if (ort.Arena != null && Game.Spieler.Orden.Contains(ort.Arena.OrdenName))
+                        {
+                            <span class="orden-check">✓</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Ort-Details -->
+        @if (ausgewähltOrt != null)
+        {
+            <div class="ort-details">
+                <div class="ort-details-header">
+                    <h3>@ausgewähltOrt.Name</h3>
+                    <span class="ort-typ-badge">@ausgewähltOrt.Typ</span>
+                </div>
+                <p class="ort-beschreibung">@ausgewähltOrt.Beschreibung</p>
+
+                <!-- Aktionen -->
+                <div class="ort-aktionen">
+                    @if (ausgewähltOrt.Id != Game.Spieler.AktuellerOrt)
+                    {
+                        <button class="btn-reisen" @onclick="ZumOrtReisen">
+                            🚶 Nach @ausgewähltOrt.Name reisen
+                        </button>
+                    }
+                    else
+                    {
+                        <span class="aktueller-ort-label">📍 Du bist hier</span>
+
+                        <!-- Wilde Monster -->
+                        @if (ausgewähltOrt.WildMonster.Any())
+                        {
+                            <button class="btn-erkunden" @onclick="ImGrasErkunden">
+                                🌿 Im Gras erkunden
+                            </button>
+                        }
+
+                        <!-- Trainer -->
+                        @foreach (var trainer in ausgewähltOrt.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
+                        {
+                            <button class="btn-trainer" @onclick="() => TrainerKämpfen(trainer)">
+                                🧑 @trainer.Klasse @trainer.Name herausfordern
+                            </button>
+                        }
+
+                        <!-- Arena -->
+                        @if (ausgewähltOrt.Arena != null)
+                        {
+                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(ausgewähltOrt.Arena.OrdenName);
+                            <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
+                                    @onclick="() => ArenaKämpfen(ausgewähltOrt)"
+                                    disabled="@bereitsGewonnen">
+                                🏆 @(bereitsGewonnen ? $"✓ {ausgewähltOrt.Arena.OrdenName} erhalten" : $"Arena: {ausgewähltOrt.Arena.Leiter} herausfordern")
+                            </button>
+                        }
+                    }
+                </div>
+
+                <!-- Wilde Monster Liste -->
+                @if (ausgewähltOrt.WildMonster.Any())
+                {
+                    <div class="wild-liste">
+                        <h4>Wilde Monster:</h4>
+                        @foreach (var wild in ausgewähltOrt.WildMonster)
+                        {
+                            var spezies = Game.AlleMonster.FirstOrDefault(m => m.Id == wild.MonsterId);
+                            if (spezies != null)
+                            {
+                                <span class="wild-eintrag">
+                                    @GetTypEmoji(spezies.Typen.FirstOrDefault() ?? "") @spezies.Name (Lv.@wild.MinLevel–@wild.MaxLevel)
+                                </span>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@if (meldung != null)
+{
+    <div class="meldung-overlay" @onclick="MeldungSchließen">
+        <div class="meldung-box">
+            <p>@meldung</p>
+            <button class="btn-ok" @onclick="MeldungSchließen">OK</button>
+        </div>
+    </div>
+}
+
+@code {
+    private string? ausgewähltOrtId;
+    private Ort? ausgewähltOrt;
+    private string? meldung;
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+        ausgewähltOrtId = Game.Spieler.AktuellerOrt;
+        ausgewähltOrt = Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrtId);
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void OrtAuswählen(Ort ort)
+    {
+        ausgewähltOrtId = ort.Id;
+        ausgewähltOrt = ort;
+    }
+
+    private void ZumOrtReisen()
+    {
+        if (ausgewähltOrt == null) return;
+        Game.OrtBetreten(ausgewähltOrt.Id);
+        ausgewähltOrtId = ausgewähltOrt.Id;
+    }
+
+    private void ImGrasErkunden()
+    {
+        if (ausgewähltOrt == null) return;
+        var wild = Game.ZufälligesWildMonster(ausgewähltOrt);
+        if (wild != null)
+        {
+            Game.WildkampfStarten(wild);
+        }
+        else
+        {
+            meldung = "Kein wildes Monster gefunden...";
+        }
+    }
+
+    private void TrainerKämpfen(TrainerKampf trainer)
+    {
+        Game.TrainerKampfStarten(trainer);
+    }
+
+    private void ArenaKämpfen(Ort ort)
+    {
+        Game.ArenaKampfStarten(ort);
+    }
+
+    private void MeldungSchließen() => meldung = null;
+
+    private string OrtIcon(Ort ort) => ort.Typ switch
+    {
+        "stadt"  => ort.Arena != null ? "🏆" : "🏙️",
+        "route"  => "🌿",
+        "hoehle" => "⛰️",
+        "wald"   => "🌲",
+        _        => "📍"
+    };
+
+    private string GetTypEmoji(string typ) =>
+        TypeChart.TypEmojis.GetValueOrDefault(typ, "❓");
+
+    private string KpFarbe(MonsterInstanz mon)
+    {
+        float pct = mon.MaxKp > 0 ? (float)mon.AktuelleKp / mon.MaxKp : 0;
+        return pct > 0.5f ? "kp-gruen" : pct > 0.25f ? "kp-gelb" : "kp-rot";
+    }
+}

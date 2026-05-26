@@ -1,0 +1,84 @@
+@inject GameService Game
+
+<div class="starter-screen">
+    <div class="starter-box">
+        <h2 class="starter-titel">Wähle dein Starter-Monster!</h2>
+        <p class="starter-info">Dein erstes Monster begleitet dich auf deiner Reise.</p>
+
+        <div class="starter-grid">
+            @foreach (var mon in starter)
+            {
+                <div class="starter-karte @(ausgewählt == mon.Id ? "ausgewaehlt" : "")"
+                     @onclick="() => ausgewählt = mon.Id">
+                    <div class="starter-bild-platz">
+                        <span class="starter-emoji">@GetTypEmoji(mon.Typen.FirstOrDefault() ?? "")</span>
+                    </div>
+                    <h3 class="starter-name">@mon.Name</h3>
+                    <div class="starter-typen">
+                        @foreach (var typ in mon.Typen)
+                        {
+                            <span class="typ-badge" style="background: @TypeChart.TypFarben.GetValueOrDefault(typ, "#888")">
+                                @TypeChart.TypEmojis.GetValueOrDefault(typ, "") @typ
+                            </span>
+                        }
+                    </div>
+                    <div class="starter-stats">
+                        <div class="stat-zeile">
+                            <span>KP</span>
+                            <div class="stat-balken">
+                                <div class="stat-fill" style="width: @(mon.Stats.GetValueOrDefault("kp",45))%"></div>
+                            </div>
+                            <span>@mon.Stats.GetValueOrDefault("kp", 45)</span>
+                        </div>
+                        <div class="stat-zeile">
+                            <span>Angriff</span>
+                            <div class="stat-balken">
+                                <div class="stat-fill" style="width: @(mon.Stats.GetValueOrDefault("angriff",45))%"></div>
+                            </div>
+                            <span>@mon.Stats.GetValueOrDefault("angriff", 45)</span>
+                        </div>
+                        <div class="stat-zeile">
+                            <span>Verteidigung</span>
+                            <div class="stat-balken">
+                                <div class="stat-fill" style="width: @(mon.Stats.GetValueOrDefault("verteidigung",45))%"></div>
+                            </div>
+                            <span>@mon.Stats.GetValueOrDefault("verteidigung", 45)</span>
+                        </div>
+                        <div class="stat-zeile">
+                            <span>Initiative</span>
+                            <div class="stat-balken">
+                                <div class="stat-fill" style="width: @(mon.Stats.GetValueOrDefault("initiative",45))%"></div>
+                            </div>
+                            <span>@mon.Stats.GetValueOrDefault("initiative", 45)</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="starter-aktionen">
+            <button class="btn-zurück" @onclick="Game.ZuHauptmenü">← Zurück</button>
+            <button class="btn-wählen" @onclick="StarterWählen" disabled="@(ausgewählt == null)">
+                @(ausgewählt != null ? $"✓ {starter.FirstOrDefault(m => m.Id == ausgewählt)?.Name} wählen!" : "Monster wählen")
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<MonsterData> starter = new();
+    private string? ausgewählt;
+
+    protected override void OnInitialized()
+    {
+        starter = Game.GetStarterOptionen();
+    }
+
+    private void StarterWählen()
+    {
+        if (ausgewählt != null) Game.StarterWählen(ausgewählt);
+    }
+
+    private string GetTypEmoji(string typ) =>
+        TypeChart.TypEmojis.GetValueOrDefault(typ, "❓");
+}

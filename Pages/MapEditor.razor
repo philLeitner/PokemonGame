@@ -1,0 +1,287 @@
+@inject GameService Game
+@implements IDisposable
+
+<div class="editor-screen">
+    <!-- Linke Sidebar -->
+    <div class="editor-sidebar">
+        <h3 class="editor-titel">🗺️ Map-Editor</h3>
+
+        <!-- Such- und Filterbereich -->
+        <div class="editor-suche">
+            <input class="editor-input" @bind="suchbegriff" @bind:event="oninput"
+                   placeholder="Ort suchen..." />
+        </div>
+
+        <!-- Ort-Typ Filter -->
+        <div class="editor-filter">
+            @foreach (var typ in ortTypen)
+            {
+                <button class="filter-btn @(gewählterTyp == typ ? "aktiv" : "")"
+                        @onclick="() => gewählterTyp = gewählterTyp == typ ? null : typ">
+                    @OrtTypIcon(typ) @typ
+                </button>
+            }
+        </div>
+
+        <!-- Ort-Liste -->
+        <div class="editor-ort-liste">
+            @foreach (var ort in GefilterteOrte())
+            {
+                <div class="editor-ort-eintrag @(bearbeiteterOrt?.Id == ort.Id ? "aktiv" : "")"
+                     @onclick="() => OrtBearbeiten(ort)">
+                    <span class="ort-icon-klein">@OrtTypIcon(ort.Typ)</span>
+                    <div class="ort-info-klein">
+                        <span class="ort-name-klein">@ort.Name</span>
+                        <span class="ort-id-klein">@ort.Id</span>
+                    </div>
+                    @if (ort.Arena != null)
+                    {
+                        <span class="arena-indikator" title="Arena: @ort.Arena.Leiter">🏆</span>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="editor-aktionen">
+            <button class="btn-neuer-ort" @onclick="NeuenOrtErstellen">+ Neuer Ort</button>
+            <button class="btn-zurück-editor" @onclick="Game.ZuHauptmenü">← Hauptmenü</button>
+        </div>
+    </div>
+
+    <!-- Hauptbereich: Karten-Vorschau + Bearbeitungsformular -->
+    <div class="editor-haupt">
+        <!-- Karten-Vorschau -->
+        <div class="editor-karte-vorschau">
+            <h4>Karten-Vorschau</h4>
+            <div class="editor-karten-grid">
+                @foreach (var ort in bearbeitungsOrte)
+                {
+                    <div class="editor-ort-zelle"
+                         style="grid-column: @(ort.GridX + 1); grid-row: @(ort.GridY + 1);"
+                         @onclick="() => OrtBearbeiten(ort)">
+                        <div class="editor-ort-knopf @(bearbeiteterOrt?.Id == ort.Id ? "ausgewaehlt" : "")"
+                             style="background: @WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
+                            <span>@OrtTypIcon(ort.Typ)</span>
+                            <span class="editor-ort-name">@ort.Name</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Bearbeitungsformular -->
+        @if (bearbeiteterOrt != null)
+        {
+            <div class="editor-formular">
+                <h4>✏️ @bearbeiteterOrt.Name bearbeiten</h4>
+
+                <div class="form-gruppe">
+                    <label>ID:</label>
+                    <input class="editor-input" @bind="bearbeiteterOrt.Id" />
+                </div>
+                <div class="form-gruppe">
+                    <label>Name:</label>
+                    <input class="editor-input" @bind="bearbeiteterOrt.Name" />
+                </div>
+                <div class="form-gruppe">
+                    <label>Typ:</label>
+                    <select class="editor-select" @bind="bearbeiteterOrt.Typ">
+                        @foreach (var typ in ortTypen)
+                        {
+                            <option value="@typ">@typ</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-gruppe">
+                    <label>Farbe:</label>
+                    <select class="editor-select" @bind="bearbeiteterOrt.Farbe">
+                        @foreach (var farbe in WeltData.OrtFarben.Keys)
+                        {
+                            <option value="@farbe">@farbe</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-gruppe form-gruppe-inline">
+                    <div>
+                        <label>Grid X:</label>
+                        <input type="number" class="editor-input editor-input-klein" @bind="bearbeiteterOrt.GridX" min="0" max="12" />
+                    </div>
+                    <div>
+                        <label>Grid Y:</label>
+                        <input type="number" class="editor-input editor-input-klein" @bind="bearbeiteterOrt.GridY" min="0" max="12" />
+                    </div>
+                </div>
+                <div class="form-gruppe">
+                    <label>Beschreibung:</label>
+                    <textarea class="editor-textarea" @bind="bearbeiteterOrt.Beschreibung"></textarea>
+                </div>
+
+                <!-- Arena-Bereich -->
+                <div class="editor-arena-bereich">
+                    <div class="arena-header">
+                        <h5>🏆 Arena</h5>
+                        <label class="switch-label">
+                            <input type="checkbox" @bind="hatArena" @bind:after="ArenaToggle" />
+                            <span>Arena vorhanden</span>
+                        </label>
+                    </div>
+                    @if (hatArena && bearbeiteterOrt.Arena != null)
+                    {
+                        <div class="form-gruppe">
+                            <label>Orden-Name:</label>
+                            <input class="editor-input" @bind="bearbeiteterOrt.Arena.OrdenName" />
+                        </div>
+                        <div class="form-gruppe">
+                            <label>Arena-Leiter:</label>
+                            <input class="editor-input" @bind="bearbeiteterOrt.Arena.Leiter" />
+                        </div>
+                        <div class="form-gruppe">
+                            <label>Typ-Spezialisierung:</label>
+                            <select class="editor-select" @bind="bearbeiteterOrt.Arena.TypSpezialisierung">
+                                @foreach (var typ in TypeChart.AlleTypen)
+                                {
+                                    <option value="@typ">@TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ</option>
+                                }
+                            </select>
+                        </div>
+                    }
+                </div>
+
+                <!-- Wilde Monster -->
+                <div class="editor-wild-bereich">
+                    <h5>🌿 Wilde Monster</h5>
+                    @foreach (var wild in bearbeiteterOrt.WildMonster)
+                    {
+                        var spezies = Game.AlleMonster.FirstOrDefault(m => m.Id == wild.MonsterId);
+                        <div class="wild-eintrag-editor">
+                            <span>@(spezies?.Name ?? wild.MonsterId)</span>
+                            <span>Lv.@wild.MinLevel–@wild.MaxLevel (@wild.Chance%)</span>
+                            <button class="btn-entfernen" @onclick="() => bearbeiteterOrt.WildMonster.Remove(wild)">✕</button>
+                        </div>
+                    }
+                    <button class="btn-wild-hinzu" @onclick="WildMonsterHinzufügen">+ Wildes Monster</button>
+                </div>
+
+                <div class="editor-formular-aktionen">
+                    <button class="btn-speichern" @onclick="ÄnderungenSpeichern">💾 Speichern</button>
+                    <button class="btn-abbrechen" @onclick="() => bearbeiteterOrt = null">Abbrechen</button>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="editor-leer">
+                <p>← Wähle einen Ort aus der Liste zum Bearbeiten</p>
+                <p>oder klicke auf einen Ort in der Karten-Vorschau</p>
+            </div>
+        }
+    </div>
+</div>
+
+@if (meldung != null)
+{
+    <div class="meldung-overlay" @onclick="() => meldung = null">
+        <div class="meldung-box">
+            <p>@meldung</p>
+            <button class="btn-ok" @onclick="() => meldung = null">OK</button>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Ort> bearbeitungsOrte = new();
+    private Ort? bearbeiteterOrt;
+    private string suchbegriff = "";
+    private string? gewählterTyp;
+    private bool hatArena;
+    private string? meldung;
+
+    private static readonly string[] ortTypen = { "stadt", "route", "hoehle", "wald" };
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+        bearbeitungsOrte = Game.AlleOrte.ToList();
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private IEnumerable<Ort> GefilterteOrte()
+    {
+        var liste = bearbeitungsOrte.AsEnumerable();
+        if (!string.IsNullOrWhiteSpace(suchbegriff))
+            liste = liste.Where(o => o.Name.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase)
+                                  || o.Id.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase));
+        if (gewählterTyp != null)
+            liste = liste.Where(o => o.Typ == gewählterTyp);
+        return liste;
+    }
+
+    private void OrtBearbeiten(Ort ort)
+    {
+        bearbeiteterOrt = ort;
+        hatArena = ort.Arena != null;
+    }
+
+    private void NeuenOrtErstellen()
+    {
+        var neuer = new Ort
+        {
+            Id = $"ort_{DateTime.Now.Ticks}",
+            Name = "Neuer Ort",
+            Typ = "stadt",
+            Farbe = "blue",
+            GridX = 0, GridY = 0
+        };
+        bearbeitungsOrte.Add(neuer);
+        OrtBearbeiten(neuer);
+    }
+
+    private void ArenaToggle()
+    {
+        if (bearbeiteterOrt == null) return;
+        if (hatArena && bearbeiteterOrt.Arena == null)
+        {
+            bearbeiteterOrt.Arena = new Arena
+            {
+                OrdenName = "Neuer Orden",
+                Leiter = "Arena-Leiter",
+                TypSpezialisierung = "Normal",
+                OrdenNr = 1
+            };
+        }
+        else if (!hatArena)
+        {
+            bearbeiteterOrt.Arena = null;
+        }
+    }
+
+    private void WildMonsterHinzufügen()
+    {
+        if (bearbeiteterOrt == null) return;
+        var erstesMonster = Game.AlleMonster.FirstOrDefault();
+        if (erstesMonster != null)
+        {
+            bearbeiteterOrt.WildMonster.Add(new WildBegegnung
+            {
+                MonsterId = erstesMonster.Id,
+                MinLevel = 5, MaxLevel = 10, Chance = 20
+            });
+        }
+    }
+
+    private void ÄnderungenSpeichern()
+    {
+        meldung = $"✅ '{bearbeiteterOrt?.Name}' gespeichert! (Im Spiel aktiv)";
+        bearbeiteterOrt = null;
+    }
+
+    private string OrtTypIcon(string typ) => typ switch
+    {
+        "stadt"  => "🏙️",
+        "route"  => "🌿",
+        "hoehle" => "⛰️",
+        "wald"   => "🌲",
+        _        => "📍"
+    };
+}

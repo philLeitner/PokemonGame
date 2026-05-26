@@ -1,0 +1,19 @@
+## .NET / Blazor
+bin/
+obj/
+*.user
+.vs/
+.vscode/
+*.suo
+*.userosscache
+*.sln.docstates
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## OS
+.DS_Store
+Thumbs.db
+*.swp

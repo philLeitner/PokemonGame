@@ -1,0 +1,507 @@
+{
+  "Normal": {
+    "id": 1,
+    "name": "Normal",
+    "x2_gegen": [],
+    "x05_gegen": [
+      "Stein",
+      "Stahl"
+    ],
+    "x0_gegen": [
+      "Geist"
+    ],
+    "schwach_gegen": [
+      "Kampf"
+    ],
+    "resistent_gegen": [],
+    "immun_gegen": [
+      "Geist"
+    ]
+  },
+  "Brennen": {
+    "id": 10,
+    "name": "Brennen",
+    "x2_gegen": [
+      "Käfer",
+      "Stahl",
+      "Blatt",
+      "Eis"
+    ],
+    "x05_gegen": [
+      "Stein",
+      "Brennen",
+      "Tropfen",
+      "Drache"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Boden",
+      "Stein",
+      "Tropfen"
+    ],
+    "resistent_gegen": [
+      "Käfer",
+      "Stahl",
+      "Brennen",
+      "Blatt",
+      "Eis",
+      "Fee"
+    ],
+    "immun_gegen": []
+  },
+  "Tropfen": {
+    "id": 11,
+    "name": "Tropfen",
+    "x2_gegen": [
+      "Boden",
+      "Stein",
+      "Brennen"
+    ],
+    "x05_gegen": [
+      "Tropfen",
+      "Blatt",
+      "Drache"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Blatt",
+      "Blitz"
+    ],
+    "resistent_gegen": [
+      "Stahl",
+      "Brennen",
+      "Tropfen",
+      "Eis"
+    ],
+    "immun_gegen": []
+  },
+  "Blitz": {
+    "id": 13,
+    "name": "Blitz",
+    "x2_gegen": [
+      "Flug",
+      "Tropfen"
+    ],
+    "x05_gegen": [
+      "Blatt",
+      "Blitz",
+      "Drache"
+    ],
+    "x0_gegen": [
+      "Boden"
+    ],
+    "schwach_gegen": [
+      "Boden"
+    ],
+    "resistent_gegen": [
+      "Flug",
+      "Stahl",
+      "Blitz"
+    ],
+    "immun_gegen": []
+  },
+  "Blatt": {
+    "id": 12,
+    "name": "Blatt",
+    "x2_gegen": [
+      "Boden",
+      "Stein",
+      "Tropfen"
+    ],
+    "x05_gegen": [
+      "Flug",
+      "Gift",
+      "Käfer",
+      "Stahl",
+      "Brennen",
+      "Blatt",
+      "Drache"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Flug",
+      "Gift",
+      "Käfer",
+      "Brennen",
+      "Eis"
+    ],
+    "resistent_gegen": [
+      "Boden",
+      "Tropfen",
+      "Blatt",
+      "Blitz"
+    ],
+    "immun_gegen": []
+  },
+  "Eis": {
+    "id": 15,
+    "name": "Eis",
+    "x2_gegen": [
+      "Flug",
+      "Boden",
+      "Blatt",
+      "Drache"
+    ],
+    "x05_gegen": [
+      "Stahl",
+      "Brennen",
+      "Tropfen",
+      "Eis"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Kampf",
+      "Stein",
+      "Stahl",
+      "Brennen"
+    ],
+    "resistent_gegen": [
+      "Eis"
+    ],
+    "immun_gegen": []
+  },
+  "Kampf": {
+    "id": 2,
+    "name": "Kampf",
+    "x2_gegen": [
+      "Normal",
+      "Stein",
+      "Stahl",
+      "Eis",
+      "Dunkel"
+    ],
+    "x05_gegen": [
+      "Flug",
+      "Gift",
+      "Käfer",
+      "Psycho",
+      "Fee"
+    ],
+    "x0_gegen": [
+      "Geist"
+    ],
+    "schwach_gegen": [
+      "Flug",
+      "Psycho",
+      "Fee"
+    ],
+    "resistent_gegen": [
+      "Stein",
+      "Käfer",
+      "Dunkel"
+    ],
+    "immun_gegen": []
+  },
+  "Gift": {
+    "id": 4,
+    "name": "Gift",
+    "x2_gegen": [
+      "Blatt",
+      "Fee"
+    ],
+    "x05_gegen": [
+      "Gift",
+      "Boden",
+      "Stein",
+      "Geist"
+    ],
+    "x0_gegen": [
+      "Stahl"
+    ],
+    "schwach_gegen": [
+      "Boden",
+      "Psycho"
+    ],
+    "resistent_gegen": [
+      "Kampf",
+      "Gift",
+      "Käfer",
+      "Blatt",
+      "Fee"
+    ],
+    "immun_gegen": []
+  },
+  "Boden": {
+    "id": 5,
+    "name": "Boden",
+    "x2_gegen": [
+      "Gift",
+      "Stein",
+      "Stahl",
+      "Brennen",
+      "Blitz"
+    ],
+    "x05_gegen": [
+      "Käfer",
+      "Blatt"
+    ],
+    "x0_gegen": [
+      "Flug"
+    ],
+    "schwach_gegen": [
+      "Tropfen",
+      "Blatt",
+      "Eis"
+    ],
+    "resistent_gegen": [
+      "Gift",
+      "Stein"
+    ],
+    "immun_gegen": [
+      "Blitz"
+    ]
+  },
+  "Flug": {
+    "id": 3,
+    "name": "Flug",
+    "x2_gegen": [
+      "Kampf",
+      "Käfer",
+      "Blatt"
+    ],
+    "x05_gegen": [
+      "Stein",
+      "Stahl",
+      "Blitz"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Stein",
+      "Blitz",
+      "Eis"
+    ],
+    "resistent_gegen": [
+      "Kampf",
+      "Käfer",
+      "Blatt"
+    ],
+    "immun_gegen": [
+      "Boden"
+    ]
+  },
+  "Psycho": {
+    "id": 14,
+    "name": "Psycho",
+    "x2_gegen": [
+      "Kampf",
+      "Gift"
+    ],
+    "x05_gegen": [
+      "Stahl",
+      "Psycho"
+    ],
+    "x0_gegen": [
+      "Dunkel"
+    ],
+    "schwach_gegen": [
+      "Käfer",
+      "Geist",
+      "Dunkel"
+    ],
+    "resistent_gegen": [
+      "Kampf",
+      "Psycho"
+    ],
+    "immun_gegen": []
+  },
+  "Käfer": {
+    "id": 7,
+    "name": "Käfer",
+    "x2_gegen": [
+      "Blatt",
+      "Psycho",
+      "Dunkel"
+    ],
+    "x05_gegen": [
+      "Kampf",
+      "Flug",
+      "Gift",
+      "Geist",
+      "Stahl",
+      "Brennen",
+      "Fee"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Flug",
+      "Stein",
+      "Brennen"
+    ],
+    "resistent_gegen": [
+      "Kampf",
+      "Boden",
+      "Blatt"
+    ],
+    "immun_gegen": []
+  },
+  "Stein": {
+    "id": 6,
+    "name": "Stein",
+    "x2_gegen": [
+      "Flug",
+      "Käfer",
+      "Brennen",
+      "Eis"
+    ],
+    "x05_gegen": [
+      "Kampf",
+      "Boden",
+      "Stahl"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Kampf",
+      "Boden",
+      "Stahl",
+      "Tropfen",
+      "Blatt"
+    ],
+    "resistent_gegen": [
+      "Normal",
+      "Flug",
+      "Gift",
+      "Brennen"
+    ],
+    "immun_gegen": []
+  },
+  "Geist": {
+    "id": 8,
+    "name": "Geist",
+    "x2_gegen": [
+      "Geist",
+      "Psycho"
+    ],
+    "x05_gegen": [
+      "Dunkel"
+    ],
+    "x0_gegen": [
+      "Normal"
+    ],
+    "schwach_gegen": [
+      "Geist",
+      "Dunkel"
+    ],
+    "resistent_gegen": [
+      "Gift",
+      "Käfer"
+    ],
+    "immun_gegen": [
+      "Normal",
+      "Kampf"
+    ]
+  },
+  "Drache": {
+    "id": 16,
+    "name": "Drache",
+    "x2_gegen": [
+      "Drache"
+    ],
+    "x05_gegen": [
+      "Stahl"
+    ],
+    "x0_gegen": [
+      "Fee"
+    ],
+    "schwach_gegen": [
+      "Eis",
+      "Drache",
+      "Fee"
+    ],
+    "resistent_gegen": [
+      "Brennen",
+      "Tropfen",
+      "Blatt",
+      "Blitz"
+    ],
+    "immun_gegen": []
+  },
+  "Dunkel": {
+    "id": 17,
+    "name": "Dunkel",
+    "x2_gegen": [
+      "Geist",
+      "Psycho"
+    ],
+    "x05_gegen": [
+      "Kampf",
+      "Dunkel",
+      "Fee"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Kampf",
+      "Käfer",
+      "Fee"
+    ],
+    "resistent_gegen": [
+      "Geist",
+      "Dunkel"
+    ],
+    "immun_gegen": [
+      "Psycho"
+    ]
+  },
+  "Stahl": {
+    "id": 9,
+    "name": "Stahl",
+    "x2_gegen": [
+      "Stein",
+      "Eis",
+      "Fee"
+    ],
+    "x05_gegen": [
+      "Stahl",
+      "Brennen",
+      "Tropfen",
+      "Blitz"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Kampf",
+      "Boden",
+      "Brennen"
+    ],
+    "resistent_gegen": [
+      "Normal",
+      "Flug",
+      "Stein",
+      "Käfer",
+      "Stahl",
+      "Blatt",
+      "Psycho",
+      "Eis",
+      "Drache",
+      "Fee"
+    ],
+    "immun_gegen": [
+      "Gift"
+    ]
+  },
+  "Fee": {
+    "id": 18,
+    "name": "Fee",
+    "x2_gegen": [
+      "Kampf",
+      "Drache",
+      "Dunkel"
+    ],
+    "x05_gegen": [
+      "Gift",
+      "Stahl",
+      "Brennen"
+    ],
+    "x0_gegen": [],
+    "schwach_gegen": [
+      "Gift",
+      "Stahl"
+    ],
+    "resistent_gegen": [
+      "Kampf",
+      "Käfer",
+      "Dunkel"
+    ],
+    "immun_gegen": [
+      "Drache"
+    ]
+  }
+}

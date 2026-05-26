@@ -1,0 +1,175 @@
+@inject GameService Game
+@implements IDisposable
+
+@if (Game.AktuellerKampf == null)
+{
+    <p>Kein aktiver Kampf.</p>
+    return;
+}
+
+@{
+    var kampf = Game.AktuellerKampf;
+    var spielerMon = kampf.SpielerMonster;
+    var gegnerMon = kampf.GegnerMonster;
+}
+
+<div class="kampf-screen">
+    <!-- Kampf-Arena -->
+    <div class="kampf-arena">
+        <!-- Gegner oben -->
+        <div class="gegner-bereich">
+            <div class="monster-info-leiste gegner-leiste">
+                <div class="monster-name-zeile">
+                    <span class="monster-name">@gegnerMon.Name</span>
+                    <span class="monster-level">Lv.@gegnerMon.Level</span>
+                </div>
+                <div class="monster-typen">
+                    @foreach (var typ in gegnerMon.Typen)
+                    {
+                        <span class="typ-badge-klein" style="background: @TypeChart.TypFarben.GetValueOrDefault(typ, "#888")">
+                            @TypeChart.TypEmojis.GetValueOrDefault(typ, "") @typ
+                        </span>
+                    }
+                </div>
+                <div class="kp-leiste-container">
+                    <span class="kp-label">KP</span>
+                    <div class="kp-leiste">
+                        <div class="kp-fill @KpFarbe(gegnerMon)"
+                             style="width: @(gegnerMon.MaxKp > 0 ? (gegnerMon.AktuelleKp * 100 / gegnerMon.MaxKp) : 0)%">
+                        </div>
+                    </div>
+                    <span class="kp-zahl">@gegnerMon.AktuelleKp/@gegnerMon.MaxKp</span>
+                </div>
+            </div>
+            <div class="monster-sprite gegner-sprite">
+                <span class="monster-emoji-gross">@GetTypEmoji(gegnerMon.Typen.FirstOrDefault() ?? "")</span>
+            </div>
+        </div>
+
+        <!-- Spieler unten -->
+        <div class="spieler-bereich">
+            <div class="monster-sprite spieler-sprite">
+                <span class="monster-emoji-gross spieler-emoji">@GetTypEmoji(spielerMon.Typen.FirstOrDefault() ?? "")</span>
+            </div>
+            <div class="monster-info-leiste spieler-leiste">
+                <div class="monster-name-zeile">
+                    <span class="monster-name">@spielerMon.Name</span>
+                    <span class="monster-level">Lv.@spielerMon.Level</span>
+                </div>
+                <div class="monster-typen">
+                    @foreach (var typ in spielerMon.Typen)
+                    {
+                        <span class="typ-badge-klein" style="background: @TypeChart.TypFarben.GetValueOrDefault(typ, "#888")">
+                            @TypeChart.TypEmojis.GetValueOrDefault(typ, "") @typ
+                        </span>
+                    }
+                </div>
+                <div class="kp-leiste-container">
+                    <span class="kp-label">KP</span>
+                    <div class="kp-leiste">
+                        <div class="kp-fill @KpFarbe(spielerMon)"
+                             style="width: @(spielerMon.MaxKp > 0 ? (spielerMon.AktuelleKp * 100 / spielerMon.MaxKp) : 0)%">
+                        </div>
+                    </div>
+                    <span class="kp-zahl">@spielerMon.AktuelleKp/@spielerMon.MaxKp</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kampf-Log -->
+    <div class="kampf-log" @ref="logRef">
+        @foreach (var eintrag in kampf.Log.TakeLast(4))
+        {
+            <p class="log-eintrag">@eintrag</p>
+        }
+    </div>
+
+    <!-- Aktions-Bereich -->
+    <div class="aktions-bereich">
+        @if (kampf.Phase == KampfPhase.Beendet)
+        {
+            <div class="kampf-ergebnis @(kampf.SpielerGewonnen ? "gewonnen" : "verloren")">
+                <h3>@(kampf.SpielerGewonnen ? "🎉 Sieg!" : "💀 Niederlage!")</h3>
+                @if (kampf.SpielerGewonnen && kampf.ErfahrungGewonnen > 0)
+                {
+                    <p>+@kampf.ErfahrungGewonnen EP</p>
+                }
+                <button class="btn-weiter" @onclick="Game.KampfBeenden">Weiter →</button>
+            </div>
+        }
+        else if (kampf.Phase == KampfPhase.Intro)
+        {
+            <div class="kampf-intro">
+                <p>@kampf.Log.LastOrDefault()</p>
+                <button class="btn-kampf-start" @onclick="KampfBeginnen">Kämpfen!</button>
+            </div>
+        }
+        else if (kampf.Phase == KampfPhase.SpielerZug)
+        {
+            <div class="attacken-grid">
+                @foreach (var attacke in spielerMon.Attacken)
+                {
+                    <button class="attacke-btn typ-@attacke.Typ.ToLower()"
+                            style="border-color: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")"
+                            @onclick="() => AttackeAusführen(attacke)"
+                            disabled="@(!attacke.HatAp)">
+                        <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
+                        <span class="attacke-name">@attacke.Name</span>
+                        <span class="attacke-typ-name">@attacke.Typ</span>
+                        <span class="attacke-ap">@attacke.AktuelleAp/@attacke.MaxAp AP</span>
+                        @if (attacke.Staerke.HasValue)
+                        {
+                            <span class="attacke-staerke">⚔️ @attacke.Staerke</span>
+                        }
+                    </button>
+                }
+            </div>
+            <div class="kampf-extra-aktionen">
+                @if (kampf.Typ == KampfTyp.Wild)
+                {
+                    <button class="btn-fliehen" @onclick="Game.KampfFliehen">🏃 Fliehen</button>
+                }
+            </div>
+        }
+        else if (kampf.Phase == KampfPhase.GegnerZug)
+        {
+            <div class="warten-anzeige">
+                <div class="warten-punkte">
+                    <span>.</span><span>.</span><span>.</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private ElementReference logRef;
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void KampfBeginnen()
+    {
+        if (Game.AktuellerKampf != null)
+            Game.AktuellerKampf.Phase = KampfPhase.SpielerZug;
+    }
+
+    private async Task AttackeAusführen(AttackeInstanz attacke)
+    {
+        await Game.AttackeAusführen(attacke);
+    }
+
+    private string GetTypEmoji(string typ) =>
+        TypeChart.TypEmojis.GetValueOrDefault(typ, "❓");
+
+    private string KpFarbe(MonsterInstanz mon)
+    {
+        float pct = mon.MaxKp > 0 ? (float)mon.AktuelleKp / mon.MaxKp : 0;
+        return pct > 0.5f ? "kp-gruen" : pct > 0.25f ? "kp-gelb" : "kp-rot";
+    }
+}

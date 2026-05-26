@@ -1,0 +1,52 @@
+@using MonsterKampf.Services
+@using MonsterKampf.Models
+@inject GameService Game
+@implements IDisposable
+
+@if (!Game.DatenGeladen)
+{
+    <div class="loading-screen">
+        <div class="loading-box">
+            <div class="pokeball-anim">⚫</div>
+            <h2>Monster Kampf</h2>
+            <p class="lade-text">@Game.LadeStatus</p>
+            <div class="lade-balken">
+                <div class="lade-fortschritt"></div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    @switch (Game.Phase)
+    {
+        case SpielPhase.Hauptmenü:
+            <MonsterKampf.Pages.Hauptmenü />
+            break;
+        case SpielPhase.StarterWahl:
+            <MonsterKampf.Pages.StarterWahl />
+            break;
+        case SpielPhase.Weltkarte:
+            <MonsterKampf.Pages.Weltkarte />
+            break;
+        case SpielPhase.Kampf:
+            <MonsterKampf.Pages.Kampf />
+            break;
+        case SpielPhase.MapEditor:
+            <MonsterKampf.Pages.MapEditor />
+            break;
+        default:
+            <MonsterKampf.Pages.Hauptmenü />
+            break;
+    }
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        Game.OnChange += StateHasChanged;
+        await Game.DatenLadenAsync();
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+}
