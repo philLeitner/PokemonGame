@@ -163,8 +163,10 @@
     protected override void OnInitialized()
     {
         Game.OnChange += StateHasChanged;
-        ausgewähltOrtId = Game.Spieler.AktuellerOrt;
-        ausgewähltOrt = Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrtId);
+        // Kein automatisches Auswählen beim Laden – Spieler muss explizit auf einen Ort klicken.
+        // So wird verhindert, dass nach einem Kampf sofort wieder ein Kampf startet.
+        ausgewähltOrtId = null;
+        ausgewähltOrt = null;
     }
 
     public void Dispose() => Game.OnChange -= StateHasChanged;
