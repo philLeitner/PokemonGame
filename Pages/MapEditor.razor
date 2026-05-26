@@ -1,283 +1,693 @@
 @inject GameService Game
+@inject LocalStorageService Storage
+@inject IJSRuntime JS
 @implements IDisposable
 
 <div class="editor-screen">
-    <!-- Linke Sidebar -->
-    <div class="editor-sidebar">
-        <h3 class="editor-titel">🗺️ Map-Editor</h3>
 
-        <!-- Such- und Filterbereich -->
-        <div class="editor-suche">
-            <input class="editor-input" @bind="suchbegriff" @bind:event="oninput"
-                   placeholder="Ort suchen..." />
+    <!-- ═══ PANEL 1: Ortsliste ══════════════════════════════════════════════ -->
+    <div class="editor-panel-left">
+        <div class="editor-panel-header">
+            <span class="editor-panel-title">🗺️ Orte</span>
+            <button class="btn-editor-back" @onclick="Game.ZuWeltkarte" title="Zurück zur Weltkarte">✕</button>
         </div>
 
-        <!-- Ort-Typ Filter -->
-        <div class="editor-filter">
-            @foreach (var typ in ortTypen)
+        <div class="editor-search-box">
+            <span class="editor-search-icon">🔍</span>
+            <input class="editor-search-input" placeholder="Suchen..."
+                   @bind="suchbegriff" @bind:event="oninput" />
+        </div>
+
+        <div class="editor-filter-row">
+            @foreach (var typ in new[] { "Alle", "stadt", "route", "hoehle", "wald" })
             {
-                <button class="filter-btn @(gewählterTyp == typ ? "aktiv" : "")"
-                        @onclick="() => gewählterTyp = gewählterTyp == typ ? null : typ">
-                    @OrtTypIcon(typ) @typ
+                <button class="editor-filter-btn @(filterTyp == typ ? "aktiv" : "")"
+                        @onclick="() => filterTyp = typ" title="@typ">
+                    @TypIcon(typ)
                 </button>
             }
         </div>
 
-        <!-- Ort-Liste -->
         <div class="editor-ort-liste">
-            @foreach (var ort in GefilterteOrte())
+            @foreach (var ort in GefilterteOrte)
             {
-                <div class="editor-ort-eintrag @(bearbeiteterOrt?.Id == ort.Id ? "aktiv" : "")"
-                     @onclick="() => OrtBearbeiten(ort)">
-                    <span class="ort-icon-klein">@OrtTypIcon(ort.Typ)</span>
-                    <div class="ort-info-klein">
-                        <span class="ort-name-klein">@ort.Name</span>
-                        <span class="ort-id-klein">@ort.Id</span>
+                <div class="editor-ort-eintrag @(ausgewähltOrtId == ort.Id ? "aktiv" : "")"
+                     @onclick="() => OrtAuswählen(ort.Id)">
+                    <span class="editor-ort-color-dot"
+                          style="background:@WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
+                        @OrtIcon(ort)
+                    </span>
+                    <div class="editor-ort-info">
+                        <span class="editor-ort-name">@ort.Name</span>
+                        <span class="editor-ort-id">@ort.Id</span>
                     </div>
-                    @if (ort.Arena != null)
-                    {
-                        <span class="arena-indikator" title="Arena: @ort.Arena.Leiter">🏆</span>
-                    }
+                    <div class="editor-ort-badges">
+                        @if (ort.HatMonsterCenter) { <span title="Monster Center">🏥</span> }
+                        @if (ort.HatMarkt) { <span title="Markt">🏪</span> }
+                        @if (ort.Arena != null) { <span title="Arena">🏆</span> }
+                        @if (ort.GridX >= 0) { <span class="badge-grid-ok" title="Auf Karte platziert">●</span> }
+                    </div>
                 </div>
             }
         </div>
 
-        <div class="editor-aktionen">
-            <button class="btn-neuer-ort" @onclick="NeuenOrtErstellen">+ Neuer Ort</button>
-            <button class="btn-zurück-editor" @onclick="Game.ZuHauptmenü">← Hauptmenü</button>
+        <div class="editor-panel-footer">
+            <button class="btn-editor-neu" @onclick="NeuenOrtErstellen">＋ Neuen Ort erstellen</button>
         </div>
     </div>
 
-    <!-- Hauptbereich: Karten-Vorschau + Bearbeitungsformular -->
-    <div class="editor-haupt">
-        <!-- Karten-Vorschau -->
-        <div class="editor-karte-vorschau">
-            <h4>Karten-Vorschau</h4>
-            <div class="editor-karten-grid">
-                @foreach (var ort in bearbeitungsOrte)
+    <!-- ═══ PANEL 2: Karten-Grid ═══════════════════════════════════════════ -->
+    <div class="editor-panel-mitte">
+        <div class="editor-panel-header">
+            <span class="editor-panel-title">Karten-Grid</span>
+            <div class="editor-grid-controls">
+                <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Max(60, gridZoom - 10)">−</button>
+                <span class="grid-zoom-label">@gridZoom%</span>
+                <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Min(150, gridZoom + 10)">+</button>
+            </div>
+        </div>
+
+        <div class="editor-grid-scroll">
+            <div class="editor-grid" style="--cell-size: @(gridZoom * 0.8)px">
+                @for (int row = 0; row < 10; row++)
                 {
-                    <div class="editor-ort-zelle"
-                         style="grid-column: @(ort.GridX + 1); grid-row: @(ort.GridY + 1);"
-                         @onclick="() => OrtBearbeiten(ort)">
-                        <div class="editor-ort-knopf @(bearbeiteterOrt?.Id == ort.Id ? "ausgewaehlt" : "")"
-                             style="background: @WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
-                            <span>@OrtTypIcon(ort.Typ)</span>
-                            <span class="editor-ort-name">@ort.Name</span>
+                    @for (int col = 0; col < 10; col++)
+                    {
+                        int r = row, c = col;
+                        var ort = editorOrte.FirstOrDefault(o => o.GridX == c && o.GridY == r);
+                        <div class="editor-grid-zelle @(ort != null ? "belegt" : "leer") @(ort?.Id == ausgewähltOrtId ? "aktiv" : "")"
+                             style="grid-column: @(c+1); grid-row: @(r+1);"
+                             @onclick="() => GridZelleKlick(c, r)"
+                             title="@(ort != null ? ort.Name : $"Leer ({c},{r})")">
+                            @if (ort != null)
+                            {
+                                <div class="editor-grid-knopf"
+                                     style="background:@WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
+                                    <span class="editor-grid-icon">@OrtIcon(ort)</span>
+                                    <span class="editor-grid-name">@ort.Name</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="editor-grid-leer">
+                                    @if (ausgewähltOrt != null && ausgewähltOrt.GridX < 0)
+                                    {
+                                        <span class="grid-place-hint">+</span>
+                                    }
+                                </div>
+                            }
                         </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
 
-        <!-- Bearbeitungsformular -->
-        @if (bearbeiteterOrt != null)
+        <div class="editor-grid-legende">
+            <span>🏙️ Stadt</span><span>🌿 Route</span><span>⛰️ Höhle</span><span>🌲 Wald</span>
+            <span class="legende-sep">|</span>
+            <span>🏥 Center</span><span>🏪 Markt</span><span>🏆 Arena</span>
+            @if (ausgewähltOrt != null && ausgewähltOrt.GridX < 0)
+            {
+                <span class="legende-tipp">← Klicke eine leere Zelle um <strong>@ausgewähltOrt.Name</strong> zu platzieren</span>
+            }
+        </div>
+    </div>
+
+    <!-- ═══ PANEL 3: Detail-Editor ══════════════════════════════════════════ -->
+    <div class="editor-panel-rechts">
+        @if (ausgewähltOrt != null)
         {
-            <div class="editor-formular">
-                <h4>✏️ @bearbeiteterOrt.Name bearbeiten</h4>
-
-                <div class="form-gruppe">
-                    <label>ID:</label>
-                    <input class="editor-input" @bind="bearbeiteterOrt.Id" />
-                </div>
-                <div class="form-gruppe">
-                    <label>Name:</label>
-                    <input class="editor-input" @bind="bearbeiteterOrt.Name" />
-                </div>
-                <div class="form-gruppe">
-                    <label>Typ:</label>
-                    <select class="editor-select" @bind="bearbeiteterOrt.Typ">
-                        @foreach (var typ in ortTypen)
-                        {
-                            <option value="@typ">@typ</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-gruppe">
-                    <label>Farbe:</label>
-                    <select class="editor-select" @bind="bearbeiteterOrt.Farbe">
-                        @foreach (var farbe in WeltData.OrtFarben.Keys)
-                        {
-                            <option value="@farbe">@farbe</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-gruppe form-gruppe-inline">
-                    <div>
-                        <label>Grid X:</label>
-                        <input type="number" class="editor-input editor-input-klein" @bind="bearbeiteterOrt.GridX" min="0" max="12" />
-                    </div>
-                    <div>
-                        <label>Grid Y:</label>
-                        <input type="number" class="editor-input editor-input-klein" @bind="bearbeiteterOrt.GridY" min="0" max="12" />
-                    </div>
-                </div>
-                <div class="form-gruppe">
-                    <label>Beschreibung:</label>
-                    <textarea class="editor-textarea" @bind="bearbeiteterOrt.Beschreibung"></textarea>
-                </div>
-
-                <!-- Arena-Bereich -->
-                <div class="editor-arena-bereich">
-                    <div class="arena-header">
-                        <h5>🏆 Arena</h5>
-                        <label class="switch-label">
-                            <input type="checkbox" @bind="hatArena" @bind:after="ArenaToggle" />
-                            <span>Arena vorhanden</span>
-                        </label>
-                    </div>
-                    @if (hatArena && bearbeiteterOrt.Arena != null)
+            var ort = ausgewähltOrt;
+            <div class="editor-detail-header">
+                <div>
+                    <h3 class="editor-detail-titel">@ort.Name</h3>
+                    <span class="editor-detail-id">@ort.Id</span>
+                    @if (!string.IsNullOrEmpty(speicherStatus))
                     {
-                        <div class="form-gruppe">
-                            <label>Orden-Name:</label>
-                            <input class="editor-input" @bind="bearbeiteterOrt.Arena.OrdenName" />
+                        <span class="editor-save-badge @(speicherFehler ? "fehler" : "")">@speicherStatus</span>
+                    }
+                </div>
+                <button class="btn-editor-loeschen" @onclick="OrtLöschen" title="Ort löschen">🗑️</button>
+            </div>
+
+            <div class="editor-detail-body">
+
+                <!-- Basis-Daten -->
+                <div class="editor-section">
+                    <div class="editor-section-title">📋 Basis-Daten</div>
+                    <div class="editor-field-grid">
+                        <div class="editor-field">
+                            <label>Name</label>
+                            <input class="editor-input" value="@ort.Name"
+                                   @onchange="e => { ort.Name = e.Value?.ToString() ?? ort.Name; Speichern(); }" />
                         </div>
-                        <div class="form-gruppe">
-                            <label>Arena-Leiter:</label>
-                            <input class="editor-input" @bind="bearbeiteterOrt.Arena.Leiter" />
+                        <div class="editor-field">
+                            <label>Typ</label>
+                            <select class="editor-input" value="@ort.Typ"
+                                    @onchange="e => { ort.Typ = e.Value?.ToString() ?? ort.Typ; Speichern(); }">
+                                <option value="stadt">🏙️ Stadt</option>
+                                <option value="route">🌿 Route</option>
+                                <option value="hoehle">⛰️ Höhle</option>
+                                <option value="wald">🌲 Wald</option>
+                            </select>
                         </div>
-                        <div class="form-gruppe">
-                            <label>Typ-Spezialisierung:</label>
-                            <select class="editor-select" @bind="bearbeiteterOrt.Arena.TypSpezialisierung">
-                                @foreach (var typ in TypeChart.AlleTypen)
+                        <div class="editor-field">
+                            <label>Kartenfarbe</label>
+                            <select class="editor-input" value="@ort.Farbe"
+                                    @onchange="e => { ort.Farbe = e.Value?.ToString() ?? ort.Farbe; Speichern(); }">
+                                @foreach (var kv in WeltData.OrtFarben)
                                 {
-                                    <option value="@typ">@TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ</option>
+                                    <option value="@kv.Key">@kv.Key</option>
                                 }
                             </select>
+                        </div>
+                        <div class="editor-field">
+                            <label>Grid-Position (X , Y)</label>
+                            <div class="editor-xy-row">
+                                <input class="editor-input editor-input-klein" type="number" min="-1" max="9"
+                                       value="@ort.GridX"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.GridX = v; Speichern(); } }" />
+                                <span class="xy-sep">,</span>
+                                <input class="editor-input editor-input-klein" type="number" min="-1" max="9"
+                                       value="@ort.GridY"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.GridY = v; Speichern(); } }" />
+                                @if (ort.GridX >= 0)
+                                {
+                                    <button class="btn-grid-entfernen" title="Von Karte entfernen"
+                                            @onclick="() => { ort.GridX = -1; ort.GridY = -1; Speichern(); }">✕</button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editor-field editor-field-voll">
+                        <label>Beschreibung</label>
+                        <textarea class="editor-input editor-textarea" rows="2"
+                                  @onchange="e => { ort.Beschreibung = e.Value?.ToString(); Speichern(); }">@ort.Beschreibung</textarea>
+                    </div>
+                </div>
+
+                <!-- Einrichtungen -->
+                <div class="editor-section">
+                    <div class="editor-section-title">🏗️ Einrichtungen</div>
+                    <div class="editor-toggle-row">
+                        <label class="editor-toggle">
+                            <input type="checkbox" checked="@ort.HatMonsterCenter"
+                                   @onchange="e => { ort.HatMonsterCenter = (bool)(e.Value ?? false); Speichern(); }" />
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">🏥 Monster Center</span>
+                        </label>
+                        <label class="editor-toggle">
+                            <input type="checkbox" checked="@ort.HatMarkt"
+                                   @onchange="e => { ort.HatMarkt = (bool)(e.Value ?? false); Speichern(); }" />
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">🏪 Markt</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Verbindungen -->
+                <div class="editor-section">
+                    <div class="editor-section-title">🔗 Verbindungen zu anderen Orten</div>
+                    <div class="editor-verbindungen">
+                        @foreach (var verbId in ort.Verbindungen.ToList())
+                        {
+                            var vid = verbId;
+                            var ziel = editorOrte.FirstOrDefault(o => o.Id == vid);
+                            <div class="editor-verbindung-eintrag">
+                                <span class="verbindung-icon">@(ziel != null ? OrtIcon(ziel) : "📍")</span>
+                                <span class="verbindung-name">@(ziel?.Name ?? vid)</span>
+                                <button class="btn-verbindung-loeschen"
+                                        @onclick="() => VerbindungEntfernen(ort, vid)">✕</button>
+                            </div>
+                        }
+                        <select class="editor-input editor-input-add"
+                                @onchange="e => VerbindungHinzufügen(ort, e.Value?.ToString())">
+                            <option value="">＋ Verbindung hinzufügen...</option>
+                            @foreach (var andererOrt in editorOrte.Where(o => o.Id != ort.Id && !ort.Verbindungen.Contains(o.Id)).OrderBy(o => o.Name))
+                            {
+                                <option value="@andererOrt.Id">@andererOrt.Name (@andererOrt.Id)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Arena -->
+                <div class="editor-section">
+                    <div class="editor-section-title-row">
+                        <span class="editor-section-title">🏆 Arena</span>
+                        @if (ort.Arena == null)
+                        {
+                            <button class="btn-section-add"
+                                    @onclick="() => ArenaHinzufügen(ort)">
+                                + Hinzufügen
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn-section-remove"
+                                    @onclick="() => { ort.Arena = null; Speichern(); }">Entfernen</button>
+                        }
+                    </div>
+                    @if (ort.Arena != null)
+                    {
+                        var arena = ort.Arena;
+                        <div class="editor-field-grid">
+                            <div class="editor-field">
+                                <label>Leiter</label>
+                                <input class="editor-input" value="@arena.Leiter"
+                                       @onchange="e => { arena.Leiter = e.Value?.ToString() ?? arena.Leiter; Speichern(); }" />
+                            </div>
+                            <div class="editor-field">
+                                <label>Orden-Name</label>
+                                <input class="editor-input" value="@arena.OrdenName"
+                                       @onchange="e => { arena.OrdenName = e.Value?.ToString() ?? arena.OrdenName; Speichern(); }" />
+                            </div>
+                            <div class="editor-field">
+                                <label>Orden-Nr.</label>
+                                <input class="editor-input editor-input-klein" type="number" min="1" max="8"
+                                       value="@arena.OrdenNr"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { arena.OrdenNr = v; Speichern(); } }" />
+                            </div>
+                            <div class="editor-field">
+                                <label>Typ-Spezialisierung</label>
+                                <select class="editor-input" value="@arena.TypSpezialisierung"
+                                        @onchange="e => { arena.TypSpezialisierung = e.Value?.ToString() ?? arena.TypSpezialisierung; Speichern(); }">
+                                    @foreach (var typ in TypeChart.AlleTypen)
+                                    {
+                                        <option value="@typ">@TypeChart.TypEmojis.GetValueOrDefault(typ, "") @typ</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="editor-sub-section">
+                            <div class="editor-sub-title">Arena-Team</div>
+                            @foreach (var te in arena.Team.ToList())
+                            {
+                                var t2 = te;
+                                <div class="editor-team-eintrag">
+                                    <input class="editor-input editor-input-id" placeholder="PKM-ID (z.B. PKM-0001)"
+                                           value="@t2.MonsterId"
+                                           @onchange="ev => { t2.MonsterId = ev.Value?.ToString() ?? t2.MonsterId; Speichern(); }" />
+                                    <span class="editor-label-klein">Lv.</span>
+                                    <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                           value="@t2.Level"
+                                           @onchange="ev => { if(int.TryParse(ev.Value?.ToString(), out int v)) { t2.Level = v; Speichern(); } }" />
+                                    <button class="btn-row-loeschen"
+                                            @onclick="() => { arena.Team.Remove(t2); Speichern(); }">✕</button>
+                                </div>
+                            }
+                            <button class="btn-row-add"
+                                    @onclick="ArenaMonsterHinzufügen">
+                                ＋ Monster hinzufügen
+                            </button>
                         </div>
                     }
                 </div>
 
                 <!-- Wilde Monster -->
-                <div class="editor-wild-bereich">
-                    <h5>🌿 Wilde Monster</h5>
-                    @foreach (var wild in bearbeiteterOrt.WildMonster)
+                <div class="editor-section">
+                    <div class="editor-section-title-row">
+                        <span class="editor-section-title">🌿 Wilde Monster</span>
+                        <button class="btn-section-add"
+                                @onclick="() => WildMonsterHinzufügen(ort)">
+                            + Hinzufügen
+                        </button>
+                    </div>
+                    @if (!ort.WildMonster.Any())
                     {
-                        var spezies = Game.AlleMonster.FirstOrDefault(m => m.Id == wild.MonsterId);
-                        <div class="wild-eintrag-editor">
-                            <span>@(spezies?.Name ?? wild.MonsterId)</span>
-                            <span>Lv.@wild.MinLevel–@wild.MaxLevel (@wild.Chance%)</span>
-                            <button class="btn-entfernen" @onclick="() => bearbeiteterOrt.WildMonster.Remove(wild)">✕</button>
+                        <p class="editor-leer-text">Keine wilden Monster in diesem Gebiet.</p>
+                    }
+                    @foreach (var wild in ort.WildMonster.ToList())
+                    {
+                        var w = wild;
+                        <div class="editor-wild-eintrag">
+                            <input class="editor-input editor-input-id" placeholder="PKM-ID"
+                                   value="@w.MonsterId"
+                                   @onchange="e => { w.MonsterId = e.Value?.ToString() ?? w.MonsterId; Speichern(); }" />
+                            <span class="editor-label-klein">Lv.</span>
+                            <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                   value="@w.MinLevel"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { w.MinLevel = v; Speichern(); } }" />
+                            <span class="editor-label-klein">–</span>
+                            <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                   value="@w.MaxLevel"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { w.MaxLevel = v; Speichern(); } }" />
+                            <span class="editor-label-klein">%</span>
+                            <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                   value="@w.Chance"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { w.Chance = v; Speichern(); } }" />
+                            <button class="btn-row-loeschen"
+                                    @onclick="() => { ort.WildMonster.Remove(w); Speichern(); }">✕</button>
                         </div>
                     }
-                    <button class="btn-wild-hinzu" @onclick="WildMonsterHinzufügen">+ Wildes Monster</button>
                 </div>
 
-                <div class="editor-formular-aktionen">
-                    <button class="btn-speichern" @onclick="ÄnderungenSpeichern">💾 Speichern</button>
-                    <button class="btn-abbrechen" @onclick="() => bearbeiteterOrt = null">Abbrechen</button>
+                <!-- Trainer -->
+                <div class="editor-section">
+                    <div class="editor-section-title-row">
+                        <span class="editor-section-title">🧑 Trainer</span>
+                        <button class="btn-section-add"
+                                @onclick="() => TrainerHinzufügen(ort)">
+                            + Hinzufügen
+                        </button>
+                    </div>
+                    @if (!ort.Trainer.Any())
+                    {
+                        <p class="editor-leer-text">Keine Trainer in diesem Gebiet.</p>
+                    }
+                    @foreach (var trainer in ort.Trainer.ToList())
+                    {
+                        var tr = trainer;
+                        bool offen = offeneTrainer.Contains(tr.Id);
+                        <div class="editor-trainer-block">
+                            <div class="editor-trainer-header" @onclick="() => TrainerToggle(tr.Id)">
+                                <span class="trainer-header-name">🧑 @tr.Name <span class="trainer-klasse">(@tr.Klasse)</span></span>
+                                <div class="trainer-header-rechts">
+                                    <span class="trainer-belohnung">💰 @tr.Belohnung</span>
+                                    <span class="trainer-chevron">@(offen ? "▲" : "▼")</span>
+                                </div>
+                            </div>
+                            @if (offen)
+                            {
+                                <div class="editor-trainer-body">
+                                    <div class="editor-field-grid">
+                                        <div class="editor-field">
+                                            <label>Name</label>
+                                            <input class="editor-input" value="@tr.Name"
+                                                   @onchange="e => { tr.Name = e.Value?.ToString() ?? tr.Name; Speichern(); }" />
+                                        </div>
+                                        <div class="editor-field">
+                                            <label>Klasse</label>
+                                            <input class="editor-input" value="@tr.Klasse"
+                                                   @onchange="e => { tr.Klasse = e.Value?.ToString() ?? tr.Klasse; Speichern(); }" />
+                                        </div>
+                                        <div class="editor-field">
+                                            <label>Belohnung</label>
+                                            <input class="editor-input editor-input-klein" type="number"
+                                                   value="@tr.Belohnung"
+                                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { tr.Belohnung = v; Speichern(); } }" />
+                                        </div>
+                                    </div>
+                                    <div class="editor-field editor-field-voll">
+                                        <label>Dialog (vor Kampf)</label>
+                                        <input class="editor-input" value="@tr.Dialogvor"
+                                               @onchange="e => { tr.Dialogvor = e.Value?.ToString() ?? tr.Dialogvor; Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field editor-field-voll">
+                                        <label>Dialog (nach Kampf)</label>
+                                        <input class="editor-input" value="@tr.DialogNach"
+                                               @onchange="e => { tr.DialogNach = e.Value?.ToString() ?? tr.DialogNach; Speichern(); }" />
+                                    </div>
+                                    <div class="editor-sub-section">
+                                        <div class="editor-sub-title">Team</div>
+                                        @foreach (var te in tr.Team.ToList())
+                                        {
+                                            var t2 = te;
+                                            <div class="editor-team-eintrag">
+                                                <input class="editor-input editor-input-id" placeholder="PKM-ID"
+                                                       value="@t2.MonsterId"
+                                                       @onchange="ev => { t2.MonsterId = ev.Value?.ToString() ?? t2.MonsterId; Speichern(); }" />
+                                                <span class="editor-label-klein">Lv.</span>
+                                                <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                                       value="@t2.Level"
+                                                       @onchange="ev => { if(int.TryParse(ev.Value?.ToString(), out int v)) { t2.Level = v; Speichern(); } }" />
+                                                <button class="btn-row-loeschen"
+                                                        @onclick="() => { tr.Team.Remove(t2); Speichern(); }">✕</button>
+                                            </div>
+                                        }
+                                        <button class="btn-row-add"
+                                                @onclick="() => TrainerMonsterHinzufügen(tr)">
+                                            ＋ Monster
+                                        </button>
+                                    </div>
+                                    <button class="btn-trainer-loeschen"
+                                            @onclick="() => { ort.Trainer.Remove(tr); offeneTrainer.Remove(tr.Id); Speichern(); }">
+                                        🗑️ Trainer löschen
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
+
             </div>
         }
         else
         {
-            <div class="editor-leer">
-                <p>← Wähle einen Ort aus der Liste zum Bearbeiten</p>
-                <p>oder klicke auf einen Ort in der Karten-Vorschau</p>
+            <div class="editor-leer-hinweis">
+                <span class="editor-leer-icon">🗺️</span>
+                <p>Wähle einen Ort aus der Liste</p>
+                <p class="editor-leer-sub">oder klicke auf eine Zelle im Grid</p>
             </div>
         }
     </div>
+
 </div>
 
-@if (meldung != null)
-{
-    <div class="meldung-overlay" @onclick="() => meldung = null">
-        <div class="meldung-box">
-            <p>@meldung</p>
-            <button class="btn-ok" @onclick="() => meldung = null">OK</button>
-        </div>
-    </div>
-}
+<!-- Toolbar unten -->
+<div class="editor-toolbar">
+    <button class="btn-toolbar" @onclick="AllesZurücksetzen">🔄 Zurücksetzen</button>
+    <button class="btn-toolbar btn-export" @onclick="ExportierenAsync">⬇️ JSON exportieren</button>
+    <label class="btn-toolbar btn-import">
+        📂 JSON importieren
+        <InputFile OnChange="ImportierenAsync" accept=".json" style="display:none" />
+    </label>
+    <span class="editor-toolbar-info">💾 Änderungen werden automatisch im Browser gespeichert</span>
+</div>
 
 @code {
-    private List<Ort> bearbeitungsOrte = new();
-    private Ort? bearbeiteterOrt;
+    private List<Ort> editorOrte = new();
+    private string? ausgewähltOrtId;
+    private Ort? ausgewähltOrt;
     private string suchbegriff = "";
-    private string? gewählterTyp;
-    private bool hatArena;
-    private string? meldung;
+    private string filterTyp = "Alle";
+    private int gridZoom = 100;
+    private HashSet<string> offeneTrainer = new();
+    private string speicherStatus = "";
+    private bool speicherFehler = false;
+    private int _neuZähler = 100;
 
-    private static readonly string[] ortTypen = { "stadt", "route", "hoehle", "wald" };
+    private IEnumerable<Ort> GefilterteOrte => editorOrte
+        .Where(o => (filterTyp == "Alle" || o.Typ == filterTyp) &&
+                    (string.IsNullOrEmpty(suchbegriff) ||
+                     o.Name.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase) ||
+                     o.Id.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase)))
+        .OrderBy(o => o.Name);
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         Game.OnChange += StateHasChanged;
-        bearbeitungsOrte = Game.AlleOrte.ToList();
+        var json = await Storage.GetItemAsync("editor_orte");
+        if (!string.IsNullOrEmpty(json))
+        {
+            try
+            {
+                var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(json,
+                    new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (geladen?.Any() == true) { editorOrte = geladen; return; }
+            }
+            catch { }
+        }
+        editorOrte = WeltData.AlleOrte();
     }
 
     public void Dispose() => Game.OnChange -= StateHasChanged;
 
-    private IEnumerable<Ort> GefilterteOrte()
+    private void OrtAuswählen(string id)
     {
-        var liste = bearbeitungsOrte.AsEnumerable();
-        if (!string.IsNullOrWhiteSpace(suchbegriff))
-            liste = liste.Where(o => o.Name.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase)
-                                  || o.Id.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase));
-        if (gewählterTyp != null)
-            liste = liste.Where(o => o.Typ == gewählterTyp);
-        return liste;
+        ausgewähltOrtId = id;
+        ausgewähltOrt = editorOrte.FirstOrDefault(o => o.Id == id);
     }
 
-    private void OrtBearbeiten(Ort ort)
+    private void GridZelleKlick(int col, int row)
     {
-        bearbeiteterOrt = ort;
-        hatArena = ort.Arena != null;
+        var ort = editorOrte.FirstOrDefault(o => o.GridX == col && o.GridY == row);
+        if (ort != null)
+        {
+            OrtAuswählen(ort.Id);
+        }
+        else if (ausgewähltOrt != null)
+        {
+            ausgewähltOrt.GridX = col;
+            ausgewähltOrt.GridY = row;
+            Speichern();
+        }
     }
 
     private void NeuenOrtErstellen()
     {
+        _neuZähler++;
         var neuer = new Ort
         {
-            Id = $"ort_{DateTime.Now.Ticks}",
-            Name = "Neuer Ort",
-            Typ = "stadt",
-            Farbe = "blue",
-            GridX = 0, GridY = 0
+            Id = $"ort-{_neuZähler:D3}",
+            Name = $"Neuer Ort {_neuZähler}",
+            Typ = "route",
+            Farbe = "forest",
+            GridX = -1,
+            GridY = -1,
+            Beschreibung = "",
         };
-        bearbeitungsOrte.Add(neuer);
-        OrtBearbeiten(neuer);
+        editorOrte.Add(neuer);
+        OrtAuswählen(neuer.Id);
+        Speichern();
     }
 
-    private void ArenaToggle()
+    private void OrtLöschen()
     {
-        if (bearbeiteterOrt == null) return;
-        if (hatArena && bearbeiteterOrt.Arena == null)
+        if (ausgewähltOrt == null) return;
+        editorOrte.Remove(ausgewähltOrt);
+        ausgewähltOrtId = null;
+        ausgewähltOrt = null;
+        Speichern();
+    }
+
+    private void VerbindungHinzufügen(Ort ort, string? zielId)
+    {
+        if (string.IsNullOrEmpty(zielId)) return;
+        if (!ort.Verbindungen.Contains(zielId))
         {
-            bearbeiteterOrt.Arena = new Arena
+            ort.Verbindungen.Add(zielId);
+            var ziel = editorOrte.FirstOrDefault(o => o.Id == zielId);
+            if (ziel != null && !ziel.Verbindungen.Contains(ort.Id))
+                ziel.Verbindungen.Add(ort.Id);
+            Speichern();
+        }
+    }
+
+    private void VerbindungEntfernen(Ort ort, string zielId)
+    {
+        ort.Verbindungen.Remove(zielId);
+        Speichern();
+    }
+
+    private void TrainerToggle(string id)
+    {
+        if (offeneTrainer.Contains(id)) offeneTrainer.Remove(id);
+        else offeneTrainer.Add(id);
+    }
+
+    private async void Speichern()
+    {
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(editorOrte,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = false });
+            await Storage.SetItemAsync("editor_orte", json);
+            speicherStatus = "✓ Gespeichert";
+            speicherFehler = false;
+            StateHasChanged();
+            await Task.Delay(2000);
+            speicherStatus = "";
+            StateHasChanged();
+        }
+        catch
+        {
+            speicherStatus = "⚠️ Fehler";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task AllesZurücksetzen()
+    {
+        await Storage.RemoveItemAsync("editor_orte");
+        editorOrte = WeltData.AlleOrte();
+        ausgewähltOrtId = null;
+        ausgewähltOrt = null;
+        speicherStatus = "🔄 Zurückgesetzt";
+        StateHasChanged();
+        await Task.Delay(2000);
+        speicherStatus = "";
+    }
+
+    private async Task ExportierenAsync()
+    {
+        var json = System.Text.Json.JsonSerializer.Serialize(editorOrte,
+            new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+        var bytes = System.Text.Encoding.UTF8.GetBytes(json);
+        var base64 = Convert.ToBase64String(bytes);
+        await JS.InvokeVoidAsync("eval",
+            $"const a=document.createElement('a');a.href='data:application/json;base64,{base64}';a.download='weltkarte.json';a.click()");
+    }
+
+    private async Task ImportierenAsync(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            using var stream = e.File.OpenReadStream(5 * 1024 * 1024);
+            using var reader = new System.IO.StreamReader(stream);
+            var json = await reader.ReadToEndAsync();
+            var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(json,
+                new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            if (geladen != null)
             {
-                OrdenName = "Neuer Orden",
-                Leiter = "Arena-Leiter",
-                TypSpezialisierung = "Normal",
-                OrdenNr = 1
-            };
+                editorOrte = geladen;
+                await Storage.SetItemAsync("editor_orte", json);
+                speicherStatus = $"✅ {geladen.Count} Orte importiert!";
+                StateHasChanged();
+                await Task.Delay(3000);
+                speicherStatus = "";
+                StateHasChanged();
+            }
         }
-        else if (!hatArena)
+        catch (Exception ex)
         {
-            bearbeiteterOrt.Arena = null;
+            speicherStatus = $"❌ {ex.Message}";
+            speicherFehler = true;
         }
     }
 
-    private void WildMonsterHinzufügen()
+    private void ArenaHinzufügen(Ort ort)
     {
-        if (bearbeiteterOrt == null) return;
-        var erstesMonster = Game.AlleMonster.FirstOrDefault();
-        if (erstesMonster != null)
+        ort.Arena = new Arena { OrdenName = "Neuer Orden", Leiter = "Arena-Leiter", TypSpezialisierung = "Normal", OrdenNr = 1 };
+        Speichern();
+    }
+
+    private void ArenaMonsterHinzufügen()
+    {
+        if (ausgewähltOrt?.Arena == null) return;
+        ausgewähltOrt.Arena.Team.Add(new MonsterTeamEintrag { MonsterId = "PKM-0001", Level = 10 });
+        Speichern();
+    }
+
+    private void WildMonsterHinzufügen(Ort ort)
+    {
+        ort.WildMonster.Add(new WildBegegnung { MonsterId = "PKM-0001", MinLevel = 3, MaxLevel = 8, Chance = 20 });
+        Speichern();
+    }
+
+    private void TrainerHinzufügen(Ort ort)
+    {
+        ort.Trainer.Add(new TrainerKampf
         {
-            bearbeiteterOrt.WildMonster.Add(new WildBegegnung
-            {
-                MonsterId = erstesMonster.Id,
-                MinLevel = 5, MaxLevel = 10, Chance = 20
-            });
-        }
+            Id = $"tr_{ort.Id}_{ort.Trainer.Count + 1}",
+            Name = "Neuer Trainer",
+            Klasse = "Trainer",
+            Belohnung = 200,
+            Dialogvor = "Auf zum Kampf!",
+            DialogNach = "Gut gekämpft!"
+        });
+        Speichern();
     }
 
-    private void ÄnderungenSpeichern()
+    private void TrainerMonsterHinzufügen(TrainerKampf tr)
     {
-        meldung = $"✅ '{bearbeiteterOrt?.Name}' gespeichert! (Im Spiel aktiv)";
-        bearbeiteterOrt = null;
+        tr.Team.Add(new MonsterTeamEintrag { MonsterId = "PKM-0001", Level = 5 });
+        Speichern();
     }
 
-    private string OrtTypIcon(string typ) => typ switch
+    private string OrtIcon(Ort ort) => ort.Typ switch
     {
+        "stadt"  => ort.Arena != null ? "🏆" : "🏙️",
+        "route"  => "🌿",
+        "hoehle" => "⛰️",
+        "wald"   => "🌲",
+        _        => "📍"
+    };
+
+    private string TypIcon(string typ) => typ switch
+    {
+        "Alle"   => "🗺️",
         "stadt"  => "🏙️",
         "route"  => "🌿",
         "hoehle" => "⛰️",
