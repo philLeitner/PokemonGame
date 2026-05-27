@@ -124,10 +124,8 @@
         }
         @if (anzeigeOrt != null)
         {
-            @{
-                bool istHier2 = anzeigeOrt.Id == Game.Spieler.AktuellerOrt;
-                var ortRef3 = Game.AlleOrte.First(o => o.Id == anzeigeOrt.Id);
-            }
+            bool istHier2 = anzeigeOrt.Id == Game.Spieler.AktuellerOrt;
+            var ortRef3 = Game.AlleOrte.First(o => o.Id == anzeigeOrt.Id);
             <div class="ort-details">
                 <div class="ort-details-header">
                     <h3>@anzeigeOrt.Name</h3>
