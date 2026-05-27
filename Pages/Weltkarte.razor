@@ -66,6 +66,12 @@
             var no   = GetOrt(nord?.Ost  ?? ost?.Nord);
             var sw   = GetOrt(süd?.West  ?? west?.Süd);
             var so   = GetOrt(süd?.Ost   ?? ost?.Süd);
+            // Duplikate verhindern: Ecke nur zeigen wenn sie nicht schon als Nachbar vorkommt
+            var hauptIds = new HashSet<string?> { aktOrt?.Id, nord?.Id, süd?.Id, ost?.Id, west?.Id };
+            if (nw != null && hauptIds.Contains(nw.Id)) nw = null;
+            if (no != null && hauptIds.Contains(no.Id)) no = null;
+            if (sw != null && hauptIds.Contains(sw.Id)) sw = null;
+            if (so != null && hauptIds.Contains(so.Id)) so = null;
             var felder = new Ort?[3, 3]
             {
                 { nw,   nord, no  },
@@ -93,6 +99,8 @@
                             var f = feld;
                             <div class="minimap-zelle @(istZentrum ? "zentrum" : "") @(istAusgewählt ? "ausgewaehlt" : "")"
                                  style="background: @WeltData.OrtFarben.GetValueOrDefault(f.Farbe, "#374151")"
+                                 draggable="false"
+                                 @ondragstart:preventDefault
                                  @onclick="() => MinimapKlick(f)">
                                 <span class="minimap-icon">@OrtIcon(f)</span>
                                 <span class="minimap-name">@f.Name</span>
@@ -129,7 +137,7 @@
             <div class="ort-details">
                 <div class="ort-details-header">
                     <h3>@anzeigeOrt.Name</h3>
-                    <span class="ort-typ-badge">@anzeigeOrt.Typ</span>
+                    <span class="ort-typ-badge">@(char.ToUpper(anzeigeOrt.Typ[0]) + anzeigeOrt.Typ[1..])</span>
                 </div>
                 @if (!string.IsNullOrEmpty(anzeigeOrt.Beschreibung))
                 {
