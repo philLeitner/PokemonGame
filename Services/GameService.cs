@@ -882,6 +882,33 @@ public class GameService
     }
 
     // ── Markt ─────────────────────────────────────────────────────────────────
+    // ── NPC Gespräch ─────────────────────────────────────────────────────
+    public (string dialog, string? itemName, string? itemEmoji) NpcSprechen(GesprächsNPC npc)
+    {
+        bool bereitsGesprochen = Spieler.BesproacheneNPCs.Contains(npc.Id);
+        if (!bereitsGesprochen)
+            Spieler.BesproacheneNPCs.Add(npc.Id);
+
+        string? itemName = null;
+        string? itemEmoji = null;
+
+        // Item schenken (nur beim ersten Gespräch)
+        if (!bereitsGesprochen && npc.GibtItemId != null && npc.GibtItemName != null)
+        {
+            Spieler.ItemHinzufügen(npc.GibtItemId, npc.GibtItemName, npc.GibtItemEmoji ?? "🎁");
+            itemName = npc.GibtItemName;
+            itemEmoji = npc.GibtItemEmoji;
+            Notify();
+        }
+
+        string dialog = (bereitsGesprochen && npc.DialogNachGeschenk != null)
+            ? npc.DialogNachGeschenk
+            : npc.Dialog;
+
+        return (dialog, itemName, itemEmoji);
+    }
+
+    // ── Markt ─────────────────────────────────────────────────────
     public string ItemKaufen(ShopItem item)
     {
         if (Spieler.Geld < item.Preis)

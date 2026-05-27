@@ -1528,3 +1528,162 @@ body {
     cursor: pointer;
 }
 .editor-region-select:focus { outline: none; border-color: #58a6ff; }
+
+
+/* ── Weltkarte: Ort-Sektionen ─────────────────────────────────────────────── */
+.ort-aktionen { display: flex; flex-direction: column; gap: 0.5rem; }
+.ort-sektion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+.ort-sektion-header {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 0.2rem;
+}
+.aktueller-ort-label {
+    color: #4ecdc4;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Wilde Monster Chips */
+.wild-monster-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+.wild-monster-chip {
+    background: rgba(22,101,52,0.35);
+    border: 1px solid rgba(34,197,94,0.25);
+    color: #86efac;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.wild-level {
+    color: #6ee7b7;
+    font-size: 0.68rem;
+    opacity: 0.8;
+}
+
+/* NPC Button */
+.btn-npc {
+    background: linear-gradient(135deg, #1e3a5f, #1e4976);
+    color: #93c5fd;
+    border: 1px solid rgba(96,165,250,0.3);
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    text-align: left;
+}
+.btn-npc:hover { background: linear-gradient(135deg, #1e4976, #1d4ed8); transform: translateY(-1px); }
+.btn-npc.gesprochen { background: rgba(30,58,95,0.4); color: #64748b; border-color: rgba(100,116,139,0.2); }
+.npc-item-hint { font-size: 0.8rem; margin-left: auto; }
+
+/* NPC Dialog Box */
+.npc-dialog-box {
+    background: #1e293b;
+    border: 1px solid rgba(96,165,250,0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.npc-dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+.npc-dialog-emoji { font-size: 2rem; }
+.npc-dialog-name { font-size: 1.1rem; font-weight: 700; color: #93c5fd; }
+.npc-dialog-text {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.npc-item-erhalten {
+    background: rgba(22,101,52,0.3);
+    border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 1rem;
+    color: #86efac;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Rucksack Button in Sidebar */
+.btn-rucksack {
+    background: linear-gradient(135deg, #78350f, #92400e);
+    color: #fde68a;
+    border: none;
+    padding: 0.55rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    margin-bottom: 0.4rem;
+}
+.btn-rucksack:hover { background: linear-gradient(135deg, #92400e, #b45309); transform: translateY(-1px); }
+
+/* Rucksack Overlay Box */
+.rucksack-box {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.rucksack-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.rucksack-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+}
+.rucksack-item .item-emoji { font-size: 1.5rem; }
+.rucksack-item .item-info { flex: 1; }
+.rucksack-item .item-name { font-weight: 600; color: #e2e8f0; font-size: 0.9rem; display: block; }
+.rucksack-item .item-menge { color: #94a3b8; font-size: 0.8rem; }
+.rucksack-leer { color: #64748b; text-align: center; padding: 1rem; }

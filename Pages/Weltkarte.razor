@@ -38,6 +38,14 @@
             }
         </div>
 
+        <!-- Rucksack-Button -->
+        @if (Game.Spieler.Inventar.Any())
+        {
+            <button class="btn-rucksack" @onclick="RucksackOeffnen">
+                🎒 Rucksack (@Game.Spieler.Inventar.Sum(i => i.Menge))
+            </button>
+        }
+
         <div class="speichern-buttons">
             <button class="btn-speichern" @onclick="SpielstandSpeichern">💾 Speichern</button>
             <button class="btn-laden" @onclick="SpielstandLaden">📂 Laden</button>
@@ -127,7 +135,6 @@
         <!-- Ort-Details (rechts daneben) -->
         <div class="location-info">
         @{
-            // Zeige immer den aktuellen Ort – oder wenn ein anderer Ort angeklickt wurde
             var anzeigeOrt = ausgewähltOrt ?? aktOrt;
         }
         @if (anzeigeOrt != null)
@@ -154,43 +161,93 @@
                     {
                         <span class="aktueller-ort-label">📍 Du bist hier</span>
 
+                        <!-- Wilde Monster -->
                         @if (ortRef3.WildMonster.Any())
                         {
-                            <button class="btn-erkunden" @onclick="ImGrasErkunden">
-                                🌿 Im Gras erkunden
-                            </button>
+                            <div class="ort-sektion">
+                                <div class="ort-sektion-header">🌿 Wilde Monster</div>
+                                <div class="wild-monster-liste">
+                                    @foreach (var wm in ortRef3.WildMonster)
+                                    {
+                                        var monData = Game.AlleMonster.FirstOrDefault(m => m.Id == wm.MonsterId);
+                                        if (monData != null)
+                                        {
+                                            <span class="wild-monster-chip">
+                                                @GetTypEmoji(monData.Typen.FirstOrDefault() ?? "") @monData.Name
+                                                <span class="wild-level">Lv.@wm.MinLevel–@wm.MaxLevel</span>
+                                            </span>
+                                        }
+                                    }
+                                </div>
+                                <button class="btn-erkunden" @onclick="ImGrasErkunden">
+                                    🌿 Im Gras erkunden
+                                </button>
+                            </div>
                         }
 
-                        @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id) && t.Klasse != "Arena" && t.Klasse != "Arena/Boss"))
+                        <!-- NPCs (Sensei, etc.) -->
+                        @if (ortRef3.NPCs.Any())
                         {
-                            var t2 = trainer;
-                            <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
-                                🧑 @t2.Klasse @t2.Name
-                            </button>
+                            <div class="ort-sektion">
+                                <div class="ort-sektion-header">💬 Personen</div>
+                                @foreach (var npc in ortRef3.NPCs)
+                                {
+                                    var n = npc;
+                                    bool bereitsGesprochen = Game.Spieler.BesproacheneNPCs.Contains(n.Id);
+                                    <button class="btn-npc @(bereitsGesprochen ? "gesprochen" : "")"
+                                            @onclick="() => NpcSprechen(n)">
+                                        @n.Emoji @n.Name
+                                        @if (!bereitsGesprochen && n.GibtItemId != null)
+                                        {
+                                            <span class="npc-item-hint">🎁</span>
+                                        }
+                                    </button>
+                                }
+                            </div>
                         }
 
-                        @if (ortRef3.HatMonsterCenter)
+                        <!-- Kämpfe (Trainer + Arena) -->
+                        @if (ortRef3.Trainer.Any(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id) && t.Klasse != "Arena" && t.Klasse != "Arena/Boss") || ortRef3.Arena != null)
                         {
-                            <button class="btn-center" @onclick="MonsterZentrumHeilen">
-                                🏥 Monster Center
-                            </button>
+                            <div class="ort-sektion">
+                                <div class="ort-sektion-header">⚔️ Kämpfe</div>
+                                @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id) && t.Klasse != "Arena" && t.Klasse != "Arena/Boss"))
+                                {
+                                    var t2 = trainer;
+                                    <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
+                                        🧑 @t2.Klasse @t2.Name
+                                    </button>
+                                }
+                                @if (ortRef3.Arena != null)
+                                {
+                                    bool bereitsGewonnen = Game.Spieler.Orden.Contains(ortRef3.Arena!.OrdenName);
+                                    <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
+                                            @onclick="() => ArenaKämpfen(ortRef3)"
+                                            disabled="@bereitsGewonnen">
+                                        🏆 @(bereitsGewonnen ? $"✓ {ortRef3.Arena!.OrdenName}" : $"Arena: {ortRef3.Arena!.Leiter}")
+                                    </button>
+                                }
+                            </div>
                         }
 
-                        @if (ortRef3.HatMarkt)
+                        <!-- Einrichtungen -->
+                        @if (ortRef3.HatMonsterCenter || ortRef3.HatMarkt)
                         {
-                            <button class="btn-markt" @onclick="MarktOeffnen">
-                                🏪 Markt
-                            </button>
-                        }
-
-                        @if (ortRef3.Arena != null)
-                        {
-                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(ortRef3.Arena.OrdenName);
-                            <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
-                                    @onclick="() => ArenaKämpfen(ortRef3)"
-                                    disabled="@bereitsGewonnen">
-                                🏆 @(bereitsGewonnen ? $"✓ {ortRef3.Arena.OrdenName}" : $"Arena: {ortRef3.Arena.Leiter}")
-                            </button>
+                            <div class="ort-sektion">
+                                <div class="ort-sektion-header">🏢 Einrichtungen</div>
+                                @if (ortRef3.HatMonsterCenter)
+                                {
+                                    <button class="btn-center" @onclick="MonsterZentrumHeilen">
+                                        🏥 Monster Center
+                                    </button>
+                                }
+                                @if (ortRef3.HatMarkt)
+                                {
+                                    <button class="btn-markt" @onclick="MarktOeffnen">
+                                        🏪 Markt
+                                    </button>
+                                }
+                            </div>
                         }
                     }
                 </div>
@@ -201,12 +258,66 @@
     </div>
 </div>
 
+<!-- NPC Gesprächs-Dialog -->
+@if (npcDialog != null)
+{
+    <div class="meldung-overlay" @onclick="NpcDialogSchließen">
+        <div class="npc-dialog-box" @onclick:stopPropagation="true">
+            <div class="npc-dialog-header">
+                <span class="npc-dialog-emoji">@npcDialogEmoji</span>
+                <span class="npc-dialog-name">@npcDialogName</span>
+            </div>
+            <p class="npc-dialog-text">@npcDialog</p>
+            @if (npcGeschenktItem != null)
+            {
+                <div class="npc-item-erhalten">
+                    <span>🎁 Du hast erhalten:</span>
+                    <strong>@npcGeschenktItemEmoji @npcGeschenktItem</strong>
+                </div>
+            }
+            <button class="btn-ok" @onclick="NpcDialogSchließen">OK</button>
+        </div>
+    </div>
+}
+
 @if (meldung != null)
 {
     <div class="meldung-overlay" @onclick="MeldungSchließen">
         <div class="meldung-box">
             <p>@meldung</p>
             <button class="btn-ok" @onclick="MeldungSchließen">OK</button>
+        </div>
+    </div>
+}
+
+<!-- Rucksack-Overlay -->
+@if (rucksackOffen)
+{
+    <div class="meldung-overlay" @onclick="RucksackSchließen">
+        <div class="rucksack-box" @onclick:stopPropagation="true">
+            <div class="markt-header">
+                <h3>🎒 Rucksack</h3>
+                <button class="btn-schliessen" @onclick="RucksackSchließen">✕</button>
+            </div>
+            <div class="rucksack-items">
+                @if (!Game.Spieler.Inventar.Any())
+                {
+                    <p class="rucksack-leer">Dein Rucksack ist leer.</p>
+                }
+                else
+                {
+                    @foreach (var item in Game.Spieler.Inventar)
+                    {
+                        <div class="rucksack-item">
+                            <span class="item-emoji">@item.Emoji</span>
+                            <div class="item-info">
+                                <span class="item-name">@item.Name</span>
+                                <span class="item-menge">×@item.Menge</span>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
         </div>
     </div>
 }
@@ -264,8 +375,16 @@
     private Ort? ausgewähltOrt;
     private string? meldung;
     private bool marktOffen = false;
+    private bool rucksackOffen = false;
     private string aktiveKategorie = "Alle";
     private string kaufMeldung = "";
+
+    // NPC Dialog
+    private string? npcDialog;
+    private string? npcDialogName;
+    private string? npcDialogEmoji;
+    private string? npcGeschenktItem;
+    private string? npcGeschenktItemEmoji;
 
     protected override void OnInitialized()
     {
@@ -284,14 +403,12 @@
 
     private void MinimapKlick(Ort ort)
     {
-        // Zentrum-Zelle (aktueller Ort) → nur auswählen, nicht reisen
         if (ort.Id == Game.Spieler.AktuellerOrt)
         {
             ausgewähltOrtId = ort.Id;
             ausgewähltOrt = ort;
             return;
         }
-        // Andere Zellen → sofort reisen
         Game.OrtBetreten(ort.Id);
         ausgewähltOrtId = null;
         ausgewähltOrt = null;
@@ -317,6 +434,26 @@
         else
             meldung = "Keine wilden Monster in diesem Gebiet.";
     }
+
+    private void NpcSprechen(GesprächsNPC npc)
+    {
+        var (dialog, itemName, itemEmoji) = Game.NpcSprechen(npc);
+        npcDialog = dialog;
+        npcDialogName = npc.Name;
+        npcDialogEmoji = npc.Emoji;
+        npcGeschenktItem = itemName;
+        npcGeschenktItemEmoji = itemEmoji;
+    }
+
+    private void NpcDialogSchließen()
+    {
+        npcDialog = null;
+        npcGeschenktItem = null;
+        npcGeschenktItemEmoji = null;
+    }
+
+    private void RucksackOeffnen() => rucksackOffen = true;
+    private void RucksackSchließen() => rucksackOffen = false;
 
     private void TrainerKämpfen(TrainerKampf trainer) => Game.TrainerKampfStarten(trainer);
     private void ArenaKämpfen(Ort ort) => Game.ArenaKampfStarten(ort);
