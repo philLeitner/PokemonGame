@@ -109,7 +109,7 @@
                 {
                     <p>+@kampf.ErfahrungGewonnen EP</p>
                 }
-                <button class="btn-weiter" @onclick="Game.KampfBeenden">Weiter →</button>
+                <p class="kampf-weiter-hint">⏳ Weiter in Kürze...</p>
             </div>
         }
         else if (kampf.Phase == KampfPhase.Evolution)
@@ -293,6 +293,7 @@
     private ElementReference logRef;
     private string aktivesPanel = "haupt";
     private string? gewähltesItemId;
+    private bool autoWeiterGestartet = false;
 
     protected override void OnInitialized()
     {
@@ -306,6 +307,13 @@
             await Task.Delay(1200);
             KampfBeginnen();
             StateHasChanged();
+        }
+        // Auto-Weiter nach Kampfende
+        if (!autoWeiterGestartet && Game.AktuellerKampf?.Phase == KampfPhase.Beendet)
+        {
+            autoWeiterGestartet = true;
+            await Task.Delay(2000);
+            Game.KampfBeenden();
         }
     }
 

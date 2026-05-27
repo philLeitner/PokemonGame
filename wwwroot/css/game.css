@@ -414,6 +414,7 @@ body {
 .kampf-intro { text-align: center; padding: 1rem; }
 .kampf-intro p { font-size: 1.1rem; margin-bottom: 1rem; }
 .kampf-intro-hint { font-size: 0.85rem !important; color: var(--text-mittel) !important; animation: blinken 0.8s ease-in-out infinite; }
+.kampf-weiter-hint { font-size: 0.8rem; color: var(--text-mittel); margin-top: 0.5rem; animation: blinken 0.8s ease-in-out infinite; }
 @keyframes blinken { 50% { opacity: 0.4; } }
 .btn-kampf-start {
   padding: 0.75rem 2.5rem; font-size: 1rem; font-weight: 700;
