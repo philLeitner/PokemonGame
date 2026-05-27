@@ -181,9 +181,10 @@
                                 @onclick="() => AttackeAusführen(attacke)"
                                 disabled="@(!attacke.HatAp)">
                             <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
-                            <span class="attacke-name">@attacke.Name</span>
-                            <span class="attacke-typ-name">@attacke.Typ</span>
-                            <span class="attacke-ap">@attacke.AktuelleAp/@attacke.MaxAp AP</span>
+                            <div class="attacke-btn-info">
+                                <span class="attacke-name">@attacke.Name</span>
+                                <span class="attacke-typ-name">@attacke.Typ &nbsp;|&nbsp; @attacke.AktuelleAp/@attacke.MaxAp AP</span>
+                            </div>
                             @if (attacke.Staerke.HasValue)
                             {
                                 <span class="attacke-staerke">⚔️ @attacke.Staerke</span>
