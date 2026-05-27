@@ -161,7 +161,7 @@
                             </button>
                         }
 
-                        @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
+                        @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id) && t.Klasse != "Arena" && t.Klasse != "Arena/Boss"))
                         {
                             var t2 = trainer;
                             <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
