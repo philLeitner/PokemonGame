@@ -118,42 +118,44 @@
 
         <!-- Ort-Details (rechts daneben) -->
         <div class="location-info">
-        @if (ausgewähltOrt != null)
+        @{
+            // Zeige immer den aktuellen Ort – oder wenn ein anderer Ort angeklickt wurde
+            var anzeigeOrt = ausgewähltOrt ?? aktOrt;
+        }
+        @if (anzeigeOrt != null)
         {
+            @{
+                bool istHier2 = anzeigeOrt.Id == Game.Spieler.AktuellerOrt;
+                var ortRef3 = Game.AlleOrte.First(o => o.Id == anzeigeOrt.Id);
+            }
             <div class="ort-details">
                 <div class="ort-details-header">
-                    <h3>@ausgewähltOrt.Name</h3>
-                    <span class="ort-typ-badge">@ausgewähltOrt.Typ</span>
+                    <h3>@anzeigeOrt.Name</h3>
+                    <span class="ort-typ-badge">@anzeigeOrt.Typ</span>
                 </div>
-                @if (!string.IsNullOrEmpty(ausgewähltOrt.Beschreibung))
+                @if (!string.IsNullOrEmpty(anzeigeOrt.Beschreibung))
                 {
-                    <p class="ort-beschreibung">@ausgewähltOrt.Beschreibung</p>
+                    <p class="ort-beschreibung">@anzeigeOrt.Beschreibung</p>
                 }
-
-                <!-- Aktionen -->
                 <div class="ort-aktionen">
-                    @{
-                        bool istHier = ausgewähltOrt.Id == Game.Spieler.AktuellerOrt;
-                        var aktuellerOrtRef = Game.AlleOrte.First(o => o.Id == ausgewähltOrt.Id);
-                    }
-                    @if (!istHier)
+                    @if (!istHier2)
                     {
                         <button class="btn-reisen" @onclick="ZumOrtReisen">
-                            🚶 Nach @ausgewähltOrt.Name reisen
+                            🚶 Nach @anzeigeOrt.Name reisen
                         </button>
                     }
                     else
                     {
                         <span class="aktueller-ort-label">📍 Du bist hier</span>
 
-                        @if (aktuellerOrtRef.WildMonster.Any())
+                        @if (ortRef3.WildMonster.Any())
                         {
                             <button class="btn-erkunden" @onclick="ImGrasErkunden">
                                 🌿 Im Gras erkunden
                             </button>
                         }
 
-                        @foreach (var trainer in aktuellerOrtRef.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
+                        @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id)))
                         {
                             var t2 = trainer;
                             <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
@@ -161,68 +163,29 @@
                             </button>
                         }
 
-                        @if (aktuellerOrtRef.HatMonsterCenter)
+                        @if (ortRef3.HatMonsterCenter)
                         {
                             <button class="btn-center" @onclick="MonsterZentrumHeilen">
                                 🏥 Monster Center
                             </button>
                         }
 
-                        @if (aktuellerOrtRef.HatMarkt)
+                        @if (ortRef3.HatMarkt)
                         {
                             <button class="btn-markt" @onclick="MarktOeffnen">
                                 🏪 Markt
                             </button>
                         }
 
-                        @if (aktuellerOrtRef.Arena != null)
+                        @if (ortRef3.Arena != null)
                         {
-                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(aktuellerOrtRef.Arena.OrdenName);
+                            bool bereitsGewonnen = Game.Spieler.Orden.Contains(ortRef3.Arena.OrdenName);
                             <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
-                                    @onclick="() => ArenaKämpfen(aktuellerOrtRef)"
+                                    @onclick="() => ArenaKämpfen(ortRef3)"
                                     disabled="@bereitsGewonnen">
-                                🏆 @(bereitsGewonnen ? $"✓ {aktuellerOrtRef.Arena.OrdenName}" : $"Arena: {aktuellerOrtRef.Arena.Leiter}")
+                                🏆 @(bereitsGewonnen ? $"✓ {ortRef3.Arena.OrdenName}" : $"Arena: {ortRef3.Arena.Leiter}")
                             </button>
                         }
-                    }
-                </div>
-            </div>
-        }
-        else if (aktOrt != null)
-        {
-            <!-- Zeige aktuellen Ort-Info wenn nichts ausgewählt -->
-            <div class="ort-details ort-details-hint">
-                <p class="ort-hint-text">👆 Klicke auf ein Feld in der Karte um Details zu sehen und dorthin zu reisen.</p>
-                <div class="ort-aktionen">
-                    @{
-                        var aktRef = Game.AlleOrte.First(o => o.Id == aktOrt.Id);
-                    }
-                    @if (aktRef.WildMonster.Any())
-                    {
-                        <button class="btn-erkunden" @onclick="() => { OrtAuswählen(aktOrt); ImGrasErkunden(); }">
-                            🌿 Im Gras erkunden
-                        </button>
-                    }
-                    @if (aktRef.HatMonsterCenter)
-                    {
-                        <button class="btn-center" @onclick="MonsterZentrumHeilen">
-                            🏥 Monster Center
-                        </button>
-                    }
-                    @if (aktRef.HatMarkt)
-                    {
-                        <button class="btn-markt" @onclick="MarktOeffnen">
-                            🏪 Markt
-                        </button>
-                    }
-                    @if (aktRef.Arena != null)
-                    {
-                        bool bereitsGewonnen = Game.Spieler.Orden.Contains(aktRef.Arena.OrdenName);
-                        <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
-                                @onclick="() => ArenaKämpfen(aktRef)"
-                                disabled="@bereitsGewonnen">
-                            🏆 @(bereitsGewonnen ? $"✓ {aktRef.Arena.OrdenName}" : $"Arena: {aktRef.Arena.Leiter}")
-                        </button>
                     }
                 </div>
             </div>
