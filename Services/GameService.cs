@@ -173,7 +173,7 @@ public class GameService
         if (spezies == null) return;
         var starter = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
         Spieler.Team.Add(starter);
-        Spieler.AktuellerOrt = "startstadt";
+        Spieler.AktuellerOrt = "KAN-0001";
         Phase = SpielPhase.Weltkarte;
         Notify();
     }
