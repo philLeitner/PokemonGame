@@ -46,7 +46,7 @@ public static class WeltData
             Farbe = "purple", GridX = 4, GridY = 12,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0002",
-            Ost = "KAN-0043",
+            Süd = "KAN-0043",
             Verbindungen = new() { "KAN-0002", "KAN-0043" },
             Trainer = new() {
                 new() {
