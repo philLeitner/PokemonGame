@@ -170,6 +170,7 @@ public class Spieler
     public string AktuellerOrt { get; set; } = "startstadt";
     public List<InventarItem> Inventar { get; set; } = new();
     public int AktivesMonsterIndex { get; set; } = 0;  // Welches Monster gerade aktiv ist
+    public List<string> BesproacheneNPCs { get; set; } = new(); // NPCs mit denen gesprochen wurde
 
     public MonsterInstanz? AktivesMonster
     {
@@ -254,6 +255,20 @@ public class Ort
     public bool HatMarkt { get; set; } = false;
     public List<ShopItem> MarktAngebot { get; set; } = new();
     public int MinOrdenFürZugang { get; set; } = 0; // Orden-Sperre
+    public List<GesprächsNPC> NPCs { get; set; } = new();
+}
+
+public class GesprächsNPC
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Emoji { get; set; } = "🧓";
+    public string Dialog { get; set; } = "";
+    // Optionales Item das der NPC beim ersten Gespräch gibt
+    public string? GibtItemId { get; set; }
+    public string? GibtItemName { get; set; }
+    public string? GibtItemEmoji { get; set; }
+    public string? DialogNachGeschenk { get; set; }
 }
 
 public class Arena
@@ -365,6 +380,7 @@ public class SpielstandDaten
     public List<GespeichertesMonster> Team { get; set; } = new();
     public List<GespeichertesMonster> Box { get; set; } = new();
     public List<GespeichertesItem> Inventar { get; set; } = new();
+    public List<string> BesproacheneNPCs { get; set; } = new();
 }
 
 public class GespeichertesMonster

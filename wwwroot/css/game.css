@@ -664,6 +664,7 @@ body {
 }
 .btn-grid-ctrl:hover { background: #30363d; }
 .grid-zoom-label { font-size: 0.75rem; color: #8b949e; min-width: 2.5rem; text-align: center; }
+.grid-size-label { font-size: 0.7rem; color: #8b949e; white-space: nowrap; margin-left: 0.25rem; }
 .editor-grid-scroll {
   flex: 1; overflow: auto; padding: 1rem;
   display: flex; align-items: flex-start; justify-content: center;

@@ -69,8 +69,17 @@
     <!-- ═══ PANEL 2: Karten-Grid ═══════════════════════════════════════════ -->
     <div class="editor-panel-mitte">
         <div class="editor-panel-header">
-            <span class="editor-panel-title">Karten-Grid</span>
+            <span class="editor-panel-title">@(RegionNamen.GetValueOrDefault(filterRegion, filterRegion)) – Grid</span>
             <div class="editor-grid-controls">
+                <span class="grid-size-label">Zeilen:</span>
+                <button class="btn-grid-ctrl" @onclick="() => gridRows = Math.Max(3, gridRows - 1)">−</button>
+                <span class="grid-zoom-label">@gridRows</span>
+                <button class="btn-grid-ctrl" @onclick="() => gridRows = Math.Min(25, gridRows + 1)">+</button>
+                <span class="grid-size-label">Spalten:</span>
+                <button class="btn-grid-ctrl" @onclick="() => gridCols = Math.Max(3, gridCols - 1)">−</button>
+                <span class="grid-zoom-label">@gridCols</span>
+                <button class="btn-grid-ctrl" @onclick="() => gridCols = Math.Min(25, gridCols + 1)">+</button>
+                <span class="grid-size-label">Zoom:</span>
                 <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Max(60, gridZoom - 10)">−</button>
                 <span class="grid-zoom-label">@gridZoom%</span>
                 <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Min(150, gridZoom + 10)">+</button>
@@ -78,13 +87,15 @@
         </div>
 
         <div class="editor-grid-scroll">
-            <div class="editor-grid" style="--cell-size: @(gridZoom * 0.8)px">
-                @for (int row = 0; row < 10; row++)
+            <div class="editor-grid" style="--cell-size: @(gridZoom * 0.8)px; grid-template-columns: repeat(@gridCols, var(--cell-size, 80px)); grid-template-rows: repeat(@gridRows, calc(var(--cell-size, 80px) * 0.7))">
+                @for (int row = 0; row < gridRows; row++)
                 {
-                    @for (int col = 0; col < 10; col++)
+                    @for (int col = 0; col < gridCols; col++)
                     {
                         int r = row, c = col;
-                        var ort = editorOrte.FirstOrDefault(o => o.GridX == c && o.GridY == r);
+                        var ort = editorOrte.FirstOrDefault(o =>
+                            o.GridX == c && o.GridY == r &&
+                            (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")));
                         <div class="editor-grid-zelle @(ort != null ? "belegt" : "leer") @(ort?.Id == ausgewähltOrtId ? "aktiv" : "")"
                              style="grid-column: @(c+1); grid-row: @(r+1);"
                              @onclick="() => GridZelleKlick(c, r)"
@@ -473,6 +484,8 @@
     private string filterTyp = "Alle";
     private string filterRegion = "KAN"; // Standard: Kanto
     private int gridZoom = 100;
+    private int gridRows = 10;
+    private int gridCols = 10;
     private HashSet<string> offeneTrainer = new();
     private string speicherStatus = "";
     private bool speicherFehler = false;
@@ -520,7 +533,10 @@
 
     private void GridZelleKlick(int col, int row)
     {
-        var ort = editorOrte.FirstOrDefault(o => o.GridX == col && o.GridY == row);
+        // Nur Orte der aktuellen Region berücksichtigen
+        var ort = editorOrte.FirstOrDefault(o =>
+            o.GridX == col && o.GridY == row &&
+            (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")));
         if (ort != null)
         {
             OrtAuswählen(ort.Id);

@@ -908,6 +908,7 @@ public class GameService
             {
                 ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge
             }).ToList(),
+            BesproacheneNPCs = new List<string>(Spieler.BesproacheneNPCs),
         };
         var json = JsonSerializer.Serialize(save);
         await _ls.SetItemAsync(LS_SAVEGAME, json);
@@ -946,6 +947,7 @@ public class GameService
                 AktuellerOrt = save.AktuellerOrt,
                 Orden = save.Orden ?? new(),
                 BesiegteTrainer = save.BesiegteTrainer ?? new(),
+                BesproacheneNPCs = save.BesproacheneNPCs ?? new(),
                 Inventar = save.Inventar?.Select(i => new InventarItem
                 {
                     ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge

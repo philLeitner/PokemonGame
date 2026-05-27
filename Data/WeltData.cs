@@ -56,6 +56,14 @@ public static class WeltData
                     Team = new() { new() { MonsterId = "PKM-0001", Level = 5 }, new() { MonsterId = "PKM-0004", Level = 5 }, new() { MonsterId = "PKM-0007", Level = 5 } },
                 },
             },
+            NPCs = new() {
+                new() {
+                    Id = "KAN-NPC-SENSEI", Name = "Prof. Eich", Emoji = "🧓",
+                    Dialog = "Willkommen in der Welt der Monster! Ich bin Prof. Eich, der Forscher dieser Region. Nimm diese Karte – sie zeigt dir alle Orte der Kanto-Region. Viel Erfolg auf deiner Reise!",
+                    GibtItemId = "ITEM-KARTE", GibtItemName = "Kanto-Karte", GibtItemEmoji = "🗺️",
+                    DialogNachGeschenk = "Du hast die Kanto-Karte erhalten! Öffne deinen Rucksack um sie zu benutzen.",
+                },
+            },
         },
         new() {
             Id = "KAN-0002", Name = "Route 1", Typ = "ort",
