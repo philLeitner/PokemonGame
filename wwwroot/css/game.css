@@ -412,6 +412,8 @@ body {
 .btn-weiter:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(78,205,196,0.4); }
 .kampf-intro { text-align: center; padding: 1rem; }
 .kampf-intro p { font-size: 1.1rem; margin-bottom: 1rem; }
+.kampf-intro-hint { font-size: 0.85rem !important; color: var(--text-mittel) !important; animation: blinken 0.8s ease-in-out infinite; }
+@keyframes blinken { 50% { opacity: 0.4; } }
 .btn-kampf-start {
   padding: 0.75rem 2.5rem; font-size: 1rem; font-weight: 700;
   background: var(--akzent); border: none; border-radius: var(--radius);

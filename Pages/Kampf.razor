@@ -145,7 +145,7 @@
         {
             <div class="kampf-intro">
                 <p>@kampf.Log.LastOrDefault()</p>
-                <button class="btn-kampf-start" @onclick="KampfBeginnen">Kämpfen!</button>
+                <p class="kampf-intro-hint">⏳ Kampf beginnt gleich...</p>
             </div>
         }
         else if (kampf.Phase == KampfPhase.SpielerZug)
@@ -296,6 +296,16 @@
     protected override void OnInitialized()
     {
         Game.OnChange += StateHasChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && Game.AktuellerKampf?.Phase == KampfPhase.Intro)
+        {
+            await Task.Delay(1200);
+            KampfBeginnen();
+            StateHasChanged();
+        }
     }
 
     public void Dispose() => Game.OnChange -= StateHasChanged;
