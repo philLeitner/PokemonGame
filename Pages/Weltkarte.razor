@@ -93,7 +93,7 @@
                             var f = feld;
                             <div class="minimap-zelle @(istZentrum ? "zentrum" : "") @(istAusgewählt ? "ausgewaehlt" : "")"
                                  style="background: @WeltData.OrtFarben.GetValueOrDefault(f.Farbe, "#374151")"
-                                 @onclick="() => OrtAuswählen(f)">
+                                 @onclick="() => MinimapKlick(f)">
                                 <span class="minimap-icon">@OrtIcon(f)</span>
                                 <span class="minimap-name">@f.Name</span>
                                 @if (f.Arena != null && Game.Spieler.Orden.Contains(f.Arena.OrdenName))
@@ -311,6 +311,21 @@
     {
         ausgewähltOrtId = ort.Id;
         ausgewähltOrt = ort;
+    }
+
+    private void MinimapKlick(Ort ort)
+    {
+        // Zentrum-Zelle (aktueller Ort) → nur auswählen, nicht reisen
+        if (ort.Id == Game.Spieler.AktuellerOrt)
+        {
+            ausgewähltOrtId = ort.Id;
+            ausgewähltOrt = ort;
+            return;
+        }
+        // Andere Zellen → sofort reisen
+        Game.OrtBetreten(ort.Id);
+        ausgewähltOrtId = null;
+        ausgewähltOrt = null;
     }
 
     private void ZumOrtReisen()
