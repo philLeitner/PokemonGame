@@ -90,44 +90,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0003", Name = "Viridian City", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 10,
-            HatMonsterCenter = true, HatMarkt = true,
-            Nord = "KAN-0005",
-            Süd = "KAN-0002",
-            West = "KAN-0004",
-            Verbindungen = new() { "KAN-0005", "KAN-0002", "KAN-0004" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-008", Name = "Giovanni", Klasse = "Arena/Boss",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-008-HGSS", Name = "Blau", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            MarktAngebot = new() {
-                new() { Id = "item-001", Name = "Pokéball", Preis = 200, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-002", Name = "Trank", Preis = 300, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-003", Name = "Gegengift", Preis = 100, Emoji = "🛍️", Kategorie = "Markt" },
-            },
-            Arena = new() {
-                Leiter = "Giovanni", OrdenName = "Erdorden",
-                OrdenNr = 8, TypSpezialisierung = "Normal",
-                Team = new() {
-                    new() { MonsterId = "PKM-0111", Level = 45 }, // Rihorn
-                    new() { MonsterId = "PKM-0051", Level = 42 }, // Digdri
-                    new() { MonsterId = "PKM-0031", Level = 44 }, // Nidoqueen
-                    new() { MonsterId = "PKM-0034", Level = 45 }, // Nidoking
-                },
-            },
-        },
-        new() {
             Id = "KAN-0004", Name = "Route 22", Typ = "ort",
             Farbe = "green", GridX = 1, GridY = 10,
             HatMonsterCenter = false, HatMarkt = false,
@@ -211,41 +173,6 @@ public static class WeltData
                     Belohnung = 200, MussBesiegt = false,
                     Dialogvor = "Ich fordere dich heraus!", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-        },
-        new() {
-            Id = "KAN-0007", Name = "Pewter City", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 6,
-            HatMonsterCenter = true, HatMarkt = true,
-            Nord = "KAN-0008",
-            Süd = "KAN-0005",
-            Verbindungen = new() { "KAN-0008", "KAN-0005" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-001", Name = "Rocko", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-001-HGSS", Name = "Rocko", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            MarktAngebot = new() {
-                new() { Id = "item-001", Name = "Pokéball", Preis = 200, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-002", Name = "Trank", Preis = 300, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-004", Name = "Fluchtseil", Preis = 550, Emoji = "🛍️", Kategorie = "Markt" },
-            },
-            Arena = new() {
-                Leiter = "Rocko", OrdenName = "Felsorden",
-                OrdenNr = 1, TypSpezialisierung = "Normal",
-                Team = new() {
-                    new() { MonsterId = "PKM-0074", Level = 12 }, // Kleinstein
-                    new() { MonsterId = "PKM-0095", Level = 14 }, // Onix
                 },
             },
         },
@@ -344,44 +271,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0011", Name = "Cerulean City", Typ = "ort",
-            Farbe = "purple", GridX = 11, GridY = 6,
-            HatMonsterCenter = true, HatMarkt = true,
-            Nord = "KAN-0012",
-            Süd = "KAN-0014",
-            West = "KAN-0010",
-            Ost = "KAN-0020",
-            Verbindungen = new() { "KAN-0012", "KAN-0014", "KAN-0010", "KAN-0020" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-002", Name = "Misty", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-002-HGSS", Name = "Misty", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            MarktAngebot = new() {
-                new() { Id = "item-001", Name = "Pokéball", Preis = 200, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-002", Name = "Trank", Preis = 300, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-005", Name = "Superball", Preis = 600, Emoji = "🛍️", Kategorie = "Markt" },
-                new() { Id = "item-006", Name = "Supertrank", Preis = 700, Emoji = "🛍️", Kategorie = "Markt" },
-            },
-            Arena = new() {
-                Leiter = "Misty", OrdenName = "Quellorden",
-                OrdenNr = 2, TypSpezialisierung = "Normal",
-                Team = new() {
-                    new() { MonsterId = "PKM-0120", Level = 18 }, // Sterndu
-                    new() { MonsterId = "PKM-0121", Level = 21 }, // Starmie
-                },
-            },
-        },
-        new() {
             Id = "KAN-0012", Name = "Route 24", Typ = "ort",
             Farbe = "green", GridX = 11, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
@@ -476,33 +365,6 @@ public static class WeltData
                     Dialogvor = "Zusätzlicher Route-Trainer", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "KAN-0016", Name = "Vermilion City", Typ = "ort",
-            Farbe = "purple", GridX = 11, GridY = 11,
-            HatMonsterCenter = false, HatMarkt = false,
-            Süd = "KAL-0012",
-            West = "KAL-0023",
-            Verbindungen = new() { "KAL-0012", "KAL-0023" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-003", Name = "Lt. Surge", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-003-HGSS", Name = "Surge", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Major Bob", OrdenName = "Donnerorden",
-                OrdenNr = 11, TypSpezialisierung = "Elektro",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 65 } },
             },
         },
         new() {
@@ -747,34 +609,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0028", Name = "Celadon City", Typ = "ort",
-            Farbe = "purple", GridX = 9, GridY = 9,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0033",
-            West = "KAL-0016",
-            Ost = "KAL-0014",
-            Verbindungen = new() { "KAL-0033", "KAL-0016", "KAL-0014" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-004", Name = "Erika", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-004-HGSS", Name = "Erika", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Erika", OrdenName = "Farborden",
-                OrdenNr = 12, TypSpezialisierung = "Pflanze",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 70 } },
-            },
-        },
-        new() {
             Id = "KAN-0029", Name = "Team Rocket Hideout", Typ = "ort",
             Farbe = "green", GridX = 9, GridY = 10,
             HatMonsterCenter = false, HatMarkt = false,
@@ -918,35 +752,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0036", Name = "Fuchsia City", Typ = "ort",
-            Farbe = "purple", GridX = 9, GridY = 14,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0037",
-            Süd = "KAL-0037",
-            West = "KAL-0039",
-            Ost = "KAL-0031",
-            Verbindungen = new() { "KAL-0037", "KAL-0037", "KAL-0039", "KAL-0031" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-005", Name = "Koga", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-005-HGSS", Name = "Koga", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Janina", OrdenName = "Seelenorden",
-                OrdenNr = 13, TypSpezialisierung = "Gift",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 75 } },
-            },
-        },
-        new() {
             Id = "KAN-0037", Name = "Safari Zone", Typ = "ort",
             Farbe = "blue", GridX = 9, GridY = 13,
             HatMonsterCenter = false, HatMarkt = false,
@@ -1039,33 +844,6 @@ public static class WeltData
                 Leiter = "Pyro", OrdenName = "Vulkanorden",
                 OrdenNr = 15, TypSpezialisierung = "Feuer",
                 Team = new() { new() { MonsterId = "PKM-0001", Level = 85 } },
-            },
-        },
-        new() {
-            Id = "KAN-0041", Name = "Cinnabar Island", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 16,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0041",
-            Ost = "KAL-0043",
-            Verbindungen = new() { "KAL-0041", "KAL-0043" },
-            Trainer = new() {
-                new() {
-                    Id = "KAN-GYM-007", Name = "Pyro/Blaine", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAN-GYM-007-HGSS", Name = "Blaine", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Pyro", OrdenName = "Vulkanorden",
-                OrdenNr = 7, TypSpezialisierung = "Feuer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {
@@ -1493,40 +1271,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "JOH-0007", Name = "Violet City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Süd = "JOH-0005",
-            West = "JOH-0022",
-            Ost = "JOH-0009",
-            Verbindungen = new() { "JOH-0005", "JOH-0022", "JOH-0009" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-010", Name = "Falkner", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Flug-Typ; Sturzflug-Orden", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-001", Name = "Falkner", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-RIV-004", Name = "Silber", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Falkner", OrdenName = "Sturmorden",
-                OrdenNr = 1, TypSpezialisierung = "Flug",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
-        },
-        new() {
             Id = "JOH-0008", Name = "Sprout Tower", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -1600,39 +1344,6 @@ public static class WeltData
             Verbindungen = new() { "JOH-0011", "JOH-0013" },
         },
         new() {
-            Id = "JOH-0013", Name = "Azalea Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "JOH-0015",
-            Ost = "JOH-0012",
-            Verbindungen = new() { "JOH-0015", "JOH-0012" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-011", Name = "Bugsy", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Käfer-Typ; Scyther mit Schnellen Angriff", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-002", Name = "Bugsy", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-RIV-005", Name = "Silber", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Bugsy", OrdenName = "Bienenorden",
-                OrdenNr = 2, TypSpezialisierung = "Käfer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
-            },
-        },
-        new() {
             Id = "JOH-0014", Name = "Slowpoke Well", Typ = "ort",
             Farbe = "cave", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -1678,45 +1389,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "JOH-0017", Name = "Goldenrod City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Süd = "JOH-0016",
-            West = "JOH-0020",
-            Verbindungen = new() { "JOH-0016", "JOH-0020" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-004", Name = "Silver", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Rivale in Goldenrod", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0169", Level = 20 }, new() { MonsterId = "PKM-0159", Level = 20 }, new() { MonsterId = "PKM-0153", Level = 20 } },
-                },
-                new() {
-                    Id = "JOH-K-012", Name = "Whitney", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Normal-Typ; Miltank mit Walzer", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-003", Name = "Whitney", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-RIV-006", Name = "Silber", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Whitney", OrdenName = "Einfachorden",
-                OrdenNr = 3, TypSpezialisierung = "Normal",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
             },
         },
         new() {
@@ -1819,46 +1491,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "JOH-0024", Name = "Ecruteak City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Süd = "JOH-0023",
-            West = "JOH-0027",
-            Ost = "JOH-0039",
-            Verbindungen = new() { "JOH-0023", "JOH-0027", "JOH-0039" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-005", Name = "Silver", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Rivale im Burned Tower", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0160", Level = 25 }, new() { MonsterId = "PKM-0154", Level = 25 }, new() { MonsterId = "PKM-0157", Level = 25 } },
-                },
-                new() {
-                    Id = "JOH-K-013", Name = "Morty", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Geist-Typ; Gengar mit Hypnose+Traumfresser", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-004", Name = "Morty", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-RIV-007", Name = "Silber", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Morty", OrdenName = "Nebelorden",
-                OrdenNr = 4, TypSpezialisierung = "Geist",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
-            },
-        },
-        new() {
             Id = "JOH-0025", Name = "Burned Tower", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -1929,33 +1561,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "JOH-0029", Name = "Olivine City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "JOH-0031",
-            Ost = "JOH-0028",
-            Verbindungen = new() { "JOH-0031", "JOH-0028" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-015", Name = "Jasmine", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Stahl-Typ; Steelix mit Eisenschwanz", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-006", Name = "Jasmine", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Jasmine", OrdenName = "Mineralorden",
-                OrdenNr = 6, TypSpezialisierung = "Stahl",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
-            },
-        },
-        new() {
             Id = "JOH-0030", Name = "Olivine Lighthouse", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -2016,32 +1621,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "JOH-0034", Name = "Cianwood City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Ost = "JOH-0032",
-            Verbindungen = new() { "JOH-0032" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-014", Name = "Chuck", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Kampf-Typ; Poliwrath mit Wasserpuls", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-005", Name = "Chuck", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Chuck", OrdenName = "Sturmorden",
-                OrdenNr = 5, TypSpezialisierung = "Kampf",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
             },
         },
         new() {
@@ -2124,46 +1703,6 @@ public static class WeltData
             Verbindungen = new() { "JOH-0039", "JOH-0039" },
             WildMonster = new() {
                 new() { MonsterId = "PKM-0236", MinLevel = 20, MaxLevel = 20, Chance = 0 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "JOH-0041", Name = "Mahogany Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "JOH-0043",
-            West = "JOH-0039",
-            Ost = "JOH-0045",
-            Verbindungen = new() { "JOH-0043", "JOH-0039", "JOH-0045" },
-            Trainer = new() {
-                new() {
-                    Id = "JOH-K-006", Name = "Silver", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Rivale vor Mahogany", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0160", Level = 30 }, new() { MonsterId = "PKM-0154", Level = 30 }, new() { MonsterId = "PKM-0157", Level = 30 } },
-                },
-                new() {
-                    Id = "JOH-K-016", Name = "Pryce", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Eis-Typ; Piloswine mit Blizzard", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-GYM-007", Name = "Pryce", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "JOH-RIV-008", Name = "Silber", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Pryce", OrdenName = "Gletscherorden",
-                OrdenNr = 7, TypSpezialisierung = "Eis",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {
@@ -2536,33 +2075,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "HOE-0006", Name = "Petalburg City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "HOE-0007",
-            Ost = "HOE-0005",
-            Verbindungen = new() { "HOE-0007", "HOE-0005" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-014", Name = "Norman", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Normal-Typ; Slaking mit Truant", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-005", Name = "Norman", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Norman", OrdenName = "Gleichgewichtsorden",
-                OrdenNr = 5, TypSpezialisierung = "Normal",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
-            },
-        },
-        new() {
             Id = "HOE-0007", Name = "Route 104", Typ = "ort",
             Farbe = "blue", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -2606,34 +2118,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "HOE-0009", Name = "Rustboro City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "HOE-0012",
-            Süd = "HOE-0007",
-            Ost = "HOE-0010",
-            Verbindungen = new() { "HOE-0012", "HOE-0007", "HOE-0010" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-010", Name = "Roxanne", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Gestein-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-001", Name = "Roxanne", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Roxanne", OrdenName = "Steinorden",
-                OrdenNr = 1, TypSpezialisierung = "Gestein",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
             },
         },
         new() {
@@ -2685,41 +2169,6 @@ public static class WeltData
             West = "HOE-0013",
             Ost = "HOE-0011",
             Verbindungen = new() { "HOE-0013", "HOE-0011" },
-        },
-        new() {
-            Id = "HOE-0015", Name = "Mauville City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "HOE-0027",
-            Süd = "HOE-0016",
-            West = "HOE-0013",
-            Ost = "HOE-0037",
-            Verbindungen = new() { "HOE-0027", "HOE-0016", "HOE-0013", "HOE-0037" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-003", Name = "Wally", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Wally-Kampf", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0281", Level = 16 } },
-                },
-                new() {
-                    Id = "HOE-K-012", Name = "Wattson", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Elektro-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-003", Name = "Wattson", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Wattson", OrdenName = "Dynamoorden",
-                OrdenNr = 3, TypSpezialisierung = "Elektro",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
-            },
         },
         new() {
             Id = "HOE-0016", Name = "Route 110", Typ = "ort",
@@ -2807,33 +2256,6 @@ public static class WeltData
             Verbindungen = new() { "HOE-0019", "HOE-0022" },
             WildMonster = new() {
                 new() { MonsterId = "PKM-0072", MinLevel = 15, MaxLevel = 20, Chance = 60 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "HOE-0022", Name = "Dewford Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "HOE-0023",
-            Süd = "HOE-0021",
-            Verbindungen = new() { "HOE-0023", "HOE-0021" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-011", Name = "Brawly", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Kampf-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-002", Name = "Brawly", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Brawly", OrdenName = "Knöchelorden",
-                OrdenNr = 2, TypSpezialisierung = "Kampf",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
             },
         },
         new() {
@@ -2974,33 +2396,6 @@ public static class WeltData
             Verbindungen = new() { "HOE-0032", "HOE-0030" },
         },
         new() {
-            Id = "HOE-0032", Name = "Lavaridge Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "HOE-0028",
-            Süd = "HOE-0031",
-            Verbindungen = new() { "HOE-0028", "HOE-0031" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-013", Name = "Flannery", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Feuer-Typ; Smaragd: Torkoal", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-004", Name = "Flannery", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Flannery", OrdenName = "Wärmeorden",
-                OrdenNr = 4, TypSpezialisierung = "Feuer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
-            },
-        },
-        new() {
             Id = "HOE-0033", Name = "Route 113", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -3079,33 +2474,6 @@ public static class WeltData
                     Dialogvor = "Versteckt im Gras", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "HOE-0039", Name = "Fortree City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "HOE-0040",
-            Ost = "HOE-0038",
-            Verbindungen = new() { "HOE-0040", "HOE-0038" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-015", Name = "Winona", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Flug-Typ; Altaria mit Draco Meteor", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-006", Name = "Winona", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Winona", OrdenName = "Federorden",
-                OrdenNr = 6, TypSpezialisierung = "Flug",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
             },
         },
         new() {
@@ -3238,33 +2606,6 @@ public static class WeltData
             WildMonster = new() {
                 new() { MonsterId = "PKM-0369", MinLevel = 35, MaxLevel = 30, Chance = 0 }, // Unbekannt
                 new() { MonsterId = "PKM-0072", MinLevel = 30, MaxLevel = 35, Chance = 60 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "HOE-0051", Name = "Mossdeep City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "HOE-0052",
-            Ost = "HOE-0050",
-            Verbindungen = new() { "HOE-0052", "HOE-0050" },
-            Trainer = new() {
-                new() {
-                    Id = "HOE-K-016", Name = "Tate & Liza", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Psycho-Typ; Doppelkampf", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "HOE-GYM-007R", Name = "Tate & Liza", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Tate & Liza", OrdenName = "Regenorden",
-                OrdenNr = 7, TypSpezialisierung = "Psycho",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {
@@ -3694,33 +3035,6 @@ public static class WeltData
             Verbindungen = new() { "SIN-0007", "SIN-0009" },
         },
         new() {
-            Id = "SIN-0009", Name = "Oreburgh City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0020",
-            Süd = "SIN-0008",
-            Verbindungen = new() { "SIN-0020", "SIN-0008" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-010", Name = "Roark", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Gestein-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-001", Name = "Roark", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Roark", OrdenName = "Kohleorden",
-                OrdenNr = 1, TypSpezialisierung = "Gestein",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
-        },
-        new() {
             Id = "SIN-0010", Name = "Oreburgh Mine", Typ = "ort",
             Farbe = "cave", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -3776,46 +3090,6 @@ public static class WeltData
             WildMonster = new() {
                 new() { MonsterId = "PKM-0420", MinLevel = 12, MaxLevel = 30, Chance = 0 }, // Unbekannt
                 new() { MonsterId = "PKM-0092", MinLevel = 12, MaxLevel = 20, Chance = 0 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "SIN-0017", Name = "Eterna City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0019",
-            West = "SIN-0030",
-            Ost = "SIN-0015",
-            Verbindungen = new() { "SIN-0019", "SIN-0030", "SIN-0015" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-003", Name = "Barry", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Barry in Eterna", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0388", Level = 19 }, new() { MonsterId = "PKM-0391", Level = 19 } },
-                },
-                new() {
-                    Id = "SIN-K-011", Name = "Gardenia", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Pflanz-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-002", Name = "Gardenia", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-T-004", Name = "Team Galactic Jupiter", Klasse = "Boss",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Gardenia", OrdenName = "Waldorden",
-                OrdenNr = 2, TypSpezialisierung = "Pflanze",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
             },
         },
         new() {
@@ -3884,52 +3158,6 @@ public static class WeltData
             Verbindungen = new() { "SIN-0023", "SIN-0021" },
             WildMonster = new() {
                 new() { MonsterId = "PKM-0420", MinLevel = 18, MaxLevel = 22, Chance = 30 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "SIN-0023", Name = "Hearthome City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0031",
-            West = "SIN-0024",
-            Ost = "SIN-0022",
-            Verbindungen = new() { "SIN-0031", "SIN-0024", "SIN-0022" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-004", Name = "Barry", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Barry in Hearthome", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0389", Level = 24 }, new() { MonsterId = "PKM-0392", Level = 24 } },
-                },
-                new() {
-                    Id = "SIN-K-014", Name = "Fantina", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Geist-Typ; Platin: Arena 3", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-003P", Name = "Fantina", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-005", Name = "Fantina (D/P) / Maylene (Platin)", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-T-006", Name = "Barry", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Fantina", OrdenName = "Rampenlichtorden",
-                OrdenNr = 3, TypSpezialisierung = "Geist",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
             },
         },
         new() {
@@ -4034,45 +3262,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "SIN-0032", Name = "Pastoria City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "SIN-0034",
-            Ost = "SIN-0031",
-            Verbindungen = new() { "SIN-0034", "SIN-0031" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-013", Name = "Crasher Wake", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Wasser-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-004", Name = "Crasher Wake", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-T-007", Name = "Team Galactic Saturn", Klasse = "Boss",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-T-008", Name = "Barry", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Crasher Wake", OrdenName = "Regenorden",
-                OrdenNr = 5, TypSpezialisierung = "Wasser",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
-            },
-        },
-        new() {
             Id = "SIN-0033", Name = "Great Marsh", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -4103,33 +3292,6 @@ public static class WeltData
             Verbindungen = new() { "SIN-0036", "SIN-0034" },
             WildMonster = new() {
                 new() { MonsterId = "PKM-0396", MinLevel = 22, MaxLevel = 26, Chance = 30 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "SIN-0036", Name = "Veilstone City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0038",
-            Ost = "SIN-0035",
-            Verbindungen = new() { "SIN-0038", "SIN-0035" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-012", Name = "Maylene", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Kampf-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-003DP", Name = "Maylene", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Maylene", OrdenName = "Kobolzorden",
-                OrdenNr = 4, TypSpezialisierung = "Kampf",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
             },
         },
         new() {
@@ -4202,33 +3364,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "SIN-0043", Name = "Snowpoint City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0039",
-            Süd = "SIN-0041",
-            Verbindungen = new() { "SIN-0039", "SIN-0041" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-016", Name = "Candice", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Eis-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-007", Name = "Candice", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Candice", OrdenName = "Eisorden",
-                OrdenNr = 7, TypSpezialisierung = "Eis",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
-            },
-        },
-        new() {
             Id = "SIN-0044", Name = "Snowpoint Temple", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -4247,39 +3382,6 @@ public static class WeltData
             Verbindungen = new() { "SIN-0046", "SIN-0006" },
             WildMonster = new() {
                 new() { MonsterId = "PKM-0072", MinLevel = 25, MaxLevel = 30, Chance = 60 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "SIN-0046", Name = "Canalave City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "SIN-0045",
-            Süd = "SIN-0047",
-            Verbindungen = new() { "SIN-0045", "SIN-0047" },
-            Trainer = new() {
-                new() {
-                    Id = "SIN-K-005", Name = "Barry", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Barry in Canalave", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0389", Level = 35 }, new() { MonsterId = "PKM-0392", Level = 35 } },
-                },
-                new() {
-                    Id = "SIN-K-015", Name = "Byron", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Stahl-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "SIN-GYM-006", Name = "Byron", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Byron", OrdenName = "Mineorden",
-                OrdenNr = 6, TypSpezialisierung = "Stahl",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
             },
         },
         new() {
@@ -4648,34 +3750,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "UNO-0005", Name = "Striaton City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0006",
-            Süd = "KAL-0004",
-            Ost = "UNO-0006",
-            Verbindungen = new() { "KAL-0006", "KAL-0004", "UNO-0006" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-010", Name = "Cilan/Chili/Cress", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Starter-abhängig; Pansage/Pansear/Panpour", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0511", Level = 12 }, new() { MonsterId = "PKM-0513", Level = 12 }, new() { MonsterId = "PKM-0514", Level = 12 } },
-                },
-                new() {
-                    Id = "UNO-GYM-001", Name = "Cilan/Chili/Cress", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Cilan/Chili/Cress", OrdenName = "Trilobitorden",
-                OrdenNr = 1, TypSpezialisierung = "Pflanze/Feuer/Wasser",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
-        },
-        new() {
             Id = "UNO-0006", Name = "Dreamyard", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -4753,39 +3827,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "UNO-0009", Name = "Nacrene City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "UNO-0010",
-            Süd = "KAL-0006",
-            Verbindungen = new() { "UNO-0010", "KAL-0006" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-003", Name = "Cheren", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Cheren in Nacrene", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0496", Level = 18 }, new() { MonsterId = "PKM-0499", Level = 18 } },
-                },
-                new() {
-                    Id = "UNO-K-011", Name = "Lenora", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Normal-Typ; Watchog mit Retaliate", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-002", Name = "Lenora", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Lenora", OrdenName = "Grundorden",
-                OrdenNr = 2, TypSpezialisierung = "Normal",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
-            },
-        },
-        new() {
             Id = "UNO-0010", Name = "Pinwheel Forest", Typ = "ort",
             Farbe = "forest", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -4811,45 +3852,6 @@ public static class WeltData
             West = "UNO-0012",
             Ost = "UNO-0010",
             Verbindungen = new() { "UNO-0012", "UNO-0010" },
-        },
-        new() {
-            Id = "UNO-0012", Name = "Castelia City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0008",
-            Ost = "UNO-0011",
-            Verbindungen = new() { "KAL-0008", "UNO-0011" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-004", Name = "Bianca", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Bianca in Castelia", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0496", Level = 21 }, new() { MonsterId = "PKM-0499", Level = 21 } },
-                },
-                new() {
-                    Id = "UNO-K-012", Name = "Burgh", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Käfer-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-003", Name = "Burgh", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-T-005", Name = "Team Plasma Ghetsis", Klasse = "Boss",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0509", Level = 22 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Burgh", OrdenName = "Insektorden",
-                OrdenNr = 3, TypSpezialisierung = "Käfer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
-            },
         },
         new() {
             Id = "UNO-0013", Name = "Castelia Sewers", Typ = "ort",
@@ -4923,47 +3925,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "UNO-0017", Name = "Nimbasa City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0033",
-            Süd = "KAL-0019",
-            West = "KAL-0010",
-            Ost = "KAL-0008",
-            Verbindungen = new() { "KAL-0033", "KAL-0019", "KAL-0010", "KAL-0008" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-005", Name = "N", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "N in Nimbasa", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-K-013", Name = "Elesa", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Elektro-Typ; Zebstrika mit Volt Switch", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-004", Name = "Elesa", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-T-008", Name = "Cheren", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Elesa", OrdenName = "Voltaorden",
-                OrdenNr = 4, TypSpezialisierung = "Elektro",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
-            },
-        },
-        new() {
             Id = "UNO-0018", Name = "Route 5", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -4999,39 +3960,6 @@ public static class WeltData
             West = "UNO-0020",
             Ost = "KAL-0010",
             Verbindungen = new() { "UNO-0020", "KAL-0010" },
-        },
-        new() {
-            Id = "UNO-0020", Name = "Driftveil City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0012",
-            Ost = "UNO-0019",
-            Verbindungen = new() { "KAL-0012", "UNO-0019" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-014", Name = "Clay", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Boden-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-005", Name = "Clay", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-T-009", Name = "Team Plasma N", Klasse = "Boss",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Clay", OrdenName = "Jetorden",
-                OrdenNr = 5, TypSpezialisierung = "Boden",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
-            },
         },
         new() {
             Id = "UNO-0021", Name = "Cold Storage", Typ = "ort",
@@ -5073,33 +4001,6 @@ public static class WeltData
             WildMonster = new() {
                 new() { MonsterId = "PKM-0599", MinLevel = 25, MaxLevel = 30, Chance = 0 }, // Unbekannt
                 new() { MonsterId = "PKM-0602", MinLevel = 25, MaxLevel = 15, Chance = 0 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "UNO-0024", Name = "Mistralton City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0014",
-            Süd = "UNO-0023",
-            Verbindungen = new() { "KAL-0014", "UNO-0023" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-015", Name = "Skyla", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Flug-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-006", Name = "Skyla", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Skyla", OrdenName = "Jetorden",
-                OrdenNr = 6, TypSpezialisierung = "Flug",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
             },
         },
         new() {
@@ -5149,33 +4050,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "UNO-0028", Name = "Icirrus City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "UNO-0029",
-            Ost = "UNO-0027",
-            Verbindungen = new() { "UNO-0029", "UNO-0027" },
-            Trainer = new() {
-                new() {
-                    Id = "UNO-K-016", Name = "Brycen", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Eis-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "UNO-GYM-007", Name = "Brycen", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Brycen", OrdenName = "Eisorden",
-                OrdenNr = 7, TypSpezialisierung = "Eis",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {
@@ -5732,33 +4606,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAL-0007", Name = "Santalune City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0008",
-            Ost = "KAL-0006",
-            Verbindungen = new() { "KAL-0008", "KAL-0006" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-010", Name = "Viola", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Käfer-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-001", Name = "Viola", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Viola", OrdenName = "Käferorden",
-                OrdenNr = 1, TypSpezialisierung = "Käfer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
-        },
-        new() {
             Id = "KAL-0008", Name = "Route 4", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -5787,35 +4634,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "KAL-0009", Name = "Lumiose City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0029",
-            Süd = "KAL-0010",
-            West = "KAL-0028",
-            Ost = "KAL-0008",
-            Verbindungen = new() { "KAL-0029", "KAL-0010", "KAL-0028", "KAL-0008" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-014", Name = "Clemont", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Elektro-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-005", Name = "Clemont", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Clemont", OrdenName = "Voltaorden",
-                OrdenNr = 5, TypSpezialisierung = "Elektro",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
             },
         },
         new() {
@@ -5994,33 +4812,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAL-0020", Name = "Cyllage City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0021",
-            Ost = "KAL-0019",
-            Verbindungen = new() { "KAL-0021", "KAL-0019" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-011", Name = "Grant", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Gestein/Eis-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-002", Name = "Grant", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Grant", OrdenName = "Klippenorden",
-                OrdenNr = 2, TypSpezialisierung = "Gestein",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
-            },
-        },
-        new() {
             Id = "KAL-0021", Name = "Route 10", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -6080,39 +4871,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAL-0024", Name = "Shalour City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0026",
-            Ost = "KAL-0023",
-            Verbindungen = new() { "KAL-0026", "KAL-0023" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-002", Name = "Serena/Calem", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Rivale in Shalour", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0651", Level = 26 }, new() { MonsterId = "PKM-0654", Level = 26 } },
-                },
-                new() {
-                    Id = "KAL-K-012", Name = "Korrina", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Kampf-Typ; Mega-Lucario", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-003", Name = "Korrina", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Korrina", OrdenName = "Rumpelorden",
-                OrdenNr = 3, TypSpezialisierung = "Kampf",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
-            },
-        },
-        new() {
             Id = "KAL-0025", Name = "Tower of Mastery", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -6146,39 +4904,6 @@ public static class WeltData
                     Dialogvor = "Sky Battle", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "KAL-0027", Name = "Coumarine City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0028",
-            Ost = "KAL-0026",
-            Verbindungen = new() { "KAL-0028", "KAL-0026" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-003", Name = "Serena/Calem", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Rivale in Coumarine", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0652", Level = 32 }, new() { MonsterId = "PKM-0655", Level = 32 } },
-                },
-                new() {
-                    Id = "KAL-K-013", Name = "Ramos", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Pflanz-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-004", Name = "Ramos", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Ramos", OrdenName = "Pflanzenorden",
-                OrdenNr = 4, TypSpezialisierung = "Pflanze",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
             },
         },
         new() {
@@ -6234,33 +4959,6 @@ public static class WeltData
                     Dialogvor = "", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
                 },
-            },
-        },
-        new() {
-            Id = "KAL-0030", Name = "Laverre City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0031",
-            Ost = "KAL-0029",
-            Verbindungen = new() { "KAL-0031", "KAL-0029" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-015", Name = "Valerie", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Fee-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-006", Name = "Valerie", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Valerie", OrdenName = "Feenorden",
-                OrdenNr = 6, TypSpezialisierung = "Fee",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
             },
         },
         new() {
@@ -6322,33 +5020,6 @@ public static class WeltData
             WildMonster = new() {
                 new() { MonsterId = "PKM-0460", MinLevel = 35, MaxLevel = 20, Chance = 0 }, // Unbekannt
                 new() { MonsterId = "PKM-0459", MinLevel = 35, MaxLevel = 40, Chance = 30 }, // Unbekannt
-            },
-        },
-        new() {
-            Id = "KAL-0035", Name = "Anistar City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0036",
-            Ost = "KAL-0033",
-            Verbindungen = new() { "KAL-0036", "KAL-0033" },
-            Trainer = new() {
-                new() {
-                    Id = "KAL-K-016", Name = "Olympia", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Psycho-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "KAL-GYM-007", Name = "Olympia", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Olympia", OrdenName = "Psychoorden",
-                OrdenNr = 7, TypSpezialisierung = "Psycho",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {
@@ -7304,39 +5975,6 @@ public static class WeltData
             },
         },
         new() {
-            Id = "GAL-0006", Name = "Motostoke", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            West = "KAL-0006",
-            Ost = "KAL-0004",
-            Verbindungen = new() { "KAL-0006", "KAL-0004" },
-            Trainer = new() {
-                new() {
-                    Id = "GAL-K-012", Name = "Kabu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Feuer-Typ; Dynamax", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-GYM-003", Name = "Kabu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-T-004", Name = "Kabu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Kabu", OrdenName = "Feuerorden",
-                OrdenNr = 3, TypSpezialisierung = "Feuer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
-            },
-        },
-        new() {
             Id = "GAL-0007", Name = "Wild Area", Typ = "ort",
             Farbe = "green", GridX = -1, GridY = -1,
             HatMonsterCenter = false, HatMarkt = false,
@@ -7383,45 +6021,6 @@ public static class WeltData
             West = "GAL-0011",
             Ost = "GAL-0009",
             Verbindungen = new() { "GAL-0011", "GAL-0009" },
-        },
-        new() {
-            Id = "GAL-0011", Name = "Turffield", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0010",
-            Süd = "KAL-0008",
-            Verbindungen = new() { "KAL-0010", "KAL-0008" },
-            Trainer = new() {
-                new() {
-                    Id = "GAL-K-002", Name = "Hop", Klasse = "Rivale",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Hop in Turffield", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0811", Level = 17 }, new() { MonsterId = "PKM-0814", Level = 17 } },
-                },
-                new() {
-                    Id = "GAL-K-010", Name = "Milo", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Pflanz-Typ; Dynamax", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-GYM-001", Name = "Milo", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-T-002", Name = "Milo", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Milo", OrdenName = "Grasorden",
-                OrdenNr = 1, TypSpezialisierung = "Pflanze",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
         },
         new() {
             Id = "GAL-0012", Name = "Route 5 (Galar)", Typ = "ort",
@@ -7515,38 +6114,6 @@ public static class WeltData
             West = "GAL-0023",
             Ost = "GAL-0021",
             Verbindungen = new() { "GAL-0023", "GAL-0021" },
-        },
-        new() {
-            Id = "GAL-0023", Name = "Spikemuth", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Nord = "KAL-0019",
-            Verbindungen = new() { "KAL-0019" },
-            Trainer = new() {
-                new() {
-                    Id = "GAL-K-018", Name = "Piers", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Unlicht-Typ; KEIN Dynamax", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-GYM-007", Name = "Piers", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "GAL-T-010", Name = "Piers", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Piers", OrdenName = "Dunkelorden",
-                OrdenNr = 7, TypSpezialisierung = "Unlicht",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
-            },
         },
         new() {
             Id = "GAL-0024", Name = "Hammerlocke", Typ = "ort",
@@ -7742,216 +6309,6 @@ public static class WeltData
                     Dialogvor = "Nemona erster Kampf", DialogNach = "Gut gekaempft!",
                     Team = new() { new() { MonsterId = "PKM-0906", Level = 8 }, new() { MonsterId = "PKM-0909", Level = 8 }, new() { MonsterId = "PKM-0912", Level = 8 } },
                 },
-            },
-        },
-        new() {
-            Id = "PAL-0004", Name = "Cortondo", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-010", Name = "Katy", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Käfer-Typ; Tera-Teddiursa", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-001", Name = "Katy", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-002", Name = "Katy", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Katy", OrdenName = "Grasorden",
-                OrdenNr = 1, TypSpezialisierung = "Käfer",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 15 } },
-            },
-        },
-        new() {
-            Id = "PAL-0005", Name = "Artazon", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-011", Name = "Brassius", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Pflanz-Typ; Tera-Sudowoodo", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-002", Name = "Brassius", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-003", Name = "Brassius", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Brassius", OrdenName = "Normalorden",
-                OrdenNr = 2, TypSpezialisierung = "Pflanze",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 20 } },
-            },
-        },
-        new() {
-            Id = "PAL-0006", Name = "Levincia", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-012", Name = "Iono", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Elektro-Typ; Tera-Mismagius", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-003", Name = "Iono", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-004", Name = "Iono", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Iono", OrdenName = "Elektroorden",
-                OrdenNr = 3, TypSpezialisierung = "Elektro",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 25 } },
-            },
-        },
-        new() {
-            Id = "PAL-0007", Name = "Cascarrafa", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-013", Name = "Kofu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Wasser-Typ; Kofu-Quest nötig", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-004", Name = "Kofu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-005", Name = "Kofu", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Kofu", OrdenName = "Wasserorden",
-                OrdenNr = 4, TypSpezialisierung = "Wasser",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 30 } },
-            },
-        },
-        new() {
-            Id = "PAL-0008", Name = "Medali", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-014", Name = "Larry", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Normal-Typ; Geheimgericht-Rätsel", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-005", Name = "Larry", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-006", Name = "Larry", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Larry", OrdenName = "Normalorden",
-                OrdenNr = 5, TypSpezialisierung = "Normal",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 35 } },
-            },
-        },
-        new() {
-            Id = "PAL-0009", Name = "Montenevera", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-015", Name = "Ryme", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Geist-Typ; Doppelkampf-Rap", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-006", Name = "Ryme", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-007", Name = "Ryme", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Ryme", OrdenName = "Geistorden",
-                OrdenNr = 6, TypSpezialisierung = "Geist",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 40 } },
-            },
-        },
-        new() {
-            Id = "PAL-0010", Name = "Alfornada", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
-            HatMonsterCenter = false, HatMarkt = false,
-            Trainer = new() {
-                new() {
-                    Id = "PAL-K-016", Name = "Tulip", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "Psycho-Typ", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-GYM-007", Name = "Tulip", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-                new() {
-                    Id = "PAL-T-008", Name = "Tulip", Klasse = "Arena",
-                    Belohnung = 200, MussBesiegt = true,
-                    Dialogvor = "", DialogNach = "Gut gekaempft!",
-                    Team = new() { new() { MonsterId = "PKM-0019", Level = 5 } },
-                },
-            },
-            Arena = new() {
-                Leiter = "Tulip", OrdenName = "Psychoorden",
-                OrdenNr = 7, TypSpezialisierung = "Psycho",
-                Team = new() { new() { MonsterId = "PKM-0001", Level = 45 } },
             },
         },
         new() {

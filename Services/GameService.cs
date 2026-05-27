@@ -673,6 +673,8 @@ public class GameService
             }
         }
 
+        // Sieg markieren
+        AktuellerKampf.SpielerGewonnen = true;
         // Evolution prüfen
         Notify();
         await Task.Delay(500);

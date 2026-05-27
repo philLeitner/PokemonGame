@@ -46,14 +46,24 @@
                 </div>
             </div>
             <div class="monster-sprite gegner-sprite">
-                <span class="monster-emoji-gross">@GetTypEmoji(gegnerMon.Typen.FirstOrDefault() ?? "")</span>
+                @{
+                    var gegnerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(gegnerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
+                }
+                <div class="monster-emoji-fallback" style="background: @gegnerTypFarbe">
+                    <span class="monster-emoji-gross">@GetTypEmoji(gegnerMon.Typen.FirstOrDefault() ?? "")</span>
+                </div>
             </div>
         </div>
 
         <!-- Spieler unten -->
         <div class="spieler-bereich">
             <div class="monster-sprite spieler-sprite">
-                <span class="monster-emoji-gross spieler-emoji">@GetTypEmoji(spielerMon.Typen.FirstOrDefault() ?? "")</span>
+                @{
+                    var spielerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(spielerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
+                }
+                <div class="monster-emoji-fallback" style="background: @spielerTypFarbe">
+                    <span class="monster-emoji-gross spieler-emoji">@GetTypEmoji(spielerMon.Typen.FirstOrDefault() ?? "")</span>
+                </div>
             </div>
             <div class="monster-info-leiste spieler-leiste">
                 <div class="monster-name-zeile">

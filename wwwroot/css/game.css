@@ -360,8 +360,18 @@ body {
 .kp-rot { background: linear-gradient(90deg, #ef4444, #dc2626); animation: kp-blinken 1s ease-in-out infinite; }
 @keyframes kp-blinken { 50% { opacity: 0.6; } }
 .kp-zahl { font-size: 0.75rem; color: var(--text-mittel); white-space: nowrap; }
-.monster-sprite { font-size: 5rem; line-height: 1; }
-.monster-emoji-gross { display: block; }
+.monster-sprite { display: flex; align-items: center; justify-content: center; }
+.monster-emoji-fallback {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    border: 3px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+.monster-emoji-gross { display: block; line-height: 1; }
+.monster-bild { width: 110px; height: 110px; object-fit: contain; image-rendering: pixelated; }
 .spieler-emoji { transform: scaleX(-1); }
 .kampf-log {
   background: rgba(0,0,0,0.7); border-top: 1px solid var(--border);
