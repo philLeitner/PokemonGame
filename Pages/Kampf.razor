@@ -24,7 +24,7 @@
                     <span class="monster-level">Lv.@gegnerMon.Level</span>
                     @if (gegnerMon.Status != "none")
                     {
-                        <span class="status-badge">@StatusEmoji(gegnerMon.Status)</span>
+                        <span class="status-badge status-@gegnerMon.Status">@StatusEmoji(gegnerMon.Status) @StatusLabel(gegnerMon.Status)</span>
                     }
                 </div>
                 <div class="monster-typen">
@@ -61,7 +61,7 @@
                     <span class="monster-level">Lv.@spielerMon.Level</span>
                     @if (spielerMon.Status != "none")
                     {
-                        <span class="status-badge">@StatusEmoji(spielerMon.Status)</span>
+                        <span class="status-badge status-@spielerMon.Status">@StatusEmoji(spielerMon.Status) @StatusLabel(spielerMon.Status)</span>
                     }
                 </div>
                 <div class="monster-typen">
@@ -386,11 +386,21 @@
 
     private string StatusEmoji(string status) => status switch
     {
-        "vergiftet" => "☠️",
-        "verbrannt" => "🔥",
-        "gelähmt" => "⚡",
+        "vergiftet"     => "☠️",
+        "verbrannt"     => "🔥",
+        "gelähmt"       => "⚡",
         "eingeschlafen" => "💤",
-        "eingefroren" => "🧊",
-        _ => ""
+        "eingefroren"   => "🧧",
+        _               => ""
+    };
+
+    private string StatusLabel(string status) => status switch
+    {
+        "vergiftet"     => "Gift",
+        "verbrannt"     => "Brand",
+        "gelähmt"       => "Lähm.",
+        "eingeschlafen" => "Schlaf",
+        "eingefroren"   => "Eis",
+        _               => ""
     };
 }
