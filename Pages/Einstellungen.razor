@@ -146,6 +146,7 @@
     <div class="settings-footer">
         <button class="btn-settings-back" @onclick="ZurückZuHauptmenü">← Zurück zum Hauptmenü</button>
         <button class="btn-settings-save" @onclick="EinstellungenSpeichern">💾 Einstellungen speichern</button>
+        <button class="btn-settings-start" @onclick="SpeichernUndStarten">▶️ Speichern &amp; Spiel starten</button>
     </div>
 
     @if (!string.IsNullOrEmpty(meldung))
@@ -176,5 +177,14 @@
     private void ZurückZuHauptmenü()
     {
         Game.ZuHauptmenü();
+    }
+
+    private async Task SpeichernUndStarten()
+    {
+        Game.EinstellungenSpeichern();
+        meldung = "✅ Einstellungen gespeichert! Starte Spiel...";
+        StateHasChanged();
+        await Task.Delay(800);
+        Game.ZuStarterWahl();
     }
 }

@@ -18,6 +18,16 @@
                    @bind="suchbegriff" @bind:event="oninput" />
         </div>
 
+        <!-- Region-Filter -->
+        <div class="editor-region-row">
+            <select class="editor-region-select" @bind="filterRegion">
+                @foreach (var kv in RegionNamen)
+                {
+                    <option value="@kv.Key">@kv.Value</option>
+                }
+            </select>
+        </div>
+
         <div class="editor-filter-row">
             @foreach (var typ in new[] { "Alle", "stadt", "route", "hoehle", "wald" })
             {
@@ -461,14 +471,23 @@
     private Ort? ausgewähltOrt;
     private string suchbegriff = "";
     private string filterTyp = "Alle";
+    private string filterRegion = "KAN"; // Standard: Kanto
     private int gridZoom = 100;
     private HashSet<string> offeneTrainer = new();
     private string speicherStatus = "";
     private bool speicherFehler = false;
     private int _neuZähler = 100;
 
+    private static readonly Dictionary<string, string> RegionNamen = new()
+    {
+        { "ALLE", "🌍 Alle" }, { "KAN", "🔴 Kanto" }, { "JOH", "🟡 Johto" },
+        { "HOE", "🔵 Hoenn" }, { "SIN", "⚪ Sinnoh" }, { "UNG", "⚫ Einall" },
+        { "KAL", "🟣 Kalos" }, { "ALO", "🟠 Alola" }, { "GAL", "🟢 Galar" }, { "PAL", "🟤 Paldea" }
+    };
+
     private IEnumerable<Ort> GefilterteOrte => editorOrte
-        .Where(o => (filterTyp == "Alle" || o.Typ == filterTyp) &&
+        .Where(o => (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")) &&
+                    (filterTyp == "Alle" || o.Typ == filterTyp) &&
                     (string.IsNullOrEmpty(suchbegriff) ||
                      o.Name.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase) ||
                      o.Id.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase)))
