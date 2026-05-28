@@ -43,7 +43,7 @@ public static class WeltData
         // === Kanto (60 Orte) ===
         new() {
             Id = "KAN-0001", Name = "Pallet Town", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 12,
+            Farbe = "purple", GridX = 2, GridY = 8,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0002",
             Süd = "KAN-0043",
@@ -67,7 +67,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0002", Name = "Route 1", Typ = "ort",
-            Farbe = "green", GridX = 4, GridY = 11,
+            Farbe = "green", GridX = 2, GridY = 7,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0003",
             Süd = "KAN-0001",
@@ -98,8 +98,194 @@ public static class WeltData
             },
         },
         new() {
+            Id = "KAN-0003", Name = "Vertania", Typ = "stadt",
+            Farbe = "purple", GridX = 2, GridY = 6,
+            HatMonsterCenter = true, HatMarkt = true,
+            Nord = "KAN-0005", Süd = "KAN-0002", Ost = "KAN-0004",
+            Verbindungen = new() { "KAN-0005", "KAN-0002", "KAN-0004" },
+            Arena = new() {
+                Leiter = "Blau", OrdenName = "Erden-Orden",
+                Beschreibung = "Arenaleiter Blau – Erd-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0112", Level = 58 },
+                    new() { MonsterId = "PKM-0059", Level = 58 },
+                    new() { MonsterId = "PKM-0065", Level = 58 },
+                    new() { MonsterId = "PKM-0103", Level = 58 },
+                    new() { MonsterId = "PKM-0009", Level = 58 },
+                },
+            },
+            Trainer = new() { },
+        },
+        new() {
+            Id = "KAN-0007", Name = "Marmoria", Typ = "stadt",
+            Farbe = "purple", GridX = 1, GridY = 2,
+            HatMonsterCenter = true, HatMarkt = true,
+            Süd = "KAN-0005", Ost = "KAN-0008",
+            Verbindungen = new() { "KAN-0005", "KAN-0008" },
+            Arena = new() {
+                Leiter = "Rocko", OrdenName = "Stein-Orden",
+                Beschreibung = "Arenaleiter Rocko – Gesteins-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0074", Level = 12 },
+                    new() { MonsterId = "PKM-0095", Level = 14 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-001", Name = "Rocko", Klasse = "Arena",
+                    Belohnung = 1400, MussBesiegt = true,
+                    Dialogvor = "Ich bin Rocko, Arenaleiter von Marmoria!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0074", Level = 12 },
+                        new() { MonsterId = "PKM-0095", Level = 14 },
+                    },
+                },
+            },
+        },
+        new() {
+            Id = "KAN-0011", Name = "Azuria", Typ = "stadt",
+            Farbe = "purple", GridX = 7, GridY = 2,
+            HatMonsterCenter = true, HatMarkt = true,
+            West = "KAN-0010", Süd = "KAN-0014", Nord = "KAN-0012",
+            Verbindungen = new() { "KAN-0010", "KAN-0014", "KAN-0012", "KAN-0053" },
+            Arena = new() {
+                Leiter = "Misty", OrdenName = "Kaskaden-Orden",
+                Beschreibung = "Arenaleiterin Misty – Wasser-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0120", Level = 18 },
+                    new() { MonsterId = "PKM-0121", Level = 21 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-002", Name = "Misty", Klasse = "Arena",
+                    Belohnung = 2100, MussBesiegt = true,
+                    Dialogvor = "Ich bin Misty, die Wasserblume von Azuria!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0120", Level = 18 },
+                        new() { MonsterId = "PKM-0121", Level = 21 },
+                    },
+                },
+            },
+        },
+        new() {
+            Id = "KAN-0016", Name = "Orania", Typ = "stadt",
+            Farbe = "purple", GridX = 7, GridY = 7,
+            HatMonsterCenter = true, HatMarkt = true,
+            Nord = "KAN-0015", Ost = "KAN-0018",
+            Verbindungen = new() { "KAN-0015", "KAN-0018", "KAN-0017" },
+            Arena = new() {
+                Leiter = "Surge", OrdenName = "Donner-Orden",
+                Beschreibung = "Arenaleiter Surge – Elektro-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0100", Level = 21 },
+                    new() { MonsterId = "PKM-0025", Level = 18 },
+                    new() { MonsterId = "PKM-0026", Level = 24 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-003", Name = "Surge", Klasse = "Arena",
+                    Belohnung = 2400, MussBesiegt = true,
+                    Dialogvor = "Ich bin Lt. Surge, der Elektriker von Orania!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0100", Level = 21 },
+                        new() { MonsterId = "PKM-0025", Level = 18 },
+                        new() { MonsterId = "PKM-0026", Level = 24 },
+                    },
+                },
+            },
+        },
+        new() {
+            Id = "KAN-0028", Name = "Prismania", Typ = "stadt",
+            Farbe = "purple", GridX = 6, GridY = 4,
+            HatMonsterCenter = true, HatMarkt = true,
+            Ost = "KAN-0027", Nord = "KAN-0030",
+            Verbindungen = new() { "KAN-0027", "KAN-0030", "KAN-0029" },
+            Arena = new() {
+                Leiter = "Erika", OrdenName = "Regenbogen-Orden",
+                Beschreibung = "Arenaleiterin Erika – Pflanzen-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0071", Level = 29 },
+                    new() { MonsterId = "PKM-0045", Level = 24 },
+                    new() { MonsterId = "PKM-0045", Level = 29 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-004", Name = "Erika", Klasse = "Arena",
+                    Belohnung = 2900, MussBesiegt = true,
+                    Dialogvor = "Ich bin Erika, die Naturschönheit von Prismania!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0071", Level = 29 },
+                        new() { MonsterId = "PKM-0045", Level = 24 },
+                        new() { MonsterId = "PKM-0045", Level = 29 },
+                    },
+                },
+            },
+        },
+        new() {
+            Id = "KAN-0036", Name = "Fuchsania", Typ = "stadt",
+            Farbe = "purple", GridX = 7, GridY = 10,
+            HatMonsterCenter = true, HatMarkt = true,
+            Nord = "KAN-0035", West = "KAN-0032", Ost = "KAN-0015",
+            Verbindungen = new() { "KAN-0035", "KAN-0032", "KAN-0037", "KAN-0038" },
+            Arena = new() {
+                Leiter = "Janine", OrdenName = "Seelen-Orden",
+                Beschreibung = "Arenaleiterin Janine – Gift-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0048", Level = 36 },
+                    new() { MonsterId = "PKM-0049", Level = 33 },
+                    new() { MonsterId = "PKM-0049", Level = 36 },
+                    new() { MonsterId = "PKM-0049", Level = 39 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-006", Name = "Janine", Klasse = "Arena",
+                    Belohnung = 3900, MussBesiegt = true,
+                    Dialogvor = "Ich bin Janine, Arenaleiterin von Fuchsania!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0048", Level = 36 },
+                        new() { MonsterId = "PKM-0049", Level = 33 },
+                        new() { MonsterId = "PKM-0049", Level = 39 },
+                    },
+                },
+            },
+        },
+        new() {
+            Id = "KAN-0041", Name = "Zinnober", Typ = "stadt",
+            Farbe = "purple", GridX = 1, GridY = 12,
+            HatMonsterCenter = true, HatMarkt = true,
+            Nord = "KAN-0043", Ost = "KAN-0039",
+            Verbindungen = new() { "KAN-0043", "KAN-0039", "KAN-0042" },
+            Arena = new() {
+                Leiter = "Blaine", OrdenName = "Vulkan-Orden",
+                Beschreibung = "Arenaleiter Blaine – Feuer-Typ",
+                Team = new() {
+                    new() { MonsterId = "PKM-0058", Level = 42 },
+                    new() { MonsterId = "PKM-0077", Level = 40 },
+                    new() { MonsterId = "PKM-0078", Level = 42 },
+                    new() { MonsterId = "PKM-0059", Level = 47 },
+                },
+            },
+            Trainer = new() {
+                new() {
+                    Id = "KAN-GYM-008", Name = "Blaine", Klasse = "Arena",
+                    Belohnung = 4700, MussBesiegt = true,
+                    Dialogvor = "Ich bin Blaine, der Feuerspucker von Zinnober!", DialogNach = "Gut gekämpft!",
+                    Team = new() {
+                        new() { MonsterId = "PKM-0058", Level = 42 },
+                        new() { MonsterId = "PKM-0077", Level = 40 },
+                        new() { MonsterId = "PKM-0078", Level = 42 },
+                        new() { MonsterId = "PKM-0059", Level = 47 },
+                    },
+                },
+            },
+        },
+        new() {
             Id = "KAN-0004", Name = "Route 22", Typ = "ort",
-            Farbe = "green", GridX = 1, GridY = 10,
+            Farbe = "green", GridX = 0, GridY = 6,
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0003",
             Verbindungen = new() { "KAN-0003" },
@@ -125,7 +311,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0005", Name = "Route 2", Typ = "ort",
-            Farbe = "green", GridX = 4, GridY = 7,
+            Farbe = "green", GridX = 2, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0007",
             Süd = "KAN-0003",
@@ -163,8 +349,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0006", Name = "Viridian Forest", Typ = "ort",
-            Farbe = "forest", GridX = 3, GridY = 8,
+            Id = "KAN-0006", Name = "Viridan-Wald", Typ = "ort",
+            Farbe = "forest", GridX = 2, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0005",
             Verbindungen = new() { "KAN-0005" },
@@ -186,7 +372,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0008", Name = "Route 3", Typ = "ort",
-            Farbe = "green", GridX = 5, GridY = 6,
+            Farbe = "green", GridX = 3, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0009",
             Verbindungen = new() { "KAN-0009" },
@@ -212,8 +398,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0009", Name = "Mt. Moon", Typ = "ort",
-            Farbe = "cave", GridX = 7, GridY = 6,
+            Id = "KAN-0009", Name = "Mond-Berg", Typ = "ort",
+            Farbe = "cave", GridX = 5, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0008",
             Ost = "KAN-0010",
@@ -253,7 +439,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0010", Name = "Route 4", Typ = "ort",
-            Farbe = "green", GridX = 9, GridY = 6,
+            Farbe = "green", GridX = 6, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0009",
             Ost = "KAN-0011",
@@ -280,7 +466,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0012", Name = "Route 24", Typ = "ort",
-            Farbe = "green", GridX = 11, GridY = 4,
+            Farbe = "green", GridX = 3, GridY = 0,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0013",
             Süd = "KAN-0011",
@@ -308,7 +494,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0013", Name = "Route 25", Typ = "ort",
-            Farbe = "blue", GridX = 12, GridY = 4,
+            Farbe = "blue", GridX = 4, GridY = 0,
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0012",
             Verbindungen = new() { "KAN-0012" },
@@ -326,7 +512,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0014", Name = "Route 5", Typ = "ort",
-            Farbe = "green", GridX = 11, GridY = 7,
+            Farbe = "green", GridX = 7, GridY = 3,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0011",
             Verbindungen = new() { "KAN-0011" },
@@ -354,7 +540,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0015", Name = "Route 6", Typ = "ort",
-            Farbe = "blue", GridX = 11, GridY = 10,
+            Farbe = "blue", GridX = 7, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0016",
             Süd = "KAL-0010",
@@ -377,7 +563,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0017", Name = "S.S. Anne", Typ = "ort",
-            Farbe = "green", GridX = 11, GridY = 12,
+            Farbe = "green", GridX = 7, GridY = 8,
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -396,7 +582,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0018", Name = "Route 11", Typ = "ort",
-            Farbe = "blue", GridX = 13, GridY = 11,
+            Farbe = "blue", GridX = 9, GridY = 7,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0026",
             Ost = "KAN-0016",
@@ -417,7 +603,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0019", Name = "Route 12", Typ = "ort",
-            Farbe = "blue", GridX = 14, GridY = 10,
+            Farbe = "blue", GridX = 12, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0023",
             Süd = "KAL-0028",
@@ -447,7 +633,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0020", Name = "Route 9", Typ = "ort",
-            Farbe = "green", GridX = 12, GridY = 6,
+            Farbe = "green", GridX = 9, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0021",
             Ost = "KAN-0011",
@@ -475,7 +661,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0021", Name = "Route 10", Typ = "ort",
-            Farbe = "blue", GridX = 14, GridY = 6,
+            Farbe = "blue", GridX = 11, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0024",
             Ost = "KAL-0019",
@@ -496,8 +682,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0022", Name = "Rock Tunnel", Typ = "ort",
-            Farbe = "cave", GridX = 14, GridY = 8,
+            Id = "KAN-0022", Name = "Fels-Tunnel", Typ = "ort",
+            Farbe = "cave", GridX = 11, GridY = 3,
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0041", MinLevel = 15, MaxLevel = 20, Chance = 50 }, // Unbekannt
@@ -520,8 +706,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0023", Name = "Power Plant", Typ = "ort",
-            Farbe = "blue", GridX = 15, GridY = 7,
+            Id = "KAN-0023", Name = "Kraftwerk", Typ = "ort",
+            Farbe = "blue", GridX = 8, GridY = 1,
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0081", MinLevel = 22, MaxLevel = 30, Chance = 20 }, // Unbekannt
@@ -538,8 +724,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0024", Name = "Lavender Town", Typ = "ort",
-            Farbe = "purple", GridX = 14, GridY = 9,
+            Id = "KAN-0024", Name = "Lavandia", Typ = "ort",
+            Farbe = "purple", GridX = 12, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0016",
             Süd = "KAL-0021",
@@ -547,8 +733,8 @@ public static class WeltData
             Verbindungen = new() { "KAL-0016", "KAL-0021", "KAL-0026" },
         },
         new() {
-            Id = "KAN-0025", Name = "Pokémon Tower", Typ = "ort",
-            Farbe = "green", GridX = 15, GridY = 9,
+            Id = "KAN-0025", Name = "Pokémon-Turm", Typ = "ort",
+            Farbe = "green", GridX = 12, GridY = 3,
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -573,7 +759,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0026", Name = "Route 8", Typ = "ort",
-            Farbe = "green", GridX = 12, GridY = 9,
+            Farbe = "green", GridX = 10, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0014",
             Ost = "KAN-0024",
@@ -595,7 +781,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0027", Name = "Route 7", Typ = "ort",
-            Farbe = "green", GridX = 10, GridY = 9,
+            Farbe = "green", GridX = 7, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0028",
             Ost = "KAL-0016",
@@ -617,13 +803,13 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0029", Name = "Team Rocket Hideout", Typ = "ort",
-            Farbe = "green", GridX = 9, GridY = 10,
+            Id = "KAN-0029", Name = "Rocket-Versteck", Typ = "ort",
+            Farbe = "green", GridX = 6, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0030", Name = "Route 16", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 9,
+            Farbe = "green", GridX = 5, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0028",
             Verbindungen = new() { "KAN-0028" },
@@ -643,7 +829,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0031", Name = "Route 17", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 10,
+            Farbe = "green", GridX = 5, GridY = 6,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0033",
             Süd = "KAN-0037",
@@ -664,7 +850,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0032", Name = "Route 18", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 14,
+            Farbe = "green", GridX = 5, GridY = 10,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0036",
             West = "KAN-0036",
@@ -685,7 +871,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0033", Name = "Route 13", Typ = "ort",
-            Farbe = "blue", GridX = 13, GridY = 13,
+            Farbe = "blue", GridX = 10, GridY = 9,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0029",
             Ost = "KAL-0026",
@@ -712,7 +898,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0034", Name = "Route 14", Typ = "ort",
-            Farbe = "green", GridX = 12, GridY = 13,
+            Farbe = "green", GridX = 9, GridY = 10,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0031",
             Ost = "KAL-0028",
@@ -740,7 +926,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0035", Name = "Route 15", Typ = "ort",
-            Farbe = "green", GridX = 10, GridY = 14,
+            Farbe = "green", GridX = 8, GridY = 10,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0036",
             Ost = "KAL-0029",
@@ -760,8 +946,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0037", Name = "Safari Zone", Typ = "ort",
-            Farbe = "blue", GridX = 9, GridY = 13,
+            Id = "KAN-0037", Name = "Safari-Zone", Typ = "ort",
+            Farbe = "blue", GridX = 6, GridY = 9,
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0111", MinLevel = 25, MaxLevel = 30, Chance = 15 }, // Unbekannt
@@ -784,7 +970,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0038", Name = "Route 19", Typ = "ort",
-            Farbe = "blue", GridX = 9, GridY = 15,
+            Farbe = "blue", GridX = 6, GridY = 11,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0041",
             Ost = "KAN-0036",
@@ -805,7 +991,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0039", Name = "Route 20", Typ = "ort",
-            Farbe = "blue", GridX = 5, GridY = 16,
+            Farbe = "blue", GridX = 4, GridY = 12,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0039",
             Süd = "KAN-0041",
@@ -824,8 +1010,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0040", Name = "Seafoam Islands", Typ = "ort",
-            Farbe = "blue", GridX = 6, GridY = 15,
+            Id = "KAN-0040", Name = "Eisinseln", Typ = "ort",
+            Farbe = "blue", GridX = 9, GridY = 1,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0041",
             Ost = "KAL-0041",
@@ -855,8 +1041,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0042", Name = "Pokémon Mansion", Typ = "ort",
-            Farbe = "green", GridX = 3, GridY = 16,
+            Id = "KAN-0042", Name = "Pokémon-Villa", Typ = "ort",
+            Farbe = "green", GridX = 1, GridY = 11,
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0109", MinLevel = 30, MaxLevel = 38, Chance = 20 }, // Unbekannt
@@ -875,7 +1061,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0043", Name = "Route 21", Typ = "ort",
-            Farbe = "blue", GridX = 4, GridY = 13,
+            Farbe = "blue", GridX = 2, GridY = 9,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0001",
             Süd = "KAN-0041",
@@ -895,8 +1081,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0044", Name = "Saffron City", Typ = "ort",
-            Farbe = "purple", GridX = 11, GridY = 9,
+            Id = "KAN-0044", Name = "Saffronia", Typ = "ort",
+            Farbe = "purple", GridX = 8, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0010",
             Süd = "KAL-0012",
@@ -924,8 +1110,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0045", Name = "Silph Co.", Typ = "ort",
-            Farbe = "green", GridX = 11, GridY = 16,
+            Id = "KAN-0045", Name = "Silph AG", Typ = "ort",
+            Farbe = "green", GridX = 8, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -949,29 +1135,29 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0046", Name = "Fighting Dojo", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Id = "KAN-0046", Name = "Kampf-Dojo", Typ = "ort",
+            Farbe = "green", GridX = 8, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
-            Id = "KAN-0047", Name = "Diglett's Cave", Typ = "ort",
-            Farbe = "cave", GridX = 5, GridY = 8,
+            Id = "KAN-0047", Name = "Digda-Höhle", Typ = "ort",
+            Farbe = "cave", GridX = 3, GridY = 4,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0023",
             Ost = "KAN-0018",
             Verbindungen = new() { "KAL-0023", "KAN-0018" },
         },
         new() {
-            Id = "KAN-0048", Name = "Underground Path (R5-R6)", Typ = "ort",
-            Farbe = "green", GridX = 12, GridY = 17,
+            Id = "KAN-0048", Name = "Unterweg. R5-R6", Typ = "ort",
+            Farbe = "green", GridX = 7, GridY = 6,
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0014",
             Süd = "KAN-0015",
             Verbindungen = new() { "KAN-0014", "KAN-0015" },
         },
         new() {
-            Id = "KAN-0049", Name = "Underground Path (R7-R8)", Typ = "ort",
-            Farbe = "green", GridX = 13, GridY = 16,
+            Id = "KAN-0049", Name = "Unterweg. R7-R8", Typ = "ort",
+            Farbe = "green", GridX = 6, GridY = 5,
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0027",
             Ost = "KAN-0026",
@@ -979,7 +1165,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0050", Name = "Route 23", Typ = "ort",
-            Farbe = "blue", GridX = 1, GridY = 9,
+            Farbe = "blue", GridX = 0, GridY = 2,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0051",
             Ost = "KAN-0004",
@@ -990,8 +1176,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0051", Name = "Victory Road", Typ = "ort",
-            Farbe = "cave", GridX = 1, GridY = 8,
+            Id = "KAN-0051", Name = "Siegesstraße", Typ = "ort",
+            Farbe = "cave", GridX = 0, GridY = 1,
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0055",
             Ost = "KAN-0050",
@@ -1046,8 +1232,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0052", Name = "Indigo Plateau", Typ = "ort",
-            Farbe = "green", GridX = 1, GridY = 7,
+            Id = "KAN-0052", Name = "Indigo-Plateau", Typ = "ort",
+            Farbe = "green", GridX = 0, GridY = 3,
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0051",
             Verbindungen = new() { "KAN-0051" },
@@ -1091,8 +1277,8 @@ public static class WeltData
             },
         },
         new() {
-            Id = "KAN-0053", Name = "Cerulean Cave", Typ = "ort",
-            Farbe = "cave", GridX = 10, GridY = 4,
+            Id = "KAN-0053", Name = "Azuria-Höhle", Typ = "ort",
+            Farbe = "cave", GridX = 6, GridY = 1,
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0063", MinLevel = 55, MaxLevel = 60, Chance = 10 }, // Unbekannt
