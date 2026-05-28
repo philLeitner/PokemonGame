@@ -179,10 +179,42 @@ public class GameService
     }
 
     // ── Ort betreten ─────────────────────────────────────────────────────────
-    public void OrtBetreten(string ortId)
+    /// <summary>Prüft ob ein Ort zugänglich ist. Gibt null zurück wenn ok, sonst Fehlermeldung.</summary>
+    public string? OrtZugangsPrüfung(Ort ort)
     {
+        // Unterirdische Gänge sind immer zugänglich
+        if (ort.IstUnterirdisch) return null;
+        // Liga-Zugang: alle Kanto-Arenen-Orden benötigt
+        if (ort.LigaZugang)
+        {
+            var kantoArenaOrden = AlleOrte
+                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-"))
+                .Select(o => o.Arena!.OrdenName)
+                .Distinct().ToList();
+            var fehlendeOrden = kantoArenaOrden.Where(o => !Spieler.Orden.Contains(o)).ToList();
+            if (fehlendeOrden.Count > 0)
+                return $"⛔ Du benötigst alle {kantoArenaOrden.Count} Kanto-Orden für den Liga-Zugang! Es fehlen noch {fehlendeOrden.Count} Orden.";
+        }
+        // Mindest-Orden-Prüfung
+        if (ort.MinOrdenFürZugang > 0 && Spieler.Orden.Count < ort.MinOrdenFürZugang)
+            return $"⛔ Du benötigst mindestens {ort.MinOrdenFürZugang} Orden für diesen Ort. Du hast {Spieler.Orden.Count}.";
+        // Item-Bedingung
+        if (ort.BenötigtItem != null && Spieler.GetItemMenge(ort.BenötigtItem) <= 0)
+            return $"⛔ Du benötigst {ort.BenötigtItemName ?? ort.BenötigtItem}, um diesen Ort zu betreten!";
+        return null;
+    }
+
+    public string? OrtBetreten(string ortId)
+    {
+        var ort = AlleOrte.FirstOrDefault(o => o.Id == ortId);
+        if (ort != null)
+        {
+            var fehler = OrtZugangsPrüfung(ort);
+            if (fehler != null) return fehler;
+        }
         Spieler.AktuellerOrt = ortId;
         Notify();
+        return null;
     }
 
     // ── Kampf starten ────────────────────────────────────────────────────────

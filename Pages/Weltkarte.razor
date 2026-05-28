@@ -141,6 +141,7 @@
         {
             bool istHier2 = anzeigeOrt.Id == Game.Spieler.AktuellerOrt;
             var ortRef3 = Game.AlleOrte.First(o => o.Id == anzeigeOrt.Id);
+            var zugangsFehler2 = istHier2 ? null : Game.OrtZugangsPrüfung(ortRef3);
             <div class="ort-details">
                 <div class="ort-details-header">
                     <h3>@anzeigeOrt.Name</h3>
@@ -153,9 +154,22 @@
                 <div class="ort-aktionen">
                     @if (!istHier2)
                     {
-                        <button class="btn-reisen" @onclick="ZumOrtReisen">
-                            🚶 Nach @anzeigeOrt.Name reisen
-                        </button>
+                        @if (zugangsFehler2 != null)
+                        {
+                            <div class="ort-gesperrt-hinweis">
+                                <span class="gesperrt-icon">⛔</span>
+                                <span>@zugangsFehler2.Replace("⛔ ", "")</span>
+                            </div>
+                            <button class="btn-reisen btn-reisen-gesperrt" disabled>
+                                🔒 Zugang gesperrt
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn-reisen" @onclick="ZumOrtReisen">
+                                🚶 Nach @anzeigeOrt.Name reisen
+                            </button>
+                        }
                     }
                     else
                     {
@@ -409,7 +423,12 @@
             ausgewähltOrt = ort;
             return;
         }
-        Game.OrtBetreten(ort.Id);
+        var fehler = Game.OrtBetreten(ort.Id);
+        if (fehler != null)
+        {
+            meldung = fehler;
+            return;
+        }
         ausgewähltOrtId = null;
         ausgewähltOrt = null;
     }
@@ -417,7 +436,12 @@
     private void ZumOrtReisen()
     {
         if (ausgewähltOrt == null) return;
-        Game.OrtBetreten(ausgewähltOrt.Id);
+        var fehler = Game.OrtBetreten(ausgewähltOrt.Id);
+        if (fehler != null)
+        {
+            meldung = fehler;
+            return;
+        }
         ausgewähltOrtId = null;
         ausgewähltOrt = null;
     }

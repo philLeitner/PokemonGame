@@ -255,6 +255,11 @@ public class Ort
     public bool HatMarkt { get; set; } = false;
     public List<ShopItem> MarktAngebot { get; set; } = new();
     public int MinOrdenFürZugang { get; set; } = 0; // Orden-Sperre
+    // Zugangs-Bedingungen
+    public string? BenötigtItem { get; set; } = null;       // Item-ID die der Spieler besitzen muss
+    public string? BenötigtItemName { get; set; } = null;   // Anzeigename des benötigten Items
+    public bool IstUnterirdisch { get; set; } = false;      // Unterirdische Gänge: immer zugänglich
+    public bool LigaZugang { get; set; } = false;           // Nur mit allen 8 Kanto-Orden zugänglich
     public List<GesprächsNPC> NPCs { get; set; } = new();
 }
 
