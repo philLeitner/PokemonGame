@@ -1695,3 +1695,276 @@ body {
 .rucksack-item .item-name { font-weight: 600; color: #e2e8f0; font-size: 0.9rem; display: block; }
 .rucksack-item .item-menge { color: #94a3b8; font-size: 0.8rem; }
 .rucksack-leer { color: #64748b; text-align: center; padding: 1rem; }
+
+/* ═══ MapEditor: Kompass-Verbindungen ════════════════════════════════════ */
+.editor-kompass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.kompass-nord, .kompass-süd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  max-width: 200px;
+}
+.kompass-mitte-zeile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.kompass-west, .kompass-ost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  flex: 1;
+}
+.kompass-mitte {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  min-width: 70px;
+  height: 50px;
+  background: #161b22;
+  border: 2px solid #58a6ff;
+  border-radius: 50%;
+  text-align: center;
+}
+.kompass-ort-name {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #58a6ff;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.kompass-label {
+  font-size: 0.65rem;
+  color: #8b949e;
+  text-align: center;
+}
+.kompass-select {
+  font-size: 0.72rem !important;
+  padding: 0.2rem 0.3rem !important;
+  width: 100% !important;
+  max-width: 160px;
+}
+
+/* ═══ MapEditor: Verbindungs-Info-Chips ══════════════════════════════════ */
+.editor-verbindungen-info {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+.verbindungen-label {
+  font-size: 0.68rem;
+  color: #8b949e;
+  margin-right: 0.25rem;
+}
+.verbindung-chip {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  color: #c9d1d9;
+}
+
+/* ═══ MapEditor: Ortsliste Farbcodierung ═════════════════════════════════ */
+.editor-liste-legende {
+  font-size: 0.68rem;
+  color: #8b949e;
+  padding: 0.25rem 0.75rem;
+  border-bottom: 1px solid #21262d;
+}
+.legende-gruen { color: #3fb950; font-size: 0.8rem; }
+.legende-grau  { color: #8b949e; font-size: 0.8rem; }
+
+.editor-ort-eintrag.unplatziert {
+  border-left: 3px solid #3fb950;
+}
+.editor-ort-eintrag.platziert {
+  border-left: 3px solid #30363d;
+  opacity: 0.75;
+}
+.editor-ort-eintrag.platziert:hover { opacity: 1; }
+
+.badge-platziert.ja  { color: #8b949e; font-size: 0.7rem; }
+.badge-platziert.nein { color: #3fb950; font-size: 0.7rem; }
+
+/* ═══ MapEditor: Sperrbedingungen – Hinweis-Text ═════════════════════════ */
+.editor-field-hint {
+  font-size: 0.62rem;
+  color: #8b949e;
+  font-style: italic;
+  margin-top: 0.1rem;
+}
+
+/* ═══ MapEditor: Grid-Entfernen-Button ═══════════════════════════════════ */
+.btn-grid-entfernen {
+  background: transparent;
+  border: 1px solid #f85149;
+  color: #f85149;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-grid-entfernen:hover { background: rgba(248,81,73,0.12); }
+
+/* ═══ MapEditor: Handy-Popup ═════════════════════════════════════════════ */
+.editor-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.editor-popup {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.5);
+}
+.editor-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #30363d;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+.editor-popup-search {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #21262d;
+}
+.editor-popup-liste {
+  overflow-y: auto;
+  flex: 1;
+}
+.editor-popup-eintrag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #21262d;
+  transition: background 0.1s;
+}
+.editor-popup-eintrag:hover { background: #21262d; }
+.editor-popup-leer { color: #f85149; }
+.editor-popup-eintrag.popup-frei { border-left: 3px solid #3fb950; }
+.editor-popup-eintrag.popup-platziert { border-left: 3px solid #30363d; opacity: 0.8; }
+.popup-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.popup-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.popup-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e6edf3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.popup-id {
+  font-size: 0.68rem;
+  color: #8b949e;
+  font-family: monospace;
+}
+.popup-status-dot { font-size: 0.8rem; }
+.dot-gruen { color: #3fb950; }
+.dot-grau  { color: #8b949e; }
+
+/* ═══ MapEditor: Mobile Responsive ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .editor-screen {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh;
+  }
+  .editor-panel-left {
+    width: 100% !important;
+    height: 220px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #30363d;
+  }
+  .editor-panel-mitte {
+    width: 100% !important;
+    height: 300px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #30363d;
+  }
+  .editor-panel-rechts {
+    width: 100% !important;
+    flex: 1;
+    min-height: 400px;
+  }
+  .editor-grid-controls {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+  }
+  .kompass-mitte-zeile {
+    gap: 0.25rem;
+  }
+  .kompass-select {
+    max-width: 110px;
+    font-size: 0.65rem !important;
+  }
+  .editor-field-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .editor-popup {
+    border-radius: 12px 12px 0 0;
+    max-height: 85vh;
+  }
+}
+@media (min-width: 600px) {
+  .editor-popup-overlay {
+    align-items: center;
+  }
+  .editor-popup {
+    border-radius: 12px;
+    max-height: 70vh;
+  }
+}

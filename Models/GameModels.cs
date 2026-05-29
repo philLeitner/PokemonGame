@@ -254,12 +254,15 @@ public class Ort
     public bool HatMonsterCenter { get; set; } = false;
     public bool HatMarkt { get; set; } = false;
     public List<ShopItem> MarktAngebot { get; set; } = new();
-    public int MinOrdenFürZugang { get; set; } = 0; // Orden-Sperre
+    public int MinOrdenFürZugang { get; set; } = 0; // Orden-Sperre (ab diesem Orden zugänglich)
+    public int MaxOrdenFürSperre { get; set; } = 0;  // Bis zu diesem Orden gesperrt (0 = kein Max)
     // Zugangs-Bedingungen
     public string? BenötigtItem { get; set; } = null;       // Item-ID die der Spieler besitzen muss
     public string? BenötigtItemName { get; set; } = null;   // Anzeigename des benötigten Items
     public bool IstUnterirdisch { get; set; } = false;      // Unterirdische Gänge: immer zugänglich
     public bool LigaZugang { get; set; } = false;           // Nur mit allen 8 Kanto-Orden zugänglich
+    public string? Teleport { get; set; }                   // Teleport-Ziel (Ort-ID)
+    public string? Untergrund { get; set; }                 // Unterirdischer Gang (Ort-ID)
     public List<GesprächsNPC> NPCs { get; set; } = new();
 }
 
