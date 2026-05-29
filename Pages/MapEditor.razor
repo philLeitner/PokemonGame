@@ -69,7 +69,7 @@
         </div>
 
         <div class="editor-panel-footer">
-            <button class="btn-editor-neu" @onclick="NeuenOrtErstellen">＋ Neuen Ort erstellen</button>
+            <button class="btn-editor-neu" @onclick="NeuOrtModalOeffnen">＋ Neuen Ort erstellen</button>
         </div>
     </div>
 
@@ -393,11 +393,11 @@
                                     value="@(ort.Nord ?? "")"
                                     @onchange="e => { var v = e.Value?.ToString(); ort.Nord = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                 <option value="">— keine —</option>
-                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
-                                {
-                                    <option value="@o.Id">@o.Name</option>
-                                }
-                            </select>
+                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
+                                    {
+                                        <option value="@o.Id">@o.Name</option>
+                                    }
+                                </select>
                         </div>
                         <!-- Mitte-Zeile: West | [Name] | Ost -->
                         <div class="kompass-mitte-zeile">
@@ -407,7 +407,7 @@
                                         value="@(ort.West ?? "")"
                                         @onchange="e => { var v = e.Value?.ToString(); ort.West = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                     <option value="">— keine —</option>
-                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                     {
                                         <option value="@o.Id">@o.Name</option>
                                     }
@@ -422,7 +422,7 @@
                                         value="@(ort.Ost ?? "")"
                                         @onchange="e => { var v = e.Value?.ToString(); ort.Ost = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                     <option value="">— keine —</option>
-                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                     {
                                         <option value="@o.Id">@o.Name</option>
                                     }
@@ -436,14 +436,13 @@
                                     value="@(ort.Süd ?? "")"
                                     @onchange="e => { var v = e.Value?.ToString(); ort.Süd = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                 <option value="">— keine —</option>
-                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                 {
                                     <option value="@o.Id">@o.Name</option>
                                 }
                             </select>
                         </div>
                     </div>
-
                     <!-- Teleport & Untergrund -->
                     <div class="editor-field-grid" style="margin-top:0.75rem">
                         <div class="editor-field">
@@ -452,7 +451,7 @@
                                     value="@(ort.Teleport ?? "")"
                                     @onchange="e => { var v = e.Value?.ToString(); ort.Teleport = string.IsNullOrEmpty(v) ? null : v; Speichern(); }">
                                 <option value="">— kein Teleport —</option>
-                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                 {
                                     <option value="@o.Id">@o.Name</option>
                                 }
@@ -464,14 +463,13 @@
                                     value="@(ort.Untergrund ?? "")"
                                     @onchange="e => { var v = e.Value?.ToString(); ort.Untergrund = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                 <option value="">— kein Untergang —</option>
-                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                 {
                                     <option value="@o.Id">@o.Name</option>
                                 }
                             </select>
                         </div>
                     </div>
-
                     <!-- Verbindungs-Übersicht -->
                     <div class="editor-verbindungen-info">
                         <span class="verbindungen-label">Alle Verbindungen:</span>
@@ -752,6 +750,65 @@
     </div>
 }
 
+<!-- ═══ Modal: Neuen Ort erstellen ══════════════════════════════════════ -->
+@if (neuOrtModalOffen)
+{
+    <div class="editor-popup-overlay" @onclick="NeuOrtModalSchliessen">
+        <div class="editor-popup editor-neu-ort-modal" @onclick:stopPropagation="true">
+            <div class="editor-popup-header">
+                <span>＋ Neuen Ort erstellen</span>
+                <button class="btn-schliessen" @onclick="NeuOrtModalSchliessen">✕</button>
+            </div>
+            <div class="editor-neu-ort-body">
+                <div class="editor-field">
+                    <label>Name</label>
+                    <input class="editor-input" placeholder="z.B. Route 1" @bind="neuOrtName" />
+                </div>
+                <div class="editor-field">
+                    <label>Typ</label>
+                    <select class="editor-input" @bind="neuOrtTyp">
+                        <option value="route">🌿 Route</option>
+                        <option value="stadt">🏙️ Stadt</option>
+                        <option value="hoehle">⛰️ Höhle</option>
+                        <option value="wald">🌲 Wald</option>
+                    </select>
+                </div>
+                <div class="editor-field">
+                    <label>Region</label>
+                    <select class="editor-input" @bind="neuOrtRegion">
+                        @foreach (var kv in RegionNamen.Where(x => x.Key != "ALLE"))
+                        {
+                            <option value="@kv.Key">@kv.Value</option>
+                        }
+                    </select>
+                </div>
+                <div class="editor-field">
+                    <label>Kartenfarbe</label>
+                    <div class="editor-farb-auswahl">
+                        @foreach (var kv in WeltData.OrtFarben)
+                        {
+                            <button class="farb-btn @(neuOrtFarbe == kv.Key ? "aktiv" : "")"
+                                    style="background:@kv.Value"
+                                    title="@kv.Key"
+                                    @onclick="() => neuOrtFarbe = kv.Key">
+                                @(neuOrtFarbe == kv.Key ? "✓" : "")
+                            </button>
+                        }
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(neuOrtFehler))
+                {
+                    <p class="editor-fehler-text">⚠️ @neuOrtFehler</p>
+                }
+            </div>
+            <div class="editor-neu-ort-footer">
+                <button class="btn-editor-abbrechen" @onclick="NeuOrtModalSchliessen">Abbrechen</button>
+                <button class="btn-editor-erstellen" @onclick="NeuOrtErstellen">✓ Erstellen</button>
+            </div>
+        </div>
+    </div>
+}
+
 @code {
     private List<Ort> editorOrte = new();
     private string? ausgewähltOrtId;
@@ -765,7 +822,13 @@
     private HashSet<string> offeneTrainer = new();
     private string speicherStatus = "";
     private bool speicherFehler = false;
-    private int _neuZähler = 100;
+    // "Neuen Ort erstellen" Modal
+    private bool neuOrtModalOffen = false;
+    private string neuOrtName = "";
+    private string neuOrtTyp = "route";
+    private string neuOrtRegion = "KAN";
+    private string neuOrtFarbe = "green";
+    private string neuOrtFehler = "";
 
     // Popup-Zustand
     private bool popupOffen = false;
@@ -889,21 +952,59 @@
         ort.Verbindungen = neu.Distinct().ToList();
     }
 
-    private void NeuenOrtErstellen()
+    private void NeuOrtModalOeffnen()
     {
-        _neuZähler++;
+        // Vorauswahl: aktuelle Region (falls nicht ALLE)
+        neuOrtRegion = filterRegion == "ALLE" ? "KAN" : filterRegion;
+        neuOrtName = "";
+        neuOrtTyp = "route";
+        neuOrtFarbe = "green";
+        neuOrtFehler = "";
+        neuOrtModalOffen = true;
+    }
+
+    private void NeuOrtModalSchliessen()
+    {
+        neuOrtModalOffen = false;
+        neuOrtFehler = "";
+    }
+
+    private void NeuOrtErstellen()
+    {
+        var name = neuOrtName.Trim();
+        if (string.IsNullOrEmpty(name))
+        {
+            neuOrtFehler = "Bitte einen Namen eingeben.";
+            return;
+        }
+        // Neue ID generieren: REGION-XXXX (nächste freie Nummer)
+        var prefix = neuOrtRegion;
+        var vorhandeneNummern = editorOrte
+            .Where(o => o.Id.StartsWith(prefix + "-"))
+            .Select(o => {
+                var teil = o.Id.Substring(prefix.Length + 1);
+                return int.TryParse(teil, out int n) ? n : 0;
+            })
+            .ToHashSet();
+        int naechste = 1;
+        while (vorhandeneNummern.Contains(naechste)) naechste++;
+        var neueId = $"{prefix}-{naechste:D4}";
         var neuer = new Ort
         {
-            Id = $"ort-{_neuZähler:D3}",
-            Name = $"Neuer Ort {_neuZähler}",
-            Typ = "route",
-            Farbe = "green",
+            Id = neueId,
+            Name = name,
+            Typ = neuOrtTyp,
+            Farbe = neuOrtFarbe,
             GridX = -1,
             GridY = -1,
             Beschreibung = "",
         };
         editorOrte.Add(neuer);
-        OrtAuswählen(neuer.Id);
+        // Region-Filter auf die neue Region setzen
+        filterRegion = neuOrtRegion;
+        OrtAuswählen(neueId);
+        neuOrtModalOffen = false;
+        neuOrtFehler = "";
         Speichern();
     }
 
@@ -1129,4 +1230,12 @@
         "wald"   => "🌲",
         _        => "📍"
     };
+
+    /// <summary>Prüft ob zwei Orte zur gleichen Region gehören (anhand ID-Präfix vor dem Bindestrich)</summary>
+    private bool SameRegion(Ort a, Ort b)
+    {
+        var prefixA = a.Id.Contains('-') ? a.Id.Split('-')[0] : a.Id;
+        var prefixB = b.Id.Contains('-') ? b.Id.Split('-')[0] : b.Id;
+        return prefixA == prefixB;
+    }
 }
