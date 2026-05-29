@@ -588,7 +588,7 @@ body {
 
 /* Panel 1 – Ortsliste */
 .editor-panel-left {
-  width: 240px; min-width: 200px;
+  width: 190px; min-width: 160px;
   background: #161b22; border-right: 1px solid #30363d;
   display: flex; flex-direction: column; overflow: hidden;
 }
@@ -646,7 +646,7 @@ body {
 }
 .editor-ort-info { flex: 1; min-width: 0; }
 .editor-ort-name { display: block; font-size: 0.82rem; font-weight: 600; color: #e6edf3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.editor-ort-id { display: block; font-size: 0.68rem; color: #8b949e; }
+.editor-ort-id { display: none; }
 .editor-ort-badges { display: flex; gap: 2px; font-size: 0.75rem; }
 .badge-grid-ok { color: #3fb950; font-size: 0.6rem; }
 .editor-panel-footer {
@@ -723,7 +723,7 @@ body {
 
 /* Panel 3 – Detail-Editor */
 .editor-panel-rechts {
-  width: 360px; min-width: 320px;
+  width: 360px; min-width: 320px; transition: width 0.2s ease, min-width 0.2s ease;
   background: #161b22; overflow-y: auto;
   display: flex; flex-direction: column;
 }
@@ -1968,3 +1968,8 @@ body {
     max-height: 70vh;
   }
 }
+
+.editor-panel-rechts.sichtbar { width: 360px; min-width: 320px; }
+
+.editor-panel-rechts.versteckt { width: 0; min-width: 0; overflow: hidden; border: none; }
+.editor-panel-rechts.sichtbar { width: 360px; min-width: 320px; }

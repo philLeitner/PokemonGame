@@ -56,7 +56,7 @@
                     </span>
                     <div class="editor-ort-info">
                         <span class="editor-ort-name">@ort.Name</span>
-                        <span class="editor-ort-id">@ort.Id</span>
+
                     </div>
                     <div class="editor-ort-badges">
                         @if (ort.HatMonsterCenter) { <span title="Monster Center">🏥</span> }
@@ -142,7 +142,7 @@
     </div>
 
     <!-- ═══ PANEL 3: Detail-Editor ══════════════════════════════════════════ -->
-    <div class="editor-panel-rechts">
+    <div class="editor-panel-rechts @(ausgewähltOrt != null ? "sichtbar" : "versteckt")">
         @if (ausgewähltOrt != null)
         {
             var ort = ausgewähltOrt;
