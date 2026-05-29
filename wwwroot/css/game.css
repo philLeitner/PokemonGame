@@ -2023,3 +2023,21 @@ body {
 }
 .editor-item-eintrag:hover { background: rgba(99,102,241,0.15); }
 .editor-item-eintrag.item-vorhanden { opacity: 0.5; }
+
+/* ═══ Grid Sperr-Badge ═══════════════════════════════════════════════════ */
+.editor-grid-zelle { position: relative; }
+.grid-sperre-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 4px;
+    pointer-events: none;
+    line-height: 1.4;
+    z-index: 5;
+    white-space: nowrap;
+}

@@ -114,6 +114,14 @@
                                     <span class="editor-grid-icon">@OrtIcon(ort)</span>
                                     <span class="editor-grid-name">@ort.Name</span>
                                 </div>
+                                @if (ort.MinOrdenFürZugang > 0 || !string.IsNullOrEmpty(ort.BenötigtItem) || ort.LigaZugang)
+                                {
+                                    <div class="grid-sperre-badge" title="@SperreBeschreibung(ort)">
+                                        @if (ort.LigaZugang) { <span>🏆</span> }
+                                        else if (ort.MinOrdenFürZugang > 0) { <span>🏅@ort.MinOrdenFürZugang</span> }
+                                        else { <span>📦</span> }
+                                    </div>
+                                }
                             }
                             else
                             {
@@ -1090,6 +1098,17 @@
         neuesItemEmoji = "📦";
         neuesItemWoBekommt = "";
         Speichern();
+    }
+
+    private string SperreBeschreibung(Ort ort)
+    {
+        var teile = new List<string>();
+        if (ort.LigaZugang) teile.Add("🏆 Liga-Zugang (alle 8 Orden)");
+        else if (ort.MinOrdenFürZugang > 0) teile.Add($"🏅 Min. {ort.MinOrdenFürZugang} Orden");
+        if (!string.IsNullOrEmpty(ort.BenötigtItem)) teile.Add($"📦 Benötigt: {ort.BenötigtItem}");
+        if (!string.IsNullOrEmpty(ort.BenötigtItemQuelle)) teile.Add($"📍 Wo: {ort.BenötigtItemQuelle}");
+        if (ort.MaxOrdenFürSperre > 0) teile.Add($"🔒 Gesperrt bis Orden {ort.MaxOrdenFürSperre}");
+        return teile.Any() ? string.Join(" | ", teile) : "Kein Zugangsschutz";
     }
 
     private string OrtIcon(Ort ort) => ort.Typ switch
