@@ -38,10 +38,17 @@
             }
         </div>
 
+        <!-- Legende Farbcodierung -->
+        <div class="editor-liste-legende">
+            <span class="legende-gruen">●</span> Noch nicht platziert
+            <span class="legende-grau" style="margin-left:0.5rem">●</span> Auf Karte
+        </div>
+
         <div class="editor-ort-liste">
             @foreach (var ort in GefilterteOrte)
             {
-                <div class="editor-ort-eintrag @(ausgewähltOrtId == ort.Id ? "aktiv" : "")"
+                bool platziert = ort.GridX >= 0;
+                <div class="editor-ort-eintrag @(ausgewähltOrtId == ort.Id ? "aktiv" : "") @(platziert ? "platziert" : "unplatziert")"
                      @onclick="() => OrtAuswählen(ort.Id)">
                     <span class="editor-ort-color-dot"
                           style="background:@WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
@@ -55,7 +62,7 @@
                         @if (ort.HatMonsterCenter) { <span title="Monster Center">🏥</span> }
                         @if (ort.HatMarkt) { <span title="Markt">🏪</span> }
                         @if (ort.Arena != null) { <span title="Arena">🏆</span> }
-                        @if (ort.GridX >= 0) { <span class="badge-grid-ok" title="Auf Karte platziert">●</span> }
+                        <span class="badge-platziert @(platziert ? "ja" : "nein")" title="@(platziert ? "Auf Karte platziert" : "Noch nicht platziert")">●</span>
                     </div>
                 </div>
             }
@@ -231,10 +238,18 @@
                     <div class="editor-section-title">🔒 Sperrbedingungen</div>
                     <div class="editor-field-grid">
                         <div class="editor-field">
-                            <label>Min. Orden</label>
+                            <label>Ab Orden (min.)</label>
                             <input class="editor-input editor-input-klein" type="number" min="0" max="8"
                                    value="@ort.MinOrdenFürZugang"
                                    @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.MinOrdenFürZugang = v; Speichern(); } }" />
+                            <span class="editor-field-hint">0 = immer offen</span>
+                        </div>
+                        <div class="editor-field">
+                            <label>Bis Orden gesperrt (max.)</label>
+                            <input class="editor-input editor-input-klein" type="number" min="0" max="8"
+                                   value="@ort.MaxOrdenFürSperre"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.MaxOrdenFürSperre = v; Speichern(); } }" />
+                            <span class="editor-field-hint">0 = keine Max-Sperre</span>
                         </div>
                         <div class="editor-field">
                             <label>Benötigtes Item (ID)</label>
@@ -265,29 +280,113 @@
                     </div>
                 </div>
 
-                <!-- Verbindungen -->
+                <!-- Verbindungen (Richtungen) -->
                 <div class="editor-section">
-                    <div class="editor-section-title">🔗 Verbindungen zu anderen Orten</div>
-                    <div class="editor-verbindungen">
-                        @foreach (var verbId in ort.Verbindungen.ToList())
-                        {
-                            var vid = verbId;
-                            var ziel = editorOrte.FirstOrDefault(o => o.Id == vid);
-                            <div class="editor-verbindung-eintrag">
-                                <span class="verbindung-icon">@(ziel != null ? OrtIcon(ziel) : "📍")</span>
-                                <span class="verbindung-name">@(ziel?.Name ?? vid)</span>
-                                <button class="btn-verbindung-loeschen"
-                                        @onclick="() => VerbindungEntfernen(ort, vid)">✕</button>
+                    <div class="editor-section-title">🔗 Verbindungen</div>
+
+                    <!-- Kompass-Layout -->
+                    <div class="editor-kompass">
+                        <!-- Nord -->
+                        <div class="kompass-nord">
+                            <label class="kompass-label">⬆️ Nord</label>
+                            <select class="editor-input kompass-select"
+                                    value="@(ort.Nord ?? "")"
+                                    @onchange="e => { var v = e.Value?.ToString(); ort.Nord = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                <option value="">— keine —</option>
+                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                {
+                                    <option value="@o.Id">@o.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <!-- Mitte-Zeile: West | [Name] | Ost -->
+                        <div class="kompass-mitte-zeile">
+                            <div class="kompass-west">
+                                <label class="kompass-label">⬅️ West</label>
+                                <select class="editor-input kompass-select"
+                                        value="@(ort.West ?? "")"
+                                        @onchange="e => { var v = e.Value?.ToString(); ort.West = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                    <option value="">— keine —</option>
+                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                    {
+                                        <option value="@o.Id">@o.Name</option>
+                                    }
+                                </select>
                             </div>
-                        }
-                        <select class="editor-input editor-input-add"
-                                @onchange="e => VerbindungHinzufügen(ort, e.Value?.ToString())">
-                            <option value="">＋ Verbindung hinzufügen...</option>
-                            @foreach (var andererOrt in editorOrte.Where(o => o.Id != ort.Id && !ort.Verbindungen.Contains(o.Id)).OrderBy(o => o.Name))
+                            <div class="kompass-mitte">
+                                <span class="kompass-ort-name">@ort.Name</span>
+                            </div>
+                            <div class="kompass-ost">
+                                <label class="kompass-label">➡️ Ost</label>
+                                <select class="editor-input kompass-select"
+                                        value="@(ort.Ost ?? "")"
+                                        @onchange="e => { var v = e.Value?.ToString(); ort.Ost = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                    <option value="">— keine —</option>
+                                    @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                    {
+                                        <option value="@o.Id">@o.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Süd -->
+                        <div class="kompass-süd">
+                            <label class="kompass-label">⬇️ Süd</label>
+                            <select class="editor-input kompass-select"
+                                    value="@(ort.Süd ?? "")"
+                                    @onchange="e => { var v = e.Value?.ToString(); ort.Süd = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                <option value="">— keine —</option>
+                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                {
+                                    <option value="@o.Id">@o.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Teleport & Untergrund -->
+                    <div class="editor-field-grid" style="margin-top:0.75rem">
+                        <div class="editor-field">
+                            <label>🌀 Teleport-Ziel</label>
+                            <select class="editor-input"
+                                    value="@(ort.Teleport ?? "")"
+                                    @onchange="e => { var v = e.Value?.ToString(); ort.Teleport = string.IsNullOrEmpty(v) ? null : v; Speichern(); }">
+                                <option value="">— kein Teleport —</option>
+                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                {
+                                    <option value="@o.Id">@o.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="editor-field">
+                            <label>🕳️ Unterirdischer Gang</label>
+                            <select class="editor-input"
+                                    value="@(ort.Untergrund ?? "")"
+                                    @onchange="e => { var v = e.Value?.ToString(); ort.Untergrund = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                <option value="">— kein Untergang —</option>
+                                @foreach (var o in editorOrte.Where(o => o.Id != ort.Id).OrderBy(o => o.Name))
+                                {
+                                    <option value="@o.Id">@o.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Verbindungs-Übersicht -->
+                    <div class="editor-verbindungen-info">
+                        <span class="verbindungen-label">Alle Verbindungen:</span>
+                        @if (ort.Verbindungen.Any())
+                        {
+                            @foreach (var vid in ort.Verbindungen)
                             {
-                                <option value="@andererOrt.Id">@andererOrt.Name (@andererOrt.Id)</option>
+                                var ziel = editorOrte.FirstOrDefault(o => o.Id == vid);
+                                <span class="verbindung-chip">@(ziel?.Name ?? vid)</span>
                             }
-                        </select>
+                        }
+                        else
+                        {
+                            <span class="editor-leer-text">Keine Verbindungen</span>
+                        }
                     </div>
                 </div>
 
@@ -515,13 +614,51 @@
     <span class="editor-toolbar-info">💾 Änderungen werden automatisch im Browser gespeichert</span>
 </div>
 
+<!-- ═══ Handy-Popup: Ort-Auswahl für Grid-Zelle ══════════════════════════ -->
+@if (popupOffen)
+{
+    <div class="editor-popup-overlay" @onclick="PopupSchliessen">
+        <div class="editor-popup" @onclick:stopPropagation="true">
+            <div class="editor-popup-header">
+                <span>📍 Ort für Zelle (@popupCol, @popupRow) wählen</span>
+                <button class="btn-schliessen" @onclick="PopupSchliessen">✕</button>
+            </div>
+            <div class="editor-popup-search">
+                <input class="editor-search-input" placeholder="🔍 Suchen..."
+                       @bind="popupSuche" @bind:event="oninput" />
+            </div>
+            <div class="editor-popup-liste">
+                <!-- Leer-Option -->
+                <div class="editor-popup-eintrag editor-popup-leer"
+                     @onclick="() => PopupOrtWählen(null)">
+                    <span>🚫 Leer lassen</span>
+                </div>
+                @foreach (var o in PopupGefilterteOrte)
+                {
+                    var po = o;
+                    bool platziert = po.GridX >= 0;
+                    <div class="editor-popup-eintrag @(platziert ? "popup-platziert" : "popup-frei")"
+                         @onclick="() => PopupOrtWählen(po)">
+                        <span class="popup-dot" style="background:@WeltData.OrtFarben.GetValueOrDefault(po.Farbe, "#374151")">@OrtIcon(po)</span>
+                        <div class="popup-info">
+                            <span class="popup-name">@po.Name</span>
+                            <span class="popup-id">@po.Id @(platziert ? $"· ({po.GridX},{po.GridY})" : "· noch nicht platziert")</span>
+                        </div>
+                        <span class="popup-status-dot @(platziert ? "dot-grau" : "dot-gruen")">●</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
 @code {
     private List<Ort> editorOrte = new();
     private string? ausgewähltOrtId;
     private Ort? ausgewähltOrt;
     private string suchbegriff = "";
     private string filterTyp = "Alle";
-    private string filterRegion = "KAN"; // Standard: Kanto
+    private string filterRegion = "KAN";
     private int gridZoom = 100;
     private int gridRows = 10;
     private int gridCols = 10;
@@ -529,6 +666,12 @@
     private string speicherStatus = "";
     private bool speicherFehler = false;
     private int _neuZähler = 100;
+
+    // Popup-Zustand
+    private bool popupOffen = false;
+    private int popupCol = 0;
+    private int popupRow = 0;
+    private string popupSuche = "";
 
     private static readonly Dictionary<string, string> RegionNamen = new()
     {
@@ -543,7 +686,16 @@
                     (string.IsNullOrEmpty(suchbegriff) ||
                      o.Name.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase) ||
                      o.Id.Contains(suchbegriff, StringComparison.OrdinalIgnoreCase)))
-        .OrderBy(o => o.Name);
+        .OrderBy(o => o.GridX >= 0 ? 1 : 0) // Unplatzierte zuerst
+        .ThenBy(o => o.Name);
+
+    private IEnumerable<Ort> PopupGefilterteOrte => editorOrte
+        .Where(o => (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")) &&
+                    (string.IsNullOrEmpty(popupSuche) ||
+                     o.Name.Contains(popupSuche, StringComparison.OrdinalIgnoreCase) ||
+                     o.Id.Contains(popupSuche, StringComparison.OrdinalIgnoreCase)))
+        .OrderBy(o => o.GridX >= 0 ? 1 : 0) // Unplatzierte zuerst
+        .ThenBy(o => o.Name);
 
     protected override async Task OnInitializedAsync()
     {
@@ -572,20 +724,69 @@
 
     private void GridZelleKlick(int col, int row)
     {
-        // Nur Orte der aktuellen Region berücksichtigen
         var ort = editorOrte.FirstOrDefault(o =>
             o.GridX == col && o.GridY == row &&
             (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")));
+
         if (ort != null)
         {
             OrtAuswählen(ort.Id);
         }
-        else if (ausgewähltOrt != null)
+        else if (ausgewähltOrt != null && ausgewähltOrt.GridX < 0)
         {
+            // Direkt platzieren wenn Ort ausgewählt und noch nicht platziert
             ausgewähltOrt.GridX = col;
             ausgewähltOrt.GridY = row;
             Speichern();
         }
+        else
+        {
+            // Popup öffnen für Handy-Auswahl
+            popupCol = col;
+            popupRow = row;
+            popupSuche = "";
+            popupOffen = true;
+        }
+    }
+
+    private void PopupSchliessen() => popupOffen = false;
+
+    private void PopupOrtWählen(Ort? gewählt)
+    {
+        if (gewählt == null)
+        {
+            // Leer lassen: vorhandenen Ort von dieser Zelle entfernen
+            var vorhandener = editorOrte.FirstOrDefault(o =>
+                o.GridX == popupCol && o.GridY == popupRow);
+            if (vorhandener != null)
+            {
+                vorhandener.GridX = -1;
+                vorhandener.GridY = -1;
+                Speichern();
+            }
+        }
+        else
+        {
+            // Ort auf diese Zelle setzen (ggf. vorherige Position überschreiben)
+            gewählt.GridX = popupCol;
+            gewählt.GridY = popupRow;
+            OrtAuswählen(gewählt.Id);
+            Speichern();
+        }
+        popupOffen = false;
+    }
+
+    /// <summary>Synchronisiert Verbindungen-Liste aus den Richtungsfeldern + Teleport + Untergrund</summary>
+    private void SyncVerbindungen(Ort ort)
+    {
+        var neu = new List<string>();
+        if (!string.IsNullOrEmpty(ort.Nord)) neu.Add(ort.Nord);
+        if (!string.IsNullOrEmpty(ort.Süd)) neu.Add(ort.Süd);
+        if (!string.IsNullOrEmpty(ort.Ost)) neu.Add(ort.Ost);
+        if (!string.IsNullOrEmpty(ort.West)) neu.Add(ort.West);
+        if (!string.IsNullOrEmpty(ort.Untergrund)) neu.Add(ort.Untergrund);
+        if (!string.IsNullOrEmpty(ort.Teleport)) neu.Add(ort.Teleport);
+        ort.Verbindungen = neu.Distinct().ToList();
     }
 
     private void NeuenOrtErstellen()
@@ -596,7 +797,7 @@
             Id = $"ort-{_neuZähler:D3}",
             Name = $"Neuer Ort {_neuZähler}",
             Typ = "route",
-            Farbe = "forest",
+            Farbe = "green",
             GridX = -1,
             GridY = -1,
             Beschreibung = "",
@@ -612,25 +813,6 @@
         editorOrte.Remove(ausgewähltOrt);
         ausgewähltOrtId = null;
         ausgewähltOrt = null;
-        Speichern();
-    }
-
-    private void VerbindungHinzufügen(Ort ort, string? zielId)
-    {
-        if (string.IsNullOrEmpty(zielId)) return;
-        if (!ort.Verbindungen.Contains(zielId))
-        {
-            ort.Verbindungen.Add(zielId);
-            var ziel = editorOrte.FirstOrDefault(o => o.Id == zielId);
-            if (ziel != null && !ziel.Verbindungen.Contains(ort.Id))
-                ziel.Verbindungen.Add(ort.Id);
-            Speichern();
-        }
-    }
-
-    private void VerbindungEntfernen(Ort ort, string zielId)
-    {
-        ort.Verbindungen.Remove(zielId);
         Speichern();
     }
 
