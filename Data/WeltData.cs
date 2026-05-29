@@ -73,7 +73,7 @@ public static class WeltData
         // === Kanto (60 Orte) ===
         new() {
             Id = "KAN-0001", Name = "Pallet Town", Typ = "ort",
-            Farbe = "purple", GridX = 2, GridY = 8,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0002",
             Süd = "KAN-0043",
@@ -97,7 +97,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0002", Name = "Route 1", Typ = "ort",
-            Farbe = "green", GridX = 2, GridY = 7,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0003",
             Süd = "KAN-0001",
@@ -129,7 +129,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0003", Name = "Vertania", Typ = "stadt",
-            Farbe = "purple", GridX = 2, GridY = 6,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Nord = "KAN-0005", Süd = "KAN-0002", Ost = "KAN-0004",
             Verbindungen = new() { "KAN-0005", "KAN-0002", "KAN-0004" },
@@ -148,7 +148,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0007", Name = "Marmoria", Typ = "stadt",
-            Farbe = "purple", GridX = 1, GridY = 2,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Süd = "KAN-0005", Ost = "KAN-0008",
             Verbindungen = new() { "KAN-0005", "KAN-0008" },
@@ -174,7 +174,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0011", Name = "Azuria", Typ = "stadt",
-            Farbe = "purple", GridX = 7, GridY = 2,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             West = "KAN-0010", Süd = "KAN-0014", Nord = "KAN-0012",
             Verbindungen = new() { "KAN-0010", "KAN-0014", "KAN-0012", "KAN-0053" },
@@ -200,7 +200,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0016", Name = "Orania", Typ = "stadt",
-            Farbe = "purple", GridX = 7, GridY = 7,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Nord = "KAN-0015", Ost = "KAN-0018",
             Verbindungen = new() { "KAN-0015", "KAN-0018", "KAN-0017" },
@@ -228,7 +228,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0028", Name = "Prismania", Typ = "stadt",
-            Farbe = "purple", GridX = 6, GridY = 4,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Ost = "KAN-0027", Nord = "KAN-0030",
             Verbindungen = new() { "KAN-0027", "KAN-0030", "KAN-0029" },
@@ -264,7 +264,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0036", Name = "Fuchsania", Typ = "stadt",
-            Farbe = "purple", GridX = 7, GridY = 10,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Nord = "KAN-0035", West = "KAN-0032", Ost = "KAN-0015",
             Verbindungen = new() { "KAN-0035", "KAN-0032", "KAN-0037", "KAN-0038" },
@@ -293,7 +293,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0041", Name = "Zinnober", Typ = "stadt",
-            Farbe = "purple", GridX = 1, GridY = 12,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Nord = "KAN-0043", Ost = "KAN-0039",
             Verbindungen = new() { "KAN-0043", "KAN-0039", "KAN-0042" },
@@ -323,7 +323,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0004", Name = "Route 22", Typ = "ort",
-            Farbe = "green", GridX = 0, GridY = 6,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0003",
             Verbindungen = new() { "KAN-0003" },
@@ -349,7 +349,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0005", Name = "Route 2", Typ = "ort",
-            Farbe = "green", GridX = 2, GridY = 5,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0007",
             Süd = "KAN-0003",
@@ -388,7 +388,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0006", Name = "Viridan-Wald", Typ = "ort",
-            Farbe = "forest", GridX = 2, GridY = 4,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0005",
             Verbindungen = new() { "KAN-0005" },
@@ -410,7 +410,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0008", Name = "Route 3", Typ = "ort",
-            Farbe = "green", GridX = 3, GridY = 2,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0009",
             Verbindungen = new() { "KAN-0009" },
@@ -437,7 +437,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0009", Name = "Mond-Berg", Typ = "ort",
-            Farbe = "cave", GridX = 5, GridY = 2,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0008",
             Ost = "KAN-0010",
@@ -477,7 +477,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0010", Name = "Route 4", Typ = "ort",
-            Farbe = "green", GridX = 6, GridY = 2,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0009",
             Ost = "KAN-0011",
@@ -504,7 +504,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0012", Name = "Route 24", Typ = "ort",
-            Farbe = "green", GridX = 3, GridY = 0,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0013",
             Süd = "KAN-0011",
@@ -532,7 +532,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0013", Name = "Route 25", Typ = "ort",
-            Farbe = "blue", GridX = 4, GridY = 0,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0012",
             Verbindungen = new() { "KAN-0012" },
@@ -550,7 +550,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0014", Name = "Route 5", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 3,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0011",
             Verbindungen = new() { "KAN-0011" },
@@ -578,7 +578,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0015", Name = "Route 6", Typ = "ort",
-            Farbe = "blue", GridX = 7, GridY = 5,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0016",
             Süd = "KAL-0010",
@@ -601,7 +601,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0017", Name = "S.S. Anne", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 8,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -620,7 +620,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0018", Name = "Route 11", Typ = "ort",
-            Farbe = "blue", GridX = 9, GridY = 7,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0026",
             Ost = "KAN-0016",
@@ -641,7 +641,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0019", Name = "Route 12", Typ = "ort",
-            Farbe = "blue", GridX = 12, GridY = 5,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0023",
             Süd = "KAL-0028",
@@ -671,7 +671,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0020", Name = "Route 9", Typ = "ort",
-            Farbe = "green", GridX = 9, GridY = 2,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0021",
             Ost = "KAN-0011",
@@ -699,7 +699,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0021", Name = "Route 10", Typ = "ort",
-            Farbe = "blue", GridX = 11, GridY = 2,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0024",
             Ost = "KAL-0019",
@@ -721,7 +721,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0022", Name = "Fels-Tunnel", Typ = "ort",
-            Farbe = "cave", GridX = 11, GridY = 3,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0041", MinLevel = 15, MaxLevel = 20, Chance = 50 }, // Unbekannt
@@ -745,7 +745,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0023", Name = "Kraftwerk", Typ = "ort",
-            Farbe = "blue", GridX = 8, GridY = 1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0081", MinLevel = 22, MaxLevel = 30, Chance = 20 }, // Unbekannt
@@ -763,7 +763,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0024", Name = "Lavandia", Typ = "ort",
-            Farbe = "purple", GridX = 12, GridY = 4,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0016",
             Süd = "KAL-0021",
@@ -772,7 +772,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0025", Name = "Pokémon-Turm", Typ = "ort",
-            Farbe = "green", GridX = 12, GridY = 3,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -797,7 +797,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0026", Name = "Route 8", Typ = "ort",
-            Farbe = "green", GridX = 10, GridY = 4,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0014",
             Ost = "KAN-0024",
@@ -819,7 +819,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0027", Name = "Route 7", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 4,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0028",
             Ost = "KAL-0016",
@@ -842,12 +842,12 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0029", Name = "Rocket-Versteck", Typ = "ort",
-            Farbe = "green", GridX = 6, GridY = 5,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0030", Name = "Route 16", Typ = "ort",
-            Farbe = "green", GridX = 5, GridY = 5,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "KAN-0028",
             Verbindungen = new() { "KAN-0028" },
@@ -867,7 +867,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0031", Name = "Route 17", Typ = "ort",
-            Farbe = "green", GridX = 5, GridY = 6,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0033",
             Süd = "KAN-0037",
@@ -888,7 +888,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0032", Name = "Route 18", Typ = "ort",
-            Farbe = "green", GridX = 5, GridY = 10,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0036",
             West = "KAN-0036",
@@ -909,7 +909,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0033", Name = "Route 13", Typ = "ort",
-            Farbe = "blue", GridX = 10, GridY = 9,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0029",
             Ost = "KAL-0026",
@@ -936,7 +936,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0034", Name = "Route 14", Typ = "ort",
-            Farbe = "green", GridX = 9, GridY = 10,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0031",
             Ost = "KAL-0028",
@@ -964,7 +964,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0035", Name = "Route 15", Typ = "ort",
-            Farbe = "green", GridX = 8, GridY = 10,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAN-0036",
             Ost = "KAL-0029",
@@ -985,7 +985,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0037", Name = "Safari-Zone", Typ = "ort",
-            Farbe = "blue", GridX = 6, GridY = 9,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0111", MinLevel = 25, MaxLevel = 30, Chance = 15 }, // Unbekannt
@@ -1008,7 +1008,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0038", Name = "Route 19", Typ = "ort",
-            Farbe = "blue", GridX = 6, GridY = 11,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0041",
             Ost = "KAN-0036",
@@ -1029,7 +1029,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0039", Name = "Route 20", Typ = "ort",
-            Farbe = "blue", GridX = 4, GridY = 12,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0039",
             Süd = "KAN-0041",
@@ -1049,7 +1049,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0040", Name = "Eisinseln", Typ = "ort",
-            Farbe = "blue", GridX = 9, GridY = 1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0041",
             Ost = "KAL-0041",
@@ -1080,7 +1080,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0042", Name = "Pokémon-Villa", Typ = "ort",
-            Farbe = "green", GridX = 1, GridY = 11,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0109", MinLevel = 30, MaxLevel = 38, Chance = 20 }, // Unbekannt
@@ -1099,7 +1099,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0043", Name = "Route 21", Typ = "ort",
-            Farbe = "blue", GridX = 2, GridY = 9,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0001",
             Süd = "KAN-0041",
@@ -1120,7 +1120,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0044", Name = "Saffronia", Typ = "ort",
-            Farbe = "purple", GridX = 8, GridY = 4,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             BenötigtItem = "sprudelwasser", BenötigtItemName = "Sprudelwasser",
             Nord = "KAL-0010",
@@ -1150,7 +1150,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0045", Name = "Silph AG", Typ = "ort",
-            Farbe = "green", GridX = 8, GridY = 4,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -1175,12 +1175,12 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0046", Name = "Kampf-Dojo", Typ = "ort",
-            Farbe = "green", GridX = 8, GridY = 4,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0047", Name = "Digda-Höhle", Typ = "ort",
-            Farbe = "cave", GridX = 3, GridY = 4,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             MinOrdenFürZugang = 3,
             West = "KAL-0023",
@@ -1189,7 +1189,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0048", Name = "Unterweg. R5-R6", Typ = "ort",
-            Farbe = "green", GridX = 7, GridY = 6,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             IstUnterirdisch = true,
             Nord = "KAN-0014",
@@ -1198,7 +1198,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0049", Name = "Unterweg. R7-R8", Typ = "ort",
-            Farbe = "green", GridX = 6, GridY = 5,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             IstUnterirdisch = true,
             West = "KAN-0027",
@@ -1207,7 +1207,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0050", Name = "Route 23", Typ = "ort",
-            Farbe = "blue", GridX = 0, GridY = 2,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0051",
             Ost = "KAN-0004",
@@ -1219,7 +1219,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0051", Name = "Siegesstraße", Typ = "ort",
-            Farbe = "cave", GridX = 0, GridY = 1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             LigaZugang = true,
             West = "JOH-0055",
@@ -1276,7 +1276,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0052", Name = "Indigo-Plateau", Typ = "ort",
-            Farbe = "green", GridX = 0, GridY = 3,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             LigaZugang = true,
             Süd = "KAN-0051",
@@ -1322,7 +1322,7 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0053", Name = "Azuria-Höhle", Typ = "ort",
-            Farbe = "cave", GridX = 6, GridY = 1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0063", MinLevel = 55, MaxLevel = 60, Chance = 10 }, // Unbekannt
@@ -1341,43 +1341,43 @@ public static class WeltData
         },
         new() {
             Id = "KAN-0054", Name = "One Island (Eiland Eins)", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 17,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0055", Name = "Two Island (Eiland Zwei)", Typ = "ort",
-            Farbe = "purple", GridX = 4, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0056", Name = "Three Island (Eiland Drei)", Typ = "ort",
-            Farbe = "purple", GridX = 5, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0057", Name = "Four Island (Eiland Vier)", Typ = "ort",
-            Farbe = "purple", GridX = 6, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0058", Name = "Five Island (Eiland Fünf)", Typ = "ort",
-            Farbe = "purple", GridX = 7, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0059", Name = "Six Island (Eiland Sechs)", Typ = "ort",
-            Farbe = "purple", GridX = 8, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "KAN-0060", Name = "Seven Island (Eiland Sieben)", Typ = "ort",
-            Farbe = "purple", GridX = 9, GridY = 18,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         // === Johto (60 Orte) ===
         new() {
             Id = "JOH-0001", Name = "New Bark Town", Typ = "ort",
-            Farbe = "purple", GridX = 25, GridY = 10,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0002",
             Verbindungen = new() { "JOH-0002" },
@@ -1398,7 +1398,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0002", Name = "Route 29", Typ = "ort",
-            Farbe = "green", GridX = 23, GridY = 10,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0003",
             Ost = "JOH-0001",
@@ -1419,7 +1419,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0003", Name = "Cherrygrove City", Typ = "ort",
-            Farbe = "purple", GridX = 22, GridY = 10,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Nord = "JOH-0004",
             Ost = "JOH-0002",
@@ -1446,7 +1446,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0004", Name = "Route 30", Typ = "ort",
-            Farbe = "green", GridX = 22, GridY = 9,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0005",
             Süd = "JOH-0003",
@@ -1468,7 +1468,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0005", Name = "Route 31", Typ = "ort",
-            Farbe = "green", GridX = 22, GridY = 8,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0004",
             West = "JOH-0006",
@@ -1489,7 +1489,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0006", Name = "Violet City", Typ = "ort",
-            Farbe = "purple", GridX = 21, GridY = 8,
+            Farbe = "purple",
             HatMonsterCenter = true, HatMarkt = true,
             Süd = "JOH-0007",
             Ost = "JOH-0005",
@@ -1510,7 +1510,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0008", Name = "Sprout Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0007",
             Verbindungen = new() { "JOH-0007" },
@@ -1525,7 +1525,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0009", Name = "Route 32", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0007",
             Süd = "JOH-0010",
@@ -1545,7 +1545,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0010", Name = "Ruins of Alph", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0009",
             Ost = "JOH-0022",
@@ -1553,7 +1553,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0011", Name = "Union Cave", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0009",
             Ost = "JOH-0012",
@@ -1575,7 +1575,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0012", Name = "Route 33", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0011",
             Ost = "JOH-0013",
@@ -1583,7 +1583,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0014", Name = "Slowpoke Well", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0013",
             Verbindungen = new() { "JOH-0013" },
@@ -1604,7 +1604,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0015", Name = "Ilex Forest", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0016",
             Ost = "JOH-0013",
@@ -1612,7 +1612,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0016", Name = "Route 34", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0017",
             Süd = "JOH-0015",
@@ -1631,7 +1631,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0018", Name = "Goldenrod Radio Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0017",
             Verbindungen = new() { "JOH-0017" },
@@ -1652,14 +1652,14 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0019", Name = "Goldenrod Underground", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0017",
             Verbindungen = new() { "JOH-0017" },
         },
         new() {
             Id = "JOH-0020", Name = "Route 35", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0021",
             West = "JOH-0017",
@@ -1679,7 +1679,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0021", Name = "National Park", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0020",
             Ost = "JOH-0022",
@@ -1699,7 +1699,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0022", Name = "Route 36", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0010",
             West = "JOH-0007",
@@ -1719,7 +1719,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0023", Name = "Route 37", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0024",
             Süd = "JOH-0022",
@@ -1730,7 +1730,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0025", Name = "Burned Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0024",
             Verbindungen = new() { "JOH-0024" },
@@ -1745,7 +1745,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0026", Name = "Bell Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0024",
             Verbindungen = new() { "JOH-0024" },
@@ -1755,7 +1755,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0027", Name = "Route 38", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0029",
             Ost = "JOH-0024",
@@ -1781,7 +1781,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0028", Name = "Route 39", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0029",
             Ost = "JOH-0027",
@@ -1800,7 +1800,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0030", Name = "Olivine Lighthouse", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0029",
             Verbindungen = new() { "JOH-0029" },
@@ -1815,7 +1815,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0031", Name = "Route 40", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0034",
             Ost = "JOH-0029",
@@ -1834,7 +1834,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0032", Name = "Route 41", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0033",
             West = "JOH-0034",
@@ -1843,7 +1843,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0033", Name = "Whirl Islands", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0032",
             Ost = "JOH-0032",
@@ -1863,7 +1863,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0035", Name = "Route 47", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0036",
             Ost = "JOH-0034",
@@ -1874,7 +1874,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0036", Name = "Route 48", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "JOH-0035",
             Verbindungen = new() { "JOH-0035" },
@@ -1884,7 +1884,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0037", Name = "Safari Zone", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0111", MinLevel = 25, MaxLevel = 30, Chance = 15 }, // Unbekannt
@@ -1907,14 +1907,14 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0038", Name = "Cliff Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0035",
             Verbindungen = new() { "JOH-0035" },
         },
         new() {
             Id = "JOH-0039", Name = "Route 42", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0040",
             West = "JOH-0024",
@@ -1934,7 +1934,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0040", Name = "Mt. Mortar", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0039",
             Ost = "JOH-0039",
@@ -1945,7 +1945,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0042", Name = "Team Rocket HQ", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0041",
             Verbindungen = new() { "JOH-0041" },
@@ -1972,7 +1972,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0043", Name = "Route 43", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0044",
             Süd = "JOH-0041",
@@ -1983,7 +1983,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0044", Name = "Lake of Rage", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0043",
             Verbindungen = new() { "JOH-0043" },
@@ -2001,7 +2001,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0045", Name = "Route 44", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0041",
             Ost = "JOH-0046",
@@ -2021,7 +2021,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0046", Name = "Ice Path", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0045",
             Ost = "JOH-0047",
@@ -2041,7 +2041,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0047", Name = "Blackthorn City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0048",
             West = "JOH-0046",
@@ -2075,7 +2075,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0048", Name = "Dragon's Den", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0047",
             Verbindungen = new() { "JOH-0047" },
@@ -2093,7 +2093,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0049", Name = "Route 45", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0047",
             West = "JOH-0006",
@@ -2105,7 +2105,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0050", Name = "Route 46", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "JOH-0049",
             Süd = "JOH-0002",
@@ -2116,7 +2116,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0051", Name = "Route 27", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0052",
             West = "JOH-0001",
@@ -2125,7 +2125,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0052", Name = "Tohjo Falls", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0051",
             Ost = "JOH-0051",
@@ -2136,14 +2136,14 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0053", Name = "Route 26", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0051",
             Verbindungen = new() { "JOH-0051" },
         },
         new() {
             Id = "JOH-0054", Name = "Victory Road (Johto)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0053",
             Ost = "JOH-0055",
@@ -2151,7 +2151,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0055", Name = "Indigo Plateau", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "JOH-0054",
             Verbindungen = new() { "JOH-0054" },
@@ -2196,7 +2196,7 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0056", Name = "Mt. Silver", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0057",
             Verbindungen = new() { "JOH-0057" },
@@ -2223,21 +2223,21 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0057", Name = "Route 28", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0056",
             Verbindungen = new() { "JOH-0056" },
         },
         new() {
             Id = "JOH-0058", Name = "Battle Frontier (Johto)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0059",
             Verbindungen = new() { "JOH-0059" },
         },
         new() {
             Id = "JOH-0059", Name = "Frontier Access", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "JOH-0031",
             Ost = "JOH-0058",
@@ -2245,13 +2245,13 @@ public static class WeltData
         },
         new() {
             Id = "JOH-0060", Name = "Sinjoh Ruins", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         // === Hoenn (74 Orte) ===
         new() {
             Id = "HOE-0001", Name = "Littleroot Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0004",
             Ost = "HOE-0002",
@@ -2259,7 +2259,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0002", Name = "Route 101", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0003",
             Süd = "HOE-0001",
@@ -2271,7 +2271,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0003", Name = "Oldale Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0004",
             Süd = "HOE-0002",
@@ -2280,7 +2280,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0004", Name = "Route 103", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0003",
             West = "HOE-0007",
@@ -2302,7 +2302,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0005", Name = "Route 102", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0006",
             Ost = "HOE-0003",
@@ -2314,7 +2314,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0007", Name = "Route 104", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0008",
             West = "HOE-0009",
@@ -2337,7 +2337,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0008", Name = "Petalburg Woods", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0285", MinLevel = 8, MaxLevel = 20, Chance = 0 }, // Unbekannt
@@ -2360,7 +2360,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0010", Name = "Route 116", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0011",
             Ost = "HOE-0009",
@@ -2372,7 +2372,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0011", Name = "Rusturf Tunnel", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0010",
             Ost = "HOE-0013",
@@ -2380,7 +2380,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0012", Name = "Route 115", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0030",
             Ost = "HOE-0009",
@@ -2391,7 +2391,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0013", Name = "Route 117", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0014",
             Ost = "HOE-0015",
@@ -2402,7 +2402,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0014", Name = "Verdanturf Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0013",
             Ost = "HOE-0011",
@@ -2410,7 +2410,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0016", Name = "Route 110", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0015",
             Süd = "HOE-0017",
@@ -2450,7 +2450,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0017", Name = "Slateport City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0016",
             Ost = "HOE-0018",
@@ -2458,7 +2458,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0018", Name = "Route 109", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0017",
             Süd = "HOE-0019",
@@ -2469,7 +2469,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0019", Name = "Route 108", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0018",
             Süd = "HOE-0021",
@@ -2480,14 +2480,14 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0020", Name = "Abandoned Ship", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0019",
             Verbindungen = new() { "HOE-0019" },
         },
         new() {
             Id = "HOE-0021", Name = "Route 107", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0019",
             Süd = "HOE-0022",
@@ -2498,7 +2498,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0023", Name = "Route 106", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0024",
             Süd = "HOE-0022",
@@ -2506,7 +2506,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0024", Name = "Granite Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0023",
             Verbindungen = new() { "HOE-0023" },
@@ -2517,7 +2517,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0025", Name = "Route 105", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0023",
             Süd = "HOE-0007",
@@ -2525,7 +2525,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0026", Name = "Island Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0025",
             Verbindungen = new() { "HOE-0025" },
@@ -2536,7 +2536,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0027", Name = "Route 111", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0028",
             Süd = "HOE-0015",
@@ -2563,7 +2563,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0028", Name = "Route 112", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0030",
             West = "HOE-0029",
@@ -2583,7 +2583,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0029", Name = "Fiery Path", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0028",
             Ost = "HOE-0028",
@@ -2591,7 +2591,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0030", Name = "Mt. Chimney", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0031",
             Verbindungen = new() { "HOE-0031" },
@@ -2627,7 +2627,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0031", Name = "Jagged Pass", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0032",
             West = "HOE-0030",
@@ -2635,7 +2635,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0033", Name = "Route 113", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0034",
             Ost = "HOE-0027",
@@ -2647,7 +2647,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0034", Name = "Fallarbor Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0035",
             Ost = "HOE-0033",
@@ -2655,7 +2655,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0035", Name = "Route 114", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0036",
             Ost = "HOE-0034",
@@ -2663,7 +2663,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0036", Name = "Meteor Falls", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0035",
             Ost = "HOE-0012",
@@ -2676,7 +2676,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0037", Name = "Route 118", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0038",
             Ost = "HOE-0015",
@@ -2684,7 +2684,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0038", Name = "Route 119", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0039",
             Ost = "HOE-0037",
@@ -2716,7 +2716,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0040", Name = "Route 120", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0041",
             West = "HOE-0042",
@@ -2728,7 +2728,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0041", Name = "Ancient Tomb", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0040",
             Verbindungen = new() { "HOE-0040" },
@@ -2739,7 +2739,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0042", Name = "Route 121", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0044",
             West = "HOE-0043",
@@ -2748,7 +2748,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0043", Name = "Safari Zone", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0042",
             Verbindungen = new() { "HOE-0042" },
@@ -2773,7 +2773,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0044", Name = "Lilycove City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0050",
             Ost = "HOE-0042",
@@ -2789,21 +2789,21 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0045", Name = "Team Aqua Hideout", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0044",
             Verbindungen = new() { "HOE-0044" },
         },
         new() {
             Id = "HOE-0046", Name = "Team Magma Hideout", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0031",
             Verbindungen = new() { "HOE-0031" },
         },
         new() {
             Id = "HOE-0047", Name = "Route 122", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0042",
             Süd = "HOE-0048",
@@ -2814,7 +2814,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0048", Name = "Mt. Pyre", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0047",
             Verbindungen = new() { "HOE-0047" },
@@ -2825,7 +2825,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0049", Name = "Route 123", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0047",
             Ost = "HOE-0037",
@@ -2836,7 +2836,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0050", Name = "Route 124", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0051",
             Ost = "HOE-0044",
@@ -2848,7 +2848,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0052", Name = "Route 125", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0053",
             Süd = "HOE-0051",
@@ -2859,7 +2859,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0053", Name = "Shoal Cave", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0052",
             Verbindungen = new() { "HOE-0052" },
@@ -2872,7 +2872,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0054", Name = "Route 126", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0052",
             Süd = "HOE-0055",
@@ -2883,7 +2883,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0055", Name = "Sootopolis City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0054",
             Verbindungen = new() { "HOE-0054" },
@@ -2909,7 +2909,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0056", Name = "Cave of Origin", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "HOE-0055",
             Verbindungen = new() { "HOE-0055" },
@@ -2920,7 +2920,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0057", Name = "Route 127", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0054",
             Süd = "HOE-0051",
@@ -2931,7 +2931,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0058", Name = "Route 128", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0057",
             Süd = "HOE-0059",
@@ -2942,7 +2942,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0059", Name = "Seafloor Cavern", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0058",
             Verbindungen = new() { "HOE-0058" },
@@ -2972,7 +2972,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0060", Name = "Route 129", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0058",
             Süd = "HOE-0061",
@@ -2983,7 +2983,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0061", Name = "Route 130", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0060",
             Süd = "HOE-0062",
@@ -2994,7 +2994,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0062", Name = "Route 131", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0061",
             Süd = "HOE-0063",
@@ -3005,7 +3005,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0063", Name = "Pacifidlog Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0062",
             Süd = "HOE-0064",
@@ -3013,7 +3013,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0064", Name = "Route 132", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0063",
             Süd = "HOE-0065",
@@ -3024,7 +3024,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0065", Name = "Route 133", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0064",
             Süd = "HOE-0066",
@@ -3035,7 +3035,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0066", Name = "Route 134", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0065",
             Süd = "HOE-0067",
@@ -3046,14 +3046,14 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0067", Name = "Sealed Chamber", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0066",
             Verbindungen = new() { "HOE-0066" },
         },
         new() {
             Id = "HOE-0068", Name = "Desert Ruins", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0027",
             Verbindungen = new() { "HOE-0027" },
@@ -3064,14 +3064,14 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0069", Name = "Route 119 (Süd)", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "HOE-0037",
             Verbindungen = new() { "HOE-0037" },
         },
         new() {
             Id = "HOE-0070", Name = "Weather Institute", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0038",
             Verbindungen = new() { "HOE-0038" },
@@ -3086,7 +3086,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0071", Name = "Ever Grande City", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0058",
             Verbindungen = new() { "HOE-0058" },
@@ -3131,7 +3131,7 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0072", Name = "Victory Road (Hoenn)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0071",
             Verbindungen = new() { "HOE-0071" },
@@ -3146,12 +3146,12 @@ public static class WeltData
         },
         new() {
             Id = "HOE-0073", Name = "Battle Resort", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "HOE-0074", Name = "Sky Pillar", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "HOE-0062",
             Verbindungen = new() { "HOE-0062" },
@@ -3162,14 +3162,14 @@ public static class WeltData
         // === Sinnoh (65 Orte) ===
         new() {
             Id = "SIN-0001", Name = "Twinleaf Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0002",
             Verbindungen = new() { "SIN-0002" },
         },
         new() {
             Id = "SIN-0002", Name = "Route 201", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0003",
             Süd = "SIN-0001",
@@ -3196,7 +3196,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0003", Name = "Lake Verity", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0002",
             Verbindungen = new() { "SIN-0002" },
@@ -3206,7 +3206,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0004", Name = "Sandgem Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0058",
             West = "SIN-0005",
@@ -3215,7 +3215,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0005", Name = "Route 202", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0006",
             Ost = "SIN-0004",
@@ -3226,7 +3226,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0006", Name = "Jubilife City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0011",
             Süd = "SIN-0005",
@@ -3250,7 +3250,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0007", Name = "Route 203", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0008",
             Ost = "SIN-0006",
@@ -3266,7 +3266,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0008", Name = "Oreburgh Gate", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0007",
             Ost = "SIN-0009",
@@ -3274,14 +3274,14 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0010", Name = "Oreburgh Mine", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0009",
             Verbindungen = new() { "SIN-0009" },
         },
         new() {
             Id = "SIN-0011", Name = "Route 204", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0013",
             Süd = "SIN-0006",
@@ -3292,12 +3292,12 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0012", Name = "Ravaged Path", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "SIN-0013", Name = "Floaroma Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0015",
             Süd = "SIN-0011",
@@ -3305,14 +3305,14 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0014", Name = "Valley Windworks", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0015",
             Verbindungen = new() { "SIN-0015" },
         },
         new() {
             Id = "SIN-0015", Name = "Route 205", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0017",
             Ost = "SIN-0013",
@@ -3323,7 +3323,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0016", Name = "Eterna Forest", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0420", MinLevel = 12, MaxLevel = 30, Chance = 0 }, // Unbekannt
@@ -3332,14 +3332,14 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0018", Name = "Team Galaxis Gebäude (Eterna)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0017",
             Verbindungen = new() { "SIN-0017" },
         },
         new() {
             Id = "SIN-0019", Name = "Route 206", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0017",
             Süd = "SIN-0020",
@@ -3350,7 +3350,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0020", Name = "Route 207", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0009",
             Verbindungen = new() { "SIN-0009" },
@@ -3368,7 +3368,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0021", Name = "Mt. Coronet", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0055",
             West = "SIN-0020",
@@ -3389,7 +3389,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0022", Name = "Route 208", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0023",
             Ost = "SIN-0021",
@@ -3400,7 +3400,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0024", Name = "Route 209", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0026",
             Ost = "SIN-0023",
@@ -3419,14 +3419,14 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0025", Name = "Lost Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0024",
             Verbindungen = new() { "SIN-0024" },
         },
         new() {
             Id = "SIN-0026", Name = "Solaceon Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0028",
             Süd = "SIN-0024",
@@ -3434,14 +3434,14 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0027", Name = "Solaceon Ruins", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0026",
             Verbindungen = new() { "SIN-0026" },
         },
         new() {
             Id = "SIN-0028", Name = "Route 210", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0026",
             West = "SIN-0029",
@@ -3462,7 +3462,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0029", Name = "Celestic Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0030",
             Ost = "SIN-0028",
@@ -3478,7 +3478,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0030", Name = "Route 211", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0029",
             West = "SIN-0021",
@@ -3490,7 +3490,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0031", Name = "Route 212", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0032",
             Ost = "SIN-0023",
@@ -3501,7 +3501,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0033", Name = "Great Marsh", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0032",
             Verbindungen = new() { "SIN-0032" },
@@ -3512,7 +3512,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0034", Name = "Route 213", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0035",
             Ost = "SIN-0032",
@@ -3523,7 +3523,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0035", Name = "Route 214", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0036",
             Ost = "SIN-0034",
@@ -3534,7 +3534,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0037", Name = "Team Galaxis HQ", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0036",
             Verbindungen = new() { "SIN-0036" },
@@ -3549,7 +3549,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0038", Name = "Route 215", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0036",
             Ost = "SIN-0028",
@@ -3560,7 +3560,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0039", Name = "Route 216", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0040",
             Ost = "SIN-0021",
@@ -3572,7 +3572,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0040", Name = "Route 217", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0041",
             Ost = "SIN-0039",
@@ -3584,7 +3584,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0041", Name = "Acuity Lakefront", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0040",
             West = "SIN-0042",
@@ -3593,7 +3593,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0042", Name = "Lake Acuity", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0041",
             Verbindungen = new() { "SIN-0041" },
@@ -3603,7 +3603,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0044", Name = "Snowpoint Temple", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0043",
             Verbindungen = new() { "SIN-0043" },
@@ -3613,7 +3613,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0045", Name = "Route 218", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0046",
             Ost = "SIN-0006",
@@ -3624,7 +3624,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0047", Name = "Iron Island", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0046",
             Verbindungen = new() { "SIN-0046" },
@@ -3635,7 +3635,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0048", Name = "Lake Valor", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0035",
             Verbindungen = new() { "SIN-0035" },
@@ -3645,7 +3645,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0049", Name = "Valor Lakefront", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0048",
             West = "SIN-0034",
@@ -3654,7 +3654,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0050", Name = "Route 222", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0051",
             Ost = "SIN-0049",
@@ -3665,7 +3665,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0051", Name = "Sunyshore City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0052",
             Ost = "SIN-0050",
@@ -3692,7 +3692,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0052", Name = "Route 223", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "SIN-0051",
             Verbindungen = new() { "SIN-0051" },
@@ -3702,7 +3702,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0053", Name = "Victory Road (Sinnoh)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0052",
             Verbindungen = new() { "SIN-0052" },
@@ -3717,7 +3717,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0054", Name = "Pokémon League (Sinnoh)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0053",
             Verbindungen = new() { "SIN-0053" },
@@ -3756,7 +3756,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0055", Name = "Spear Pillar", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0021",
             Verbindungen = new() { "SIN-0021" },
@@ -3775,7 +3775,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0056", Name = "Distortion World", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0055",
             Verbindungen = new() { "SIN-0055" },
@@ -3785,7 +3785,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0057", Name = "Turnback Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0035",
             Verbindungen = new() { "SIN-0035" },
@@ -3795,7 +3795,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0058", Name = "Route 219", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0004",
             Süd = "SIN-0059",
@@ -3806,7 +3806,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0059", Name = "Route 220", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0058",
             Süd = "SIN-0060",
@@ -3817,7 +3817,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0060", Name = "Route 221", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "SIN-0059",
             Süd = "SIN-0061",
@@ -3828,7 +3828,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0061", Name = "Pal Park", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "SIN-0060",
             Verbindungen = new() { "SIN-0060" },
@@ -3838,7 +3838,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0062", Name = "Battle Zone", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0063",
             Verbindungen = new() { "SIN-0063" },
@@ -3853,7 +3853,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0063", Name = "Route 225", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "SIN-0064",
             Ost = "SIN-0062",
@@ -3864,7 +3864,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0064", Name = "Route 226", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "SIN-0063",
             Verbindungen = new() { "SIN-0063" },
@@ -3874,7 +3874,7 @@ public static class WeltData
         },
         new() {
             Id = "SIN-0065", Name = "Stark Mountain", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0485", MinLevel = 70, MaxLevel = 1, Chance = 0 }, // Unbekannt
@@ -3884,14 +3884,14 @@ public static class WeltData
         // === Unova (54 Orte) ===
         new() {
             Id = "UNO-0001", Name = "Nuvema Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0002",
             Verbindungen = new() { "KAL-0002" },
         },
         new() {
             Id = "UNO-0002", Name = "Route 1", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "UNO-0003",
             Süd = "UNO-0001",
@@ -3929,7 +3929,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0003", Name = "Accumula Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0004",
             Süd = "KAL-0002",
@@ -3945,7 +3945,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0004", Name = "Route 2", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "UNO-0005",
             Süd = "UNO-0003",
@@ -3989,7 +3989,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0006", Name = "Dreamyard", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0005",
             Verbindungen = new() { "UNO-0005" },
@@ -3999,7 +3999,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0007", Name = "Route 3", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "UNO-0009",
             Süd = "UNO-0005",
@@ -4051,7 +4051,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0008", Name = "Wellspring Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0006",
             Verbindungen = new() { "KAL-0006" },
@@ -4066,7 +4066,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0010", Name = "Pinwheel Forest", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0011",
             Ost = "UNO-0009",
@@ -4085,7 +4085,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0011", Name = "Skyarrow Bridge", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0012",
             Ost = "UNO-0010",
@@ -4093,7 +4093,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0013", Name = "Castelia Sewers", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0012",
             Verbindungen = new() { "UNO-0012" },
@@ -4103,7 +4103,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0014", Name = "Route 4", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0017",
             Ost = "UNO-0012",
@@ -4134,7 +4134,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0015", Name = "Desert Resort", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0008",
             Verbindungen = new() { "KAL-0008" },
@@ -4153,7 +4153,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0016", Name = "Relic Castle", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0015",
             Verbindungen = new() { "UNO-0015" },
@@ -4164,7 +4164,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0018", Name = "Route 5", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0019",
             Ost = "UNO-0017",
@@ -4193,7 +4193,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0019", Name = "Driftveil Drawbridge", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0020",
             Ost = "KAL-0010",
@@ -4201,14 +4201,14 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0021", Name = "Cold Storage", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0020",
             Verbindungen = new() { "UNO-0020" },
         },
         new() {
             Id = "UNO-0022", Name = "Route 6", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0023",
             Ost = "UNO-0020",
@@ -4231,7 +4231,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0023", Name = "Chargestone Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0012",
             Ost = "UNO-0024",
@@ -4243,14 +4243,14 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0025", Name = "Celestial Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0014",
             Verbindungen = new() { "KAL-0014" },
         },
         new() {
             Id = "UNO-0026", Name = "Route 7", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0027",
             Ost = "UNO-0024",
@@ -4273,7 +4273,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0027", Name = "Twist Mountain", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0014",
             Ost = "UNO-0028",
@@ -4292,7 +4292,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0029", Name = "Dragonspiral Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0028",
             Verbindungen = new() { "UNO-0028" },
@@ -4312,7 +4312,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0030", Name = "Route 8", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0031",
             Ost = "UNO-0028",
@@ -4334,7 +4334,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0031", Name = "Tubeline Bridge", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0019",
             Ost = "KAL-0016",
@@ -4342,7 +4342,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0032", Name = "Route 9", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0017",
             West = "UNO-0033",
@@ -4371,7 +4371,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0033", Name = "Opelucid City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0021",
             Süd = "KAL-0019",
@@ -4404,7 +4404,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0034", Name = "Route 10", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0035",
             Ost = "UNO-0033",
@@ -4426,7 +4426,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0035", Name = "Victory Road (Unova)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0021",
             Ost = "UNO-0036",
@@ -4434,7 +4434,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0036", Name = "Pokémon League (Unova)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0035",
             Verbindungen = new() { "UNO-0035" },
@@ -4479,7 +4479,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0037", Name = "N's Castle", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0036",
             Verbindungen = new() { "UNO-0036" },
@@ -4500,7 +4500,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0038", Name = "Aspertia City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0039",
             Verbindungen = new() { "KAL-0039" },
@@ -4520,7 +4520,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0039", Name = "Virbank City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0041",
             Verbindungen = new() { "KAL-0041" },
@@ -4540,14 +4540,14 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0040", Name = "Pokéstar Studios", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0039",
             Verbindungen = new() { "UNO-0039" },
         },
         new() {
             Id = "UNO-0041", Name = "Floccesy Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAN-0004",
             Süd = "KAL-0039",
@@ -4555,7 +4555,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0042", Name = "Humilau City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAN-0004",
             Verbindungen = new() { "KAN-0004" },
@@ -4570,28 +4570,28 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0043", Name = "Join Avenue", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0017",
             Verbindungen = new() { "UNO-0017" },
         },
         new() {
             Id = "UNO-0044", Name = "PWT (Pokemon World Tournament)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "UNO-0020",
             Verbindungen = new() { "UNO-0020" },
         },
         new() {
             Id = "UNO-0045", Name = "Black City / White Forest", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0031",
             Verbindungen = new() { "KAL-0031" },
         },
         new() {
             Id = "UNO-0046", Name = "Giant Chasm", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0028",
             Verbindungen = new() { "KAL-0028" },
@@ -4610,21 +4610,21 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0047", Name = "Abyssal Ruins", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0028",
             Verbindungen = new() { "KAL-0028" },
         },
         new() {
             Id = "UNO-0048", Name = "Reversal Mountain", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0019",
             Verbindungen = new() { "KAL-0019" },
         },
         new() {
             Id = "UNO-0049", Name = "Lostlorn Forest", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0033",
             Verbindungen = new() { "KAL-0033" },
@@ -4634,14 +4634,14 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0050", Name = "Liberty Garden", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "UNO-0012",
             Verbindungen = new() { "UNO-0012" },
         },
         new() {
             Id = "UNO-0051", Name = "Mistralton Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0012",
             Verbindungen = new() { "KAL-0012" },
@@ -4651,14 +4651,14 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0052", Name = "Moor of Icirrus", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0016",
             Verbindungen = new() { "KAL-0016" },
         },
         new() {
             Id = "UNO-0053", Name = "Undella Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0029",
             Süd = "KAL-0028",
@@ -4666,7 +4666,7 @@ public static class WeltData
         },
         new() {
             Id = "UNO-0054", Name = "Village Bridge", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0023",
             Ost = "KAL-0026",
@@ -4675,14 +4675,14 @@ public static class WeltData
         // === Kalos (53 Orte) ===
         new() {
             Id = "KAL-0001", Name = "Vaniville Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0002",
             Verbindungen = new() { "KAL-0002" },
         },
         new() {
             Id = "KAL-0002", Name = "Route 1", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0003",
             Süd = "KAL-0001",
@@ -4720,7 +4720,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0003", Name = "Aquacorde Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0004",
             Süd = "KAL-0002",
@@ -4728,7 +4728,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0004", Name = "Route 2", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0005",
             Süd = "KAL-0003",
@@ -4772,7 +4772,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0005", Name = "Santalune Forest", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0004",
             Ost = "KAL-0006",
@@ -4793,7 +4793,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0006", Name = "Route 3", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0007",
             Ost = "KAL-0005",
@@ -4845,7 +4845,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0008", Name = "Route 4", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0009",
             Ost = "KAL-0007",
@@ -4876,7 +4876,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0010", Name = "Route 5", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0011",
             Ost = "KAL-0009",
@@ -4905,7 +4905,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0011", Name = "Camphrier Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0012",
             Ost = "KAL-0010",
@@ -4913,7 +4913,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0012", Name = "Route 6", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0013",
             Ost = "KAL-0011",
@@ -4936,14 +4936,14 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0013", Name = "Parfum Palace", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0012",
             Verbindungen = new() { "KAL-0012" },
         },
         new() {
             Id = "KAL-0014", Name = "Route 7", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0015",
             Ost = "KAL-0012",
@@ -4966,7 +4966,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0015", Name = "Connecting Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0014",
             Ost = "KAL-0016",
@@ -4974,7 +4974,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0016", Name = "Route 8", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0017",
             Ost = "KAL-0015",
@@ -4996,7 +4996,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0017", Name = "Ambrette Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0019",
             Ost = "KAL-0016",
@@ -5004,7 +5004,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0018", Name = "Glittering Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0019",
             Verbindungen = new() { "KAL-0019" },
@@ -5023,7 +5023,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0019", Name = "Route 9", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0018",
             Ost = "KAL-0017",
@@ -5051,7 +5051,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0021", Name = "Route 10", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0022",
             Ost = "KAL-0020",
@@ -5073,7 +5073,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0022", Name = "Geosenge Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0023",
             Ost = "KAL-0021",
@@ -5089,7 +5089,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0023", Name = "Route 11", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0024",
             Ost = "KAL-0022",
@@ -5110,14 +5110,14 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0025", Name = "Tower of Mastery", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0024",
             Verbindungen = new() { "KAL-0024" },
         },
         new() {
             Id = "KAL-0026", Name = "Route 12", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0048",
             Ost = "KAL-0024",
@@ -5146,7 +5146,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0028", Name = "Route 13", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0009",
             Ost = "KAL-0027",
@@ -5173,7 +5173,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0029", Name = "Route 14", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0030",
             Ost = "KAL-0009",
@@ -5201,7 +5201,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0031", Name = "Route 15", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0032",
             Ost = "KAL-0030",
@@ -5222,7 +5222,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0032", Name = "Dendemille Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0033",
             Ost = "KAL-0031",
@@ -5230,7 +5230,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0033", Name = "Route 16", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0034",
             Ost = "KAL-0032",
@@ -5251,7 +5251,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0034", Name = "Frost Cavern", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0033",
             Verbindungen = new() { "KAL-0033" },
@@ -5262,7 +5262,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0036", Name = "Route 17", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0035",
             Ost = "KAL-0037",
@@ -5283,7 +5283,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0037", Name = "Route 18", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0038",
             Ost = "KAL-0036",
@@ -5304,7 +5304,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0038", Name = "Couriway Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0039",
             Ost = "KAL-0037",
@@ -5312,7 +5312,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0039", Name = "Route 19", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0042",
             Ost = "KAL-0038",
@@ -5333,7 +5333,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0040", Name = "Pokémon Village", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0041",
             Verbindungen = new() { "KAL-0041" },
@@ -5344,7 +5344,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0041", Name = "Route 20", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0040",
             Ost = "KAL-0042",
@@ -5364,7 +5364,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0042", Name = "Snowbelle City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0043",
             Ost = "KAL-0041",
@@ -5391,7 +5391,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0043", Name = "Route 21", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0044",
             Ost = "KAL-0042",
@@ -5412,7 +5412,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0044", Name = "Victory Road (Kalos)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0043",
             Ost = "KAL-0045",
@@ -5420,7 +5420,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0045", Name = "Pokémon League (Kalos)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0044",
             Verbindungen = new() { "KAL-0044" },
@@ -5459,7 +5459,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0046", Name = "Team Flare Secret HQ", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0022",
             Verbindungen = new() { "KAL-0022" },
@@ -5478,7 +5478,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0047", Name = "Terminus Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0037",
             Verbindungen = new() { "KAL-0037" },
@@ -5488,7 +5488,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0048", Name = "Azure Bay", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0026",
             Verbindungen = new() { "KAL-0026" },
@@ -5498,7 +5498,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0049", Name = "Reflection Cave", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0023",
             Ost = "KAL-0024",
@@ -5506,14 +5506,14 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0050", Name = "Kalos Power Plant", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0028",
             Verbindungen = new() { "KAL-0028" },
         },
         new() {
             Id = "KAL-0051", Name = "Sea Spirit's Den", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0048",
             Verbindungen = new() { "KAL-0048" },
@@ -5523,7 +5523,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0052", Name = "Kiloude City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -5536,7 +5536,7 @@ public static class WeltData
         },
         new() {
             Id = "KAL-0053", Name = "Battle Maison", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "KAL-0052",
             Verbindungen = new() { "KAL-0052" },
@@ -5552,7 +5552,7 @@ public static class WeltData
         // === Alola (44 Orte) ===
         new() {
             Id = "ALO-0001", Name = "Iki Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -5583,7 +5583,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0002", Name = "Route 1 (Melemele)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "ALO-0001",
             Verbindungen = new() { "ALO-0001" },
@@ -5594,21 +5594,21 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0003", Name = "Hau'oli City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0004",
             Verbindungen = new() { "KAL-0004" },
         },
         new() {
             Id = "ALO-0004", Name = "Route 2 (Melemele)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "ALO-0003",
             Verbindungen = new() { "ALO-0003" },
         },
         new() {
             Id = "ALO-0005", Name = "Verdant Cavern", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0004",
             Verbindungen = new() { "KAL-0004" },
@@ -5639,19 +5639,19 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0006", Name = "Melemele Sea", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0002",
             Verbindungen = new() { "KAL-0002" },
         },
         new() {
             Id = "ALO-0007", Name = "Ten Carat Hill", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "ALO-0008", Name = "Heahea City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0008",
             Süd = "KAL-0006",
@@ -5659,7 +5659,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0009", Name = "Route 4 (Akala)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0010",
             Ost = "ALO-0008",
@@ -5670,7 +5670,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0010", Name = "Paniola Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0010",
             Süd = "KAL-0008",
@@ -5678,7 +5678,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0011", Name = "Route 5 (Akala)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0012",
             Ost = "ALO-0010",
@@ -5689,7 +5689,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0012", Name = "Brooklet Hill", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0010",
             Verbindungen = new() { "KAL-0010" },
@@ -5719,7 +5719,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0013", Name = "Route 6 (Akala)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0014",
             Ost = "ALO-0012",
@@ -5730,7 +5730,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0014", Name = "Royal Avenue", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0014",
             Ost = "KAL-0012",
@@ -5738,7 +5738,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0015", Name = "Wela Volcano Park", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0014",
             Verbindungen = new() { "KAL-0014" },
@@ -5768,7 +5768,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0016", Name = "Route 8 (Akala)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0017",
             Ost = "KAL-0014",
@@ -5779,7 +5779,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0017", Name = "Lush Jungle", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0016",
             Verbindungen = new() { "KAL-0016" },
@@ -5809,7 +5809,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0018", Name = "Diglett's Tunnel", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0016",
             Ost = "KAL-0019",
@@ -5817,7 +5817,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0019", Name = "Konikoni City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0019",
             Ost = "ALO-0018",
@@ -5839,7 +5839,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0020", Name = "Akala Outskirts", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0019",
             Verbindungen = new() { "ALO-0019" },
@@ -5854,7 +5854,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0021", Name = "Ruins of Life", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0020",
             Verbindungen = new() { "ALO-0020" },
@@ -5864,7 +5864,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0022", Name = "Malie City", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0021",
             Süd = "KAL-0019",
@@ -5880,7 +5880,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0023", Name = "Route 10 (Ula'ula)", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0024",
             Ost = "ALO-0022",
@@ -5891,7 +5891,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0024", Name = "Mount Hokulani", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0021",
             Verbindungen = new() { "KAL-0021" },
@@ -5911,7 +5911,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0025", Name = "Route 11 (Ula'ula)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0026",
             Ost = "ALO-0022",
@@ -5922,7 +5922,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0026", Name = "Tapu Village", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0026",
             Ost = "KAL-0023",
@@ -5930,7 +5930,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0027", Name = "Route 12 (Ula'ula)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0028",
             Ost = "ALO-0026",
@@ -5941,7 +5941,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0028", Name = "Route 13 (Ula'ula)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0029",
             Ost = "KAL-0026",
@@ -5952,14 +5952,14 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0029", Name = "Haina Desert", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0028",
             Verbindungen = new() { "KAL-0028" },
         },
         new() {
             Id = "ALO-0030", Name = "Po Town", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0036",
             Verbindungen = new() { "KAL-0036" },
@@ -5974,7 +5974,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0031", Name = "Aether Paradise", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -5993,7 +5993,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0032", Name = "Ula'ula Meadow", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0033",
             Verbindungen = new() { "KAL-0033" },
@@ -6008,14 +6008,14 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0033", Name = "Seafolk Village", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "ALO-0034",
             Verbindungen = new() { "ALO-0034" },
         },
         new() {
             Id = "ALO-0034", Name = "Poni Wilds", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0035",
             Ost = "ALO-0033",
@@ -6026,7 +6026,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0035", Name = "Ancient Poni Path", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0036",
             Ost = "ALO-0034",
@@ -6037,14 +6037,14 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0036", Name = "Poni Plains", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Ost = "ALO-0035",
             Verbindungen = new() { "ALO-0035" },
         },
         new() {
             Id = "ALO-0037", Name = "Exeggutor Island", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0034",
             Verbindungen = new() { "ALO-0034" },
@@ -6065,7 +6065,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0038", Name = "Vast Poni Canyon", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0035",
             Verbindungen = new() { "ALO-0035" },
@@ -6095,7 +6095,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0039", Name = "Altar of the Sunne/Moone", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0038",
             Verbindungen = new() { "ALO-0038" },
@@ -6105,7 +6105,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0040", Name = "Ruins of Conflict", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0006",
             Verbindungen = new() { "ALO-0006" },
@@ -6115,7 +6115,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0041", Name = "Ruins of Abundance", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0029",
             Verbindungen = new() { "ALO-0029" },
@@ -6125,7 +6125,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0042", Name = "Ruins of Hope", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0788", MinLevel = 60, MaxLevel = 1, Chance = 0 }, // Unbekannt
@@ -6133,7 +6133,7 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0043", Name = "Battle Tree", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "ALO-0036",
             Verbindungen = new() { "ALO-0036" },
@@ -6154,20 +6154,20 @@ public static class WeltData
         },
         new() {
             Id = "ALO-0044", Name = "Ultra Space", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
         },
         // === Galar (31 Orte) ===
         new() {
             Id = "GAL-0001", Name = "Postwick", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0002",
             Verbindungen = new() { "KAL-0002" },
         },
         new() {
             Id = "GAL-0002", Name = "Route 1 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "GAL-0003",
             Süd = "GAL-0001",
@@ -6187,7 +6187,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0003", Name = "Wedgehurst", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0004",
             Süd = "KAL-0002",
@@ -6195,7 +6195,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0004", Name = "Route 2 (Galar)", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0005",
             Ost = "GAL-0003",
@@ -6203,7 +6203,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0005", Name = "Slumbering Weald", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0004",
             Verbindungen = new() { "KAL-0004" },
@@ -6214,7 +6214,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0007", Name = "Wild Area", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "GAL-0003",
             West = "GAL-0006",
@@ -6235,7 +6235,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0008", Name = "Route 3 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0009",
             Ost = "GAL-0006",
@@ -6243,7 +6243,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0009", Name = "Galar Mine", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0006",
             Ost = "KAL-0008",
@@ -6254,7 +6254,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0010", Name = "Route 4 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0011",
             Ost = "GAL-0009",
@@ -6262,7 +6262,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0012", Name = "Route 5 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "GAL-0007",
             West = "GAL-0013",
@@ -6271,7 +6271,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0013", Name = "Hulbury", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0012",
             Süd = "KAL-0010",
@@ -6279,7 +6279,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0014", Name = "Route 6 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0006",
             Ost = "GAL-0013",
@@ -6287,7 +6287,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0015", Name = "Galar Mine No. 2", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0012",
             Ost = "GAL-0006",
@@ -6295,7 +6295,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0016", Name = "Stow-on-Side", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0014",
             Süd = "KAL-0012",
@@ -6303,7 +6303,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0017", Name = "Route 7 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0024",
             Ost = "GAL-0016",
@@ -6311,7 +6311,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0018", Name = "Glimwood Tangle", Typ = "ort",
-            Farbe = "forest", GridX = -1, GridY = -1,
+            Farbe = "forest",
             HatMonsterCenter = false, HatMarkt = false,
             West = "KAL-0014",
             Ost = "KAL-0016",
@@ -6323,7 +6323,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0019", Name = "Ballonlea", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0016",
             Süd = "GAL-0018",
@@ -6331,7 +6331,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0020", Name = "Route 8 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0021",
             Ost = "GAL-0019",
@@ -6339,7 +6339,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0021", Name = "Circhester", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0019",
             Süd = "KAL-0016",
@@ -6347,7 +6347,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0022", Name = "Route 9 (Galar)", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0023",
             Ost = "GAL-0021",
@@ -6355,7 +6355,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0024", Name = "Hammerlocke", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0014",
             West = "KAL-0012",
@@ -6394,7 +6394,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0025", Name = "Route 10 (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             West = "GAL-0026",
             Ost = "GAL-0024",
@@ -6402,7 +6402,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0026", Name = "Wyndon", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "GAL-0027",
             Süd = "KAL-0021",
@@ -6410,7 +6410,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0027", Name = "Rose Tower", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "GAL-0026",
             Verbindungen = new() { "GAL-0026" },
@@ -6425,7 +6425,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0028", Name = "Pokémon League (Galar)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "GAL-0026",
             Verbindungen = new() { "GAL-0026" },
@@ -6452,7 +6452,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0029", Name = "Energy Plant", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "GAL-0024",
             Verbindungen = new() { "GAL-0024" },
@@ -6470,7 +6470,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0030", Name = "Isle of Armor", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0819", MinLevel = 20, MaxLevel = 40, Chance = 30 }, // Unbekannt
@@ -6486,7 +6486,7 @@ public static class WeltData
         },
         new() {
             Id = "GAL-0031", Name = "Crown Tundra", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0875", MinLevel = 60, MaxLevel = 65, Chance = 30 }, // Unbekannt
@@ -6503,7 +6503,7 @@ public static class WeltData
         // === Paldea (27 Orte) ===
         new() {
             Id = "PAL-0001", Name = "Mesagoza", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "KAL-0002",
             Verbindungen = new() { "KAL-0002" },
@@ -6524,7 +6524,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0002", Name = "Poco Path", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "PAL-0001",
             Verbindungen = new() { "PAL-0001" },
@@ -6536,7 +6536,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0003", Name = "Los Platos", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
             Nord = "PAL-0002",
             Verbindungen = new() { "PAL-0002" },
@@ -6551,7 +6551,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0011", Name = "Glaseado Mountain", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             WildMonster = new() {
                 new() { MonsterId = "PKM-0872", MinLevel = 35, MaxLevel = 20, Chance = 0 }, // Unbekannt
@@ -6590,7 +6590,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0012", Name = "Stony Cliff Titan", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6603,7 +6603,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0013", Name = "Open Sky Titan", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6616,7 +6616,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0014", Name = "Lurking Steel Titan", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6629,7 +6629,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0015", Name = "Quaking Earth Titan", Typ = "ort",
-            Farbe = "cave", GridX = -1, GridY = -1,
+            Farbe = "cave",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6642,7 +6642,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0016", Name = "False Dragon Titan", Typ = "ort",
-            Farbe = "blue", GridX = -1, GridY = -1,
+            Farbe = "blue",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6655,7 +6655,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0017", Name = "Team Star Scherengang-Basis", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6668,7 +6668,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0018", Name = "Team Star Flammengang-Basis", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6681,7 +6681,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0019", Name = "Team Star Giftgang-Basis", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6694,7 +6694,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0020", Name = "Team Star Feengang-Basis", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6707,7 +6707,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0021", Name = "Team Star Kampfgang-Basis", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Trainer = new() {
                 new() {
@@ -6720,7 +6720,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0022", Name = "Area Zero", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "PAL-0001",
             Verbindungen = new() { "PAL-0001" },
@@ -6760,17 +6760,17 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0023", Name = "Porto Marinada", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "PAL-0024", Name = "Zapapico", Typ = "ort",
-            Farbe = "purple", GridX = -1, GridY = -1,
+            Farbe = "purple",
             HatMonsterCenter = false, HatMarkt = false,
         },
         new() {
             Id = "PAL-0025", Name = "Pokémon League (Paldea)", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "PAL-0001",
             Verbindungen = new() { "PAL-0001" },
@@ -6809,7 +6809,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0026", Name = "Kitakami", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "PAL-0001",
             Verbindungen = new() { "PAL-0001" },
@@ -6824,7 +6824,7 @@ public static class WeltData
         },
         new() {
             Id = "PAL-0027", Name = "Blueberry Academy", Typ = "ort",
-            Farbe = "green", GridX = -1, GridY = -1,
+            Farbe = "green",
             HatMonsterCenter = false, HatMarkt = false,
             Süd = "PAL-0001",
             Verbindungen = new() { "PAL-0001" },
