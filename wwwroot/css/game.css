@@ -1973,3 +1973,53 @@ body {
 
 .editor-panel-rechts.versteckt { width: 0; min-width: 0; overflow: hidden; border: none; }
 .editor-panel-rechts.sichtbar { width: 360px; min-width: 320px; }
+
+/* ═══ Markt-Items Editor ══════════════════════════════════════════════════ */
+.editor-markt-eintrag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+}
+.markt-emoji { font-size: 1.3rem; flex-shrink: 0; }
+.markt-info { flex: 1; min-width: 0; }
+.markt-name { display: block; font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
+.markt-preis { display: block; font-size: 0.72rem; color: #94a3b8; }
+
+/* Item-Auswahl Panel */
+.editor-item-auswahl {
+    background: #1a2035;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+.editor-item-auswahl-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.05);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+.editor-item-liste {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.25rem;
+}
+.editor-item-eintrag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.editor-item-eintrag:hover { background: rgba(99,102,241,0.15); }
+.editor-item-eintrag.item-vorhanden { opacity: 0.5; }
