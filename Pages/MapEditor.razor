@@ -233,6 +233,98 @@
                     </div>
                 </div>
 
+                <!-- Markt-Items -->
+                @if (ort.HatMarkt)
+                {
+                    <div class="editor-section">
+                        <div class="editor-section-title-row">
+                            <span class="editor-section-title">🏪 Markt-Angebot</span>
+                            <button class="btn-section-add" @onclick="() => MarktItemAuswahlÖffnen()">
+                                + Aus Datenbank
+                            </button>
+                        </div>
+                        @if (!ort.MarktAngebot.Any())
+                        {
+                            <p class="editor-leer-text">Noch keine Items. Klicke "+ Aus Datenbank" oder erstelle unten ein neues Item.</p>
+                        }
+                        @foreach (var item in ort.MarktAngebot.ToList())
+                        {
+                            var it = item;
+                            <div class="editor-markt-eintrag">
+                                <span class="markt-emoji">@it.Emoji</span>
+                                <div class="markt-info">
+                                    <span class="markt-name">@it.Name</span>
+                                    <span class="markt-preis">@it.Preis 💰</span>
+                                </div>
+                                <button class="btn-row-loeschen" @onclick="() => { ort.MarktAngebot.Remove(it); Speichern(); }">✕</button>
+                            </div>
+                        }
+                        <!-- Item-Auswahl Panel -->
+                        @if (marktItemAuswahlOffen)
+                        {
+                            <div class="editor-item-auswahl">
+                                <div class="editor-item-auswahl-header">
+                                    <span>📦 Item wählen</span>
+                                    <button class="btn-schliessen" @onclick="() => marktItemAuswahlOffen = false">✕</button>
+                                </div>
+                                <input class="editor-search-input" placeholder="🔍 Suchen..." @bind="itemSuche" @bind:event="oninput" />
+                                <div class="editor-item-liste">
+                                    @foreach (var dbItem in AlleItemsGefiltert)
+                                    {
+                                        var di = dbItem;
+                                        bool bereitsImMarkt = ort.MarktAngebot.Any(x => x.Id == di.Id);
+                                        <div class="editor-item-eintrag" style="@(bereitsImMarkt ? "opacity:0.5" : "")" @onclick="() => ItemAuswahlBestätigen(ort, di)">
+                                            <span class="markt-emoji">@di.Emoji</span>
+                                            <div class="markt-info">
+                                                <span class="markt-name">@di.Name @(bereitsImMarkt ? "✓" : "")</span>
+                                                <span class="markt-preis">@di.Preis 💰 · @di.WoBekommt</span>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        <!-- Neues Item erstellen -->
+                        <details class="editor-sub-section" style="margin-top:0.75rem">
+                            <summary class="editor-sub-title" style="cursor:pointer">✏️ Neues Item erstellen</summary>
+                            <div class="editor-field-grid" style="margin-top:0.5rem">
+                                <div class="editor-field">
+                                    <label>Name</label>
+                                    <input class="editor-input" @bind="neuesItemName" placeholder="z.B. Ananassaft" />
+                                </div>
+                                <div class="editor-field">
+                                    <label>Preis (💰)</label>
+                                    <input class="editor-input editor-input-klein" type="number" min="0" @bind="neuesItemPreis" />
+                                </div>
+                                <div class="editor-field">
+                                    <label>Emoji</label>
+                                    <input class="editor-input editor-input-klein" @bind="neuesItemEmoji" placeholder="🍍" />
+                                </div>
+                                <div class="editor-field">
+                                    <label>Kategorie</label>
+                                    <select class="editor-input" @bind="neuesItemKategorie">
+                                        <option value="Heilung">Heilung</option>
+                                        <option value="Fangen">Fangen</option>
+                                        <option value="Status">Status</option>
+                                        <option value="Kampf">Kampf</option>
+                                        <option value="Spezial">Spezial</option>
+                                    </select>
+                                </div>
+                                <div class="editor-field" style="grid-column:span 2">
+                                    <label>Beschreibung</label>
+                                    <input class="editor-input" @bind="neuesItemBeschreibung" placeholder="Was macht das Item?" />
+                                </div>
+                                <div class="editor-field" style="grid-column:span 2">
+                                    <label>Wo bekommt man es?</label>
+                                    <input class="editor-input" @bind="neuesItemWoBekommt" placeholder="z.B. NPC in Prismania, nach Orden 3..." />
+                                </div>
+                            </div>
+                            <button class="btn-row-add" style="margin-top:0.5rem" @onclick="() => NeuesItemErstellen(ort)">
+                                ✅ Item erstellen & zum Markt hinzufügen
+                            </button>
+                        </details>
+                    </div>
+                }
                 <!-- Sperrbedingungen -->
                 <div class="editor-section">
                     <div class="editor-section-title">🔒 Sperrbedingungen</div>
@@ -929,6 +1021,74 @@
     private void TrainerMonsterHinzufügen(TrainerKampf tr)
     {
         tr.Team.Add(new MonsterTeamEintrag { MonsterId = "PKM-0001", Level = 5 });
+        Speichern();
+    }
+
+    // ─── Markt-Item Verwaltung ────────────────────────────────────────────────
+    private bool marktItemAuswahlOffen = false;
+    private string itemSuche = "";
+    private string neuesItemName = "";
+    private int neuesItemPreis = 200;
+    private string neuesItemEmoji = "📦";
+    private string neuesItemKategorie = "Heilung";
+    private string neuesItemBeschreibung = "";
+    private string neuesItemWoBekommt = "";
+    private static int _itemZähler = 200;
+
+    private List<ShopItem> _alleItemsCache = new();
+    private List<ShopItem> AlleItemsGefiltert => _alleItemsCache
+        .Where(i => string.IsNullOrEmpty(itemSuche) ||
+                    i.Name.Contains(itemSuche, StringComparison.OrdinalIgnoreCase) ||
+                    i.Kategorie.Contains(itemSuche, StringComparison.OrdinalIgnoreCase))
+        .ToList();
+
+    private void MarktItemAuswahlÖffnen()
+    {
+        _alleItemsCache = WeltData.AlleItems();
+        itemSuche = "";
+        marktItemAuswahlOffen = true;
+    }
+
+    private void ItemAuswahlBestätigen(Ort ort, ShopItem item)
+    {
+        if (!ort.MarktAngebot.Any(x => x.Id == item.Id))
+        {
+            ort.MarktAngebot.Add(new ShopItem
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Beschreibung = item.Beschreibung,
+                Preis = item.Preis,
+                Emoji = item.Emoji,
+                Kategorie = item.Kategorie,
+                WoBekommt = item.WoBekommt
+            });
+            Speichern();
+        }
+        marktItemAuswahlOffen = false;
+    }
+
+    private void NeuesItemErstellen(Ort ort)
+    {
+        if (string.IsNullOrWhiteSpace(neuesItemName)) return;
+        _itemZähler++;
+        var neues = new ShopItem
+        {
+            Id = $"item-custom-{_itemZähler}",
+            Name = neuesItemName.Trim(),
+            Beschreibung = neuesItemBeschreibung.Trim(),
+            Preis = neuesItemPreis,
+            Emoji = string.IsNullOrEmpty(neuesItemEmoji) ? "📦" : neuesItemEmoji,
+            Kategorie = neuesItemKategorie,
+            WoBekommt = string.IsNullOrEmpty(neuesItemWoBekommt) ? "Hier" : neuesItemWoBekommt
+        };
+        ort.MarktAngebot.Add(neues);
+        // Felder zurücksetzen
+        neuesItemName = "";
+        neuesItemBeschreibung = "";
+        neuesItemPreis = 200;
+        neuesItemEmoji = "📦";
+        neuesItemWoBekommt = "";
         Speichern();
     }
 

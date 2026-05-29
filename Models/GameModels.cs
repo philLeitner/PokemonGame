@@ -222,6 +222,7 @@ public class ShopItem
     public int Preis { get; set; }
     public string Emoji { get; set; } = "💊";
     public string Kategorie { get; set; } = "Heilung";
+    public string? WoBekommt { get; set; } = null; // Wo/wie man das Item bekommt
 }
 
 public class InventarItem
@@ -259,6 +260,7 @@ public class Ort
     // Zugangs-Bedingungen
     public string? BenötigtItem { get; set; } = null;       // Item-ID die der Spieler besitzen muss
     public string? BenötigtItemName { get; set; } = null;   // Anzeigename des benötigten Items
+    public string? BenötigtItemQuelle { get; set; } = null; // Wo man das benötigte Item bekommt
     public bool IstUnterirdisch { get; set; } = false;      // Unterirdische Gänge: immer zugänglich
     public bool LigaZugang { get; set; } = false;           // Nur mit allen 8 Kanto-Orden zugänglich
     public string? Teleport { get; set; }                   // Teleport-Ziel (Ort-ID)
