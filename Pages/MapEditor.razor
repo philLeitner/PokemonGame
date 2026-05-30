@@ -174,7 +174,10 @@
                         <span class="editor-save-badge @(speicherFehler ? "fehler" : "")">@speicherStatus</span>
                     }
                 </div>
-                <button class="btn-editor-loeschen" @onclick="OrtLöschen" title="Ort löschen">🗑️</button>
+                <div class="editor-header-aktionen">
+                    <button class="btn-editor-kopieren" @onclick="OrtKopieren" title="Ort kopieren (ohne Verbindungen)">📋</button>
+                    <button class="btn-editor-loeschen" @onclick="OrtLöschen" title="Ort löschen">🗑️</button>
+                </div>
             </div>
 
             <div class="editor-detail-body">
@@ -1066,6 +1069,112 @@
         OrtAuswählen(neueId);
         neuOrtModalOffen = false;
         neuOrtFehler = "";
+        Speichern();
+    }
+
+    private void OrtKopieren()
+    {
+        if (ausgewähltOrt == null) return;
+        var quelle = ausgewähltOrt;
+
+        // Basis-Name ermitteln: "Route 1" → "Route 1", "Route 1.1" → "Route 1", "Route 1.2" → "Route 1"
+        string basisName = quelle.Name;
+        // Entferne bestehenden .N-Suffix
+        var dotIdx = basisName.LastIndexOf('.');
+        if (dotIdx >= 0 && int.TryParse(basisName[(dotIdx + 1)..], out _))
+            basisName = basisName[..dotIdx];
+
+        // Nächste freie Nummer finden (.1, .2, .3, ...)
+        int nr = 1;
+        while (editorOrte.Any(o => o.Name == $"{basisName}.{nr}"))
+            nr++;
+        string neuerName = $"{basisName}.{nr}";
+
+        // Neue ID generieren: gleiche Region, nächste freie Nummer
+        string region = quelle.Id.Contains('-') ? quelle.Id.Split('-')[0] : "KAN";
+        var regionOrte = editorOrte.Where(o => o.Id.StartsWith(region + "-")).ToList();
+        int maxNr = regionOrte
+            .Select(o => { var t = o.Id.Split('-'); return t.Length > 1 && int.TryParse(t[1], out int n) ? n : 0; })
+            .DefaultIfEmpty(0).Max();
+        string neueId = $"{region}-{(maxNr + 1):D4}";
+
+        // Deep-Copy aller Felder außer Verbindungen und Grid-Position
+        var kopie = new Ort
+        {
+            Id         = neueId,
+            Name       = neuerName,
+            Typ        = quelle.Typ,
+            Farbe      = quelle.Farbe,
+            GridX      = -1,  // noch nicht platziert
+            GridY      = -1,
+            Beschreibung = quelle.Beschreibung,
+            HatMonsterCenter = quelle.HatMonsterCenter,
+            HatMarkt   = quelle.HatMarkt,
+            MinOrdenFürZugang = quelle.MinOrdenFürZugang,
+            MaxOrdenFürSperre = quelle.MaxOrdenFürSperre,
+            BenötigtItem      = quelle.BenötigtItem,
+            BenötigtItemName  = quelle.BenötigtItemName,
+            BenötigtItemQuelle = quelle.BenötigtItemQuelle,
+            IstUnterirdisch   = quelle.IstUnterirdisch,
+            LigaZugang        = quelle.LigaZugang,
+            // Verbindungen NICHT übernehmen
+            WildMonster = quelle.WildMonster.Select(w => new WildBegegnung
+            {
+                MonsterId = w.MonsterId,
+                MinLevel  = w.MinLevel,
+                MaxLevel  = w.MaxLevel,
+                Chance    = w.Chance
+            }).ToList(),
+            MarktAngebot = quelle.MarktAngebot.Select(m => new ShopItem
+            {
+                Id           = m.Id,
+                Name         = m.Name,
+                Beschreibung = m.Beschreibung,
+                Preis        = m.Preis,
+                Emoji        = m.Emoji,
+                Kategorie    = m.Kategorie,
+                WoBekommt    = m.WoBekommt
+            }).ToList(),
+            Trainer = quelle.Trainer.Select(t => new TrainerKampf
+            {
+                Id        = $"{neueId}-T{quelle.Trainer.IndexOf(t) + 1}",
+                Name      = t.Name,
+                Klasse    = t.Klasse,
+                Belohnung = t.Belohnung,
+                Team      = t.Team.Select(m => new MonsterTeamEintrag
+                {
+                    MonsterId = m.MonsterId,
+                    Level     = m.Level
+                }).ToList()
+            }).ToList(),
+            NPCs = quelle.NPCs.Select(n => new GesprächsNPC
+            {
+                Id    = $"{neueId}-N{quelle.NPCs.IndexOf(n) + 1}",
+                Name  = n.Name,
+                Emoji = n.Emoji,
+                Dialog = n.Dialog,
+                GibtItemId     = n.GibtItemId,
+                GibtItemName   = n.GibtItemName,
+                GibtItemEmoji  = n.GibtItemEmoji,
+                DialogNachGeschenk = n.DialogNachGeschenk
+            }).ToList(),
+            Arena = quelle.Arena == null ? null : new Arena
+            {
+                OrdenName          = quelle.Arena.OrdenName,
+                OrdenNr            = quelle.Arena.OrdenNr,
+                Leiter             = quelle.Arena.Leiter,
+                TypSpezialisierung = quelle.Arena.TypSpezialisierung,
+                Beschreibung       = quelle.Arena.Beschreibung,
+                Team = quelle.Arena.Team.Select(m => new MonsterTeamEintrag
+                {
+                    MonsterId = m.MonsterId,
+                    Level     = m.Level
+                }).ToList()
+            }
+        };
+
+        editorOrte.Add(kopie);
+        OrtAuswählen(kopie.Id);
         Speichern();
     }
 

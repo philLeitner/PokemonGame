@@ -2142,3 +2142,24 @@ body {
     background: #30363d;
     color: #e6edf3;
 }
+
+/* ═══ Ort kopieren Button ════════════════════════════════════════════════ */
+.editor-header-aktionen {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+.btn-editor-kopieren {
+    background: none;
+    border: none;
+    color: #8b949e;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+.btn-editor-kopieren:hover {
+    color: #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+}
