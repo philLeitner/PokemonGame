@@ -204,13 +204,49 @@ public class GameService
         return null;
     }
 
-    public string? OrtBetreten(string ortId)
+    /// <summary>Prüft die Richtungs-Sperre für eine bestimmte Ausgangsrichtung vom aktuellen Ort.</summary>
+    public string? RichtungsZugangsPrüfung(Ort vonOrt, string richtung)
+    {
+        var sperre = richtung switch
+        {
+            "Nord" => vonOrt.SperrNord,
+            "Süd"  => vonOrt.SperrSüd,
+            "Ost"  => vonOrt.SperrOst,
+            "West" => vonOrt.SperrWest,
+            _      => null
+        };
+        if (sperre == null) return null;
+        if (sperre.MinOrden > 0 && Spieler.Orden.Count < sperre.MinOrden)
+        {
+            var hinweis = !string.IsNullOrEmpty(sperre.Hinweis) ? $" ({sperre.Hinweis})" : "";
+            return $"⛔ Richtung {richtung} gesperrt – du benötigst mindestens {sperre.MinOrden} Orden. Du hast {Spieler.Orden.Count}.{hinweis}";
+        }
+        if (sperre.ItemId != null && Spieler.GetItemMenge(sperre.ItemId) <= 0)
+        {
+            var hinweis = !string.IsNullOrEmpty(sperre.Hinweis) ? $" Tipp: {sperre.Hinweis}" : "";
+            return $"⛔ Richtung {richtung} gesperrt – du benötigst {sperre.ItemName ?? sperre.ItemId}.{hinweis}";
+        }
+        return null;
+    }
+
+    public string? OrtBetreten(string ortId, string? vonRichtung = null)
     {
         var ort = AlleOrte.FirstOrDefault(o => o.Id == ortId);
         if (ort != null)
         {
+            // Allgemeine Zugangsprüfung
             var fehler = OrtZugangsPrüfung(ort);
             if (fehler != null) return fehler;
+            // Richtungs-Sperre vom aktuellen Ort aus prüfen
+            if (vonRichtung != null)
+            {
+                var aktOrt = AlleOrte.FirstOrDefault(o => o.Id == Spieler.AktuellerOrt);
+                if (aktOrt != null)
+                {
+                    var richtungsFehler = RichtungsZugangsPrüfung(aktOrt, vonRichtung);
+                    if (richtungsFehler != null) return richtungsFehler;
+                }
+            }
         }
         Spieler.AktuellerOrt = ortId;
         Notify();

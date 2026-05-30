@@ -266,6 +266,11 @@ public class Ort
     public string? Teleport { get; set; }                   // Teleport-Ziel (Ort-ID)
     public string? Untergrund { get; set; }                 // Unterirdischer Gang (Ort-ID)
     public List<GesprächsNPC> NPCs { get; set; } = new();
+    // ─── Richtungs-Sperren (pro Richtung eigene Bedingung) ───────────────────────────
+    public RichtungsSperre? SperrNord { get; set; } = null;
+    public RichtungsSperre? SperrSüd  { get; set; } = null;
+    public RichtungsSperre? SperrOst  { get; set; } = null;
+    public RichtungsSperre? SperrWest { get; set; } = null;
 }
 
 public class GesprächsNPC
@@ -279,6 +284,15 @@ public class GesprächsNPC
     public string? GibtItemName { get; set; }
     public string? GibtItemEmoji { get; set; }
     public string? DialogNachGeschenk { get; set; }
+}
+
+/// <summary>Sperre für eine einzelne Reiserichtung (Nord/Süd/Ost/West)</summary>
+public class RichtungsSperre
+{
+    public int MinOrden     { get; set; } = 0;    // 0 = kein Orden-Limit
+    public string? ItemId   { get; set; } = null; // Item-ID die benötigt wird
+    public string? ItemName { get; set; } = null; // Anzeigename des Items
+    public string? Hinweis  { get; set; } = null; // Freitext-Hinweis für den Spieler
 }
 
 public class Arena

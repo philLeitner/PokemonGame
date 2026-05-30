@@ -109,7 +109,7 @@
                                  style="background: @WeltData.OrtFarben.GetValueOrDefault(f.Farbe, "#374151")"
                                  draggable="false"
                                  @ondragstart:preventDefault
-                                 @onclick="() => MinimapKlick(f)">
+                                 @onclick="() => MinimapKlick(f, row, col)">
                                 <span class="minimap-icon">@OrtIcon(f)</span>
                                 <span class="minimap-name">@f.Name</span>
                                 @if (f.Arena != null && Game.Spieler.Orden.Contains(f.Arena.OrdenName))
@@ -415,7 +415,7 @@
         ausgewähltOrt = ort;
     }
 
-    private void MinimapKlick(Ort ort)
+    private void MinimapKlick(Ort ort, int row, int col)
     {
         if (ort.Id == Game.Spieler.AktuellerOrt)
         {
@@ -423,7 +423,16 @@
             ausgewähltOrt = ort;
             return;
         }
-        var fehler = Game.OrtBetreten(ort.Id);
+        // Richtung aus Grid-Position ableiten (3x3: Mitte = [1,1])
+        string? richtung = (row, col) switch
+        {
+            (0, 1) => "Nord",
+            (2, 1) => "Süd",
+            (1, 0) => "West",
+            (1, 2) => "Ost",
+            _      => null  // Ecken: keine Richtungs-Sperre
+        };
+        var fehler = Game.OrtBetreten(ort.Id, richtung);
         if (fehler != null)
         {
             meldung = fehler;

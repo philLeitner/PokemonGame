@@ -484,7 +484,175 @@
                             </select>
                         </div>
                     </div>
-                    <!-- Verbindungs-Übersicht -->
+                    <!-- Richtungs-Sperren -->
+                    <div class="editor-richtungssperren">
+                        <div class="editor-section-subtitle">🔒 Sperren pro Richtung</div>
+
+                        @* ── Nord ── *@
+                        <div class="richtungssperre-zeile">
+                            <div class="richtungssperre-header">
+                                <span class="richtungssperre-dir">⬆️ Nord</span>
+                                <label class="editor-toggle editor-toggle-klein">
+                                    <input type="checkbox" checked="@(ort.SperrNord != null)"
+                                           @onchange="e => { ort.SperrNord = (bool)(e.Value ?? false) ? new RichtungsSperre() : null; Speichern(); }" />
+                                    <span class="toggle-slider toggle-slider-klein"></span>
+                                </label>
+                            </div>
+                            @if (ort.SperrNord != null)
+                            {
+                                <div class="richtungssperre-felder">
+                                    <div class="editor-field">
+                                        <label>Min. Orden</label>
+                                        <input class="editor-input editor-input-klein" type="number" min="0" max="8"
+                                               value="@ort.SperrNord.MinOrden"
+                                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.SperrNord.MinOrden = v; Speichern(); } }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-ID</label>
+                                        <input class="editor-input" value="@(ort.SperrNord.ItemId ?? "")"
+                                               placeholder="z.B. ITEM-SPRUDEL"
+                                               @onchange="e => { ort.SperrNord.ItemId = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-Name</label>
+                                        <input class="editor-input" value="@(ort.SperrNord.ItemName ?? "")"
+                                               placeholder="z.B. Sprudelwasser"
+                                               @onchange="e => { ort.SperrNord.ItemName = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field" style="grid-column:1/-1">
+                                        <label>Hinweis</label>
+                                        <input class="editor-input" value="@(ort.SperrNord.Hinweis ?? "")"
+                                               placeholder="z.B. Sprudelwasser gibt Dir..."
+                                               @onchange="e => { ort.SperrNord.Hinweis = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        @* ── Süd ── *@
+                        <div class="richtungssperre-zeile">
+                            <div class="richtungssperre-header">
+                                <span class="richtungssperre-dir">⬇️ Süd</span>
+                                <label class="editor-toggle editor-toggle-klein">
+                                    <input type="checkbox" checked="@(ort.SperrSüd != null)"
+                                           @onchange="e => { ort.SperrSüd = (bool)(e.Value ?? false) ? new RichtungsSperre() : null; Speichern(); }" />
+                                    <span class="toggle-slider toggle-slider-klein"></span>
+                                </label>
+                            </div>
+                            @if (ort.SperrSüd != null)
+                            {
+                                <div class="richtungssperre-felder">
+                                    <div class="editor-field">
+                                        <label>Min. Orden</label>
+                                        <input class="editor-input editor-input-klein" type="number" min="0" max="8"
+                                               value="@ort.SperrSüd.MinOrden"
+                                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.SperrSüd.MinOrden = v; Speichern(); } }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-ID</label>
+                                        <input class="editor-input" value="@(ort.SperrSüd.ItemId ?? "")"
+                                               placeholder="z.B. ITEM-SPRUDEL"
+                                               @onchange="e => { ort.SperrSüd.ItemId = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-Name</label>
+                                        <input class="editor-input" value="@(ort.SperrSüd.ItemName ?? "")"
+                                               placeholder="z.B. Sprudelwasser"
+                                               @onchange="e => { ort.SperrSüd.ItemName = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field" style="grid-column:1/-1">
+                                        <label>Hinweis</label>
+                                        <input class="editor-input" value="@(ort.SperrSüd.Hinweis ?? "")"
+                                               placeholder="z.B. Sprudelwasser gibt Dir..."
+                                               @onchange="e => { ort.SperrSüd.Hinweis = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        @* ── West ── *@
+                        <div class="richtungssperre-zeile">
+                            <div class="richtungssperre-header">
+                                <span class="richtungssperre-dir">⬅️ West</span>
+                                <label class="editor-toggle editor-toggle-klein">
+                                    <input type="checkbox" checked="@(ort.SperrWest != null)"
+                                           @onchange="e => { ort.SperrWest = (bool)(e.Value ?? false) ? new RichtungsSperre() : null; Speichern(); }" />
+                                    <span class="toggle-slider toggle-slider-klein"></span>
+                                </label>
+                            </div>
+                            @if (ort.SperrWest != null)
+                            {
+                                <div class="richtungssperre-felder">
+                                    <div class="editor-field">
+                                        <label>Min. Orden</label>
+                                        <input class="editor-input editor-input-klein" type="number" min="0" max="8"
+                                               value="@ort.SperrWest.MinOrden"
+                                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.SperrWest.MinOrden = v; Speichern(); } }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-ID</label>
+                                        <input class="editor-input" value="@(ort.SperrWest.ItemId ?? "")"
+                                               placeholder="z.B. ITEM-SPRUDEL"
+                                               @onchange="e => { ort.SperrWest.ItemId = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-Name</label>
+                                        <input class="editor-input" value="@(ort.SperrWest.ItemName ?? "")"
+                                               placeholder="z.B. Sprudelwasser"
+                                               @onchange="e => { ort.SperrWest.ItemName = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field" style="grid-column:1/-1">
+                                        <label>Hinweis</label>
+                                        <input class="editor-input" value="@(ort.SperrWest.Hinweis ?? "")"
+                                               placeholder="z.B. Sprudelwasser gibt Dir..."
+                                               @onchange="e => { ort.SperrWest.Hinweis = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        @* ── Ost ── *@
+                        <div class="richtungssperre-zeile">
+                            <div class="richtungssperre-header">
+                                <span class="richtungssperre-dir">➡️ Ost</span>
+                                <label class="editor-toggle editor-toggle-klein">
+                                    <input type="checkbox" checked="@(ort.SperrOst != null)"
+                                           @onchange="e => { ort.SperrOst = (bool)(e.Value ?? false) ? new RichtungsSperre() : null; Speichern(); }" />
+                                    <span class="toggle-slider toggle-slider-klein"></span>
+                                </label>
+                            </div>
+                            @if (ort.SperrOst != null)
+                            {
+                                <div class="richtungssperre-felder">
+                                    <div class="editor-field">
+                                        <label>Min. Orden</label>
+                                        <input class="editor-input editor-input-klein" type="number" min="0" max="8"
+                                               value="@ort.SperrOst.MinOrden"
+                                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.SperrOst.MinOrden = v; Speichern(); } }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-ID</label>
+                                        <input class="editor-input" value="@(ort.SperrOst.ItemId ?? "")"
+                                               placeholder="z.B. ITEM-SPRUDEL"
+                                               @onchange="e => { ort.SperrOst.ItemId = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field">
+                                        <label>Item-Name</label>
+                                        <input class="editor-input" value="@(ort.SperrOst.ItemName ?? "")"
+                                               placeholder="z.B. Sprudelwasser"
+                                               @onchange="e => { ort.SperrOst.ItemName = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                    <div class="editor-field" style="grid-column:1/-1">
+                                        <label>Hinweis</label>
+                                        <input class="editor-input" value="@(ort.SperrOst.Hinweis ?? "")"
+                                               placeholder="z.B. Sprudelwasser gibt Dir..."
+                                               @onchange="e => { ort.SperrOst.Hinweis = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                                        <!-- Verbindungs-Übersicht -->
                     <div class="editor-verbindungen-info">
                         <span class="verbindungen-label">Alle Verbindungen:</span>
                         @if (ort.Verbindungen.Any())

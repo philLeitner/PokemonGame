@@ -2208,3 +2208,64 @@ body {
 .editor-panel-rechts::-webkit-scrollbar-thumb:hover {
     background: #58a6ff;
 }
+
+/* ═══ Richtungs-Sperren im Editor ═══════════════════════════════════════════ */
+.editor-richtungssperren {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.editor-section-subtitle {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+}
+.richtungssperre-zeile {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.richtungssperre-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    background: #0d1117;
+}
+.richtungssperre-dir {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #c9d1d9;
+}
+.editor-toggle-klein {
+    transform: scale(0.85);
+    transform-origin: right center;
+}
+.toggle-slider-klein {
+    width: 28px !important;
+    height: 16px !important;
+}
+.toggle-slider-klein::before {
+    width: 12px !important;
+    height: 12px !important;
+    top: 2px !important;
+    left: 2px !important;
+}
+input:checked + .toggle-slider-klein::before {
+    transform: translateX(12px) !important;
+}
+.richtungssperre-felder {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 0.4rem;
+    padding: 0.5rem 0.6rem;
+    border-top: 1px solid #21262d;
+}
+.richtungssperre-felder .editor-field:last-child {
+    grid-column: 1 / -1;
+}
