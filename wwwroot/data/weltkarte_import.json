@@ -65,7 +65,15 @@
         "GibtItemEmoji": "\uD83D\uDDFA\uFE0F",
         "DialogNachGeschenk": "Du hast die Kanto-Karte erhalten! \u00D6ffne deinen Rucksack um sie zu benutzen."
       }
-    ]
+    ],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0002",
@@ -91,10 +99,9 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0031",
       "KAN-0005"
     ],
-    "Nord": "KAN-0031",
+    "Nord": null,
     "S\u00FCd": null,
     "Ost": null,
     "West": "KAN-0005",
@@ -168,7 +175,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0003",
@@ -210,11 +225,12 @@
     },
     "WildMonster": [],
     "Verbindungen": [
-      "KAN-0006"
+      "KAN-0006",
+      "KAN-0005"
     ],
     "Nord": "KAN-0006",
     "S\u00FCd": null,
-    "Ost": null,
+    "Ost": "KAN-0005",
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": true,
@@ -229,7 +245,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0007",
@@ -299,7 +323,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0011",
@@ -307,7 +339,7 @@
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 7,
-    "GridY": 6,
+    "GridY": 7,
     "Beschreibung": null,
     "Arena": {
       "OrdenName": "Kaskaden-Orden",
@@ -329,15 +361,12 @@
     },
     "WildMonster": [],
     "Verbindungen": [
-      "KAN-0010",
-      "KAN-0014",
-      "KAN-0012",
-      "KAN-0053"
+      "KAN-0014"
     ],
-    "Nord": "KAN-0012",
+    "Nord": null,
     "S\u00FCd": "KAN-0014",
     "Ost": null,
-    "West": "KAN-0010",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-GYM-002",
@@ -372,15 +401,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0016",
     "Name": "Orania",
     "Typ": "stadt",
     "Farbe": "purple",
-    "GridX": -1,
-    "GridY": -1,
+    "GridX": 4,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": {
       "OrdenName": "Donner-Orden",
@@ -406,14 +443,14 @@
     },
     "WildMonster": [],
     "Verbindungen": [
-      "KAN-0015",
+      "KAN-0017",
       "KAN-0018",
-      "KAN-0017"
+      "KAN-0020"
     ],
-    "Nord": "KAN-0015",
-    "S\u00FCd": null,
+    "Nord": null,
+    "S\u00FCd": "KAN-0017",
     "Ost": "KAN-0018",
-    "West": null,
+    "West": "KAN-0020",
     "Trainer": [
       {
         "Id": "KAN-GYM-003",
@@ -452,15 +489,33 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": {
+      "MinOrden": 3,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
+    "SperrOst": null,
+    "SperrWest": {
+      "MinOrden": 3,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0028",
     "Name": "Prismania",
     "Typ": "stadt",
     "Farbe": "purple",
-    "GridX": 0,
-    "GridY": 0,
+    "GridX": 4,
+    "GridY": 5,
     "Beschreibung": null,
     "Arena": {
       "OrdenName": "Regenbogen-Orden",
@@ -486,14 +541,12 @@
     },
     "WildMonster": [],
     "Verbindungen": [
-      "KAN-0027",
-      "KAN-0030",
-      "KAN-0029"
+      "KAN-0018"
     ],
-    "Nord": "KAN-0030",
+    "Nord": null,
     "S\u00FCd": null,
-    "Ost": "KAN-0027",
-    "West": null,
+    "Ost": null,
+    "West": "KAN-0018",
     "Trainer": [
       {
         "Id": "KAN-GYM-004",
@@ -543,7 +596,15 @@
         "GibtItemEmoji": "\uD83D\uDCA7",
         "DialogNachGeschenk": "Mit dem Sprudelwasser kannst du nun durch die Wachen in Saffronia gelangen!"
       }
-    ]
+    ],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0036",
@@ -628,7 +689,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0041",
@@ -716,7 +785,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0004",
@@ -808,7 +885,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0005",
@@ -840,11 +925,12 @@
       }
     ],
     "Verbindungen": [
+      "KAN-0002",
       "KAN-0003"
     ],
     "Nord": null,
     "S\u00FCd": null,
-    "Ost": null,
+    "Ost": "KAN-0002",
     "West": "KAN-0003",
     "Trainer": [
       {
@@ -924,7 +1010,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0006",
@@ -969,10 +1063,11 @@
     ],
     "Verbindungen": [
       "KAN-0061",
+      "KAN-0003",
       "KAN-0062"
     ],
     "Nord": "KAN-0061",
-    "S\u00FCd": null,
+    "S\u00FCd": "KAN-0003",
     "Ost": null,
     "West": "KAN-0062",
     "Trainer": [
@@ -1005,7 +1100,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0008",
@@ -1096,15 +1199,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0009",
     "Name": "Mond-Berg",
     "Typ": "hoehle",
     "Farbe": "brown",
-    "GridX": 7,
-    "GridY": 9,
+    "GridX": 8,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1138,8 +1249,8 @@
       "KAN-0010"
     ],
     "Nord": "KAN-0063",
-    "S\u00FCd": null,
-    "Ost": "KAN-0010",
+    "S\u00FCd": "KAN-0010",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -1227,7 +1338,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0010",
@@ -1259,13 +1378,13 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0008",
-      "KAN-0009"
+      "KAN-0009",
+      "KAN-0008"
     ],
-    "Nord": null,
+    "Nord": "KAN-0009",
     "S\u00FCd": null,
     "Ost": "KAN-0008",
-    "West": "KAN-0009",
+    "West": null,
     "Trainer": [
       {
         "Id": "UNO-T-006",
@@ -1312,15 +1431,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0012",
     "Name": "Route 24",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 7,
+    "GridY": 9,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1350,13 +1477,14 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0013",
-      "KAN-0011"
+      "KAN-0014",
+      "KAN-0010",
+      "KAN-0013"
     ],
-    "Nord": "KAN-0013",
-    "S\u00FCd": "KAN-0011",
-    "Ost": null,
-    "West": null,
+    "Nord": "KAN-0014",
+    "S\u00FCd": null,
+    "Ost": "KAN-0010",
+    "West": "KAN-0013",
     "Trainer": [
       {
         "Id": "t-r24-01",
@@ -1403,15 +1531,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0013",
     "Name": "Route 25",
-    "Typ": "ort",
-    "Farbe": "blue",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 6,
+    "GridY": 9,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1423,12 +1559,13 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0012"
+      "KAN-0012",
+      "KAN-0015"
     ],
     "Nord": null,
     "S\u00FCd": null,
     "Ost": "KAN-0012",
-    "West": null,
+    "West": "KAN-0015",
     "Trainer": [
       {
         "Id": "KAN-NPC-1008",
@@ -1459,15 +1596,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0014",
     "Name": "Route 5",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 7,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1503,10 +1648,10 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0011"
+      "KAN-0012"
     ],
     "Nord": null,
-    "S\u00FCd": "KAN-0011",
+    "S\u00FCd": "KAN-0012",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -1563,15 +1708,28 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": {
+      "MinOrden": 0,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0015",
     "Name": "Route 6",
-    "Typ": "ort",
-    "Farbe": "blue",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 5,
+    "GridY": 9,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1607,12 +1765,12 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0016",
-      "KAL-0010"
+      "KAN-0018",
+      "KAN-0013"
     ],
-    "Nord": "KAN-0016",
-    "S\u00FCd": "KAL-0010",
-    "Ost": null,
+    "Nord": "KAN-0018",
+    "S\u00FCd": null,
+    "Ost": "KAN-0013",
     "West": null,
     "Trainer": [
       {
@@ -1644,20 +1802,30 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0017",
     "Name": "S.S. Anne",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "stadt",
+    "Farbe": "teal",
+    "GridX": 4,
+    "GridY": 9,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [],
-    "Verbindungen": [],
-    "Nord": null,
+    "Verbindungen": [
+      "KAN-0016"
+    ],
+    "Nord": "KAN-0016",
     "S\u00FCd": null,
     "Ost": null,
     "West": null,
@@ -1707,15 +1875,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0018",
     "Name": "Route 11",
-    "Typ": "ort",
-    "Farbe": "blue",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 5,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1739,13 +1915,13 @@
       }
     ],
     "Verbindungen": [
-      "KAL-0026",
+      "KAN-0015",
       "KAN-0016"
     ],
     "Nord": null,
-    "S\u00FCd": null,
-    "Ost": "KAN-0016",
-    "West": "KAL-0026",
+    "S\u00FCd": "KAN-0015",
+    "Ost": null,
+    "West": "KAN-0016",
     "Trainer": [
       {
         "Id": "KAN-NPC-1010",
@@ -1776,7 +1952,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0019",
@@ -1874,15 +2058,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0020",
     "Name": "Route 9",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 3,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -1912,13 +2104,13 @@
       }
     ],
     "Verbindungen": [
-      "KAL-0021",
-      "KAN-0011"
+      "KAN-0021",
+      "KAN-0016"
     ],
-    "Nord": null,
+    "Nord": "KAN-0021",
     "S\u00FCd": null,
-    "Ost": "KAN-0011",
-    "West": "KAL-0021",
+    "Ost": "KAN-0016",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-NPC-1011",
@@ -1965,15 +2157,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0021",
     "Name": "Route 10",
-    "Typ": "ort",
-    "Farbe": "blue",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 3,
+    "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -2003,12 +2203,12 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0024",
-      "KAL-0019"
+      "KAN-0020",
+      "KAN-0022"
     ],
     "Nord": null,
-    "S\u00FCd": "KAN-0024",
-    "Ost": "KAL-0019",
+    "S\u00FCd": "KAN-0020",
+    "Ost": "KAN-0022",
     "West": null,
     "Trainer": [
       {
@@ -2040,15 +2240,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0022",
     "Name": "Fels-Tunnel",
-    "Typ": "ort",
-    "Farbe": "cave",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "hoehle",
+    "Farbe": "brown",
+    "GridX": 4,
+    "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -2071,11 +2279,15 @@
         "Chance": 10
       }
     ],
-    "Verbindungen": [],
-    "Nord": null,
+    "Verbindungen": [
+      "KAN-0026",
+      "KAN-0066",
+      "KAN-0021"
+    ],
+    "Nord": "KAN-0026",
     "S\u00FCd": null,
-    "Ost": null,
-    "West": null,
+    "Ost": "KAN-0066",
+    "West": "KAN-0021",
     "Trainer": [
       {
         "Id": "KAN-NPC-1012",
@@ -2122,7 +2334,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0023",
@@ -2188,27 +2408,34 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0024",
     "Name": "Lavandia",
     "Typ": "ort",
     "Farbe": "purple",
-    "GridX": 0,
-    "GridY": 0,
+    "GridX": 6,
+    "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [],
     "Verbindungen": [
-      "KAL-0016",
-      "KAL-0021",
-      "KAL-0026"
+      "KAN-0025",
+      "KAN-0026"
     ],
-    "Nord": "KAL-0016",
-    "S\u00FCd": "KAL-0021",
+    "Nord": null,
+    "S\u00FCd": "KAN-0025",
     "Ost": null,
-    "West": "KAL-0026",
+    "West": "KAN-0026",
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -2222,15 +2449,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0025",
     "Name": "Pok\u00E9mon-Turm",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "hoehle",
+    "Farbe": "teal",
+    "GridX": 6,
+    "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [],
@@ -2289,7 +2524,7 @@
         "SperrtRichtung": null
       }
     ],
-    "HatMonsterCenter": false,
+    "HatMonsterCenter": true,
     "HatMarkt": false,
     "MarktAngebot": [],
     "MinOrdenF\u00FCrZugang": 0,
@@ -2301,15 +2536,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0026",
     "Name": "Route 8",
-    "Typ": "ort",
-    "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "Typ": "route",
+    "Farbe": "gray",
+    "GridX": 4,
+    "GridY": 6,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -2339,12 +2582,11 @@
       }
     ],
     "Verbindungen": [
-      "KAL-0014",
-      "KAN-0024"
+      "KAN-0022"
     ],
     "Nord": null,
-    "S\u00FCd": "KAL-0014",
-    "Ost": "KAN-0024",
+    "S\u00FCd": "KAN-0022",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -2376,15 +2618,23 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0027",
     "Name": "Route 7",
     "Typ": "ort",
     "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "GridX": 6,
+    "GridY": 4,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [
@@ -2420,12 +2670,12 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0028",
-      "KAL-0016"
+      "KAN-0018",
+      "KAN-0026"
     ],
-    "Nord": null,
-    "S\u00FCd": "KAN-0028",
-    "Ost": "KAL-0016",
+    "Nord": "KAN-0018",
+    "S\u00FCd": "KAN-0026",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -2457,7 +2707,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0029",
@@ -2487,7 +2745,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0030",
@@ -2555,7 +2821,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0031",
@@ -2623,7 +2897,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0032",
@@ -2692,7 +2974,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0033",
@@ -2777,7 +3067,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0034",
@@ -2868,7 +3166,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0035",
@@ -2937,7 +3243,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0037",
@@ -3033,7 +3347,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0038",
@@ -3102,7 +3424,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0039",
@@ -3165,7 +3495,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0040",
@@ -3257,7 +3595,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0042",
@@ -3329,7 +3675,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0043",
@@ -3398,7 +3752,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0044",
@@ -3479,20 +3841,30 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0045",
     "Name": "Silph AG",
     "Typ": "ort",
     "Farbe": "green",
-    "GridX": 0,
-    "GridY": 0,
+    "GridX": -1,
+    "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [],
-    "Verbindungen": [],
-    "Nord": null,
+    "Verbindungen": [
+      "KAN-0016"
+    ],
+    "Nord": "KAN-0016",
     "S\u00FCd": null,
     "Ost": null,
     "West": null,
@@ -3558,7 +3930,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0046",
@@ -3588,30 +3968,38 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0047",
     "Name": "Digda-H\u00F6hle",
     "Typ": "ort",
     "Farbe": "brown",
-    "GridX": 12,
-    "GridY": 8,
+    "GridX": 4,
+    "GridY": 3,
     "Beschreibung": null,
     "Arena": null,
     "WildMonster": [],
     "Verbindungen": [
-      "KAN-0008"
+      "KAN-0018"
     ],
     "Nord": null,
-    "S\u00FCd": null,
-    "Ost": "KAN-0008",
+    "S\u00FCd": "KAN-0018",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
-    "MinOrdenF\u00FCrZugang": 3,
+    "MinOrdenF\u00FCrZugang": 0,
     "MaxOrdenF\u00FCrSperre": 0,
     "Ben\u00F6tigtItem": null,
     "Ben\u00F6tigtItemName": null,
@@ -3620,7 +4008,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0048",
@@ -3653,7 +4049,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0049",
@@ -3686,7 +4090,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0050",
@@ -3732,7 +4144,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0051",
@@ -3911,7 +4331,15 @@
     "LigaZugang": true,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0052",
@@ -4040,7 +4468,15 @@
     "LigaZugang": true,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0053",
@@ -4112,7 +4548,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0054",
@@ -4142,7 +4586,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0055",
@@ -4172,7 +4624,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0056",
@@ -4202,7 +4662,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0057",
@@ -4232,7 +4700,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0058",
@@ -4262,7 +4738,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0059",
@@ -4292,7 +4776,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0060",
@@ -4322,7 +4814,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0001",
@@ -4395,7 +4895,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0002",
@@ -4464,7 +4972,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0003",
@@ -4566,7 +5082,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0004",
@@ -4641,7 +5165,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0005",
@@ -4710,7 +5242,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0006",
@@ -4788,7 +5328,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0008",
@@ -4837,7 +5385,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0009",
@@ -4900,7 +5456,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0010",
@@ -4933,7 +5497,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0011",
@@ -5008,7 +5580,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0012",
@@ -5041,7 +5621,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0014",
@@ -5106,7 +5694,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0015",
@@ -5139,7 +5735,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0016",
@@ -5196,7 +5800,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0018",
@@ -5261,7 +5873,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0019",
@@ -5293,7 +5913,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0020",
@@ -5356,7 +5984,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0021",
@@ -5419,7 +6055,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0022",
@@ -5477,7 +6121,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0023",
@@ -5517,7 +6169,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0025",
@@ -5566,7 +6226,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0026",
@@ -5605,7 +6273,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0027",
@@ -5684,7 +6360,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0028",
@@ -5741,7 +6425,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0030",
@@ -5790,7 +6482,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0031",
@@ -5847,7 +6547,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0032",
@@ -5881,7 +6589,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0033",
@@ -5944,7 +6660,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0035",
@@ -5984,7 +6708,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0036",
@@ -6023,7 +6755,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0037",
@@ -6119,7 +6859,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0038",
@@ -6151,7 +6899,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0039",
@@ -6209,7 +6965,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0040",
@@ -6249,7 +7013,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0042",
@@ -6330,7 +7102,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0043",
@@ -6370,7 +7150,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0044",
@@ -6426,7 +7214,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0045",
@@ -6489,7 +7285,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0046",
@@ -6552,7 +7356,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0047",
@@ -6648,7 +7460,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0048",
@@ -6704,7 +7524,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0049",
@@ -6745,7 +7573,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0050",
@@ -6785,7 +7621,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0051",
@@ -6819,7 +7663,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0052",
@@ -6859,7 +7711,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0053",
@@ -6891,7 +7751,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0054",
@@ -6924,7 +7792,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0055",
@@ -7053,7 +7929,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0056",
@@ -7143,7 +8027,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0057",
@@ -7175,7 +8067,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0058",
@@ -7207,7 +8107,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0059",
@@ -7240,7 +8148,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "JOH-0060",
@@ -7270,7 +8186,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0001",
@@ -7303,7 +8227,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0002",
@@ -7349,7 +8281,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0003",
@@ -7383,7 +8323,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0004",
@@ -7457,7 +8405,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0005",
@@ -7503,7 +8459,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0007",
@@ -7570,7 +8534,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0008",
@@ -7646,7 +8618,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0010",
@@ -7692,7 +8672,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0011",
@@ -7725,7 +8713,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0012",
@@ -7765,7 +8761,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0013",
@@ -7805,7 +8809,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0014",
@@ -7838,7 +8850,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0016",
@@ -7956,7 +8976,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0017",
@@ -7989,7 +9017,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0018",
@@ -8029,7 +9065,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0019",
@@ -8069,7 +9113,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0020",
@@ -8101,7 +9153,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0021",
@@ -8141,7 +9201,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0023",
@@ -8174,7 +9242,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0024",
@@ -8219,7 +9295,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0025",
@@ -8252,7 +9336,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0026",
@@ -8297,7 +9389,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0027",
@@ -8377,7 +9477,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0028",
@@ -8435,7 +9543,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0029",
@@ -8468,7 +9584,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0030",
@@ -8572,7 +9696,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0031",
@@ -8605,7 +9737,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0033",
@@ -8651,7 +9791,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0034",
@@ -8684,7 +9832,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0035",
@@ -8717,7 +9873,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0036",
@@ -8769,7 +9933,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0037",
@@ -8802,7 +9974,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0038",
@@ -8901,7 +10081,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0040",
@@ -8942,7 +10130,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0041",
@@ -8987,7 +10183,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0042",
@@ -9021,7 +10225,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0043",
@@ -9119,7 +10331,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0044",
@@ -9173,7 +10393,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0045",
@@ -9205,7 +10433,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0046",
@@ -9237,7 +10473,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0047",
@@ -9277,7 +10521,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0048",
@@ -9322,7 +10574,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0049",
@@ -9362,7 +10622,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0050",
@@ -9408,7 +10676,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0052",
@@ -9448,7 +10724,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0053",
@@ -9505,7 +10789,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0054",
@@ -9545,7 +10837,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0055",
@@ -9623,7 +10923,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0056",
@@ -9668,7 +10976,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0057",
@@ -9708,7 +11024,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0058",
@@ -9748,7 +11072,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0059",
@@ -9836,7 +11168,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0060",
@@ -9876,7 +11216,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0061",
@@ -9916,7 +11264,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0062",
@@ -9956,7 +11312,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0063",
@@ -9989,7 +11353,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0064",
@@ -10029,7 +11401,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0065",
@@ -10069,7 +11449,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0066",
@@ -10109,7 +11497,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0067",
@@ -10141,7 +11537,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0068",
@@ -10186,7 +11590,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0069",
@@ -10218,7 +11630,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0070",
@@ -10267,7 +11687,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0071",
@@ -10396,7 +11824,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0072",
@@ -10445,7 +11881,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0073",
@@ -10475,7 +11919,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "HOE-0074",
@@ -10514,7 +11966,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0001",
@@ -10546,7 +12006,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0002",
@@ -10634,7 +12102,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0003",
@@ -10673,7 +12149,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0004",
@@ -10707,7 +12191,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0005",
@@ -10747,7 +12239,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0006",
@@ -10823,7 +12323,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0007",
@@ -10873,7 +12381,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0008",
@@ -10906,7 +12422,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0010",
@@ -10938,7 +12462,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0011",
@@ -10978,7 +12510,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0012",
@@ -11008,7 +12548,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0013",
@@ -11041,7 +12589,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0014",
@@ -11073,7 +12629,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0015",
@@ -11113,7 +12677,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0016",
@@ -11156,7 +12728,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0018",
@@ -11188,7 +12768,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0019",
@@ -11228,7 +12816,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0020",
@@ -11284,7 +12880,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0021",
@@ -11348,7 +12952,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0022",
@@ -11388,7 +13000,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0024",
@@ -11445,7 +13065,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0025",
@@ -11477,7 +13105,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0026",
@@ -11510,7 +13146,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0027",
@@ -11542,7 +13186,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0028",
@@ -11606,7 +13258,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0029",
@@ -11656,7 +13316,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0030",
@@ -11697,7 +13365,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0031",
@@ -11737,7 +13413,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0033",
@@ -11782,7 +13466,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0034",
@@ -11822,7 +13514,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0035",
@@ -11862,7 +13562,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0037",
@@ -11911,7 +13619,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0038",
@@ -11951,7 +13667,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0039",
@@ -11997,7 +13721,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0040",
@@ -12043,7 +13775,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0041",
@@ -12077,7 +13817,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0042",
@@ -12116,7 +13864,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0044",
@@ -12155,7 +13911,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0045",
@@ -12195,7 +13959,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0047",
@@ -12240,7 +14012,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0048",
@@ -12279,7 +14059,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0049",
@@ -12313,7 +14101,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0050",
@@ -12353,7 +14149,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0051",
@@ -12432,7 +14236,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0052",
@@ -12471,7 +14283,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0053",
@@ -12524,7 +14344,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0054",
@@ -12637,7 +14465,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0055",
@@ -12699,7 +14535,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0056",
@@ -12738,7 +14582,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0057",
@@ -12777,7 +14629,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0058",
@@ -12817,7 +14677,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0059",
@@ -12857,7 +14725,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0060",
@@ -12897,7 +14773,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0061",
@@ -12936,7 +14820,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0062",
@@ -12985,7 +14877,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0063",
@@ -13025,7 +14925,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0064",
@@ -13064,7 +14972,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "SIN-0065",
@@ -13107,7 +15023,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0001",
@@ -13139,7 +15063,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0002",
@@ -13278,7 +15210,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0003",
@@ -13336,7 +15276,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0004",
@@ -13483,7 +15431,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0006",
@@ -13522,7 +15478,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0007",
@@ -13677,7 +15641,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0008",
@@ -13726,7 +15698,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0010",
@@ -13783,7 +15763,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0011",
@@ -13816,7 +15804,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0013",
@@ -13855,7 +15851,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0014",
@@ -13964,7 +15968,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0015",
@@ -14026,7 +16038,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0016",
@@ -14071,7 +16091,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0018",
@@ -14176,7 +16204,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0019",
@@ -14209,7 +16245,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0021",
@@ -14241,7 +16285,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0022",
@@ -14322,7 +16374,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0023",
@@ -14368,7 +16428,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0025",
@@ -14400,7 +16468,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0026",
@@ -14481,7 +16557,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0027",
@@ -14538,7 +16622,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0029",
@@ -14606,7 +16698,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0030",
@@ -14681,7 +16781,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0031",
@@ -14714,7 +16822,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0032",
@@ -14806,7 +16922,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0033",
@@ -14901,7 +17025,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0034",
@@ -14976,7 +17108,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0035",
@@ -15009,7 +17149,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0036",
@@ -15138,7 +17286,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0037",
@@ -15207,7 +17363,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0038",
@@ -15269,7 +17433,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0039",
@@ -15331,7 +17503,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0040",
@@ -15363,7 +17543,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0041",
@@ -15396,7 +17584,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0042",
@@ -15445,7 +17641,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0043",
@@ -15477,7 +17681,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0044",
@@ -15509,7 +17721,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0045",
@@ -15541,7 +17761,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0046",
@@ -15603,7 +17831,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0047",
@@ -15635,7 +17871,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0048",
@@ -15667,7 +17911,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0049",
@@ -15706,7 +17958,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0050",
@@ -15738,7 +17998,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0051",
@@ -15777,7 +18045,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0052",
@@ -15809,7 +18085,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0053",
@@ -15842,7 +18126,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "UNO-0054",
@@ -15875,7 +18167,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0001",
@@ -15907,7 +18207,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0002",
@@ -16046,7 +18354,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0003",
@@ -16079,7 +18395,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0004",
@@ -16226,7 +18550,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0005",
@@ -16295,7 +18627,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0006",
@@ -16450,7 +18790,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0008",
@@ -16559,7 +18907,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0010",
@@ -16664,7 +19020,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0011",
@@ -16697,7 +19061,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0012",
@@ -16778,7 +19150,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0013",
@@ -16810,7 +19190,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0014",
@@ -16891,7 +19279,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0015",
@@ -16924,7 +19320,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0016",
@@ -16999,7 +19403,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0017",
@@ -17032,7 +19444,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0018",
@@ -17094,7 +19514,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0019",
@@ -17185,7 +19613,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0021",
@@ -17260,7 +19696,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0022",
@@ -17310,7 +19754,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0023",
@@ -17379,7 +19831,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0025",
@@ -17411,7 +19871,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0026",
@@ -17508,7 +19976,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0028",
@@ -17593,7 +20069,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0029",
@@ -17684,7 +20168,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0031",
@@ -17753,7 +20245,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0032",
@@ -17786,7 +20286,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0033",
@@ -17855,7 +20363,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0034",
@@ -17900,7 +20416,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0036",
@@ -17969,7 +20493,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0037",
@@ -18038,7 +20570,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0038",
@@ -18071,7 +20611,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0039",
@@ -18140,7 +20688,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0040",
@@ -18185,7 +20741,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0041",
@@ -18248,7 +20812,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0042",
@@ -18327,7 +20899,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0043",
@@ -18396,7 +20976,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0044",
@@ -18429,7 +21017,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0045",
@@ -18542,7 +21138,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0046",
@@ -18604,7 +21208,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0047",
@@ -18643,7 +21255,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0048",
@@ -18682,7 +21302,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0049",
@@ -18715,7 +21343,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0050",
@@ -18747,7 +21383,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0051",
@@ -18786,7 +21430,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0052",
@@ -18833,7 +21485,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAL-0053",
@@ -18882,7 +21542,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0001",
@@ -18985,7 +21653,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0002",
@@ -19030,7 +21706,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0003",
@@ -19062,7 +21746,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0004",
@@ -19094,7 +21786,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0005",
@@ -19195,7 +21895,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0006",
@@ -19227,7 +21935,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0007",
@@ -19257,7 +21973,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0008",
@@ -19290,7 +22014,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0009",
@@ -19330,7 +22062,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0010",
@@ -19363,7 +22103,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0011",
@@ -19403,7 +22151,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0012",
@@ -19494,7 +22250,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0013",
@@ -19534,7 +22298,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0014",
@@ -19567,7 +22339,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0015",
@@ -19658,7 +22438,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0016",
@@ -19698,7 +22486,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0017",
@@ -19789,7 +22585,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0018",
@@ -19822,7 +22626,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0019",
@@ -19888,7 +22700,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0020",
@@ -19937,7 +22757,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0021",
@@ -19976,7 +22804,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0022",
@@ -20026,7 +22862,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0023",
@@ -20066,7 +22910,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0024",
@@ -20128,7 +22980,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0025",
@@ -20168,7 +23028,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0026",
@@ -20201,7 +23069,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0027",
@@ -20241,7 +23117,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0028",
@@ -20281,7 +23165,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0029",
@@ -20313,7 +23205,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0030",
@@ -20362,7 +23262,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0031",
@@ -20425,7 +23333,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0032",
@@ -20474,7 +23390,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0033",
@@ -20506,7 +23430,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0034",
@@ -20546,7 +23478,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0035",
@@ -20586,7 +23526,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0036",
@@ -20618,7 +23566,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0037",
@@ -20683,7 +23639,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0038",
@@ -20774,7 +23738,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0039",
@@ -20813,7 +23785,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0040",
@@ -20852,7 +23832,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0041",
@@ -20891,7 +23879,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0042",
@@ -20928,7 +23924,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0043",
@@ -20993,7 +23997,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "ALO-0044",
@@ -21023,7 +24035,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0001",
@@ -21055,7 +24075,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0002",
@@ -21126,7 +24154,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0003",
@@ -21159,7 +24195,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0004",
@@ -21192,7 +24236,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0005",
@@ -21237,7 +24289,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0007",
@@ -21301,7 +24361,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0008",
@@ -21334,7 +24402,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0009",
@@ -21374,7 +24450,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0010",
@@ -21407,7 +24491,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0012",
@@ -21441,7 +24533,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0013",
@@ -21474,7 +24574,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0014",
@@ -21507,7 +24615,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0015",
@@ -21540,7 +24656,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0016",
@@ -21573,7 +24697,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0017",
@@ -21606,7 +24738,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0018",
@@ -21652,7 +24792,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0019",
@@ -21685,7 +24833,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0020",
@@ -21718,7 +24874,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0021",
@@ -21751,7 +24915,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0022",
@@ -21784,7 +24956,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0024",
@@ -21899,7 +25079,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0025",
@@ -21932,7 +25120,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0026",
@@ -21965,7 +25161,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0027",
@@ -22014,7 +25218,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0028",
@@ -22099,7 +25311,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0029",
@@ -22155,7 +25375,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0030",
@@ -22209,7 +25437,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "GAL-0031",
@@ -22263,7 +25499,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0001",
@@ -22332,7 +25576,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0002",
@@ -22383,7 +25635,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0003",
@@ -22440,7 +25700,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0011",
@@ -22555,7 +25823,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0012",
@@ -22602,7 +25878,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0013",
@@ -22649,7 +25933,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0014",
@@ -22696,7 +25988,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0015",
@@ -22747,7 +26047,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0016",
@@ -22794,7 +26102,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0017",
@@ -22841,7 +26157,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0018",
@@ -22888,7 +26212,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0019",
@@ -22935,7 +26267,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0020",
@@ -22982,7 +26322,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0021",
@@ -23029,7 +26377,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0022",
@@ -23157,7 +26513,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0023",
@@ -23187,7 +26551,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0024",
@@ -23217,7 +26589,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0025",
@@ -23330,7 +26710,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0026",
@@ -23379,7 +26767,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "PAL-0027",
@@ -23444,7 +26840,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0061",
@@ -23525,7 +26929,15 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0062",
@@ -23606,14 +27018,22 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0063",
     "Name": "Mond-Berg.1",
     "Typ": "hoehle",
     "Farbe": "brown",
-    "GridX": 7,
+    "GridX": 8,
     "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
@@ -23644,11 +27064,11 @@
       }
     ],
     "Verbindungen": [
-      "KAN-0011",
+      "KAN-0065",
       "KAN-0009",
       "KAN-0064"
     ],
-    "Nord": "KAN-0011",
+    "Nord": "KAN-0065",
     "S\u00FCd": "KAN-0009",
     "Ost": "KAN-0064",
     "West": null,
@@ -23738,14 +27158,22 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   },
   {
     "Id": "KAN-0064",
     "Name": "Mond-Berg.2",
     "Typ": "hoehle",
     "Farbe": "brown",
-    "GridX": 8,
+    "GridX": 9,
     "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
@@ -23775,11 +27203,13 @@
         "Chance": 20
       }
     ],
-    "Verbindungen": [],
+    "Verbindungen": [
+      "KAN-0063"
+    ],
     "Nord": null,
     "S\u00FCd": null,
     "Ost": null,
-    "West": null,
+    "West": "KAN-0063",
     "Trainer": [
       {
         "Id": "KAN-0064-T1",
@@ -23866,6 +27296,343 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": []
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
+  },
+  {
+    "Id": "KAN-0065",
+    "Name": "Mond-Berg.3",
+    "Typ": "hoehle",
+    "Farbe": "brown",
+    "GridX": 8,
+    "GridY": 6,
+    "Beschreibung": null,
+    "Arena": null,
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 7,
+        "MaxLevel": 10,
+        "Chance": 50
+      },
+      {
+        "MonsterId": "PKM-0035",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 5
+      },
+      {
+        "MonsterId": "PKM-0046",
+        "MinLevel": 8,
+        "MaxLevel": 10,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0074",
+        "MinLevel": 8,
+        "MaxLevel": 10,
+        "Chance": 20
+      }
+    ],
+    "Verbindungen": [
+      "KAN-0063"
+    ],
+    "Nord": null,
+    "S\u00FCd": "KAN-0063",
+    "Ost": null,
+    "West": null,
+    "Trainer": [
+      {
+        "Id": "KAN-0065-T1",
+        "Name": "Super Nerd",
+        "Klasse": "NPC-Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      },
+      {
+        "Id": "KAN-0065-T2",
+        "Name": "Silver",
+        "Klasse": "Rivale",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0160",
+            "Level": 35
+          },
+          {
+            "MonsterId": "PKM-0154",
+            "Level": 35
+          },
+          {
+            "MonsterId": "PKM-0157",
+            "Level": 35
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      },
+      {
+        "Id": "KAN-0065-T3",
+        "Name": "Team Rocket R\u00FCpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      },
+      {
+        "Id": "KAN-0065-T4",
+        "Name": "Nerd (Fossil)",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      }
+    ],
+    "HatMonsterCenter": false,
+    "HatMarkt": false,
+    "MarktAngebot": [],
+    "MinOrdenF\u00FCrZugang": 0,
+    "MaxOrdenF\u00FCrSperre": 0,
+    "Ben\u00F6tigtItem": null,
+    "Ben\u00F6tigtItemName": null,
+    "Ben\u00F6tigtItemQuelle": null,
+    "IstUnterirdisch": false,
+    "LigaZugang": false,
+    "Teleport": null,
+    "Untergrund": null,
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": {
+      "MinOrden": 2,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": "mann braucht den 2ten Orden"
+    },
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
+  },
+  {
+    "Id": "KAN-0066",
+    "Name": "Fels-Tunnel.1",
+    "Typ": "hoehle",
+    "Farbe": "brown",
+    "GridX": 5,
+    "GridY": 7,
+    "Beschreibung": null,
+    "Arena": null,
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 50
+      },
+      {
+        "MonsterId": "PKM-0074",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0066",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 10
+      }
+    ],
+    "Verbindungen": [
+      "KAN-0024",
+      "KAN-0022"
+    ],
+    "Nord": null,
+    "S\u00FCd": null,
+    "Ost": "KAN-0024",
+    "West": "KAN-0022",
+    "Trainer": [
+      {
+        "Id": "KAN-0066-T1",
+        "Name": "Pok\u00E9maniac",
+        "Klasse": "NPC-Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      },
+      {
+        "Id": "KAN-0066-T2",
+        "Name": "Hiker",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      }
+    ],
+    "HatMonsterCenter": false,
+    "HatMarkt": false,
+    "MarktAngebot": [],
+    "MinOrdenF\u00FCrZugang": 0,
+    "MaxOrdenF\u00FCrSperre": 0,
+    "Ben\u00F6tigtItem": null,
+    "Ben\u00F6tigtItemName": null,
+    "Ben\u00F6tigtItemQuelle": null,
+    "IstUnterirdisch": false,
+    "LigaZugang": false,
+    "Teleport": null,
+    "Untergrund": null,
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
+  },
+  {
+    "Id": "KAN-0067",
+    "Name": "Fels-Tunnel.2",
+    "Typ": "hoehle",
+    "Farbe": "brown",
+    "GridX": 6,
+    "GridY": 6,
+    "Beschreibung": null,
+    "Arena": null,
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 50
+      },
+      {
+        "MonsterId": "PKM-0074",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0066",
+        "MinLevel": 15,
+        "MaxLevel": 20,
+        "Chance": 10
+      }
+    ],
+    "Verbindungen": [
+      "KAN-0024",
+      "KAN-0022"
+    ],
+    "Nord": null,
+    "S\u00FCd": "KAN-0024",
+    "Ost": null,
+    "West": "KAN-0022",
+    "Trainer": [
+      {
+        "Id": "KAN-0067-T1",
+        "Name": "Pok\u00E9maniac",
+        "Klasse": "NPC-Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      },
+      {
+        "Id": "KAN-0067-T2",
+        "Name": "Hiker",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 5
+          }
+        ],
+        "Dialogvor": "Auf zum Kampf!",
+        "DialogNach": "Gut gek\u00E4mpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": null
+      }
+    ],
+    "HatMonsterCenter": false,
+    "HatMarkt": false,
+    "MarktAngebot": [],
+    "MinOrdenF\u00FCrZugang": 0,
+    "MaxOrdenF\u00FCrSperre": 0,
+    "Ben\u00F6tigtItem": null,
+    "Ben\u00F6tigtItemName": null,
+    "Ben\u00F6tigtItemQuelle": null,
+    "IstUnterirdisch": false,
+    "LigaZugang": false,
+    "Teleport": null,
+    "Untergrund": null,
+    "NPCs": [],
+    "SperrNord": null,
+    "SperrS\u00FCd": null,
+    "SperrOst": null,
+    "SperrWest": null,
+    "SperrNW": null,
+    "SperrNO": null,
+    "SperrSW": null,
+    "SperrSO": null
   }
 ]
