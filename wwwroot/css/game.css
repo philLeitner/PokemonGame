@@ -674,8 +674,34 @@ body {
 .grid-zoom-label { font-size: 0.75rem; color: #8b949e; min-width: 2.5rem; text-align: center; }
 .grid-size-label { font-size: 0.7rem; color: #8b949e; white-space: nowrap; margin-left: 0.25rem; }
 .editor-grid-scroll {
-  flex: 1; overflow: auto; padding: 1rem;
-  display: flex; align-items: flex-start; justify-content: center;
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* start, not center, so horizontal scroll works */
+  /* Custom scrollbars for the grid */
+  scrollbar-width: thin;
+  scrollbar-color: #30363d #0d1117;
+}
+.editor-grid-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.editor-grid-scroll::-webkit-scrollbar-track {
+  background: #0d1117;
+  border-radius: 4px;
+}
+.editor-grid-scroll::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+  border: 2px solid #0d1117;
+}
+.editor-grid-scroll::-webkit-scrollbar-thumb:hover {
+  background: #58a6ff;
+}
+.editor-grid-scroll::-webkit-scrollbar-corner {
+  background: #0d1117;
 }
 .editor-grid {
   display: grid;
@@ -2162,4 +2188,23 @@ body {
 .btn-editor-kopieren:hover {
     color: #58a6ff;
     background: rgba(88, 166, 255, 0.1);
+}
+
+/* ═══ Schöne Scrollbars für Editor-Panels ════════════════════════════════ */
+.editor-ort-liste::-webkit-scrollbar,
+.editor-panel-rechts::-webkit-scrollbar {
+    width: 6px;
+}
+.editor-ort-liste::-webkit-scrollbar-track,
+.editor-panel-rechts::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+.editor-ort-liste::-webkit-scrollbar-thumb,
+.editor-panel-rechts::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 3px;
+}
+.editor-ort-liste::-webkit-scrollbar-thumb:hover,
+.editor-panel-rechts::-webkit-scrollbar-thumb:hover {
+    background: #58a6ff;
 }
