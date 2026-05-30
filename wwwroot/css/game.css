@@ -2119,3 +2119,26 @@ body {
     border-radius: 4px;
     border-left: 3px solid #f87171;
 }
+
+/* ═══ Drag & Drop Grid ═══════════════════════════════════════════════════ */
+.editor-grid-zelle.drag-over {
+    background: rgba(31, 111, 235, 0.25) !important;
+    border: 2px dashed #58a6ff !important;
+    transform: scale(1.06);
+}
+.editor-grid-knopf[draggable="true"]:active {
+    cursor: grabbing;
+    opacity: 0.7;
+}
+/* Toggle-Button für rechte Spalte */
+.btn-toggle-rechts {
+    margin-left: 0.5rem;
+    background: #21262d;
+    color: #8b949e;
+    font-size: 0.7rem;
+    border-color: #30363d;
+}
+.btn-toggle-rechts:hover {
+    background: #30363d;
+    color: #e6edf3;
+}

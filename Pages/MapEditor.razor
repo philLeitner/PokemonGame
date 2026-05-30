@@ -90,6 +90,10 @@
                 <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Max(60, gridZoom - 10)">−</button>
                 <span class="grid-zoom-label">@gridZoom%</span>
                 <button class="btn-grid-ctrl" @onclick="() => gridZoom = Math.Min(150, gridZoom + 10)">+</button>
+                <button class="btn-grid-ctrl btn-toggle-rechts" title="Detail-Panel"
+                        @onclick="() => rechtesSpalteOffen = !rechtesSpalteOffen">
+                    @(rechtesSpalteOffen ? "◀" : "▶")
+                </button>
             </div>
         </div>
 
@@ -103,14 +107,21 @@
                         var ort = editorOrte.FirstOrDefault(o =>
                             o.GridX == c && o.GridY == r &&
                             (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")));
-                        <div class="editor-grid-zelle @(ort != null ? "belegt" : "leer") @(ort?.Id == ausgewähltOrtId ? "aktiv" : "")"
+                        <div class="editor-grid-zelle @(ort != null ? "belegt" : "leer") @(ort?.Id == ausgewähltOrtId ? "aktiv" : "") @(dragOverCol == c && dragOverRow == r ? "drag-over" : "")"
                              style="grid-column: @(c+1); grid-row: @(r+1);"
                              @onclick="() => GridZelleKlick(c, r)"
+                             @ondragover:preventDefault="true"
+                             @ondragover="() => { dragOverCol = c; dragOverRow = r; }"
+                             @ondragleave="() => { if (dragOverCol == c && dragOverRow == r) { dragOverCol = -1; dragOverRow = -1; } }"
+                             @ondrop="() => DragDrop(c, r)"
                              title="@(ort != null ? ort.Name : $"Leer ({c},{r})")">
                             @if (ort != null)
                             {
                                 <div class="editor-grid-knopf"
-                                     style="background:@WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151")">
+                                     draggable="true"
+                                     @ondragstart="() => DragStart(ort.Id)"
+                                     @ondragend="DragEnd"
+                                     style="background:@WeltData.OrtFarben.GetValueOrDefault(ort.Farbe, "#374151"); cursor: grab;">
                                     <span class="editor-grid-icon">@OrtIcon(ort)</span>
                                     <span class="editor-grid-name">@ort.Name</span>
                                 </div>
@@ -126,7 +137,7 @@
                             else
                             {
                                 <div class="editor-grid-leer">
-                                    @if (ausgewähltOrt != null && ausgewähltOrt.GridX < 0)
+                                    @if (dragOrtId != null || (ausgewähltOrt != null && ausgewähltOrt.GridX < 0))
                                     {
                                         <span class="grid-place-hint">+</span>
                                     }
@@ -150,7 +161,7 @@
     </div>
 
     <!-- ═══ PANEL 3: Detail-Editor ══════════════════════════════════════════ -->
-    <div class="editor-panel-rechts @(ausgewähltOrt != null ? "sichtbar" : "versteckt")">
+    <div class="editor-panel-rechts @(ausgewähltOrt != null && rechtesSpalteOffen ? "sichtbar" : "versteckt")">
         @if (ausgewähltOrt != null)
         {
             var ort = ausgewähltOrt;
@@ -822,6 +833,9 @@
     private HashSet<string> offeneTrainer = new();
     private string speicherStatus = "";
     private bool speicherFehler = false;
+    // Rechte Spalte Toggle
+    private bool rechtesSpalteOffen = true;
+
     // "Neuen Ort erstellen" Modal
     private bool neuOrtModalOffen = false;
     private string neuOrtName = "";
@@ -835,6 +849,11 @@
     private int popupCol = 0;
     private int popupRow = 0;
     private string popupSuche = "";
+
+    // Drag & Drop Zustand
+    private string? dragOrtId = null;
+    private int dragOverCol = -1;
+    private int dragOverRow = -1;
 
     private static readonly Dictionary<string, string> RegionNamen = new()
     {
@@ -937,6 +956,48 @@
             Speichern();
         }
         popupOffen = false;
+    }
+
+    // ─── Drag & Drop ─────────────────────────────────────────────────────────
+    private void DragStart(string ortId)
+    {
+        dragOrtId = ortId;
+        dragOverCol = -1;
+        dragOverRow = -1;
+    }
+
+    private void DragEnd()
+    {
+        dragOrtId = null;
+        dragOverCol = -1;
+        dragOverRow = -1;
+    }
+
+    private void DragDrop(int col, int row)
+    {
+        if (dragOrtId == null) return;
+        var gezogen = editorOrte.FirstOrDefault(o => o.Id == dragOrtId);
+        if (gezogen == null) { DragEnd(); return; }
+
+        // Prüfen ob Zielzelle schon belegt ist
+        var vorhandener = editorOrte.FirstOrDefault(o =>
+            o.GridX == col && o.GridY == row &&
+            (filterRegion == "ALLE" || o.Id.StartsWith(filterRegion + "-")));
+
+        if (vorhandener != null && vorhandener.Id != gezogen.Id)
+        {
+            // Swap: vorhandenen Ort auf die alte Position des gezogenen setzen
+            int altX = gezogen.GridX;
+            int altY = gezogen.GridY;
+            vorhandener.GridX = altX;
+            vorhandener.GridY = altY;
+        }
+
+        gezogen.GridX = col;
+        gezogen.GridY = row;
+        OrtAuswählen(gezogen.Id);
+        DragEnd();
+        Speichern();
     }
 
     /// <summary>Synchronisiert Verbindungen-Liste aus den Richtungsfeldern + Teleport + Untergrund</summary>
