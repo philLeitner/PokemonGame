@@ -213,6 +213,10 @@ public class GameService
             "Süd"  => vonOrt.SperrSüd,
             "Ost"  => vonOrt.SperrOst,
             "West" => vonOrt.SperrWest,
+            "NW"   => vonOrt.SperrNW,
+            "NO"   => vonOrt.SperrNO,
+            "SW"   => vonOrt.SperrSW,
+            "SO"   => vonOrt.SperrSO,
             _      => null
         };
         if (sperre == null) return null;

@@ -271,6 +271,11 @@ public class Ort
     public RichtungsSperre? SperrSüd  { get; set; } = null;
     public RichtungsSperre? SperrOst  { get; set; } = null;
     public RichtungsSperre? SperrWest { get; set; } = null;
+    // Ecken
+    public RichtungsSperre? SperrNW   { get; set; } = null;
+    public RichtungsSperre? SperrNO   { get; set; } = null;
+    public RichtungsSperre? SperrSW   { get; set; } = null;
+    public RichtungsSperre? SperrSO   { get; set; } = null;
 }
 
 public class GesprächsNPC

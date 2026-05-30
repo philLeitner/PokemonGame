@@ -430,7 +430,11 @@
             (2, 1) => "Süd",
             (1, 0) => "West",
             (1, 2) => "Ost",
-            _      => null  // Ecken: keine Richtungs-Sperre
+            (0, 0) => "NW",
+            (0, 2) => "NO",
+            (2, 0) => "SW",
+            (2, 2) => "SO",
+            _      => null
         };
         var fehler = Game.OrtBetreten(ort.Id, richtung);
         if (fehler != null)
