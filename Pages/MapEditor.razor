@@ -1211,21 +1211,40 @@
         .OrderBy(o => o.GridX >= 0 ? 1 : 0) // Unplatzierte zuerst
         .ThenBy(o => o.Name);
 
+    // Aktuelle Daten-Version – bei neuer weltkarte_import.json hier anpassen
+    private const string DatenVersion = "77cce2c0";
+
     protected override async Task OnInitializedAsync()
     {
         Game.OnChange += StateHasChanged;
-        var json = await Storage.GetItemAsync("editor_orte");
-        if (!string.IsNullOrEmpty(json))
+
+        // Versions-Check: wenn gespeicherte Version != aktuelle Version → neu laden
+        var gespeicherteVersion = await Storage.GetItemAsync("editor_orte_version");
+        bool versionAktuell = gespeicherteVersion == DatenVersion;
+
+        if (versionAktuell)
         {
-            try
+            var json = await Storage.GetItemAsync("editor_orte");
+            if (!string.IsNullOrEmpty(json))
             {
-                var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(json,
-                    new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                if (geladen?.Any() == true) { editorOrte = geladen; return; }
+                try
+                {
+                    var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(json,
+                        new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    if (geladen?.Any() == true) { editorOrte = geladen; return; }
+                }
+                catch { }
             }
-            catch { }
         }
+
+        // Neue Daten laden (erste Nutzung oder neue Version)
         editorOrte = WeltData.AlleOrte();
+        // Version im LocalStorage merken
+        await Storage.SetItemAsync("editor_orte_version", DatenVersion);
+        // Neue Daten sofort speichern damit sie beim nächsten Start verfügbar sind
+        var neuesJson = System.Text.Json.JsonSerializer.Serialize(editorOrte,
+            new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = null });
+        await Storage.SetItemAsync("editor_orte", neuesJson);
     }
 
     public void Dispose() => Game.OnChange -= StateHasChanged;
