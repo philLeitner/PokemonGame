@@ -112,7 +112,30 @@ public class GameService
                 }).ToList();
             }
 
+            // Orte aus LocalStorage laden (mit Versions-Check)
+            const string ortVersion = "77cce2c0";
+            var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
+            if (gespeicherteOrtVersion == ortVersion)
+            {
+                var ortJson = await _ls.GetItemAsync("editor_orte");
+                if (!string.IsNullOrEmpty(ortJson))
+                {
+                    try
+                    {
+                        var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(ortJson,
+                            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                        if (geladen?.Any() == true) { AlleOrte = geladen; goto OrteLaden_Fertig; }
+                    }
+                    catch { }
+                }
+            }
+            // Fallback: Standard-Daten laden und im LocalStorage speichern
             AlleOrte = WeltData.AlleOrte();
+            await _ls.SetItemAsync("editor_orte_version", ortVersion);
+            var neueOrteJson = System.Text.Json.JsonSerializer.Serialize(AlleOrte,
+                new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = null });
+            await _ls.SetItemAsync("editor_orte", neueOrteJson);
+            OrteLaden_Fertig:
             DatenGeladen = true;
             LadeStatus = "Fertig!";
 
