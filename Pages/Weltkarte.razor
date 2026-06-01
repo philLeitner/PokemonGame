@@ -236,7 +236,7 @@
                         }
 
                         <!-- Einrichtungen -->
-                        @if (ortRef3.HatMonsterCenter || ortRef3.HatMarkt)
+                        @if (ortRef3.HatMonsterCenter || ortRef3.HatMarkt || ortRef3.MarktAngebot.Any())
                         {
                             <div class="ort-sektion">
                                 <div class="ort-sektion-header">🏢 Einrichtungen</div>
@@ -246,10 +246,10 @@
                                         🏥 Monster Center
                                     </button>
                                 }
-                                @if (ortRef3.HatMarkt)
+                                @if (ortRef3.HatMarkt || ortRef3.MarktAngebot.Any())
                                 {
                                     <button class="btn-markt" @onclick="MarktOeffnen">
-                                        🏪 Markt
+                                        🏪 Markt (@ortRef3.MarktAngebot.Count Items)
                                     </button>
                                 }
                             </div>

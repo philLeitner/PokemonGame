@@ -115,7 +115,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "77cce2c0";
+            const string ortVersion = "e6c29bc0";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
@@ -594,6 +594,21 @@ public class GameService
             case "ap-trank":
                 foreach (var atk in ziel.Attacken) atk.AktuelleAp = Math.Min(atk.MaxAp, atk.AktuelleAp + 10);
                 AktuellerKampf.Log.Add($"✅ AP von {ziel.AngezeigterName} aufgefüllt!"); verwendet = true;
+                break;
+            case "fluchtseil":
+                if (AktuellerKampf.Typ == KampfTyp.Wild)
+                {
+                    AktuellerKampf.Log.Add("🧵 Fluchtseil verwendet! Du bist geflohen!");
+                    Spieler.ItemVerwenden(itemId);
+                    AktuellerKampf.SpielerGewonnen = false;
+                    AktuellerKampf.Phase = KampfPhase.Beendet;
+                    Notify();
+                    return;
+                }
+                AktuellerKampf.Log.Add("❌ Fluchtseil funktioniert nicht in Trainer-Kämpfen!");
+                break;
+            case "sprudelwasser":
+                AktuellerKampf.Log.Add("❌ Sprudelwasser kann hier nicht verwendet werden!");
                 break;
         }
 
