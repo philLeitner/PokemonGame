@@ -70,21 +70,12 @@
             var süd  = GetOrt(aktOrt?.Süd);
             var ost  = GetOrt(aktOrt?.Ost);
             var west = GetOrt(aktOrt?.West);
-            var nw   = GetOrt(nord?.West ?? west?.Nord);
-            var no   = GetOrt(nord?.Ost  ?? ost?.Nord);
-            var sw   = GetOrt(süd?.West  ?? west?.Süd);
-            var so   = GetOrt(süd?.Ost   ?? ost?.Süd);
-            // Duplikate verhindern: Ecke nur zeigen wenn sie nicht schon als Nachbar vorkommt
-            var hauptIds = new HashSet<string?> { aktOrt?.Id, nord?.Id, süd?.Id, ost?.Id, west?.Id };
-            if (nw != null && hauptIds.Contains(nw.Id)) nw = null;
-            if (no != null && hauptIds.Contains(no.Id)) no = null;
-            if (sw != null && hauptIds.Contains(sw.Id)) sw = null;
-            if (so != null && hauptIds.Contains(so.Id)) so = null;
+            // Nur die 4 Hauptrichtungen anzeigen (keine Ecken NW/NO/SW/SO)
             var felder = new Ort?[3, 3]
             {
-                { nw,   nord, no  },
-                { west, aktOrt, ost },
-                { sw,   süd,  so  }
+                { null, nord,   null },
+                { west, aktOrt, ost  },
+                { null, süd,   null }
             };
         }
         @if (aktOrt != null)
