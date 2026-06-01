@@ -66,13 +66,13 @@
       }
     ],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -176,13 +176,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -265,13 +265,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -380,13 +380,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -513,13 +513,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0014"
   },
   {
@@ -647,6 +647,12 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": {
+      "MinOrden": 3,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrOst": null,
     "SperrWest": {
       "MinOrden": 3,
@@ -658,12 +664,6 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": {
-      "MinOrden": 3,
-      "ItemId": null,
-      "ItemName": null,
-      "Hinweis": null
-    },
     "Sued": "KAN-0017"
   },
   {
@@ -764,13 +764,13 @@
       }
     ],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -857,13 +857,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -953,13 +953,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1053,13 +1053,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1178,13 +1178,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1268,13 +1268,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0003"
   },
   {
@@ -1367,13 +1367,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1506,13 +1506,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0010"
   },
   {
@@ -1600,13 +1600,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1700,13 +1700,18 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
-    "SperrWest": null,
+    "SperrWest": {
+      "MinOrden": 2,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1765,13 +1770,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -1816,9 +1821,10 @@
       }
     ],
     "Verbindungen": [
+      "KAN-0011",
       "KAN-0012"
     ],
-    "Nord": null,
+    "Nord": "KAN-0011",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -1877,18 +1883,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
-    "SperrWest": {
-      "MinOrden": 0,
-      "ItemId": null,
-      "ItemName": null,
-      "Hinweis": null
-    },
+    "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0012"
   },
   {
@@ -1971,13 +1972,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2044,13 +2045,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2121,13 +2122,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0015"
   },
   {
@@ -2227,13 +2228,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0028"
   },
   {
@@ -2326,13 +2327,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2409,13 +2410,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0020"
   },
   {
@@ -2503,13 +2504,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2577,13 +2578,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2673,13 +2674,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0025"
   },
   {
@@ -2760,13 +2761,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2842,13 +2843,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0022"
   },
   {
@@ -2930,13 +2931,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -2968,13 +2969,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3044,13 +3045,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3120,13 +3121,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0002"
   },
   {
@@ -3197,13 +3198,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3290,13 +3291,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3389,13 +3390,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3466,13 +3467,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3570,13 +3571,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3647,13 +3648,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0041"
   },
   {
@@ -3718,13 +3719,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0041"
   },
   {
@@ -3818,13 +3819,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3898,13 +3899,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -3975,13 +3976,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0041"
   },
   {
@@ -4059,13 +4060,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4148,13 +4149,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4186,13 +4187,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4226,13 +4227,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0018"
   },
   {
@@ -4267,13 +4268,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0015"
   },
   {
@@ -4308,13 +4309,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4362,13 +4363,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0051"
   },
   {
@@ -4549,13 +4550,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4686,13 +4687,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0051"
   },
   {
@@ -4766,13 +4767,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4804,13 +4805,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4842,13 +4843,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4880,13 +4881,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4918,13 +4919,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4956,13 +4957,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -4994,13 +4995,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5032,13 +5033,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5113,13 +5114,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5190,13 +5191,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5300,13 +5301,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5383,13 +5384,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0003"
   },
   {
@@ -5460,13 +5461,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0004"
   },
   {
@@ -5546,13 +5547,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0007"
   },
   {
@@ -5603,13 +5604,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0007"
   },
   {
@@ -5674,13 +5675,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0010"
   },
   {
@@ -5715,13 +5716,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5798,13 +5799,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5839,13 +5840,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -5912,13 +5913,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0013"
   },
   {
@@ -5953,13 +5954,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6018,13 +6019,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0015"
   },
   {
@@ -6091,13 +6092,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0017"
   },
   {
@@ -6131,13 +6132,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0017"
   },
   {
@@ -6202,13 +6203,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6273,13 +6274,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6339,13 +6340,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0010"
   },
   {
@@ -6387,13 +6388,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0022"
   },
   {
@@ -6444,13 +6445,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0024"
   },
   {
@@ -6491,13 +6492,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0024"
   },
   {
@@ -6578,13 +6579,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6643,13 +6644,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6700,13 +6701,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0029"
   },
   {
@@ -6765,13 +6766,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6807,13 +6808,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0033"
   },
   {
@@ -6878,13 +6879,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6926,13 +6927,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -6973,13 +6974,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7077,13 +7078,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7117,13 +7118,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7183,13 +7184,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0040"
   },
   {
@@ -7231,13 +7232,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7320,13 +7321,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0041"
   },
   {
@@ -7368,13 +7369,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0041"
   },
   {
@@ -7432,13 +7433,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0043"
   },
   {
@@ -7503,13 +7504,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7574,13 +7575,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7678,13 +7679,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0048"
   },
   {
@@ -7742,13 +7743,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0047"
   },
   {
@@ -7791,13 +7792,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0047"
   },
   {
@@ -7839,13 +7840,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0002"
   },
   {
@@ -7881,13 +7882,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0052"
   },
   {
@@ -7929,13 +7930,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -7969,13 +7970,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8010,13 +8011,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8147,13 +8148,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "JOH-0054"
   },
   {
@@ -8245,13 +8246,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8285,13 +8286,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8325,13 +8326,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8366,13 +8367,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8404,13 +8405,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8445,13 +8446,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8499,13 +8500,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0001"
   },
   {
@@ -8541,13 +8542,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0002"
   },
   {
@@ -8623,13 +8624,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0003"
   },
   {
@@ -8677,13 +8678,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8752,13 +8753,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0008"
   },
   {
@@ -8836,13 +8837,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8890,13 +8891,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8931,13 +8932,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -8979,13 +8980,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9027,13 +9028,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9068,13 +9069,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9194,13 +9195,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0017"
   },
   {
@@ -9235,13 +9236,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9283,13 +9284,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0019"
   },
   {
@@ -9331,13 +9332,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0021"
   },
   {
@@ -9371,13 +9372,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9419,13 +9420,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0022"
   },
   {
@@ -9460,13 +9461,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0022"
   },
   {
@@ -9513,13 +9514,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9554,13 +9555,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0007"
   },
   {
@@ -9607,13 +9608,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9695,13 +9696,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0015"
   },
   {
@@ -9761,13 +9762,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0030"
   },
   {
@@ -9802,13 +9803,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9914,13 +9915,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -9955,13 +9956,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0032"
   },
   {
@@ -10009,13 +10010,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10050,13 +10051,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10091,13 +10092,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10151,13 +10152,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10192,13 +10193,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10299,13 +10300,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10348,13 +10349,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0041"
   },
   {
@@ -10401,13 +10402,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10443,13 +10444,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0044"
   },
   {
@@ -10549,13 +10550,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10611,13 +10612,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10651,13 +10652,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0044"
   },
   {
@@ -10691,13 +10692,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0031"
   },
   {
@@ -10739,13 +10740,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0048"
   },
   {
@@ -10792,13 +10793,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10840,13 +10841,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10894,13 +10895,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -10942,13 +10943,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0051"
   },
   {
@@ -11007,13 +11008,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -11055,13 +11056,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0055"
   },
   {
@@ -11141,13 +11142,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0054"
   },
   {
@@ -11194,13 +11195,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0055"
   },
   {
@@ -11242,13 +11243,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0051"
   },
   {
@@ -11290,13 +11291,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0059"
   },
   {
@@ -11386,13 +11387,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -11434,13 +11435,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0061"
   },
   {
@@ -11482,13 +11483,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0062"
   },
   {
@@ -11530,13 +11531,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0063"
   },
   {
@@ -11571,13 +11572,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0064"
   },
   {
@@ -11619,13 +11620,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0065"
   },
   {
@@ -11667,13 +11668,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0066"
   },
   {
@@ -11715,13 +11716,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "HOE-0067"
   },
   {
@@ -11755,13 +11756,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -11808,13 +11809,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -11848,13 +11849,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -11905,13 +11906,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12042,13 +12043,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12099,13 +12100,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12137,13 +12138,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12184,13 +12185,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12224,13 +12225,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12320,13 +12321,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0001"
   },
   {
@@ -12367,13 +12368,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12409,13 +12410,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0058"
   },
   {
@@ -12457,13 +12458,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12541,13 +12542,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0005"
   },
   {
@@ -12599,13 +12600,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12640,13 +12641,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12680,13 +12681,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0009"
   },
   {
@@ -12728,13 +12729,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0006"
   },
   {
@@ -12766,13 +12767,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12807,13 +12808,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0011"
   },
   {
@@ -12847,13 +12848,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12895,13 +12896,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12946,13 +12947,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -12986,13 +12987,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0017"
   },
   {
@@ -13034,13 +13035,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0020"
   },
   {
@@ -13098,13 +13099,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0009"
   },
   {
@@ -13170,13 +13171,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0055"
   },
   {
@@ -13218,13 +13219,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13283,13 +13284,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13323,13 +13324,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0024"
   },
   {
@@ -13364,13 +13365,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0024"
   },
   {
@@ -13404,13 +13405,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0026"
   },
   {
@@ -13476,13 +13477,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0026"
   },
   {
@@ -13534,13 +13535,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13583,13 +13584,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0029"
   },
   {
@@ -13631,13 +13632,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13684,13 +13685,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0032"
   },
   {
@@ -13732,13 +13733,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13780,13 +13781,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13837,13 +13838,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0036"
   },
   {
@@ -13885,13 +13886,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13939,13 +13940,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -13993,13 +13994,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14035,13 +14036,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0040"
   },
   {
@@ -14082,13 +14083,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14129,13 +14130,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0043"
   },
   {
@@ -14177,13 +14178,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14230,13 +14231,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14277,13 +14278,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14319,13 +14320,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0048"
   },
   {
@@ -14367,13 +14368,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14454,13 +14455,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14501,13 +14502,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14562,13 +14563,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -14683,13 +14684,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0053"
   },
   {
@@ -14753,13 +14754,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0021"
   },
   {
@@ -14800,13 +14801,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0055"
   },
   {
@@ -14847,13 +14848,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0035"
   },
   {
@@ -14895,13 +14896,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0059"
   },
   {
@@ -14943,13 +14944,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0060"
   },
   {
@@ -14991,13 +14992,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0061"
   },
   {
@@ -15038,13 +15039,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "SIN-0060"
   },
   {
@@ -15095,13 +15096,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15143,13 +15144,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15190,13 +15191,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15241,13 +15242,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15281,13 +15282,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15428,13 +15429,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0001"
   },
   {
@@ -15494,13 +15495,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0002"
   },
   {
@@ -15649,13 +15650,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0003"
   },
   {
@@ -15696,13 +15697,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15859,13 +15860,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0005"
   },
   {
@@ -15916,13 +15917,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -15981,13 +15982,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16022,13 +16023,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16069,13 +16070,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0012"
   },
   {
@@ -16186,13 +16187,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16256,13 +16257,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16309,13 +16310,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16422,13 +16423,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16463,13 +16464,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16503,13 +16504,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0020"
   },
   {
@@ -16592,13 +16593,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16646,13 +16647,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16686,13 +16687,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0014"
   },
   {
@@ -16775,13 +16776,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16840,13 +16841,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -16916,13 +16917,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0028"
   },
   {
@@ -16999,13 +17000,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -17040,13 +17041,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -17140,13 +17141,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0017"
   },
   {
@@ -17243,13 +17244,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0019"
   },
   {
@@ -17326,13 +17327,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -17367,13 +17368,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -17504,13 +17505,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0035"
   },
   {
@@ -17581,13 +17582,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0036"
   },
   {
@@ -17651,13 +17652,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -17721,13 +17722,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0041"
   },
   {
@@ -17761,13 +17762,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0039"
   },
   {
@@ -17802,13 +17803,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0039"
   },
   {
@@ -17859,13 +17860,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0004"
   },
   {
@@ -17899,13 +17900,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0017"
   },
   {
@@ -17939,13 +17940,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "UNO-0020"
   },
   {
@@ -17979,13 +17980,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0031"
   },
   {
@@ -18049,13 +18050,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18089,13 +18090,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18129,13 +18130,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18176,13 +18177,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18216,13 +18217,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18263,13 +18264,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18303,13 +18304,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18344,13 +18345,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0028"
   },
   {
@@ -18385,13 +18386,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18425,13 +18426,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -18572,13 +18573,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0001"
   },
   {
@@ -18613,13 +18614,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0002"
   },
   {
@@ -18768,13 +18769,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0003"
   },
   {
@@ -18845,13 +18846,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19008,13 +19009,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19125,13 +19126,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19238,13 +19239,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19279,13 +19280,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19368,13 +19369,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19408,13 +19409,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19497,13 +19498,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19538,13 +19539,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19621,13 +19622,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19662,13 +19663,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19732,13 +19733,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19831,13 +19832,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19914,13 +19915,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -19972,13 +19973,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20049,13 +20050,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20089,13 +20090,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0024"
   },
   {
@@ -20194,13 +20195,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20287,13 +20288,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20386,13 +20387,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20463,13 +20464,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20504,13 +20505,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20581,13 +20582,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20634,13 +20635,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20711,13 +20712,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20788,13 +20789,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20829,13 +20830,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20906,13 +20907,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -20959,13 +20960,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21030,13 +21031,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21117,13 +21118,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21194,13 +21195,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21235,13 +21236,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21356,13 +21357,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0044"
   },
   {
@@ -21426,13 +21427,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0022"
   },
   {
@@ -21473,13 +21474,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21520,13 +21521,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21561,13 +21562,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21601,13 +21602,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21648,13 +21649,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21703,13 +21704,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21760,13 +21761,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0052"
   },
   {
@@ -21871,13 +21872,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21924,13 +21925,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -21964,13 +21965,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22004,13 +22005,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22113,13 +22114,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22153,13 +22154,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22191,13 +22192,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22232,13 +22233,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0006"
   },
   {
@@ -22280,13 +22281,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22321,13 +22322,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0008"
   },
   {
@@ -22369,13 +22370,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22468,13 +22469,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22516,13 +22517,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22557,13 +22558,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22656,13 +22657,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22704,13 +22705,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22803,13 +22804,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22844,13 +22845,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22918,13 +22919,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -22975,13 +22976,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23022,13 +23023,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23080,13 +23081,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0019"
   },
   {
@@ -23128,13 +23129,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23198,13 +23199,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23246,13 +23247,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23287,13 +23288,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23335,13 +23336,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23383,13 +23384,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23423,13 +23424,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23480,13 +23481,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23551,13 +23552,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23608,13 +23609,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23648,13 +23649,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23696,13 +23697,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23744,13 +23745,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23784,13 +23785,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23857,13 +23858,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -23956,13 +23957,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24003,13 +24004,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24050,13 +24051,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24097,13 +24098,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24142,13 +24143,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24215,13 +24216,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24253,13 +24254,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24293,13 +24294,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24372,13 +24373,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0001"
   },
   {
@@ -24413,13 +24414,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0002"
   },
   {
@@ -24454,13 +24455,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24507,13 +24508,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24579,13 +24580,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0003"
   },
   {
@@ -24620,13 +24621,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24668,13 +24669,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24709,13 +24710,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24751,13 +24752,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0007"
   },
   {
@@ -24792,13 +24793,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0010"
   },
   {
@@ -24833,13 +24834,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24874,13 +24875,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -24915,13 +24916,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0012"
   },
   {
@@ -24956,13 +24957,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25010,13 +25011,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25051,13 +25052,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0018"
   },
   {
@@ -25092,13 +25093,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25133,13 +25134,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0016"
   },
   {
@@ -25174,13 +25175,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25297,13 +25298,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25338,13 +25339,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25379,13 +25380,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAL-0021"
   },
   {
@@ -25436,13 +25437,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0026"
   },
   {
@@ -25529,13 +25530,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0026"
   },
   {
@@ -25593,13 +25594,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "GAL-0024"
   },
   {
@@ -25655,13 +25656,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25717,13 +25718,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25794,13 +25795,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25853,13 +25854,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -25918,13 +25919,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26041,13 +26042,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26096,13 +26097,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26151,13 +26152,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26206,13 +26207,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26265,13 +26266,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26320,13 +26321,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26375,13 +26376,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26430,13 +26431,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26485,13 +26486,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26540,13 +26541,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26595,13 +26596,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26731,13 +26732,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "PAL-0001"
   },
   {
@@ -26769,13 +26770,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26807,13 +26808,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -26928,13 +26929,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "PAL-0001"
   },
   {
@@ -26985,13 +26986,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "PAL-0001"
   },
   {
@@ -27058,13 +27059,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "PAL-0001"
   },
   {
@@ -27147,13 +27148,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0006"
   },
   {
@@ -27236,13 +27237,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0008"
   },
   {
@@ -27376,13 +27377,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0009"
   },
   {
@@ -27514,13 +27515,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -27652,6 +27653,7 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": {
       "MinOrden": 2,
@@ -27663,7 +27665,6 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0063"
   },
   {
@@ -27750,13 +27751,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": null
   },
   {
@@ -27843,13 +27844,13 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
+    "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null,
     "Sued": "KAN-0024"
   }
 ]
