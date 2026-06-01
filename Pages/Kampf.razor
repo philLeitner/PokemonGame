@@ -131,8 +131,9 @@
         }
         else if (kampf.Phase == KampfPhase.Fangen)
         {
-            <div class="warten-anzeige">
-                <p>⚪ Monsterball fliegt...</p>
+            <div class="fang-animation">
+                <div class="fang-ball-anim"><span class="fang-ball-emoji">@GetBallEmoji(kampf)</span></div>
+                <p class="fang-text">Ball fliegt...</p>
                 <div class="warten-punkte"><span>.</span><span>.</span><span>.</span></div>
             </div>
         }
@@ -268,6 +269,11 @@
                 <div class="panel-header">
                     <button class="btn-zurueck" @onclick='() => aktivesPanel = "haupt"'>← Zurück</button>
                     <span>Ball wählen:</span>
+                </div>
+                <div class="fang-info-box">
+                    <span class="fang-widerstand-label">Widerstand: <strong>@GegnerWiderstand(gegnerMon)/10</strong></span>
+                    @if (!string.IsNullOrEmpty(HpHinweis(gegnerMon))) { <span class="fang-bonus-chip">@HpHinweis(gegnerMon)</span> }
+                    @if (!string.IsNullOrEmpty(StatusHinweis(gegnerMon))) { <span class="fang-bonus-chip">@StatusHinweis(gegnerMon)</span> }
                 </div>
                 <div class="ball-liste">
                     @foreach (var ball in new[] {
@@ -413,4 +419,26 @@
         "eingefroren"   => "Eis",
         _               => ""
     };
+    // ─ Fang-Hilfsmethoden ─
+    private string GetBallEmoji(KampfZustand k)
+    {
+        var log = k.Log.LastOrDefault(l => l.Contains("Superball") || l.Contains("Hyperball") || l.Contains("Meisterball") || l.Contains("Monsterball")) ?? "";
+        return log.Contains("Superball") ? "🔵" : log.Contains("Hyperball") ? "🟡" : log.Contains("Meisterball") ? "🟣" : "⚪";
+    }
+    private int GegnerWiderstand(MonsterInstanz m)
+    {
+        int w = (int)Math.Round(10.0 - (m.Fangrate / 255.0) * 9.0);
+        return Math.Clamp(w, 1, 10);
+    }
+    private string HpHinweis(MonsterInstanz m)
+    {
+        float hp = m.MaxKp > 0 ? (float)m.AktuelleKp / m.MaxKp : 1f;
+        return hp < 0.10f ? "❤️‍🔥 sehr schwach (+3)" : hp < 0.25f ? "🔶 schwach (+2)" : hp < 0.50f ? "🟡 angeschlagen (+1)" : "";
+    }
+    private string StatusHinweis(MonsterInstanz m)
+    {
+        int bon = m.Status is "eingeschlafen" or "eingefroren" ? 3
+                : m.Status is "vergiftet" or "gelähmt" or "verbrannt" ? 1 : 0;
+        return bon > 0 ? $"{m.Status} (+{bon})" : "";
+    }
 }

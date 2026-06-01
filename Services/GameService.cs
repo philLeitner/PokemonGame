@@ -612,32 +612,54 @@ public class GameService
         }
     }
 
-    // ── Monster fangen ────────────────────────────────────────────────────────
+    // ── Monster fangen (eigenes Widerstandssystem) ──────────────────────────
+    // Widerstand: 1–10 (aus Fangrate: Fangrate 255=1, Fangrate 3=10)
+    // Ball-Kraft:  Monsterball=1, Superball=2, Hyperball=4, Meisterball=99
+    // HP-Bonus:    <50%=+1, <25%=+2, <10%=+3
+    // Status-Bonus: Schlaf/Einfrieren=+3, Gift/Lähmung/Verbrennung=+1
+    // Fang: Ball-Kraft + Boni > Schutzwurf (0..Widerstand-1) → gefangen!
+    private int FangWiderstand(int fangrate)
+    {
+        // Fangrate 255 → Widerstand 1 (sehr leicht zu fangen)
+        // Fangrate 45  → Widerstand 5 (normal)
+        // Fangrate 3   → Widerstand 10 (sehr selten)
+        int w = (int)Math.Round(10.0 - (fangrate / 255.0) * 9.0);
+        return Math.Clamp(w, 1, 10);
+    }
     public async Task MonsterFangen(string ballId)
     {
         if (AktuellerKampf == null) return;
         if (AktuellerKampf.Phase != KampfPhase.SpielerZug) return;
         if (!AktuellerKampf.KannFangen) { AktuellerKampf.Log.Add("❌ Vor einem Trainer-Kampf kann man nicht fangen!"); Notify(); return; }
-
         var item = Spieler.GetItem(ballId);
-        if (item == null || item.Menge <= 0) { AktuellerKampf.Log.Add("❌ Kein Monsterball mehr!"); Notify(); return; }
-
+        if (item == null || item.Menge <= 0) { AktuellerKampf.Log.Add("❌ Kein Ball mehr!"); Notify(); return; }
         Spieler.ItemVerwenden(ballId);
         AktuellerKampf.Phase = KampfPhase.Fangen;
         var gegner = AktuellerKampf.GegnerMonster;
-        AktuellerKampf.Log.Add($"⚪ Du wirfst einen Monsterball nach {gegner.Name}...");
+        string ballEmoji = ballId switch { "superball" => "🔵", "hyperball" => "🟡", "meisterball" => "🟣", _ => "⚪" };
+        string ballName  = ballId switch { "superball" => "Superball", "hyperball" => "Hyperball", "meisterball" => "Meisterball", _ => "Monsterball" };
+        AktuellerKampf.Log.Add($"{ballEmoji} Du wirfst einen {ballName} nach {gegner.Name}...");
         Notify();
         await Task.Delay(1200);
-
-        // Fang-Formel (vereinfacht nach Pokémon-Formel)
-        float ballBonus = ballId switch { "superball" => 1.5f, "hyperball" => 2f, "meisterball" => 255f, _ => 1f };
-        float hpFaktor = (float)(3 * gegner.MaxKp - 2 * gegner.AktuelleKp) / (3f * gegner.MaxKp);
-        float statusBonus = gegner.Status is "eingeschlafen" or "eingefroren" ? 2f : gegner.Status == "none" ? 1f : 1.5f;
-        float fangChance = (gegner.Fangrate * hpFaktor * statusBonus * ballBonus) / 255f;
-        fangChance = Math.Clamp(fangChance, 0.01f, 0.99f);
-
-        bool gefangen = _rng.NextDouble() < fangChance;
-
+        // ─ Widerstand berechnen ─
+        int widerstand = FangWiderstand(gegner.Fangrate);
+        // ─ Ball-Kraft ─
+        int ballKraft = ballId switch { "superball" => 2, "hyperball" => 4, "meisterball" => 99, _ => 1 };
+        // ─ HP-Schwäche-Bonus ─
+        float hpProzent = gegner.MaxKp > 0 ? (float)gegner.AktuelleKp / gegner.MaxKp : 1f;
+        int hpBonus = hpProzent < 0.10f ? 3 : hpProzent < 0.25f ? 2 : hpProzent < 0.50f ? 1 : 0;
+        // ─ Status-Bonus ─
+        int statusBonus = gegner.Status is "eingeschlafen" or "eingefroren" ? 3
+                        : gegner.Status is "vergiftet" or "gelähmt" or "verbrannt" ? 1 : 0;
+        // ─ Gesamtkraft ─
+        int gesamtKraft = ballKraft + hpBonus + statusBonus;
+        // ─ Schutzwurf des Monsters (0 bis Widerstand-1) ─
+        int schutzwurf = _rng.Next(0, widerstand);
+        bool gefangen = gesamtKraft > schutzwurf;
+        // ─ Feedback-Log ─
+        string hpInfo = hpProzent < 0.10f ? "(sehr schwach)" : hpProzent < 0.25f ? "(schwach)" : hpProzent < 0.50f ? "(angeschlagen)" : "";
+        string statusInfo = statusBonus > 0 ? $"({gegner.Status})" : "";
+        AktuellerKampf.Log.Add($"📦 Kraft: {gesamtKraft} vs. Schutz: {schutzwurf} (Widerstand {widerstand}) {hpInfo} {statusInfo}".Trim());
         if (gefangen)
         {
             AktuellerKampf.Log.Add($"🎉 {gegner.Name} wurde gefangen!");
@@ -653,24 +675,24 @@ public class GameService
         }
         else
         {
-            int wackler = _rng.Next(1, 4);
-            AktuellerKampf.Log.Add(wackler switch
+            int differenz = gesamtKraft - schutzwurf;
+            int wackler = differenz == 0 ? 3 : differenz >= -1 ? 2 : 1;
+            string wacklerText = wackler switch
             {
-                1 => "💨 Oh! Fast gefangen!",
-                2 => "💨 Ärgerlich! Knapp daneben!",
-                _ => "💨 Entkommen!"
-            });
+                3 => $"🟡 {gegner.Name} wackelt dreimal... und entwischt knapp!",
+                2 => $"🟠 {gegner.Name} wackelt zweimal... und bricht aus!",
+                _ => $"🔴 {gegner.Name} bricht sofort aus!"
+            };
+            AktuellerKampf.Log.Add(wacklerText);
             AktuellerKampf.Phase = KampfPhase.GegnerZug;
             Notify();
             await Task.Delay(800);
             await GegnerZug();
             return;
         }
-
         Notify();
     }
-
-    // ── Fliehen ───────────────────────────────────────────────────────────────
+        // ── Fliehen ───────────────────────────────────────────────────────────────
     public async Task KampfFliehen()
     {
         if (AktuellerKampf == null) return;

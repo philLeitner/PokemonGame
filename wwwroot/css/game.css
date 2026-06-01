@@ -2269,3 +2269,56 @@ input:checked + .toggle-slider-klein::before {
 .richtungssperre-felder .editor-field:last-child {
     grid-column: 1 / -1;
 }
+
+/* ── Fang-Animation ─────────────────────────────────────────────────────── */
+.fang-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+}
+.fang-ball-anim {
+    animation: fangBallFlug 0.8s ease-in-out infinite alternate;
+}
+.fang-ball-emoji {
+    font-size: 2.5rem;
+    display: block;
+}
+@keyframes fangBallFlug {
+    from { transform: translateY(0) rotate(-15deg); }
+    to   { transform: translateY(-16px) rotate(15deg); }
+}
+.fang-text {
+    font-size: 0.9rem;
+    color: var(--text-muted, #aaa);
+    margin: 0;
+}
+
+/* ── Fang-Info-Box (Widerstand + Boni) ──────────────────────────────────── */
+.fang-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+}
+.fang-widerstand-label {
+    color: #ccc;
+}
+.fang-widerstand-label strong {
+    color: #fff;
+}
+.fang-bonus-chip {
+    background: rgba(100, 200, 100, 0.2);
+    border: 1px solid rgba(100, 200, 100, 0.4);
+    border-radius: 12px;
+    padding: 2px 8px;
+    color: #90ee90;
+    font-size: 0.78rem;
+}
