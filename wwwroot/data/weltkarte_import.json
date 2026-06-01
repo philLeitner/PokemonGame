@@ -13,7 +13,7 @@
       "KAN-0002"
     ],
     "Nord": null,
-    "Süd": "KAN-0043",
+    "Süd": null,
     "Ost": null,
     "West": "KAN-0002",
     "Trainer": [
@@ -101,9 +101,9 @@
     "Verbindungen": [
       "KAN-0005"
     ],
-    "Nord": "KAN-0031",
+    "Nord": null,
     "Süd": null,
-    "Ost": "KAN-0001",
+    "Ost": null,
     "West": "KAN-0005",
     "Trainer": [
       {
@@ -231,7 +231,7 @@
     "Nord": "KAN-0006",
     "Süd": null,
     "Ost": "KAN-0005",
-    "West": "KAN-0004",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": true,
     "HatMarkt": true,
@@ -994,10 +994,10 @@
     "Verbindungen": [
       "KAN-0003"
     ],
-    "Nord": "UNO-0042",
-    "Süd": "UNO-0041",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAN-0003",
-    "West": "KAN-0050",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-RIV-002",
@@ -1551,7 +1551,7 @@
     "Nord": "KAN-0009",
     "Süd": null,
     "Ost": "KAN-0008",
-    "West": "KAN-0012",
+    "West": null,
     "Trainer": [
       {
         "Id": "UNO-T-006",
@@ -1817,7 +1817,7 @@
     "Verbindungen": [
       "KAN-0012"
     ],
-    "Nord": "KAN-0011",
+    "Nord": null,
     "Süd": "KAN-0012",
     "Ost": null,
     "West": null,
@@ -1938,7 +1938,7 @@
     "Nord": "KAN-0018",
     "Süd": null,
     "Ost": "KAN-0013",
-    "West": "KAN-0036",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-NPC-1009",
@@ -2085,9 +2085,9 @@
       "KAN-0015",
       "KAN-0016"
     ],
-    "Nord": "KAN-0047",
+    "Nord": null,
     "Süd": "KAN-0015",
-    "Ost": "KAN-0028",
+    "Ost": null,
     "West": "KAN-0016",
     "Trainer": [
       {
@@ -2599,7 +2599,7 @@
       "KAN-0025",
       "KAN-0026"
     ],
-    "Nord": "KAN-0067",
+    "Nord": null,
     "Süd": "KAN-0025",
     "Ost": null,
     "West": "KAN-0026",
@@ -2692,7 +2692,7 @@
     "Arena": null,
     "WildMonster": [],
     "Verbindungen": [],
-    "Nord": "KAN-0024",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": null,
@@ -2808,8 +2808,8 @@
     ],
     "Nord": null,
     "Süd": "KAN-0022",
-    "Ost": "KAN-0024",
-    "West": "KAN-0049",
+    "Ost": null,
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-NPC-1013",
@@ -3163,7 +3163,7 @@
     ],
     "Nord": "KAL-0036",
     "Süd": null,
-    "Ost": "KAN-0036",
+    "Ost": null,
     "West": "KAN-0036",
     "Trainer": [
       {
@@ -3431,7 +3431,7 @@
       "KAL-0029"
     ],
     "Nord": null,
-    "Süd": "KAN-0036",
+    "Süd": null,
     "Ost": "KAL-0029",
     "West": "KAN-0036",
     "Trainer": [
@@ -3685,7 +3685,7 @@
     "Nord": "KAL-0039",
     "Süd": "KAN-0041",
     "Ost": null,
-    "West": "KAN-0041",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-T-020",
@@ -4346,7 +4346,7 @@
     "Nord": null,
     "Süd": "KAN-0051",
     "Ost": "KAN-0004",
-    "West": "KAN-0051",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -4433,7 +4433,7 @@
       "JOH-0055",
       "KAN-0050"
     ],
-    "Nord": "KAN-0050",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAN-0050",
     "West": "JOH-0055",
@@ -5055,7 +5055,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "JOH-0051",
+    "Ost": null,
     "West": "JOH-0002",
     "Trainer": [
       {
@@ -5154,7 +5154,7 @@
       "JOH-0003",
       "JOH-0001"
     ],
-    "Nord": "JOH-0050",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0001",
     "West": "JOH-0003",
@@ -5640,7 +5640,7 @@
     ],
     "Nord": "JOH-0007",
     "Süd": "JOH-0010",
-    "Ost": "JOH-0010",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -5696,7 +5696,7 @@
       "JOH-0009",
       "JOH-0022"
     ],
-    "Nord": "JOH-0009",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0022",
     "West": "JOH-0009",
@@ -5934,7 +5934,7 @@
       "JOH-0016",
       "JOH-0013"
     ],
-    "Nord": "JOH-0016",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0013",
     "West": "JOH-0016",
@@ -5984,7 +5984,7 @@
     ],
     "Nord": "JOH-0017",
     "Süd": "JOH-0015",
-    "Ost": "JOH-0015",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -6168,7 +6168,7 @@
     ],
     "Nord": "JOH-0021",
     "Süd": null,
-    "Ost": "JOH-0021",
+    "Ost": null,
     "West": "JOH-0017",
     "Trainer": [
       {
@@ -6238,7 +6238,7 @@
       "JOH-0022"
     ],
     "Nord": null,
-    "Süd": "JOH-0020",
+    "Süd": null,
     "Ost": "JOH-0022",
     "West": "JOH-0020",
     "Trainer": [
@@ -6303,7 +6303,7 @@
       "JOH-0007",
       "JOH-0023"
     ],
-    "Nord": "JOH-0023",
+    "Nord": null,
     "Süd": "JOH-0010",
     "Ost": "JOH-0023",
     "West": "JOH-0007",
@@ -6371,7 +6371,7 @@
     "Nord": "JOH-0024",
     "Süd": "JOH-0022",
     "Ost": null,
-    "West": "JOH-0022",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -6842,7 +6842,7 @@
       "JOH-0032",
       "JOH-0032"
     ],
-    "Nord": "JOH-0032",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0032",
     "West": "JOH-0032",
@@ -7212,7 +7212,7 @@
       "JOH-0039",
       "JOH-0039"
     ],
-    "Nord": "JOH-0039",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0039",
     "West": "JOH-0039",
@@ -7610,7 +7610,7 @@
       "JOH-0046",
       "JOH-0049"
     ],
-    "Nord": "JOH-0048",
+    "Nord": null,
     "Süd": "JOH-0048",
     "Ost": "JOH-0049",
     "West": "JOH-0046",
@@ -7706,7 +7706,7 @@
     "Verbindungen": [
       "JOH-0047"
     ],
-    "Nord": "JOH-0047",
+    "Nord": null,
     "Süd": "JOH-0047",
     "Ost": null,
     "West": null,
@@ -7823,7 +7823,7 @@
     "Nord": "JOH-0049",
     "Süd": "JOH-0002",
     "Ost": null,
-    "West": "JOH-0049",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -7910,7 +7910,7 @@
       "JOH-0051",
       "JOH-0051"
     ],
-    "Nord": "JOH-0051",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0051",
     "West": "JOH-0051",
@@ -7952,7 +7952,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "JOH-0054",
+    "Ost": null,
     "West": "JOH-0051",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -7991,7 +7991,7 @@
       "JOH-0053",
       "JOH-0055"
     ],
-    "Nord": "JOH-0055",
+    "Nord": null,
     "Süd": null,
     "Ost": "JOH-0055",
     "West": "JOH-0053",
@@ -8033,8 +8033,8 @@
     ],
     "Nord": null,
     "Süd": "JOH-0054",
-    "Ost": "KAN-0051",
-    "West": "JOH-0054",
+    "Ost": null,
+    "West": null,
     "Trainer": [
       {
         "Id": "KAN-E4-001",
@@ -8195,7 +8195,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "JOH-0057",
+    "Ost": null,
     "West": "JOH-0057",
     "Trainer": [
       {
@@ -8268,7 +8268,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "JOH-0056",
+    "Ost": null,
     "West": "JOH-0056",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -8483,7 +8483,7 @@
     "Nord": "HOE-0003",
     "Süd": "HOE-0001",
     "Ost": null,
-    "West": "HOE-0001",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -8700,7 +8700,7 @@
       "HOE-0009",
       "HOE-0006"
     ],
-    "Nord": "HOE-0025",
+    "Nord": null,
     "Süd": "HOE-0008",
     "Ost": "HOE-0006",
     "West": "HOE-0009",
@@ -8784,7 +8784,7 @@
       }
     ],
     "Verbindungen": [],
-    "Nord": "HOE-0007",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": null,
@@ -8963,7 +8963,7 @@
     "Nord": "HOE-0030",
     "Süd": null,
     "Ost": "HOE-0009",
-    "West": "HOE-0036",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -9217,7 +9217,7 @@
       "HOE-0018"
     ],
     "Nord": "HOE-0016",
-    "Süd": "HOE-0018",
+    "Süd": null,
     "Ost": "HOE-0018",
     "West": null,
     "Trainer": [],
@@ -9267,7 +9267,7 @@
     "Nord": "HOE-0017",
     "Süd": "HOE-0019",
     "Ost": null,
-    "West": "HOE-0017",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -9314,7 +9314,7 @@
     ],
     "Nord": "HOE-0018",
     "Süd": "HOE-0021",
-    "Ost": "HOE-0020",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -9443,7 +9443,7 @@
     ],
     "Nord": "HOE-0024",
     "Süd": "HOE-0022",
-    "Ost": "HOE-0024",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -9495,7 +9495,7 @@
       "HOE-0023"
     ],
     "Nord": null,
-    "Süd": "HOE-0023",
+    "Süd": null,
     "Ost": null,
     "West": "HOE-0023",
     "Trainer": [],
@@ -9537,7 +9537,7 @@
     ],
     "Nord": "HOE-0023",
     "Süd": "HOE-0007",
-    "Ost": "HOE-0026",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -9646,7 +9646,7 @@
     "Nord": "HOE-0028",
     "Süd": "HOE-0015",
     "Ost": "HOE-0033",
-    "West": "HOE-0028",
+    "West": null,
     "Trainer": [
       {
         "Id": "HOE-T-006",
@@ -9830,9 +9830,9 @@
     "Verbindungen": [
       "HOE-0031"
     ],
-    "Nord": "HOE-0028",
-    "Süd": "HOE-0012",
-    "Ost": "HOE-0031",
+    "Nord": null,
+    "Süd": null,
+    "Ost": null,
     "West": "HOE-0031",
     "Trainer": [
       {
@@ -9936,9 +9936,9 @@
       "HOE-0032",
       "HOE-0030"
     ],
-    "Nord": "HOE-0046",
+    "Nord": null,
     "Süd": "HOE-0032",
-    "Ost": "HOE-0030",
+    "Ost": null,
     "West": "HOE-0030",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -10174,7 +10174,7 @@
       "HOE-0015"
     ],
     "Nord": null,
-    "Süd": "HOE-0069",
+    "Süd": null,
     "Ost": "HOE-0015",
     "West": "HOE-0038",
     "Trainer": [],
@@ -10382,7 +10382,7 @@
     "Verbindungen": [
       "HOE-0040"
     ],
-    "Nord": "HOE-0040",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "HOE-0040",
@@ -10515,7 +10515,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "HOE-0042",
+    "Ost": null,
     "West": "HOE-0042",
     "Trainer": [
       {
@@ -10571,7 +10571,7 @@
       "HOE-0050",
       "HOE-0042"
     ],
-    "Nord": "HOE-0042",
+    "Nord": null,
     "Süd": null,
     "Ost": "HOE-0042",
     "West": "HOE-0050",
@@ -10722,7 +10722,7 @@
     ],
     "Nord": "HOE-0042",
     "Süd": "HOE-0048",
-    "Ost": "HOE-0048",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -10773,7 +10773,7 @@
     "Verbindungen": [
       "HOE-0047"
     ],
-    "Nord": "HOE-0047",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "HOE-0047",
@@ -10925,7 +10925,7 @@
     ],
     "Nord": "HOE-0053",
     "Süd": "HOE-0051",
-    "Ost": "HOE-0053",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -10989,7 +10989,7 @@
       "HOE-0052"
     ],
     "Nord": null,
-    "Süd": "HOE-0052",
+    "Süd": null,
     "Ost": null,
     "West": "HOE-0052",
     "Trainer": [],
@@ -11089,7 +11089,7 @@
     "Verbindungen": [
       "HOE-0054"
     ],
-    "Nord": "HOE-0054",
+    "Nord": null,
     "Süd": "HOE-0054",
     "Ost": null,
     "West": null,
@@ -11273,7 +11273,7 @@
     ],
     "Nord": "HOE-0057",
     "Süd": "HOE-0059",
-    "Ost": "HOE-0059",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -11318,7 +11318,7 @@
     "Verbindungen": [
       "HOE-0058"
     ],
-    "Nord": "HOE-0058",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "HOE-0058",
@@ -11513,7 +11513,7 @@
     ],
     "Nord": "HOE-0061",
     "Süd": "HOE-0063",
-    "Ost": "HOE-0074",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -11698,7 +11698,7 @@
     ],
     "Nord": "HOE-0065",
     "Süd": "HOE-0067",
-    "Ost": "HOE-0067",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -11736,7 +11736,7 @@
     "Verbindungen": [
       "HOE-0066"
     ],
-    "Nord": "HOE-0066",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "HOE-0066",
@@ -11928,7 +11928,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "HOE-0072",
+    "Ost": null,
     "West": "HOE-0058",
     "Trainer": [
       {
@@ -12263,7 +12263,7 @@
     "Nord": "SIN-0003",
     "Süd": "SIN-0001",
     "Ost": "SIN-0004",
-    "West": "SIN-0004",
+    "West": null,
     "Trainer": [
       {
         "Id": "SIN-K-001",
@@ -12349,7 +12349,7 @@
       "SIN-0002"
     ],
     "Nord": null,
-    "Süd": "SIN-0002",
+    "Süd": null,
     "Ost": null,
     "West": "SIN-0002",
     "Trainer": [],
@@ -12438,7 +12438,7 @@
       "SIN-0006",
       "SIN-0004"
     ],
-    "Nord": "SIN-0006",
+    "Nord": null,
     "Süd": null,
     "Ost": "SIN-0004",
     "West": "SIN-0006",
@@ -12791,7 +12791,7 @@
     "Nord": "SIN-0015",
     "Süd": "SIN-0011",
     "Ost": null,
-    "West": "SIN-0015",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -12877,7 +12877,7 @@
       "SIN-0013"
     ],
     "Nord": null,
-    "Süd": "SIN-0013",
+    "Süd": null,
     "Ost": "SIN-0013",
     "West": "SIN-0017",
     "Trainer": [],
@@ -13062,9 +13062,9 @@
     "Verbindungen": [
       "SIN-0009"
     ],
-    "Nord": "SIN-0019",
+    "Nord": null,
     "Süd": "SIN-0009",
-    "Ost": "SIN-0021",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -13134,7 +13134,7 @@
       "SIN-0020",
       "SIN-0022"
     ],
-    "Nord": "SIN-0055",
+    "Nord": null,
     "Süd": "SIN-0055",
     "Ost": "SIN-0022",
     "West": "SIN-0020",
@@ -13247,7 +13247,7 @@
       "SIN-0026",
       "SIN-0023"
     ],
-    "Nord": "SIN-0025",
+    "Nord": null,
     "Süd": null,
     "Ost": "SIN-0023",
     "West": "SIN-0026",
@@ -13347,7 +13347,7 @@
     ],
     "Nord": "SIN-0028",
     "Süd": "SIN-0024",
-    "Ost": "SIN-0024",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -13498,7 +13498,7 @@
       "SIN-0030",
       "SIN-0028"
     ],
-    "Nord": "SIN-0030",
+    "Nord": null,
     "Süd": null,
     "Ost": "SIN-0028",
     "West": "SIN-0030",
@@ -13761,7 +13761,7 @@
       "SIN-0036",
       "SIN-0034"
     ],
-    "Nord": "SIN-0057",
+    "Nord": null,
     "Süd": null,
     "Ost": "SIN-0034",
     "West": "SIN-0036",
@@ -13974,7 +13974,7 @@
       "SIN-0041",
       "SIN-0039"
     ],
-    "Nord": "SIN-0041",
+    "Nord": null,
     "Süd": null,
     "Ost": "SIN-0039",
     "West": "SIN-0041",
@@ -14065,7 +14065,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "SIN-0041",
+    "Ost": null,
     "West": "SIN-0041",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -14258,7 +14258,7 @@
     "Verbindungen": [
       "SIN-0035"
     ],
-    "Nord": "SIN-0049",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "SIN-0035",
@@ -14522,7 +14522,7 @@
     "Verbindungen": [
       "SIN-0052"
     ],
-    "Nord": "SIN-0054",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": "SIN-0052",
@@ -14717,7 +14717,7 @@
     "Verbindungen": [
       "SIN-0021"
     ],
-    "Nord": "SIN-0021",
+    "Nord": null,
     "Süd": "SIN-0021",
     "Ost": null,
     "West": null,
@@ -15019,7 +15019,7 @@
     "Verbindungen": [
       "SIN-0060"
     ],
-    "Nord": "SIN-0060",
+    "Nord": null,
     "Süd": "SIN-0060",
     "Ost": null,
     "West": null,
@@ -16222,7 +16222,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "UNO-0016",
+    "Ost": null,
     "West": "KAL-0008",
     "Trainer": [
       {
@@ -17177,8 +17177,8 @@
     ],
     "Nord": "KAL-0021",
     "Süd": "KAL-0019",
-    "Ost": "UNO-0032",
-    "West": "UNO-0034",
+    "Ost": null,
+    "West": null,
     "Trainer": [
       {
         "Id": "UNO-K-017",
@@ -17348,7 +17348,7 @@
       "KAL-0021",
       "UNO-0036"
     ],
-    "Nord": "UNO-0036",
+    "Nord": null,
     "Süd": null,
     "Ost": "UNO-0036",
     "West": "KAL-0021",
@@ -17388,10 +17388,10 @@
     "Verbindungen": [
       "UNO-0035"
     ],
-    "Nord": "UNO-0037",
+    "Nord": null,
     "Süd": "UNO-0035",
     "Ost": null,
-    "West": "UNO-0035",
+    "West": null,
     "Trainer": [
       {
         "Id": "UNO-K-020",
@@ -17685,7 +17685,7 @@
     "Verbindungen": [
       "KAL-0041"
     ],
-    "Nord": "UNO-0040",
+    "Nord": null,
     "Süd": "KAL-0041",
     "Ost": null,
     "West": null,
@@ -18498,7 +18498,7 @@
     ],
     "Nord": "KAL-0003",
     "Süd": "KAL-0001",
-    "Ost": "ALO-0006",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -18686,7 +18686,7 @@
     ],
     "Nord": "KAL-0005",
     "Süd": "KAL-0003",
-    "Ost": "KAL-0005",
+    "Ost": null,
     "West": null,
     "Trainer": [
       {
@@ -18810,7 +18810,7 @@
       "KAL-0006"
     ],
     "Nord": null,
-    "Süd": "KAL-0004",
+    "Süd": null,
     "Ost": "KAL-0006",
     "West": "KAL-0004",
     "Trainer": [
@@ -18892,7 +18892,7 @@
       "KAL-0007",
       "KAL-0005"
     ],
-    "Nord": "ALO-0008",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0005",
     "West": "KAL-0007",
@@ -19073,8 +19073,8 @@
       "KAL-0009",
       "KAL-0007"
     ],
-    "Nord": "ALO-0010",
-    "Süd": "ALO-0008",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0007",
     "West": "KAL-0009",
     "Trainer": [
@@ -19178,8 +19178,8 @@
       "KAL-0011",
       "KAL-0009"
     ],
-    "Nord": "GAL-0013",
-    "Süd": "ALO-0010",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0009",
     "West": "KAL-0011",
     "Trainer": [
@@ -19332,8 +19332,8 @@
       "KAL-0013",
       "KAL-0011"
     ],
-    "Nord": "GAL-0016",
-    "Süd": "GAL-0013",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0011",
     "West": "KAL-0013",
     "Trainer": [
@@ -19391,7 +19391,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "KAL-0012",
+    "Ost": null,
     "West": "KAL-0012",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -19461,8 +19461,8 @@
       "KAL-0015",
       "KAL-0012"
     ],
-    "Nord": "UNO-0025",
-    "Süd": "GAL-0016",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0012",
     "West": "KAL-0015",
     "Trainer": [
@@ -19585,8 +19585,8 @@
       "KAL-0017",
       "KAL-0015"
     ],
-    "Nord": "GAL-0021",
-    "Süd": "GAL-0019",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0015",
     "West": "KAL-0017",
     "Trainer": [
@@ -19698,7 +19698,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "KAL-0019",
+    "Ost": null,
     "West": "KAL-0019",
     "Trainer": [
       {
@@ -19779,8 +19779,8 @@
       "KAL-0018",
       "KAL-0017"
     ],
-    "Nord": "UNO-0033",
-    "Süd": "GAL-0021",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0017",
     "West": "KAL-0018",
     "Trainer": [
@@ -19878,8 +19878,8 @@
       "KAL-0022",
       "KAL-0020"
     ],
-    "Nord": "GAL-0026",
-    "Süd": "UNO-0033",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0020",
     "West": "KAL-0022",
     "Trainer": [
@@ -19936,7 +19936,7 @@
       "KAL-0023",
       "KAL-0021"
     ],
-    "Nord": "KAL-0046",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0021",
     "West": "KAL-0023",
@@ -20014,7 +20014,7 @@
       "KAL-0022"
     ],
     "Nord": null,
-    "Süd": "KAN-0019",
+    "Süd": null,
     "Ost": "KAL-0022",
     "West": "KAL-0024",
     "Trainer": [
@@ -20235,7 +20235,7 @@
       "KAL-0009",
       "KAL-0027"
     ],
-    "Nord": "KAN-0019",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0027",
     "West": "KAL-0009",
@@ -20335,7 +20335,7 @@
       "KAL-0009"
     ],
     "Nord": null,
-    "Süd": "UNO-0053",
+    "Süd": null,
     "Ost": "KAL-0009",
     "West": "KAL-0030",
     "Trainer": [
@@ -20427,7 +20427,7 @@
       "KAL-0032",
       "KAL-0030"
     ],
-    "Nord": "UNO-0045",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0030",
     "West": "KAL-0032",
@@ -20617,7 +20617,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "KAL-0033",
+    "Ost": null,
     "West": "KAL-0033",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -20676,7 +20676,7 @@
       "KAL-0037"
     ],
     "Nord": null,
-    "Süd": "KAN-0032",
+    "Süd": null,
     "Ost": "KAL-0037",
     "West": "KAL-0035",
     "Trainer": [
@@ -20870,8 +20870,8 @@
       "KAL-0042",
       "KAL-0038"
     ],
-    "Nord": "UNO-0041",
-    "Süd": "KAN-0039",
+    "Nord": null,
+    "Süd": null,
     "Ost": "KAL-0038",
     "West": "KAL-0042",
     "Trainer": [
@@ -20942,7 +20942,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "KAL-0041",
+    "Ost": null,
     "West": "KAL-0041",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -20994,7 +20994,7 @@
       "KAL-0040",
       "KAL-0042"
     ],
-    "Nord": "KAN-0038",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0042",
     "West": "KAL-0040",
@@ -21216,7 +21216,7 @@
       "KAL-0043",
       "KAL-0045"
     ],
-    "Nord": "KAL-0045",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0045",
     "West": "KAL-0043",
@@ -21259,7 +21259,7 @@
     "Nord": null,
     "Süd": "KAL-0044",
     "Ost": null,
-    "West": "KAL-0044",
+    "West": null,
     "Trainer": [
       {
         "Id": "KAL-K-020",
@@ -21503,7 +21503,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "KAL-0026",
+    "Ost": null,
     "West": "KAL-0026",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -21667,7 +21667,7 @@
     "Arena": null,
     "WildMonster": [],
     "Verbindungen": [],
-    "Nord": "KAL-0053",
+    "Nord": null,
     "Süd": null,
     "Ost": null,
     "West": null,
@@ -21780,7 +21780,7 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": "ALO-0002",
+    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -22136,7 +22136,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0040",
+    "Ost": null,
     "West": "KAL-0002",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -22216,7 +22216,7 @@
     "Nord": "KAL-0008",
     "Süd": "KAL-0006",
     "Ost": null,
-    "West": "ALO-0009",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -22304,8 +22304,8 @@
     ],
     "Nord": "KAL-0010",
     "Süd": "KAL-0008",
-    "Ost": "ALO-0009",
-    "West": "ALO-0011",
+    "Ost": null,
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -22418,7 +22418,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0011",
+    "Ost": null,
     "West": "KAL-0010",
     "Trainer": [
       {
@@ -22753,7 +22753,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0016",
+    "Ost": null,
     "West": "KAL-0016",
     "Trainer": [
       {
@@ -22941,7 +22941,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0021",
+    "Ost": null,
     "West": "ALO-0019",
     "Trainer": [
       {
@@ -23047,7 +23047,7 @@
     "Nord": "KAL-0021",
     "Süd": "KAL-0019",
     "Ost": null,
-    "West": "ALO-0023",
+    "West": null,
     "Trainer": [
       {
         "Id": "ALO-KAH-003",
@@ -23164,7 +23164,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0023",
+    "Ost": null,
     "West": "KAL-0021",
     "Trainer": [
       {
@@ -23406,7 +23406,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0028",
+    "Ost": null,
     "West": "KAL-0028",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -23632,7 +23632,7 @@
     "Nord": "ALO-0034",
     "Süd": null,
     "Ost": null,
-    "West": "ALO-0034",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -23678,7 +23678,7 @@
       "ALO-0033"
     ],
     "Nord": null,
-    "Süd": "ALO-0033",
+    "Süd": null,
     "Ost": "ALO-0033",
     "West": "ALO-0035",
     "Trainer": [],
@@ -23906,7 +23906,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "ALO-0039",
+    "Ost": null,
     "West": "ALO-0035",
     "Trainer": [
       {
@@ -24397,7 +24397,7 @@
     "Nord": "KAL-0004",
     "Süd": "KAL-0002",
     "Ost": null,
-    "West": "GAL-0004",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -24490,7 +24490,7 @@
     ],
     "Nord": null,
     "Süd": null,
-    "Ost": "GAL-0004",
+    "Ost": null,
     "West": "KAL-0004",
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -24543,7 +24543,7 @@
       "GAL-0006",
       "KAL-0010"
     ],
-    "Nord": "GAL-0012",
+    "Nord": null,
     "Süd": "GAL-0003",
     "Ost": "KAL-0010",
     "West": "GAL-0006",
@@ -24775,8 +24775,8 @@
     ],
     "Nord": "KAL-0012",
     "Süd": "KAL-0010",
-    "Ost": "GAL-0012",
-    "West": "GAL-0014",
+    "Ost": null,
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -24899,7 +24899,7 @@
     "Nord": "KAL-0014",
     "Süd": "KAL-0012",
     "Ost": null,
-    "West": "GAL-0017",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -24991,7 +24991,7 @@
       "KAL-0014",
       "KAL-0016"
     ],
-    "Nord": "GAL-0019",
+    "Nord": null,
     "Süd": null,
     "Ost": "KAL-0016",
     "West": "KAL-0014",
@@ -25035,7 +25035,7 @@
     "Nord": "KAL-0016",
     "Süd": "GAL-0018",
     "Ost": null,
-    "West": "GAL-0020",
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -25116,8 +25116,8 @@
     ],
     "Nord": "KAL-0019",
     "Süd": "KAL-0016",
-    "Ost": "GAL-0020",
-    "West": "GAL-0022",
+    "Ost": null,
+    "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
     "HatMarkt": false,
@@ -25211,7 +25211,7 @@
     ],
     "Nord": "KAL-0014",
     "Süd": null,
-    "Ost": "GAL-0017",
+    "Ost": null,
     "West": "KAL-0012",
     "Trainer": [
       {
@@ -25362,7 +25362,7 @@
     ],
     "Nord": "GAL-0027",
     "Süd": "KAL-0021",
-    "Ost": "GAL-0025",
+    "Ost": null,
     "West": null,
     "Trainer": [],
     "HatMonsterCenter": false,
@@ -25739,7 +25739,7 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0002",
-    "Süd": "PAL-0002",
+    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25835,7 +25835,7 @@
       "PAL-0001"
     ],
     "Nord": "PAL-0001",
-    "Süd": "PAL-0003",
+    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
