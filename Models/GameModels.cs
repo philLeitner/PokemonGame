@@ -268,7 +268,7 @@ public class Ort
     public List<GesprächsNPC> NPCs { get; set; } = new();
     // ─── Richtungs-Sperren (pro Richtung eigene Bedingung) ───────────────────────────
     public RichtungsSperre? SperrNord { get; set; } = null;
-    public RichtungsSperre? SperrSüd  { get; set; } = null;
+    public RichtungsSperre? SperrSued  { get; set; } = null;
     public RichtungsSperre? SperrOst  { get; set; } = null;
     public RichtungsSperre? SperrWest { get; set; } = null;
     // Ecken

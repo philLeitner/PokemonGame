@@ -115,7 +115,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "2baeaa70";
+            const string ortVersion = "aee1f6c8";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
@@ -241,7 +241,7 @@ public class GameService
         var sperre = richtung switch
         {
             "Nord" => vonOrt.SperrNord,
-            "Süd"  => vonOrt.SperrSüd,
+            "Süd"  => vonOrt.SperrSued,
             "Ost"  => vonOrt.SperrOst,
             "West" => vonOrt.SperrWest,
             "NW"   => vonOrt.SperrNW,
