@@ -450,7 +450,7 @@
             else if (aktOrt.Ost == ausgewähltOrt.Id) richtung = "Ost";
             else if (aktOrt.West == ausgewähltOrt.Id) richtung = "West";
             else if (aktOrt.Teleport == ausgewähltOrt.Id) richtung = "Teleport";
-            else if (aktOrt.Unterirdisch == ausgewähltOrt.Id) richtung = "Unterirdisch";
+            else if (aktOrt.Untergrund == ausgewähltOrt.Id) richtung = "Untergrund";
         }
         var fehler = Game.OrtBetreten(ausgewähltOrt.Id, richtung);
         if (fehler != null)
