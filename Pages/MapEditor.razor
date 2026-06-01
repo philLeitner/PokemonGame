@@ -1,6 +1,7 @@
 @inject GameService Game
 @inject LocalStorageService Storage
 @inject IJSRuntime JS
+@inject HttpClient Http
 @implements IDisposable
 
 <div class="editor-screen">
@@ -1237,8 +1238,17 @@
             }
         }
 
-        // Neue Daten laden (erste Nutzung oder neue Version)
-        editorOrte = WeltData.AlleOrte();
+        // Neue Daten per HTTP laden (funktioniert in Blazor WASM / GitHub Pages)
+        try
+        {
+            var opts = new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var geladen = await Http.GetFromJsonAsync<List<Ort>>("data/weltkarte_import.json", opts);
+            if (geladen?.Any() == true) editorOrte = geladen;
+        }
+        catch
+        {
+            editorOrte = WeltData.AlleOrte();
+        }
         // Version im LocalStorage merken
         await Storage.SetItemAsync("editor_orte_version", DatenVersion);
         // Neue Daten sofort speichern damit sie beim nächsten Start verfügbar sind

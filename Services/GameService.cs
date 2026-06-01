@@ -112,7 +112,9 @@ public class GameService
                 }).ToList();
             }
 
-            // Orte aus LocalStorage laden (mit Versions-Check)
+            // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
+            LadeStatus = "Lade Weltkarte...";
+            Notify();
             const string ortVersion = "77cce2c0";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
@@ -129,12 +131,18 @@ public class GameService
                     catch { }
                 }
             }
-            // Fallback: Standard-Daten laden und im LocalStorage speichern
-            AlleOrte = WeltData.AlleOrte();
-            await _ls.SetItemAsync("editor_orte_version", ortVersion);
-            var neueOrteJson = System.Text.Json.JsonSerializer.Serialize(AlleOrte,
-                new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = null });
-            await _ls.SetItemAsync("editor_orte", neueOrteJson);
+            // Fallback: JSON per HTTP laden (funktioniert in Blazor WASM / GitHub Pages)
+            var ortOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var orteHttp = await _http.GetFromJsonAsync<List<Ort>>("data/weltkarte_import.json", ortOpts);
+            if (orteHttp?.Any() == true)
+            {
+                AlleOrte = orteHttp;
+                // Im LocalStorage speichern für nächsten Start
+                await _ls.SetItemAsync("editor_orte_version", ortVersion);
+                var neueOrteJson = System.Text.Json.JsonSerializer.Serialize(AlleOrte,
+                    new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = null });
+                await _ls.SetItemAsync("editor_orte", neueOrteJson);
+            }
             OrteLaden_Fertig:
             DatenGeladen = true;
             LadeStatus = "Fertig!";
