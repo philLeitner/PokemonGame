@@ -448,8 +448,8 @@
                         <div class="kompass-süd">
                             <label class="kompass-label">⬇️ Süd</label>
                             <select class="editor-input kompass-select"
-                                    value="@(ort.Süd ?? "")"
-                                    @onchange="e => { var v = e.Value?.ToString(); ort.Süd = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
+                                    value="@(ort.Sued ?? "")"
+                                    @onchange="e => { var v = e.Value?.ToString(); ort.Sued = string.IsNullOrEmpty(v) ? null : v; SyncVerbindungen(ort); Speichern(); }">
                                 <option value="">— keine —</option>
                                                                 @foreach (var o in editorOrte.Where(o => o.Id != ort.Id && SameRegion(o, ort)).OrderBy(o => o.Name))
                                 {
@@ -1213,7 +1213,7 @@
         .ThenBy(o => o.Name);
 
     // Aktuelle Daten-Version – bei neuer weltkarte_import.json hier anpassen
-    private const string DatenVersion = "aee1f6c8";
+    private const string DatenVersion = "aeef2b4e";
 
     protected override async Task OnInitializedAsync()
     {
@@ -1366,7 +1366,7 @@
     {
         var neu = new List<string>();
         if (!string.IsNullOrEmpty(ort.Nord)) neu.Add(ort.Nord);
-        if (!string.IsNullOrEmpty(ort.Süd)) neu.Add(ort.Süd);
+        if (!string.IsNullOrEmpty(ort.Sued)) neu.Add(ort.Sued);
         if (!string.IsNullOrEmpty(ort.Ost)) neu.Add(ort.Ost);
         if (!string.IsNullOrEmpty(ort.West)) neu.Add(ort.West);
         if (!string.IsNullOrEmpty(ort.Untergrund)) neu.Add(ort.Untergrund);

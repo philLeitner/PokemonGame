@@ -13,7 +13,6 @@
       "KAN-0002"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0002",
     "Trainer": [
@@ -73,7 +72,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0002",
@@ -102,7 +102,6 @@
       "KAN-0005"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0005",
     "Trainer": [
@@ -183,7 +182,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0003",
@@ -229,7 +229,6 @@
       "KAN-0005"
     ],
     "Nord": "KAN-0006",
-    "Süd": null,
     "Ost": "KAN-0005",
     "West": null,
     "Trainer": [],
@@ -272,7 +271,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0007",
@@ -305,7 +305,6 @@
       "KAN-0061"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0061",
     "Trainer": [
@@ -387,7 +386,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0011",
@@ -420,7 +420,6 @@
       "KAN-0014"
     ],
     "Nord": null,
-    "Süd": "KAN-0014",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -520,7 +519,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0014"
   },
   {
     "Id": "KAN-0016",
@@ -559,7 +559,6 @@
       "KAN-0020"
     ],
     "Nord": null,
-    "Süd": "KAN-0017",
     "Ost": "KAN-0018",
     "West": "KAN-0020",
     "Trainer": [
@@ -664,7 +663,8 @@
       "ItemId": null,
       "ItemName": null,
       "Hinweis": null
-    }
+    },
+    "Sued": "KAN-0017"
   },
   {
     "Id": "KAN-0028",
@@ -701,7 +701,6 @@
       "KAN-0018"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0018",
     "Trainer": [
@@ -771,7 +770,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0036",
@@ -815,7 +815,6 @@
       "KAN-0038"
     ],
     "Nord": "KAN-0035",
-    "Süd": null,
     "Ost": "KAN-0015",
     "West": "KAN-0032",
     "Trainer": [
@@ -864,7 +863,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0041",
@@ -907,7 +907,6 @@
       "KAN-0042"
     ],
     "Nord": "KAN-0043",
-    "Süd": null,
     "Ost": "KAN-0039",
     "West": null,
     "Trainer": [
@@ -960,7 +959,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0004",
@@ -995,7 +995,6 @@
       "KAN-0003"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0003",
     "West": null,
     "Trainer": [
@@ -1060,7 +1059,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0005",
@@ -1096,7 +1096,6 @@
       "KAN-0003"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0002",
     "West": "KAN-0003",
     "Trainer": [
@@ -1185,7 +1184,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0006",
@@ -1234,7 +1234,6 @@
       "KAN-0062"
     ],
     "Nord": "KAN-0061",
-    "Süd": "KAN-0003",
     "Ost": null,
     "West": "KAN-0062",
     "Trainer": [
@@ -1275,7 +1274,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0003"
   },
   {
     "Id": "KAN-0008",
@@ -1317,7 +1317,6 @@
       "KAN-0010"
     ],
     "Nord": "KAN-0062",
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0010",
     "Trainer": [
@@ -1374,7 +1373,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0009",
@@ -1416,7 +1416,6 @@
       "KAN-0010"
     ],
     "Nord": "KAN-0063",
-    "Süd": "KAN-0010",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -1513,7 +1512,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0010"
   },
   {
     "Id": "KAN-0010",
@@ -1550,7 +1550,6 @@
       "KAN-0012"
     ],
     "Nord": "KAN-0009",
-    "Süd": null,
     "Ost": "KAN-0008",
     "West": "KAN-0012",
     "Trainer": [
@@ -1607,7 +1606,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0012",
@@ -1650,7 +1650,6 @@
       "KAN-0013"
     ],
     "Nord": "KAN-0014",
-    "Süd": null,
     "Ost": "KAN-0010",
     "West": "KAN-0013",
     "Trainer": [
@@ -1707,7 +1706,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0013",
@@ -1731,7 +1731,6 @@
       "KAN-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0012",
     "West": "KAN-0015",
     "Trainer": [
@@ -1772,7 +1771,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0014",
@@ -1819,7 +1819,6 @@
       "KAN-0012"
     ],
     "Nord": null,
-    "Süd": "KAN-0012",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -1889,7 +1888,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0012"
   },
   {
     "Id": "KAN-0015",
@@ -1937,7 +1937,6 @@
       "KAN-0013"
     ],
     "Nord": "KAN-0018",
-    "Süd": null,
     "Ost": "KAN-0013",
     "West": null,
     "Trainer": [
@@ -1978,7 +1977,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0017",
@@ -1994,7 +1994,6 @@
       "KAN-0016"
     ],
     "Nord": "KAN-0016",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -2051,7 +2050,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0018",
@@ -2087,7 +2087,6 @@
       "KAN-0016"
     ],
     "Nord": null,
-    "Süd": "KAN-0015",
     "Ost": null,
     "West": "KAN-0016",
     "Trainer": [
@@ -2128,7 +2127,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0015"
   },
   {
     "Id": "KAN-0019",
@@ -2177,7 +2177,6 @@
       "KAL-0028"
     ],
     "Nord": "KAL-0023",
-    "Süd": "KAL-0028",
     "Ost": null,
     "West": "KAL-0028",
     "Trainer": [
@@ -2234,7 +2233,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0028"
   },
   {
     "Id": "KAN-0020",
@@ -2276,7 +2276,6 @@
       "KAN-0016"
     ],
     "Nord": "KAN-0021",
-    "Süd": null,
     "Ost": "KAN-0016",
     "West": null,
     "Trainer": [
@@ -2333,7 +2332,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0021",
@@ -2375,7 +2375,6 @@
       "KAN-0022"
     ],
     "Nord": null,
-    "Süd": "KAN-0020",
     "Ost": "KAN-0022",
     "West": null,
     "Trainer": [
@@ -2416,7 +2415,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0020"
   },
   {
     "Id": "KAN-0022",
@@ -2453,7 +2453,6 @@
       "KAN-0021"
     ],
     "Nord": "KAN-0026",
-    "Süd": null,
     "Ost": "KAN-0066",
     "West": "KAN-0021",
     "Trainer": [
@@ -2510,7 +2509,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0023",
@@ -2543,7 +2543,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -2584,7 +2583,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0024",
@@ -2601,7 +2601,6 @@
       "KAN-0026"
     ],
     "Nord": null,
-    "Süd": "KAN-0025",
     "Ost": null,
     "West": "KAN-0026",
     "Trainer": [],
@@ -2680,7 +2679,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0025"
   },
   {
     "Id": "KAN-0025",
@@ -2694,7 +2694,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -2767,7 +2766,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0026",
@@ -2808,7 +2808,6 @@
       "KAN-0022"
     ],
     "Nord": null,
-    "Süd": "KAN-0022",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -2849,7 +2848,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0022"
   },
   {
     "Id": "KAN-0027",
@@ -2896,7 +2896,6 @@
       "KAN-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0028",
     "West": null,
     "Trainer": [
@@ -2937,7 +2936,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0029",
@@ -2951,7 +2951,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -2975,7 +2974,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0030",
@@ -3010,7 +3010,6 @@
       "KAN-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0028",
     "West": null,
     "Trainer": [
@@ -3051,7 +3050,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0031",
@@ -3086,7 +3086,6 @@
       "KAN-0002"
     ],
     "Nord": null,
-    "Süd": "KAN-0002",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -3127,7 +3126,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0002"
   },
   {
     "Id": "KAN-0032",
@@ -3163,7 +3163,6 @@
       "KAN-0036"
     ],
     "Nord": "KAL-0036",
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0036",
     "Trainer": [
@@ -3204,7 +3203,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0033",
@@ -3240,7 +3240,6 @@
       "KAL-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0026",
     "West": "KAL-0029",
     "Trainer": [
@@ -3297,7 +3296,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0034",
@@ -3339,7 +3339,6 @@
       "KAL-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0028",
     "West": "KAL-0031",
     "Trainer": [
@@ -3396,7 +3395,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0035",
@@ -3432,7 +3432,6 @@
       "KAL-0029"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0029",
     "West": "KAN-0036",
     "Trainer": [
@@ -3473,7 +3472,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0037",
@@ -3536,7 +3536,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -3577,7 +3576,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0038",
@@ -3613,7 +3613,6 @@
       "KAN-0036"
     ],
     "Nord": null,
-    "Süd": "KAL-0041",
     "Ost": "KAN-0036",
     "West": null,
     "Trainer": [
@@ -3654,7 +3653,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0041"
   },
   {
     "Id": "KAN-0039",
@@ -3684,7 +3684,6 @@
       "KAN-0041"
     ],
     "Nord": "KAL-0039",
-    "Süd": "KAN-0041",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -3725,7 +3724,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0041"
   },
   {
     "Id": "KAN-0040",
@@ -3768,7 +3768,6 @@
       "KAL-0041"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0041",
     "West": "KAL-0041",
     "Trainer": [
@@ -3825,7 +3824,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0042",
@@ -3864,7 +3864,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -3905,7 +3904,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0043",
@@ -3941,7 +3941,6 @@
       "KAN-0041"
     ],
     "Nord": "KAN-0001",
-    "Süd": "KAN-0041",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -3982,7 +3981,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0041"
   },
   {
     "Id": "KAN-0044",
@@ -4009,7 +4009,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -4066,7 +4065,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0045",
@@ -4082,7 +4082,6 @@
       "KAN-0016"
     ],
     "Nord": "KAN-0016",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -4155,7 +4154,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0046",
@@ -4169,7 +4169,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4193,7 +4192,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0047",
@@ -4209,7 +4209,6 @@
       "KAN-0018"
     ],
     "Nord": null,
-    "Süd": "KAN-0018",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4233,7 +4232,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0018"
   },
   {
     "Id": "KAN-0048",
@@ -4250,7 +4250,6 @@
       "KAN-0015"
     ],
     "Nord": "KAN-0014",
-    "Süd": "KAN-0015",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4274,7 +4273,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0015"
   },
   {
     "Id": "KAN-0049",
@@ -4291,7 +4291,6 @@
       "KAN-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0026",
     "West": "KAN-0027",
     "Trainer": [],
@@ -4315,7 +4314,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0050",
@@ -4345,7 +4345,6 @@
       "KAN-0004"
     ],
     "Nord": null,
-    "Süd": "KAN-0051",
     "Ost": "KAN-0004",
     "West": null,
     "Trainer": [],
@@ -4369,7 +4368,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0051"
   },
   {
     "Id": "KAN-0051",
@@ -4435,7 +4435,6 @@
       "KAN-0050"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0050",
     "West": "JOH-0055",
     "Trainer": [
@@ -4556,7 +4555,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0052",
@@ -4572,7 +4572,6 @@
       "KAN-0051"
     ],
     "Nord": null,
-    "Süd": "KAN-0051",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -4693,7 +4692,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0051"
   },
   {
     "Id": "KAN-0053",
@@ -4732,7 +4732,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -4773,7 +4772,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0054",
@@ -4787,7 +4787,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4811,7 +4810,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0055",
@@ -4825,7 +4825,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4849,7 +4848,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0056",
@@ -4863,7 +4863,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4887,7 +4886,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0057",
@@ -4901,7 +4901,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4925,7 +4924,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0058",
@@ -4939,7 +4939,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -4963,7 +4962,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0059",
@@ -4977,7 +4977,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -5001,7 +5000,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0060",
@@ -5015,7 +5015,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -5039,7 +5038,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0001",
@@ -5055,7 +5055,6 @@
       "JOH-0002"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0002",
     "Trainer": [
@@ -5120,7 +5119,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0002",
@@ -5156,7 +5156,6 @@
       "JOH-0001"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0001",
     "West": "JOH-0003",
     "Trainer": [
@@ -5197,7 +5196,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0003",
@@ -5214,7 +5214,6 @@
       "JOH-0002"
     ],
     "Nord": "JOH-0004",
-    "Süd": null,
     "Ost": "JOH-0002",
     "West": null,
     "Trainer": [
@@ -5307,7 +5306,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0004",
@@ -5349,7 +5349,6 @@
       "JOH-0003"
     ],
     "Nord": "JOH-0005",
-    "Süd": "JOH-0003",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -5390,7 +5389,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0003"
   },
   {
     "Id": "JOH-0005",
@@ -5426,7 +5426,6 @@
       "JOH-0006"
     ],
     "Nord": null,
-    "Süd": "JOH-0004",
     "Ost": null,
     "West": "JOH-0006",
     "Trainer": [
@@ -5467,7 +5466,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0004"
   },
   {
     "Id": "JOH-0006",
@@ -5501,7 +5501,6 @@
       "JOH-0005"
     ],
     "Nord": null,
-    "Süd": "JOH-0007",
     "Ost": "JOH-0005",
     "West": null,
     "Trainer": [],
@@ -5553,7 +5552,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0007"
   },
   {
     "Id": "JOH-0008",
@@ -5569,7 +5569,6 @@
       "JOH-0007"
     ],
     "Nord": null,
-    "Süd": "JOH-0007",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -5610,7 +5609,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0007"
   },
   {
     "Id": "JOH-0009",
@@ -5640,7 +5640,6 @@
       "JOH-0010"
     ],
     "Nord": "JOH-0007",
-    "Süd": "JOH-0010",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -5681,7 +5680,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0010"
   },
   {
     "Id": "JOH-0010",
@@ -5698,7 +5698,6 @@
       "JOH-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0022",
     "West": "JOH-0009",
     "Trainer": [],
@@ -5722,7 +5721,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0011",
@@ -5764,7 +5764,6 @@
       "JOH-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0012",
     "West": "JOH-0009",
     "Trainer": [
@@ -5805,7 +5804,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0012",
@@ -5822,7 +5822,6 @@
       "JOH-0013"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0013",
     "West": "JOH-0011",
     "Trainer": [],
@@ -5846,7 +5845,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0014",
@@ -5862,7 +5862,6 @@
       "JOH-0013"
     ],
     "Nord": null,
-    "Süd": "JOH-0013",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -5919,7 +5918,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0013"
   },
   {
     "Id": "JOH-0015",
@@ -5936,7 +5936,6 @@
       "JOH-0013"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0013",
     "West": "JOH-0016",
     "Trainer": [],
@@ -5960,7 +5959,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0016",
@@ -5984,7 +5984,6 @@
       "JOH-0015"
     ],
     "Nord": "JOH-0017",
-    "Süd": "JOH-0015",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -6025,7 +6024,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0015"
   },
   {
     "Id": "JOH-0018",
@@ -6041,7 +6041,6 @@
       "JOH-0017"
     ],
     "Nord": null,
-    "Süd": "JOH-0017",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -6098,7 +6097,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0017"
   },
   {
     "Id": "JOH-0019",
@@ -6114,7 +6114,6 @@
       "JOH-0017"
     ],
     "Nord": null,
-    "Süd": "JOH-0017",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -6138,7 +6137,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0017"
   },
   {
     "Id": "JOH-0020",
@@ -6168,7 +6168,6 @@
       "JOH-0017"
     ],
     "Nord": "JOH-0021",
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0017",
     "Trainer": [
@@ -6209,7 +6208,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0021",
@@ -6239,7 +6239,6 @@
       "JOH-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0022",
     "West": "JOH-0020",
     "Trainer": [
@@ -6280,7 +6279,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0022",
@@ -6305,7 +6305,6 @@
       "JOH-0023"
     ],
     "Nord": null,
-    "Süd": "JOH-0010",
     "Ost": "JOH-0023",
     "West": "JOH-0007",
     "Trainer": [
@@ -6346,7 +6345,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0010"
   },
   {
     "Id": "JOH-0023",
@@ -6370,7 +6370,6 @@
       "JOH-0022"
     ],
     "Nord": "JOH-0024",
-    "Süd": "JOH-0022",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -6394,7 +6393,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0022"
   },
   {
     "Id": "JOH-0025",
@@ -6410,7 +6410,6 @@
       "JOH-0024"
     ],
     "Nord": null,
-    "Süd": "JOH-0024",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -6451,7 +6450,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0024"
   },
   {
     "Id": "JOH-0026",
@@ -6474,7 +6474,6 @@
       "JOH-0024"
     ],
     "Nord": null,
-    "Süd": "JOH-0024",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -6498,7 +6497,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0024"
   },
   {
     "Id": "JOH-0027",
@@ -6528,7 +6528,6 @@
       "JOH-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0024",
     "West": "JOH-0029",
     "Trainer": [
@@ -6585,7 +6584,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0028",
@@ -6609,7 +6609,6 @@
       "JOH-0027"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0027",
     "West": "JOH-0029",
     "Trainer": [
@@ -6650,7 +6649,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0030",
@@ -6666,7 +6666,6 @@
       "JOH-0029"
     ],
     "Nord": null,
-    "Süd": "JOH-0029",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -6707,7 +6706,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0029"
   },
   {
     "Id": "JOH-0031",
@@ -6731,7 +6731,6 @@
       "JOH-0029"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0029",
     "West": "JOH-0034",
     "Trainer": [
@@ -6772,7 +6771,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0032",
@@ -6790,7 +6790,6 @@
       "JOH-0031"
     ],
     "Nord": null,
-    "Süd": "JOH-0033",
     "Ost": "JOH-0031",
     "West": "JOH-0034",
     "Trainer": [],
@@ -6814,7 +6813,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0033"
   },
   {
     "Id": "JOH-0033",
@@ -6844,7 +6844,6 @@
       "JOH-0032"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0032",
     "West": "JOH-0032",
     "Trainer": [
@@ -6885,7 +6884,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0035",
@@ -6909,7 +6909,6 @@
       "JOH-0034"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0034",
     "West": "JOH-0036",
     "Trainer": [],
@@ -6933,7 +6932,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0036",
@@ -6956,7 +6956,6 @@
       "JOH-0035"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0035",
     "West": null,
     "Trainer": [],
@@ -6980,7 +6979,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0037",
@@ -7043,7 +7043,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -7084,7 +7083,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0038",
@@ -7100,7 +7100,6 @@
       "JOH-0035"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0035",
     "Trainer": [],
@@ -7124,7 +7123,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0039",
@@ -7149,7 +7149,6 @@
       "JOH-0041"
     ],
     "Nord": null,
-    "Süd": "JOH-0040",
     "Ost": "JOH-0041",
     "West": "JOH-0024",
     "Trainer": [
@@ -7190,7 +7189,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0040"
   },
   {
     "Id": "JOH-0040",
@@ -7214,7 +7214,6 @@
       "JOH-0039"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0039",
     "West": "JOH-0039",
     "Trainer": [],
@@ -7238,7 +7237,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0042",
@@ -7254,7 +7254,6 @@
       "JOH-0041"
     ],
     "Nord": null,
-    "Süd": "JOH-0041",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -7327,7 +7326,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0041"
   },
   {
     "Id": "JOH-0043",
@@ -7351,7 +7351,6 @@
       "JOH-0041"
     ],
     "Nord": "JOH-0044",
-    "Süd": "JOH-0041",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -7375,7 +7374,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0041"
   },
   {
     "Id": "JOH-0044",
@@ -7398,7 +7398,6 @@
       "JOH-0043"
     ],
     "Nord": null,
-    "Süd": "JOH-0043",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -7439,7 +7438,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0043"
   },
   {
     "Id": "JOH-0045",
@@ -7469,7 +7469,6 @@
       "JOH-0046"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0046",
     "West": "JOH-0041",
     "Trainer": [
@@ -7510,7 +7509,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0046",
@@ -7540,7 +7540,6 @@
       "JOH-0047"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0047",
     "West": "JOH-0045",
     "Trainer": [
@@ -7581,7 +7580,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0047",
@@ -7612,7 +7612,6 @@
       "JOH-0049"
     ],
     "Nord": null,
-    "Süd": "JOH-0048",
     "Ost": "JOH-0049",
     "West": "JOH-0046",
     "Trainer": [
@@ -7685,7 +7684,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0048"
   },
   {
     "Id": "JOH-0048",
@@ -7708,7 +7708,6 @@
       "JOH-0047"
     ],
     "Nord": null,
-    "Süd": "JOH-0047",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -7749,7 +7748,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0047"
   },
   {
     "Id": "JOH-0049",
@@ -7774,7 +7774,6 @@
       "JOH-0050"
     ],
     "Nord": null,
-    "Süd": "JOH-0047",
     "Ost": "JOH-0050",
     "West": "JOH-0006",
     "Trainer": [],
@@ -7798,7 +7797,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0047"
   },
   {
     "Id": "JOH-0050",
@@ -7822,7 +7822,6 @@
       "JOH-0002"
     ],
     "Nord": "JOH-0049",
-    "Süd": "JOH-0002",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -7846,7 +7845,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0002"
   },
   {
     "Id": "JOH-0051",
@@ -7864,7 +7864,6 @@
       "JOH-0053"
     ],
     "Nord": null,
-    "Süd": "JOH-0052",
     "Ost": "JOH-0053",
     "West": "JOH-0001",
     "Trainer": [],
@@ -7888,7 +7887,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0052"
   },
   {
     "Id": "JOH-0052",
@@ -7912,7 +7912,6 @@
       "JOH-0051"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0051",
     "West": "JOH-0051",
     "Trainer": [],
@@ -7936,7 +7935,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0053",
@@ -7952,7 +7952,6 @@
       "JOH-0051"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0051",
     "Trainer": [],
@@ -7976,7 +7975,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0054",
@@ -7993,7 +7993,6 @@
       "JOH-0055"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0055",
     "West": "JOH-0053",
     "Trainer": [],
@@ -8017,7 +8016,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0055",
@@ -8033,7 +8033,6 @@
       "JOH-0054"
     ],
     "Nord": null,
-    "Süd": "JOH-0054",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -8154,7 +8153,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "JOH-0054"
   },
   {
     "Id": "JOH-0056",
@@ -8195,7 +8195,6 @@
       "JOH-0057"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0057",
     "Trainer": [
@@ -8252,7 +8251,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0057",
@@ -8268,7 +8268,6 @@
       "JOH-0056"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0056",
     "Trainer": [],
@@ -8292,7 +8291,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0058",
@@ -8308,7 +8308,6 @@
       "JOH-0059"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "JOH-0059",
     "Trainer": [],
@@ -8332,7 +8331,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0059",
@@ -8349,7 +8349,6 @@
       "JOH-0058"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "JOH-0058",
     "West": "JOH-0031",
     "Trainer": [],
@@ -8373,7 +8372,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "JOH-0060",
@@ -8387,7 +8387,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -8411,7 +8410,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0001",
@@ -8428,7 +8428,6 @@
       "HOE-0002"
     ],
     "Nord": "HOE-0004",
-    "Süd": null,
     "Ost": "HOE-0002",
     "West": null,
     "Trainer": [],
@@ -8452,7 +8451,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0002",
@@ -8482,7 +8482,6 @@
       "HOE-0001"
     ],
     "Nord": "HOE-0003",
-    "Süd": "HOE-0001",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -8506,7 +8505,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0001"
   },
   {
     "Id": "HOE-0003",
@@ -8524,7 +8524,6 @@
       "HOE-0005"
     ],
     "Nord": "HOE-0004",
-    "Süd": "HOE-0002",
     "Ost": null,
     "West": "HOE-0005",
     "Trainer": [],
@@ -8548,7 +8547,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0002"
   },
   {
     "Id": "HOE-0004",
@@ -8565,7 +8565,6 @@
       "HOE-0007"
     ],
     "Nord": null,
-    "Süd": "HOE-0003",
     "Ost": null,
     "West": "HOE-0007",
     "Trainer": [
@@ -8630,7 +8629,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0003"
   },
   {
     "Id": "HOE-0005",
@@ -8660,7 +8660,6 @@
       "HOE-0003"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0003",
     "West": "HOE-0006",
     "Trainer": [],
@@ -8684,7 +8683,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0007",
@@ -8702,7 +8702,6 @@
       "HOE-0006"
     ],
     "Nord": null,
-    "Süd": "HOE-0008",
     "Ost": "HOE-0006",
     "West": "HOE-0009",
     "Trainer": [
@@ -8759,7 +8758,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0008"
   },
   {
     "Id": "HOE-0008",
@@ -8786,7 +8786,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -8843,7 +8842,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0010",
@@ -8873,7 +8873,6 @@
       "HOE-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0009",
     "West": "HOE-0011",
     "Trainer": [],
@@ -8897,7 +8896,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0011",
@@ -8914,7 +8914,6 @@
       "HOE-0013"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0013",
     "West": "HOE-0010",
     "Trainer": [],
@@ -8938,7 +8937,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0012",
@@ -8962,7 +8962,6 @@
       "HOE-0009"
     ],
     "Nord": "HOE-0030",
-    "Süd": null,
     "Ost": "HOE-0009",
     "West": null,
     "Trainer": [],
@@ -8986,7 +8985,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0013",
@@ -9010,7 +9010,6 @@
       "HOE-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0015",
     "West": "HOE-0014",
     "Trainer": [],
@@ -9034,7 +9033,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0014",
@@ -9051,7 +9051,6 @@
       "HOE-0011"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0011",
     "West": "HOE-0013",
     "Trainer": [],
@@ -9075,7 +9074,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0016",
@@ -9092,7 +9092,6 @@
       "HOE-0017"
     ],
     "Nord": "HOE-0015",
-    "Süd": "HOE-0017",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -9201,7 +9200,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0017"
   },
   {
     "Id": "HOE-0017",
@@ -9218,7 +9218,6 @@
       "HOE-0018"
     ],
     "Nord": "HOE-0016",
-    "Süd": null,
     "Ost": "HOE-0018",
     "West": null,
     "Trainer": [],
@@ -9242,7 +9241,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0018",
@@ -9266,7 +9266,6 @@
       "HOE-0019"
     ],
     "Nord": "HOE-0017",
-    "Süd": "HOE-0019",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -9290,7 +9289,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0019"
   },
   {
     "Id": "HOE-0019",
@@ -9314,7 +9314,6 @@
       "HOE-0021"
     ],
     "Nord": "HOE-0018",
-    "Süd": "HOE-0021",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -9338,7 +9337,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0021"
   },
   {
     "Id": "HOE-0020",
@@ -9354,7 +9354,6 @@
       "HOE-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0019",
     "Trainer": [],
@@ -9378,7 +9377,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0021",
@@ -9402,7 +9402,6 @@
       "HOE-0022"
     ],
     "Nord": "HOE-0019",
-    "Süd": "HOE-0022",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -9426,7 +9425,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0022"
   },
   {
     "Id": "HOE-0023",
@@ -9443,7 +9443,6 @@
       "HOE-0022"
     ],
     "Nord": "HOE-0024",
-    "Süd": "HOE-0022",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -9467,7 +9466,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0022"
   },
   {
     "Id": "HOE-0024",
@@ -9496,7 +9496,6 @@
       "HOE-0023"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0023",
     "Trainer": [],
@@ -9520,7 +9519,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0025",
@@ -9537,7 +9537,6 @@
       "HOE-0007"
     ],
     "Nord": "HOE-0023",
-    "Süd": "HOE-0007",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -9561,7 +9560,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0007"
   },
   {
     "Id": "HOE-0026",
@@ -9590,7 +9590,6 @@
       "HOE-0025"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0025",
     "Trainer": [],
@@ -9614,7 +9613,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0027",
@@ -9645,7 +9645,6 @@
       "HOE-0033"
     ],
     "Nord": "HOE-0028",
-    "Süd": "HOE-0015",
     "Ost": "HOE-0033",
     "West": null,
     "Trainer": [
@@ -9702,7 +9701,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0015"
   },
   {
     "Id": "HOE-0028",
@@ -9727,7 +9727,6 @@
       "HOE-0027"
     ],
     "Nord": null,
-    "Süd": "HOE-0030",
     "Ost": "HOE-0027",
     "West": "HOE-0029",
     "Trainer": [
@@ -9768,7 +9767,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0030"
   },
   {
     "Id": "HOE-0029",
@@ -9785,7 +9785,6 @@
       "HOE-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0028",
     "West": "HOE-0028",
     "Trainer": [],
@@ -9809,7 +9808,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0030",
@@ -9832,7 +9832,6 @@
       "HOE-0031"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0031",
     "Trainer": [
@@ -9921,7 +9920,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0031",
@@ -9938,7 +9938,6 @@
       "HOE-0030"
     ],
     "Nord": null,
-    "Süd": "HOE-0032",
     "Ost": null,
     "West": "HOE-0030",
     "Trainer": [],
@@ -9962,7 +9961,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0032"
   },
   {
     "Id": "HOE-0033",
@@ -9992,7 +9992,6 @@
       "HOE-0027"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0027",
     "West": "HOE-0034",
     "Trainer": [],
@@ -10016,7 +10015,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0034",
@@ -10033,7 +10033,6 @@
       "HOE-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0033",
     "West": "HOE-0035",
     "Trainer": [],
@@ -10057,7 +10056,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0035",
@@ -10074,7 +10074,6 @@
       "HOE-0034"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0034",
     "West": "HOE-0036",
     "Trainer": [],
@@ -10098,7 +10097,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0036",
@@ -10134,7 +10134,6 @@
       "HOE-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0012",
     "West": "HOE-0035",
     "Trainer": [],
@@ -10158,7 +10157,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0037",
@@ -10175,7 +10175,6 @@
       "HOE-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0015",
     "West": "HOE-0038",
     "Trainer": [],
@@ -10199,7 +10198,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0038",
@@ -10229,7 +10229,6 @@
       "HOE-0037"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0037",
     "West": "HOE-0039",
     "Trainer": [
@@ -10306,7 +10305,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0040",
@@ -10331,7 +10331,6 @@
       "HOE-0039"
     ],
     "Nord": null,
-    "Süd": "HOE-0041",
     "Ost": "HOE-0039",
     "West": "HOE-0042",
     "Trainer": [],
@@ -10355,7 +10354,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0041"
   },
   {
     "Id": "HOE-0041",
@@ -10384,7 +10384,6 @@
       "HOE-0040"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0040",
     "Trainer": [],
@@ -10408,7 +10407,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0042",
@@ -10426,7 +10426,6 @@
       "HOE-0040"
     ],
     "Nord": null,
-    "Süd": "HOE-0044",
     "Ost": "HOE-0040",
     "West": "HOE-0043",
     "Trainer": [],
@@ -10450,7 +10449,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0044"
   },
   {
     "Id": "HOE-0043",
@@ -10515,7 +10515,6 @@
       "HOE-0042"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0042",
     "Trainer": [
@@ -10556,7 +10555,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0044",
@@ -10573,7 +10573,6 @@
       "HOE-0042"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0042",
     "West": "HOE-0050",
     "Trainer": [
@@ -10618,7 +10617,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0045",
@@ -10634,7 +10634,6 @@
       "HOE-0044"
     ],
     "Nord": null,
-    "Süd": "HOE-0044",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -10658,7 +10657,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0044"
   },
   {
     "Id": "HOE-0046",
@@ -10674,7 +10674,6 @@
       "HOE-0031"
     ],
     "Nord": null,
-    "Süd": "HOE-0031",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -10698,7 +10697,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0031"
   },
   {
     "Id": "HOE-0047",
@@ -10722,7 +10722,6 @@
       "HOE-0048"
     ],
     "Nord": "HOE-0042",
-    "Süd": "HOE-0048",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -10746,7 +10745,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0048"
   },
   {
     "Id": "HOE-0048",
@@ -10775,7 +10775,6 @@
       "HOE-0047"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0047",
     "Trainer": [],
@@ -10799,7 +10798,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0049",
@@ -10823,7 +10823,6 @@
       "HOE-0037"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0037",
     "West": "HOE-0047",
     "Trainer": [],
@@ -10847,7 +10846,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0050",
@@ -10877,7 +10877,6 @@
       "HOE-0044"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "HOE-0044",
     "West": "HOE-0051",
     "Trainer": [],
@@ -10901,7 +10900,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0052",
@@ -10925,7 +10925,6 @@
       "HOE-0051"
     ],
     "Nord": "HOE-0053",
-    "Süd": "HOE-0051",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -10949,7 +10948,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0051"
   },
   {
     "Id": "HOE-0053",
@@ -10990,7 +10990,6 @@
       "HOE-0052"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0052",
     "Trainer": [],
@@ -11014,7 +11013,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0054",
@@ -11038,7 +11038,6 @@
       "HOE-0055"
     ],
     "Nord": "HOE-0052",
-    "Süd": "HOE-0055",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11062,7 +11061,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0055"
   },
   {
     "Id": "HOE-0055",
@@ -11091,7 +11091,6 @@
       "HOE-0054"
     ],
     "Nord": null,
-    "Süd": "HOE-0054",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -11148,7 +11147,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0054"
   },
   {
     "Id": "HOE-0056",
@@ -11177,7 +11177,6 @@
       "HOE-0055"
     ],
     "Nord": null,
-    "Süd": "HOE-0055",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11201,7 +11200,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0055"
   },
   {
     "Id": "HOE-0057",
@@ -11225,7 +11225,6 @@
       "HOE-0051"
     ],
     "Nord": "HOE-0054",
-    "Süd": "HOE-0051",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11249,7 +11248,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0051"
   },
   {
     "Id": "HOE-0058",
@@ -11273,7 +11273,6 @@
       "HOE-0059"
     ],
     "Nord": "HOE-0057",
-    "Süd": "HOE-0059",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11297,7 +11296,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0059"
   },
   {
     "Id": "HOE-0059",
@@ -11320,7 +11320,6 @@
       "HOE-0058"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0058",
     "Trainer": [
@@ -11393,7 +11392,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0060",
@@ -11417,7 +11417,6 @@
       "HOE-0061"
     ],
     "Nord": "HOE-0058",
-    "Süd": "HOE-0061",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11441,7 +11440,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0061"
   },
   {
     "Id": "HOE-0061",
@@ -11465,7 +11465,6 @@
       "HOE-0062"
     ],
     "Nord": "HOE-0060",
-    "Süd": "HOE-0062",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11489,7 +11488,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0062"
   },
   {
     "Id": "HOE-0062",
@@ -11513,7 +11513,6 @@
       "HOE-0063"
     ],
     "Nord": "HOE-0061",
-    "Süd": "HOE-0063",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11537,7 +11536,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0063"
   },
   {
     "Id": "HOE-0063",
@@ -11554,7 +11554,6 @@
       "HOE-0064"
     ],
     "Nord": "HOE-0062",
-    "Süd": "HOE-0064",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11578,7 +11577,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0064"
   },
   {
     "Id": "HOE-0064",
@@ -11602,7 +11602,6 @@
       "HOE-0065"
     ],
     "Nord": "HOE-0063",
-    "Süd": "HOE-0065",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11626,7 +11625,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0065"
   },
   {
     "Id": "HOE-0065",
@@ -11650,7 +11650,6 @@
       "HOE-0066"
     ],
     "Nord": "HOE-0064",
-    "Süd": "HOE-0066",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11674,7 +11673,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0066"
   },
   {
     "Id": "HOE-0066",
@@ -11698,7 +11698,6 @@
       "HOE-0067"
     ],
     "Nord": "HOE-0065",
-    "Süd": "HOE-0067",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11722,7 +11721,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "HOE-0067"
   },
   {
     "Id": "HOE-0067",
@@ -11738,7 +11738,6 @@
       "HOE-0066"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0066",
     "Trainer": [],
@@ -11762,7 +11761,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0068",
@@ -11791,7 +11791,6 @@
       "HOE-0027"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0027",
     "Trainer": [],
@@ -11815,7 +11814,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0069",
@@ -11831,7 +11831,6 @@
       "HOE-0037"
     ],
     "Nord": "HOE-0037",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -11855,7 +11854,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0070",
@@ -11871,7 +11871,6 @@
       "HOE-0038"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0038",
     "Trainer": [
@@ -11912,7 +11911,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0071",
@@ -11928,7 +11928,6 @@
       "HOE-0058"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0058",
     "Trainer": [
@@ -12049,7 +12048,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0072",
@@ -12065,7 +12065,6 @@
       "HOE-0071"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0071",
     "Trainer": [
@@ -12106,7 +12105,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0073",
@@ -12120,7 +12120,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12144,7 +12143,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "HOE-0074",
@@ -12167,7 +12167,6 @@
       "HOE-0062"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "HOE-0062",
     "Trainer": [],
@@ -12191,7 +12190,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0001",
@@ -12207,7 +12207,6 @@
       "SIN-0002"
     ],
     "Nord": "SIN-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12231,7 +12230,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0002",
@@ -12262,7 +12262,6 @@
       "SIN-0004"
     ],
     "Nord": "SIN-0003",
-    "Süd": "SIN-0001",
     "Ost": "SIN-0004",
     "West": null,
     "Trainer": [
@@ -12327,7 +12326,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0001"
   },
   {
     "Id": "SIN-0003",
@@ -12350,7 +12350,6 @@
       "SIN-0002"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0002",
     "Trainer": [],
@@ -12374,7 +12373,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0004",
@@ -12392,7 +12392,6 @@
       "SIN-0002"
     ],
     "Nord": null,
-    "Süd": "SIN-0058",
     "Ost": "SIN-0002",
     "West": "SIN-0005",
     "Trainer": [],
@@ -12416,7 +12415,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0058"
   },
   {
     "Id": "SIN-0005",
@@ -12440,7 +12440,6 @@
       "SIN-0004"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0004",
     "West": "SIN-0006",
     "Trainer": [],
@@ -12464,7 +12463,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0006",
@@ -12483,7 +12483,6 @@
       "SIN-0007"
     ],
     "Nord": "SIN-0011",
-    "Süd": "SIN-0005",
     "Ost": "SIN-0007",
     "West": "SIN-0045",
     "Trainer": [
@@ -12548,7 +12547,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0005"
   },
   {
     "Id": "SIN-0007",
@@ -12565,7 +12565,6 @@
       "SIN-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0006",
     "West": "SIN-0008",
     "Trainer": [
@@ -12606,7 +12605,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0008",
@@ -12623,7 +12623,6 @@
       "SIN-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0009",
     "West": "SIN-0007",
     "Trainer": [],
@@ -12647,7 +12646,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0010",
@@ -12663,7 +12663,6 @@
       "SIN-0009"
     ],
     "Nord": null,
-    "Süd": "SIN-0009",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12687,7 +12686,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0009"
   },
   {
     "Id": "SIN-0011",
@@ -12711,7 +12711,6 @@
       "SIN-0006"
     ],
     "Nord": "SIN-0013",
-    "Süd": "SIN-0006",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12735,7 +12734,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0006"
   },
   {
     "Id": "SIN-0012",
@@ -12749,7 +12749,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12773,7 +12772,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0013",
@@ -12790,7 +12790,6 @@
       "SIN-0011"
     ],
     "Nord": "SIN-0015",
-    "Süd": "SIN-0011",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12814,7 +12813,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0011"
   },
   {
     "Id": "SIN-0014",
@@ -12830,7 +12830,6 @@
       "SIN-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0015",
     "Trainer": [],
@@ -12854,7 +12853,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0015",
@@ -12878,7 +12878,6 @@
       "SIN-0013"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0013",
     "West": "SIN-0017",
     "Trainer": [],
@@ -12902,7 +12901,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0016",
@@ -12929,7 +12929,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12953,7 +12952,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0018",
@@ -12969,7 +12969,6 @@
       "SIN-0017"
     ],
     "Nord": null,
-    "Süd": "SIN-0017",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -12993,7 +12992,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0017"
   },
   {
     "Id": "SIN-0019",
@@ -13017,7 +13017,6 @@
       "SIN-0020"
     ],
     "Nord": "SIN-0017",
-    "Süd": "SIN-0020",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -13041,7 +13040,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0020"
   },
   {
     "Id": "SIN-0020",
@@ -13064,7 +13064,6 @@
       "SIN-0009"
     ],
     "Nord": null,
-    "Süd": "SIN-0009",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -13105,7 +13104,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0009"
   },
   {
     "Id": "SIN-0021",
@@ -13136,7 +13136,6 @@
       "SIN-0022"
     ],
     "Nord": null,
-    "Süd": "SIN-0055",
     "Ost": "SIN-0022",
     "West": "SIN-0020",
     "Trainer": [
@@ -13177,7 +13176,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0055"
   },
   {
     "Id": "SIN-0022",
@@ -13201,7 +13201,6 @@
       "SIN-0021"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0021",
     "West": "SIN-0023",
     "Trainer": [],
@@ -13225,7 +13224,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0024",
@@ -13249,7 +13249,6 @@
       "SIN-0023"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0023",
     "West": "SIN-0026",
     "Trainer": [
@@ -13290,7 +13289,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0025",
@@ -13306,7 +13306,6 @@
       "SIN-0024"
     ],
     "Nord": null,
-    "Süd": "SIN-0024",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -13330,7 +13329,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0024"
   },
   {
     "Id": "SIN-0026",
@@ -13347,7 +13347,6 @@
       "SIN-0024"
     ],
     "Nord": "SIN-0028",
-    "Süd": "SIN-0024",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -13371,7 +13370,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0024"
   },
   {
     "Id": "SIN-0027",
@@ -13387,7 +13387,6 @@
       "SIN-0026"
     ],
     "Nord": null,
-    "Süd": "SIN-0026",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -13411,7 +13410,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0026"
   },
   {
     "Id": "SIN-0028",
@@ -13442,7 +13442,6 @@
       "SIN-0038"
     ],
     "Nord": null,
-    "Süd": "SIN-0026",
     "Ost": "SIN-0038",
     "West": "SIN-0029",
     "Trainer": [
@@ -13483,7 +13482,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0026"
   },
   {
     "Id": "SIN-0029",
@@ -13500,7 +13500,6 @@
       "SIN-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0028",
     "West": "SIN-0030",
     "Trainer": [
@@ -13541,7 +13540,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0030",
@@ -13566,7 +13566,6 @@
       "SIN-0017"
     ],
     "Nord": null,
-    "Süd": "SIN-0029",
     "Ost": "SIN-0017",
     "West": "SIN-0021",
     "Trainer": [],
@@ -13590,7 +13589,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0029"
   },
   {
     "Id": "SIN-0031",
@@ -13614,7 +13614,6 @@
       "SIN-0023"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0023",
     "West": "SIN-0032",
     "Trainer": [],
@@ -13638,7 +13637,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0033",
@@ -13667,7 +13667,6 @@
       "SIN-0032"
     ],
     "Nord": null,
-    "Süd": "SIN-0032",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -13691,7 +13690,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0032"
   },
   {
     "Id": "SIN-0034",
@@ -13715,7 +13715,6 @@
       "SIN-0032"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0032",
     "West": "SIN-0035",
     "Trainer": [],
@@ -13739,7 +13738,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0035",
@@ -13763,7 +13763,6 @@
       "SIN-0034"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0034",
     "West": "SIN-0036",
     "Trainer": [],
@@ -13787,7 +13786,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0037",
@@ -13803,7 +13803,6 @@
       "SIN-0036"
     ],
     "Nord": null,
-    "Süd": "SIN-0036",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -13844,7 +13843,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0036"
   },
   {
     "Id": "SIN-0038",
@@ -13868,7 +13868,6 @@
       "SIN-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0028",
     "West": "SIN-0036",
     "Trainer": [],
@@ -13892,7 +13891,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0039",
@@ -13922,7 +13922,6 @@
       "SIN-0021"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0021",
     "West": "SIN-0040",
     "Trainer": [],
@@ -13946,7 +13945,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0040",
@@ -13976,7 +13976,6 @@
       "SIN-0039"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0039",
     "West": "SIN-0041",
     "Trainer": [],
@@ -14000,7 +13999,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0041",
@@ -14018,7 +14018,6 @@
       "SIN-0043"
     ],
     "Nord": null,
-    "Süd": "SIN-0040",
     "Ost": "SIN-0043",
     "West": "SIN-0042",
     "Trainer": [],
@@ -14042,7 +14041,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0040"
   },
   {
     "Id": "SIN-0042",
@@ -14065,7 +14065,6 @@
       "SIN-0041"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0041",
     "Trainer": [],
@@ -14089,7 +14088,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0044",
@@ -14112,7 +14112,6 @@
       "SIN-0043"
     ],
     "Nord": null,
-    "Süd": "SIN-0043",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14136,7 +14135,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0043"
   },
   {
     "Id": "SIN-0045",
@@ -14160,7 +14160,6 @@
       "SIN-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0006",
     "West": "SIN-0046",
     "Trainer": [],
@@ -14184,7 +14183,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0047",
@@ -14213,7 +14213,6 @@
       "SIN-0046"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0046",
     "Trainer": [],
@@ -14237,7 +14236,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0048",
@@ -14260,7 +14260,6 @@
       "SIN-0035"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0035",
     "Trainer": [],
@@ -14284,7 +14283,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0049",
@@ -14302,7 +14302,6 @@
       "SIN-0050"
     ],
     "Nord": null,
-    "Süd": "SIN-0048",
     "Ost": "SIN-0050",
     "West": "SIN-0034",
     "Trainer": [],
@@ -14326,7 +14325,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0048"
   },
   {
     "Id": "SIN-0050",
@@ -14350,7 +14350,6 @@
       "SIN-0049"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0049",
     "West": "SIN-0051",
     "Trainer": [],
@@ -14374,7 +14373,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0051",
@@ -14404,7 +14404,6 @@
       "SIN-0050"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0050",
     "West": "SIN-0052",
     "Trainer": [
@@ -14461,7 +14460,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0052",
@@ -14484,7 +14484,6 @@
       "SIN-0051"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0051",
     "West": null,
     "Trainer": [],
@@ -14508,7 +14507,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0053",
@@ -14524,7 +14524,6 @@
       "SIN-0052"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0052",
     "Trainer": [
@@ -14569,7 +14568,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0054",
@@ -14585,7 +14585,6 @@
       "SIN-0053"
     ],
     "Nord": null,
-    "Süd": "SIN-0053",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -14690,7 +14689,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0053"
   },
   {
     "Id": "SIN-0055",
@@ -14719,7 +14719,6 @@
       "SIN-0021"
     ],
     "Nord": null,
-    "Süd": "SIN-0021",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -14760,7 +14759,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0021"
   },
   {
     "Id": "SIN-0056",
@@ -14783,7 +14783,6 @@
       "SIN-0055"
     ],
     "Nord": null,
-    "Süd": "SIN-0055",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14807,7 +14806,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0055"
   },
   {
     "Id": "SIN-0057",
@@ -14830,7 +14830,6 @@
       "SIN-0035"
     ],
     "Nord": null,
-    "Süd": "SIN-0035",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14854,7 +14853,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0035"
   },
   {
     "Id": "SIN-0058",
@@ -14878,7 +14878,6 @@
       "SIN-0059"
     ],
     "Nord": "SIN-0004",
-    "Süd": "SIN-0059",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14902,7 +14901,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0059"
   },
   {
     "Id": "SIN-0059",
@@ -14926,7 +14926,6 @@
       "SIN-0060"
     ],
     "Nord": "SIN-0058",
-    "Süd": "SIN-0060",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14950,7 +14949,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0060"
   },
   {
     "Id": "SIN-0060",
@@ -14974,7 +14974,6 @@
       "SIN-0061"
     ],
     "Nord": "SIN-0059",
-    "Süd": "SIN-0061",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -14998,7 +14997,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0061"
   },
   {
     "Id": "SIN-0061",
@@ -15021,7 +15021,6 @@
       "SIN-0060"
     ],
     "Nord": null,
-    "Süd": "SIN-0060",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -15045,7 +15044,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "SIN-0060"
   },
   {
     "Id": "SIN-0062",
@@ -15061,7 +15061,6 @@
       "SIN-0063"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "SIN-0063",
     "Trainer": [
@@ -15102,7 +15101,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0063",
@@ -15126,7 +15126,6 @@
       "SIN-0062"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0062",
     "West": "SIN-0064",
     "Trainer": [],
@@ -15150,7 +15149,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0064",
@@ -15173,7 +15173,6 @@
       "SIN-0063"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "SIN-0063",
     "West": null,
     "Trainer": [],
@@ -15197,7 +15196,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "SIN-0065",
@@ -15224,7 +15224,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -15248,7 +15247,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0001",
@@ -15264,7 +15264,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -15288,7 +15287,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0002",
@@ -15354,7 +15354,6 @@
       "UNO-0001"
     ],
     "Nord": "UNO-0003",
-    "Süd": "UNO-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -15435,7 +15434,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0001"
   },
   {
     "Id": "UNO-0003",
@@ -15452,7 +15452,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0004",
-    "Süd": "KAL-0002",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -15501,7 +15500,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0002"
   },
   {
     "Id": "UNO-0004",
@@ -15567,7 +15567,6 @@
       "UNO-0003"
     ],
     "Nord": "UNO-0005",
-    "Süd": "UNO-0003",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -15656,7 +15655,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0003"
   },
   {
     "Id": "UNO-0006",
@@ -15679,7 +15679,6 @@
       "UNO-0005"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "UNO-0005",
     "Trainer": [],
@@ -15703,7 +15702,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0007",
@@ -15745,7 +15745,6 @@
       "UNO-0005"
     ],
     "Nord": "UNO-0009",
-    "Süd": "UNO-0005",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -15866,7 +15865,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0005"
   },
   {
     "Id": "UNO-0008",
@@ -15882,7 +15882,6 @@
       "KAL-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0006",
     "Trainer": [
@@ -15923,7 +15922,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0010",
@@ -15947,7 +15947,6 @@
       "UNO-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0009",
     "West": "UNO-0011",
     "Trainer": [
@@ -15988,7 +15987,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0011",
@@ -16005,7 +16005,6 @@
       "UNO-0010"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0010",
     "West": "UNO-0012",
     "Trainer": [],
@@ -16029,7 +16028,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0013",
@@ -16052,7 +16052,6 @@
       "UNO-0012"
     ],
     "Nord": null,
-    "Süd": "UNO-0012",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -16076,7 +16075,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0012"
   },
   {
     "Id": "UNO-0014",
@@ -16136,7 +16136,6 @@
       "UNO-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0012",
     "West": "UNO-0017",
     "Trainer": [
@@ -16193,7 +16192,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0015",
@@ -16222,7 +16222,6 @@
       "KAL-0008"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0008",
     "Trainer": [
@@ -16263,7 +16262,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0016",
@@ -16292,7 +16292,6 @@
       "UNO-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "UNO-0015",
     "Trainer": [],
@@ -16316,7 +16315,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0018",
@@ -16364,7 +16364,6 @@
       "UNO-0017"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0017",
     "West": "UNO-0019",
     "Trainer": [
@@ -16429,7 +16428,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0019",
@@ -16446,7 +16446,6 @@
       "KAL-0010"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0010",
     "West": "UNO-0020",
     "Trainer": [],
@@ -16470,7 +16469,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0021",
@@ -16486,7 +16486,6 @@
       "UNO-0020"
     ],
     "Nord": null,
-    "Süd": "UNO-0020",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -16510,7 +16509,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0020"
   },
   {
     "Id": "UNO-0022",
@@ -16558,7 +16558,6 @@
       "UNO-0020"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0020",
     "West": "UNO-0023",
     "Trainer": [
@@ -16599,7 +16598,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0023",
@@ -16629,7 +16629,6 @@
       "UNO-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0024",
     "West": "KAL-0012",
     "Trainer": [],
@@ -16653,7 +16652,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0025",
@@ -16669,7 +16669,6 @@
       "KAL-0014"
     ],
     "Nord": null,
-    "Süd": "KAL-0014",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -16693,7 +16692,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0014"
   },
   {
     "Id": "UNO-0026",
@@ -16741,7 +16741,6 @@
       "UNO-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0024",
     "West": "UNO-0027",
     "Trainer": [
@@ -16782,7 +16781,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0027",
@@ -16806,7 +16806,6 @@
       "UNO-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0028",
     "West": "KAL-0014",
     "Trainer": [
@@ -16847,7 +16846,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0029",
@@ -16882,7 +16882,6 @@
       "UNO-0028"
     ],
     "Nord": null,
-    "Süd": "UNO-0028",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -16923,7 +16922,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0028"
   },
   {
     "Id": "UNO-0030",
@@ -16965,7 +16965,6 @@
       "UNO-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0028",
     "West": "UNO-0031",
     "Trainer": [
@@ -17006,7 +17005,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0031",
@@ -17023,7 +17023,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0016",
     "West": "KAL-0019",
     "Trainer": [],
@@ -17047,7 +17046,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0032",
@@ -17090,7 +17090,6 @@
       "UNO-0031"
     ],
     "Nord": null,
-    "Süd": "UNO-0017",
     "Ost": "UNO-0031",
     "West": "UNO-0033",
     "Trainer": [
@@ -17147,7 +17146,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0017"
   },
   {
     "Id": "UNO-0033",
@@ -17177,7 +17177,6 @@
       "KAL-0019"
     ],
     "Nord": "KAL-0021",
-    "Süd": "KAL-0019",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17250,7 +17249,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0019"
   },
   {
     "Id": "UNO-0034",
@@ -17292,7 +17292,6 @@
       "UNO-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0033",
     "West": "UNO-0035",
     "Trainer": [
@@ -17333,7 +17332,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0035",
@@ -17350,7 +17350,6 @@
       "UNO-0036"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "UNO-0036",
     "West": "KAL-0021",
     "Trainer": [],
@@ -17374,7 +17373,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0036",
@@ -17390,7 +17390,6 @@
       "UNO-0035"
     ],
     "Nord": null,
-    "Süd": "UNO-0035",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17511,7 +17510,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0035"
   },
   {
     "Id": "UNO-0037",
@@ -17527,7 +17527,6 @@
       "UNO-0036"
     ],
     "Nord": null,
-    "Süd": "UNO-0036",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17588,7 +17587,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0036"
   },
   {
     "Id": "UNO-0038",
@@ -17617,7 +17617,6 @@
       "KAL-0039"
     ],
     "Nord": "KAL-0039",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17658,7 +17657,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0039",
@@ -17687,7 +17687,6 @@
       "KAL-0041"
     ],
     "Nord": null,
-    "Süd": "KAL-0041",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17728,7 +17727,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0041"
   },
   {
     "Id": "UNO-0040",
@@ -17744,7 +17744,6 @@
       "UNO-0039"
     ],
     "Nord": null,
-    "Süd": "UNO-0039",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -17768,7 +17767,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0039"
   },
   {
     "Id": "UNO-0041",
@@ -17785,7 +17785,6 @@
       "KAL-0039"
     ],
     "Nord": "KAN-0004",
-    "Süd": "KAL-0039",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -17809,7 +17808,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0039"
   },
   {
     "Id": "UNO-0042",
@@ -17825,7 +17825,6 @@
       "KAN-0004"
     ],
     "Nord": null,
-    "Süd": "KAN-0004",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -17866,7 +17865,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0004"
   },
   {
     "Id": "UNO-0043",
@@ -17882,7 +17882,6 @@
       "UNO-0017"
     ],
     "Nord": null,
-    "Süd": "UNO-0017",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -17906,7 +17905,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0017"
   },
   {
     "Id": "UNO-0044",
@@ -17922,7 +17922,6 @@
       "UNO-0020"
     ],
     "Nord": null,
-    "Süd": "UNO-0020",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -17946,7 +17945,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "UNO-0020"
   },
   {
     "Id": "UNO-0045",
@@ -17962,7 +17962,6 @@
       "KAL-0031"
     ],
     "Nord": null,
-    "Süd": "KAL-0031",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -17986,7 +17985,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0031"
   },
   {
     "Id": "UNO-0046",
@@ -18015,7 +18015,6 @@
       "KAL-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0028",
     "Trainer": [
@@ -18056,7 +18055,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0047",
@@ -18072,7 +18072,6 @@
       "KAL-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0028",
     "Trainer": [],
@@ -18096,7 +18095,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0048",
@@ -18112,7 +18112,6 @@
       "KAL-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0019",
     "Trainer": [],
@@ -18136,7 +18135,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0049",
@@ -18159,7 +18159,6 @@
       "KAL-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0033",
     "Trainer": [],
@@ -18183,7 +18182,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0050",
@@ -18199,7 +18199,6 @@
       "UNO-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "UNO-0012",
     "Trainer": [],
@@ -18223,7 +18222,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0051",
@@ -18246,7 +18246,6 @@
       "KAL-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0012",
     "Trainer": [],
@@ -18270,7 +18269,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0052",
@@ -18286,7 +18286,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0016",
     "Trainer": [],
@@ -18310,7 +18309,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "UNO-0053",
@@ -18327,7 +18327,6 @@
       "KAL-0028"
     ],
     "Nord": "KAL-0029",
-    "Süd": "KAL-0028",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -18351,7 +18350,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0028"
   },
   {
     "Id": "UNO-0054",
@@ -18368,7 +18368,6 @@
       "KAL-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0026",
     "West": "KAL-0023",
     "Trainer": [],
@@ -18392,7 +18391,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0001",
@@ -18408,7 +18408,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -18432,7 +18431,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0002",
@@ -18498,7 +18498,6 @@
       "KAL-0001"
     ],
     "Nord": "KAL-0003",
-    "Süd": "KAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -18579,7 +18578,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0001"
   },
   {
     "Id": "KAL-0003",
@@ -18596,7 +18596,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0004",
-    "Süd": "KAL-0002",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -18620,7 +18619,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0002"
   },
   {
     "Id": "KAL-0004",
@@ -18686,7 +18686,6 @@
       "KAL-0003"
     ],
     "Nord": "KAL-0005",
-    "Süd": "KAL-0003",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -18775,7 +18774,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0003"
   },
   {
     "Id": "KAL-0005",
@@ -18811,7 +18811,6 @@
       "KAL-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0006",
     "West": "KAL-0004",
     "Trainer": [
@@ -18852,7 +18851,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0006",
@@ -18894,7 +18894,6 @@
       "KAL-0005"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0005",
     "West": "KAL-0007",
     "Trainer": [
@@ -19015,7 +19014,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0008",
@@ -19075,7 +19075,6 @@
       "KAL-0007"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0007",
     "West": "KAL-0009",
     "Trainer": [
@@ -19132,7 +19131,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0010",
@@ -19180,7 +19180,6 @@
       "KAL-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0009",
     "West": "KAL-0011",
     "Trainer": [
@@ -19245,7 +19244,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0011",
@@ -19262,7 +19262,6 @@
       "KAL-0010"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0010",
     "West": "KAL-0012",
     "Trainer": [],
@@ -19286,7 +19285,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0012",
@@ -19334,7 +19334,6 @@
       "KAL-0011"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0011",
     "West": "KAL-0013",
     "Trainer": [
@@ -19375,7 +19374,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0013",
@@ -19391,7 +19391,6 @@
       "KAL-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0012",
     "Trainer": [],
@@ -19415,7 +19414,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0014",
@@ -19463,7 +19463,6 @@
       "KAL-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0012",
     "West": "KAL-0015",
     "Trainer": [
@@ -19504,7 +19503,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0015",
@@ -19521,7 +19521,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0016",
     "West": "KAL-0014",
     "Trainer": [],
@@ -19545,7 +19544,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0016",
@@ -19587,7 +19587,6 @@
       "KAL-0015"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0015",
     "West": "KAL-0017",
     "Trainer": [
@@ -19628,7 +19627,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0017",
@@ -19645,7 +19645,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0016",
     "West": "KAL-0019",
     "Trainer": [],
@@ -19669,7 +19668,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0018",
@@ -19698,7 +19698,6 @@
       "KAL-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0019",
     "Trainer": [
@@ -19739,7 +19738,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0019",
@@ -19781,7 +19781,6 @@
       "KAL-0017"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0017",
     "West": "KAL-0018",
     "Trainer": [
@@ -19838,7 +19837,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0021",
@@ -19880,7 +19880,6 @@
       "KAL-0020"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0020",
     "West": "KAL-0022",
     "Trainer": [
@@ -19921,7 +19920,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0022",
@@ -19938,7 +19938,6 @@
       "KAL-0021"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0021",
     "West": "KAL-0023",
     "Trainer": [
@@ -19979,7 +19978,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0023",
@@ -20015,7 +20015,6 @@
       "KAL-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0022",
     "West": "KAL-0024",
     "Trainer": [
@@ -20056,7 +20055,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0025",
@@ -20072,7 +20072,6 @@
       "KAL-0024"
     ],
     "Nord": null,
-    "Süd": "KAL-0024",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -20096,7 +20095,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0024"
   },
   {
     "Id": "KAL-0026",
@@ -20144,7 +20144,6 @@
       "KAL-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0024",
     "West": "KAL-0048",
     "Trainer": [
@@ -20201,7 +20200,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0028",
@@ -20237,7 +20237,6 @@
       "KAL-0027"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0027",
     "West": "KAL-0009",
     "Trainer": [
@@ -20294,7 +20293,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0029",
@@ -20336,7 +20336,6 @@
       "KAL-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0009",
     "West": "KAL-0030",
     "Trainer": [
@@ -20393,7 +20392,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0031",
@@ -20429,7 +20429,6 @@
       "KAL-0030"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0030",
     "West": "KAL-0032",
     "Trainer": [
@@ -20470,7 +20469,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0032",
@@ -20487,7 +20487,6 @@
       "KAL-0031"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0031",
     "West": "KAL-0033",
     "Trainer": [],
@@ -20511,7 +20510,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0033",
@@ -20547,7 +20547,6 @@
       "KAL-0032"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0032",
     "West": "KAL-0034",
     "Trainer": [
@@ -20588,7 +20587,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0034",
@@ -20617,7 +20617,6 @@
       "KAL-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0033",
     "Trainer": [],
@@ -20641,7 +20640,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0036",
@@ -20677,7 +20677,6 @@
       "KAL-0037"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0037",
     "West": "KAL-0035",
     "Trainer": [
@@ -20718,7 +20717,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0037",
@@ -20754,7 +20754,6 @@
       "KAL-0036"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0036",
     "West": "KAL-0038",
     "Trainer": [
@@ -20795,7 +20794,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0038",
@@ -20812,7 +20812,6 @@
       "KAL-0037"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0037",
     "West": "KAL-0039",
     "Trainer": [],
@@ -20836,7 +20835,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0039",
@@ -20872,7 +20872,6 @@
       "KAL-0038"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0038",
     "West": "KAL-0042",
     "Trainer": [
@@ -20913,7 +20912,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0040",
@@ -20942,7 +20942,6 @@
       "KAL-0041"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0041",
     "Trainer": [],
@@ -20966,7 +20965,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0041",
@@ -20996,7 +20996,6 @@
       "KAL-0042"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0042",
     "West": "KAL-0040",
     "Trainer": [
@@ -21037,7 +21036,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0042",
@@ -21067,7 +21067,6 @@
       "KAL-0041"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0041",
     "West": "KAL-0043",
     "Trainer": [
@@ -21124,7 +21123,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0043",
@@ -21160,7 +21160,6 @@
       "KAL-0042"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0042",
     "West": "KAL-0044",
     "Trainer": [
@@ -21201,7 +21200,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0044",
@@ -21218,7 +21218,6 @@
       "KAL-0045"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0045",
     "West": "KAL-0043",
     "Trainer": [],
@@ -21242,7 +21241,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0045",
@@ -21258,7 +21258,6 @@
       "KAL-0044"
     ],
     "Nord": null,
-    "Süd": "KAL-0044",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -21363,7 +21362,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0044"
   },
   {
     "Id": "KAL-0046",
@@ -21392,7 +21392,6 @@
       "KAL-0022"
     ],
     "Nord": null,
-    "Süd": "KAL-0022",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -21433,7 +21432,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0022"
   },
   {
     "Id": "KAL-0047",
@@ -21456,7 +21456,6 @@
       "KAL-0037"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0037",
     "Trainer": [],
@@ -21480,7 +21479,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0048",
@@ -21503,7 +21503,6 @@
       "KAL-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0026",
     "Trainer": [],
@@ -21527,7 +21526,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0049",
@@ -21544,7 +21544,6 @@
       "KAL-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0024",
     "West": "KAL-0023",
     "Trainer": [],
@@ -21568,7 +21567,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0050",
@@ -21584,7 +21584,6 @@
       "KAL-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0028",
     "Trainer": [],
@@ -21608,7 +21607,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0051",
@@ -21631,7 +21631,6 @@
       "KAL-0048"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0048",
     "Trainer": [],
@@ -21655,7 +21654,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0052",
@@ -21669,7 +21669,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -21710,7 +21709,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAL-0053",
@@ -21726,7 +21726,6 @@
       "KAL-0052"
     ],
     "Nord": null,
-    "Süd": "KAL-0052",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -21767,7 +21766,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0052"
   },
   {
     "Id": "ALO-0001",
@@ -21781,7 +21781,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -21878,7 +21877,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0002",
@@ -21907,7 +21907,6 @@
       "ALO-0001"
     ],
     "Nord": "ALO-0001",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -21931,7 +21930,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0003",
@@ -21947,7 +21947,6 @@
       "KAL-0004"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0004",
     "Trainer": [],
@@ -21971,7 +21970,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0004",
@@ -21987,7 +21987,6 @@
       "ALO-0003"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0003",
     "West": null,
     "Trainer": [],
@@ -22011,7 +22010,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0005",
@@ -22059,7 +22059,6 @@
       "KAL-0004"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0004",
     "Trainer": [
@@ -22120,7 +22119,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0006",
@@ -22136,7 +22136,6 @@
       "KAL-0002"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0002",
     "Trainer": [],
@@ -22160,7 +22159,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0007",
@@ -22174,7 +22174,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -22198,7 +22197,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0008",
@@ -22215,7 +22215,6 @@
       "KAL-0006"
     ],
     "Nord": "KAL-0008",
-    "Süd": "KAL-0006",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -22239,7 +22238,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0006"
   },
   {
     "Id": "ALO-0009",
@@ -22263,7 +22263,6 @@
       "ALO-0008"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0008",
     "West": "ALO-0010",
     "Trainer": [],
@@ -22287,7 +22286,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0010",
@@ -22304,7 +22304,6 @@
       "KAL-0008"
     ],
     "Nord": "KAL-0010",
-    "Süd": "KAL-0008",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -22328,7 +22327,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0008"
   },
   {
     "Id": "ALO-0011",
@@ -22352,7 +22352,6 @@
       "ALO-0010"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0010",
     "West": "ALO-0012",
     "Trainer": [],
@@ -22376,7 +22375,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0012",
@@ -22418,7 +22418,6 @@
       "KAL-0010"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0010",
     "Trainer": [
@@ -22475,7 +22474,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0013",
@@ -22499,7 +22499,6 @@
       "ALO-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0012",
     "West": "ALO-0014",
     "Trainer": [],
@@ -22523,7 +22522,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0014",
@@ -22540,7 +22540,6 @@
       "KAL-0012"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0012",
     "West": "KAL-0014",
     "Trainer": [],
@@ -22564,7 +22563,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0015",
@@ -22606,7 +22606,6 @@
       "KAL-0014"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0014",
     "Trainer": [
@@ -22663,7 +22662,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0016",
@@ -22687,7 +22687,6 @@
       "KAL-0014"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0014",
     "West": "ALO-0017",
     "Trainer": [],
@@ -22711,7 +22710,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0017",
@@ -22753,7 +22753,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0016",
     "Trainer": [
@@ -22810,7 +22809,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0018",
@@ -22827,7 +22827,6 @@
       "KAL-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0019",
     "West": "KAL-0016",
     "Trainer": [],
@@ -22851,7 +22850,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0019",
@@ -22868,7 +22868,6 @@
       "ALO-0018"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0018",
     "West": "KAL-0019",
     "Trainer": [
@@ -22925,7 +22924,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0020",
@@ -22941,7 +22941,6 @@
       "ALO-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0019",
     "Trainer": [
@@ -22982,7 +22981,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0021",
@@ -23005,7 +23005,6 @@
       "ALO-0020"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0020",
     "Trainer": [],
@@ -23029,7 +23028,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0022",
@@ -23046,7 +23046,6 @@
       "KAL-0019"
     ],
     "Nord": "KAL-0021",
-    "Süd": "KAL-0019",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -23087,7 +23086,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0019"
   },
   {
     "Id": "ALO-0023",
@@ -23111,7 +23111,6 @@
       "ALO-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0022",
     "West": "ALO-0024",
     "Trainer": [],
@@ -23135,7 +23134,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0024",
@@ -23164,7 +23164,6 @@
       "KAL-0021"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0021",
     "Trainer": [
@@ -23205,7 +23204,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0025",
@@ -23229,7 +23229,6 @@
       "ALO-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0022",
     "West": "ALO-0026",
     "Trainer": [],
@@ -23253,7 +23252,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0026",
@@ -23270,7 +23270,6 @@
       "KAL-0023"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0023",
     "West": "KAL-0026",
     "Trainer": [],
@@ -23294,7 +23293,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0027",
@@ -23318,7 +23318,6 @@
       "ALO-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0026",
     "West": "KAL-0028",
     "Trainer": [],
@@ -23342,7 +23341,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0028",
@@ -23366,7 +23366,6 @@
       "KAL-0026"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0026",
     "West": "ALO-0029",
     "Trainer": [],
@@ -23390,7 +23389,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0029",
@@ -23406,7 +23406,6 @@
       "KAL-0028"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0028",
     "Trainer": [],
@@ -23430,7 +23429,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0030",
@@ -23446,7 +23446,6 @@
       "KAL-0036"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0036",
     "Trainer": [
@@ -23487,7 +23486,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0031",
@@ -23501,7 +23501,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -23558,7 +23557,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0032",
@@ -23574,7 +23574,6 @@
       "KAL-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0033",
     "Trainer": [
@@ -23615,7 +23614,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0033",
@@ -23631,7 +23631,6 @@
       "ALO-0034"
     ],
     "Nord": "ALO-0034",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -23655,7 +23654,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0034",
@@ -23679,7 +23679,6 @@
       "ALO-0033"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0033",
     "West": "ALO-0035",
     "Trainer": [],
@@ -23703,7 +23702,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0035",
@@ -23727,7 +23727,6 @@
       "ALO-0034"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0034",
     "West": "ALO-0036",
     "Trainer": [],
@@ -23751,7 +23750,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0036",
@@ -23767,7 +23767,6 @@
       "ALO-0035"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "ALO-0035",
     "West": null,
     "Trainer": [],
@@ -23791,7 +23790,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0037",
@@ -23807,7 +23807,6 @@
       "ALO-0034"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0034",
     "Trainer": [
@@ -23864,7 +23863,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0038",
@@ -23906,7 +23906,6 @@
       "ALO-0035"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0035",
     "Trainer": [
@@ -23963,7 +23962,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0039",
@@ -23986,7 +23986,6 @@
       "ALO-0038"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0038",
     "Trainer": [],
@@ -24010,7 +24009,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0040",
@@ -24033,7 +24033,6 @@
       "ALO-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0006",
     "Trainer": [],
@@ -24057,7 +24056,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0041",
@@ -24080,7 +24080,6 @@
       "ALO-0029"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0029",
     "Trainer": [],
@@ -24104,7 +24103,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0042",
@@ -24125,7 +24125,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24149,7 +24148,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0043",
@@ -24165,7 +24165,6 @@
       "ALO-0036"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "ALO-0036",
     "Trainer": [
@@ -24222,7 +24221,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "ALO-0044",
@@ -24236,7 +24236,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24260,7 +24259,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0001",
@@ -24276,7 +24276,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24300,7 +24299,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0002",
@@ -24330,7 +24330,6 @@
       "GAL-0001"
     ],
     "Nord": "GAL-0003",
-    "Süd": "GAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -24379,7 +24378,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0001"
   },
   {
     "Id": "GAL-0003",
@@ -24396,7 +24396,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0004",
-    "Süd": "KAL-0002",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24420,7 +24419,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0002"
   },
   {
     "Id": "GAL-0004",
@@ -24437,7 +24437,6 @@
       "GAL-0003"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0003",
     "West": "GAL-0005",
     "Trainer": [],
@@ -24461,7 +24460,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0005",
@@ -24490,7 +24490,6 @@
       "KAL-0004"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0004",
     "Trainer": [],
@@ -24514,7 +24513,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0007",
@@ -24545,7 +24545,6 @@
       "KAL-0010"
     ],
     "Nord": null,
-    "Süd": "GAL-0003",
     "Ost": "KAL-0010",
     "West": "GAL-0006",
     "Trainer": [
@@ -24586,7 +24585,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0003"
   },
   {
     "Id": "GAL-0008",
@@ -24603,7 +24603,6 @@
       "GAL-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0006",
     "West": "GAL-0009",
     "Trainer": [],
@@ -24627,7 +24626,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0009",
@@ -24651,7 +24651,6 @@
       "KAL-0008"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0008",
     "West": "KAL-0006",
     "Trainer": [],
@@ -24675,7 +24674,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0010",
@@ -24692,7 +24692,6 @@
       "GAL-0009"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0009",
     "West": "GAL-0011",
     "Trainer": [],
@@ -24716,7 +24715,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0012",
@@ -24734,7 +24734,6 @@
       "GAL-0011"
     ],
     "Nord": null,
-    "Süd": "GAL-0007",
     "Ost": "GAL-0011",
     "West": "GAL-0013",
     "Trainer": [],
@@ -24758,7 +24757,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0007"
   },
   {
     "Id": "GAL-0013",
@@ -24775,7 +24775,6 @@
       "KAL-0010"
     ],
     "Nord": "KAL-0012",
-    "Süd": "KAL-0010",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24799,7 +24798,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0010"
   },
   {
     "Id": "GAL-0014",
@@ -24816,7 +24816,6 @@
       "GAL-0013"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0013",
     "West": "GAL-0006",
     "Trainer": [],
@@ -24840,7 +24839,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0015",
@@ -24857,7 +24857,6 @@
       "GAL-0006"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0006",
     "West": "KAL-0012",
     "Trainer": [],
@@ -24881,7 +24880,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0016",
@@ -24898,7 +24898,6 @@
       "KAL-0012"
     ],
     "Nord": "KAL-0014",
-    "Süd": "KAL-0012",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -24922,7 +24921,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0012"
   },
   {
     "Id": "GAL-0017",
@@ -24939,7 +24939,6 @@
       "GAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0016",
     "West": "GAL-0024",
     "Trainer": [],
@@ -24963,7 +24962,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0018",
@@ -24993,7 +24993,6 @@
       "KAL-0016"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAL-0016",
     "West": "KAL-0014",
     "Trainer": [],
@@ -25017,7 +25016,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0019",
@@ -25034,7 +25034,6 @@
       "GAL-0018"
     ],
     "Nord": "KAL-0016",
-    "Süd": "GAL-0018",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -25058,7 +25057,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0018"
   },
   {
     "Id": "GAL-0020",
@@ -25075,7 +25075,6 @@
       "GAL-0019"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0019",
     "West": "GAL-0021",
     "Trainer": [],
@@ -25099,7 +25098,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0021",
@@ -25116,7 +25116,6 @@
       "KAL-0016"
     ],
     "Nord": "KAL-0019",
-    "Süd": "KAL-0016",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -25140,7 +25139,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0016"
   },
   {
     "Id": "GAL-0022",
@@ -25157,7 +25157,6 @@
       "GAL-0021"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0021",
     "West": "GAL-0023",
     "Trainer": [],
@@ -25181,7 +25180,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0024",
@@ -25211,7 +25211,6 @@
       "KAL-0012"
     ],
     "Nord": "KAL-0014",
-    "Süd": null,
     "Ost": null,
     "West": "KAL-0012",
     "Trainer": [
@@ -25304,7 +25303,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0025",
@@ -25321,7 +25321,6 @@
       "GAL-0024"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "GAL-0024",
     "West": "GAL-0026",
     "Trainer": [],
@@ -25345,7 +25344,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0026",
@@ -25362,7 +25362,6 @@
       "KAL-0021"
     ],
     "Nord": "GAL-0027",
-    "Süd": "KAL-0021",
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -25386,7 +25385,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAL-0021"
   },
   {
     "Id": "GAL-0027",
@@ -25402,7 +25402,6 @@
       "GAL-0026"
     ],
     "Nord": null,
-    "Süd": "GAL-0026",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25443,7 +25442,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0026"
   },
   {
     "Id": "GAL-0028",
@@ -25459,7 +25459,6 @@
       "GAL-0026"
     ],
     "Nord": null,
-    "Süd": "GAL-0026",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25536,7 +25535,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0026"
   },
   {
     "Id": "GAL-0029",
@@ -25559,7 +25559,6 @@
       "GAL-0024"
     ],
     "Nord": null,
-    "Süd": "GAL-0024",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25600,7 +25599,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "GAL-0024"
   },
   {
     "Id": "GAL-0030",
@@ -25621,7 +25621,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25662,7 +25661,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "GAL-0031",
@@ -25683,7 +25683,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25724,7 +25723,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0001",
@@ -25740,7 +25740,6 @@
       "KAL-0002"
     ],
     "Nord": "KAL-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25801,7 +25800,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0002",
@@ -25836,7 +25836,6 @@
       "PAL-0001"
     ],
     "Nord": "PAL-0001",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -25860,7 +25859,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0003",
@@ -25876,7 +25876,6 @@
       "PAL-0002"
     ],
     "Nord": "PAL-0002",
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -25925,7 +25924,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0011",
@@ -25959,7 +25959,6 @@
     ],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26048,7 +26047,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0012",
@@ -26062,7 +26062,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26103,7 +26102,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0013",
@@ -26117,7 +26117,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26158,7 +26157,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0014",
@@ -26172,7 +26172,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26213,7 +26212,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0015",
@@ -26227,7 +26227,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26272,7 +26271,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0016",
@@ -26286,7 +26286,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26327,7 +26326,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0017",
@@ -26341,7 +26341,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26382,7 +26381,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0018",
@@ -26396,7 +26396,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26437,7 +26436,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0019",
@@ -26451,7 +26451,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26492,7 +26491,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0020",
@@ -26506,7 +26506,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26547,7 +26546,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0021",
@@ -26561,7 +26561,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26602,7 +26601,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0022",
@@ -26649,7 +26649,6 @@
       "PAL-0001"
     ],
     "Nord": null,
-    "Süd": "PAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26738,7 +26737,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "PAL-0001"
   },
   {
     "Id": "PAL-0023",
@@ -26752,7 +26752,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -26776,7 +26775,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0024",
@@ -26790,7 +26790,6 @@
     "WildMonster": [],
     "Verbindungen": [],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": null,
     "Trainer": [],
@@ -26814,7 +26813,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "PAL-0025",
@@ -26830,7 +26830,6 @@
       "PAL-0001"
     ],
     "Nord": null,
-    "Süd": "PAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26935,7 +26934,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "PAL-0001"
   },
   {
     "Id": "PAL-0026",
@@ -26951,7 +26951,6 @@
       "PAL-0001"
     ],
     "Nord": null,
-    "Süd": "PAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -26992,7 +26991,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "PAL-0001"
   },
   {
     "Id": "PAL-0027",
@@ -27008,7 +27008,6 @@
       "PAL-0001"
     ],
     "Nord": null,
-    "Süd": "PAL-0001",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -27065,7 +27064,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "PAL-0001"
   },
   {
     "Id": "KAN-0061",
@@ -27113,7 +27113,6 @@
       "KAN-0007"
     ],
     "Nord": null,
-    "Süd": "KAN-0006",
     "Ost": "KAN-0007",
     "West": null,
     "Trainer": [
@@ -27154,7 +27153,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0006"
   },
   {
     "Id": "KAN-0062",
@@ -27202,7 +27202,6 @@
       "KAN-0006"
     ],
     "Nord": null,
-    "Süd": "KAN-0008",
     "Ost": "KAN-0006",
     "West": null,
     "Trainer": [
@@ -27243,7 +27242,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0008"
   },
   {
     "Id": "KAN-0063",
@@ -27286,7 +27286,6 @@
       "KAN-0064"
     ],
     "Nord": "KAN-0065",
-    "Süd": "KAN-0009",
     "Ost": "KAN-0064",
     "West": null,
     "Trainer": [
@@ -27383,7 +27382,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0009"
   },
   {
     "Id": "KAN-0064",
@@ -27424,7 +27424,6 @@
       "KAN-0063"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": null,
     "West": "KAN-0063",
     "Trainer": [
@@ -27521,7 +27520,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0065",
@@ -27562,7 +27562,6 @@
       "KAN-0063"
     ],
     "Nord": null,
-    "Süd": "KAN-0063",
     "Ost": null,
     "West": null,
     "Trainer": [
@@ -27664,7 +27663,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0063"
   },
   {
     "Id": "KAN-0066",
@@ -27700,7 +27700,6 @@
       "KAN-0022"
     ],
     "Nord": null,
-    "Süd": null,
     "Ost": "KAN-0024",
     "West": "KAN-0022",
     "Trainer": [
@@ -27757,7 +27756,8 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": null
   },
   {
     "Id": "KAN-0067",
@@ -27793,7 +27793,6 @@
       "KAN-0022"
     ],
     "Nord": null,
-    "Süd": "KAN-0024",
     "Ost": null,
     "West": "KAN-0022",
     "Trainer": [
@@ -27850,6 +27849,7 @@
     "SperrNO": null,
     "SperrSW": null,
     "SperrSO": null,
-    "SperrSued": null
+    "SperrSued": null,
+    "Sued": "KAN-0024"
   }
 ]

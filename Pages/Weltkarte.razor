@@ -67,7 +67,7 @@
             var aktOrt = Game.AktuellerOrt;
             Ort? GetOrt(string? id) => id == null ? null : Game.AlleOrte.FirstOrDefault(o => o.Id == id);
             var nord = GetOrt(aktOrt?.Nord);
-            var süd  = GetOrt(aktOrt?.Süd);
+            var süd  = GetOrt(aktOrt?.Sued);
             var ost  = GetOrt(aktOrt?.Ost);
             var west = GetOrt(aktOrt?.West);
             // Nur die 4 Hauptrichtungen anzeigen (keine Ecken NW/NO/SW/SO)
@@ -418,7 +418,7 @@
         string? richtung = (row, col) switch
         {
             (0, 1) => "Nord",
-            (2, 1) => "Süd",
+            (2, 1) => "Sued",
             (1, 0) => "West",
             (1, 2) => "Ost",
             (0, 0) => "NW",
@@ -446,7 +446,7 @@
         if (aktOrt != null)
         {
             if (aktOrt.Nord == ausgewähltOrt.Id) richtung = "Nord";
-            else if (aktOrt.Süd == ausgewähltOrt.Id) richtung = "Süd";
+            else if (aktOrt.Sued == ausgewähltOrt.Id) richtung = "Sued";
             else if (aktOrt.Ost == ausgewähltOrt.Id) richtung = "Ost";
             else if (aktOrt.West == ausgewähltOrt.Id) richtung = "West";
             else if (aktOrt.Teleport == ausgewähltOrt.Id) richtung = "Teleport";

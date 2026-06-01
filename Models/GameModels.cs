@@ -248,7 +248,7 @@ public class Ort
     public List<string> Verbindungen { get; set; } = new();
     // Richtungs-Verbindungen für 3x3 Minimap
     public string? Nord { get; set; }
-    public string? Süd { get; set; }
+    public string? Sued { get; set; }
     public string? Ost { get; set; }
     public string? West { get; set; }
     public List<TrainerKampf> Trainer { get; set; } = new();
