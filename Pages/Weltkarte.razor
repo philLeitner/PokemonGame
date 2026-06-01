@@ -440,7 +440,19 @@
     private void ZumOrtReisen()
     {
         if (ausgewähltOrt == null) return;
-        var fehler = Game.OrtBetreten(ausgewähltOrt.Id);
+        // Richtung aus Verbindungen des aktuellen Ortes ableiten
+        var aktOrt = Game.AktuellerOrt;
+        string? richtung = null;
+        if (aktOrt != null)
+        {
+            if (aktOrt.Nord == ausgewähltOrt.Id) richtung = "Nord";
+            else if (aktOrt.Süd == ausgewähltOrt.Id) richtung = "Süd";
+            else if (aktOrt.Ost == ausgewähltOrt.Id) richtung = "Ost";
+            else if (aktOrt.West == ausgewähltOrt.Id) richtung = "West";
+            else if (aktOrt.Teleport == ausgewähltOrt.Id) richtung = "Teleport";
+            else if (aktOrt.Unterirdisch == ausgewähltOrt.Id) richtung = "Unterirdisch";
+        }
+        var fehler = Game.OrtBetreten(ausgewähltOrt.Id, richtung);
         if (fehler != null)
         {
             meldung = fehler;
