@@ -154,7 +154,19 @@
         {
             bool istHier2 = anzeigeOrt.Id == Game.Spieler.AktuellerOrt;
             var ortRef3 = Game.AlleOrte.First(o => o.Id == anzeigeOrt.Id);
-            var zugangsFehler2 = istHier2 ? null : Game.OrtZugangsPrüfung(ortRef3);
+            // Richtung vom aktuellen Ort zum Zielort bestimmen (für Richtungssperre)
+            string? richtung2 = null;
+            if (!istHier2 && aktOrt != null)
+            {
+                if (aktOrt.Nord == anzeigeOrt.Id) richtung2 = "Nord";
+                else if (aktOrt.Sued == anzeigeOrt.Id) richtung2 = "Sued";
+                else if (aktOrt.Ost == anzeigeOrt.Id) richtung2 = "Ost";
+                else if (aktOrt.West == anzeigeOrt.Id) richtung2 = "West";
+            }
+            // Allgemeine Zugangsprüfung + Richtungssperre
+            var zugangsFehler2 = istHier2 ? null
+                : (Game.OrtZugangsPrüfung(ortRef3)
+                   ?? (richtung2 != null && aktOrt != null ? Game.RichtungsZugangsPrüfung(aktOrt, richtung2) : null));
             <div class="ort-details">
                 <div class="ort-details-header">
                     <h3>@anzeigeOrt.Name</h3>
