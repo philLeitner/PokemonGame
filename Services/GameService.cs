@@ -122,7 +122,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "verbindung_v3";
+            const string ortVersion = "verbindung_v4";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
@@ -178,6 +178,7 @@ public class GameService
 
     /// <summary>Wechselt in den Eigene-Map-Modus. Zeigt zuerst den Start-Dialog.</summary>
     public void ZuEigeneMapStart() { Phase = SpielPhase.EigeneMapStart; Notify(); }
+    public void ZuAdminPanel() { Phase = SpielPhase.AdminPanel; Notify(); }
 
     /// <summary>Startet die Eigene Map: entweder Spielstand kopieren oder neu starten.</summary>
     public async Task EigeneMapStarten(bool spielstandKopieren)
@@ -277,11 +278,11 @@ public class GameService
     {
         // Unterirdische Gänge sind immer zugänglich
         if (ort.IstUnterirdisch) return null;
-        // Liga-Zugang: alle Kanto-Arenen-Orden benötigt
+        // Liga-Zugang: alle 8 echten Kanto-Arenen-Orden benötigt (OrdenNr 1-8)
         if (ort.LigaZugang)
         {
             var kantoArenaOrden = AlleOrte
-                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-"))
+                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
                 .Select(o => o.Arena!.OrdenName)
                 .Distinct().ToList();
             var fehlendeOrden = kantoArenaOrden.Where(o => !Spieler.Orden.Contains(o)).ToList();

@@ -1,0 +1,358 @@
+@using MonsterKampf.Services
+@using MonsterKampf.Models
+@inject GameService Game
+@implements IDisposable
+
+@* ══════════════════════════════════════════════════════════════════════════════
+   ADMIN PANEL – Zum Testen: Level, HP, Orden, Geld, Ort ändern
+   Kein Passwort benötigt
+══════════════════════════════════════════════════════════════════════════════ *@
+
+<div class="admin-screen">
+    <div class="admin-container">
+
+        <!-- Header -->
+        <div class="admin-header">
+            <div class="admin-header-left">
+                <span class="admin-icon">🔧</span>
+                <div>
+                    <h1 class="admin-titel">Admin Panel</h1>
+                    <p class="admin-untertitel">Nur zum Testen – keine Passwort-Abfrage</p>
+                </div>
+            </div>
+            <button class="admin-back-btn" @onclick="Zurück">← Zurück</button>
+        </div>
+
+        @if (!Game.DatenGeladen || Game.Spieler == null || !Game.Spieler.Team.Any())
+        {
+            <div class="admin-kein-spielstand">
+                <p>⚠️ Kein aktiver Spielstand. Starte zuerst ein Spiel.</p>
+                <button class="admin-btn admin-btn-primary" @onclick="Game.ZuHauptmenü">Zum Hauptmenü</button>
+            </div>
+        }
+        else
+        {
+            <div class="admin-body">
+
+                <!-- ══ Pokémon Team ══ -->
+                <div class="admin-section">
+                    <h2 class="admin-section-titel">⚔️ Pokémon Team – Level &amp; HP</h2>
+                    <div class="admin-monster-liste">
+                        @foreach (var monster in Game.Spieler.Team)
+                        {
+                            <div class="admin-monster-card">
+                                <div class="admin-monster-header">
+                                    <span class="admin-monster-bild">@monster.Bild</span>
+                                    <div class="admin-monster-info">
+                                        <strong>@monster.AngezeigterName</strong>
+                                        <span class="admin-monster-typen">@string.Join(" / ", monster.Typen)</span>
+                                    </div>
+                                    <div class="admin-monster-kp-anzeige">
+                                        <span class="@(monster.IstOhnmächtig ? "admin-kp-rot" : "admin-kp-gruen")">
+                                            @monster.AktuelleKp / @monster.MaxKp KP
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="admin-monster-controls">
+                                    <!-- Level -->
+                                    <div class="admin-control-row">
+                                        <label>Level:</label>
+                                        <div class="admin-number-input">
+                                            <button @onclick="() => LevelÄndern(monster, -1)">−</button>
+                                            <span class="admin-number-wert">@monster.Level</span>
+                                            <button @onclick="() => LevelÄndern(monster, 1)">+</button>
+                                            <button @onclick="() => LevelSetzen(monster, 5)" class="admin-preset-btn">Lv.5</button>
+                                            <button @onclick="() => LevelSetzen(monster, 50)" class="admin-preset-btn">Lv.50</button>
+                                            <button @onclick="() => LevelSetzen(monster, 100)" class="admin-preset-btn">Lv.100</button>
+                                        </div>
+                                    </div>
+                                    <!-- HP -->
+                                    <div class="admin-control-row">
+                                        <label>HP:</label>
+                                        <div class="admin-number-input">
+                                            <button @onclick="() => HpÄndern(monster, -10)">−10</button>
+                                            <button @onclick="() => HpÄndern(monster, -1)">−1</button>
+                                            <span class="admin-number-wert">@monster.AktuelleKp</span>
+                                            <button @onclick="() => HpÄndern(monster, 1)">+1</button>
+                                            <button @onclick="() => HpÄndern(monster, 10)">+10</button>
+                                            <button @onclick="() => HpVollHeilen(monster)" class="admin-preset-btn admin-preset-gruen">Voll heilen</button>
+                                        </div>
+                                    </div>
+                                    <!-- Status -->
+                                    <div class="admin-control-row">
+                                        <label>Status:</label>
+                                        <div class="admin-status-row">
+                                            <span class="admin-status-badge">@(monster.Status == "none" ? "✅ Gesund" : $"⚠️ {monster.Status}")</span>
+                                            <button @onclick="() => StatusHeilen(monster)" class="admin-preset-btn">Status heilen</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <button class="admin-btn admin-btn-gruen" @onclick="AlleHeilen">💊 Alle Pokémon voll heilen</button>
+                </div>
+
+                <!-- ══ Orden ══ -->
+                <div class="admin-section">
+                    <h2 class="admin-section-titel">🏅 Orden verwalten</h2>
+                    <p class="admin-section-info">Aktuell: <strong>@Game.Spieler.Orden.Count Orden</strong></p>
+
+                    @if (Game.Spieler.Orden.Any())
+                    {
+                        <div class="admin-orden-liste">
+                            @foreach (var orden in Game.Spieler.Orden.ToList())
+                            {
+                                <div class="admin-orden-chip">
+                                    <span>🏅 @orden</span>
+                                    <button @onclick="() => OrdenEntfernen(orden)" class="admin-orden-remove">✕</button>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    <div class="admin-orden-hinzufuegen">
+                        <h3>Orden hinzufügen:</h3>
+                        <div class="admin-orden-buttons">
+                            @foreach (var arena in AlleArenen)
+                            {
+                                bool hatOrden = Game.Spieler.Orden.Contains(arena.OrdenName);
+                                <button class="admin-orden-add-btn @(hatOrden ? "admin-orden-hat" : "")"
+                                        @onclick="() => OrdenToggle(arena.OrdenName)"
+                                        disabled="@hatOrden">
+                                    @(hatOrden ? "✅" : "➕") @arena.OrdenName
+                                    <span class="admin-orden-nr">Nr.@arena.OrdenNr</span>
+                                </button>
+                            }
+                        </div>
+                        <div class="admin-orden-schnell">
+                            <button class="admin-btn admin-btn-primary" @onclick="Alle8KantoOrden">🏆 Alle 8 Kanto-Orden</button>
+                            <button class="admin-btn admin-btn-rot" @onclick="AlleOrdenEntfernen">🗑️ Alle Orden löschen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ Geld & Ort ══ -->
+                <div class="admin-section">
+                    <h2 class="admin-section-titel">💰 Geld &amp; Ort</h2>
+                    <div class="admin-geld-ort">
+                        <div class="admin-control-row">
+                            <label>Geld (aktuell: @Game.Spieler.Geld ₽):</label>
+                            <div class="admin-number-input">
+                                <button @onclick="() => GeldÄndern(-1000)">−1000</button>
+                                <button @onclick="() => GeldÄndern(-100)">−100</button>
+                                <span class="admin-number-wert">@Game.Spieler.Geld ₽</span>
+                                <button @onclick="() => GeldÄndern(100)">+100</button>
+                                <button @onclick="() => GeldÄndern(1000)">+1000</button>
+                                <button @onclick="() => GeldÄndern(10000)" class="admin-preset-btn">+10.000</button>
+                            </div>
+                        </div>
+                        <div class="admin-control-row">
+                            <label>Ort teleportieren:</label>
+                            <div class="admin-ort-select">
+                                <select @bind="zielOrtId" class="admin-select">
+                                    @foreach (var ort in Game.AlleOrte.OrderBy(o => o.Name))
+                                    {
+                                        <option value="@ort.Id">@ort.Name (@ort.Id)</option>
+                                    }
+                                </select>
+                                <button class="admin-btn admin-btn-primary" @onclick="OrtTeleportieren">🌀 Teleportieren</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ Besiegte Trainer zurücksetzen ══ -->
+                <div class="admin-section">
+                    <h2 class="admin-section-titel">🔄 Trainer zurücksetzen</h2>
+                    <p class="admin-section-info">Besiegte Trainer: <strong>@Game.Spieler.BesiegteTrainer.Count</strong></p>
+                    <button class="admin-btn admin-btn-rot" @onclick="TrainerZurücksetzen">🔄 Alle Trainer zurücksetzen</button>
+                </div>
+
+                <!-- ══ Speichern ══ -->
+                <div class="admin-section admin-section-speichern">
+                    <button class="admin-btn admin-btn-gruen admin-btn-gross" @onclick="Speichern">
+                        💾 Änderungen speichern
+                    </button>
+                    @if (meldung != null)
+                    {
+                        <div class="admin-meldung @(meldungFehler ? "admin-meldung-fehler" : "admin-meldung-ok")">
+                            @meldung
+                        </div>
+                    }
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string? meldung;
+    private bool meldungFehler = false;
+    private string zielOrtId = "";
+
+    // Alle Arenen aus der Karte (für Orden-Auswahl)
+    private List<(string OrdenName, int OrdenNr, string OrtName)> AlleArenen =>
+        Game.AlleOrte
+            .Where(o => o.Arena != null)
+            .Select(o => (o.Arena!.OrdenName, o.Arena.OrdenNr, o.Name))
+            .OrderBy(a => a.OrdenNr)
+            .ThenBy(a => a.OrdenName)
+            .ToList();
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+        if (Game.AlleOrte.Any())
+            zielOrtId = Game.Spieler?.AktuellerOrt ?? Game.AlleOrte.First().Id;
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void Zurück()
+    {
+        // Zurück zur Weltkarte wenn Spielstand vorhanden, sonst Hauptmenü
+        if (Game.Spieler?.Team.Any() == true)
+            Game.ZuWeltkarte();
+        else
+            Game.ZuHauptmenü();
+    }
+
+    // ── Monster ──────────────────────────────────────────────────────────────
+    private void LevelÄndern(MonsterInstanz m, int delta)
+    {
+        int neuesLevel = Math.Clamp(m.Level + delta, 1, 100);
+        LevelSetzen(m, neuesLevel);
+    }
+
+    private void LevelSetzen(MonsterInstanz m, int level)
+    {
+        var spezies = Game.AlleMonster.FirstOrDefault(s => s.Id == m.SpeziesId);
+        if (spezies == null) return;
+        float lf = level / 50f;
+        m.Level = level;
+        m.Angriff = (int)(spezies.Stats.GetValueOrDefault("angriff", 50) * lf) + 5;
+        m.Verteidigung = (int)(spezies.Stats.GetValueOrDefault("verteidigung", 50) * lf) + 5;
+        m.SpezialAngriff = (int)(spezies.Stats.GetValueOrDefault("spezialangriff", 50) * lf) + 5;
+        m.SpezialVerteidigung = (int)(spezies.Stats.GetValueOrDefault("spezialverteidigung", 50) * lf) + 5;
+        m.Initiative = (int)(spezies.Stats.GetValueOrDefault("initiative", 50) * lf) + 5;
+        int basisKp = spezies.Stats.GetValueOrDefault("kp", 45);
+        m.MaxKp = (int)((basisKp * 2 * level) / 100f) + level + 10;
+        m.AktuelleKp = m.MaxKp;
+        Game.Notify();
+    }
+
+    private void HpÄndern(MonsterInstanz m, int delta)
+    {
+        m.AktuelleKp = Math.Clamp(m.AktuelleKp + delta, 0, m.MaxKp);
+        Game.Notify();
+    }
+
+    private void HpVollHeilen(MonsterInstanz m)
+    {
+        m.AktuelleKp = m.MaxKp;
+        Game.Notify();
+    }
+
+    private void StatusHeilen(MonsterInstanz m)
+    {
+        m.Status = "none";
+        m.StatusZähler = 0;
+        Game.Notify();
+    }
+
+    private void AlleHeilen()
+    {
+        foreach (var m in Game.Spieler.Team)
+        {
+            m.AktuelleKp = m.MaxKp;
+            m.Status = "none";
+            m.StatusZähler = 0;
+            foreach (var a in m.Attacken) a.AktuelleAp = a.MaxAp;
+        }
+        Game.Notify();
+        ZeigeMeldung("✅ Alle Pokémon vollständig geheilt!");
+    }
+
+    // ── Orden ─────────────────────────────────────────────────────────────────
+    private void OrdenToggle(string ordenName)
+    {
+        if (!Game.Spieler.Orden.Contains(ordenName))
+        {
+            Game.Spieler.Orden.Add(ordenName);
+            Game.Notify();
+        }
+    }
+
+    private void OrdenEntfernen(string ordenName)
+    {
+        Game.Spieler.Orden.Remove(ordenName);
+        Game.Notify();
+    }
+
+    private void Alle8KantoOrden()
+    {
+        var kantoOrden = Game.AlleOrte
+            .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
+            .Select(o => o.Arena!.OrdenName)
+            .Distinct();
+        foreach (var o in kantoOrden)
+            if (!Game.Spieler.Orden.Contains(o))
+                Game.Spieler.Orden.Add(o);
+        Game.Notify();
+        ZeigeMeldung("✅ Alle 8 Kanto-Orden hinzugefügt!");
+    }
+
+    private void AlleOrdenEntfernen()
+    {
+        Game.Spieler.Orden.Clear();
+        Game.Notify();
+        ZeigeMeldung("🗑️ Alle Orden entfernt.");
+    }
+
+    // ── Geld & Ort ────────────────────────────────────────────────────────────
+    private void GeldÄndern(int delta)
+    {
+        Game.Spieler.Geld = Math.Max(0, Game.Spieler.Geld + delta);
+        Game.Notify();
+    }
+
+    private void OrtTeleportieren()
+    {
+        if (!string.IsNullOrEmpty(zielOrtId))
+        {
+            Game.Spieler.AktuellerOrt = zielOrtId;
+            var ort = Game.AlleOrte.FirstOrDefault(o => o.Id == zielOrtId);
+            Game.Notify();
+            ZeigeMeldung($"🌀 Teleportiert nach {ort?.Name ?? zielOrtId}");
+        }
+    }
+
+    // ── Trainer ───────────────────────────────────────────────────────────────
+    private void TrainerZurücksetzen()
+    {
+        Game.Spieler.BesiegteTrainer.Clear();
+        Game.Notify();
+        ZeigeMeldung("🔄 Alle Trainer zurückgesetzt – sie können erneut bekämpft werden.");
+    }
+
+    // ── Speichern ─────────────────────────────────────────────────────────────
+    private async Task Speichern()
+    {
+        await Game.AktuellenSpielstandSpeichern();
+        ZeigeMeldung("💾 Gespeichert!");
+    }
+
+    private void ZeigeMeldung(string text, bool fehler = false)
+    {
+        meldung = text;
+        meldungFehler = fehler;
+        InvokeAsync(async () =>
+        {
+            await Task.Delay(3000);
+            meldung = null;
+            StateHasChanged();
+        });
+    }
+}
