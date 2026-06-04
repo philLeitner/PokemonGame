@@ -749,7 +749,7 @@ body {
 
 /* Panel 3 – Detail-Editor */
 .editor-panel-rechts {
-  width: 360px; min-width: 320px; transition: width 0.2s ease, min-width 0.2s ease;
+  width: 420px; min-width: 380px; transition: width 0.2s ease, min-width 0.2s ease;
   background: #161b22; overflow-y: auto;
   display: flex; flex-direction: column;
 }
@@ -1760,8 +1760,8 @@ body {
 }
 .kompass-mitte-zeile {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.4rem;
   width: 100%;
 }
 .kompass-west, .kompass-ost {
@@ -1770,6 +1770,8 @@ body {
   align-items: center;
   gap: 0.2rem;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 .kompass-mitte {
   display: flex;
@@ -2012,10 +2014,10 @@ body {
   }
 }
 
-.editor-panel-rechts.sichtbar { width: 360px; min-width: 320px; }
+.editor-panel-rechts.sichtbar { width: 420px; min-width: 380px; }
 
 .editor-panel-rechts.versteckt { width: 0; min-width: 0; overflow: hidden; border: none; }
-.editor-panel-rechts.sichtbar { width: 360px; min-width: 320px; }
+.editor-panel-rechts.sichtbar { width: 420px; min-width: 380px; }
 
 /* ═══ Markt-Items Editor ══════════════════════════════════════════════════ */
 .editor-markt-eintrag {
