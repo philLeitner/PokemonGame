@@ -2506,3 +2506,175 @@ input:checked + .toggle-slider-klein::before {
   background: linear-gradient(135deg, #1e3a5f, #0f2744) !important;
   border-color: #3b82f6 !important; color: #93c5fd !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EIGENE MAP START SCREEN (ems-*)
+═══════════════════════════════════════════════════════════════════════════ */
+.ems-screen {
+  position: relative; min-height: 100vh; overflow: hidden;
+  background: linear-gradient(135deg, #060d1a 0%, #0a1628 40%, #0d1f3c 100%);
+  display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+}
+
+/* Hintergrund-Gitter */
+.ems-bg-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.ems-container {
+  position: relative; width: 100%; max-width: 900px;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+
+/* Header */
+.ems-header {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.ems-back-btn {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.5rem; color: var(--text-mittel); padding: 0.5rem 1rem;
+  cursor: pointer; font-size: 0.9rem; transition: all 0.2s; white-space: nowrap;
+}
+.ems-back-btn:hover { background: rgba(255,255,255,0.12); color: var(--text-hell); }
+.ems-title-block {
+  flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.ems-title-icon { font-size: 2.5rem; line-height: 1; }
+.ems-title {
+  font-size: 2.2rem; font-weight: 900; letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #93c5fd, #3b82f6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin: 0;
+}
+.ems-subtitle { color: var(--text-mittel); font-size: 0.9rem; margin: 0; }
+.ems-badge-warn {
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 0.5rem; padding: 0.4rem 0.75rem;
+  color: #f59e0b; font-size: 0.8rem; font-weight: 600; white-space: nowrap;
+}
+
+/* Body: 2 Spalten */
+.ems-body {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+}
+@media (max-width: 640px) { .ems-body { grid-template-columns: 1fr; } }
+
+/* Karten */
+.ems-card {
+  background: rgba(255,255,255,0.04); border-radius: 1rem;
+  padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+  transition: transform 0.2s;
+}
+.ems-card-spielstand { border: 1px solid rgba(59,130,246,0.3); }
+.ems-card-editor { border: 1px solid rgba(16,185,129,0.3); }
+.ems-card-icon { font-size: 2.2rem; }
+.ems-card-titel {
+  font-size: 1.3rem; font-weight: 800; color: var(--text-hell); margin: 0;
+}
+.ems-card-info { color: var(--text-mittel); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+/* Buttons */
+.ems-btn {
+  padding: 0.7rem 1.25rem; border-radius: 0.6rem; font-weight: 700;
+  font-size: 0.95rem; cursor: pointer; border: none;
+  transition: all 0.18s cubic-bezier(0.23,1,0.32,1);
+}
+.ems-btn:active { transform: scale(0.97); }
+.ems-btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white; box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+}
+.ems-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.5); }
+.ems-btn-secondary {
+  background: rgba(255,255,255,0.07); border: 1px solid var(--border);
+  color: var(--text-hell);
+}
+.ems-btn-secondary:hover { background: rgba(255,255,255,0.13); }
+.ems-btn-editor {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white; box-shadow: 0 4px 14px rgba(5,150,105,0.3); margin-top: auto;
+}
+.ems-btn-editor:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,150,105,0.45); }
+
+/* Spielstand-Aktionen */
+.ems-spielstand-aktionen { display: flex; flex-direction: column; gap: 0.6rem; }
+
+/* Start-Optionen (kein Spielstand) */
+.ems-spielstart-optionen { display: flex; flex-direction: column; gap: 0.75rem; }
+.ems-start-option {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.05); border-radius: 0.75rem;
+  padding: 0.9rem 1rem; cursor: pointer;
+  transition: all 0.2s; text-align: left;
+}
+.ems-start-option:active { transform: scale(0.98); }
+.ems-start-kopieren { border: 1px solid rgba(59,130,246,0.35); }
+.ems-start-kopieren:hover { background: rgba(59,130,246,0.12); border-color: #3b82f6; transform: translateY(-1px); }
+.ems-start-neu { border: 1px solid rgba(16,185,129,0.35); }
+.ems-start-neu:hover { background: rgba(16,185,129,0.1); border-color: #10b981; transform: translateY(-1px); }
+.ems-start-option-icon { font-size: 1.8rem; flex-shrink: 0; }
+.ems-start-option-text {
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.ems-start-option-text strong { color: var(--text-hell); font-size: 0.95rem; }
+.ems-start-option-text span { color: var(--text-mittel); font-size: 0.82rem; }
+
+/* Neustart-Panel */
+.ems-neustart-panel {
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 0.75rem; padding: 1rem;
+}
+.ems-neustart-warnung { color: #f59e0b; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem; }
+.ems-neustart-optionen { display: flex; flex-direction: column; gap: 0.5rem; }
+.ems-neustart-btn {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.55rem 0.9rem; border-radius: 0.5rem;
+  cursor: pointer; font-weight: 600; font-size: 0.88rem;
+  transition: all 0.18s; border: 1px solid transparent;
+}
+.ems-neustart-kopieren {
+  background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); color: #93c5fd;
+}
+.ems-neustart-kopieren:hover { background: #2563eb; color: white; }
+.ems-neustart-frisch {
+  background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); color: #fca5a5;
+}
+.ems-neustart-frisch:hover { background: #ef4444; color: white; }
+.ems-neustart-abbrechen {
+  background: rgba(255,255,255,0.05); border-color: var(--border); color: var(--text-mittel);
+}
+.ems-neustart-abbrechen:hover { background: rgba(255,255,255,0.1); }
+.ems-neustart-icon { font-size: 1rem; }
+
+/* Editor Features */
+.ems-editor-features {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.ems-feature-chip {
+  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 999px; padding: 0.25rem 0.65rem;
+  color: #6ee7b7; font-size: 0.78rem; font-weight: 600;
+}
+
+/* Laden */
+.ems-laden {
+  display: flex; align-items: center; gap: 0.75rem; color: var(--text-mittel);
+}
+.ems-spinner { animation: spin 1s linear infinite; display: inline-block; font-size: 1.5rem; }
+
+/* Fehler */
+.ems-fehler {
+  background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 0.5rem; padding: 0.75rem; color: #fca5a5;
+  display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem;
+}
+
+/* Footer */
+.ems-footer-info {
+  text-align: center; color: var(--text-dunkel); font-size: 0.85rem;
+  padding: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05);
+}

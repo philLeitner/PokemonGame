@@ -4,105 +4,148 @@
 @implements IDisposable
 
 @* ══════════════════════════════════════════════════════════════════════════════
-   EIGENE MAP START – Dialog: Spielstand kopieren oder neu starten
-   Separater Spielstand, keine Zähne/Boni
+   EIGENE MAP START – Schöner Hub-Screen
+   Separater Spielstand · kein Zähne/Boni · Map-Editor Zugang
 ══════════════════════════════════════════════════════════════════════════════ *@
 
-<div class="eigene-map-start-screen">
-    <div class="eigene-map-start-box">
-        <div class="eigene-map-start-icon">🗺️</div>
-        <h2 class="eigene-map-start-titel">Eigene Map</h2>
-        <p class="eigene-map-start-hinweis">
-            Die eigene Map hat einen <strong>separaten Spielstand</strong>.<br />
-            Dein normaler Spielstand (Gen 1–8) bleibt unberührt.<br />
-            <span class="eigene-map-kein-bonus">⚠️ Keine Zähne und keine Boni in diesem Modus.</span>
-        </p>
+<div class="ems-screen">
+    <!-- Hintergrund-Deko -->
+    <div class="ems-bg-grid"></div>
 
-        @if (ladevorgang)
-        {
-            <div class="eigene-map-laden">
-                <div class="pokeball-anim">⚫</div>
-                <p>Lade Spielstand...</p>
+    <div class="ems-container">
+
+        <!-- Header -->
+        <div class="ems-header">
+            <button class="ems-back-btn" @onclick="Game.ZuHauptmenü">← Hauptmenü</button>
+            <div class="ems-title-block">
+                <span class="ems-title-icon">🗺️</span>
+                <h1 class="ems-title">Eigene Map</h1>
+                <p class="ems-subtitle">Gestalte deine Welt – spiele auf deinen eigenen Regeln</p>
             </div>
-        }
-        else if (Game.HatEigeneMapSpeicherstand)
-        {
-            <!-- Eigener Spielstand vorhanden: Weiterspielen oder Neu starten -->
-            <div class="eigene-map-optionen">
-                <div class="eigene-map-option-card empfohlen" @onclick="WeiterSpielen">
-                    <div class="option-icon">▶️</div>
-                    <div class="option-info">
-                        <span class="option-titel">Weiterspielen</span>
-                        <span class="option-beschreibung">Eigenen Map-Spielstand laden</span>
-                    </div>
-                </div>
-                <div class="eigene-map-option-card" @onclick="() => zeigeNeuStartOptionen = !zeigeNeuStartOptionen">
-                    <div class="option-icon">🔄</div>
-                    <div class="option-info">
-                        <span class="option-titel">Neu starten</span>
-                        <span class="option-beschreibung">Eigenen Spielstand zurücksetzen</span>
-                    </div>
-                </div>
-                @if (zeigeNeuStartOptionen)
+            <div class="ems-badge-warn">⚠️ Kein Zähne &amp; Boni</div>
+        </div>
+
+        <!-- Zwei Spalten: Spielstand + Editor -->
+        <div class="ems-body">
+
+            <!-- Linke Karte: Spielstand -->
+            <div class="ems-card ems-card-spielstand">
+                <div class="ems-card-icon">💾</div>
+                <h2 class="ems-card-titel">Spielstand</h2>
+                <p class="ems-card-info">
+                    Dein eigener Map-Spielstand ist <strong>komplett getrennt</strong> vom normalen Gen 1–8 Spielstand.
+                    Er wird niemals überschrieben.
+                </p>
+
+                @if (ladevorgang)
                 {
-                    <div class="eigene-map-neustart-warnung">
-                        <p>⚠️ Achtung: Der eigene Map-Spielstand wird gelöscht!</p>
-                        <div class="eigene-map-neustart-buttons">
-                            @if (Game.HatSpeicherstand)
-                            {
-                                <button class="btn-eigene-map-kopieren" @onclick="() => NeuStartenMitKopie()">
-                                    📋 Spielstand von Gen 1–8 kopieren
+                    <div class="ems-laden">
+                        <div class="ems-spinner">⚫</div>
+                        <span>Lade...</span>
+                    </div>
+                }
+                else if (fehler != null)
+                {
+                    <div class="ems-fehler">
+                        <span>⚠️ @fehler</span>
+                        <button class="ems-btn ems-btn-secondary" @onclick="() => fehler = null">Erneut versuchen</button>
+                    </div>
+                }
+                else if (Game.HatEigeneMapSpeicherstand)
+                {
+                    <!-- Spielstand vorhanden -->
+                    <div class="ems-spielstand-aktionen">
+                        <button class="ems-btn ems-btn-primary" @onclick="WeiterSpielen">
+                            ▶️ Weiterspielen
+                        </button>
+                        <button class="ems-btn ems-btn-secondary" @onclick="() => zeigeNeuStart = !zeigeNeuStart">
+                            🔄 Neu starten
+                        </button>
+                    </div>
+
+                    @if (zeigeNeuStart)
+                    {
+                        <div class="ems-neustart-panel">
+                            <p class="ems-neustart-warnung">⚠️ Eigener Spielstand wird gelöscht!</p>
+                            <div class="ems-neustart-optionen">
+                                @if (Game.HatSpeicherstand)
+                                {
+                                    <button class="ems-neustart-btn ems-neustart-kopieren" @onclick="NeuMitKopie">
+                                        <span class="ems-neustart-icon">📋</span>
+                                        <span>Gen 1–8 kopieren</span>
+                                    </button>
+                                }
+                                <button class="ems-neustart-btn ems-neustart-frisch" @onclick="NeuFrisch">
+                                    <span class="ems-neustart-icon">✨</span>
+                                    <span>Komplett neu</span>
                                 </button>
-                            }
-                            <button class="btn-eigene-map-neu" @onclick="() => NeuStartenFrisch()">
-                                ✨ Komplett neu starten
-                            </button>
-                            <button class="btn-eigene-map-abbrechen" @onclick="() => zeigeNeuStartOptionen = false">
-                                Abbrechen
-                            </button>
+                                <button class="ems-neustart-btn ems-neustart-abbrechen" @onclick="() => zeigeNeuStart = false">
+                                    Abbrechen
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
-            </div>
-        }
-        else
-        {
-            <!-- Kein eigener Spielstand: Kopieren oder neu -->
-            <div class="eigene-map-optionen">
-                @if (Game.HatSpeicherstand)
+                else
                 {
-                    <div class="eigene-map-option-card empfohlen" @onclick="() => StartenMitKopie()">
-                        <div class="option-icon">📋</div>
-                        <div class="option-info">
-                            <span class="option-titel">Spielstand kopieren</span>
-                            <span class="option-beschreibung">
-                                Deine Pokémon und Items aus Gen 1–8 als Startpunkt verwenden.<br />
-                                Dein normaler Spielstand bleibt unverändert.
-                            </span>
-                        </div>
+                    <!-- Kein Spielstand -->
+                    <div class="ems-spielstart-optionen">
+                        @if (Game.HatSpeicherstand)
+                        {
+                            <button class="ems-start-option ems-start-kopieren" @onclick="StartenMitKopie">
+                                <div class="ems-start-option-icon">📋</div>
+                                <div class="ems-start-option-text">
+                                    <strong>Spielstand kopieren</strong>
+                                    <span>Pokémon &amp; Items aus Gen 1–8 übernehmen</span>
+                                </div>
+                            </button>
+                        }
+                        <button class="ems-start-option ems-start-neu" @onclick="StartenFrisch">
+                            <div class="ems-start-option-icon">✨</div>
+                            <div class="ems-start-option-text">
+                                <strong>Neu starten</strong>
+                                <span>Starter wählen &amp; von vorne beginnen</span>
+                            </div>
+                        </button>
                     </div>
                 }
-                <div class="eigene-map-option-card @(Game.HatSpeicherstand ? "" : "empfohlen")" @onclick="() => StartenFrisch()">
-                    <div class="option-icon">✨</div>
-                    <div class="option-info">
-                        <span class="option-titel">Neu starten</span>
-                        <span class="option-beschreibung">
-                            Frisch beginnen – Starter wählen und von vorne spielen.
-                        </span>
-                    </div>
-                </div>
             </div>
-        }
 
-        <button class="btn-eigene-map-zurueck" @onclick="Game.ZuHauptmenü">
-            ← Zurück zum Hauptmenü
-        </button>
+            <!-- Rechte Karte: Map Editor -->
+            <div class="ems-card ems-card-editor">
+                <div class="ems-card-icon">🗺️</div>
+                <h2 class="ems-card-titel">Map gestalten</h2>
+                <p class="ems-card-info">
+                    Erstelle deine eigene Welt im Map-Editor: Orte anlegen, Verbindungen setzen,
+                    Trainer &amp; Monster platzieren.
+                </p>
+                <div class="ems-editor-features">
+                    <span class="ems-feature-chip">🏙️ Orte &amp; Routen</span>
+                    <span class="ems-feature-chip">🔗 Verbindungen</span>
+                    <span class="ems-feature-chip">👾 Wild-Monster</span>
+                    <span class="ems-feature-chip">🥊 Trainer</span>
+                    <span class="ems-feature-chip">🏆 Arenen</span>
+                    <span class="ems-feature-chip">🛒 Märkte</span>
+                </div>
+                <button class="ems-btn ems-btn-editor" @onclick="Game.ZuMapEditor">
+                    🗺️ Map-Editor öffnen
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Info-Footer -->
+        <div class="ems-footer-info">
+            <span>💡 Tipp: Erstelle zuerst deine Map im Editor, dann starte das Spiel!</span>
+        </div>
+
     </div>
 </div>
 
 @code {
     bool ladevorgang = false;
-    bool zeigeNeuStartOptionen = false;
+    bool zeigeNeuStart = false;
+    string? fehler = null;
 
     protected override void OnInitialized()
     {
@@ -113,38 +156,44 @@
 
     private async Task WeiterSpielen()
     {
+        fehler = null;
         ladevorgang = true;
         StateHasChanged();
-        await Game.EigeneMapStarten(spielstandKopieren: false);
+        try { await Game.EigeneMapStarten(spielstandKopieren: false); }
+        catch (Exception ex) { fehler = ex.Message; }
         ladevorgang = false;
     }
 
     private async Task StartenMitKopie()
     {
+        fehler = null;
         ladevorgang = true;
         StateHasChanged();
-        await Game.EigeneMapStarten(spielstandKopieren: true);
+        try { await Game.EigeneMapStarten(spielstandKopieren: true); }
+        catch (Exception ex) { fehler = ex.Message; }
         ladevorgang = false;
     }
 
     private async Task StartenFrisch()
     {
+        fehler = null;
         ladevorgang = true;
         StateHasChanged();
-        await Game.EigeneMapStarten(spielstandKopieren: false);
+        try { await Game.EigeneMapStarten(spielstandKopieren: false); }
+        catch (Exception ex) { fehler = ex.Message; }
         ladevorgang = false;
     }
 
-    private async Task NeuStartenMitKopie()
+    private async Task NeuMitKopie()
     {
-        zeigeNeuStartOptionen = false;
+        zeigeNeuStart = false;
         await Game.EigeneMapSpielstandLöschen();
         await StartenMitKopie();
     }
 
-    private async Task NeuStartenFrisch()
+    private async Task NeuFrisch()
     {
-        zeigeNeuStartOptionen = false;
+        zeigeNeuStart = false;
         await Game.EigeneMapSpielstandLöschen();
         await StartenFrisch();
     }
