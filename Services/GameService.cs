@@ -289,12 +289,6 @@ public class GameService
             if (fehlendeOrden.Count > 0)
                 return $"⛔ Du benötigst alle {kantoArenaOrden.Count} Kanto-Orden für den Liga-Zugang! Es fehlen noch {fehlendeOrden.Count} Orden.";
         }
-        // Mindest-Orden-Prüfung
-        if (ort.MinOrdenFürZugang > 0 && Spieler.Orden.Count < ort.MinOrdenFürZugang)
-            return $"⛔ Du benötigst mindestens {ort.MinOrdenFürZugang} Orden für diesen Ort. Du hast {Spieler.Orden.Count}.";
-        // Item-Bedingung
-        if (ort.BenötigtItem != null && Spieler.GetItemMenge(ort.BenötigtItem) <= 0)
-            return $"⛔ Du benötigst {ort.BenötigtItemName ?? ort.BenötigtItem}, um diesen Ort zu betreten!";
         return null;
     }
 

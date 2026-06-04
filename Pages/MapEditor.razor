@@ -348,38 +348,10 @@
                         </details>
                     </div>
                 }
-                <!-- Sperrbedingungen -->
+                <!-- Liga-Zugang Toggle -->
                 <div class="editor-section">
-                    <div class="editor-section-title">🔒 Sperrbedingungen</div>
-                    <div class="editor-field-grid">
-                        <div class="editor-field">
-                            <label>Ab Orden (min.)</label>
-                            <input class="editor-input editor-input-klein" type="number" min="0" max="8"
-                                   value="@ort.MinOrdenFürZugang"
-                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.MinOrdenFürZugang = v; Speichern(); } }" />
-                            <span class="editor-field-hint">0 = immer offen</span>
-                        </div>
-                        <div class="editor-field">
-                            <label>Bis Orden gesperrt (max.)</label>
-                            <input class="editor-input editor-input-klein" type="number" min="0" max="8"
-                                   value="@ort.MaxOrdenFürSperre"
-                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { ort.MaxOrdenFürSperre = v; Speichern(); } }" />
-                            <span class="editor-field-hint">0 = keine Max-Sperre</span>
-                        </div>
-                        <div class="editor-field">
-                            <label>Benötigtes Item (ID)</label>
-                            <input class="editor-input" value="@(ort.BenötigtItem ?? "")"
-                                   placeholder="z.B. sprudelwasser"
-                                   @onchange="e => { ort.BenötigtItem = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
-                        </div>
-                        <div class="editor-field">
-                            <label>Item-Name (Anzeige)</label>
-                            <input class="editor-input" value="@(ort.BenötigtItemName ?? "")"
-                                   placeholder="z.B. Sprudelwasser"
-                                   @onchange="e => { ort.BenötigtItemName = string.IsNullOrWhiteSpace(e.Value?.ToString()) ? null : e.Value.ToString(); Speichern(); }" />
-                        </div>
-                    </div>
-                    <div class="editor-toggle-row" style="margin-top:0.5rem">
+                    <div class="editor-section-title">🔒 Zugangsbedingungen</div>
+                    <div class="editor-toggle-row">
                         <label class="editor-toggle">
                             <input type="checkbox" checked="@ort.IstUnterirdisch"
                                    @onchange="e => { ort.IstUnterirdisch = (bool)(e.Value ?? false); Speichern(); }" />
