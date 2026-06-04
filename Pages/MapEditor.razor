@@ -703,6 +703,11 @@
                                                    @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { tr.Belohnung = v; Speichern(); } }" />
                                         </div>
                                     </div>
+                                    <label class="muss-kampf-check">
+                                        <input type="checkbox" checked="@tr.MussBesiegt"
+                                               @onchange="e => { tr.MussBesiegt = (bool)(e.Value ?? false); Speichern(); }" />
+                                        <span>⚔️ Muss-Kampf (blockiert Weiterreise bis besiegt)</span>
+                                    </label>
                                     <div class="editor-field editor-field-voll">
                                         <label>Dialog (vor Kampf)</label>
                                         <input class="editor-input" value="@tr.Dialogvor"

@@ -358,6 +358,15 @@ public class GameService
                 {
                     var richtungsFehler = RichtungsZugangsPrüfung(aktOrt, vonRichtung);
                     if (richtungsFehler != null) return richtungsFehler;
+                    // Muss-Kampf Trainer auf dem aktuellen Ort prüfen
+                    var mussTrainer = aktOrt.Trainer
+                        .Where(t => t.MussBesiegt && !Spieler.BesiegteTrainer.Contains(t.Id))
+                        .ToList();
+                    if (mussTrainer.Any())
+                    {
+                        var namen = string.Join(", ", mussTrainer.Select(t => $"{t.Klasse} {t.Name}"));
+                        return $"⚔️ Du musst zuerst folgende Trainer besiegen: {namen}";
+                    }
                 }
             }
         }
