@@ -46,11 +46,32 @@
             </button>
         }
 
+        @if (Game.IstEigeneMapModus)
+        {
+            <div class="eigene-map-modus-badge">
+                🗺️ Eigene Map
+                <span class="eigene-map-kein-bonus-klein">(keine Boni)</span>
+            </div>
+        }
+
         <div class="speichern-buttons">
-            <button class="btn-speichern" @onclick="SpielstandSpeichern">💾 Speichern</button>
-            <button class="btn-laden" @onclick="SpielstandLaden">📂 Laden</button>
+            <button class="btn-speichern" @onclick="SpielstandSpeichernAktuell">💾 Speichern</button>
+            @if (!Game.IstEigeneMapModus)
+            {
+                <button class="btn-laden" @onclick="SpielstandLaden">📂 Laden</button>
+            }
         </div>
-        <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
+
+        @if (Game.IstEigeneMapModus)
+        {
+            <button class="btn-hauptmenu btn-eigene-map-verlassen" @onclick="ZumNormalenSpielstandWechseln">
+                ← Gen 1–8 Spielstand
+            </button>
+        }
+        else
+        {
+            <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
+        }
         <button class="btn-editor-klein" @onclick="Game.ZuMapEditor">🗺️ Map-Editor</button>
     </div>
 
@@ -519,10 +540,23 @@
         meldung = "💾 Spielstand gespeichert!";
     }
 
+    private async Task SpielstandSpeichernAktuell()
+    {
+        await Game.AktuellenSpielstandSpeichern();
+        meldung = Game.IstEigeneMapModus
+            ? "💾 Eigener Map-Spielstand gespeichert!"
+            : "💾 Spielstand gespeichert!";
+    }
+
     private async Task SpielstandLaden()
     {
         await Game.SpielstandLaden();
         meldung = "📂 Spielstand geladen!";
+    }
+
+    private async Task ZumNormalenSpielstandWechseln()
+    {
+        await Game.ZumNormalenSpielstandWechseln();
     }
 
     private async Task ItemKaufen(ShopItem item)

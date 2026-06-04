@@ -2359,3 +2359,150 @@ input:checked + .toggle-slider-klein::before {
     font-size: 0.8rem !important;
     height: auto !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EIGENE MAP – Styles
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hauptmenü Button */
+.btn-eigene-map {
+  padding: 0.75rem; font-size: 0.95rem; font-weight: 600;
+  background: linear-gradient(135deg, #1e3a5f, #0f2744);
+  border: 1px solid #3b82f6; border-radius: var(--radius);
+  color: #93c5fd; cursor: pointer; transition: background 0.2s, transform 0.15s;
+}
+.btn-eigene-map:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; transform: translateY(-1px); }
+.btn-eigene-map:active { transform: scale(0.97); }
+
+/* Weltkarte: Eigene Map Modus Badge */
+.eigene-map-modus-badge {
+  background: linear-gradient(135deg, #1e3a5f, #0f2744);
+  border: 1px solid #3b82f6; border-radius: var(--radius);
+  padding: 0.5rem 0.75rem; color: #93c5fd; font-size: 0.85rem; font-weight: 700;
+  text-align: center; margin-bottom: 0.5rem;
+}
+.eigene-map-kein-bonus-klein {
+  display: block; font-size: 0.75rem; color: #f59e0b; font-weight: 400;
+}
+
+/* Weltkarte: Verlassen-Button */
+.btn-eigene-map-verlassen {
+  background: linear-gradient(135deg, #1e3a5f, #0f2744) !important;
+  border: 1px solid #3b82f6 !important; color: #93c5fd !important;
+}
+.btn-eigene-map-verlassen:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8) !important; color: white !important; }
+
+/* ── EigeneMapStart Screen ─────────────────────────────────────────────── */
+.eigene-map-start-screen {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; padding: 1rem;
+  background: linear-gradient(135deg, #0a1628, #0f2744, #0a1628);
+}
+.eigene-map-start-box {
+  width: 100%; max-width: 600px;
+  background: var(--karte-bg); border: 1px solid #3b82f6;
+  border-radius: 1rem; padding: 2.5rem 2rem; text-align: center;
+  box-shadow: 0 0 40px rgba(59,130,246,0.2);
+}
+.eigene-map-start-icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
+.eigene-map-start-titel {
+  font-size: 2rem; font-weight: 800; color: #93c5fd; margin-bottom: 1rem;
+}
+.eigene-map-start-hinweis {
+  color: var(--text-mittel); font-size: 0.95rem; line-height: 1.6;
+  margin-bottom: 2rem; background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.2); border-radius: 0.5rem; padding: 1rem;
+}
+.eigene-map-kein-bonus {
+  display: inline-block; color: #f59e0b; font-weight: 600; margin-top: 0.5rem;
+}
+
+/* Optionen-Karten */
+.eigene-map-optionen {
+  display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;
+}
+.eigene-map-option-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+  border-radius: 0.75rem; padding: 1rem 1.25rem;
+  cursor: pointer; transition: all 0.2s; text-align: left;
+}
+.eigene-map-option-card:hover {
+  background: rgba(59,130,246,0.15); border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+.eigene-map-option-card:active { transform: scale(0.98); }
+.eigene-map-option-card.empfohlen {
+  border-color: #3b82f6; background: rgba(59,130,246,0.1);
+}
+.option-icon { font-size: 2rem; flex-shrink: 0; }
+.option-info { display: flex; flex-direction: column; gap: 0.25rem; }
+.option-titel { font-size: 1.05rem; font-weight: 700; color: var(--text-hell); }
+.option-beschreibung { font-size: 0.85rem; color: var(--text-mittel); line-height: 1.4; }
+
+/* Neustart-Warnung */
+.eigene-map-neustart-warnung {
+  background: rgba(245,158,11,0.1); border: 1px solid #f59e0b;
+  border-radius: 0.75rem; padding: 1rem; text-align: center;
+}
+.eigene-map-neustart-warnung p { color: #f59e0b; font-weight: 600; margin-bottom: 0.75rem; }
+.eigene-map-neustart-buttons { display: flex; flex-direction: column; gap: 0.5rem; }
+.btn-eigene-map-kopieren {
+  padding: 0.6rem; background: linear-gradient(135deg, #1e3a5f, #0f2744);
+  border: 1px solid #3b82f6; border-radius: var(--radius);
+  color: #93c5fd; cursor: pointer; font-weight: 600; transition: all 0.2s;
+}
+.btn-eigene-map-kopieren:hover { background: #2563eb; color: white; }
+.btn-eigene-map-neu {
+  padding: 0.6rem; background: rgba(239,68,68,0.1);
+  border: 1px solid #ef4444; border-radius: var(--radius);
+  color: #fca5a5; cursor: pointer; font-weight: 600; transition: all 0.2s;
+}
+.btn-eigene-map-neu:hover { background: #ef4444; color: white; }
+.btn-eigene-map-abbrechen {
+  padding: 0.6rem; background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text-mittel); cursor: pointer; transition: all 0.2s;
+}
+.btn-eigene-map-abbrechen:hover { background: rgba(255,255,255,0.1); }
+
+/* Lade-Animation */
+.eigene-map-laden {
+  padding: 2rem; color: var(--text-mittel); font-size: 1rem;
+}
+.eigene-map-laden .pokeball-anim {
+  font-size: 2rem; display: block; margin-bottom: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+/* Zurück-Button */
+.btn-eigene-map-zurueck {
+  padding: 0.6rem 1.25rem; background: transparent;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text-dunkel); cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.btn-eigene-map-zurueck:hover { color: var(--text-hell); border-color: var(--text-mittel); }
+
+/* Einstellungen: EigeneMap Hinweis */
+.eigene-map-einstellungen-hinweis {
+  background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 0.5rem; padding: 1rem; margin-top: 0.75rem; text-align: center;
+}
+.eigene-map-einstellungen-hinweis p { color: var(--text-mittel); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.btn-eigene-map-starten {
+  padding: 0.6rem 1.5rem; background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none; border-radius: var(--radius); color: white;
+  cursor: pointer; font-weight: 700; font-size: 0.95rem; transition: all 0.2s;
+}
+.btn-eigene-map-starten:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.4); }
+.btn-eigene-map-starten:active { transform: scale(0.97); }
+
+/* Einstellungen: EigeneMap Button Variante */
+.opt-btn.eigene-map-btn {
+  border-color: #3b82f6; color: #93c5fd;
+}
+.opt-btn.eigene-map-btn.active {
+  background: linear-gradient(135deg, #1e3a5f, #0f2744) !important;
+  border-color: #3b82f6 !important; color: #93c5fd !important;
+}

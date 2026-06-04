@@ -403,7 +403,8 @@ public enum SpielPhase
     Kampf,
     MapEditor,
     Einstellungen,
-    ZähneShop
+    ZähneShop,
+    EigeneMapStart   // Dialog: Spielstand kopieren oder neu starten
 }
 
 // ─── Speicherstand ────────────────────────────────────────────────────────────
@@ -458,7 +459,8 @@ public class GespeichertesItem
 public enum MapModus
 {
     AlleRegionen,   // Alle Regionen zugänglich
-    EineRegion      // Nur eine bestimmte Region
+    EineRegion,     // Nur eine bestimmte Region
+    EigeneMap       // Eigene selbst gestaltete Map (separater Spielstand)
 }
 
 public enum StarterModus

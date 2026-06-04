@@ -29,6 +29,10 @@
                         @onclick="() => { Game.Einstellungen.KartenModus = MapModus.EineRegion; Game.Notify(); }">
                     📍 Nur eine Region
                 </button>
+                <button class="opt-btn eigene-map-btn @(Game.Einstellungen.KartenModus == MapModus.EigeneMap ? "active" : "")"
+                        @onclick="() => { Game.Einstellungen.KartenModus = MapModus.EigeneMap; Game.Notify(); }">
+                    🗺️ Eigene Map
+                </button>
             </div>
             @if (Game.Einstellungen.KartenModus == MapModus.EineRegion)
             {
@@ -41,6 +45,16 @@
                             Gen @gen
                         </button>
                     }
+                </div>
+            }
+            @if (Game.Einstellungen.KartenModus == MapModus.EigeneMap)
+            {
+                <div class="eigene-map-einstellungen-hinweis">
+                    <p>🗺️ <strong>Eigene Map</strong> – Separater Spielstand, keine Zähne &amp; keine Boni.</p>
+                    <p>Du kannst Relikte, Starter und alle anderen Optionen trotzdem konfigurieren.</p>
+                    <button class="btn-eigene-map-starten" @onclick="Game.ZuEigeneMapStart">
+                        ▶️ Eigene Map starten
+                    </button>
                 </div>
             }
         </div>

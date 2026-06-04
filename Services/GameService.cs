@@ -12,6 +12,13 @@ public class GameService
     private readonly LocalStorageService _ls;
     private readonly Random _rng = new();
     private const string LS_SAVEGAME = "monsterkampf_save";
+    private const string LS_SAVEGAME_EIGENE_MAP = "monsterkampf_save_eigene_map";
+
+    // ── Eigene-Map-Modus ─────────────────────────────────────────────────────
+    /// <summary>True wenn der Spieler gerade im Eigene-Map-Modus spielt.</summary>
+    public bool IstEigeneMapModus { get; private set; } = false;
+    /// <summary>True wenn ein gespeicherter Eigene-Map-Spielstand existiert.</summary>
+    public bool HatEigeneMapSpeicherstand { get; private set; } = false;
 
     // ── Daten ────────────────────────────────────────────────────────────────
     public List<MonsterData> AlleMonster { get; private set; } = new();
@@ -115,7 +122,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "verbindung_v2";
+            const string ortVersion = "verbindung_v3";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
@@ -150,6 +157,8 @@ public class GameService
             // Speicherstand prüfen
             var saveJson = await _ls.GetItemAsync(LS_SAVEGAME);
             HatSpeicherstand = !string.IsNullOrEmpty(saveJson);
+            var eigeneMapJson = await _ls.GetItemAsync(LS_SAVEGAME_EIGENE_MAP);
+            HatEigeneMapSpeicherstand = !string.IsNullOrEmpty(eigeneMapJson);
 
             Phase = SpielPhase.Hauptmenü;
         }
@@ -166,6 +175,59 @@ public class GameService
     public void ZuWeltkarte() { Phase = SpielPhase.Weltkarte; Notify(); }
     public void ZuMapEditor() { Phase = SpielPhase.MapEditor; Notify(); }
     public void ZuEinstellungen() { Phase = SpielPhase.Einstellungen; Notify(); }
+
+    /// <summary>Wechselt in den Eigene-Map-Modus. Zeigt zuerst den Start-Dialog.</summary>
+    public void ZuEigeneMapStart() { Phase = SpielPhase.EigeneMapStart; Notify(); }
+
+    /// <summary>Startet die Eigene Map: entweder Spielstand kopieren oder neu starten.</summary>
+    public async Task EigeneMapStarten(bool spielstandKopieren)
+    {
+        // Aktuellen normalen Spielstand sichern (falls noch nicht gespeichert)
+        if (!IstEigeneMapModus && Spieler.Team.Any())
+            await SpielstandSpeichern(); // normalen Stand sichern
+
+        if (spielstandKopieren && HatSpeicherstand)
+        {
+            // Normalen Spielstand als Basis für eigene Map laden
+            var json = await _ls.GetItemAsync(LS_SAVEGAME);
+            if (!string.IsNullOrEmpty(json))
+            {
+                // Direkt in eigene Map Slot speichern
+                await _ls.SetItemAsync(LS_SAVEGAME_EIGENE_MAP, json);
+            }
+        }
+        else if (!spielstandKopieren)
+        {
+            // Prüfen ob bereits ein eigener Map-Spielstand existiert
+            var eigeneJson = await _ls.GetItemAsync(LS_SAVEGAME_EIGENE_MAP);
+            if (string.IsNullOrEmpty(eigeneJson))
+            {
+                // Kein eigener Spielstand – neuen erstellen (Starter-Wahl)
+                IstEigeneMapModus = true;
+                Notify();
+                Phase = SpielPhase.StarterWahl;
+                Notify();
+                return;
+            }
+        }
+
+        // Eigenen Map-Spielstand laden
+        IstEigeneMapModus = true;
+        await EigeneMapSpielstandLaden();
+    }
+
+    /// <summary>Wechselt zurück zum normalen Spielstand (Gen 1-8).</summary>
+    public async Task ZumNormalenSpielstandWechseln()
+    {
+        if (IstEigeneMapModus && Spieler.Team.Any())
+            await EigeneMapSpielstandSpeichern(); // eigenen Stand sichern
+
+        IstEigeneMapModus = false;
+        await SpielstandLaden();
+        if (!HatSpeicherstand)
+            Phase = SpielPhase.Hauptmenü;
+        Notify();
+    }
     public void ZuZähneShop() { Phase = SpielPhase.ZähneShop; Notify(); }
     public void EinstellungenSpeichern() { Notify(); }
     public string UpgradeKaufen(ZähneUpgrade upgrade)
@@ -1179,6 +1241,81 @@ public class GameService
         HatSpeicherstand = false;
         Notify();
     }
+
+    // ── Eigene Map: Spielstand speichern / laden / löschen ────────────────────────────
+    /// <summary>Speichert den aktuellen Spielstand in den Eigene-Map-Slot.</summary>
+    public async Task EigeneMapSpielstandSpeichern()
+    {
+        var save = new SpielstandDaten
+        {
+            SpielerName = Spieler.Name,
+            Geld = Spieler.Geld,
+            AktuellerOrt = Spieler.AktuellerOrt,
+            Orden = new List<string>(Spieler.Orden),
+            BesiegteTrainer = new List<string>(Spieler.BesiegteTrainer),
+            Team = Spieler.Team.Select(MonsterZuSpeichern).ToList(),
+            Box = Spieler.Box.Select(MonsterZuSpeichern).ToList(),
+            Inventar = Spieler.Inventar.Select(i => new GespeichertesItem
+            {
+                ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge
+            }).ToList(),
+            BesproacheneNPCs = new List<string>(Spieler.BesproacheneNPCs),
+        };
+        var json = JsonSerializer.Serialize(save);
+        await _ls.SetItemAsync(LS_SAVEGAME_EIGENE_MAP, json);
+        HatEigeneMapSpeicherstand = true;
+        Notify();
+    }
+
+    /// <summary>Lädt den Eigene-Map-Spielstand und wechselt zur Weltkarte.</summary>
+    public async Task EigeneMapSpielstandLaden()
+    {
+        var json = await _ls.GetItemAsync(LS_SAVEGAME_EIGENE_MAP);
+        if (string.IsNullOrEmpty(json)) { Phase = SpielPhase.StarterWahl; Notify(); return; }
+        try
+        {
+            var save = JsonSerializer.Deserialize<SpielstandDaten>(json);
+            if (save == null) { Phase = SpielPhase.StarterWahl; Notify(); return; }
+            Spieler = new Spieler
+            {
+                Name = save.SpielerName,
+                Geld = save.Geld,
+                AktuellerOrt = save.AktuellerOrt,
+                Orden = save.Orden ?? new(),
+                BesiegteTrainer = save.BesiegteTrainer ?? new(),
+                BesproacheneNPCs = save.BesproacheneNPCs ?? new(),
+                Inventar = save.Inventar?.Select(i => new InventarItem
+                {
+                    ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge
+                }).ToList() ?? new(),
+            };
+            Spieler.Team.AddRange(save.Team?.Select(GespeichertesZuMonster) ?? []);
+            Spieler.Box.AddRange(save.Box?.Select(GespeichertesZuMonster) ?? []);
+            Phase = SpielPhase.Weltkarte;
+            Notify();
+        }
+        catch { Phase = SpielPhase.StarterWahl; Notify(); }
+    }
+
+    /// <summary>Löscht den Eigene-Map-Spielstand.</summary>
+    public async Task EigeneMapSpielstandLöschen()
+    {
+        await _ls.RemoveItemAsync(LS_SAVEGAME_EIGENE_MAP);
+        HatEigeneMapSpeicherstand = false;
+        Notify();
+    }
+
+    /// <summary>Speichert im richtigen Slot je nach Modus (normal oder eigene Map).</summary>
+    public async Task AktuellenSpielstandSpeichern()
+    {
+        if (IstEigeneMapModus)
+            await EigeneMapSpielstandSpeichern();
+        else
+            await SpielstandSpeichern();
+    }
+
+    /// <summary>Gibt zurück ob Zähne/Boni im aktuellen Modus gelten.</summary>
+    public bool ZähneAktiv => !IstEigeneMapModus;
 }
 
 // ── JSON-Hilfsklassen ─────────────────────────────────────────────────────────
