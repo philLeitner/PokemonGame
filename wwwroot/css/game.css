@@ -2322,3 +2322,40 @@ input:checked + .toggle-slider-klein::before {
     color: #90ee90;
     font-size: 0.78rem;
 }
+
+/* ── Verbindungs-Optionen pro Richtung ─────────────────────────────────── */
+.verbindung-optionen {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.verbindung-typ-select {
+    font-size: 0.75rem !important;
+    padding: 3px 6px !important;
+    height: auto !important;
+}
+
+.verbindung-sperre-zeile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.verbindung-sperre-label {
+    font-size: 0.7rem;
+    color: #f59e0b;
+    white-space: nowrap;
+}
+
+.editor-input-klein {
+    width: 60px !important;
+    padding: 3px 6px !important;
+    font-size: 0.8rem !important;
+    height: auto !important;
+}

@@ -115,7 +115,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "sued_fix_v1";
+            const string ortVersion = "verbindung_v2";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
@@ -238,6 +238,21 @@ public class GameService
     /// <summary>Prüft die Richtungs-Sperre für eine bestimmte Ausgangsrichtung vom aktuellen Ort.</summary>
     public string? RichtungsZugangsPrüfung(Ort vonOrt, string richtung)
     {
+        // Neue einfache MinOrden-Felder pro Richtung prüfen (NordMinOrden, SuedMinOrden, OstMinOrden, WestMinOrden)
+        int minOrden = richtung switch
+        {
+            "Nord" => vonOrt.NordMinOrden,
+            "Sued" => vonOrt.SuedMinOrden,
+            "Ost"  => vonOrt.OstMinOrden,
+            "West" => vonOrt.WestMinOrden,
+            _      => 0
+        };
+        if (minOrden > 0 && Spieler.Orden.Count < minOrden)
+        {
+            string richtungName = richtung switch { "Nord" => "Norden", "Sued" => "Süden", "Ost" => "Osten", "West" => "Westen", _ => richtung };
+            return $"⛔ Richtung {richtungName} gesperrt – du benötigst mindestens {minOrden} Orden. Du hast {Spieler.Orden.Count}.";
+        }
+        // Alte RichtungsSperre-Objekte als zusätzlicher Fallback
         var sperre = richtung switch
         {
             "Nord" => vonOrt.SperrNord,
@@ -509,18 +524,21 @@ public class GameService
         AktuellerKampf.Log.Add($"🔄 {altesMonster.AngezeigterName} zurück! {neuesMonster.AngezeigterName} kämpft weiter!");
 
         bool warMonsterWechselPhase = AktuellerKampf.Phase == KampfPhase.MonsterWechsel;
-        AktuellerKampf.Phase = KampfPhase.GegnerZug;
-        Notify();
 
-        // Wenn erzwungener Wechsel (Monster ohnmächtig), kein Gegner-Angriff
-        if (!warMonsterWechselPhase)
+        if (warMonsterWechselPhase)
         {
-            await Task.Delay(600);
-            await GegnerZug();
+            // Erzwungener Wechsel nach Ohnmacht: KEIN Gegner-Angriff!
+            // Das neue Monster bekommt sofort seinen Zug (freier Wechsel).
+            AktuellerKampf.Log.Add($"⚡ {neuesMonster.AngezeigterName} ist bereit!");
+            await Task.Delay(400);
+            AktuellerKampf.Phase = KampfPhase.SpielerZug;
+            Notify();
         }
         else
         {
-            // Erzwungener Wechsel: Gegner greift trotzdem an
+            // Freiwilliger Wechsel im eigenen Zug: Gegner greift danach an
+            AktuellerKampf.Phase = KampfPhase.GegnerZug;
+            Notify();
             await Task.Delay(600);
             await GegnerZug();
         }

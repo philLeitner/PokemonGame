@@ -248,9 +248,17 @@ public class Ort
     public List<string> Verbindungen { get; set; } = new();
     // Richtungs-Verbindungen für 3x3 Minimap
     public string? Nord { get; set; }
+    public string? NordTyp { get; set; } = "normal"; // "normal", "untergrund", "teleport"
+    public int NordMinOrden { get; set; } = 0;
     public string? Sued { get; set; }
+    public string? SuedTyp { get; set; } = "normal";
+    public int SuedMinOrden { get; set; } = 0;
     public string? Ost { get; set; }
+    public string? OstTyp { get; set; } = "normal";
+    public int OstMinOrden { get; set; } = 0;
     public string? West { get; set; }
+    public string? WestTyp { get; set; } = "normal";
+    public int WestMinOrden { get; set; } = 0;
     public List<TrainerKampf> Trainer { get; set; } = new();
     public bool HatMonsterCenter { get; set; } = false;
     public bool HatMarkt { get; set; } = false;
