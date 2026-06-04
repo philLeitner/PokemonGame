@@ -976,7 +976,7 @@
     ],
     "Nord": "KAN-0019",
     "NordTyp": "normal",
-    "NordMinOrden": 0,
+    "NordMinOrden": 6,
     "Sued": null,
     "SuedTyp": "normal",
     "SuedMinOrden": 0,
@@ -1029,7 +1029,12 @@
     "Teleport": null,
     "Untergrund": null,
     "NPCs": [],
-    "SperrNord": null,
+    "SperrNord": {
+      "MinOrden": 6,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
@@ -1430,7 +1435,7 @@
     ],
     "Nord": "KAN-0062",
     "NordTyp": "normal",
-    "NordMinOrden": 0,
+    "NordMinOrden": 1,
     "Sued": null,
     "SuedTyp": "normal",
     "SuedMinOrden": 0,
@@ -1487,7 +1492,12 @@
     "Teleport": null,
     "Untergrund": null,
     "NPCs": [],
-    "SperrNord": null,
+    "SperrNord": {
+      "MinOrden": 1,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
@@ -1887,7 +1897,7 @@
     "SuedMinOrden": 0,
     "Ost": "KAN-0012",
     "OstTyp": "normal",
-    "OstMinOrden": 0,
+    "OstMinOrden": 2,
     "West": "KAN-0015",
     "WestTyp": "normal",
     "WestMinOrden": 0,
@@ -1924,7 +1934,12 @@
     "NPCs": [],
     "SperrNord": null,
     "SperrSued": null,
-    "SperrOst": null,
+    "SperrOst": {
+      "MinOrden": 2,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
@@ -2164,7 +2179,7 @@
     ],
     "Nord": "KAN-0016",
     "NordTyp": "normal",
-    "NordMinOrden": 0,
+    "NordMinOrden": 3,
     "Sued": null,
     "SuedTyp": "normal",
     "SuedMinOrden": 0,
@@ -2221,7 +2236,12 @@
     "Teleport": null,
     "Untergrund": null,
     "NPCs": [],
-    "SperrNord": null,
+    "SperrNord": {
+      "MinOrden": 3,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrSued": null,
     "SperrOst": null,
     "SperrWest": null,
@@ -2480,7 +2500,7 @@
     "SuedMinOrden": 0,
     "Ost": "KAN-0016",
     "OstTyp": "normal",
-    "OstMinOrden": 0,
+    "OstMinOrden": 3,
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
@@ -2533,7 +2553,12 @@
     "NPCs": [],
     "SperrNord": null,
     "SperrSued": null,
-    "SperrOst": null,
+    "SperrOst": {
+      "MinOrden": 3,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
@@ -2773,7 +2798,7 @@
     "SuedMinOrden": 0,
     "Ost": "KAN-0044",
     "OstTyp": "normal",
-    "OstMinOrden": 0,
+    "OstMinOrden": 8,
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
@@ -2810,7 +2835,12 @@
     "NPCs": [],
     "SperrNord": null,
     "SperrSued": null,
-    "SperrOst": null,
+    "SperrOst": {
+      "MinOrden": 8,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrWest": null,
     "SperrNW": null,
     "SperrNO": null,
@@ -3959,7 +3989,7 @@
     "OstMinOrden": 0,
     "West": "KAN-0033",
     "WestTyp": "normal",
-    "WestMinOrden": 0,
+    "WestMinOrden": 5,
     "Trainer": [
       {
         "Id": "KAN-T-019",
@@ -3994,7 +4024,12 @@
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
-    "SperrWest": null,
+    "SperrWest": {
+      "MinOrden": 5,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
@@ -4222,10 +4257,10 @@
     ],
     "Nord": "KAN-0044",
     "NordTyp": "normal",
-    "NordMinOrden": 0,
+    "NordMinOrden": 8,
     "Sued": "KAN-0011",
     "SuedTyp": "normal",
-    "SuedMinOrden": 0,
+    "SuedMinOrden": 7,
     "Ost": null,
     "OstTyp": "normal",
     "OstMinOrden": 0,
@@ -4263,8 +4298,18 @@
     "Teleport": null,
     "Untergrund": null,
     "NPCs": [],
-    "SperrNord": null,
-    "SperrSued": null,
+    "SperrNord": {
+      "MinOrden": 8,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
+    "SperrSued": {
+      "MinOrden": 7,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
@@ -4662,7 +4707,7 @@
     "OstMinOrden": 0,
     "West": "KAN-0004",
     "WestTyp": "normal",
-    "WestMinOrden": 0,
+    "WestMinOrden": 8,
     "Trainer": [
       {
         "Id": "KAN-LEG-003",
@@ -4777,7 +4822,12 @@
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
-    "SperrWest": null,
+    "SperrWest": {
+      "MinOrden": 8,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
@@ -4977,7 +5027,7 @@
     "OstMinOrden": 0,
     "West": "KAN-0044",
     "WestTyp": "normal",
-    "WestMinOrden": 0,
+    "WestMinOrden": 8,
     "Trainer": [
       {
         "Id": "KAN-LEG-004",
@@ -5012,7 +5062,12 @@
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
-    "SperrWest": null,
+    "SperrWest": {
+      "MinOrden": 8,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
@@ -31131,7 +31186,7 @@
     "NordMinOrden": 0,
     "Sued": "KAN-0005",
     "SuedTyp": "normal",
-    "SuedMinOrden": 0,
+    "SuedMinOrden": 6,
     "Ost": "KAN-0004",
     "OstTyp": "normal",
     "OstMinOrden": 0,
@@ -31153,7 +31208,12 @@
     "Untergrund": null,
     "NPCs": [],
     "SperrNord": null,
-    "SperrSued": null,
+    "SperrSued": {
+      "MinOrden": 6,
+      "ItemId": null,
+      "ItemName": null,
+      "Hinweis": null
+    },
     "SperrOst": null,
     "SperrWest": null,
     "SperrNW": null,
