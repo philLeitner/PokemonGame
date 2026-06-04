@@ -342,6 +342,16 @@ public class GameService
         return null;
     }
 
+    // Gibt die Gegenrichtung zurück (Nord↔Süd, Ost↔West)
+    private static string? Gegenrichtung(string richtung) => richtung switch
+    {
+        "Nord" => "Sued",
+        "Sued" => "Nord",
+        "Ost"  => "West",
+        "West" => "Ost",
+        _      => null
+    };
+
     public string? OrtBetreten(string ortId, string? vonRichtung = null)
     {
         var ort = AlleOrte.FirstOrDefault(o => o.Id == ortId);
@@ -356,9 +366,20 @@ public class GameService
                 var aktOrt = AlleOrte.FirstOrDefault(o => o.Id == Spieler.AktuellerOrt);
                 if (aktOrt != null)
                 {
+                    // 1) Sperre auf dem Ausgangsort (z.B. Route 24 → West gesperrt)
                     var richtungsFehler = RichtungsZugangsPrüfung(aktOrt, vonRichtung);
                     if (richtungsFehler != null) return richtungsFehler;
-                    // Muss-Kampf Trainer auf dem aktuellen Ort prüfen
+
+                    // 2) Gegenrichtungs-Sperre auf dem Zielort prüfen
+                    //    z.B. Orania.WestMinOrden=3 bedeutet auch Route 9 → Orania ist gesperrt
+                    var gegenRichtung = Gegenrichtung(vonRichtung);
+                    if (gegenRichtung != null)
+                    {
+                        var gegenFehler = RichtungsZugangsPrüfung(ort, gegenRichtung);
+                        if (gegenFehler != null) return gegenFehler;
+                    }
+
+                    // 3) Muss-Kampf Trainer auf dem aktuellen Ort prüfen
                     var mussTrainer = aktOrt.Trainer
                         .Where(t => t.MussBesiegt && !Spieler.BesiegteTrainer.Contains(t.Id))
                         .ToList();

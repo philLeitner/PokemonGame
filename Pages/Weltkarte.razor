@@ -163,10 +163,24 @@
                 else if (aktOrt.Ost == anzeigeOrt.Id) richtung2 = "Ost";
                 else if (aktOrt.West == anzeigeOrt.Id) richtung2 = "West";
             }
-            // Allgemeine Zugangsprüfung + Richtungssperre
-            var zugangsFehler2 = istHier2 ? null
-                : (Game.OrtZugangsPrüfung(ortRef3)
-                   ?? (richtung2 != null && aktOrt != null ? Game.RichtungsZugangsPrüfung(aktOrt, richtung2) : null));
+            // Allgemeine Zugangsprüfung + Richtungssperre (Ausgangsort UND Gegenrichtung auf Zielort)
+            string? zugangsFehler2 = null;
+            if (!istHier2)
+            {
+                zugangsFehler2 = Game.OrtZugangsPrüfung(ortRef3);
+                if (zugangsFehler2 == null && richtung2 != null && aktOrt != null)
+                {
+                    // Sperre auf Ausgangsort
+                    zugangsFehler2 = Game.RichtungsZugangsPrüfung(aktOrt, richtung2);
+                    // Gegenrichtungs-Sperre auf Zielort (z.B. Orania.West wenn man von Route 9 kommt)
+                    if (zugangsFehler2 == null)
+                    {
+                        var gegen = richtung2 switch { "Nord" => "Sued", "Sued" => "Nord", "Ost" => "West", "West" => "Ost", _ => (string?)null };
+                        if (gegen != null)
+                            zugangsFehler2 = Game.RichtungsZugangsPrüfung(ortRef3, gegen);
+                    }
+                }
+            }
             <div class="ort-details">
                 <div class="ort-details-header">
                     <h3>@anzeigeOrt.Name</h3>
