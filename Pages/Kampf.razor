@@ -321,6 +321,10 @@
                                         : "";
                                     <span class="attacke-status-effekt">@statusIcon @statusText@chanceText</span>
                                 }
+                                @if (attacke.Generation == 9)
+                                {
+                                    <span class="attacke-gen9-badge">Gen 9</span>
+                                }
                             </div>
                         </button>
                     }

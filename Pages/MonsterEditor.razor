@@ -64,6 +64,10 @@
                         <span class="editor-liste-nr">@atk.Id</span>
                         <span class="editor-liste-name">@atk.Name</span>
                         <span class="typ-badge-mini" style="background:@GetTypFarbe(atk.Typ)">@atk.Typ</span>
+                        @if (atk.Generation == 9)
+                        {
+                            <span class="attacke-gen9-badge">Gen 9</span>
+                        }
                     </div>
                 }
             </div>
@@ -364,6 +368,10 @@
                     <div class="editor-detail-typen">
                         <span class="typ-badge" style="background:@GetTypFarbe(atk.Typ)">@GetTypEmoji(atk.Typ) @atk.Typ</span>
                         <span class="kategorie-badge">@GetKategorieEmoji(atk.Kategorie) @atk.Kategorie</span>
+                        @if (atk.Generation == 9)
+                        {
+                            <span class="attacke-gen9-badge">Gen 9</span>
+                        }
                     </div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end;">

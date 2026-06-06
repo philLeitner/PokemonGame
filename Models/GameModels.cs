@@ -25,6 +25,7 @@ public class AttackeData
     public int? Ap { get; set; }
     public string? Statuseffekt { get; set; }        // eingeschlafen, gelähmt, vergiftet, verbrannt, eingefroren
     public int? StatuseffektChance { get; set; }     // 0-100 %
+    public int? Generation { get; set; }             // 1-9, 0 = unbekannt
 }
 
 // ─── Monster (Spezies-Definition aus JSON) ───────────────────────────────────
@@ -162,6 +163,7 @@ public class AttackeInstanz
     public bool HatAp => AktuelleAp > 0;
     public string? Statuseffekt { get; set; }
     public int? StatuseffektChance { get; set; }
+    public int? Generation { get; set; }
 }
 
 // ─── Spieler ─────────────────────────────────────────────────────────────────

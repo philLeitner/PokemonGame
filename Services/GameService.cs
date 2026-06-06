@@ -93,6 +93,7 @@ public class GameService
                     Ap = a.Ap,
                     Statuseffekt = a.Statuseffekt,
                     StatuseffektChance = a.StatuseffektChance,
+                    Generation = a.Generation,
                 }).ToList();
             }
 
@@ -1532,6 +1533,7 @@ public class AttackeRaw
     [JsonPropertyName("ap")] public int? Ap { get; set; }
     [JsonPropertyName("statuseffekt")] public string? Statuseffekt { get; set; }
     [JsonPropertyName("statuseffekt_chance")] public int? StatuseffektChance { get; set; }
+    [JsonPropertyName("generation")] public int? Generation { get; set; }
 }
 
 public class MonsterRaw
