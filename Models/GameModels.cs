@@ -405,7 +405,8 @@ public enum SpielPhase
     Einstellungen,
     ZähneShop,
     EigeneMapStart,  // Dialog: Spielstand kopieren oder neu starten
-    AdminPanel       // Admin-Bereich: Level, Orden, Stats ändern (kein Passwort)
+    AdminPanel,      // Admin-Bereich: Level, Orden, Stats ändern (kein Passwort)
+    Pokédex           // Monsterübersicht
 }
 
 // ─── Speicherstand ────────────────────────────────────────────────────────────

@@ -179,6 +179,7 @@ public class GameService
     /// <summary>Wechselt in den Eigene-Map-Modus. Zeigt zuerst den Start-Dialog.</summary>
     public void ZuEigeneMapStart() { Phase = SpielPhase.EigeneMapStart; Notify(); }
     public void ZuAdminPanel() { Phase = SpielPhase.AdminPanel; Notify(); }
+    public void ZuPokédex() { Phase = SpielPhase.Pokédex; Notify(); }
 
     /// <summary>Startet die Eigene Map: entweder Spielstand kopieren oder neu starten.</summary>
     public async Task EigeneMapStarten(bool spielstandKopieren)

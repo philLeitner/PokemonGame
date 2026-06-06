@@ -1,0 +1,413 @@
+@using MonsterKampf.Data
+@using MonsterKampf.Models
+@inject GameService Game
+@implements IDisposable
+
+<div class="pokedex-screen">
+    <!-- Linke Spalte: Suchliste -->
+    <div class="pokedex-liste">
+        <div class="pokedex-header">
+            <button class="btn-zurueck" @onclick="Game.ZuWeltkarte">← Zurück</button>
+            <h2>📖 Monsterübersicht</h2>
+            <div class="pokedex-stats">
+                <span class="gefangen-zahl">@gefangenCount / @Game.AlleMonster.Count gefangen</span>
+            </div>
+        </div>
+
+        <!-- Suchfeld + Filter -->
+        <div class="pokedex-suche">
+            <input class="pokedex-suchfeld" type="text" placeholder="🔍 Name suchen..."
+                   @bind="suchText" @bind:event="oninput" />
+            <select class="pokedex-filter" @bind="filterTyp">
+                <option value="">Alle Typen</option>
+                @foreach (var typ in TypeChart.TypFarben.Keys)
+                {
+                    <option value="@typ">@TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ</option>
+                }
+            </select>
+            <label class="pokedex-nur-gefangen">
+                <input type="checkbox" @bind="nurGefangen" /> Nur gefangen
+            </label>
+        </div>
+
+        <!-- Monster-Gitter -->
+        <div class="pokedex-gitter">
+            @foreach (var mon in GefilterteMonster())
+            {
+                bool istGefangen = IstGefangen(mon.Id);
+                bool istAusgewaehlt = ausgewähltId == mon.Id;
+                int nr = GetNummer(mon.Id);
+                <div class="pokedex-karte @(istAusgewaehlt ? "ausgewaehlt" : "") @(istGefangen ? "gefangen" : "unbekannt")"
+                     @onclick="() => AuswaehlenKlick(mon)">
+                    <span class="pokedex-nr">#@nr.ToString("D3")</span>
+                    @if (istGefangen)
+                    {
+                        <div class="pokedex-bild-container">
+                            <img class="pokedex-bild" src="@mon.Bild" alt="@mon.Name"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                            <div class="pokedex-bild-fallback" style="display:none">
+                                @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
+                            </div>
+                        </div>
+                        <span class="pokedex-name">@mon.Name</span>
+                        <div class="pokedex-typen-mini">
+                            @foreach (var typ in mon.Typen)
+                            {
+                                <span class="typ-badge-mini" style="background:@TypeChart.TypFarben.GetValueOrDefault(typ,"#888")">
+                                    @TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ
+                                </span>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="pokedex-unbekannt-bild">❓</div>
+                        <span class="pokedex-name unbekannt-name">???</span>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Rechte Spalte: Details -->
+    <div class="pokedex-details">
+        @if (ausgewähltMon == null)
+        {
+            <div class="pokedex-leer">
+                <div class="pokedex-leer-icon">📖</div>
+                <p>Wähle ein Monster aus der Liste aus</p>
+            </div>
+        }
+        else
+        {
+            bool istGefangen2 = IstGefangen(ausgewähltMon.Id);
+            int nr2 = GetNummer(ausgewähltMon.Id);
+            <div class="pokedex-detail-inhalt">
+                <!-- Kopfbereich -->
+                <div class="detail-kopf">
+                    <div class="detail-bild-bereich">
+                        @if (istGefangen2)
+                        {
+                            <img class="detail-bild" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                            <div class="detail-bild-fallback" style="display:none">
+                                @TypeChart.TypEmojis.GetValueOrDefault(ausgewähltMon.Typen.FirstOrDefault() ?? "", "❓")
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="detail-unbekannt">❓</div>
+                        }
+                    </div>
+                    <div class="detail-kopf-info">
+                        <div class="detail-nr">#@nr2.ToString("D3")</div>
+                        <h2 class="detail-name">@(istGefangen2 ? ausgewähltMon.Name : "????")</h2>
+                        @if (istGefangen2)
+                        {
+                            <div class="detail-typen">
+                                @foreach (var typ in ausgewähltMon.Typen)
+                                {
+                                    <span class="typ-badge-gross" style="background:@TypeChart.TypFarben.GetValueOrDefault(typ,"#888")">
+                                        @TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ
+                                    </span>
+                                }
+                            </div>
+                            <div class="detail-status-badge @(istGefangen2 ? "status-gefangen" : "status-gesehen")">
+                                @if (IstImTeam(ausgewähltMon.Id))
+                                {
+                                    <span>⚔️ Im Team</span>
+                                }
+                                else
+                                {
+                                    <span>📦 Gefangen</span>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="detail-status-badge status-unbekannt">❓ Noch nicht gefangen</div>
+                        }
+                    </div>
+                </div>
+
+                @if (istGefangen2)
+                {
+                    <!-- Fundorte -->
+                    var fundorte = GetFundorte(ausgewähltMon.Id);
+                    if (fundorte.Any())
+                    {
+                        <div class="detail-sektion">
+                            <h3 class="detail-sektion-titel">📍 Fundorte</h3>
+                            <div class="fundort-liste">
+                                @foreach (var ort in fundorte)
+                                {
+                                    <span class="fundort-chip">@ort</span>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    <!-- Basiswerte -->
+                    <div class="detail-sektion">
+                        <h3 class="detail-sektion-titel">📊 Basiswerte</h3>
+                        <div class="stats-liste">
+                            @foreach (var stat in ausgewähltMon.Stats)
+                            {
+                                string statName = stat.Key switch
+                                {
+                                    "kp"                  => "KP",
+                                    "angriff"             => "Angriff",
+                                    "verteidigung"        => "Verteidigung",
+                                    "spezialangriff"      => "Sp.Angriff",
+                                    "spezialverteidigung" => "Sp.Verteidigung",
+                                    "initiative"          => "Initiative",
+                                    _                     => stat.Key
+                                };
+                                int maxStat = 255;
+                                int pct = (int)((float)stat.Value / maxStat * 100);
+                                string statFarbe = stat.Value >= 100 ? "#4CAF50"
+                                                 : stat.Value >= 70  ? "#8BC34A"
+                                                 : stat.Value >= 50  ? "#FFC107"
+                                                 : "#F44336";
+                                <div class="stat-zeile">
+                                    <span class="stat-name">@statName</span>
+                                    <span class="stat-wert">@stat.Value</span>
+                                    <div class="stat-balken-bg">
+                                        <div class="stat-balken-fill" style="width:@pct%;background:@statFarbe"></div>
+                                    </div>
+                                </div>
+                            }
+                            <div class="stat-gesamt">
+                                Gesamt: <strong>@ausgewähltMon.Stats.Values.Sum()</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attacken -->
+                    <div class="detail-sektion">
+                        <h3 class="detail-sektion-titel">⚔️ Attacken</h3>
+                        <div class="attacken-tabelle">
+                            <div class="attacken-kopf">
+                                <span>Lv.</span>
+                                <span>Name</span>
+                                <span>Typ</span>
+                                <span>Stärke</span>
+                                <span>AP</span>
+                            </div>
+                            @foreach (var eintrag in ausgewähltMon.Attacken.OrderBy(a => a.Level))
+                            {
+                                var attackeData = Game.AlleAttacken.FirstOrDefault(a => a.Id == eintrag.AttackeId);
+                                if (attackeData != null)
+                                {
+                                    string typFarbe = TypeChart.TypFarben.GetValueOrDefault(attackeData.Typ, "#888");
+                                    <div class="attacken-zeile">
+                                        <span class="attacke-level">@eintrag.Level</span>
+                                        <span class="attacke-name">@attackeData.Name</span>
+                                        <span class="attacke-typ" style="background:@typFarbe">
+                                            @TypeChart.TypEmojis.GetValueOrDefault(attackeData.Typ,"") @attackeData.Typ
+                                        </span>
+                                        <span class="attacke-staerke">@(attackeData.Staerke > 0 ? attackeData.Staerke.ToString() : "—")</span>
+                                        <span class="attacke-ap">@attackeData.Ap</span>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Entwicklung -->
+                    @if (!string.IsNullOrEmpty(ausgewähltMon.EntwickeltZu))
+                    {
+                        var entwicklungData = Game.AlleMonster.FirstOrDefault(m => m.Id == ausgewähltMon.EntwickeltZu);
+                        <div class="detail-sektion">
+                            <h3 class="detail-sektion-titel">🔄 Entwicklung</h3>
+                            <div class="entwicklung-kette">
+                                <!-- Aktuelles Monster -->
+                                <div class="entwicklung-mon">
+                                    <img class="entwicklung-bild" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name"
+                                         onerror="this.style.display='none'" />
+                                    <span>@ausgewähltMon.Name</span>
+                                </div>
+                                <!-- Pfeil -->
+                                <div class="entwicklung-pfeil">
+                                    <span>→</span>
+                                    <span class="entwicklung-level-info">Lv.@ausgewähltMon.EntwicklungLevel</span>
+                                </div>
+                                <!-- Entwicklung -->
+                                @if (entwicklungData != null)
+                                {
+                                    bool entwicklungGefangen = IstGefangen(entwicklungData.Id);
+                                    <div class="entwicklung-mon @(entwicklungGefangen ? "" : "entwicklung-unbekannt")"
+                                         @onclick="() => AuswaehlenKlick(entwicklungData)">
+                                        @if (entwicklungGefangen)
+                                        {
+                                            <img class="entwicklung-bild" src="@entwicklungData.Bild" alt="@entwicklungData.Name"
+                                                 onerror="this.style.display='none'" />
+                                            <span>@entwicklungData.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <div class="entwicklung-unbekannt-bild">❓</div>
+                                            <span>???</span>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="entwicklung-mon">
+                                        <div class="entwicklung-unbekannt-bild">❓</div>
+                                        <span>@(ausgewähltMon.EntwicklungName ?? "???")</span>
+                                    </div>
+                                }
+                                <!-- Weitere Entwicklung? -->
+                                @if (entwicklungData != null && !string.IsNullOrEmpty(entwicklungData.EntwickeltZu))
+                                {
+                                    var entwicklung2 = Game.AlleMonster.FirstOrDefault(m => m.Id == entwicklungData.EntwickeltZu);
+                                    bool e2Gefangen = entwicklung2 != null && IstGefangen(entwicklung2.Id);
+                                    <div class="entwicklung-pfeil">
+                                        <span>→</span>
+                                        <span class="entwicklung-level-info">Lv.@entwicklungData.EntwicklungLevel</span>
+                                    </div>
+                                    <div class="entwicklung-mon @(e2Gefangen ? "" : "entwicklung-unbekannt")"
+                                         @onclick="() => { if(entwicklung2 != null) AuswaehlenKlick(entwicklung2); }">
+                                        @if (e2Gefangen && entwicklung2 != null)
+                                        {
+                                            <img class="entwicklung-bild" src="@entwicklung2.Bild" alt="@entwicklung2.Name"
+                                                 onerror="this.style.display='none'" />
+                                            <span>@entwicklung2.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <div class="entwicklung-unbekannt-bild">❓</div>
+                                            <span>@(entwicklungData.EntwicklungName ?? "???")</span>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <!-- Prüfe ob dieses Monster eine Vorstufe hat -->
+                        var vorstufe = Game.AlleMonster.FirstOrDefault(m => m.EntwickeltZu == ausgewähltMon.Id);
+                        @if (vorstufe == null)
+                        {
+                            <div class="detail-sektion">
+                                <h3 class="detail-sektion-titel">🔄 Entwicklung</h3>
+                                <p class="keine-entwicklung">Dieses Monster entwickelt sich nicht weiter.</p>
+                            </div>
+                        }
+                    }
+                }
+                else
+                {
+                    <!-- Noch nicht gefangen -->
+                    <div class="detail-sektion">
+                        <p class="noch-nicht-gefangen">
+                            Du hast dieses Monster noch nicht gefangen.<br />
+                            Erkunde die Welt um es zu entdecken!
+                        </p>
+                        @{
+                            var fundorte2 = GetFundorte(ausgewähltMon.Id);
+                        }
+                        @if (fundorte2.Any())
+                        {
+                            <div class="fundort-hinweis">
+                                <strong>💡 Mögliche Fundorte:</strong>
+                                <div class="fundort-liste">
+                                    @foreach (var ort in fundorte2)
+                                    {
+                                        <span class="fundort-chip">@ort</span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string suchText = "";
+    private string filterTyp = "";
+    private bool nurGefangen = false;
+    private string? ausgewähltId = null;
+    private MonsterData? ausgewähltMon = null;
+
+    // Alle gefangenen SpeziesIds (Team + Box)
+    private HashSet<string> gefangeneIds = new();
+    private int gefangenCount = 0;
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += AktualisierenUndNeuzeichnen;
+        AktualisierenGefangen();
+    }
+
+    public void Dispose() => Game.OnChange -= AktualisierenUndNeuzeichnen;
+
+    private void AktualisierenUndNeuzeichnen()
+    {
+        AktualisierenGefangen();
+        StateHasChanged();
+    }
+
+    private void AktualisierenGefangen()
+    {
+        gefangeneIds = new HashSet<string>(
+            Game.Spieler.Team.Select(m => m.SpeziesId)
+            .Concat(Game.Spieler.Box.Select(m => m.SpeziesId))
+        );
+        gefangenCount = Game.AlleMonster.Count(m => gefangeneIds.Contains(m.Id));
+    }
+
+    private bool IstGefangen(string monsterId) => gefangeneIds.Contains(monsterId);
+
+    private bool IstImTeam(string monsterId) =>
+        Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
+
+    private int GetNummer(string id)
+    {
+        // PKM-0001 → 1
+        if (id.StartsWith("PKM-") && int.TryParse(id[4..], out int nr)) return nr;
+        return Game.AlleMonster.IndexOf(Game.AlleMonster.FirstOrDefault(m => m.Id == id)!) + 1;
+    }
+
+    private List<string> GetFundorte(string monsterId)
+    {
+        return Game.AlleOrte
+            .Where(o => o.WildMonster.Any(wm => wm.MonsterId == monsterId))
+            .Select(o => o.Name)
+            .Distinct()
+            .OrderBy(n => n)
+            .ToList();
+    }
+
+    private IEnumerable<MonsterData> GefilterteMonster()
+    {
+        var liste = Game.AlleMonster.AsEnumerable();
+
+        if (!string.IsNullOrWhiteSpace(suchText))
+        {
+            string suche = suchText.Trim().ToLower();
+            liste = liste.Where(m =>
+                m.Name.ToLower().Contains(suche) ||
+                GetNummer(m.Id).ToString().Contains(suche));
+        }
+
+        if (!string.IsNullOrEmpty(filterTyp))
+            liste = liste.Where(m => m.Typen.Contains(filterTyp));
+
+        if (nurGefangen)
+            liste = liste.Where(m => IstGefangen(m.Id));
+
+        return liste;
+    }
+
+    private void AuswaehlenKlick(MonsterData mon)
+    {
+        ausgewähltId = mon.Id;
+        ausgewähltMon = mon;
+    }
+}
