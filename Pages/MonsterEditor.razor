@@ -1,0 +1,682 @@
+@inject GameService Game
+@inject LocalStorageService Storage
+@implements IDisposable
+
+<div class="editor-screen monster-editor-screen">
+
+    <!-- ═══ LINKE SPALTE: Monster-Liste + Filter ═══ -->
+    <div class="editor-panel-left">
+        <div class="editor-panel-header">
+            <h3>🐾 Monster-Editor</h3>
+            <button class="btn-zurueck" @onclick="ZurückNavigieren">← Zurück</button>
+        </div>
+
+        <!-- Tabs: Monster / Attacken / Referenz -->
+        <div class="editor-tabs">
+            <button class="editor-tab @(aktiverTab == "monster" ? "aktiv" : "")" @onclick='() => aktiverTab = "monster"'>🐾 Monster</button>
+            <button class="editor-tab @(aktiverTab == "attacken" ? "aktiv" : "")" @onclick='() => aktiverTab = "attacken"'>⚔️ Attacken</button>
+            <button class="editor-tab @(aktiverTab == "referenz" ? "aktiv" : "")" @onclick='() => aktiverTab = "referenz"'>📋 Referenz</button>
+        </div>
+
+        @if (aktiverTab == "monster")
+        {
+            <!-- Suche -->
+            <div class="editor-suche">
+                <input class="editor-suche-input" @bind="suchtext" @bind:event="oninput"
+                       placeholder="🔍 Name oder #Nr. suchen..." />
+            </div>
+
+            <!-- Monster-Liste -->
+            <div class="editor-liste">
+                @foreach (var mon in GefilterteMonster())
+                {
+                    var istAusgewaehlt = ausgewähltesMonster?.Id == mon.Id;
+                    <div class="editor-liste-item @(istAusgewaehlt ? "aktiv" : "")"
+                         @onclick="() => MonsterAuswählen(mon)">
+                        <span class="editor-liste-nr">#@(GetMonsterNr(mon.Id))</span>
+                        <span class="editor-liste-name">@mon.Name</span>
+                        <span class="editor-liste-typen">
+                            @foreach (var typ in mon.Typen)
+                            {
+                                <span class="typ-badge-mini" style="background:@GetTypFarbe(typ)">@typ</span>
+                            }
+                        </span>
+                    </div>
+                }
+            </div>
+        }
+        else if (aktiverTab == "attacken")
+        {
+            <!-- Attacken-Suche -->
+            <div class="editor-suche">
+                <input class="editor-suche-input" @bind="attackeSuchtext" @bind:event="oninput"
+                       placeholder="🔍 Attacke suchen..." />
+            </div>
+
+            <!-- Attacken-Liste -->
+            <div class="editor-liste">
+                @foreach (var atk in GefilterteAttacken())
+                {
+                    var istAusgewaehlt = ausgewählteAttacke?.Id == atk.Id;
+                    <div class="editor-liste-item @(istAusgewaehlt ? "aktiv" : "")"
+                         @onclick="() => AttackeAuswählen(atk)">
+                        <span class="editor-liste-nr">@atk.Id</span>
+                        <span class="editor-liste-name">@atk.Name</span>
+                        <span class="typ-badge-mini" style="background:@GetTypFarbe(atk.Typ)">@atk.Typ</span>
+                    </div>
+                }
+            </div>
+        }
+        else if (aktiverTab == "referenz")
+        {
+            <!-- Referenz-Listen -->
+            <div class="referenz-bereich">
+                <div class="referenz-tabs">
+                    <button class="referenz-tab @(referenzTab == "monster" ? "aktiv" : "")" @onclick='() => referenzTab = "monster"'>Monster-IDs</button>
+                    <button class="referenz-tab @(referenzTab == "attacken" ? "aktiv" : "")" @onclick='() => referenzTab = "attacken"'>Attacken-IDs</button>
+                </div>
+
+                @if (referenzTab == "monster")
+                {
+                    <div class="referenz-suche">
+                        <input @bind="refMonsterSuche" @bind:event="oninput" placeholder="Suchen..." class="editor-suche-input" />
+                    </div>
+                    <div class="referenz-tabelle">
+                        <div class="ref-header">
+                            <span>ID</span>
+                            <span>Name</span>
+                            <span>Typen</span>
+                        </div>
+                        @foreach (var mon in Game.AlleMonster.Where(m =>
+                            string.IsNullOrEmpty(refMonsterSuche) ||
+                            m.Id.Contains(refMonsterSuche, StringComparison.OrdinalIgnoreCase) ||
+                            m.Name.Contains(refMonsterSuche, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            <div class="ref-zeile" @onclick="@(() => { aktiverTab = "monster"; MonsterAuswählen(mon); })">
+                                <span class="ref-id">@mon.Id</span>
+                                <span class="ref-name">@mon.Name</span>
+                                <span>
+                                    @foreach (var t in mon.Typen)
+                                    {
+                                        <span class="typ-badge-mini" style="background:@GetTypFarbe(t)">@t</span>
+                                    }
+                                </span>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="referenz-suche">
+                        <input @bind="refAttackeSuche" @bind:event="oninput" placeholder="Suchen..." class="editor-suche-input" />
+                    </div>
+                    <div class="referenz-tabelle">
+                        <div class="ref-header">
+                            <span>ID</span>
+                            <span>Name</span>
+                            <span>Typ</span>
+                        </div>
+                        @foreach (var atk in Game.AlleAttacken.Where(a =>
+                            string.IsNullOrEmpty(refAttackeSuche) ||
+                            a.Id.Contains(refAttackeSuche, StringComparison.OrdinalIgnoreCase) ||
+                            a.Name.Contains(refAttackeSuche, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            <div class="ref-zeile" @onclick="@(() => { aktiverTab = "attacken"; AttackeAuswählen(atk); })">
+                                <span class="ref-id">@atk.Id</span>
+                                <span class="ref-name">@atk.Name</span>
+                                <span class="typ-badge-mini" style="background:@GetTypFarbe(atk.Typ)">@atk.Typ</span>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <!-- ═══ RECHTE SPALTE: Detail-Editor ═══ -->
+    <div class="editor-panel-right">
+
+        @if (aktiverTab == "monster" && ausgewähltesMonster != null)
+        {
+            var mon = ausgewähltesMonster;
+            <div class="editor-detail-header">
+                <div class="editor-detail-bild">
+                    @if (!string.IsNullOrEmpty(mon.Bild))
+                    {
+                        <img src="@mon.Bild" alt="@mon.Name" class="editor-monster-img" />
+                    }
+                    else
+                    {
+                        <div class="editor-monster-placeholder">❓</div>
+                    }
+                </div>
+                <div class="editor-detail-info">
+                    <span class="editor-detail-nr">#@(GetMonsterNr(mon.Id)) · @mon.Id</span>
+                    <h2 class="editor-detail-name">@mon.Name</h2>
+                    <div class="editor-detail-typen">
+                        @foreach (var typ in mon.Typen)
+                        {
+                            <span class="typ-badge" style="background:@GetTypFarbe(typ)">@GetTypEmoji(typ) @typ</span>
+                        }
+                    </div>
+                </div>
+                @if (speicherStatus != "")
+                {
+                    <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
+                }
+            </div>
+
+            <!-- Abschnitte -->
+            <div class="editor-sektionen">
+
+                <!-- BASIS-DATEN -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">📝 BASIS-DATEN</div>
+                    <div class="editor-feld-zeile">
+                        <label>Name</label>
+                        <input class="editor-input" value="@mon.Name" @onchange="e => { mon.Name = e.Value?.ToString() ?? mon.Name; Speichern(); }" />
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Bild-URL</label>
+                        <input class="editor-input" value="@mon.Bild" @onchange="e => { mon.Bild = e.Value?.ToString(); Speichern(); }" placeholder="URL oder Pfad" />
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Fangrate (0-255)</label>
+                        <input class="editor-input editor-input-klein" type="number" min="0" max="255"
+                               value="@mon.Fangrate" @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { mon.Fangrate = v; Speichern(); } }" />
+                    </div>
+                </div>
+
+                <!-- TYPEN -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">🏷️ TYPEN</div>
+                    <div class="editor-typen-liste">
+                        @for (int i = 0; i < mon.Typen.Count; i++)
+                        {
+                            var idx = i;
+                            <div class="editor-typ-zeile">
+                                <span class="typ-badge" style="background:@GetTypFarbe(mon.Typen[idx])">@GetTypEmoji(mon.Typen[idx]) @mon.Typen[idx]</span>
+                                <select class="editor-select" value="@mon.Typen[idx]"
+                                        @onchange="e => { mon.Typen[idx] = e.Value?.ToString() ?? mon.Typen[idx]; Speichern(); }">
+                                    @foreach (var t in AlleTypen)
+                                    {
+                                        <option value="@t" selected="@(mon.Typen[idx] == t)">@t</option>
+                                    }
+                                </select>
+                                <button class="btn-entfernen" @onclick="() => { mon.Typen.RemoveAt(idx); Speichern(); }">✕</button>
+                            </div>
+                        }
+                        @if (mon.Typen.Count < 2)
+                        {
+                            <button class="btn-hinzufuegen" @onclick="() => { mon.Typen.Add(AlleTypen[0]); Speichern(); }">+ Typ hinzufügen</button>
+                        }
+                    </div>
+                </div>
+
+                <!-- BASISWERTE -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">📊 BASISWERTE</div>
+                    @foreach (var statKey in new[] { "kp", "angriff", "verteidigung", "spezialangriff", "spezialverteidigung", "initiative" })
+                    {
+                        var statVal = mon.Stats.GetValueOrDefault(statKey, 50);
+                        <div class="editor-feld-zeile">
+                            <label>@StatName(statKey)</label>
+                            <input class="editor-input editor-input-klein" type="number" min="1" max="255"
+                                   value="@statVal"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { mon.Stats[statKey] = v; Speichern(); } }" />
+                            <div class="stat-balken-mini">
+                                <div class="stat-balken-fill" style="width:@(Math.Min(100, statVal * 100 / 255))%; background:@StatFarbe(statVal)"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- ENTWICKLUNG -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">🔄 ENTWICKLUNG</div>
+                    <div class="editor-feld-zeile">
+                        <label>Entwickelt zu (ID)</label>
+                        <input class="editor-input" value="@mon.EntwickeltZu" @onchange="e => { mon.EntwickeltZu = e.Value?.ToString(); Speichern(); }"
+                               placeholder="z.B. PKM-0002" />
+                        @if (!string.IsNullOrEmpty(mon.EntwickeltZu))
+                        {
+                            var zielMon = Game.AlleMonster.FirstOrDefault(m => m.Id == mon.EntwickeltZu);
+                            if (zielMon != null)
+                            {
+                                <span class="entwicklung-vorschau">→ @zielMon.Name</span>
+                            }
+                        }
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Entwicklungsname</label>
+                        <input class="editor-input" value="@mon.EntwicklungName" @onchange="e => { mon.EntwicklungName = e.Value?.ToString(); Speichern(); }"
+                               placeholder="Name der Entwicklung" />
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Ab Level</label>
+                        <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                               value="@mon.EntwicklungLevel" @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { mon.EntwicklungLevel = v; Speichern(); } }" />
+                    </div>
+                </div>
+
+                <!-- ATTACKEN-LERNLISTE -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">⚔️ ATTACKEN-LERNLISTE</div>
+                    <div class="attacken-lern-header">
+                        <span>Level</span>
+                        <span>Attacke-ID</span>
+                        <span>Name</span>
+                        <span></span>
+                    </div>
+                    @for (int i = 0; i < mon.Attacken.Count; i++)
+                    {
+                        var idx = i;
+                        var eintrag = mon.Attacken[idx];
+                        var atkData = Game.AlleAttacken.FirstOrDefault(a => a.Id == eintrag.AttackeId);
+                        <div class="attacken-lern-zeile">
+                            <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                   value="@eintrag.Level"
+                                   @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { eintrag.Level = v; Speichern(); } }" />
+                            <input class="editor-input" value="@eintrag.AttackeId"
+                                   @onchange="e => { eintrag.AttackeId = e.Value?.ToString() ?? eintrag.AttackeId; Speichern(); }"
+                                   placeholder="MOV-0001" />
+                            <span class="attacke-name-vorschau">
+                                @if (atkData != null)
+                                {
+                                    <span class="typ-badge-mini" style="background:@GetTypFarbe(atkData.Typ)">@atkData.Typ</span>
+                                    @atkData.Name
+                                }
+                                else
+                                {
+                                    <span class="unbekannt">❓ Unbekannt</span>
+                                }
+                            </span>
+                            <button class="btn-entfernen" @onclick="() => { mon.Attacken.RemoveAt(idx); Speichern(); }">✕</button>
+                        </div>
+                    }
+                    <button class="btn-hinzufuegen" @onclick="AddAttacke">
+                        + Attacke hinzufügen
+                    </button>
+                </div>
+
+                <!-- FUNDORTE / ROUTEN -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">📍 FUNDORTE (Routen & Orte)</div>
+                    <p class="editor-hinweis">Hier kannst du festlegen wo dieses Monster in der Wildnis gefangen werden kann. Änderungen werden direkt in der Weltkarte übernommen.</p>
+
+                    @{
+                        var fundorte = GetFundorte(mon.Id);
+                    }
+                    @foreach (var ort in fundorte)
+                    {
+                        var wildEintrag = ort.WildMonster.First(w => w.MonsterId == mon.Id);
+                        <div class="fundort-zeile">
+                            <span class="fundort-name">📍 @ort.Name</span>
+                            <div class="fundort-details">
+                                <label>Min Lv</label>
+                                <input class="editor-input editor-input-mini" type="number" min="1" max="100"
+                                       value="@wildEintrag.MinLevel"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { wildEintrag.MinLevel = v; OrtesSpeichern(); } }" />
+                                <label>Max Lv</label>
+                                <input class="editor-input editor-input-mini" type="number" min="1" max="100"
+                                       value="@wildEintrag.MaxLevel"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { wildEintrag.MaxLevel = v; OrtesSpeichern(); } }" />
+                                <label>Chance %</label>
+                                <input class="editor-input editor-input-mini" type="number" min="1" max="100"
+                                       value="@wildEintrag.Chance"
+                                       @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { wildEintrag.Chance = v; OrtesSpeichern(); } }" />
+                                <button class="btn-entfernen" @onclick="() => { ort.WildMonster.Remove(wildEintrag); OrtesSpeichern(); }">✕ Entfernen</button>
+                            </div>
+                        </div>
+                    }
+
+                    <!-- Neuen Fundort hinzufügen -->
+                    <div class="fundort-hinzufuegen">
+                        <select class="editor-select" @bind="neuerFundortId">
+                            <option value="">— Ort auswählen —</option>
+                            @foreach (var ort in Game.AlleOrte.OrderBy(o => o.Name))
+                            {
+                                <option value="@ort.Id">@ort.Name</option>
+                            }
+                        </select>
+                        <button class="btn-hinzufuegen" @onclick="FundortHinzufügen"
+                                disabled="@string.IsNullOrEmpty(neuerFundortId)">
+                            + Fundort hinzufügen
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        }
+        else if (aktiverTab == "attacken" && ausgewählteAttacke != null)
+        {
+            var atk = ausgewählteAttacke;
+            <div class="editor-detail-header">
+                <div class="editor-detail-info">
+                    <span class="editor-detail-nr">@atk.Id</span>
+                    <h2 class="editor-detail-name">@atk.Name</h2>
+                    <div class="editor-detail-typen">
+                        <span class="typ-badge" style="background:@GetTypFarbe(atk.Typ)">@GetTypEmoji(atk.Typ) @atk.Typ</span>
+                        <span class="kategorie-badge">@GetKategorieEmoji(atk.Kategorie) @atk.Kategorie</span>
+                    </div>
+                </div>
+                @if (speicherStatus != "")
+                {
+                    <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
+                }
+            </div>
+
+            <div class="editor-sektionen">
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">📝 ATTACKEN-DATEN</div>
+                    <div class="editor-feld-zeile">
+                        <label>Name</label>
+                        <input class="editor-input" value="@atk.Name" @onchange="e => { atk.Name = e.Value?.ToString() ?? atk.Name; AttackeSpeichern(); }" />
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Typ</label>
+                        <select class="editor-select" value="@atk.Typ"
+                                @onchange="e => { atk.Typ = e.Value?.ToString() ?? atk.Typ; AttackeSpeichern(); }">
+                            @foreach (var t in AlleTypen)
+                            {
+                                <option value="@t" selected="@(atk.Typ == t)">@t</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Kategorie</label>
+                        <select class="editor-select" value="@atk.Kategorie"
+                                @onchange="e => { atk.Kategorie = e.Value?.ToString() ?? atk.Kategorie; AttackeSpeichern(); }">
+                            <option value="Physisch" selected="@(atk.Kategorie == "Physisch")">⚔️ Physisch</option>
+                            <option value="Speziell" selected="@(atk.Kategorie == "Speziell")">✨ Speziell</option>
+                            <option value="Status" selected="@(atk.Kategorie == "Status")">🛡️ Status</option>
+                        </select>
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Stärke</label>
+                        <input class="editor-input editor-input-klein" type="number" min="0" max="999"
+                               value="@(atk.Staerke ?? 0)"
+                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { atk.Staerke = v > 0 ? v : null; AttackeSpeichern(); } }" />
+                        <span class="editor-hinweis-inline">(0 = kein Schaden)</span>
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>Genauigkeit %</label>
+                        <input class="editor-input editor-input-klein" type="number" min="0" max="100"
+                               value="@(atk.Genauigkeit ?? 100)"
+                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { atk.Genauigkeit = v; AttackeSpeichern(); } }" />
+                    </div>
+                    <div class="editor-feld-zeile">
+                        <label>AP (Ausdauer)</label>
+                        <input class="editor-input editor-input-klein" type="number" min="1" max="99"
+                               value="@(atk.Ap ?? 10)"
+                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { atk.Ap = v; AttackeSpeichern(); } }" />
+                    </div>
+                </div>
+
+                <!-- Monster die diese Attacke lernen -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">🐾 MONSTER DIE DIESE ATTACKE LERNEN</div>
+                    @{
+                        var lernerListe = Game.AlleMonster
+                            .Where(m => m.Attacken.Any(a => a.AttackeId == atk.Id))
+                            .OrderBy(m => m.Id)
+                            .ToList();
+                    }
+                    @if (lernerListe.Any())
+                    {
+                        <div class="lerner-liste">
+                            @foreach (var lerner in lernerListe)
+                            {
+                                var lernLevel = lerner.Attacken.First(a => a.AttackeId == atk.Id).Level;
+                                <div class="lerner-zeile" @onclick="@(() => { aktiverTab = "monster"; MonsterAuswählen(lerner); })">
+                                    <span class="lerner-nr">#@GetMonsterNr(lerner.Id)</span>
+                                    <span class="lerner-name">@lerner.Name</span>
+                                    <span class="lerner-level">Lv.@lernLevel</span>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="editor-hinweis">Kein Monster lernt diese Attacke.</p>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="editor-leer">
+                <div class="editor-leer-icon">
+                    @if (aktiverTab == "referenz")
+                    {
+                        <span>📋</span>
+                        <p>Wähle einen Eintrag aus der Referenzliste aus.</p>
+                    }
+                    else
+                    {
+                        <span>👈</span>
+                        <p>Wähle ein Monster oder eine Attacke aus der Liste aus.</p>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string aktiverTab = "monster";
+    private string referenzTab = "monster";
+    private string suchtext = "";
+    private string attackeSuchtext = "";
+    private string refMonsterSuche = "";
+    private string refAttackeSuche = "";
+    private string neuerFundortId = "";
+    private string speicherStatus = "";
+    private bool speicherFehler = false;
+
+    private MonsterData? ausgewähltesMonster;
+    private AttackeData? ausgewählteAttacke;
+
+    // Lokale Kopien zum Bearbeiten
+    private List<MonsterData> editierteMonster = new();
+    private List<AttackeData> editierteAttacken = new();
+    private List<Ort> editierteOrte = new();
+
+    private static readonly string[] AlleTypen = MonsterKampf.Data.TypeChart.AlleTypen;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Game.OnChange += StateHasChanged;
+        // Tiefe Kopie der Daten für den Editor
+        var monsterJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleMonster);
+        editierteMonster = System.Text.Json.JsonSerializer.Deserialize<List<MonsterData>>(monsterJson,
+            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+
+        var attackenJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleAttacken);
+        editierteAttacken = System.Text.Json.JsonSerializer.Deserialize<List<AttackeData>>(attackenJson,
+            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+
+        var orteJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleOrte);
+        editierteOrte = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(orteJson,
+            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void MonsterAuswählen(MonsterData mon)
+    {
+        ausgewähltesMonster = editierteMonster.FirstOrDefault(m => m.Id == mon.Id);
+    }
+
+    private void AttackeAuswählen(AttackeData atk)
+    {
+        ausgewählteAttacke = editierteAttacken.FirstOrDefault(a => a.Id == atk.Id);
+    }
+
+    private List<MonsterData> GefilterteMonster()
+    {
+        if (string.IsNullOrWhiteSpace(suchtext)) return editierteMonster;
+        var s = suchtext.Trim().ToLower();
+        return editierteMonster.Where(m =>
+            m.Name.ToLower().Contains(s) ||
+            m.Id.ToLower().Contains(s) ||
+            GetMonsterNr(m.Id).Contains(s)).ToList();
+    }
+
+    private List<AttackeData> GefilterteAttacken()
+    {
+        if (string.IsNullOrWhiteSpace(attackeSuchtext)) return editierteAttacken;
+        var s = attackeSuchtext.Trim().ToLower();
+        return editierteAttacken.Where(a =>
+            a.Name.ToLower().Contains(s) ||
+            a.Id.ToLower().Contains(s) ||
+            a.Typ.ToLower().Contains(s)).ToList();
+    }
+
+    private List<Ort> GetFundorte(string monsterId)
+    {
+        return editierteOrte.Where(o => o.WildMonster.Any(w => w.MonsterId == monsterId)).ToList();
+    }
+
+    private void FundortHinzufügen()
+    {
+        if (ausgewähltesMonster == null || string.IsNullOrEmpty(neuerFundortId)) return;
+        var ort = editierteOrte.FirstOrDefault(o => o.Id == neuerFundortId);
+        if (ort == null) return;
+        if (ort.WildMonster.Any(w => w.MonsterId == ausgewähltesMonster.Id)) return;
+        ort.WildMonster.Add(new WildBegegnung
+        {
+            MonsterId = ausgewähltesMonster.Id,
+            MinLevel = 3,
+            MaxLevel = 8,
+            Chance = 20
+        });
+        neuerFundortId = "";
+        OrtesSpeichern();
+    }
+
+    private async void Speichern()
+    {
+        try
+        {
+            // Monster in LocalStorage speichern
+            var json = System.Text.Json.JsonSerializer.Serialize(editierteMonster,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = false });
+            await Storage.SetItemAsync("editor_monster", json);
+            speicherStatus = "✓ Gespeichert";
+            speicherFehler = false;
+            StateHasChanged();
+            await Task.Delay(1500);
+            speicherStatus = "";
+            StateHasChanged();
+        }
+        catch
+        {
+            speicherStatus = "⚠️ Fehler";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
+    private async void AttackeSpeichern()
+    {
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(editierteAttacken,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = false });
+            await Storage.SetItemAsync("editor_attacken", json);
+            speicherStatus = "✓ Gespeichert";
+            speicherFehler = false;
+            StateHasChanged();
+            await Task.Delay(1500);
+            speicherStatus = "";
+            StateHasChanged();
+        }
+        catch
+        {
+            speicherStatus = "⚠️ Fehler";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
+    private async void OrtesSpeichern()
+    {
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(editierteOrte,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = false });
+            await Storage.SetItemAsync("editor_orte", json);
+            speicherStatus = "✓ Fundorte gespeichert";
+            speicherFehler = false;
+            StateHasChanged();
+            await Task.Delay(1500);
+            speicherStatus = "";
+            StateHasChanged();
+        }
+        catch
+        {
+            speicherStatus = "⚠️ Fehler";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
+    private void AddAttacke()
+    {
+        if (ausgewähltesMonster == null) return;
+        ausgewähltesMonster.Attacken.Add(new AttackenLernEintrag { AttackeId = "MOV-0001", Level = 1 });
+        Speichern();
+    }
+
+    private void ZurückNavigieren()
+    {
+        // Zurück zum Hauptmenü wenn von dort, sonst Weltkarte
+        if (Game.Spieler.Team.Any())
+            Game.ZuWeltkarte();
+        else
+            Game.ZuHauptmenü();
+    }
+
+    // ── Hilfsmethoden ────────────────────────────────────────────────────────
+    private static string GetMonsterNr(string id)
+    {
+        // PKM-0001 → 001
+        if (id.StartsWith("PKM-") && id.Length >= 8)
+            return id.Substring(4).TrimStart('0').PadLeft(3, '0');
+        return id;
+    }
+
+    private static string GetTypFarbe(string typ) =>
+        MonsterKampf.Data.TypeChart.TypFarben.TryGetValue(typ, out var f) ? f : "#888";
+
+    private static string GetTypEmoji(string typ) =>
+        MonsterKampf.Data.TypeChart.TypEmojis.TryGetValue(typ, out var e) ? e : "❓";
+
+    private static string GetKategorieEmoji(string kat) => kat switch
+    {
+        "Physisch" => "⚔️",
+        "Speziell" => "✨",
+        "Status"   => "🛡️",
+        _          => "❓"
+    };
+
+    private static string StatName(string key) => key switch
+    {
+        "kp"                  => "KP",
+        "angriff"             => "Angriff",
+        "verteidigung"        => "Verteidigung",
+        "spezialangriff"      => "Sp.Angriff",
+        "spezialverteidigung" => "Sp.Verteidigung",
+        "initiative"          => "Initiative",
+        _                     => key
+    };
+
+    private static string StatFarbe(int val) => val switch
+    {
+        >= 120 => "#4ade80",
+        >= 80  => "#facc15",
+        >= 50  => "#fb923c",
+        _      => "#f87171"
+    };
+}

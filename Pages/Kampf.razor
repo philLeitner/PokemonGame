@@ -188,18 +188,30 @@
                     @foreach (var attacke in spielerMon.Attacken)
                     {
                         <button class="attacke-btn typ-@attacke.Typ.ToLower()"
-                                style="border-color: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")"
+                                style="border-color: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888"); background: @TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")22"
                                 @onclick="() => AttackeAusführen(attacke)"
                                 disabled="@(!attacke.HatAp)">
-                            <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
-                            <div class="attacke-btn-info">
+                            <div class="attacke-btn-kopf">
+                                <span class="attacke-typ-icon">@TypeChart.TypEmojis.GetValueOrDefault(attacke.Typ, "")</span>
                                 <span class="attacke-name">@attacke.Name</span>
-                                <span class="attacke-typ-name">@attacke.Typ &nbsp;|&nbsp; @attacke.AktuelleAp/@attacke.MaxAp AP</span>
+                                <span class="attacke-ap-badge">@attacke.AktuelleAp/@attacke.MaxAp AP</span>
                             </div>
-                            @if (attacke.Staerke.HasValue)
-                            {
-                                <span class="attacke-staerke">⚔️ @attacke.Staerke</span>
-                            }
+                            <div class="attacke-btn-details">
+                                <span class="attacke-typ-badge" style="background:@TypeChart.TypFarben.GetValueOrDefault(attacke.Typ, "#888")">@attacke.Typ</span>
+                                <span class="attacke-kat-badge">@(attacke.Kategorie == "Physisch" ? "💪 Physisch" : attacke.Kategorie == "Speziell" ? "✨ Speziell" : "🛡️ Status")</span>
+                                @if (attacke.Staerke.HasValue && attacke.Staerke > 0)
+                                {
+                                    <span class="attacke-staerke">⚔️ @attacke.Staerke Stärke</span>
+                                }
+                                @if (attacke.Genauigkeit.HasValue && attacke.Genauigkeit < 100)
+                                {
+                                    <span class="attacke-genauigkeit">🎯 @attacke.Genauigkeit%</span>
+                                }
+                                @if (!attacke.Staerke.HasValue || attacke.Staerke == 0)
+                                {
+                                    <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
+                                }
+                            </div>
                         </button>
                     }
                 </div>

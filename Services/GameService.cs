@@ -180,6 +180,7 @@ public class GameService
     public void ZuEigeneMapStart() { Phase = SpielPhase.EigeneMapStart; Notify(); }
     public void ZuAdminPanel() { Phase = SpielPhase.AdminPanel; Notify(); }
     public void ZuPokédex() { Phase = SpielPhase.Pokédex; Notify(); }
+    public void ZuMonsterEditor() { Phase = SpielPhase.MonsterEditor; Notify(); }
 
     /// <summary>Startet die Eigene Map: entweder Spielstand kopieren oder neu starten.</summary>
     public async Task EigeneMapStarten(bool spielstandKopieren)
