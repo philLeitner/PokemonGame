@@ -122,7 +122,7 @@ public class GameService
             // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
             LadeStatus = "Lade Weltkarte...";
             Notify();
-            const string ortVersion = "verbindung_v6";
+            const string ortVersion = "verbindung_v7";
             var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
             if (gespeicherteOrtVersion == ortVersion)
             {
