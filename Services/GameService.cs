@@ -273,70 +273,22 @@ public class GameService
     }
 
     // ── Ort betreten ─────────────────────────────────────────────────────────
-    /// <summary>Prüft ob ein Ort zugänglich ist. Gibt null zurück wenn ok, sonst Fehlermeldung.</summary>
-    public string? OrtZugangsPrüfung(Ort ort)
-    {
-        // Unterirdische Gänge sind immer zugänglich
-        if (ort.IstUnterirdisch) return null;
-        // Liga-Zugang: alle 8 echten Kanto-Arenen-Orden benötigt (OrdenNr 1-8)
-        if (ort.LigaZugang)
-        {
-            var kantoArenaOrden = AlleOrte
-                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
-                .Select(o => o.Arena!.OrdenName)
-                .Distinct().ToList();
-            var fehlendeOrden = kantoArenaOrden.Where(o => !Spieler.Orden.Contains(o)).ToList();
-            if (fehlendeOrden.Count > 0)
-                return $"⛔ Du benötigst alle {kantoArenaOrden.Count} Kanto-Orden für den Liga-Zugang! Es fehlen noch {fehlendeOrden.Count} Orden.";
-        }
-        return null;
-    }
+    // SPERREN-LOGIK (neu geschrieben, einfach):
+    // Jede Verbindung hat ein MinOrden-Feld (NordMinOrden, SuedMinOrden, OstMinOrden, WestMinOrden).
+    // Wenn MinOrden > 0: Spieler braucht mindestens so viele Orden.
+    // Prüfung läuft in BEIDE Richtungen: Ausgangsort UND Zielort werden geprüft.
 
-    /// <summary>Prüft die Richtungs-Sperre für eine bestimmte Ausgangsrichtung vom aktuellen Ort.</summary>
-    public string? RichtungsZugangsPrüfung(Ort vonOrt, string richtung)
+    // Schritt 1: Wie viele Orden braucht man für diese Richtung?
+    private int MinOrdenFürRichtung(Ort ort, string richtung) => richtung switch
     {
-        // Neue einfache MinOrden-Felder pro Richtung prüfen (NordMinOrden, SuedMinOrden, OstMinOrden, WestMinOrden)
-        int minOrden = richtung switch
-        {
-            "Nord" => vonOrt.NordMinOrden,
-            "Sued" => vonOrt.SuedMinOrden,
-            "Ost"  => vonOrt.OstMinOrden,
-            "West" => vonOrt.WestMinOrden,
-            _      => 0
-        };
-        if (minOrden > 0 && Spieler.Orden.Count < minOrden)
-        {
-            string richtungName = richtung switch { "Nord" => "Norden", "Sued" => "Süden", "Ost" => "Osten", "West" => "Westen", _ => richtung };
-            return $"⛔ Richtung {richtungName} gesperrt – du benötigst mindestens {minOrden} Orden. Du hast {Spieler.Orden.Count}.";
-        }
-        // Alte RichtungsSperre-Objekte als zusätzlicher Fallback
-        var sperre = richtung switch
-        {
-            "Nord" => vonOrt.SperrNord,
-            "Sued"  => vonOrt.SperrSued,
-            "Ost"  => vonOrt.SperrOst,
-            "West" => vonOrt.SperrWest,
-            "NW"   => vonOrt.SperrNW,
-            "NO"   => vonOrt.SperrNO,
-            "SW"   => vonOrt.SperrSW,
-            "SO"   => vonOrt.SperrSO,
-            _      => null
-        };
-        if (sperre == null) return null;
-        if (sperre.MinOrden > 0 && Spieler.Orden.Count < sperre.MinOrden)
-        {
-            var hinweis = !string.IsNullOrEmpty(sperre.Hinweis) ? $" ({sperre.Hinweis})" : "";
-            return $"⛔ Richtung {richtung} gesperrt – du benötigst mindestens {sperre.MinOrden} Orden. Du hast {Spieler.Orden.Count}.{hinweis}";
-        }
-        if (sperre.ItemId != null && Spieler.GetItemMenge(sperre.ItemId) <= 0)
-        {
-            var hinweis = !string.IsNullOrEmpty(sperre.Hinweis) ? $" Tipp: {sperre.Hinweis}" : "";
-            return $"⛔ Richtung {richtung} gesperrt – du benötigst {sperre.ItemName ?? sperre.ItemId}.{hinweis}";
-        }
-        return null;
-    }
+        "Nord" => ort.NordMinOrden,
+        "Sued" => ort.SuedMinOrden,
+        "Ost"  => ort.OstMinOrden,
+        "West" => ort.WestMinOrden,
+        _      => 0
+    };
 
-    // Gibt die Gegenrichtung zurück (Nord↔Süd, Ost↔West)
+    // Schritt 2: Gegenrichtung (Nord↔Sued, Ost↔West)
     private static string? Gegenrichtung(string richtung) => richtung switch
     {
         "Nord" => "Sued",
@@ -346,45 +298,80 @@ public class GameService
         _      => null
     };
 
+    // Schritt 3: Richtung vom aktuellen Ort zum Zielort bestimmen
+    private static string? RichtungZumZiel(Ort von, string zielId)
+    {
+        if (von.Nord == zielId) return "Nord";
+        if (von.Sued == zielId) return "Sued";
+        if (von.Ost  == zielId) return "Ost";
+        if (von.West == zielId) return "West";
+        return null;
+    }
+
+    // Schritt 4: Hauptprüfung – darf der Spieler zum Zielort?
+    // Gibt null zurück wenn erlaubt, sonst eine Fehlermeldung.
+    public string? ZugangPrüfen(string zielOrtId)
+    {
+        var ziel   = AlleOrte.FirstOrDefault(o => o.Id == zielOrtId);
+        var aktOrt = AlleOrte.FirstOrDefault(o => o.Id == Spieler.AktuellerOrt);
+        if (ziel == null || aktOrt == null) return null;
+
+        // Liga-Zugang: alle 8 Kanto-Orden nötig
+        if (ziel.LigaZugang)
+        {
+            var kantoOrden = AlleOrte
+                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
+                .Select(o => o.Arena!.OrdenName).Distinct().ToList();
+            int fehlend = kantoOrden.Count(o => !Spieler.Orden.Contains(o));
+            if (fehlend > 0)
+                return $"⛔ Liga-Zugang gesperrt! Du brauchst alle 8 Orden – es fehlen noch {fehlend}.";
+        }
+
+        // Richtung vom aktuellen Ort zum Ziel bestimmen
+        string? richtung = RichtungZumZiel(aktOrt, zielOrtId);
+        if (richtung == null) return null; // kein direkter Nachbar → keine Richtungssperre
+
+        // Sperre auf dem AUSGANGSORT prüfen (z.B. Route 3 hat NordMinOrden=1)
+        int minOrden1 = MinOrdenFürRichtung(aktOrt, richtung);
+        if (minOrden1 > 0 && Spieler.Orden.Count < minOrden1)
+            return $"⛔ Gesperrt! Du brauchst {minOrden1} Orden – du hast {Spieler.Orden.Count}.";
+
+        // Sperre auf dem ZIELORT in Gegenrichtung prüfen (z.B. Orania hat WestMinOrden=3)
+        string? gegen = Gegenrichtung(richtung);
+        if (gegen != null)
+        {
+            int minOrden2 = MinOrdenFürRichtung(ziel, gegen);
+            if (minOrden2 > 0 && Spieler.Orden.Count < minOrden2)
+                return $"⛔ Gesperrt! Du brauchst {minOrden2} Orden – du hast {Spieler.Orden.Count}.";
+        }
+
+        // Muss-Kampf Trainer auf dem aktuellen Ort prüfen
+        var mussTrainer = aktOrt.Trainer
+            .Where(t => t.MussBesiegt && !Spieler.BesiegteTrainer.Contains(t.Id)).ToList();
+        if (mussTrainer.Any())
+        {
+            var namen = string.Join(", ", mussTrainer.Select(t => $"{t.Klasse} {t.Name}"));
+            return $"⚔️ Zuerst besiegen: {namen}";
+        }
+
+        return null; // alles ok!
+    }
+
+    // Alte Methoden als Wrapper (damit MapEditor/Weltkarte.razor nicht kaputt gehen)
+    public string? OrtZugangsPrüfung(Ort ort) => ZugangPrüfen(ort.Id);
+    public string? RichtungsZugangsPrüfung(Ort vonOrt, string richtung)
+    {
+        int min = MinOrdenFürRichtung(vonOrt, richtung);
+        if (min > 0 && Spieler.Orden.Count < min)
+            return $"⛔ Gesperrt! Du brauchst {min} Orden – du hast {Spieler.Orden.Count}.";
+        return null;
+    }
+
+    // Ort betreten: Sperre prüfen, dann reisen
     public string? OrtBetreten(string ortId, string? vonRichtung = null)
     {
-        var ort = AlleOrte.FirstOrDefault(o => o.Id == ortId);
-        if (ort != null)
-        {
-            // Allgemeine Zugangsprüfung
-            var fehler = OrtZugangsPrüfung(ort);
-            if (fehler != null) return fehler;
-            // Richtungs-Sperre vom aktuellen Ort aus prüfen
-            if (vonRichtung != null)
-            {
-                var aktOrt = AlleOrte.FirstOrDefault(o => o.Id == Spieler.AktuellerOrt);
-                if (aktOrt != null)
-                {
-                    // 1) Sperre auf dem Ausgangsort (z.B. Route 24 → West gesperrt)
-                    var richtungsFehler = RichtungsZugangsPrüfung(aktOrt, vonRichtung);
-                    if (richtungsFehler != null) return richtungsFehler;
-
-                    // 2) Gegenrichtungs-Sperre auf dem Zielort prüfen
-                    //    z.B. Orania.WestMinOrden=3 bedeutet auch Route 9 → Orania ist gesperrt
-                    var gegenRichtung = Gegenrichtung(vonRichtung);
-                    if (gegenRichtung != null)
-                    {
-                        var gegenFehler = RichtungsZugangsPrüfung(ort, gegenRichtung);
-                        if (gegenFehler != null) return gegenFehler;
-                    }
-
-                    // 3) Muss-Kampf Trainer auf dem aktuellen Ort prüfen
-                    var mussTrainer = aktOrt.Trainer
-                        .Where(t => t.MussBesiegt && !Spieler.BesiegteTrainer.Contains(t.Id))
-                        .ToList();
-                    if (mussTrainer.Any())
-                    {
-                        var namen = string.Join(", ", mussTrainer.Select(t => $"{t.Klasse} {t.Name}"));
-                        return $"⚔️ Du musst zuerst folgende Trainer besiegen: {namen}";
-                    }
-                }
-            }
-        }
+        var fehler = ZugangPrüfen(ortId);
+        if (fehler != null) return fehler;
         Spieler.AktuellerOrt = ortId;
         Notify();
         return null;
