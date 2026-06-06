@@ -349,9 +349,14 @@ public class GameService
         // Muss-Kampf Trainer auf dem aktuellen Ort prüfen
         // Wenn SperrtRichtung gesetzt ist: nur diese Richtung blockieren (Rückweg bleibt frei)
         // Wenn SperrtRichtung null/leer: alle Richtungen blockieren
+        // Sonderfall: Wenn der Ort eine Arena hat und der Orden bereits gewonnen wurde,
+        //             gelten alle Trainer dieses Ortes als besiegt (auch ohne BesiegteTrainer-Eintrag)
+        bool ordenBereitsGewonnen = aktOrt.Arena != null && Spieler.Orden.Contains(aktOrt.Arena.OrdenName);
         var mussTrainer = aktOrt.Trainer
             .Where(t => t.MussBesiegt
+                     && !ordenBereitsGewonnen
                      && !Spieler.BesiegteTrainer.Contains(t.Id)
+                     && !Spieler.BesiegteTrainer.Contains($"arena_{aktOrt.Id}")
                      && (string.IsNullOrEmpty(t.SperrtRichtung) || t.SperrtRichtung == richtung))
             .ToList();
         if (mussTrainer.Any())
