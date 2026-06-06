@@ -268,6 +268,7 @@ public class GameService
         if (spezies == null) return;
         var starter = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
         Spieler.Team.Add(starter);
+        Spieler.StarterMonsterId = monsterId; // Starter merken für Rivale-Blau-Konter
         Spieler.AktuellerOrt = "KAN-0001";
         Phase = SpielPhase.Weltkarte;
         Notify();
@@ -411,6 +412,18 @@ public class GameService
         Notify();
     }
 
+    // Rivale Blau: Starter-Konter bestimmen (Pflanze→Feuer, Feuer→Wasser, Wasser→Pflanze)
+    private string RivaleBlauStarterKonter()
+    {
+        return Spieler.StarterMonsterId switch
+        {
+            "PKM-0001" => "PKM-0004", // Spieler hat Bisasam (Pflanze) → Blau nimmt Glumanda (Feuer)
+            "PKM-0004" => "PKM-0007", // Spieler hat Glumanda (Feuer) → Blau nimmt Schiggy (Wasser)
+            "PKM-0007" => "PKM-0001", // Spieler hat Schiggy (Wasser) → Blau nimmt Bisasam (Pflanze)
+            _ => "PKM-0004"           // Fallback
+        };
+    }
+
     public void TrainerKampfStarten(TrainerKampf trainer)
     {
         if (Spieler.BesiegteTrainer.Contains(trainer.Id)) return;
@@ -419,7 +432,13 @@ public class GameService
 
         var erstesGegnerMonster = trainer.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
-        var spezies = AlleMonster.FirstOrDefault(m => m.Id == erstesGegnerMonster.MonsterId)
+
+        // Rivale Blau: erstes Monster dynamisch durch Starter-Konter ersetzen
+        string ersteMonsterId = erstesGegnerMonster.MonsterId;
+        if (trainer.Name == "Blau" && trainer.Klasse == "Rivale" && !string.IsNullOrEmpty(Spieler.StarterMonsterId))
+            ersteMonsterId = RivaleBlauStarterKonter();
+
+        var spezies = AlleMonster.FirstOrDefault(m => m.Id == ersteMonsterId)
                       ?? AlleMonster[_rng.Next(AlleMonster.Count)];
         var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
 

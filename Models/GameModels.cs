@@ -163,6 +163,7 @@ public class Spieler
 {
     public string Name { get; set; } = "Trainer";
     public int Geld { get; set; } = 3000;
+    public string StarterMonsterId { get; set; } = ""; // gewählter Starter (PKM-0001/0004/0007)
     public List<string> Orden { get; set; } = new();
     public List<MonsterInstanz> Team { get; set; } = new();
     public List<MonsterInstanz> Box { get; set; } = new();  // Box für gefangene Monster
