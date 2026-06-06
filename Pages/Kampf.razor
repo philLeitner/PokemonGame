@@ -203,13 +203,27 @@
                                 {
                                     <span class="attacke-staerke">⚔️ @attacke.Staerke Stärke</span>
                                 }
-                                @if (attacke.Genauigkeit.HasValue && attacke.Genauigkeit < 100)
+                                @if (attacke.Genauigkeit.HasValue)
                                 {
                                     <span class="attacke-genauigkeit">🎯 @attacke.Genauigkeit%</span>
                                 }
                                 @if (!attacke.Staerke.HasValue || attacke.Staerke == 0)
                                 {
                                     <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
+                                }
+                                @{
+                                    var statusHinweis = attacke.Typ switch
+                                    {
+                                        "Brennen" => "🔥 Kann verbrennen",
+                                        "Eis"     => "🧊 Kann einfrieren",
+                                        "Blitz"   => "⚡ Kann lähmen",
+                                        "Gift"    => "☠️ Kann vergiften",
+                                        _         => (string?)null
+                                    };
+                                }
+                                @if (statusHinweis != null && attacke.Staerke.HasValue && attacke.Staerke > 0)
+                                {
+                                    <span class="attacke-status-effekt">@statusHinweis</span>
                                 }
                             </div>
                         </button>

@@ -434,26 +434,45 @@ public class GameService
         var erstesGegnerMonster = trainer.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
 
-        // Rivale Blau: erstes Monster dynamisch durch Starter-Konter ersetzen
-        string ersteMonsterId = erstesGegnerMonster.MonsterId;
+        // Rivale Blau: nur den Starter-Konter verwenden (1 Monster, nicht alle 3)
+        TrainerKampf effektiverTrainer = trainer;
         if (trainer.Name == "Blau" && trainer.Klasse == "Rivale" && !string.IsNullOrEmpty(Spieler.StarterMonsterId))
-            ersteMonsterId = RivaleBlauStarterKonter();
+        {
+            var konterId = RivaleBlauStarterKonter();
+            // Erstelle eine Kopie des Trainers mit nur dem Konter-Monster
+            effektiverTrainer = new TrainerKampf
+            {
+                Id = trainer.Id,
+                Name = trainer.Name,
+                Klasse = trainer.Klasse,
+                Belohnung = trainer.Belohnung,
+                Dialogvor = trainer.Dialogvor,
+                DialogNach = trainer.DialogNach,
+                MussBesiegt = trainer.MussBesiegt,
+                SperrtRichtung = trainer.SperrtRichtung,
+                Team = new List<MonsterTeamEintrag>
+                {
+                    new MonsterTeamEintrag { MonsterId = konterId, Level = erstesGegnerMonster.Level }
+                }
+            };
+        }
 
+        var ersteMonsterId = effektiverTrainer.Team[0].MonsterId;
         var spezies = AlleMonster.FirstOrDefault(m => m.Id == ersteMonsterId)
                       ?? AlleMonster[_rng.Next(AlleMonster.Count)];
-        var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
+        var gegner = MonsterInstanz.VonSpezies(spezies, effektiverTrainer.Team[0].Level, AlleAttacken);
 
         AktuellerKampf = new KampfZustand
         {
             Typ = KampfTyp.Trainer,
             SpielerMonster = spielerMonster,
             GegnerMonster = gegner,
-            GegnerName = $"{trainer.Klasse} {trainer.Name}",
+            GegnerName = $"{effektiverTrainer.Klasse} {effektiverTrainer.Name}",
             Phase = KampfPhase.Intro,
-            Log = new() { $"💬 {trainer.Klasse} {trainer.Name}: \"{trainer.Dialogvor}\"" },
-            TrainerId = trainer.Id,
-            BelohnungGeld = trainer.Belohnung,
-            AktuellerTrainer = trainer,
+            Log = new() { $"💬 {effektiverTrainer.Klasse} {effektiverTrainer.Name}: \"{effektiverTrainer.Dialogvor}\"" },
+            TrainerId = effektiverTrainer.Id,
+            BelohnungGeld = effektiverTrainer.Belohnung,
+            AktuellerTrainer = effektiverTrainer,
             TrainerMonsterIndex = 0,
         };
         Phase = SpielPhase.Kampf;

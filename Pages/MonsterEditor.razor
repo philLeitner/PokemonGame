@@ -1,5 +1,6 @@
 @inject GameService Game
 @inject LocalStorageService Storage
+@inject IJSRuntime JS
 @implements IDisposable
 
 <div class="editor-screen monster-editor-screen">
@@ -15,7 +16,7 @@
         <div class="editor-tabs">
             <button class="editor-tab @(aktiverTab == "monster" ? "aktiv" : "")" @onclick='() => aktiverTab = "monster"'>🐾 Monster</button>
             <button class="editor-tab @(aktiverTab == "attacken" ? "aktiv" : "")" @onclick='() => aktiverTab = "attacken"'>⚔️ Attacken</button>
-            <button class="editor-tab @(aktiverTab == "referenz" ? "aktiv" : "")" @onclick='() => aktiverTab = "referenz"'>📋 Referenz</button>
+            <button class="editor-tab @(aktiverTab == "referenz" ? "aktiv" : "")" @onclick='() => { referenzTab = "monster"; aktiverTab = "referenz"; }'>📋 Referenz</button>
         </div>
 
         @if (aktiverTab == "monster")
@@ -134,7 +135,7 @@
     </div>
 
     <!-- ═══ RECHTE SPALTE: Detail-Editor ═══ -->
-    <div class="editor-panel-right">
+    <div class="editor-panel-rechts">
 
         @if (aktiverTab == "monster" && ausgewähltesMonster != null)
         {
@@ -160,10 +161,15 @@
                         }
                     </div>
                 </div>
-                @if (speicherStatus != "")
-                {
-                    <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
-                }
+                <div style="display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end;">
+                    @if (speicherStatus != "")
+                    {
+                        <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
+                    }
+                    <button class="btn-json-download" @onclick="MonsterJsonHerunterladen" title="monster.json herunterladen">
+                        ⬇️ monster.json
+                    </button>
+                </div>
             </div>
 
             <!-- Abschnitte -->
@@ -360,13 +366,22 @@
                         <span class="kategorie-badge">@GetKategorieEmoji(atk.Kategorie) @atk.Kategorie</span>
                     </div>
                 </div>
-                @if (speicherStatus != "")
-                {
-                    <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
-                }
+                <div style="display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end;">
+                    @if (speicherStatus != "")
+                    {
+                        <div class="speicher-status @(speicherFehler ? "fehler" : "ok")">@speicherStatus</div>
+                    }
+                    <button class="btn-json-download" @onclick="AttackenJsonHerunterladen" title="attacken.json herunterladen">
+                        ⬇️ attacken.json
+                    </button>
+                    <button class="btn-json-download btn-json-download-monster" @onclick="MonsterJsonHerunterladen" title="monster.json herunterladen (Lernlisten)">
+                        ⬇️ monster.json
+                    </button>
+                </div>
             </div>
 
             <div class="editor-sektionen">
+                <!-- ATTACKEN-DATEN -->
                 <div class="editor-sektion">
                     <div class="editor-sektion-titel">📝 ATTACKEN-DATEN</div>
                     <div class="editor-feld-zeile">
@@ -411,27 +426,56 @@
                                value="@(atk.Ap ?? 10)"
                                @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { atk.Ap = v; AttackeSpeichern(); } }" />
                     </div>
+                    @{
+                        var statusHinweisEditor = atk.Typ switch
+                        {
+                            "Brennen" => "🔥 Diese Attacke kann verbrennen",
+                            "Eis"     => "🧊 Diese Attacke kann einfrieren",
+                            "Blitz"   => "⚡ Diese Attacke kann lähmen",
+                            "Gift"    => "☠️ Diese Attacke kann vergiften",
+                            _         => (string?)null
+                        };
+                    }
+                    @if (statusHinweisEditor != null)
+                    {
+                        <div class="editor-status-effekt-hinweis">@statusHinweisEditor</div>
+                    }
                 </div>
 
-                <!-- Monster die diese Attacke lernen -->
+                <!-- MONSTER DIE DIESE ATTACKE LERNEN (editierbar) -->
                 <div class="editor-sektion">
                     <div class="editor-sektion-titel">🐾 MONSTER DIE DIESE ATTACKE LERNEN</div>
+                    <p class="editor-hinweis">Klicke auf ein Monster um es zu bearbeiten. Du kannst Monster hinzufügen oder entfernen.</p>
+
                     @{
-                        var lernerListe = Game.AlleMonster
+                        var lernerListe = editierteMonster
                             .Where(m => m.Attacken.Any(a => a.AttackeId == atk.Id))
                             .OrderBy(m => m.Id)
                             .ToList();
                     }
+
                     @if (lernerListe.Any())
                     {
                         <div class="lerner-liste">
                             @foreach (var lerner in lernerListe)
                             {
-                                var lernLevel = lerner.Attacken.First(a => a.AttackeId == atk.Id).Level;
-                                <div class="lerner-zeile" @onclick="@(() => { aktiverTab = "monster"; MonsterAuswählen(lerner); })">
+                                var lernEintrag = lerner.Attacken.First(a => a.AttackeId == atk.Id);
+                                var lernLevel = lernEintrag.Level;
+                                var lernerId = lerner.Id; // capture für Lambda
+                                <div class="lerner-zeile">
                                     <span class="lerner-nr">#@GetMonsterNr(lerner.Id)</span>
-                                    <span class="lerner-name">@lerner.Name</span>
-                                    <span class="lerner-level">Lv.@lernLevel</span>
+                                    <span class="lerner-name" style="cursor:pointer" @onclick="@(() => { aktiverTab = "monster"; MonsterAuswählen(lerner); })">
+                                        @lerner.Name
+                                    </span>
+                                    <div style="display:flex;align-items:center;gap:0.4rem;margin-left:auto;">
+                                        <span style="font-size:0.72rem;color:#8b949e;">Lv.</span>
+                                        <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                                               style="width:60px;padding:0.2rem 0.4rem;font-size:0.82rem;"
+                                               value="@lernLevel"
+                                               @onchange="e => { if(int.TryParse(e.Value?.ToString(), out int v)) { lernEintrag.Level = v; Speichern(); } }" />
+                                        <button class="btn-entfernen" title="Aus Lernliste entfernen"
+                                                @onclick="() => { lerner.Attacken.RemoveAll(a => a.AttackeId == atk.Id); Speichern(); }">✕</button>
+                                    </div>
                                 </div>
                             }
                         </div>
@@ -440,6 +484,24 @@
                     {
                         <p class="editor-hinweis">Kein Monster lernt diese Attacke.</p>
                     }
+
+                    <!-- Monster hinzufügen -->
+                    <div style="display:flex;gap:0.5rem;margin-top:0.75rem;align-items:center;">
+                        <select class="editor-select" @bind="neuesLernerMonsterId" style="flex:1;">
+                            <option value="">— Monster auswählen —</option>
+                            @foreach (var mon in editierteMonster.Where(m => !m.Attacken.Any(a => a.AttackeId == atk.Id)).OrderBy(m => m.Id))
+                            {
+                                <option value="@mon.Id">#@GetMonsterNr(mon.Id) @mon.Name</option>
+                            }
+                        </select>
+                        <input class="editor-input editor-input-klein" type="number" min="1" max="100"
+                               @bind="neuesLernerLevel" placeholder="Lv" style="width:70px;" />
+                        <button class="btn-hinzufuegen" style="width:auto;padding:0.45rem 0.75rem;margin:0;"
+                                @onclick="LernerHinzufügen"
+                                disabled="@string.IsNullOrEmpty(neuesLernerMonsterId)">
+                            + Hinzufügen
+                        </button>
+                    </div>
                 </div>
             </div>
         }
@@ -450,14 +512,22 @@
                     @if (aktiverTab == "referenz")
                     {
                         <span>📋</span>
-                        <p>Wähle einen Eintrag aus der Referenzliste aus.</p>
                     }
                     else
                     {
                         <span>👈</span>
-                        <p>Wähle ein Monster oder eine Attacke aus der Liste aus.</p>
                     }
                 </div>
+                <p class="editor-leer-text">
+                    @if (aktiverTab == "referenz")
+                    {
+                        @("Wähle einen Eintrag aus der Referenzliste aus.")
+                    }
+                    else
+                    {
+                        @("Wähle ein Monster oder eine Attacke aus der Liste aus.")
+                    }
+                </p>
             </div>
         }
     </div>
@@ -471,6 +541,8 @@
     private string refMonsterSuche = "";
     private string refAttackeSuche = "";
     private string neuerFundortId = "";
+    private string neuesLernerMonsterId = "";
+    private int neuesLernerLevel = 1;
     private string speicherStatus = "";
     private bool speicherFehler = false;
 
@@ -488,17 +560,16 @@
     {
         Game.OnChange += StateHasChanged;
         // Tiefe Kopie der Daten für den Editor
+        var opts = new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
         var monsterJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleMonster);
-        editierteMonster = System.Text.Json.JsonSerializer.Deserialize<List<MonsterData>>(monsterJson,
-            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+        editierteMonster = System.Text.Json.JsonSerializer.Deserialize<List<MonsterData>>(monsterJson, opts) ?? new();
 
         var attackenJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleAttacken);
-        editierteAttacken = System.Text.Json.JsonSerializer.Deserialize<List<AttackeData>>(attackenJson,
-            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+        editierteAttacken = System.Text.Json.JsonSerializer.Deserialize<List<AttackeData>>(attackenJson, opts) ?? new();
 
         var orteJson = System.Text.Json.JsonSerializer.Serialize(Game.AlleOrte);
-        editierteOrte = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(orteJson,
-            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+        editierteOrte = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(orteJson, opts) ?? new();
     }
 
     public void Dispose() => Game.OnChange -= StateHasChanged;
@@ -506,11 +577,15 @@
     private void MonsterAuswählen(MonsterData mon)
     {
         ausgewähltesMonster = editierteMonster.FirstOrDefault(m => m.Id == mon.Id);
+        ausgewählteAttacke = null;
     }
 
     private void AttackeAuswählen(AttackeData atk)
     {
         ausgewählteAttacke = editierteAttacken.FirstOrDefault(a => a.Id == atk.Id);
+        ausgewähltesMonster = null;
+        neuesLernerMonsterId = "";
+        neuesLernerLevel = 1;
     }
 
     private List<MonsterData> GefilterteMonster()
@@ -555,11 +630,26 @@
         OrtesSpeichern();
     }
 
+    private void LernerHinzufügen()
+    {
+        if (ausgewählteAttacke == null || string.IsNullOrEmpty(neuesLernerMonsterId)) return;
+        var mon = editierteMonster.FirstOrDefault(m => m.Id == neuesLernerMonsterId);
+        if (mon == null) return;
+        if (mon.Attacken.Any(a => a.AttackeId == ausgewählteAttacke.Id)) return;
+        mon.Attacken.Add(new AttackenLernEintrag
+        {
+            AttackeId = ausgewählteAttacke.Id,
+            Level = neuesLernerLevel > 0 ? neuesLernerLevel : 1
+        });
+        neuesLernerMonsterId = "";
+        neuesLernerLevel = 1;
+        Speichern();
+    }
+
     private async void Speichern()
     {
         try
         {
-            // Monster in LocalStorage speichern
             var json = System.Text.Json.JsonSerializer.Serialize(editierteMonster,
                 new System.Text.Json.JsonSerializerOptions { WriteIndented = false });
             await Storage.SetItemAsync("editor_monster", json);
@@ -622,6 +712,39 @@
         }
     }
 
+    // ── JSON-Download ─────────────────────────────────────────────────────────
+    private async Task MonsterJsonHerunterladen()
+    {
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(editierteMonster,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            await JS.InvokeVoidAsync("downloadJson", "monster.json", json);
+        }
+        catch (Exception ex)
+        {
+            speicherStatus = $"⚠️ Download-Fehler: {ex.Message}";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task AttackenJsonHerunterladen()
+    {
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(editierteAttacken,
+                new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            await JS.InvokeVoidAsync("downloadJson", "attacken.json", json);
+        }
+        catch (Exception ex)
+        {
+            speicherStatus = $"⚠️ Download-Fehler: {ex.Message}";
+            speicherFehler = true;
+            StateHasChanged();
+        }
+    }
+
     private void AddAttacke()
     {
         if (ausgewähltesMonster == null) return;
@@ -631,7 +754,6 @@
 
     private void ZurückNavigieren()
     {
-        // Zurück zum Hauptmenü wenn von dort, sonst Weltkarte
         if (Game.Spieler.Team.Any())
             Game.ZuWeltkarte();
         else
@@ -641,7 +763,6 @@
     // ── Hilfsmethoden ────────────────────────────────────────────────────────
     private static string GetMonsterNr(string id)
     {
-        // PKM-0001 → 001
         if (id.StartsWith("PKM-") && id.Length >= 8)
             return id.Substring(4).TrimStart('0').PadLeft(3, '0');
         return id;
