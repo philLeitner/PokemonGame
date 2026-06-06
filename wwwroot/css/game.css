@@ -4042,3 +4042,46 @@ input:checked + .toggle-slider-klein::before {
     box-shadow: 0 1px 6px rgba(168,85,247,0.45);
     text-transform: uppercase;
 }
+
+/* ── TM-Attacken im MonsterEditor ── */
+.tm-attacken-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+.tm-attacke-zeile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+}
+.tm-badge {
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+.tm-attacke-name {
+    font-weight: 600;
+    color: #e2e8f0;
+    flex: 1;
+}
+.tm-attacke-id {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+.tm-hinzufuegen {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}

@@ -37,6 +37,7 @@ public class MonsterData
     public string Bild { get; set; } = "";
     public Dictionary<string, int> Stats { get; set; } = new();
     public List<AttackenLernEintrag> Attacken { get; set; } = new();
+    public List<string> TmAttacken { get; set; } = new();
     public string? EntwickeltZu { get; set; }
     public string? EntwicklungName { get; set; }
     public int? EntwicklungLevel { get; set; }

@@ -115,6 +115,7 @@ public class GameService
                         AttackeId = a.AttackeId,
                         Level = a.Level
                     }).ToList() ?? new(),
+                    TmAttacken = m.TmAttacken ?? new(),
                     EntwickeltZu = m.EntwickeltZu,
                     EntwicklungName = m.EntwicklungName,
                     EntwicklungLevel = m.EntwicklungLevel,
@@ -1544,6 +1545,7 @@ public class MonsterRaw
     [JsonPropertyName("bild")] public string Bild { get; set; } = "";
     [JsonPropertyName("stats")] public Dictionary<string, int>? Stats { get; set; }
     [JsonPropertyName("attacken")] public List<AttackenLernEintragRaw>? Attacken { get; set; }
+    [JsonPropertyName("tm_attacken")] public List<string>? TmAttacken { get; set; }
     [JsonPropertyName("entwickelt_zu")] public string? EntwickeltZu { get; set; }
     [JsonPropertyName("entwicklung_name")] public string? EntwicklungName { get; set; }
     [JsonPropertyName("entwicklung_level")] public int? EntwicklungLevel { get; set; }

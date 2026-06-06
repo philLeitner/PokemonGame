@@ -309,6 +309,57 @@
                     </button>
                 </div>
 
+                <!-- TM-ATTACKEN -->
+                <div class="editor-sektion">
+                    <div class="editor-sektion-titel">💿 TM-ATTACKEN (via TM lernbar)</div>
+                    <p class="editor-hinweis">Diese Attacken kann das Monster per TM erlernen (Gen 9, aus PokéAPI).</p>
+                    @if (mon.TmAttacken.Any())
+                    {
+                        <div class="tm-attacken-liste">
+                            @foreach (var tmId in mon.TmAttacken.ToList())
+                            {
+                                var tmAtk = Game.AlleAttacken.FirstOrDefault(a => a.Id == tmId);
+                                var tmIdCopy = tmId;
+                                <div class="tm-attacke-zeile">
+                                    <span class="tm-badge">TM</span>
+                                    @if (tmAtk != null)
+                                    {
+                                        <span class="typ-badge-mini" style="background:@GetTypFarbe(tmAtk.Typ)">@tmAtk.Typ</span>
+                                        <span class="tm-attacke-name">@tmAtk.Name</span>
+                                        <span class="tm-attacke-id">@tmIdCopy</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="unbekannt">❓ @tmIdCopy</span>
+                                    }
+                                    <button class="btn-entfernen" title="TM-Attacke entfernen"
+                                            @onclick="() => { mon.TmAttacken.Remove(tmIdCopy); Speichern(); }">✕</button>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="editor-leer">Keine TM-Attacken für dieses Monster.</p>
+                    }
+                    <div class="tm-hinzufuegen">
+                        <select class="editor-select" @bind="neueTmAttackeId">
+                            <option value="">— Gen-9-Attacke auswählen —</option>
+                            @foreach (var a in Game.AlleAttacken.Where(a => a.Generation == 9).OrderBy(a => a.Name))
+                            {
+                                @if (!mon.TmAttacken.Contains(a.Id))
+                                {
+                                    <option value="@a.Id">@a.Name (@a.Id)</option>
+                                }
+                            }
+                        </select>
+                        <button class="btn-hinzufuegen" @onclick="TmAttackeHinzufügen"
+                                disabled="@string.IsNullOrEmpty(neueTmAttackeId)">
+                            + TM-Attacke hinzufügen
+                        </button>
+                    </div>
+                </div>
+
                 <!-- FUNDORTE / ROUTEN -->
                 <div class="editor-sektion">
                     <div class="editor-sektion-titel">📍 FUNDORTE (Routen & Orte)</div>
@@ -551,6 +602,7 @@
     private string neuerFundortId = "";
     private string neuesLernerMonsterId = "";
     private int neuesLernerLevel = 1;
+    private string neueTmAttackeId = "";
     private string speicherStatus = "";
     private bool speicherFehler = false;
 
@@ -758,6 +810,17 @@
         if (ausgewähltesMonster == null) return;
         ausgewähltesMonster.Attacken.Add(new AttackenLernEintrag { AttackeId = "MOV-0001", Level = 1 });
         Speichern();
+    }
+
+    private void TmAttackeHinzufügen()
+    {
+        if (ausgewähltesMonster == null || string.IsNullOrEmpty(neueTmAttackeId)) return;
+        if (!ausgewähltesMonster.TmAttacken.Contains(neueTmAttackeId))
+        {
+            ausgewähltesMonster.TmAttacken.Add(neueTmAttackeId);
+            Speichern();
+        }
+        neueTmAttackeId = "";
     }
 
     private void ZurückNavigieren()
