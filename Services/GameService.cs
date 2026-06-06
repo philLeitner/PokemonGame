@@ -347,8 +347,13 @@ public class GameService
         }
 
         // Muss-Kampf Trainer auf dem aktuellen Ort prüfen
+        // Wenn SperrtRichtung gesetzt ist: nur diese Richtung blockieren (Rückweg bleibt frei)
+        // Wenn SperrtRichtung null/leer: alle Richtungen blockieren
         var mussTrainer = aktOrt.Trainer
-            .Where(t => t.MussBesiegt && !Spieler.BesiegteTrainer.Contains(t.Id)).ToList();
+            .Where(t => t.MussBesiegt
+                     && !Spieler.BesiegteTrainer.Contains(t.Id)
+                     && (string.IsNullOrEmpty(t.SperrtRichtung) || t.SperrtRichtung == richtung))
+            .ToList();
         if (mussTrainer.Any())
         {
             var namen = string.Join(", ", mussTrainer.Select(t => $"{t.Klasse} {t.Name}"));
