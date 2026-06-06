@@ -91,6 +91,8 @@ public class GameService
                     Staerke = a.Staerke,
                     Genauigkeit = a.Genauigkeit,
                     Ap = a.Ap,
+                    Statuseffekt = a.Statuseffekt,
+                    StatuseffektChance = a.StatuseffektChance,
                 }).ToList();
             }
 
@@ -552,9 +554,20 @@ public class GameService
             else if (multi <= 0f) AktuellerKampf.Log.Add("🛡️ Das hat keine Wirkung...");
             else if (multi < 1f) AktuellerKampf.Log.Add("😐 Das ist nicht sehr effektiv...");
 
-            // Status-Effekt durch Attacke (vereinfacht: 10% Chance)
-            if (schaden > 0 && _rng.Next(10) == 0)
-                VersuchemStatusEffekt(gegnerMon, attacke.Typ, AktuellerKampf.Log);
+            // Status-Effekt durch Attacke (aus Attacken-Daten)
+            if (schaden > 0 && !string.IsNullOrEmpty(attacke.Statuseffekt))
+            {
+                int chance = attacke.StatuseffektChance ?? 30;
+                if (_rng.Next(100) < chance)
+                    VersuchemStatusEffektDirekt(gegnerMon, attacke.Statuseffekt, AktuellerKampf.Log);
+            }
+            else if (schaden == 0 && !string.IsNullOrEmpty(attacke.Statuseffekt))
+            {
+                // Status-Attacken (kein Schaden) treffen direkt
+                int chance = attacke.StatuseffektChance ?? 100;
+                if (_rng.Next(100) < chance)
+                    VersuchemStatusEffektDirekt(gegnerMon, attacke.Statuseffekt, AktuellerKampf.Log);
+            }
         }
         else
         {
@@ -906,9 +919,14 @@ public class GameService
         spielerMon.ErfahrungsPunkte += exp;
         AktuellerKampf.Log.Add($"+{exp} EP für {spielerMon.AngezeigterName}");
 
-        // Level-Up prüfen
+                // Level-Up prüfen
         PrüfeLevelUp(spielerMon);
-
+        // Neue Attacken-Dialog starten falls vorhanden
+        if (AktuellerKampf.PendingNeueAttacken.Count > 0)
+        {
+            AktuellerKampf.LernMonster = spielerMon;
+            AktuellerKampf.NeueAttacke = AktuellerKampf.PendingNeueAttacken[0];
+        }
         // Geld
         if (AktuellerKampf.BelohnungGeld > 0)
         {
@@ -957,10 +975,92 @@ public class GameService
 
         // Sieg markieren
         AktuellerKampf.SpielerGewonnen = true;
-        // Evolution prüfen
         Notify();
         await Task.Delay(500);
-        await PrüfeEvolution(spielerMon);
+        // Attacken-Lern-Dialog zuerst, dann Evolution
+        if (AktuellerKampf.PendingNeueAttacken.Count > 0)
+        {
+            AktuellerKampf.Phase = KampfPhase.AttackeLernen;
+            Notify();
+        }
+        else
+        {
+            await PrüfeEvolution(spielerMon);
+        }
+    }
+
+    /// <summary>Wird vom Kampf.razor aufgerufen wenn der Spieler eine Attacke lernen/ablehnen möchte.</summary>
+    public async Task AttackeLernenAbschliessen(AttackeInstanz? zuErsetzen)
+    {
+        if (AktuellerKampf == null) return;
+        var mon = AktuellerKampf.LernMonster;
+        var neueAtk = AktuellerKampf.NeueAttacke;
+        if (mon == null || neueAtk == null) return;
+
+        if (zuErsetzen != null)
+        {
+            // Alte Attacke ersetzen
+            int idx = mon.Attacken.IndexOf(zuErsetzen);
+            if (idx >= 0)
+            {
+                mon.Attacken[idx] = new AttackeInstanz
+                {
+                    Id = neueAtk.Id,
+                    Name = neueAtk.Name,
+                    Typ = neueAtk.Typ,
+                    Kategorie = neueAtk.Kategorie,
+                    Staerke = neueAtk.Staerke,
+                    Genauigkeit = neueAtk.Genauigkeit,
+                    MaxAp = neueAtk.Ap ?? 10,
+                    AktuelleAp = neueAtk.Ap ?? 10,
+                    Statuseffekt = neueAtk.Statuseffekt,
+                    StatuseffektChance = neueAtk.StatuseffektChance,
+                };
+                AktuellerKampf.Log.Add($"✨ {mon.AngezeigterName} hat {neueAtk.Name} gelernt!");
+            }
+        }
+        else
+        {
+            // Wenn noch Platz (< 4 Attacken), automatisch hinzufügen
+            if (mon.Attacken.Count < 4)
+            {
+                mon.Attacken.Add(new AttackeInstanz
+                {
+                    Id = neueAtk.Id,
+                    Name = neueAtk.Name,
+                    Typ = neueAtk.Typ,
+                    Kategorie = neueAtk.Kategorie,
+                    Staerke = neueAtk.Staerke,
+                    Genauigkeit = neueAtk.Genauigkeit,
+                    MaxAp = neueAtk.Ap ?? 10,
+                    AktuelleAp = neueAtk.Ap ?? 10,
+                    Statuseffekt = neueAtk.Statuseffekt,
+                    StatuseffektChance = neueAtk.StatuseffektChance,
+                });
+                AktuellerKampf.Log.Add($"✨ {mon.AngezeigterName} hat {neueAtk.Name} gelernt!");
+            }
+            else
+            {
+                AktuellerKampf.Log.Add($"❌ {mon.AngezeigterName} hat {neueAtk.Name} nicht gelernt.");
+            }
+        }
+
+        // Nächste pending Attacke oder weiter
+        AktuellerKampf.PendingNeueAttacken.RemoveAt(0);
+        if (AktuellerKampf.PendingNeueAttacken.Count > 0)
+        {
+            AktuellerKampf.NeueAttacke = AktuellerKampf.PendingNeueAttacken[0];
+            Notify();
+        }
+        else
+        {
+            AktuellerKampf.LernMonster = null;
+            AktuellerKampf.NeueAttacke = null;
+            AktuellerKampf.Phase = KampfPhase.Beendet;
+            Notify();
+            await Task.Delay(300);
+            await PrüfeEvolution(mon);
+        }
     }
 
     private void KampfVerloren()
@@ -1040,6 +1140,24 @@ public class GameService
             mon.Angriff += 2; mon.Verteidigung += 2; mon.SpezialAngriff += 2;
             mon.SpezialVerteidigung += 2; mon.Initiative += 2;
             AktuellerKampf?.Log.Add($"🎉 {mon.AngezeigterName} ist auf Level {mon.Level} aufgestiegen!");
+
+            // Neue Attacken prüfen die genau auf diesem Level gelernt werden
+            var spezies = AlleMonster.FirstOrDefault(m => m.Id == mon.SpeziesId);
+            if (spezies != null && AktuellerKampf != null)
+            {
+                var neueAttackenAufDiesemLevel = spezies.Attacken
+                    .Where(a => a.Level == mon.Level)
+                    .Select(a => AlleAttacken.FirstOrDefault(ad => ad.Id == a.AttackeId))
+                    .Where(ad => ad != null && !mon.Attacken.Any(vorh => vorh.Id == ad!.Id))
+                    .ToList();
+
+                foreach (var neueAtk in neueAttackenAufDiesemLevel)
+                {
+                    if (neueAtk != null)
+                        AktuellerKampf.PendingNeueAttacken.Add(neueAtk);
+                }
+            }
+
             nächstesLevel = mon.Level + 1;
             benötigteExp = nächstesLevel * nächstesLevel * 10;
         }
@@ -1081,28 +1199,38 @@ public class GameService
         }
     }
 
-    private void VersuchemStatusEffekt(MonsterInstanz ziel, string attackeTyp, List<string> log)
+    private void VersuchemStatusEffektDirekt(MonsterInstanz ziel, string neuerStatus, List<string> log)
     {
         if (ziel.Status != "none") return;
-        string? neuerStatus = attackeTyp switch
-        {
-            "Brennen" => "verbrannt",
-            "Eis" => "eingefroren",
-            "Blitz" => "gelähmt",
-            "Gift" => "vergiftet",
-            _ => null
-        };
-        if (neuerStatus == null) return;
+        // Immunität: Feuer-Typen können nicht verbrennen, Eis-Typen nicht einfrieren, Gift-Typen nicht vergiftet werden
+        if (neuerStatus == "verbrannt" && ziel.Typen.Contains("Brennen")) return;
+        if (neuerStatus == "eingefroren" && ziel.Typen.Contains("Eis")) return;
+        if (neuerStatus == "vergiftet" && (ziel.Typen.Contains("Gift") || ziel.Typen.Contains("Stahl"))) return;
         ziel.Status = neuerStatus;
         if (neuerStatus == "eingeschlafen") ziel.StatusZähler = _rng.Next(2, 5);
         log.Add(neuerStatus switch
         {
-            "verbrannt" => $"🔥 {ziel.Name} wurde verbrannt!",
-            "eingefroren" => $"🧊 {ziel.Name} wurde eingefroren!",
-            "gelähmt" => $"⚡ {ziel.Name} wurde gelähmt!",
-            "vergiftet" => $"☠️ {ziel.Name} wurde vergiftet!",
+            "verbrannt"     => $"🔥 {ziel.AngezeigterName} wurde verbrannt!",
+            "eingefroren"   => $"🧊 {ziel.AngezeigterName} wurde eingefroren!",
+            "gelähmt"       => $"⚡ {ziel.AngezeigterName} wurde gelähmt!",
+            "vergiftet"     => $"☠️ {ziel.AngezeigterName} wurde vergiftet!",
+            "eingeschlafen" => $"💤 {ziel.AngezeigterName} ist eingeschlafen!",
+            "verwirrt"      => $"😵 {ziel.AngezeigterName} ist verwirrt!",
             _ => ""
         });
+    }
+    // Legacy-Methode (nicht mehr verwendet, bleibt für Kompatibilität)
+    private void VersuchemStatusEffekt(MonsterInstanz ziel, string attackeTyp, List<string> log)
+    {
+        string? neuerStatus = attackeTyp switch
+        {
+            "Brennen" => "verbrannt",
+            "Eis"     => "eingefroren",
+            "Blitz"   => "gelähmt",
+            "Gift"    => "vergiftet",
+            _         => null
+        };
+        if (neuerStatus != null) VersuchemStatusEffektDirekt(ziel, neuerStatus, log);
     }
 
     private int SchadenBerechnen(MonsterInstanz angreifer, MonsterInstanz verteidiger, AttackeInstanz attacke)
@@ -1402,6 +1530,8 @@ public class AttackeRaw
     [JsonPropertyName("staerke")] public int? Staerke { get; set; }
     [JsonPropertyName("genauigkeit")] public int? Genauigkeit { get; set; }
     [JsonPropertyName("ap")] public int? Ap { get; set; }
+    [JsonPropertyName("statuseffekt")] public string? Statuseffekt { get; set; }
+    [JsonPropertyName("statuseffekt_chance")] public int? StatuseffektChance { get; set; }
 }
 
 public class MonsterRaw

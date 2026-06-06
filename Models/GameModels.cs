@@ -23,6 +23,8 @@ public class AttackeData
     public int? Staerke { get; set; }
     public int? Genauigkeit { get; set; }
     public int? Ap { get; set; }
+    public string? Statuseffekt { get; set; }        // eingeschlafen, gelähmt, vergiftet, verbrannt, eingefroren
+    public int? StatuseffektChance { get; set; }     // 0-100 %
 }
 
 // ─── Monster (Spezies-Definition aus JSON) ───────────────────────────────────
@@ -121,6 +123,8 @@ public class MonsterInstanz
                     Genauigkeit = attackeData.Genauigkeit,
                     MaxAp = attackeData.Ap ?? 10,
                     AktuelleAp = attackeData.Ap ?? 10,
+                    Statuseffekt = attackeData.Statuseffekt,
+                    StatuseffektChance = attackeData.StatuseffektChance,
                 });
             }
         }
@@ -156,6 +160,8 @@ public class AttackeInstanz
     public int MaxAp { get; set; }
     public int AktuelleAp { get; set; }
     public bool HatAp => AktuelleAp > 0;
+    public string? Statuseffekt { get; set; }
+    public int? StatuseffektChance { get; set; }
 }
 
 // ─── Spieler ─────────────────────────────────────────────────────────────────
@@ -358,6 +364,7 @@ public enum KampfPhase
     ItemWählen,       // Spieler wählt Item
     Fangen,           // Fangversuch läuft
     Evolution,        // Entwicklungs-Animation
+    AttackeLernen,    // Neues Angriff-Lern-Dialog
     Ergebnis,
     Beendet
 }
@@ -392,6 +399,10 @@ public class KampfZustand
     public string? EntwickeltSichZuName { get; set; }
     // Flucht-Zähler (für Flucht-Formel)
     public int FluchtVersuche { get; set; } = 0;
+    // Attacken-Lern-Dialog
+    public MonsterInstanz? LernMonster { get; set; }
+    public AttackeData? NeueAttacke { get; set; }
+    public List<AttackeData> PendingNeueAttacken { get; set; } = new();
 }
 
 // ─── Spiel-Phasen ─────────────────────────────────────────────────────────────

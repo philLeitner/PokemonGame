@@ -122,6 +122,98 @@
                 <p class="kampf-weiter-hint">⏳ Weiter in Kürze...</p>
             </div>
         }
+        else if (kampf.Phase == KampfPhase.AttackeLernen && kampf.LernMonster != null && kampf.NeueAttacke != null)
+        {
+            @if (lernDialog_WelcheErsetzen)
+            {
+                <!-- Welche Attacke ersetzen? -->
+                <div class="attacke-lern-dialog">
+                    <div class="lern-dialog-titel">❓ Welche Attacke soll vergessen werden?</div>
+                    <div class="lern-neue-attacke-info">
+                        <span class="lern-neue-name">@kampf.NeueAttacke.Name</span>
+                        <span class="lern-neue-typ" style="background:@TypeChart.TypFarben.GetValueOrDefault(kampf.NeueAttacke.Typ, "#888")">@kampf.NeueAttacke.Typ</span>
+                        @if (kampf.NeueAttacke.Staerke.HasValue && kampf.NeueAttacke.Staerke > 0)
+                        {
+                            <span class="lern-neue-staerke">⚔️ @kampf.NeueAttacke.Staerke</span>
+                        }
+                        @if (kampf.NeueAttacke.Genauigkeit.HasValue)
+                        {
+                            <span class="lern-neue-gen">🎯 @kampf.NeueAttacke.Genauigkeit%</span>
+                        }
+                        @if (kampf.NeueAttacke.Ap.HasValue)
+                        {
+                            <span class="lern-neue-ap">@kampf.NeueAttacke.Ap AP</span>
+                        }
+                    </div>
+                    <div class="lern-attacken-liste">
+                        @foreach (var atk in kampf.LernMonster.Attacken)
+                        {
+                            <button class="lern-attacke-btn" @onclick="() => AttackeErsetzenWaehlen(atk)">
+                                <span class="lern-atk-name">@atk.Name</span>
+                                <span class="lern-atk-typ" style="background:@TypeChart.TypFarben.GetValueOrDefault(atk.Typ, "#888")">@atk.Typ</span>
+                                @if (atk.Staerke.HasValue && atk.Staerke > 0)
+                                {
+                                    <span class="lern-atk-info">⚔️ @atk.Staerke | 🎯 @(atk.Genauigkeit?.ToString() ?? "—")% | @atk.AktuelleAp/@atk.MaxAp AP</span>
+                                }
+                                else
+                                {
+                                    <span class="lern-atk-info">Status | @atk.AktuelleAp/@atk.MaxAp AP</span>
+                                }
+                            </button>
+                        }
+                    </div>
+                    <button class="lern-btn-abbrechen" @onclick="AttackeLernenAbbrechen">✖ Abbrechen</button>
+                </div>
+            }
+            else if (lernDialog_SicherheitsAbfrage != null)
+            {
+                <!-- Sicherheitsabfrage: Wirklich nicht lernen? -->
+                <div class="attacke-lern-dialog">
+                    <div class="lern-dialog-titel">⚠️ Willst du @kampf.NeueAttacke.Name wirklich nicht lernen?</div>
+                    <p class="lern-dialog-text">@kampf.LernMonster.AngezeigterName vergisst @lernDialog_SicherheitsAbfrage.Name und lernt @kampf.NeueAttacke.Name nicht.</p>
+                    <div class="lern-dialog-buttons">
+                        <button class="lern-btn-ja" @onclick="AttackeLernenWirklichNicht">✅ Ja, nicht lernen</button>
+                        <button class="lern-btn-nein" @onclick="AttackeLernenZurueck">❌ Nein, zurück</button>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <!-- Hauptfrage: Neue Attacke lernen? -->
+                <div class="attacke-lern-dialog">
+                    <div class="lern-dialog-titel">🎉 @kampf.LernMonster.AngezeigterName möchte eine neue Attacke lernen!</div>
+                    <div class="lern-neue-attacke-info">
+                        <span class="lern-neue-name">@kampf.NeueAttacke.Name</span>
+                        <span class="lern-neue-typ" style="background:@TypeChart.TypFarben.GetValueOrDefault(kampf.NeueAttacke.Typ, "#888")">@kampf.NeueAttacke.Typ</span>
+                        @if (kampf.NeueAttacke.Staerke.HasValue && kampf.NeueAttacke.Staerke > 0)
+                        {
+                            <span class="lern-neue-staerke">⚔️ @kampf.NeueAttacke.Staerke Stärke</span>
+                        }
+                        @if (kampf.NeueAttacke.Genauigkeit.HasValue)
+                        {
+                            <span class="lern-neue-gen">🎯 @kampf.NeueAttacke.Genauigkeit%</span>
+                        }
+                        @if (kampf.NeueAttacke.Ap.HasValue)
+                        {
+                            <span class="lern-neue-ap">@kampf.NeueAttacke.Ap AP</span>
+                        }
+                        @if (!string.IsNullOrEmpty(kampf.NeueAttacke.Statuseffekt))
+                        {
+                            <span class="lern-neue-status">💤 @StatuseffektLabel(kampf.NeueAttacke.Statuseffekt)</span>
+                        }
+                    </div>
+                    <p class="lern-dialog-text">Willst du diese Attacke erlernen?</p>
+                    @if (kampf.LernMonster.Attacken.Count >= 4)
+                    {
+                        <p class="lern-dialog-hinweis">⚠️ @kampf.LernMonster.AngezeigterName kennt bereits 4 Attacken. Eine muss vergessen werden.</p>
+                    }
+                    <div class="lern-dialog-buttons">
+                        <button class="lern-btn-ja" @onclick="AttackeLernenJa">✅ Ja</button>
+                        <button class="lern-btn-nein" @onclick="AttackeLernenNein">❌ Nein</button>
+                    </div>
+                </div>
+            }
+        }
         else if (kampf.Phase == KampfPhase.Evolution)
         {
             <div class="evolution-panel">
@@ -211,19 +303,23 @@
                                 {
                                     <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
                                 }
-                                @{
-                                    var statusHinweis = attacke.Typ switch
-                                    {
-                                        "Brennen" => "🔥 Kann verbrennen",
-                                        "Eis"     => "🧊 Kann einfrieren",
-                                        "Blitz"   => "⚡ Kann lähmen",
-                                        "Gift"    => "☠️ Kann vergiften",
-                                        _         => (string?)null
-                                    };
-                                }
-                                @if (statusHinweis != null && attacke.Staerke.HasValue && attacke.Staerke > 0)
+                                @if (!string.IsNullOrEmpty(attacke.Statuseffekt))
                                 {
-                                    <span class="attacke-status-effekt">@statusHinweis</span>
+                                    var statusIcon = attacke.Statuseffekt switch
+                                    {
+                                        "verbrannt"     => "🔥",
+                                        "eingefroren"   => "🧊",
+                                        "gelähmt"       => "⚡",
+                                        "vergiftet"     => "☠️",
+                                        "eingeschlafen" => "💤",
+                                        "verwirrt"      => "😵",
+                                        _               => "✨"
+                                    };
+                                    var statusText = StatuseffektLabel(attacke.Statuseffekt);
+                                    var chanceText = attacke.StatuseffektChance.HasValue && attacke.StatuseffektChance < 100
+                                        ? $" ({attacke.StatuseffektChance}%)"
+                                        : "";
+                                    <span class="attacke-status-effekt">@statusIcon @statusText@chanceText</span>
                                 }
                             </div>
                         </button>
@@ -337,6 +433,10 @@
     private string? gewähltesItemId;
     private bool autoWeiterGestartet = false;
 
+    // Attacken-Lern-Dialog Zustand
+    private bool lernDialog_WelcheErsetzen = false;
+    private AttackeInstanz? lernDialog_SicherheitsAbfrage = null;
+
     protected override void OnInitialized()
     {
         Game.OnChange += StateHasChanged;
@@ -445,6 +545,77 @@
         "eingefroren"   => "Eis",
         _               => ""
     };
+
+    private string StatuseffektLabel(string s) => s switch
+    {
+        "verbrannt"     => "Kann verbrennen",
+        "eingefroren"   => "Kann einfrieren",
+        "gelähmt"       => "Kann lähmen",
+        "vergiftet"     => "Kann vergiften",
+        "eingeschlafen" => "Kann einschläfern",
+        "verwirrt"      => "Kann verwirren",
+        _               => s
+    };
+
+    // ─ Attacken-Lern-Dialog Methoden ─
+    private void AttackeLernenJa()
+    {
+        var kampf = Game.AktuellerKampf;
+        if (kampf?.LernMonster == null) return;
+        if (kampf.LernMonster.Attacken.Count < 4)
+        {
+            // Platz vorhanden: direkt lernen (zuErsetzen = null, aber Platz da)
+            _ = Game.AttackeLernenAbschliessen(null);
+            lernDialog_WelcheErsetzen = false;
+            lernDialog_SicherheitsAbfrage = null;
+        }
+        else
+        {
+            // 4 Attacken: Auswahl welche ersetzt wird
+            lernDialog_WelcheErsetzen = true;
+            lernDialog_SicherheitsAbfrage = null;
+        }
+    }
+
+    private void AttackeLernenNein()
+    {
+        // Sicherheitsabfrage anzeigen (mit null = "keine spezifische Attacke")
+        lernDialog_SicherheitsAbfrage = new AttackeInstanz { Name = "(keine)" };
+        lernDialog_WelcheErsetzen = false;
+    }
+
+    private void AttackeErsetzenWaehlen(AttackeInstanz zuErsetzen)
+    {
+        // Sicherheitsabfrage: wirklich diese Attacke vergessen?
+        lernDialog_SicherheitsAbfrage = zuErsetzen;
+        lernDialog_WelcheErsetzen = false;
+    }
+
+    private void AttackeLernenAbbrechen()
+    {
+        // Zurück zur Hauptfrage
+        lernDialog_WelcheErsetzen = false;
+        lernDialog_SicherheitsAbfrage = null;
+    }
+
+    private void AttackeLernenWirklichNicht()
+    {
+        // Ablehnen bestätigt: Attacke nicht lernen
+        lernDialog_WelcheErsetzen = false;
+        lernDialog_SicherheitsAbfrage = null;
+        _ = Game.AttackeLernenAbschliessen(null);
+    }
+
+    private void AttackeLernenZurueck()
+    {
+        // Zurück: Wenn wir aus "welche ersetzen" kamen, dahin zurück
+        if (lernDialog_SicherheitsAbfrage != null && lernDialog_SicherheitsAbfrage.Name != "(keine)")
+        {
+            lernDialog_WelcheErsetzen = true;
+        }
+        lernDialog_SicherheitsAbfrage = null;
+    }
+
     // ─ Fang-Hilfsmethoden ─
     private string GetBallEmoji(KampfZustand k)
     {
