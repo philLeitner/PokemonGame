@@ -593,18 +593,28 @@ public class GameService
         {
             var karte = AktuelleGenerierteKarte;
 
-            // Boss-Zugang: braucht N Arenen besiegt UND alle vorherigen Bosse
+            // Boss-Zugang: braucht alle Arenen besiegt die VOR diesem Boss liegen
             if (ziel.Arena != null && karte.BossIds.Contains(zielOrtId))
             {
                 int bossNr = karte.BossIds.IndexOf(zielOrtId); // 0-basiert
-                int benötigteArenen = (bossNr + 1) * karte.StädteProBoss;
-                int besiegteArenen = karte.BesiegteArenen.Count;
                 // Vorherige Bosse müssen alle besiegt sein
                 int vorherigeBosseBesiegt = karte.BossIds.Take(bossNr).Count(b => karte.BesiegteArenen.Contains(b));
                 if (vorherigeBosseBesiegt < bossNr)
                     return $"⛔ Gesperrt! Zuerst Boss {vorherigeBosseBesiegt + 1} besiegen.";
-                if (besiegteArenen < benötigteArenen)
-                    return $"⛔ Gesperrt! Du brauchst {benötigteArenen} Arenen besiegt – du hast {besiegteArenen}.";
+                // Arenen die VOR diesem Boss liegen müssen alle besiegt sein
+                // StadtIds enthält alle Arenen in Reihenfolge; die zum aktuellen Boss-Block gehören
+                int arenenVorBoss = bossNr * karte.StädteProBoss; // Arenen aus vorherigen Blöcken
+                int arenenDieserBlock = Math.Min(karte.StädteProBoss,
+                    karte.StadtIds.Count - arenenVorBoss); // Arenen in diesem Block
+                // Nur Arenen die nicht selbst Bosse sind
+                var arenenVorDiesemBoss = karte.StadtIds
+                    .Where(id => !karte.BossIds.Contains(id))
+                    .Skip(arenenVorBoss)
+                    .Take(arenenDieserBlock)
+                    .ToList();
+                int nochNichtBesiegt = arenenVorDiesemBoss.Count(id => !karte.BesiegteArenen.Contains(id));
+                if (nochNichtBesiegt > 0)
+                    return $"⛔ Gesperrt! Du brauchst noch {nochNichtBesiegt} Arena(en) besiegen.";
             }
 
             // Arenen-Reihenfolge: Arena N ist gesperrt wenn Arena N-1 noch nicht besiegt
