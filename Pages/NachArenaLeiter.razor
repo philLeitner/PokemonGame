@@ -12,10 +12,10 @@
             @if (Game.LetzterArenaLeiter != null)
             {
                 <p class="nach-arena-leiter">
-                    @Game.LetzterArenaLeiter.ArenaLeiterName wurde besiegt!
+                    @(Game.LetzterArenaLeiter?.Arena?.Leiter ?? Game.LetzterArenaLeiter?.Name ?? "Arena-Leiter") wurde besiegt!
                 </p>
                 <div class="nach-arena-orden">
-                    🏅 @Game.LetzterArenaLeiter.OrdenName erhalten!
+                    🏅 @(Game.LetzterArenaLeiter?.Arena?.OrdenName ?? "Orden") erhalten!
                 </div>
             }
         </div>
@@ -73,7 +73,7 @@
         {
             @{
                 var region = Game.LetzterArenaLeiter != null
-                    ? Game.GetRegionFürEbene(Game.LetzterArenaLeiter)
+                    ? Game.GetRegionFürOrt(Game.LetzterArenaLeiter)
                     : null;
             }
             <div class="nach-arena-schritt">
@@ -215,7 +215,7 @@
     private void StarterZufaellig()
     {
         var region = Game.LetzterArenaLeiter != null
-            ? Game.GetRegionFürEbene(Game.LetzterArenaLeiter)
+            ? Game.GetRegionFürOrt(Game.LetzterArenaLeiter)
             : null;
         if (region?.Starter.Any() == true)
         {

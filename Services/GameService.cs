@@ -30,10 +30,8 @@ public class GameService
     public List<RegionConfig> AlleRegionen { get; private set; } = new();
     public GenerierteKarte? AktuelleGenerierteKarte { get; private set; } = null;
     public bool IstGenerierteKartenModus => AktuelleGenerierteKarte != null;
-    public GenerierteEbene? AktuelleGenerierteEbene =>
-        AktuelleGenerierteKarte?.Ebenen.ElementAtOrDefault(AktuelleGenerierteKarte.AktuelleEbeneIndex);
     // Nach-Arenaleiter-Dialog-Daten
-    public GenerierteEbene? LetzterArenaLeiter { get; private set; } = null;
+    public Ort? LetzterArenaLeiter { get; private set; } = null;
     public bool NachArenaLeiterLevelA { get; private set; } = true;
 
     // ── Spielzustand ─────────────────────────────────────────────────────────
@@ -277,13 +275,48 @@ public class GameService
     }
     // ── Prozedurale Karte ─────────────────────────────────────────────────────
 
-    /// <summary>Generiert eine neue Karte aus Seed + Regionsauswahl und startet das Spiel.</summary>
+    /// <summary>
+    /// Generiert eine neue Karte aus Seed + Regionsauswahl.
+    /// Ersetzt AlleOrte durch die generierten Ort-Kopien und setzt den Spieler auf den Startort.
+    /// </summary>
     public void KarteGenerieren(string seedCode, List<string> regionsReihenfolge)
     {
-        if (!AlleRegionen.Any()) return;
-        AktuelleGenerierteKarte = KartenGenerator.Generiere(seedCode, regionsReihenfolge, AlleRegionen);
-        AktuelleGenerierteKarte.AktuelleEbeneIndex = 0;
-        AktuelleGenerierteKarte.FreigeschalteBisIndex = 0;
+        if (!AlleRegionen.Any() || !AlleOrte.Any()) return;
+
+        // Original-Orte sichern (für Rückkehr zum klassischen Modus)
+        if (_originalOrte == null)
+            _originalOrte = new List<Ort>(AlleOrte);
+
+        var (neueOrte, meta) = KartenGenerator.Generiere(
+            seedCode, regionsReihenfolge, AlleRegionen, _originalOrte);
+
+        AktuelleGenerierteKarte = meta;
+
+        // AlleOrte durch generierte Orte ersetzen
+        AlleOrte = neueOrte;
+
+        // Spieler auf Startort setzen
+        if (!string.IsNullOrEmpty(meta.StartOrtId))
+            Spieler.AktuellerOrt = meta.StartOrtId;
+
+        Phase = SpielPhase.StarterWahl;
+        Notify();
+    }
+
+    // Original-Orte für Rückkehr zum klassischen Modus
+    private List<Ort>? _originalOrte = null;
+
+    /// <summary>Stellt die Original-Weltkarte wieder her (nach generierter Karte).</summary>
+    public void GenerierteKarteBeenden()
+    {
+        if (_originalOrte != null)
+        {
+            AlleOrte = _originalOrte;
+            _originalOrte = null;
+        }
+        AktuelleGenerierteKarte = null;
+        LetzterArenaLeiter = null;
+        Phase = SpielPhase.Hauptmenü;
         Notify();
     }
 
@@ -297,15 +330,13 @@ public class GameService
         Notify();
     }
 
-    /// <summary>Betritt eine Ebene der generierten Karte (per Klick auf der Karte).</summary>
-    public void GenerierteEbeneBetreten(int ebeneIndex)
+    /// <summary>Navigiert den Spieler zu einem Ort der generierten Karte (Fog-of-War beachten).</summary>
+    public void GenerierteOrtBetreten(string ortId)
     {
         if (AktuelleGenerierteKarte == null) return;
-        var ebene = AktuelleGenerierteKarte.Ebenen.ElementAtOrDefault(ebeneIndex);
-        if (ebene == null) return;
-        // Fog-of-War: nur bis FreigeschalteBisIndex+1 zugänglich
-        if (ebeneIndex > AktuelleGenerierteKarte.FreigeschalteBisIndex + 1) return;
-        AktuelleGenerierteKarte.AktuelleEbeneIndex = ebeneIndex;
+        // Fog-of-War: nur freigeschaltete Orte betreten
+        if (!AktuelleGenerierteKarte.FreigeschalteteOrte.Contains(ortId)) return;
+        Spieler.AktuellerOrt = ortId;
         Notify();
     }
 
@@ -321,62 +352,31 @@ public class GameService
         return basisLevel + Math.Max(0, spielerLevel - 5);
     }
 
-    /// <summary>Startet einen Kampf gegen den Arenaleiter der aktuellen Ebene (generierte Karte).</summary>
-    public void GenerierteArenaKampfStarten(GenerierteEbene arena)
-    {
-        if (arena.Typ != EbenenTyp.Arenaleiter) return;
-        var spielerMonster = Spieler.AktivesMonster;
-        if (spielerMonster == null) return;
-        // Gegner-Level: Orden-Nummer × 8 + 5, skaliert mit Spieler-Level
-        int basisLevel = arena.OrdenNummer * 8 + 5;
-        int gegnerLevel = GegnerLevelBerechnen(basisLevel);
-        // Zufälliges Monster für den Arenaleiter
-        var gegnerSpezies = AlleMonster[_rng.Next(AlleMonster.Count)];
-        var gegner = MonsterInstanz.VonSpezies(gegnerSpezies, gegnerLevel, AlleAttacken);
-        var trainer = new TrainerKampf
-        {
-            Id = $"gen_arena_{arena.Id}",
-            Name = arena.ArenaLeiterName ?? "Arena-Leiter",
-            Klasse = "Arena-Leiter",
-            Belohnung = 2000 + arena.OrdenNummer * 1000,
-            Team = new List<MonsterTeamEintrag> { new() { MonsterId = gegnerSpezies.Id, Level = gegnerLevel } },
-            Dialogvor = $"Ich bin {arena.ArenaLeiterName}, Meister des {arena.ArenaTyp}-Typs!",
-            DialogNach = $"{arena.OrdenName} erhalten!",
-        };
-        AktuellerKampf = new KampfZustand
-        {
-            Typ = KampfTyp.Arena,
-            SpielerMonster = spielerMonster,
-            GegnerMonster = gegner,
-            GegnerName = $"Arena-Leiter {arena.ArenaLeiterName}",
-            Phase = KampfPhase.Intro,
-            Log = new() { $"🏆 Arena-Leiter {arena.ArenaLeiterName} fordert dich heraus!" },
-            OrtId = arena.Id,
-            BelohnungGeld = trainer.Belohnung,
-            AktuellerTrainer = trainer,
-            TrainerMonsterIndex = 0,
-        };
-        LetzterArenaLeiter = arena;
-        Phase = SpielPhase.Kampf;
-        Notify();
-    }
+    // GenerierteArenaKampfStarten wird nicht mehr benötigt –
+    // der normale ArenaKampfStarten in Weltkarte.razor übernimmt das.
 
-    /// <summary>Wird nach Arenaleiter-Sieg aufgerufen: Orden vergeben, Karte freischalten, Dialog starten.</summary>
-    public void GenerierteArenaGewonnen()
+    /// <summary>Wird nach Arenaleiter-Sieg aufgerufen: Karte freischalten, Dialog starten.</summary>
+    public void GenerierteArenaGewonnen(Ort arenaOrt)
     {
-        if (AktuelleGenerierteKarte == null || LetzterArenaLeiter == null) return;
-        // Orden vergeben
-        var ordenName = LetzterArenaLeiter.OrdenName ?? $"Orden {LetzterArenaLeiter.OrdenNummer}";
-        if (!Spieler.Orden.Contains(ordenName))
-            Spieler.Orden.Add(ordenName);
-        // Karte freischalten (bis zur nächsten Arena)
-        var naechsteArena = AktuelleGenerierteKarte.Ebenen
-            .Skip(AktuelleGenerierteKarte.AktuelleEbeneIndex + 1)
-            .FirstOrDefault(e => e.Typ == EbenenTyp.Arenaleiter || e.Typ == EbenenTyp.Professor);
-        if (naechsteArena != null)
-            AktuelleGenerierteKarte.FreigeschalteBisIndex = naechsteArena.Index;
-        else
-            AktuelleGenerierteKarte.FreigeschalteBisIndex = AktuelleGenerierteKarte.Ebenen.Count - 1;
+        if (AktuelleGenerierteKarte == null) return;
+        LetzterArenaLeiter = arenaOrt;
+        AktuelleGenerierteKarte.BesiegteArenen.Add(arenaOrt.Id);
+
+        // Fog-of-War: nächste Orte bis zur nächsten Arena freischalten
+        var reihenfolge = AktuelleGenerierteKarte.OrtReihenfolge;
+        int aktIdx = reihenfolge.IndexOf(arenaOrt.Id);
+        // Nächste Arena in der Reihenfolge finden
+        int naechsteArenaIdx = -1;
+        for (int i = aktIdx + 1; i < reihenfolge.Count; i++)
+        {
+            var o = AlleOrte.FirstOrDefault(x => x.Id == reihenfolge[i]);
+            if (o?.Arena != null) { naechsteArenaIdx = i; break; }
+        }
+        int bisIdx = naechsteArenaIdx >= 0 ? naechsteArenaIdx : reihenfolge.Count - 1;
+        for (int i = 0; i <= bisIdx; i++)
+            AktuelleGenerierteKarte.FreigeschalteteOrte.Add(reihenfolge[i]);
+        AktuelleGenerierteKarte.FreigeschalteBisIndex = bisIdx;
+
         // Nach-Arenaleiter-Dialog
         Phase = SpielPhase.NachArenaLeiter;
         Notify();
@@ -434,9 +434,12 @@ public class GameService
         Notify();
     }
 
-    /// <summary>Gibt die RegionConfig für eine Ebene zurück.</summary>
-    public RegionConfig? GetRegionFürEbene(GenerierteEbene ebene)
-        => AlleRegionen.FirstOrDefault(r => r.Id == ebene.RegionId);
+    /// <summary>Gibt die RegionConfig für einen Ort zurück (anhand ID-Prefix).</summary>
+    public RegionConfig? GetRegionFürOrt(Ort ort)
+    {
+        var prefix = ort.Id.Split('-')[0].ToUpper();
+        return AlleRegionen.FirstOrDefault(r => r.Id.Equals(prefix, StringComparison.OrdinalIgnoreCase));
+    }
 
     /// <summary>Gibt die Starter-Optionen für eine bestimmte Region zurück.</summary>
     public List<MonsterData> GetStarterFürRegion(string regionId)
@@ -1101,7 +1104,22 @@ public class GameService
 
     public void KampfBeenden()
     {
+        bool warArenaKampf = AktuellerKampf?.Typ == KampfTyp.Arena;
+        bool hatGewonnen   = AktuellerKampf?.SpielerGewonnen == true;
+        string? arenaOrtId = AktuellerKampf?.OrtId;
         AktuellerKampf = null;
+
+        // Generierte Karte: nach Arena-Sieg → Fog-of-War freischalten + NachArenaLeiter-Dialog
+        if (IstGenerierteKartenModus && warArenaKampf && hatGewonnen && arenaOrtId != null)
+        {
+            var arenaOrt = AlleOrte.FirstOrDefault(o => o.Id == arenaOrtId);
+            if (arenaOrt?.Arena != null)
+            {
+                GenerierteArenaGewonnen(arenaOrt);
+                return;
+            }
+        }
+
         Phase = SpielPhase.Weltkarte;
         Notify();
     }

@@ -95,140 +95,6 @@
             }
         </h2>
 
-        @if (Game.IstGenerierteKartenModus && Game.AktuelleGenerierteKarte != null)
-        {
-            var genKarte = Game.AktuelleGenerierteKarte;
-            var aktEbene = Game.AktuelleGenerierteEbene;
-            <div class="gen-karte-container">
-                <div class="gen-ebenen-liste">
-                    @{
-                        string? letzteRegId = null;
-                    }
-                    @foreach (var ebene in genKarte.Ebenen)
-                    {
-                        bool istFreigeschaltet = ebene.Index <= genKarte.FreigeschalteBisIndex;
-                        bool istAktuell = ebene.Index == genKarte.AktuelleEbeneIndex;
-                        bool istNaechste = ebene.Index == genKarte.FreigeschalteBisIndex + 1;
-                        bool istNebel = !istFreigeschaltet && !istNaechste;
-                        if (ebene.RegionId != letzteRegId)
-                        {
-                            letzteRegId = ebene.RegionId;
-                            var rIdx = genKarte.RegionsReihenfolge.IndexOf(ebene.RegionId);
-                            <div class="gen-region-trennlinie">Region @(rIdx + 1)</div>
-                        }
-                        var eb = ebene;
-                        <div class="gen-ebene-zeile @(istAktuell ? "aktuell" : "") @(istNebel ? "nebel" : "") @(istFreigeschaltet && !istAktuell ? "freigeschaltet" : "")"
-                             style="@(istFreigeschaltet || istNaechste ? $"border-left: 3px solid {eb.Farbe};" : "")"
-                             @onclick="() => EbeneAnklicken(eb)">
-                            <span class="gen-ebene-icon">@GenEbeneIcon(eb)</span>
-                            <div class="gen-ebene-info">
-                                @if (istNebel)
-                                {
-                                    <span class="gen-ebene-name nebel-text">🌫️ ???</span>
-                                }
-                                else
-                                {
-                                    <span class="gen-ebene-name">@eb.Name</span>
-                                    @if (eb.Typ == EbenenTyp.Arenaleiter)
-                                    {
-                                        <span class="gen-ebene-typ arena">🏆 @eb.ArenaLeiterName</span>
-                                    }
-                                    else if (eb.Typ == EbenenTyp.Professor)
-                                    {
-                                        <span class="gen-ebene-typ professor">👨‍🔬 @eb.ProfessorName</span>
-                                    }
-                                }
-                            </div>
-                            @if (istAktuell) { <span class="gen-ebene-hier">📍</span> }
-                            @if (eb.Typ == EbenenTyp.Arenaleiter && Game.Spieler.Orden.Contains(eb.OrdenName ?? ""))
-                            { <span class="gen-ebene-orden">🏅</span> }
-                        </div>
-                    }
-                </div>
-                <div class="gen-ebene-details">
-                    @if (aktEbene != null)
-                    {
-                        var region = Game.GetRegionFürEbene(aktEbene);
-                        var regIdx2 = genKarte.RegionsReihenfolge.IndexOf(aktEbene.RegionId);
-                        <div class="gen-detail-header" style="border-left: 4px solid @aktEbene.Farbe;">
-                            <span class="gen-detail-icon">@GenEbeneIcon(aktEbene)</span>
-                            <div>
-                                <h3>@aktEbene.Name</h3>
-                                <span class="gen-detail-region">Region @(regIdx2 + 1)</span>
-                            </div>
-                        </div>
-                        @if (aktEbene.Typ == EbenenTyp.Professor)
-                        {
-                            <div class="gen-detail-sektion">
-                                <div class="gen-detail-npc">👨‍🔬 <strong>@aktEbene.ProfessorName</strong> – Heilt deine Monster und aktualisiert deine Karte.</div>
-                                <button class="btn-heilen" @onclick="ProfessorHeilen">❤️ Monster heilen</button>
-                                <button class="btn-karte-update" @onclick="ProfessorKarteUpdate">🗺️ Karte aktualisieren</button>
-                                @if (region != null)
-                                {
-                                    <div class="gen-starter-wahl">
-                                        <h4>Starter dieser Region:</h4>
-                                        @foreach (var sn in region.StarterNamen) { <span class="gen-starter-chip">🐾 @sn</span> }
-                                    </div>
-                                }
-                            </div>
-                        }
-                        else if (aktEbene.Typ == EbenenTyp.Arenaleiter)
-                        {
-                            bool bereitsGewonnen2 = Game.Spieler.Orden.Contains(aktEbene.OrdenName ?? "");
-                            <div class="gen-detail-sektion">
-                                <div class="gen-arena-info">
-                                    <span class="gen-arena-typ">🔥 @aktEbene.ArenaTyp</span>
-                                    <span class="gen-arena-orden">🏅 @aktEbene.OrdenName</span>
-                                </div>
-                                @if (bereitsGewonnen2)
-                                {
-                                    <div class="gen-orden-erhalten">✅ Orden bereits erhalten!</div>
-                                }
-                                else if (!Game.Spieler.Team.Any(m => !m.IstOhnmächtig))
-                                {
-                                    <div class="gen-kein-team">⚠️ Kein kampffähiges Monster!</div>
-                                }
-                                else
-                                {
-                                    var arenaEb = aktEbene;
-                                    <button class="btn-kampf" @onclick="() => GenArenaKampfStarten(arenaEb)">
-                                        ⚔️ Gegen @aktEbene.ArenaLeiterName kämpfen
-                                    </button>
-                                }
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="gen-detail-sektion">
-                                <p class="gen-ort-beschreibung">@GenEbeneTypBeschreibung(aktEbene.Typ)</p>
-                                @if (Game.Spieler.Team.Any(m => !m.IstOhnmächtig))
-                                {
-                                    <button class="btn-erkunden" @onclick="GenErkunden">🌿 Erkunden (Zufallskampf)</button>
-                                }
-                            </div>
-                        }
-                        @if (!Game.Spieler.Team.Any(m => !m.IstOhnmächtig))
-                        {
-                            <div class="gen-alle-ohnmaechtig">⚠️ Alle Monster ohnmächtig! Kehre zum Professor zurück.</div>
-                        }
-                    }
-                    else
-                    {
-                        <div class="gen-detail-leer">Wähle eine Ebene aus der Liste.</div>
-                    }
-                    <div class="gen-karten-code">
-                        <label>🔑 Karten-Code:</label>
-                        <code>@KartenGenerator.ExportiereKartenCode(genKarte)</code>
-                    </div>
-                    <div class="gen-aktionen">
-                        <button class="btn-speichern" @onclick="SpielstandSpeichernAktuell">💾 Speichern</button>
-                        <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
-                    </div>
-                </div>
-            </div>
-        }
-        else
-        {
         <!-- Minimap + Ort-Details nebeneinander -->
         <div class="karte-haupt-layout">
 
@@ -432,7 +298,6 @@
         }
         </div><!-- /location-info -->
         </div><!-- /karte-haupt-layout -->
-        }<!-- /else: normaler Karten-Modus -->
     </div>
 </div>
 
@@ -750,13 +615,16 @@
         float pct = mon.MaxKp > 0 ? (float)mon.AktuelleKp / mon.MaxKp : 0;
         return pct > 0.5f ? "kp-gruen" : pct > 0.25f ? "kp-gelb" : "kp-rot";
     }
-    // ── Generierte Karte ──────────────────────────────────────────────────────
-    private void EbeneAnklicken(GenerierteEbene ebene)
+    // ── Generierte Karte: Fog-of-War Helfer ─────────────────────────────────
+    private bool GenOrtZugänglich(string ortId)
     {
-        if (Game.AktuelleGenerierteKarte == null) return;
-        var karte = Game.AktuelleGenerierteKarte;
-        if (ebene.Index > karte.FreigeschalteBisIndex + 1) return;
-        Game.GenerierteEbeneBetreten(ebene.Index);
+        if (!Game.IstGenerierteKartenModus) return true;
+        return Game.AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(ortId) ?? false;
+    }
+    private bool GenOrtImNebel(string ortId)
+    {
+        if (!Game.IstGenerierteKartenModus) return false;
+        return !(Game.AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(ortId) ?? false);
     }
     private void ProfessorHeilen()
     {
@@ -771,59 +639,4 @@
         meldung = "Alle Monster wurden geheilt!";
         Game.Notify();
     }
-    private void ProfessorKarteUpdate()
-    {
-        if (Game.AktuelleGenerierteKarte == null) return;
-        var karte = Game.AktuelleGenerierteKarte;
-        var naechsteArena = karte.Ebenen
-            .Skip(karte.AktuelleEbeneIndex)
-            .FirstOrDefault(e => e.Typ == EbenenTyp.Arenaleiter);
-        if (naechsteArena != null)
-            karte.FreigeschalteBisIndex = Math.Max(karte.FreigeschalteBisIndex, naechsteArena.Index);
-        meldung = "Karte aktualisiert! Neue Gebiete sichtbar.";
-        Game.Notify();
-    }
-    private void GenArenaKampfStarten(GenerierteEbene arena)
-    {
-        Game.GenerierteArenaKampfStarten(arena);
-    }
-    private void GenErkunden()
-    {
-        var aktEbene = Game.AktuelleGenerierteEbene;
-        if (aktEbene == null) return;
-        var rng = new Random();
-        var monster = Game.AlleMonster[rng.Next(Game.AlleMonster.Count)];
-        int basisLevel = Math.Max(5, (aktEbene.Index / 10) * 5 + 5);
-        int level = Game.GegnerLevelBerechnen(basisLevel);
-        var begegnung = new WildBegegnung
-        {
-            MonsterId = monster.Id,
-            MinLevel = level,
-            MaxLevel = level + 2,
-            Chance = 100
-        };
-        Game.WildkampfStarten(begegnung);
-    }
-    private string GenEbeneIcon(GenerierteEbene ebene) => ebene.Typ switch
-    {
-        EbenenTyp.Professor   => "Prof.",
-        EbenenTyp.Arenaleiter => "Arena",
-        EbenenTyp.Route       => "Route",
-        EbenenTyp.Hoehle      => "Hoehle",
-        EbenenTyp.Wald        => "Wald",
-        EbenenTyp.Stadt       => "Stadt",
-        EbenenTyp.Gebaeude    => "Geb.",
-        EbenenTyp.Insel       => "Insel",
-        _                     => "?"
-    };
-    private string GenEbeneTypBeschreibung(EbenenTyp typ) => typ switch
-    {
-        EbenenTyp.Route    => "Wilde Monster lauern im Gras. Erkunde das Gebiet!",
-        EbenenTyp.Hoehle   => "Dunkle Hoehlen voller Geheimnisse und Monster.",
-        EbenenTyp.Wald     => "Dichter Wald mit seltenen Monstern.",
-        EbenenTyp.Stadt    => "Eine belebte Stadt. Hier gibt es Einrichtungen.",
-        EbenenTyp.Gebaeude => "Ein mysterioses Gebaeude wartet auf Erkundung.",
-        EbenenTyp.Insel    => "Eine abgelegene Insel mit einzigartigen Monstern.",
-        _                  => "Ein unbekanntes Gebiet."
-    };
 }
