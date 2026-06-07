@@ -411,26 +411,23 @@
                 <button class="btn-schliessen" @onclick="VollkarteSchliessen">✕</button>
             </div>
 
-            @if (istGenModus && genMeta != null)
+            @if (istGenModus && genMeta != null && genMeta.OrtKoordinaten.Count > 0)
             {
                 <!-- Grafische Netzansicht (wie HTML-Generator) -->
-                @{
-                    var coords = genMeta.OrtKoordinaten;
-                    if (coords.Count > 0)
-                    {
-                        int minX = coords.Values.Min(c => c.X);
-                        int maxX = coords.Values.Max(c => c.X);
-                        int minY = coords.Values.Min(c => c.Y);
-                        int maxY = coords.Values.Max(c => c.Y);
-                        int TILE = 110; int PAD = 60;
-                        int svgW = (maxX - minX + 1) * TILE + PAD * 2;
-                        int svgH = (maxY - minY + 1) * TILE + PAD * 2;
-                        int OffX(int x) => (x - minX) * TILE + PAD;
-                        int OffY(int y) => (y - minY) * TILE + PAD;
-                        var alleGenOrte = genMeta.OrtReihenfolge
-                            .Select(id => Game.AlleOrte.FirstOrDefault(o => o.Id == id))
-                            .Where(o => o != null).Cast<Ort>().ToList();
-                        <div class="vollkarte-netz-scroll">
+                var coords = genMeta.OrtKoordinaten;
+                int minX = coords.Values.Min(c => c.X);
+                int maxX = coords.Values.Max(c => c.X);
+                int minY = coords.Values.Min(c => c.Y);
+                int maxY = coords.Values.Max(c => c.Y);
+                int TILE = 110; int PAD = 60;
+                int svgW = (maxX - minX + 1) * TILE + PAD * 2;
+                int svgH = (maxY - minY + 1) * TILE + PAD * 2;
+                Func<int,int> netzOffX = x => (x - minX) * TILE + PAD;
+                Func<int,int> netzOffY = y => (y - minY) * TILE + PAD;
+                var alleGenOrte = genMeta.OrtReihenfolge
+                    .Select(id => Game.AlleOrte.FirstOrDefault(o => o.Id == id))
+                    .Where(o => o != null).Cast<Ort>().ToList();
+                <div class="vollkarte-netz-scroll">
                             <div class="vollkarte-legende">
                                 <span class="vk-leg"><span class="vk-dot" style="background:#6366f1"></span>Stadt</span>
                                 <span class="vk-leg"><span class="vk-dot" style="background:#22c55e"></span>Route</span>
@@ -445,21 +442,21 @@
                                     @foreach (var ort in alleGenOrte)
                                     {
                                         if (!coords.TryGetValue(ort.Id, out var posA)) continue;
-                                        int ax = OffX(posA.X) + 45; int ay = OffY(posA.Y) + 20;
+                                        int ax = netzOffX(posA.X) + 45; int ay = netzOffY(posA.Y) + 20;
                                         bool freiA = genMeta.FreigeschalteteOrte.Contains(ort.Id);
                                         // Ost-Verbindung
                                         if (!string.IsNullOrEmpty(ort.Ost) && coords.TryGetValue(ort.Ost, out var posB))
                                         {
                                             bool freiB = genMeta.FreigeschalteteOrte.Contains(ort.Ost);
                                             string lc = (freiA && freiB) ? "#4b5563" : "#1f2937";
-                                            <line x1="@ax" y1="@ay" x2="@(OffX(posB.X)+45)" y2="@(OffY(posB.Y)+20)" stroke="@lc" stroke-width="2" />
+                                            <line x1="@ax" y1="@ay" x2="@(netzOffX(posB.X)+45)" y2="@(netzOffY(posB.Y)+20)" stroke="@lc" stroke-width="2" />
                                         }
                                         // Süd-Verbindung
                                         if (!string.IsNullOrEmpty(ort.Sued) && coords.TryGetValue(ort.Sued, out var posC))
                                         {
                                             bool freiC = genMeta.FreigeschalteteOrte.Contains(ort.Sued);
                                             string lc = (freiA && freiC) ? "#4b5563" : "#1f2937";
-                                            <line x1="@ax" y1="@ay" x2="@(OffX(posC.X)+45)" y2="@(OffY(posC.Y)+20)" stroke="@lc" stroke-width="2" />
+                                            <line x1="@ax" y1="@ay" x2="@(netzOffX(posC.X)+45)" y2="@(netzOffY(posC.Y)+20)" stroke="@lc" stroke-width="2" />
                                         }
                                     }
                                 </svg>
@@ -477,7 +474,7 @@
                                         + (istArena ? " vk-arena-box" : "")
                                         + (istBesiegt ? " vk-besiegt" : "")
                                         + (!istFrei ? " vk-fog" : "");
-                                    int bx = OffX(pos.X); int by = OffY(pos.Y);
+                                    int bx = netzOffX(pos.X); int by = netzOffY(pos.Y);
                                     <div class="@boxClass"
                                          style="left:@(bx)px; top:@(by)px;"
                                          @onclick="() => { if(istFrei) VollkarteOrtWählen(ort); }">
