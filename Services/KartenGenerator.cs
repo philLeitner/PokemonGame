@@ -455,7 +455,72 @@ public class KartenGenerator
                 if (ebeneZuOrtId.TryGetValue(nachbarId, out var nId))
                     meta.FreigeschalteteOrte.Add(nId);
 
+            // Nächste Region: Startpunkt direkt nach dem LETZTEN Boss (Liga) dieser Region
+            // Wird als Verbindung gesetzt wenn es eine nächste Region gibt
+            int nextRegIdx = regionsReihenfolge.IndexOf(regId) + 1;
+            if (nextRegIdx < regionsReihenfolge.Count)
+            {
+                // Den letzten Boss dieser Region finden
+                var letzterBoss = ebenen.LastOrDefault(e => e.IstBoss);
+                if (letzterBoss != null)
+                {
+                    // Merken: nächste Region soll ihren Startpunkt mit diesem Boss verbinden
+                    // Dies geschieht in der nächsten Iterations-Runde
+                    // Wir speichern die OrtId des letzten Bosses für die Verknüpfung
+                    meta.OrtDistanzen[$"__LAST_BOSS_{regId}"] = ebeneZuOrtId.TryGetValue(letzterBoss.Id, out var lbId) ? meta.OrtDistanzen.GetValueOrDefault(lbId, 0) : 0;
+                    // Speichere OrtId des letzten Bosses als Verbindungspunkt
+                    if (ebeneZuOrtId.TryGetValue(letzterBoss.Id, out var lastBossOrtId))
+                        meta.OrtDistanzen[$"__LAST_BOSS_ID_{regId}"] = 0; // Marker
+                }
+            }
+
             globalOrdenOffset += bossCount;
+        }
+
+        // Regionen verbinden: Startpunkt der Region N+1 direkt nach Liga von Region N
+        for (int ri = 0; ri < regionsReihenfolge.Count - 1; ri++)
+        {
+            string thisReg = regionsReihenfolge[ri];
+            string nextReg = regionsReihenfolge[ri + 1];
+
+            // Letzter Boss dieser Region
+            var letzterBossOrt = ergebnis
+                .Where(o => o.Id.StartsWith(thisReg + "-GEN-BOSS") && o.Arena != null)
+                .OrderByDescending(o => o.Arena!.OrdenNr)
+                .FirstOrDefault();
+
+            // Erster Startpunkt der nächsten Region
+            var nächsterStart = ergebnis
+                .FirstOrDefault(o => o.Id.StartsWith(nextReg + "-GEN-START01"));
+
+            if (letzterBossOrt != null && nächsterStart != null)
+            {
+                // Verbindung: Liga → Start der nächsten Region (Ost-Richtung)
+                if (string.IsNullOrEmpty(letzterBossOrt.Ost))
+                {
+                    letzterBossOrt.Ost = nächsterStart.Id;
+                    nächsterStart.West = letzterBossOrt.Id;
+                    letzterBossOrt.Verbindungen.Add(nächsterStart.Id);
+                    nächsterStart.Verbindungen.Add(letzterBossOrt.Id);
+                }
+                else if (string.IsNullOrEmpty(letzterBossOrt.Sued))
+                {
+                    letzterBossOrt.Sued = nächsterStart.Id;
+                    nächsterStart.Nord = letzterBossOrt.Id;
+                    letzterBossOrt.Verbindungen.Add(nächsterStart.Id);
+                    nächsterStart.Verbindungen.Add(letzterBossOrt.Id);
+                }
+                else
+                {
+                    letzterBossOrt.Nord = nächsterStart.Id;
+                    nächsterStart.Sued = letzterBossOrt.Id;
+                    letzterBossOrt.Verbindungen.Add(nächsterStart.Id);
+                    nächsterStart.Verbindungen.Add(letzterBossOrt.Id);
+                }
+
+                // Start der nächsten Region im Fog-of-War sperren bis Liga besiegt
+                // (wird durch Boss-Zugang-Prüfung in ZugangPrüfen gehandhabt)
+            }
         }
 
         return (ergebnis, meta);
@@ -700,39 +765,16 @@ public class KartenGenerator
 
     private static void PlaceStartPoints(List<Ebene> ebenen)
     {
+        // Alle Starts zurücksetzen
         foreach (var e in ebenen) e.IstStart = false;
+
+        // Startpunkt 1: immer Ebene 0 (Anfang der Region, wo der Professor ist)
         if (ebenen.Count > 0) ebenen[0].IstStart = true;
-        var bossIds = ebenen.Where(e => e.IstBoss).Select(e => e.Id).ToList();
-        if (bossIds.Count == 0) return;
-        var dist = CalcDistances(ebenen);
 
-        for (int i = 0; i < bossIds.Count - 1; i++)
-        {
-            int boss = bossIds[i];
-            int bossDist = dist.TryGetValue(boss, out int bd) ? bd : 0;
-
-            // Start N muss DIREKT nach Boss N sein (direkter Nachbar mit größerer Distanz)
-            var direkteNachbarn = ebenen[boss].Exits.Values
-                .Where(n => !ebenen[n].IstStadt && !ebenen[n].IstBoss && !ebenen[n].IstStart
-                    && dist.TryGetValue(n, out int nd) && nd > bossDist)
-                .ToList();
-
-            // Bevorzuge Nachbarn die noch nicht Start sind und weiter vorne liegen
-            direkteNachbarn.Sort((a, b) =>
-                (dist.TryGetValue(b, out int db) ? db : 0)
-                .CompareTo(dist.TryGetValue(a, out int da) ? da : 0));
-
-            var pick = direkteNachbarn.FirstOrDefault();
-
-            // Fallback: irgendeinen Nachbar des Bosses nehmen
-            if (pick == default)
-            {
-                pick = ebenen[boss].Exits.Values
-                    .FirstOrDefault(n => !ebenen[n].IstBoss && !ebenen[n].IstStart);
-            }
-
-            if (pick != default) { ebenen[pick].IstStart = true; ebenen[pick].NachBoss = boss; }
-        }
+        // Weitere Startpunkte: NUR nach dem LETZTEN Boss (Liga/Champ) der Region
+        // Diese Methode wird pro Region aufgerufen, also gibt es maximal 1 weiteren Start
+        // Der weitere Start wird von außen gesetzt (nach der Generierung der Region)
+        // Hier: nichts weiter tun – der nächste Regions-Start wird in Generiere() gesetzt
     }
 
     private static void AddLocksAfterCities(List<Ebene> ebenen, int lockChance, Random rng)
