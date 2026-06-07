@@ -11,6 +11,28 @@
         </p>
     </div>
 
+    <!-- Live-Zusammenfassung -->
+    @if (AusgewählteRegionen.Any())
+    {
+        int gesamtEbenen = AusgewählteRegionen.Sum(r => r.BasisEbenen);
+        int städteProBoss = AusgewählteRegionen.Count > 0 ? AusgewählteRegionen.Max(r => r.Arenaleiter.Count) : 8;
+        int bosse = AusgewählteRegionen.Count;
+        <div class="gen-vorschau">
+            <div class="gen-vorschau-item">
+                <span class="gen-vorschau-label">🗺️ Ebenen</span>
+                <span class="gen-vorschau-wert">@gesamtEbenen</span>
+            </div>
+            <div class="gen-vorschau-item">
+                <span class="gen-vorschau-label">🏙️ Städte pro Boss</span>
+                <span class="gen-vorschau-wert">@städteProBoss</span>
+            </div>
+            <div class="gen-vorschau-item">
+                <span class="gen-vorschau-label">⚔️ Bosse</span>
+                <span class="gen-vorschau-wert">@bosse</span>
+            </div>
+        </div>
+    }
+
     <!-- Ausgewählte Reihenfolge -->
     @if (AusgewählteRegionen.Any())
     {

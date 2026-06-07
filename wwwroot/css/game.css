@@ -4959,3 +4959,36 @@ input:checked + .toggle-slider-klein::before {
     font-weight: 600;
     letter-spacing: 0.02em;
 }
+
+/* Regionsauswahl – Live-Vorschau Zusammenfassung */
+.gen-vorschau {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 0.9rem 1.4rem;
+    margin: 0.8rem auto 0.4rem;
+    max-width: 480px;
+}
+.gen-vorschau-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    min-width: 90px;
+}
+.gen-vorschau-label {
+    font-size: 0.78rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.gen-vorschau-wert {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffb000;
+    line-height: 1;
+}

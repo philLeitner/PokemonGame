@@ -592,10 +592,70 @@ public class GameService
         string? richtung = RichtungZumZiel(aktOrt, zielOrtId);
         if (richtung == null) return null; // kein direkter Nachbar → keine Richtungssperre
 
+        // ─── Stadt-Sperren (generierter Modus: SperrNord/Sued/Ost/West mit Hinweis) ───
+        var richtungsSperre = richtung switch
+        {
+            "Nord" => aktOrt.SperrNord,
+            "Sued" => aktOrt.SperrSued,
+            "Ost"  => aktOrt.SperrOst,
+            "West" => aktOrt.SperrWest,
+            _      => null
+        };
+        if (richtungsSperre != null)
+        {
+            // Hinweis-Sperre: braucht eine bestimmte Stadt (generierter Modus)
+            if (!string.IsNullOrEmpty(richtungsSperre.Hinweis))
+            {
+                // Ort-Name aus Hinweis extrahieren ("Benötigt: Stadt X")
+                string benötigteName = richtungsSperre.Hinweis.Replace("Benötigt: ", "").Trim();
+                // Prüfen ob der Spieler diesen Ort schon besucht/besiegt hat
+                var benötigtOrt = AlleOrte.FirstOrDefault(o => o.Name == benötigteName);
+                bool stadtGefunden = benötigtOrt != null &&
+                    ((AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(benötigtOrt.Id) == true) ||
+                     (benötigtOrt.Arena != null && Spieler.Orden.Contains(benötigtOrt.Arena.OrdenName)));
+                if (!stadtGefunden)
+                    return $"⛔ Gesperrt! Du brauchst zuerst: {benötigteName}";
+            }
+            // Item-Sperre
+            if (!string.IsNullOrEmpty(richtungsSperre.ItemId))
+            {
+                bool hatItem = Spieler.Inventar.Any(i => i.ItemId == richtungsSperre.ItemId);
+                if (!hatItem)
+                    return $"⛔ Gesperrt! Du brauchst: {richtungsSperre.ItemName ?? richtungsSperre.ItemId}";
+            }
+            // MinOrden-Sperre
+            if (richtungsSperre.MinOrden > 0 && Spieler.Orden.Count < richtungsSperre.MinOrden)
+                return $"⛔ Gesperrt! Du brauchst {richtungsSperre.MinOrden} Orden – du hast {Spieler.Orden.Count}.";
+        }
+
         // Sperre auf dem AUSGANGSORT prüfen (z.B. Route 3 hat NordMinOrden=1)
         int minOrden1 = MinOrdenFürRichtung(aktOrt, richtung);
         if (minOrden1 > 0 && Spieler.Orden.Count < minOrden1)
             return $"⛔ Gesperrt! Du brauchst {minOrden1} Orden – du hast {Spieler.Orden.Count}.";
+
+        // Auch Zielort-Richtungssperre prüfen (Gegenrichtung)
+        string? gegen2 = Gegenrichtung(richtung);
+        if (gegen2 != null)
+        {
+            var zielSperre = gegen2 switch
+            {
+                "Nord" => ziel.SperrNord,
+                "Sued" => ziel.SperrSued,
+                "Ost"  => ziel.SperrOst,
+                "West" => ziel.SperrWest,
+                _      => null
+            };
+            if (zielSperre != null && !string.IsNullOrEmpty(zielSperre.Hinweis))
+            {
+                string benötigteName2 = zielSperre.Hinweis.Replace("Benötigt: ", "").Trim();
+                var benötigtOrt2 = AlleOrte.FirstOrDefault(o => o.Name == benötigteName2);
+                bool stadtGefunden2 = benötigtOrt2 != null &&
+                    ((AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(benötigtOrt2.Id) == true) ||
+                     (benötigtOrt2.Arena != null && Spieler.Orden.Contains(benötigtOrt2.Arena.OrdenName)));
+                if (!stadtGefunden2)
+                    return $"⛔ Gesperrt! Du brauchst zuerst: {benötigteName2}";
+            }
+        }
 
         // Sperre auf dem ZIELORT in Gegenrichtung prüfen (z.B. Orania hat WestMinOrden=3)
         string? gegen = Gegenrichtung(richtung);

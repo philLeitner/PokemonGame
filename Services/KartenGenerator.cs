@@ -132,7 +132,7 @@ public class KartenGenerator
 
             int total = Math.Max(20, regCfg.BasisEbenen);
             int bossCount = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
-            int städteProBoss = 3;
+            int städteProBoss = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
             int totalCitiesWanted = Math.Min(Math.Max(0, total - 2 - bossCount), städteProBoss * bossCount);
 
             // Trainer-Pool direkt aus regionen.json
@@ -240,35 +240,89 @@ public class KartenGenerator
                 else if (eb.IstBoss)
                 {
                     bossZähler++;
-                    name = $"Boss {bossZähler}";
-                    typ = "stadt"; farbe = "black";
-                    hatMonsterCenter = true;
-
                     var leiterCfg = bossZähler <= arenaleiter.Count ? arenaleiter[bossZähler - 1] : null;
 
-                    // Arenaleiter aus Pool
-                    var arenaTrainer = trainerPool
-                        .Where(t => t.Klasse == "Arena" || t.Klasse == "Hauptboss" || t.Klasse == "Endgegner")
-                        .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
-                        .Skip(bossZähler - 1)
-                        .FirstOrDefault();
+                    // Letzter Boss = Pokémon-Liga (Champion), vorletzter = Top 4
+                    bool istLetzterBoss  = bossZähler == bossCount;
+                    bool istVorletzter   = bossZähler == bossCount - 1;
 
-                    // Zwischenboss-Trainer (Vortrainer)
-                    var zwischen = trainerPool
-                        .Where(t => t.Klasse == "Zwischenboss")
-                        .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
-                        .Skip((bossZähler - 1) * 2)
-                        .Take(2)
-                        .ToList();
-                    trainer.AddRange(zwischen);
+                    // Trainer aus Pool nach Klasse auswählen
+                    TrainerKampf? arenaTrainer;
+                    if (istLetzterBoss)
+                    {
+                        // Champion (Endgegner)
+                        arenaTrainer = trainerPool
+                            .Where(t => t.Klasse == "Endgegner")
+                            .FirstOrDefault()
+                            ?? trainerPool
+                                .Where(t => t.Klasse == "Arena" || t.Klasse == "Hauptboss")
+                                .OrderByDescending(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                                .FirstOrDefault();
+                        name = "Pokémon-Liga";
+                        farbe = "#6a0dad";
+                    }
+                    else if (istVorletzter)
+                    {
+                        // Top 4 (Hauptbosse)
+                        arenaTrainer = trainerPool
+                            .Where(t => t.Klasse == "Hauptboss")
+                            .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                            .FirstOrDefault()
+                            ?? trainerPool
+                                .Where(t => t.Klasse == "Arena")
+                                .OrderByDescending(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                                .FirstOrDefault();
+                        name = "Top 4";
+                        farbe = "#8b0000";
+                    }
+                    else
+                    {
+                        // Normaler Arenaleiter
+                        arenaTrainer = trainerPool
+                            .Where(t => t.Klasse == "Arena")
+                            .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                            .Skip(bossZähler - 1)
+                            .FirstOrDefault();
+                        string leiterName = leiterCfg?.Name ?? arenaTrainer?.Name ?? $"Arena {bossZähler}";
+                        name = $"Arena: {leiterName}";
+                        farbe = "black";
+                    }
+
+                    typ = "stadt";
+                    hatMonsterCenter = true;
+
+                    // Zwischenboss-Trainer (Vortrainer) nur bei normalen Arenen
+                    if (!istLetzterBoss && !istVorletzter)
+                    {
+                        var zwischen = trainerPool
+                            .Where(t => t.Klasse == "Zwischenboss")
+                            .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                            .Skip((bossZähler - 1) * 2)
+                            .Take(2)
+                            .ToList();
+                        trainer.AddRange(zwischen);
+                    }
+                    else if (istVorletzter)
+                    {
+                        // Top 4: alle 4 Hauptboss-Trainer als Pflicht-Kämpfe
+                        var top4 = trainerPool
+                            .Where(t => t.Klasse == "Hauptboss")
+                            .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                            .ToList();
+                        trainer.AddRange(top4);
+                    }
 
                     if (arenaTrainer != null)
                     {
                         arena = new Arena
                         {
-                            OrdenName = leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}",
+                            OrdenName = istLetzterBoss ? "Champion-Titel" :
+                                        istVorletzter  ? "Top-4-Sieg" :
+                                        (leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}"),
                             OrdenNr = bossZähler + globalOrdenOffset,
-                            Leiter = leiterCfg?.Name ?? arenaTrainer.Name,
+                            Leiter = istLetzterBoss ? (arenaTrainer.Name) :
+                                     istVorletzter  ? "Top 4" :
+                                     (leiterCfg?.Name ?? arenaTrainer.Name),
                             TypSpezialisierung = leiterCfg?.Typ ?? "",
                             Team = arenaTrainer.Team.Select(m => new MonsterTeamEintrag
                             {
@@ -280,9 +334,13 @@ public class KartenGenerator
                     {
                         arena = new Arena
                         {
-                            OrdenName = leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}",
+                            OrdenName = istLetzterBoss ? "Champion-Titel" :
+                                        istVorletzter  ? "Top-4-Sieg" :
+                                        (leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}"),
                             OrdenNr = bossZähler + globalOrdenOffset,
-                            Leiter = leiterCfg?.Name ?? $"Boss {bossZähler}",
+                            Leiter = istLetzterBoss ? "Champion" :
+                                     istVorletzter  ? "Top 4" :
+                                     (leiterCfg?.Name ?? $"Arena {bossZähler}"),
                             TypSpezialisierung = leiterCfg?.Typ ?? "",
                             Team = new List<MonsterTeamEintrag>()
                         };
