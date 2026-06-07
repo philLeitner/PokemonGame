@@ -308,6 +308,8 @@ public class GesprächsNPC
     public string? GibtItemName { get; set; }
     public string? GibtItemEmoji { get; set; }
     public string? DialogNachGeschenk { get; set; }
+    /// <summary>True wenn dieser NPC der Professor der Region ist (löst Wizard aus)</summary>
+    public bool IstProfessor { get; set; } = false;
 }
 
 /// <summary>Sperre für eine einzelne Reiserichtung (Nord/Süd/Ost/West)</summary>
@@ -493,14 +495,16 @@ public enum StarterModus
 
 public enum WildMonsterModus
 {
-    RouteGenau,     // Nur Monster die für diese Route definiert sind
-    Zufällig        // Zufällige Monster aus der gesamten Liste
+    RouteGenau,         // Nur Monster die für diese Route definiert sind
+    Zufällig,           // Zufällige Monster aus der gesamten Liste
+    ZufälligMitLegär   // Zufällige Monster inkl. Legendäre
 }
 
 public enum TrainerMonsterModus
 {
-    Genau,          // Trainer hat definierte Monster
-    Zufällig        // Trainer hat zufällige Monster
+    Genau,              // Trainer hat definierte Monster
+    Zufällig,           // Trainer hat zufällige Monster (Level beibehalten)
+    ZufälligMitTypen    // Trainer hat zufällige Monster mit gleichen Typen
 }
 
 public class SpielEinstellungen

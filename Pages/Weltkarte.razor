@@ -539,6 +539,216 @@
         </div>
     </div>
 }
+<!-- ══════════════════════════════════════════════════════════════════════
+     EINRICHTUNGS-WIZARD (erscheint nach Prof.-Dialog beim ersten Mal)
+     ══════════════════════════════════════════════════════════════════════ -->
+@if (wizardAktiv)
+{
+    <div class="wizard-overlay">
+        <div class="wizard-box" @onclick:stopPropagation="true">
+            <!-- Header -->
+            <div class="wizard-header">
+                <div class="wizard-schritte">
+                    @for (int s = 1; s <= 4; s++)
+                    {
+                        int step = s;
+                        string[] labels = { "🥚 Starter", "🌿 Wilde", "👥 Trainer", "💀 Relikte" };
+                        <div class="wizard-schritt-dot @(wizardSchritt == step ? "aktiv" : wizardSchritt > step ? "fertig" : "")">
+                            <span class="ws-num">@(wizardSchritt > step ? "✓" : step.ToString())</span>
+                            <span class="ws-label">@labels[step - 1]</span>
+                        </div>
+                        @if (step < 4) { <div class="ws-linie @(wizardSchritt > step ? "fertig" : "")"></div> }
+                    }
+                </div>
+            </div>
+
+            <!-- Schritt 1: Starter -->
+            @if (wizardSchritt == 1)
+            {
+                <div class="wizard-inhalt">
+                    <h2 class="wizard-titel">🥚 Wähle deinen Starter!</h2>
+                    <p class="wizard-info">Dein erstes Monster begleitet dich auf der gesamten Reise.</p>
+                    <div class="wizard-starter-grid">
+                        @foreach (var mon in wizardStarterOptionen)
+                        {
+                            var m = mon;
+                            bool gewählt = wizardGewählterStarterId == m.Id;
+                            <div class="wizard-starter-karte @(gewählt ? "ausgewaehlt" : "")" @onclick="() => WizardStarterWählen(m.Id)">
+                                @if (!string.IsNullOrEmpty(m.Bild))
+                                {
+                                    <img class="starter-bild" src="@m.Bild" alt="@m.Name" />
+                                }
+                                else
+                                {
+                                    <div class="starter-emoji-gross">@GetTypEmoji(m.Typen.FirstOrDefault() ?? "")</div>
+                                }
+                                <div class="starter-karte-name">@m.Name</div>
+                                <div class="starter-karte-typen">
+                                    @foreach (var typ in m.Typen)
+                                    {
+                                        <span class="typ-badge-mini" style="background: @TypeChart.TypFarben.GetValueOrDefault(typ, "#888")">@typ</span>
+                                    }
+                                </div>
+                                <div class="starter-karte-stats">
+                                    <span>KP @m.Stats.GetValueOrDefault("kp", 45)</span>
+                                    <span>ATK @m.Stats.GetValueOrDefault("angriff", 45)</span>
+                                    <span>SPD @m.Stats.GetValueOrDefault("initiative", 45)</span>
+                                </div>
+                                @if (gewählt) { <div class="starter-check">✓</div> }
+                            </div>
+                        }
+                    </div>
+                    <div class="wizard-starter-aktionen">
+                        <button class="btn-wizard-zufall @(wizardStarterZufälligModus ? "aktiv" : "")" @onclick="WizardStarterZufälligLaden">
+                            🎲 3 Zufällige Monster
+                        </button>
+                        @if (wizardStarterZufälligModus)
+                        {
+                            <button class="btn-wizard-zufall" @onclick="WizardStarterZufälligLaden">
+                                🔄 Neu würfeln
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+            @if (wizardSchritt == 2)
+            {
+                <div class="wizard-inhalt">
+                    <h2 class="wizard-titel">🌿 Wilde Monster</h2>
+                    <p class="wizard-info">Welche Monster begegnest du in der Wildnis?</p>
+                    <div class="wizard-optionen">
+                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.RouteGenau ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.RouteGenau; Game.Notify(); }">
+                            <div class="wo-icon">📍</div>
+                            <div class="wo-text">
+                                <strong>Route-genau</strong>
+                                <span>Nur die Monster die wirklich auf dieser Route vorkommen (wie im echten Spiel)</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.Zufällig ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.Zufällig; Game.Notify(); }">
+                            <div class="wo-icon">🎲</div>
+                            <div class="wo-text">
+                                <strong>Zufällig</strong>
+                                <span>Zufällige Monster aus dem gesamten Pool – Überraschungen garantiert!</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.ZufälligMitLegär ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.ZufälligMitLegär; Game.Notify(); }">
+                            <div class="wo-icon">⭐</div>
+                            <div class="wo-text">
+                                <strong>Zufällig + Legendäre</strong>
+                                <span>Wie zufällig, aber auch legendäre Monster können auftauchen!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (wizardSchritt == 3)
+            {
+                <div class="wizard-inhalt">
+                    <h2 class="wizard-titel">👥 Trainer-Teams</h2>
+                    <p class="wizard-info">Welche Monster haben die Trainer?</p>
+                    <div class="wizard-optionen">
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.Genau ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.Genau; Game.Notify(); }">
+                            <div class="wo-icon">📋</div>
+                            <div class="wo-text">
+                                <strong>Definierte Teams</strong>
+                                <span>Trainer haben ihre echten Teams aus dem Spiel (Rocko hat Onix, Misty hat Starmie, ...)</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.Zufällig ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.Zufällig; Game.Notify(); }">
+                            <div class="wo-icon">🎲</div>
+                            <div class="wo-text">
+                                <strong>Zufällige Teams (Level beibehalten)</strong>
+                                <span>Zufällige Monster, aber die Level bleiben gleich. Hat ein Trainer 3 Monster auf Lv.10/12/14, hat er auch zufällig 3 Monster auf genau diesen Leveln.</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.ZufälligMitTypen ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.ZufälligMitTypen; Game.Notify(); }">
+                            <div class="wo-icon">🎨</div>
+                            <div class="wo-text">
+                                <strong>Typen beibehalten</strong>
+                                <span>Zufällige Monster mit den gleichen Typen. Hat ein Trainer ein Wasser-Monster, bekommt er ein anderes zufälliges Wasser-Monster.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (wizardSchritt == 4)
+            {
+                <div class="wizard-inhalt wizard-relikte">
+                    <h2 class="wizard-titel">💀 Relikte <span class="relikt-sub">(Handicaps)</span></h2>
+                    <p class="wizard-info">Aktiviere Handicaps für zusätzliche Zähne am Ende. Zähne = Bonus-Upgrades.</p>
+                    <div class="relikt-summary-mini">
+                        <span>💀 Aktiv: <strong>@Game.Einstellungen.AktiveRelikte.Count</strong></span>
+                        <span>🦷 Zähne: <strong>@Game.Einstellungen.GetGesamtZähne()</strong></span>
+                        <span>🎁 Bonus: <strong>@Game.Einstellungen.GetBonusStatUpgrades() Upgrades</strong></span>
+                    </div>
+                    <div class="wizard-relikt-liste">
+                        @foreach (var kategorie in MonsterKampf.Data.ReliktDaten.GetKategorien())
+                        {
+                            <div class="wizard-relikt-kat">
+                                <h4>@kategorie</h4>
+                                <div class="wizard-relikt-grid">
+                                    @foreach (var relikt in MonsterKampf.Data.ReliktDaten.GetNachKategorie(kategorie))
+                                    {
+                                        bool aktiv = Game.Einstellungen.HatRelikt(relikt.Typ);
+                                        var r = relikt;
+                                        <div class="wizard-relikt-card @(aktiv ? "aktiv" : "")" @onclick="() => { Game.Einstellungen.ReliktToggle(r.Typ); Game.Notify(); }">
+                                            <span class="wr-emoji">@r.Emoji</span>
+                                            <div class="wr-info">
+                                                <div class="wr-name">@r.Name</div>
+                                                <div class="wr-beschr">@r.Beschreibung</div>
+                                            </div>
+                                            <div class="wr-zaehne">🦷 @r.Zähne</div>
+                                            @if (aktiv) { <div class="wr-check">✓</div> }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Footer: Navigation -->
+            <div class="wizard-footer">
+                @if (wizardSchritt > 1)
+                {
+                    <button class="btn-wizard-zurueck" @onclick="WizardZurück">← Zurück</button>
+                }
+                else
+                {
+                    <div></div>
+                }
+                <div class="wizard-footer-mitte">
+                    @if (wizardSchritt == 1 && wizardGewählterStarterId == null && !wizardStarterZufälligModus)
+                    {
+                        <span class="wizard-hinweis">⚠️ Bitte wähle einen Starter oder würfle</span>
+                    }
+                </div>
+                @if (wizardSchritt < 4)
+                {
+                    <button class="btn-wizard-weiter"
+                            disabled="@(wizardSchritt == 1 && wizardGewählterStarterId == null && !wizardStarterZufälligModus)"
+                            @onclick="WizardWeiter">
+                        Weiter →
+                    </button>
+                }
+                else
+                {
+                    <button class="btn-wizard-fertig" @onclick="WizardAbschließen">
+                        ✅ Spiel starten!
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+}
+
 @if (marktOffen)
 {
     var ortRef2 = Game.AktuellerOrt ?? (ausgewähltOrt != null ? Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrt.Id) : null);
@@ -608,6 +818,14 @@
     private string? npcDialogEmoji;
     private string? npcGeschenktItem;
     private string? npcGeschenktItemEmoji;
+    private bool npcIstProfessor = false;
+
+    // Einrichtungs-Wizard
+    private bool wizardAktiv = false;
+    private int wizardSchritt = 1; // 1=Starter, 2=WildeMonster, 3=TrainerTeams, 4=Relikte
+    private List<MonsterData> wizardStarterOptionen = new();
+    private string? wizardGewählterStarterId = null;
+    private bool wizardStarterZufälligModus = false;
 
     protected override void OnInitialized()
     {
@@ -701,13 +919,68 @@
         npcDialogEmoji = npc.Emoji;
         npcGeschenktItem = itemName;
         npcGeschenktItemEmoji = itemEmoji;
+        npcIstProfessor = npc.IstProfessor;
     }
 
     private void NpcDialogSchließen()
     {
+        bool warProfessor = npcIstProfessor;
+        bool wizardNochNichtGemacht = !Game.WizardAbgeschlossen;
         npcDialog = null;
         npcGeschenktItem = null;
         npcGeschenktItemEmoji = null;
+        npcIstProfessor = false;
+        // Wenn Professor und Wizard noch nicht abgeschlossen → Wizard starten
+        if (warProfessor && wizardNochNichtGemacht && Game.IstGenerierteKartenModus)
+            WizardStarten();
+    }
+
+    private void WizardStarten()
+    {
+        wizardSchritt = 1;
+        wizardGewählterStarterId = null;
+        wizardStarterZufälligModus = false;
+        // Starter-Optionen der aktuellen Region laden
+        var regionId = (Game.Spieler.AktuellerOrt?.Length >= 3)
+            ? Game.Spieler.AktuellerOrt[..3] : "KAN";
+        wizardStarterOptionen = Game.GetStarterFürRegion(regionId);
+        if (!wizardStarterOptionen.Any())
+            wizardStarterOptionen = Game.GetStarterOptionen();
+        wizardAktiv = true;
+    }
+
+    private void WizardWeiter()
+    {
+        if (wizardSchritt < 4)
+            wizardSchritt++;
+        else
+            WizardAbschließen();
+    }
+
+    private void WizardZurück()
+    {
+        if (wizardSchritt > 1) wizardSchritt--;
+    }
+
+    private void WizardAbschließen()
+    {
+        if (wizardGewählterStarterId != null)
+            Game.StarterWählenImWizard(wizardGewählterStarterId);
+        Game.WizardAbschliessen();
+        wizardAktiv = false;
+    }
+
+    private void WizardStarterWählen(string id)
+    {
+        wizardGewählterStarterId = id;
+        wizardStarterZufälligModus = false;
+    }
+
+    private void WizardStarterZufälligLaden()
+    {
+        wizardStarterOptionen = Game.GetZufälligeStarterOptionen();
+        wizardGewählterStarterId = null;
+        wizardStarterZufälligModus = true;
     }
 
     private void RucksackOeffnen() => rucksackOffen = true;

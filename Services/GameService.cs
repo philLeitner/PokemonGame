@@ -46,6 +46,10 @@ public class GameService
     // Spiel gilt als abgeschlossen wenn der Spieler mindestens 8 Orden hat
     // (kann später auf alle Orden + Elite Vier + Rivale erweitert werden)
     public bool SpielAbgeschlossen => Spieler.Orden.Count >= 8;
+    /// <summary>Ob der Einrichtungs-Wizard nach dem Prof.-Dialog bereits abgeschlossen wurde</summary>
+    public bool WizardAbgeschlossen { get; private set; } = false;
+    public void WizardAbschliessen() { WizardAbgeschlossen = true; Notify(); }
+    public void WizardZurücksetzen() { WizardAbgeschlossen = false; }
 
     // ── Events ───────────────────────────────────────────────────────────────────────────
     public event Action? OnChange;
@@ -299,7 +303,34 @@ public class GameService
         if (!string.IsNullOrEmpty(meta.StartOrtId))
             Spieler.AktuellerOrt = meta.StartOrtId;
 
-        Phase = SpielPhase.StarterWahl;
+        // Wizard zurücksetzen (neues Spiel = Wizard muss erneut durchlaufen werden)
+        WizardZurücksetzen();
+
+        // Direkt zur Weltkarte – Wizard wird durch Prof.-Dialog ausgelöst
+        Phase = SpielPhase.Weltkarte;
+        Notify();
+    }
+
+    /// <summary>3 zufällige Monster aus dem Gesamt-Pool als Starter (keine Legendären)</summary>
+    public List<MonsterData> GetZufälligeStarterOptionen()
+    {
+        var pool = AlleMonster
+            .Where(m => m.Fangrate >= 10)
+            .OrderBy(_ => _rng.Next())
+            .Take(3)
+            .ToList();
+        return pool;
+    }
+
+    /// <summary>Starter wählen im Wizard (ohne Phasenwechsel)</summary>
+    public void StarterWählenImWizard(string monsterId)
+    {
+        var spezies = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
+        if (spezies == null) return;
+        Spieler.Team.Clear();
+        var starter = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
+        Spieler.Team.Add(starter);
+        Spieler.StarterMonsterId = monsterId;
         Notify();
     }
 

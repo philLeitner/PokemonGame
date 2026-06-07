@@ -69,12 +69,13 @@
       {
         "Id": "KAN-NPC-SENSEI",
         "Name": "Prof. Eich",
-        "Emoji": "🧓",
-        "Dialog": "Willkommen in der Welt der Monster! Ich bin Prof. Eich, der Forscher dieser Region. Nimm diese Karte – sie zeigt dir alle Orte der Kanto-Region. Viel Erfolg auf deiner Reise!",
+        "Emoji": "🔬",
+        "Dialog": "Herzlich willkommen in der Welt der Monster! Ich bin Prof. Eich, Pokémon-Forscher aus Pallet Town.\n\nDieses Spiel wurde von einem leidenschaftlichen Fan erschaffen – eine Hommage an all die Abenteuer, die uns die Pokémon-Welt beschert hat. Hier erwartet dich eine prozedural generierte Welt mit echten Trainern, Arenen und wilden Monstern aus allen Regionen.\n\nBevor du aufbrichst, lass mich dir ein paar Dinge erklären. Wähle weise – dein Starter begleitet dich auf der gesamten Reise. Viel Erfolg, Trainer!",
         "GibtItemId": "ITEM-KARTE",
         "GibtItemName": "Kanto-Karte",
         "GibtItemEmoji": "🗺️",
-        "DialogNachGeschenk": "Du hast die Kanto-Karte erhalten! Öffne deinen Rucksack um sie zu benutzen."
+        "DialogNachGeschenk": "Schön, dich wiederzusehen! Denk daran: Ein guter Trainer kümmert sich um seine Monster. Viel Erfolg!",
+        "IstProfessor": true
       }
     ],
     "SperrNord": null,
@@ -7610,7 +7611,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "JOH-NPC-SENSEI",
+        "Name": "Prof. Elm",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Johto! Ich bin Prof. Elm aus New Bark Town.\n\nDieses Abenteuer wurde mit viel Liebe zum Detail erschaffen. Johto wartet mit 8 Arenen, der Elite Vier und dem Champion auf dich. Wähle deinen Starter und brich auf!",
+        "DialogNachGeschenk": "Gute Reise, Trainer! Johto hat viele Geheimnisse zu entdecken.",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -13359,7 +13372,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "HOE-NPC-SENSEI",
+        "Name": "Prof. Birk",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Hoenn! Ich bin Prof. Birk aus Littleroot Town.\n\nHoenn ist eine Region voller Natur und Abenteuer. Team Magma und Team Aqua treiben ihr Unwesen – aber das ist deine Chance, ein Held zu werden. Wähle deinen Starter!",
+        "DialogNachGeschenk": "Hoenn braucht dich, Trainer! Zeig, was du drauf hast.",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -21286,7 +21311,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "SIN-NPC-SENSEI",
+        "Name": "Prof. Eibe",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Sinnoh! Ich bin Prof. Eibe aus Twinleaf Town.\n\nSinnoh ist eine Region mit tiefer Geschichte und mystischen Legenden. Die Arenen sind anspruchsvoll, aber du schaffst das. Wähle deinen Starter und beginne deine Reise!",
+        "DialogNachGeschenk": "Die Legenden von Sinnoh warten auf dich. Viel Erfolg!",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -28164,7 +28201,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "UNO-NPC-SENSEI",
+        "Name": "Prof. Esche",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Einall! Ich bin Prof. Esche aus Nuvema Town.\n\nEinall ist eine moderne Region mit vielen neuen Monstern. Team Plasma versucht, Monster zu befreien – aber du weißt, dass echte Freundschaft zwischen Trainer und Monster das Wichtigste ist. Wähle deinen Starter!",
+        "DialogNachGeschenk": "Einall erwartet dich! Zeig, dass Trainer und Monster gemeinsam unschlagbar sind.",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -32796,7 +32845,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "KAL-NPC-SENSEI",
+        "Name": "Prof. Platan",
+        "Emoji": "🔬",
+        "Dialog": "Bienvenue! Willkommen in Kalos! Ich bin Prof. Platan aus Vaniville Town.\n\nKalos ist die Region der Schönheit und des Stils. Hier gibt es Mega-Entwicklungen und 8 herausfordernde Arenen. Wähle deinen Starter und erlebe das Abenteuer!",
+        "DialogNachGeschenk": "Kalos ist wunderschön, nicht wahr? Viel Erfolg auf deiner Reise!",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -37821,7 +37882,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "ALO-NPC-SENSEI",
+        "Name": "Prof. Kukui",
+        "Emoji": "🔬",
+        "Dialog": "Alola! Willkommen in Alola! Ich bin Prof. Kukui von Iki Town.\n\nAlola ist ein Inselparadies mit einzigartigen Monstern und der Island Challenge. Statt Arenen gibt es hier Kahuna-Kämpfe – aber das Abenteuer ist genauso spannend! Wähle deinen Starter!",
+        "DialogNachGeschenk": "Alola! Genieße die Sonne und kämpfe mit Leidenschaft!",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -41639,7 +41712,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "GAL-NPC-SENSEI",
+        "Name": "Prof. Magnolia",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Galar! Ich bin Prof. Magnolia aus Postwick.\n\nGalar ist eine Region voller Dynamax-Phänomene und großer Stadion-Kämpfe. Die Arenen sind spektakulär und die Rivalen stark. Wähle deinen Starter und werde Champion!",
+        "DialogNachGeschenk": "Galar cheert für dich! Viel Erfolg im Stadion!",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
@@ -44524,7 +44609,19 @@
     "LigaZugang": false,
     "Teleport": null,
     "Untergrund": null,
-    "NPCs": [],
+    "NPCs": [
+      {
+        "Id": "PAL-NPC-SENSEI",
+        "Name": "Prof. Tyme",
+        "Emoji": "🔬",
+        "Dialog": "Willkommen in Paldea! Ich bin Prof. Tyme aus Mesagoza.\n\nPaldea ist eine offene Region mit drei verschiedenen Abenteuerpfaden. Hier kannst du Arenen in beliebiger Reihenfolge herausfordern – aber sei vorsichtig, die Gegner werden stärker! Wähle deinen Starter!",
+        "DialogNachGeschenk": "Paldea liegt vor dir – erkunde es in deinem eigenen Tempo!",
+        "GibtItemId": null,
+        "GibtItemName": null,
+        "GibtItemEmoji": null,
+        "IstProfessor": true
+      }
+    ],
     "SperrNord": null,
     "SperrSued": null,
     "SperrOst": null,
