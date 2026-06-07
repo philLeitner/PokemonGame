@@ -3584,7 +3584,32 @@
     "GridY": 7,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0092",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 35
+      },
+      {
+        "MonsterId": "PKM-0093",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0023",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [
       "KAN-0067",
       "KAN-0025",
@@ -3602,7 +3627,52 @@
     "West": "KAN-0066",
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-024a",
+        "Name": "Team Rocket Rüpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0041",
+            "Level": 25,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0023",
+            "Level": 25,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Für Team Rocket!",
+        "DialogNach": "Verfluchter Trainer!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-024b",
+        "Name": "Team Rocket Rüpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0109",
+            "Level": 26,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0110",
+            "Level": 26,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Niemand kommt durch!",
+        "DialogNach": "Wir geben nicht auf!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": true,
     "HatMarkt": true,
     "MarktAngebot": [
@@ -4062,7 +4132,89 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-029a",
+        "Name": "Team Rocket Rüpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0041",
+            "Level": 28,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0023",
+            "Level": 28,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Für Team Rocket!",
+        "DialogNach": "Verfluchter Trainer!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-029b",
+        "Name": "Team Rocket Rüpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0109",
+            "Level": 29,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0110",
+            "Level": 29,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Niemand kommt durch!",
+        "DialogNach": "Wir geben nicht auf!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-029c",
+        "Name": "Giovanni",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0111",
+            "Level": 29,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0051",
+            "Level": 29,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0031",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0034",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0112",
+            "Level": 35,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich bin Giovanni! Anführer von Team Rocket!",
+        "DialogNach": "Wir geben nicht auf!",
+        "MussBesiegt": true,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -5707,7 +5859,20 @@
     "GridY": 2,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0050",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 90
+      },
+      {
+        "MonsterId": "PKM-0051",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 10
+      }
+    ],
     "Verbindungen": [
       "KAN-0035",
       "KAN-0068"
@@ -5724,7 +5889,52 @@
     "West": "KAN-0068",
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-047a",
+        "Name": "Hiker Lenny",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0050",
+            "Level": 22,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0051",
+            "Level": 22,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Höhle gehört mir!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-047b",
+        "Name": "Hiker Eric",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0050",
+            "Level": 23,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0051",
+            "Level": 23,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich grabe tief!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -5759,21 +5969,33 @@
     "WildMonster": [
       {
         "MonsterId": "PKM-0056",
-        "MinLevel": 35,
-        "MaxLevel": 40,
-        "Chance": 40
+        "MinLevel": 42,
+        "MaxLevel": 46,
+        "Chance": 20
       },
       {
-        "MonsterId": "PKM-0023",
-        "MinLevel": 35,
-        "MaxLevel": 40,
-        "Chance": 30
+        "MonsterId": "PKM-0074",
+        "MinLevel": 42,
+        "MaxLevel": 46,
+        "Chance": 20
       },
       {
-        "MonsterId": "PKM-0024",
-        "MinLevel": 35,
-        "MaxLevel": 40,
-        "Chance": 30
+        "MonsterId": "PKM-0066",
+        "MinLevel": 42,
+        "MaxLevel": 46,
+        "Chance": 15
+      },
+      {
+        "MonsterId": "PKM-0095",
+        "MinLevel": 42,
+        "MaxLevel": 46,
+        "Chance": 15
+      },
+      {
+        "MonsterId": "PKM-0112",
+        "MinLevel": 42,
+        "MaxLevel": 46,
+        "Chance": 10
       }
     ],
     "Verbindungen": [
@@ -5792,7 +6014,74 @@
     "West": "KAN-0036",
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-050a",
+        "Name": "Pokémon-Trainer Jonathan",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0059",
+            "Level": 46,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0130",
+            "Level": 46,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Nur die Stärksten kommen durch!",
+        "DialogNach": "Beeindruckend!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-050b",
+        "Name": "Pokémon-Trainer Phillip",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0065",
+            "Level": 46,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0112",
+            "Level": 46,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Siegesstraße ist hart!",
+        "DialogNach": "Guter Kampf!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-050c",
+        "Name": "Schönheit Cassandra",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0048",
+            "Level": 44,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0049",
+            "Level": 44,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich bin stark und schön!",
+        "DialogNach": "Toll!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6360,7 +6649,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0019",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 40
+      },
+      {
+        "MonsterId": "PKM-0016",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0035",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0039",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 10
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6374,7 +6688,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-054a",
+        "Name": "Youngster Joey",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0019",
+            "Level": 30,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0016",
+            "Level": 30,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich trainiere täglich!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-054b",
+        "Name": "Lass Reli",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0035",
+            "Level": 30,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0039",
+            "Level": 30,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Schöne Insel!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6406,7 +6765,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0021",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 35
+      },
+      {
+        "MonsterId": "PKM-0027",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0035",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0039",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6420,7 +6804,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-055a",
+        "Name": "Wanderer Liam",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0021",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0027",
+            "Level": 32,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Auf dem Weg!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-055b",
+        "Name": "Pokémon Breeder Gwen",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0035",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0039",
+            "Level": 32,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Meine Pokémon sind fit!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6452,7 +6881,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 35
+      },
+      {
+        "MonsterId": "PKM-0023",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0109",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0110",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6466,7 +6920,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-056a",
+        "Name": "Biker Jaren",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0109",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0110",
+            "Level": 32,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich fahre schnell!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-056b",
+        "Name": "Biker Ernest",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0041",
+            "Level": 32,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0023",
+            "Level": 32,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Niemand überholt mich!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6498,7 +6997,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0086",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 40
+      },
+      {
+        "MonsterId": "PKM-0087",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0090",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0091",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 10
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6512,7 +7036,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-057a",
+        "Name": "Pokémon-Trainer Jonathan",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0059",
+            "Level": 36,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0130",
+            "Level": 36,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Nur die Stärksten kommen durch!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-057b",
+        "Name": "Schwimmer Richard",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0086",
+            "Level": 36,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0087",
+            "Level": 36,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Das Meer ist wunderschön!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6544,7 +7113,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0059",
+        "MinLevel": 34,
+        "MaxLevel": 38,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0130",
+        "MinLevel": 34,
+        "MaxLevel": 38,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0065",
+        "MinLevel": 34,
+        "MaxLevel": 38,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0112",
+        "MinLevel": 34,
+        "MaxLevel": 38,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6558,7 +7152,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-058a",
+        "Name": "Pokémon-Trainer Jonathan",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0059",
+            "Level": 38,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0130",
+            "Level": 38,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Nur die Stärksten kommen durch!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-058b",
+        "Name": "Pokémon-Trainer Phillip",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0065",
+            "Level": 38,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0112",
+            "Level": 38,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Insel ist hart!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6590,7 +7229,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0059",
+        "MinLevel": 36,
+        "MaxLevel": 40,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0130",
+        "MinLevel": 36,
+        "MaxLevel": 40,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0065",
+        "MinLevel": 36,
+        "MaxLevel": 40,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0112",
+        "MinLevel": 36,
+        "MaxLevel": 40,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6604,7 +7268,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-059a",
+        "Name": "Pokémon-Trainer Jonathan",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0059",
+            "Level": 40,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0130",
+            "Level": 40,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Nur die Stärksten kommen durch!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-059b",
+        "Name": "Schönheit Cassandra",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0048",
+            "Level": 40,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0049",
+            "Level": 40,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich bin stark und schön!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -6636,7 +7345,32 @@
     "GridY": -1,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0059",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0130",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0065",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0112",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 15
+      }
+    ],
     "Verbindungen": [],
     "Nord": null,
     "NordTyp": "normal",
@@ -6650,7 +7384,74 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-060a",
+        "Name": "Pokémon-Trainer Jonathan",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0059",
+            "Level": 42,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0130",
+            "Level": 42,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Nur die Stärksten kommen durch!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-060b",
+        "Name": "Pokémon-Trainer Phillip",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0065",
+            "Level": 42,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0112",
+            "Level": 42,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Insel ist hart!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-060c",
+        "Name": "Schönheit Cassandra",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0048",
+            "Level": 42,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0049",
+            "Level": 42,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich bin stark und schön!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -45862,28 +46663,34 @@
     "Arena": null,
     "WildMonster": [
       {
-        "MonsterId": "PKM-0041",
-        "MinLevel": 7,
-        "MaxLevel": 10,
-        "Chance": 40
-      },
-      {
-        "MonsterId": "PKM-0035",
-        "MinLevel": 8,
-        "MaxLevel": 12,
-        "Chance": 20
-      },
-      {
-        "MonsterId": "PKM-0046",
-        "MinLevel": 8,
-        "MaxLevel": 10,
-        "Chance": 20
-      },
-      {
         "MonsterId": "PKM-0074",
-        "MinLevel": 8,
+        "MinLevel": 6,
+        "MaxLevel": 10,
+        "Chance": 30
+      },
+      {
+        "MonsterId": "PKM-0075",
+        "MinLevel": 6,
+        "MaxLevel": 10,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0041",
+        "MinLevel": 6,
         "MaxLevel": 10,
         "Chance": 20
+      },
+      {
+        "MonsterId": "PKM-0023",
+        "MinLevel": 6,
+        "MaxLevel": 10,
+        "Chance": 15
+      },
+      {
+        "MonsterId": "PKM-0066",
+        "MinLevel": 6,
+        "MaxLevel": 10,
+        "Chance": 10
       }
     ],
     "Verbindungen": [
@@ -45901,7 +46708,52 @@
     "West": "KAN-0063",
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-064a",
+        "Name": "Hiker Lenny",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0074",
+            "Level": 8,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0075",
+            "Level": 8,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Berge sind mein Zuhause!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-064b",
+        "Name": "Hiker Eric",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0074",
+            "Level": 9,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0075",
+            "Level": 9,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich klettere jeden Berg!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -45935,28 +46787,34 @@
     "Arena": null,
     "WildMonster": [
       {
-        "MonsterId": "PKM-0041",
-        "MinLevel": 7,
-        "MaxLevel": 10,
-        "Chance": 40
+        "MonsterId": "PKM-0074",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 30
       },
       {
-        "MonsterId": "PKM-0035",
+        "MonsterId": "PKM-0075",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 25
+      },
+      {
+        "MonsterId": "PKM-0041",
         "MinLevel": 8,
         "MaxLevel": 12,
         "Chance": 20
       },
       {
-        "MonsterId": "PKM-0046",
+        "MonsterId": "PKM-0023",
         "MinLevel": 8,
-        "MaxLevel": 10,
-        "Chance": 20
+        "MaxLevel": 12,
+        "Chance": 15
       },
       {
-        "MonsterId": "PKM-0074",
+        "MonsterId": "PKM-0066",
         "MinLevel": 8,
-        "MaxLevel": 10,
-        "Chance": 20
+        "MaxLevel": 12,
+        "Chance": 10
       }
     ],
     "Verbindungen": [
@@ -45974,7 +46832,52 @@
     "West": null,
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-065a",
+        "Name": "Hiker Lenny",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0074",
+            "Level": 10,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0075",
+            "Level": 10,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Berge sind mein Zuhause!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-065b",
+        "Name": "Team Rocket Rüpel",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0041",
+            "Level": 10,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0023",
+            "Level": 10,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Für Team Rocket!",
+        "DialogNach": "Verfluchter Trainer!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
@@ -46237,7 +47140,20 @@
     "GridY": 8,
     "Beschreibung": null,
     "Arena": null,
-    "WildMonster": [],
+    "WildMonster": [
+      {
+        "MonsterId": "PKM-0050",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 90
+      },
+      {
+        "MonsterId": "PKM-0051",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 10
+      }
+    ],
     "Verbindungen": [
       "KAN-0005",
       "KAN-0004",
@@ -46255,7 +47171,52 @@
     "West": "KAN-0047",
     "WestTyp": "normal",
     "WestMinOrden": 0,
-    "Trainer": [],
+    "Trainer": [
+      {
+        "Id": "KAN-T-068a",
+        "Name": "Hiker Lenny",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0050",
+            "Level": 24,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0051",
+            "Level": 24,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Die Höhle gehört mir!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      },
+      {
+        "Id": "KAN-T-068b",
+        "Name": "Hiker Eric",
+        "Klasse": "Trainer",
+        "Belohnung": 200,
+        "Team": [
+          {
+            "MonsterId": "PKM-0050",
+            "Level": 25,
+            "level": 1
+          },
+          {
+            "MonsterId": "PKM-0051",
+            "Level": 25,
+            "level": 1
+          }
+        ],
+        "Dialogvor": "Ich grabe tief!",
+        "DialogNach": "Gut gekämpft!",
+        "MussBesiegt": false,
+        "SperrtRichtung": ""
+      }
+    ],
     "HatMonsterCenter": false,
     "HatMarkt": false,
     "MarktAngebot": [],
