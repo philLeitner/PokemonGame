@@ -69,11 +69,9 @@
         }
         else if (schritt == 2)
         {
-            @{
-                var region = Game.LetzterArenaLeiter != null
-                    ? Game.GetRegionFürOrt(Game.LetzterArenaLeiter)
-                    : null;
-            }
+            var region = Game.LetzterArenaLeiter != null
+                ? Game.GetRegionFürOrt(Game.LetzterArenaLeiter)
+                : null;
             <div class="nach-arena-schritt">
                 <h3>🐾 Neuer Starter?</h3>
                 <p class="nach-arena-erklaerung">
