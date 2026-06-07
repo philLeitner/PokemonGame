@@ -4992,3 +4992,56 @@ input:checked + .toggle-slider-klein::before {
     color: #ffb000;
     line-height: 1;
 }
+
+/* ─── Liga-Abschluss ──────────────────────────────────────────────────────── */
+.liga-abschluss-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a0a 100%);
+    padding: 1rem;
+}
+.liga-abschluss-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255,215,0,0.15);
+}
+.liga-konfetti { font-size: 3rem; margin-bottom: 0.5rem; animation: bounce 1s infinite alternate; }
+@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+.liga-titel { font-size: 2.5rem; font-weight: 900; color: #ffd700; margin: 0 0 0.25rem; }
+.liga-untertitel { color: #aaa; margin: 0 0 1.5rem; font-size: 1.1rem; }
+.liga-champion-info { background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3); border-radius: 10px; padding: 0.75rem 1.5rem; margin-bottom: 1.5rem; display: inline-block; }
+.liga-champion-name { font-size: 1.3rem; font-weight: 700; color: #ffd700; display: block; }
+.liga-champion-label { color: #aaa; font-size: 0.9rem; }
+.liga-stats { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+.liga-stat { display: flex; flex-direction: column; align-items: center; }
+.liga-stat-zahl { font-size: 2rem; font-weight: 900; color: #ffd700; }
+.liga-stat-label { font-size: 0.8rem; color: #888; }
+.liga-profi-text { color: #ccc; margin-bottom: 1.5rem; font-size: 1rem; }
+.btn-liga-weiter { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; border: none; border-radius: 10px; padding: 0.85rem 2.5rem; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+.btn-liga-weiter:hover { transform: scale(1.04); box-shadow: 0 4px 20px rgba(255,215,0,0.4); }
+.liga-entscheidung h2, .liga-ende-optionen h2, .liga-speichern h2, .liga-monster-option h2 { color: #ffd700; margin-bottom: 0.5rem; }
+.liga-entscheidung p, .liga-ende-optionen p, .liga-speichern p, .liga-monster-option p { color: #aaa; margin-bottom: 1.5rem; }
+.liga-naechste-region { background: rgba(100,200,100,0.1); border: 1px solid rgba(100,200,100,0.3); border-radius: 10px; padding: 0.75rem 1.5rem; margin-bottom: 1.5rem; display: inline-block; }
+.liga-region-name { font-size: 1.4rem; font-weight: 700; color: #6dc86d; }
+.liga-optionen-grid { display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.liga-option { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.2s; min-width: 150px; flex: 1; }
+.liga-option:hover { border-color: rgba(255,215,0,0.4); background: rgba(255,215,0,0.05); }
+.liga-option.ausgewaehlt { border-color: #ffd700; background: rgba(255,215,0,0.1); }
+.liga-option-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.liga-option-titel { font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.liga-option-text { font-size: 0.8rem; color: #888; }
+.btn-liga-ja { background: #22c55e; color: #fff; border: none; border-radius: 10px; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: transform 0.15s; flex: 1; }
+.btn-liga-nein { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: transform 0.15s; flex: 1; }
+.btn-liga-ja:hover, .btn-liga-nein:hover { transform: scale(1.03); }
+.liga-monster-liste { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; max-height: 200px; overflow-y: auto; }
+.liga-monster-eintrag { display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 0.5rem 0.75rem; }
+.liga-monster-emoji { font-size: 1.2rem; }
+.liga-monster-name { flex: 1; font-weight: 600; color: #fff; text-align: left; }
+.liga-monster-level { color: #888; font-size: 0.85rem; }

@@ -428,7 +428,8 @@ public enum SpielPhase
     MonsterEditor,      // Monster-Daten bearbeiten
     RegionsWahl,         // Regionsauswahl für prozedurale Karte
     NachArenaLeiter,     // Dialog nach Arenaleiter-Sieg (neuer Starter, Level A/B)
-    StarterWahlNeuRegion // Starter-Auswahl für neue Region
+    StarterWahlNeuRegion, // Starter-Auswahl für neue Region
+    LigaAbschluss         // Glückwunsch nach Liga-Sieg + Übergang nächste Region oder Endscreen
 }
 
 // ─── Speicherstand ────────────────────────────────────────────────────────────

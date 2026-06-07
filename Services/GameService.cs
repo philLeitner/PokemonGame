@@ -426,11 +426,100 @@ public class GameService
         if (AktuelleGenerierteKarte == null) return;
         LetzterArenaLeiter = arenaOrt;
         AktuelleGenerierteKarte.BesiegteArenen.Add(arenaOrt.Id);
-        // Fog-of-War: sofort freischalten (Orden wird durch KampfBeendet vergeben,
-        // zusätzlich beim Betreten der Arena-Stadt erneut geprüft)
         FogOfWarFreischaltenNachOrt(arenaOrt.Id);
-        // Nach-Arenaleiter-Dialog
+
+        // Prüfen ob das der LETZTE Boss der LETZTEN Region ist
+        bool istLetzterBossAllerRegionen = AktuelleGenerierteKarte.BossIds.Count > 0
+            && arenaOrt.Id == AktuelleGenerierteKarte.BossIds.Last();
+
+        if (istLetzterBossAllerRegionen)
+        {
+            // Liga-Abschluss: Glückwunsch-Screen
+            Phase = SpielPhase.LigaAbschluss;
+        }
+        else
+        {
+            // Normaler Arena-Sieg: NachArenaLeiter-Dialog
+            Phase = SpielPhase.NachArenaLeiter;
+        }
+        Notify();
+    }
+
+    /// <summary>Prüft ob es noch eine weitere Region nach der aktuellen gibt.</summary>
+    public bool HatNächsteRegion()
+    {
+        if (AktuelleGenerierteKarte == null) return false;
+        var regionen = AktuelleGenerierteKarte.RegionsReihenfolge;
+        // Finde die Region des letzten besiegten Bosses
+        var letzterBoss = LetzterArenaLeiter;
+        if (letzterBoss == null) return false;
+        var prefix = letzterBoss.Id.Split('-')[0].ToUpper();
+        int idx = regionen.IndexOf(prefix);
+        return idx >= 0 && idx < regionen.Count - 1;
+    }
+
+    /// <summary>Gibt die nächste RegionConfig zurück (nach der aktuellen Liga).</summary>
+    public RegionConfig? GetNächsteRegion()
+    {
+        if (AktuelleGenerierteKarte == null || LetzterArenaLeiter == null) return null;
+        var regionen = AktuelleGenerierteKarte.RegionsReihenfolge;
+        var prefix = LetzterArenaLeiter.Id.Split('-')[0].ToUpper();
+        int idx = regionen.IndexOf(prefix);
+        if (idx < 0 || idx >= regionen.Count - 1) return null;
+        var nextId = regionen[idx + 1];
+        return AlleRegionen.FirstOrDefault(r => r.Id.Equals(nextId, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>Liga-Abschluss: zur nächsten Region wechseln (NachArenaLeiter-Wizard).</summary>
+    public void LigaAbschlussNächsteRegion()
+    {
         Phase = SpielPhase.NachArenaLeiter;
+        Notify();
+    }
+
+    /// <summary>Liga-Abschluss: gleiche Map neu starten.</summary>
+    public void LigaAbschlussNeustart(bool monsterMitnehmen)
+    {
+        if (!monsterMitnehmen)
+        {
+            Spieler.Team.Clear();
+            Spieler.Box.Clear();
+        }
+        else
+        {
+            // Alle Monster in die Box
+            foreach (var m in Spieler.Team)
+                Spieler.Box.Add(m);
+            Spieler.Team.Clear();
+        }
+        Spieler.Orden.Clear();
+        Spieler.BesiegteTrainer.Clear();
+        AktuelleGenerierteKarte?.BesiegteArenen.Clear();
+        AktuelleGenerierteKarte?.FreigeschalteteOrte.Clear();
+        // Startort zurücksetzen
+        if (AktuelleGenerierteKarte != null)
+        {
+            Spieler.AktuellerOrt = AktuelleGenerierteKarte.StartOrtId;
+            // Startpunkt + Nachbarn freischalten
+            var startOrt = AlleOrte.FirstOrDefault(o => o.Id == AktuelleGenerierteKarte.StartOrtId);
+            if (startOrt != null)
+            {
+                AktuelleGenerierteKarte.FreigeschalteteOrte.Add(startOrt.Id);
+                foreach (var nId in startOrt.Verbindungen)
+                    AktuelleGenerierteKarte.FreigeschalteteOrte.Add(nId);
+            }
+        }
+        LetzterArenaLeiter = null;
+        Phase = SpielPhase.Weltkarte;
+        Notify();
+    }
+
+    /// <summary>Liga-Abschluss: zum Hauptmenü zurück.</summary>
+    public async Task LigaAbschlussHauptmenü(bool spielstandSpeichern)
+    {
+        if (spielstandSpeichern)
+            await SpielstandSpeichern();
+        Phase = SpielPhase.Hauptmenü;
         Notify();
     }
 

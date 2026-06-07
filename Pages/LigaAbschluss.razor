@@ -1,0 +1,198 @@
+@using MonsterKampf.Services
+@using MonsterKampf.Models
+@inject GameService Game
+@implements IDisposable
+
+<div class="liga-abschluss-container">
+    <div class="liga-abschluss-box">
+
+        @if (schritt == 0)
+        {
+            <!-- Glückwunsch-Screen -->
+            <div class="liga-glueckwunsch">
+                <div class="liga-konfetti">🎉🏆🎉</div>
+                <h1 class="liga-titel">Glückwunsch!</h1>
+                <p class="liga-untertitel">Du hast es geschafft!</p>
+                @if (Game.LetzterArenaLeiter?.Arena != null)
+                {
+                    <div class="liga-champion-info">
+                        <span class="liga-champion-name">@(Game.LetzterArenaLeiter.Arena.Leiter ?? "Champion")</span>
+                        <span class="liga-champion-label">wurde besiegt!</span>
+                    </div>
+                }
+                <div class="liga-stats">
+                    <div class="liga-stat">
+                        <span class="liga-stat-zahl">@Game.Spieler.Orden.Count</span>
+                        <span class="liga-stat-label">Orden</span>
+                    </div>
+                    <div class="liga-stat">
+                        <span class="liga-stat-zahl">@Game.Spieler.Team.Count</span>
+                        <span class="liga-stat-label">Monster</span>
+                    </div>
+                    <div class="liga-stat">
+                        <span class="liga-stat-zahl">@Game.Spieler.BesiegteTrainer.Count</span>
+                        <span class="liga-stat-label">Trainer</span>
+                    </div>
+                </div>
+                <p class="liga-profi-text">Du bist jetzt ein <strong>Pokémon-Profi</strong>! 🌟</p>
+                <button class="btn-liga-weiter" @onclick="WeiterKlick">
+                    Weiter →
+                </button>
+            </div>
+        }
+        else if (schritt == 1)
+        {
+            <!-- Entscheidung: Nächste Region oder Ende -->
+            @if (Game.HatNächsteRegion())
+            {
+                <div class="liga-entscheidung">
+                    <h2>🗺️ Nächste Region</h2>
+                    <p>Du kommst jetzt in die nächste Region!</p>
+                    @{
+                        var nächsteRegion = Game.GetNächsteRegion();
+                    }
+                    @if (nächsteRegion != null)
+                    {
+                        <div class="liga-naechste-region">
+                            <span class="liga-region-name">@nächsteRegion.Name</span>
+                        </div>
+                    }
+                    <button class="btn-liga-weiter" @onclick="NächsteRegionStarten">
+                        🚀 In die nächste Region!
+                    </button>
+                </div>
+            }
+            else
+            {
+                <!-- Letzte Region abgeschlossen: Hauptmenü oder Neustart -->
+                <div class="liga-ende-optionen">
+                    <h2>🏁 Abenteuer abgeschlossen!</h2>
+                    <p>Du hast alle Regionen bezwungen. Was möchtest du tun?</p>
+                    <div class="liga-optionen-grid">
+                        <div class="liga-option @(gewählteOption == "neustart" ? "ausgewaehlt" : "")"
+                             @onclick='() => gewählteOption = "neustart"'>
+                            <div class="liga-option-icon">🔄</div>
+                            <div class="liga-option-titel">Gleiche Map neu</div>
+                            <div class="liga-option-text">Starte die gleiche Karte von vorne</div>
+                        </div>
+                        <div class="liga-option @(gewählteOption == "hauptmenue" ? "ausgewaehlt" : "")"
+                             @onclick='() => gewählteOption = "hauptmenue"'>
+                            <div class="liga-option-icon">🏠</div>
+                            <div class="liga-option-titel">Hauptmenü</div>
+                            <div class="liga-option-text">Zurück zum Hauptmenü</div>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(gewählteOption))
+                    {
+                        <button class="btn-liga-weiter" @onclick="OptionBestätigen">
+                            Weiter →
+                        </button>
+                    }
+                </div>
+            }
+        }
+        else if (schritt == 2 && gewählteOption == "hauptmenue")
+        {
+            <!-- Spielstand speichern? -->
+            <div class="liga-speichern">
+                <h2>💾 Spielstand speichern?</h2>
+                <p>Möchtest du deinen Spielstand vor dem Verlassen speichern?</p>
+                <div class="liga-optionen-grid">
+                    <button class="btn-liga-ja" @onclick='() => ZumHauptmenü(true)'>
+                        ✅ Ja, speichern
+                    </button>
+                    <button class="btn-liga-nein" @onclick='() => ZumHauptmenü(false)'>
+                        ❌ Nein, nicht speichern
+                    </button>
+                </div>
+            </div>
+        }
+        else if (schritt == 2 && gewählteOption == "neustart")
+        {
+            <!-- Monster mitnehmen oder freilassen? -->
+            <div class="liga-monster-option">
+                <h2>🐾 Deine Monster</h2>
+                <p>Was soll mit deinen Monstern passieren?</p>
+                <div class="liga-monster-liste">
+                    @foreach (var mon in Game.Spieler.Team)
+                    {
+                        <div class="liga-monster-eintrag">
+                            <span class="liga-monster-emoji">@GetTypEmoji(mon.Typen.FirstOrDefault() ?? "")</span>
+                            <span class="liga-monster-name">@mon.AngezeigterName</span>
+                            <span class="liga-monster-level">Lv.@mon.Level</span>
+                        </div>
+                    }
+                </div>
+                <div class="liga-optionen-grid">
+                    <div class="liga-option @(monsterOption == "mitnehmen" ? "ausgewaehlt" : "")"
+                         @onclick='() => monsterOption = "mitnehmen"'>
+                        <div class="liga-option-icon">📦</div>
+                        <div class="liga-option-titel">Mitnehmen</div>
+                        <div class="liga-option-text">Monster kommen in die Box</div>
+                    </div>
+                    <div class="liga-option @(monsterOption == "freilassen" ? "ausgewaehlt" : "")"
+                         @onclick='() => monsterOption = "freilassen"'>
+                        <div class="liga-option-icon">🌿</div>
+                        <div class="liga-option-titel">Freilassen</div>
+                        <div class="liga-option-text">Monster werden gelöscht</div>
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(monsterOption))
+                {
+                    <button class="btn-liga-weiter" @onclick="NeustartBestätigen">
+                        ✅ Bestätigen und neu starten
+                    </button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private int schritt = 0;
+    private string gewählteOption = "";
+    private string monsterOption = "";
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+    }
+
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void WeiterKlick()
+    {
+        schritt = 1;
+    }
+
+    private void NächsteRegionStarten()
+    {
+        Game.LigaAbschlussNächsteRegion();
+    }
+
+    private void OptionBestätigen()
+    {
+        schritt = 2;
+    }
+
+    private async Task ZumHauptmenü(bool speichern)
+    {
+        await Game.LigaAbschlussHauptmenü(speichern);
+    }
+
+    private void NeustartBestätigen()
+    {
+        bool mitnehmen = monsterOption == "mitnehmen";
+        Game.LigaAbschlussNeustart(mitnehmen);
+    }
+
+    private string GetTypEmoji(string typ) => typ switch
+    {
+        "Feuer" => "🔥", "Wasser" => "💧", "Pflanze" or "Grass" => "🌿",
+        "Elektro" => "⚡", "Eis" => "❄️", "Kampf" => "🥊",
+        "Gift" => "☠️", "Boden" => "🌍", "Flug" => "🦅",
+        "Psycho" => "🔮", "Käfer" => "🐛", "Gestein" => "🪨",
+        "Geist" => "👻", "Drache" => "🐉", "Unlicht" => "🌑",
+        "Stahl" => "⚙️", "Fee" => "🧚", _ => "⭐"
+    };
+}
