@@ -90,14 +90,44 @@ public class KartenGenerator
             var regCfg = alleRegionen.FirstOrDefault(r => r.Id == regId);
             if (regCfg == null) continue;
 
-            var regionOrte = alleOrte
+                        var regionOrte = alleOrte
                 .Where(o => o.Id.StartsWith(regId + "-", StringComparison.OrdinalIgnoreCase))
                 .OrderBy(o => o.Id)
                 .ToList();
-
             if (!regionOrte.Any()) continue;
 
-            var kopien = regionOrte.Select(o => KopiereOrt(o, ordenOffset)).ToList();
+            // Arenen in fester Reihenfolge (nach OrdenNr), Nicht-Arenen zufällig mischen
+            var arenaOrte = regionOrte.Where(o => o.Arena != null)
+                .OrderBy(o => o.Arena!.OrdenNr).ToList();
+            var nichtArenaOrte = regionOrte.Where(o => o.Arena == null).ToList();
+            // Fisher-Yates Shuffle der Nicht-Arena-Orte
+            for (int s = nichtArenaOrte.Count - 1; s > 0; s--)
+            {
+                int j = rng.Next(s + 1);
+                (nichtArenaOrte[s], nichtArenaOrte[j]) = (nichtArenaOrte[j], nichtArenaOrte[s]);
+            }
+            // Orte zusammenbauen: Nicht-Arena-Orte gleichmäßig zwischen Arenen verteilen
+            var gemischteOrte = new List<Ort>();
+            int nichtArenaProAbschnitt = arenaOrte.Count > 0
+                ? nichtArenaOrte.Count / (arenaOrte.Count + 1)
+                : nichtArenaOrte.Count;
+            int nichtArenaIdx = 0;
+            // Orte vor erster Arena
+            int vorErsteArena = Math.Max(1, nichtArenaProAbschnitt);
+            for (int s = 0; s < vorErsteArena && nichtArenaIdx < nichtArenaOrte.Count; s++, nichtArenaIdx++)
+                gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx]);
+            foreach (var arena in arenaOrte)
+            {
+                gemischteOrte.Add(arena);
+                int anzahl = Math.Max(1, nichtArenaProAbschnitt);
+                for (int s = 0; s < anzahl && nichtArenaIdx < nichtArenaOrte.Count; s++, nichtArenaIdx++)
+                    gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx]);
+            }
+            // Übrige Nicht-Arena-Orte ans Ende
+            while (nichtArenaIdx < nichtArenaOrte.Count)
+                gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx++]);
+
+            var kopien = gemischteOrte.Select(o => KopiereOrt(o, ordenOffset)).ToList();
 
             foreach (var k in kopien)
             {
