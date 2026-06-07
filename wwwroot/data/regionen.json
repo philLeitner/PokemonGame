@@ -6,19 +6,137 @@
     "Farbe": "#e74c3c",
     "Emoji": "🔴",
     "BasisEbenen": 95,
-    "Starter": ["#001", "#004", "#007"],
-    "StarterNamen": ["Bisasam", "Glumanda", "Schiggy"],
+    "Starter": [
+      "#001",
+      "#004",
+      "#007"
+    ],
+    "StarterNamen": [
+      "Bisasam",
+      "Glumanda",
+      "Schiggy"
+    ],
     "Professor": "Prof. Eich",
     "ProfessorEmoji": "👨‍🔬",
     "Arenaleiter": [
-      { "Name": "Rocko", "Typ": "Gestein", "Orden": "Granitorden" },
-      { "Name": "Misty", "Typ": "Wasser", "Orden": "Kaskadenorden" },
-      { "Name": "Leutnant Surge", "Typ": "Elektro", "Orden": "Donnerorden" },
-      { "Name": "Erika", "Typ": "Pflanze", "Orden": "Regenbogenorden" },
-      { "Name": "Koga", "Typ": "Gift", "Orden": "Seelenorden" },
-      { "Name": "Sabrina", "Typ": "Psycho", "Orden": "Sumpforden" },
-      { "Name": "Pyro", "Typ": "Feuer", "Orden": "Vulkanorden" },
-      { "Name": "Giovanni", "Typ": "Boden", "Orden": "Erdorden" }
+      {
+        "Name": "Rocko",
+        "Typ": "Gestein",
+        "Orden": "Granitorden"
+      },
+      {
+        "Name": "Misty",
+        "Typ": "Wasser",
+        "Orden": "Kaskadenorden"
+      },
+      {
+        "Name": "Leutnant Surge",
+        "Typ": "Elektro",
+        "Orden": "Donnerorden"
+      },
+      {
+        "Name": "Erika",
+        "Typ": "Pflanze",
+        "Orden": "Regenbogenorden"
+      },
+      {
+        "Name": "Koga",
+        "Typ": "Gift",
+        "Orden": "Seelenorden"
+      },
+      {
+        "Name": "Sabrina",
+        "Typ": "Psycho",
+        "Orden": "Sumpforden"
+      },
+      {
+        "Name": "Pyro",
+        "Typ": "Feuer",
+        "Orden": "Vulkanorden"
+      },
+      {
+        "Name": "Giovanni",
+        "Typ": "Boden",
+        "Orden": "Erdorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0003",
+      "PKM-0004",
+      "PKM-0006",
+      "PKM-0007",
+      "PKM-0010",
+      "PKM-0013",
+      "PKM-0016",
+      "PKM-0019",
+      "PKM-0021",
+      "PKM-0023",
+      "PKM-0025",
+      "PKM-0027",
+      "PKM-0029",
+      "PKM-0032",
+      "PKM-0037",
+      "PKM-0041",
+      "PKM-0043",
+      "PKM-0046",
+      "PKM-0050",
+      "PKM-0052",
+      "PKM-0054",
+      "PKM-0056",
+      "PKM-0058",
+      "PKM-0060",
+      "PKM-0063",
+      "PKM-0066",
+      "PKM-0069",
+      "PKM-0072",
+      "PKM-0074",
+      "PKM-0077",
+      "PKM-0079",
+      "PKM-0081",
+      "PKM-0083",
+      "PKM-0084",
+      "PKM-0086",
+      "PKM-0088",
+      "PKM-0090",
+      "PKM-0092",
+      "PKM-0095",
+      "PKM-0098",
+      "PKM-0100",
+      "PKM-0102",
+      "PKM-0104",
+      "PKM-0105",
+      "PKM-0109",
+      "PKM-0111",
+      "PKM-0113",
+      "PKM-0114",
+      "PKM-0115",
+      "PKM-0120",
+      "PKM-0127",
+      "PKM-0130",
+      "PKM-0144",
+      "PKM-0145",
+      "PKM-0146",
+      "PKM-0147",
+      "PKM-0150",
+      "PKM-0154",
+      "PKM-0157",
+      "PKM-0160",
+      "PKM-0231",
+      "PKM-0246",
+      "PKM-0459",
+      "PKM-0495",
+      "PKM-0498",
+      "PKM-0501",
+      "PKM-0506",
+      "PKM-0551",
+      "PKM-0585",
+      "PKM-0650",
+      "PKM-0653",
+      "PKM-0656",
+      "PKM-0661",
+      "PKM-0704",
+      "PKM-0819"
     ]
   },
   {
@@ -28,19 +146,110 @@
     "Farbe": "#f39c12",
     "Emoji": "🟡",
     "BasisEbenen": 55,
-    "Starter": ["#152", "#155", "#158"],
-    "StarterNamen": ["Endivie", "Feurigel", "Karnimani"],
+    "Starter": [
+      "#152",
+      "#155",
+      "#158"
+    ],
+    "StarterNamen": [
+      "Endivie",
+      "Feurigel",
+      "Karnimani"
+    ],
     "Professor": "Prof. Birk",
     "ProfessorEmoji": "👴",
     "Arenaleiter": [
-      { "Name": "Falkner", "Typ": "Flug", "Orden": "Flügelorden" },
-      { "Name": "Bugsy", "Typ": "Käfer", "Orden": "Bienenorden" },
-      { "Name": "Whitney", "Typ": "Normal", "Orden": "Normalorden" },
-      { "Name": "Morty", "Typ": "Geist", "Orden": "Nebelorden" },
-      { "Name": "Chuck", "Typ": "Kampf", "Orden": "Sturmorden" },
-      { "Name": "Jasmine", "Typ": "Stahl", "Orden": "Mineralorden" },
-      { "Name": "Pryce", "Typ": "Eis", "Orden": "Gletscherorden" },
-      { "Name": "Clair", "Typ": "Drache", "Orden": "Aufstiegsorden" }
+      {
+        "Name": "Falkner",
+        "Typ": "Flug",
+        "Orden": "Flügelorden"
+      },
+      {
+        "Name": "Bugsy",
+        "Typ": "Käfer",
+        "Orden": "Bienenorden"
+      },
+      {
+        "Name": "Whitney",
+        "Typ": "Normal",
+        "Orden": "Normalorden"
+      },
+      {
+        "Name": "Morty",
+        "Typ": "Geist",
+        "Orden": "Nebelorden"
+      },
+      {
+        "Name": "Chuck",
+        "Typ": "Kampf",
+        "Orden": "Sturmorden"
+      },
+      {
+        "Name": "Jasmine",
+        "Typ": "Stahl",
+        "Orden": "Mineralorden"
+      },
+      {
+        "Name": "Pryce",
+        "Typ": "Eis",
+        "Orden": "Gletscherorden"
+      },
+      {
+        "Name": "Clair",
+        "Typ": "Drache",
+        "Orden": "Aufstiegsorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0010",
+      "PKM-0016",
+      "PKM-0017",
+      "PKM-0019",
+      "PKM-0025",
+      "PKM-0029",
+      "PKM-0032",
+      "PKM-0041",
+      "PKM-0054",
+      "PKM-0058",
+      "PKM-0059",
+      "PKM-0060",
+      "PKM-0062",
+      "PKM-0069",
+      "PKM-0072",
+      "PKM-0074",
+      "PKM-0111",
+      "PKM-0113",
+      "PKM-0115",
+      "PKM-0123",
+      "PKM-0127",
+      "PKM-0128",
+      "PKM-0129",
+      "PKM-0130",
+      "PKM-0131",
+      "PKM-0133",
+      "PKM-0147",
+      "PKM-0152",
+      "PKM-0155",
+      "PKM-0158",
+      "PKM-0161",
+      "PKM-0163",
+      "PKM-0183",
+      "PKM-0185",
+      "PKM-0187",
+      "PKM-0193",
+      "PKM-0194",
+      "PKM-0199",
+      "PKM-0207",
+      "PKM-0220",
+      "PKM-0231",
+      "PKM-0234",
+      "PKM-0236",
+      "PKM-0238",
+      "PKM-0241",
+      "PKM-0246",
+      "PKM-0249",
+      "PKM-0250"
     ]
   },
   {
@@ -50,19 +259,113 @@
     "Farbe": "#27ae60",
     "Emoji": "🟢",
     "BasisEbenen": 70,
-    "Starter": ["#252", "#255", "#258"],
-    "StarterNamen": ["Geckarbor", "Flemmli", "Hydropi"],
+    "Starter": [
+      "#252",
+      "#255",
+      "#258"
+    ],
+    "StarterNamen": [
+      "Geckarbor",
+      "Flemmli",
+      "Hydropi"
+    ],
     "Professor": "Prof. Birk",
     "ProfessorEmoji": "🧑‍🔬",
     "Arenaleiter": [
-      { "Name": "Roxanne", "Typ": "Gestein", "Orden": "Steinorden" },
-      { "Name": "Brawly", "Typ": "Kampf", "Orden": "Knöchelorden" },
-      { "Name": "Wattson", "Typ": "Elektro", "Orden": "Dynamoorden" },
-      { "Name": "Flannery", "Typ": "Feuer", "Orden": "Hitzorden" },
-      { "Name": "Norman", "Typ": "Normal", "Orden": "Gleichgewichtsorden" },
-      { "Name": "Winona", "Typ": "Flug", "Orden": "Federorden" },
-      { "Name": "Tate & Liza", "Typ": "Psycho", "Orden": "Geistorden" },
-      { "Name": "Juan", "Typ": "Wasser", "Orden": "Regenorden" }
+      {
+        "Name": "Roxanne",
+        "Typ": "Gestein",
+        "Orden": "Steinorden"
+      },
+      {
+        "Name": "Brawly",
+        "Typ": "Kampf",
+        "Orden": "Knöchelorden"
+      },
+      {
+        "Name": "Wattson",
+        "Typ": "Elektro",
+        "Orden": "Dynamoorden"
+      },
+      {
+        "Name": "Flannery",
+        "Typ": "Feuer",
+        "Orden": "Hitzorden"
+      },
+      {
+        "Name": "Norman",
+        "Typ": "Normal",
+        "Orden": "Gleichgewichtsorden"
+      },
+      {
+        "Name": "Winona",
+        "Typ": "Flug",
+        "Orden": "Federorden"
+      },
+      {
+        "Name": "Tate & Liza",
+        "Typ": "Psycho",
+        "Orden": "Geistorden"
+      },
+      {
+        "Name": "Juan",
+        "Typ": "Wasser",
+        "Orden": "Regenorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0019",
+      "PKM-0072",
+      "PKM-0111",
+      "PKM-0113",
+      "PKM-0115",
+      "PKM-0127",
+      "PKM-0147",
+      "PKM-0227",
+      "PKM-0231",
+      "PKM-0246",
+      "PKM-0252",
+      "PKM-0253",
+      "PKM-0254",
+      "PKM-0255",
+      "PKM-0256",
+      "PKM-0257",
+      "PKM-0258",
+      "PKM-0261",
+      "PKM-0263",
+      "PKM-0270",
+      "PKM-0273",
+      "PKM-0278",
+      "PKM-0282",
+      "PKM-0285",
+      "PKM-0287",
+      "PKM-0300",
+      "PKM-0302",
+      "PKM-0304",
+      "PKM-0318",
+      "PKM-0322",
+      "PKM-0327",
+      "PKM-0328",
+      "PKM-0331",
+      "PKM-0333",
+      "PKM-0337",
+      "PKM-0338",
+      "PKM-0352",
+      "PKM-0353",
+      "PKM-0355",
+      "PKM-0357",
+      "PKM-0359",
+      "PKM-0361",
+      "PKM-0363",
+      "PKM-0369",
+      "PKM-0371",
+      "PKM-0377",
+      "PKM-0378",
+      "PKM-0379",
+      "PKM-0382",
+      "PKM-0383",
+      "PKM-0384"
     ]
   },
   {
@@ -72,19 +375,87 @@
     "Farbe": "#2980b9",
     "Emoji": "🔵",
     "BasisEbenen": 63,
-    "Starter": ["#387", "#390", "#393"],
-    "StarterNamen": ["Chelast", "Panflam", "Plinfa"],
+    "Starter": [
+      "#387",
+      "#390",
+      "#393"
+    ],
+    "StarterNamen": [
+      "Chelast",
+      "Panflam",
+      "Plinfa"
+    ],
     "Professor": "Prof. Eibe",
     "ProfessorEmoji": "👩‍🔬",
     "Arenaleiter": [
-      { "Name": "Rocko", "Typ": "Gestein", "Orden": "Kohleorden" },
-      { "Name": "Gardenia", "Typ": "Pflanze", "Orden": "Waldorden" },
-      { "Name": "Maylene", "Typ": "Kampf", "Orden": "Kobalorden" },
-      { "Name": "Crasher Wake", "Typ": "Wasser", "Orden": "Wellenbrechorden" },
-      { "Name": "Fantina", "Typ": "Geist", "Orden": "Reliktorden" },
-      { "Name": "Byron", "Typ": "Stahl", "Orden": "Mineorden" },
-      { "Name": "Candice", "Typ": "Eis", "Orden": "Eisorden" },
-      { "Name": "Volkner", "Typ": "Elektro", "Orden": "Leuchtturmorden" }
+      {
+        "Name": "Rocko",
+        "Typ": "Gestein",
+        "Orden": "Kohleorden"
+      },
+      {
+        "Name": "Gardenia",
+        "Typ": "Pflanze",
+        "Orden": "Waldorden"
+      },
+      {
+        "Name": "Maylene",
+        "Typ": "Kampf",
+        "Orden": "Kobalorden"
+      },
+      {
+        "Name": "Crasher Wake",
+        "Typ": "Wasser",
+        "Orden": "Wellenbrechorden"
+      },
+      {
+        "Name": "Fantina",
+        "Typ": "Geist",
+        "Orden": "Reliktorden"
+      },
+      {
+        "Name": "Byron",
+        "Typ": "Stahl",
+        "Orden": "Mineorden"
+      },
+      {
+        "Name": "Candice",
+        "Typ": "Eis",
+        "Orden": "Eisorden"
+      },
+      {
+        "Name": "Volkner",
+        "Typ": "Elektro",
+        "Orden": "Leuchtturmorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0019",
+      "PKM-0041",
+      "PKM-0072",
+      "PKM-0092",
+      "PKM-0114",
+      "PKM-0220",
+      "PKM-0234",
+      "PKM-0304",
+      "PKM-0387",
+      "PKM-0389",
+      "PKM-0390",
+      "PKM-0392",
+      "PKM-0393",
+      "PKM-0396",
+      "PKM-0420",
+      "PKM-0436",
+      "PKM-0455",
+      "PKM-0459",
+      "PKM-0480",
+      "PKM-0481",
+      "PKM-0482",
+      "PKM-0483",
+      "PKM-0484",
+      "PKM-0485",
+      "PKM-0487"
     ]
   },
   {
@@ -94,19 +465,106 @@
     "Farbe": "#8e44ad",
     "Emoji": "🟣",
     "BasisEbenen": 42,
-    "Starter": ["#495", "#498", "#501"],
-    "StarterNamen": ["Serpifeu", "Floink", "Ottaro"],
+    "Starter": [
+      "#495",
+      "#498",
+      "#501"
+    ],
+    "StarterNamen": [
+      "Serpifeu",
+      "Floink",
+      "Ottaro"
+    ],
     "Professor": "Prof. Esche",
     "ProfessorEmoji": "🧓",
     "Arenaleiter": [
-      { "Name": "Chili/Cilan/Cress", "Typ": "Feuer/Pflanze/Wasser", "Orden": "Triorden" },
-      { "Name": "Lenora", "Typ": "Normal", "Orden": "Grundorden" },
-      { "Name": "Burgh", "Typ": "Käfer", "Orden": "Insektenorden" },
-      { "Name": "Elesa", "Typ": "Elektro", "Orden": "Voltorden" },
-      { "Name": "Clay", "Typ": "Boden", "Orden": "Quaderorden" },
-      { "Name": "Skyla", "Typ": "Flug", "Orden": "Jetorden" },
-      { "Name": "Brycen", "Typ": "Eis", "Orden": "Gefrierorden" },
-      { "Name": "Iris/Drayden", "Typ": "Drache", "Orden": "Legendenorden" }
+      {
+        "Name": "Chili/Cilan/Cress",
+        "Typ": "Feuer/Pflanze/Wasser",
+        "Orden": "Triorden"
+      },
+      {
+        "Name": "Lenora",
+        "Typ": "Normal",
+        "Orden": "Grundorden"
+      },
+      {
+        "Name": "Burgh",
+        "Typ": "Käfer",
+        "Orden": "Insektenorden"
+      },
+      {
+        "Name": "Elesa",
+        "Typ": "Elektro",
+        "Orden": "Voltorden"
+      },
+      {
+        "Name": "Clay",
+        "Typ": "Boden",
+        "Orden": "Quaderorden"
+      },
+      {
+        "Name": "Skyla",
+        "Typ": "Flug",
+        "Orden": "Jetorden"
+      },
+      {
+        "Name": "Brycen",
+        "Typ": "Eis",
+        "Orden": "Gefrierorden"
+      },
+      {
+        "Name": "Iris/Drayden",
+        "Typ": "Drache",
+        "Orden": "Legendenorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0016",
+      "PKM-0019",
+      "PKM-0021",
+      "PKM-0023",
+      "PKM-0027",
+      "PKM-0039",
+      "PKM-0043",
+      "PKM-0052",
+      "PKM-0056",
+      "PKM-0058",
+      "PKM-0060",
+      "PKM-0072",
+      "PKM-0081",
+      "PKM-0109",
+      "PKM-0459",
+      "PKM-0495",
+      "PKM-0498",
+      "PKM-0501",
+      "PKM-0504",
+      "PKM-0506",
+      "PKM-0509",
+      "PKM-0511",
+      "PKM-0517",
+      "PKM-0519",
+      "PKM-0551",
+      "PKM-0554",
+      "PKM-0562",
+      "PKM-0571",
+      "PKM-0585",
+      "PKM-0599",
+      "PKM-0602",
+      "PKM-0613",
+      "PKM-0621",
+      "PKM-0635",
+      "PKM-0637",
+      "PKM-0638",
+      "PKM-0643",
+      "PKM-0644",
+      "PKM-0646",
+      "PKM-0650",
+      "PKM-0653",
+      "PKM-0656",
+      "PKM-0661",
+      "PKM-0819"
     ]
   },
   {
@@ -116,19 +574,102 @@
     "Farbe": "#16a085",
     "Emoji": "🩵",
     "BasisEbenen": 36,
-    "Starter": ["#650", "#653", "#656"],
-    "StarterNamen": ["Igamaro", "Fynx", "Froxy"],
+    "Starter": [
+      "#650",
+      "#653",
+      "#656"
+    ],
+    "StarterNamen": [
+      "Igamaro",
+      "Fynx",
+      "Froxy"
+    ],
     "Professor": "Prof. Platan",
     "ProfessorEmoji": "👨‍💼",
     "Arenaleiter": [
-      { "Name": "Viola", "Typ": "Käfer", "Orden": "Insektenorden" },
-      { "Name": "Grant", "Typ": "Gestein", "Orden": "Klippen orden" },
-      { "Name": "Korrina", "Typ": "Kampf", "Orden": "Rollschuhoroden" },
-      { "Name": "Ramos", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
-      { "Name": "Clemont", "Typ": "Elektro", "Orden": "Voltorden" },
-      { "Name": "Valerie", "Typ": "Fee", "Orden": "Feenorden" },
-      { "Name": "Olympia", "Typ": "Psycho", "Orden": "Psychoorden" },
-      { "Name": "Wulfric", "Typ": "Eis", "Orden": "Eisorden" }
+      {
+        "Name": "Viola",
+        "Typ": "Käfer",
+        "Orden": "Insektenorden"
+      },
+      {
+        "Name": "Grant",
+        "Typ": "Gestein",
+        "Orden": "Klippen orden"
+      },
+      {
+        "Name": "Korrina",
+        "Typ": "Kampf",
+        "Orden": "Rollschuhoroden"
+      },
+      {
+        "Name": "Ramos",
+        "Typ": "Pflanze",
+        "Orden": "Pflanzenorden"
+      },
+      {
+        "Name": "Clemont",
+        "Typ": "Elektro",
+        "Orden": "Voltorden"
+      },
+      {
+        "Name": "Valerie",
+        "Typ": "Fee",
+        "Orden": "Feenorden"
+      },
+      {
+        "Name": "Olympia",
+        "Typ": "Psycho",
+        "Orden": "Psychoorden"
+      },
+      {
+        "Name": "Wulfric",
+        "Typ": "Eis",
+        "Orden": "Eisorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0010",
+      "PKM-0016",
+      "PKM-0019",
+      "PKM-0021",
+      "PKM-0023",
+      "PKM-0025",
+      "PKM-0027",
+      "PKM-0039",
+      "PKM-0043",
+      "PKM-0052",
+      "PKM-0056",
+      "PKM-0058",
+      "PKM-0060",
+      "PKM-0069",
+      "PKM-0072",
+      "PKM-0081",
+      "PKM-0249",
+      "PKM-0352",
+      "PKM-0459",
+      "PKM-0460",
+      "PKM-0495",
+      "PKM-0498",
+      "PKM-0501",
+      "PKM-0504",
+      "PKM-0506",
+      "PKM-0509",
+      "PKM-0551",
+      "PKM-0571",
+      "PKM-0585",
+      "PKM-0650",
+      "PKM-0653",
+      "PKM-0656",
+      "PKM-0661",
+      "PKM-0696",
+      "PKM-0698",
+      "PKM-0704",
+      "PKM-0716",
+      "PKM-0717",
+      "PKM-0718",
+      "PKM-0819"
     ]
   },
   {
@@ -138,19 +679,88 @@
     "Farbe": "#e67e22",
     "Emoji": "🟠",
     "BasisEbenen": 28,
-    "Starter": ["#722", "#725", "#728"],
-    "StarterNamen": ["Bauz", "Flamiau", "Robball"],
+    "Starter": [
+      "#722",
+      "#725",
+      "#728"
+    ],
+    "StarterNamen": [
+      "Bauz",
+      "Flamiau",
+      "Robball"
+    ],
     "Professor": "Prof. Kukui",
     "ProfessorEmoji": "🏄",
     "Arenaleiter": [
-      { "Name": "Ilima", "Typ": "Normal", "Orden": "Normalorden" },
-      { "Name": "Lana", "Typ": "Wasser", "Orden": "Wasserorden" },
-      { "Name": "Kiawe", "Typ": "Feuer", "Orden": "Feuerorden" },
-      { "Name": "Mallow", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
-      { "Name": "Sophocles", "Typ": "Elektro", "Orden": "Elektroorden" },
-      { "Name": "Acerola", "Typ": "Geist", "Orden": "Geistorden" },
-      { "Name": "Nanu", "Typ": "Unlicht", "Orden": "Unlichtorden" },
-      { "Name": "Hapu", "Typ": "Boden", "Orden": "Bodenorden" }
+      {
+        "Name": "Ilima",
+        "Typ": "Normal",
+        "Orden": "Normalorden"
+      },
+      {
+        "Name": "Lana",
+        "Typ": "Wasser",
+        "Orden": "Wasserorden"
+      },
+      {
+        "Name": "Kiawe",
+        "Typ": "Feuer",
+        "Orden": "Feuerorden"
+      },
+      {
+        "Name": "Mallow",
+        "Typ": "Pflanze",
+        "Orden": "Pflanzenorden"
+      },
+      {
+        "Name": "Sophocles",
+        "Typ": "Elektro",
+        "Orden": "Elektroorden"
+      },
+      {
+        "Name": "Acerola",
+        "Typ": "Geist",
+        "Orden": "Geistorden"
+      },
+      {
+        "Name": "Nanu",
+        "Typ": "Unlicht",
+        "Orden": "Unlichtorden"
+      },
+      {
+        "Name": "Hapu",
+        "Typ": "Boden",
+        "Orden": "Bodenorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0019",
+      "PKM-0020",
+      "PKM-0058",
+      "PKM-0105",
+      "PKM-0551",
+      "PKM-0621",
+      "PKM-0722",
+      "PKM-0725",
+      "PKM-0728",
+      "PKM-0734",
+      "PKM-0735",
+      "PKM-0738",
+      "PKM-0742",
+      "PKM-0744",
+      "PKM-0746",
+      "PKM-0753",
+      "PKM-0754",
+      "PKM-0757",
+      "PKM-0758",
+      "PKM-0778",
+      "PKM-0782",
+      "PKM-0784",
+      "PKM-0785",
+      "PKM-0786",
+      "PKM-0787",
+      "PKM-0788"
     ]
   },
   {
@@ -160,19 +770,78 @@
     "Farbe": "#c0392b",
     "Emoji": "❤️",
     "BasisEbenen": 40,
-    "Starter": ["#810", "#813", "#816"],
-    "StarterNamen": ["Zacian", "Grookey", "Scorbunny"],
+    "Starter": [
+      "#810",
+      "#813",
+      "#816"
+    ],
+    "StarterNamen": [
+      "Zacian",
+      "Grookey",
+      "Scorbunny"
+    ],
     "Professor": "Prof. Magnolia",
     "ProfessorEmoji": "👩‍💼",
     "Arenaleiter": [
-      { "Name": "Milo", "Typ": "Pflanze", "Orden": "Grasorden" },
-      { "Name": "Nessa", "Typ": "Wasser", "Orden": "Wasserorden" },
-      { "Name": "Kabu", "Typ": "Feuer", "Orden": "Feuerorden" },
-      { "Name": "Bea/Allister", "Typ": "Kampf/Geist", "Orden": "Kampforden" },
-      { "Name": "Opal", "Typ": "Fee", "Orden": "Feenorden" },
-      { "Name": "Gordie/Melony", "Typ": "Gestein/Eis", "Orden": "Steinorden" },
-      { "Name": "Piers", "Typ": "Unlicht", "Orden": "Unlichtorden" },
-      { "Name": "Raihan", "Typ": "Drache", "Orden": "Drachenorden" }
+      {
+        "Name": "Milo",
+        "Typ": "Pflanze",
+        "Orden": "Grasorden"
+      },
+      {
+        "Name": "Nessa",
+        "Typ": "Wasser",
+        "Orden": "Wasserorden"
+      },
+      {
+        "Name": "Kabu",
+        "Typ": "Feuer",
+        "Orden": "Feuerorden"
+      },
+      {
+        "Name": "Bea/Allister",
+        "Typ": "Kampf/Geist",
+        "Orden": "Kampforden"
+      },
+      {
+        "Name": "Opal",
+        "Typ": "Fee",
+        "Orden": "Feenorden"
+      },
+      {
+        "Name": "Gordie/Melony",
+        "Typ": "Gestein/Eis",
+        "Orden": "Steinorden"
+      },
+      {
+        "Name": "Piers",
+        "Typ": "Unlicht",
+        "Orden": "Unlichtorden"
+      },
+      {
+        "Name": "Raihan",
+        "Typ": "Drache",
+        "Orden": "Drachenorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0019",
+      "PKM-0263",
+      "PKM-0810",
+      "PKM-0812",
+      "PKM-0813",
+      "PKM-0815",
+      "PKM-0816",
+      "PKM-0819",
+      "PKM-0835",
+      "PKM-0838",
+      "PKM-0856",
+      "PKM-0859",
+      "PKM-0875",
+      "PKM-0888",
+      "PKM-0889",
+      "PKM-0890"
     ]
   },
   {
@@ -182,19 +851,78 @@
     "Farbe": "#1abc9c",
     "Emoji": "🌊",
     "BasisEbenen": 32,
-    "Starter": ["#906", "#909", "#912"],
-    "StarterNamen": ["Felori", "Krokel", "Kwaks"],
+    "Starter": [
+      "#906",
+      "#909",
+      "#912"
+    ],
+    "StarterNamen": [
+      "Felori",
+      "Krokel",
+      "Kwaks"
+    ],
     "Professor": "Prof. Platan",
     "ProfessorEmoji": "🎓",
     "Arenaleiter": [
-      { "Name": "Katy", "Typ": "Käfer", "Orden": "Käferorden" },
-      { "Name": "Brassius", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
-      { "Name": "Iono", "Typ": "Elektro", "Orden": "Elektroorden" },
-      { "Name": "Kofu", "Typ": "Wasser", "Orden": "Wasserorden" },
-      { "Name": "Larry", "Typ": "Normal", "Orden": "Normalorden" },
-      { "Name": "Ryme", "Typ": "Geist", "Orden": "Geistorden" },
-      { "Name": "Tulip", "Typ": "Psycho", "Orden": "Psychoorden" },
-      { "Name": "Grusha", "Typ": "Eis", "Orden": "Eisorden" }
+      {
+        "Name": "Katy",
+        "Typ": "Käfer",
+        "Orden": "Käferorden"
+      },
+      {
+        "Name": "Brassius",
+        "Typ": "Pflanze",
+        "Orden": "Pflanzenorden"
+      },
+      {
+        "Name": "Iono",
+        "Typ": "Elektro",
+        "Orden": "Elektroorden"
+      },
+      {
+        "Name": "Kofu",
+        "Typ": "Wasser",
+        "Orden": "Wasserorden"
+      },
+      {
+        "Name": "Larry",
+        "Typ": "Normal",
+        "Orden": "Normalorden"
+      },
+      {
+        "Name": "Ryme",
+        "Typ": "Geist",
+        "Orden": "Geistorden"
+      },
+      {
+        "Name": "Tulip",
+        "Typ": "Psycho",
+        "Orden": "Psychoorden"
+      },
+      {
+        "Name": "Grusha",
+        "Typ": "Eis",
+        "Orden": "Eisorden"
+      }
+    ],
+    "MonsterPool": [
+      "PKM-0001",
+      "PKM-0019",
+      "PKM-0872",
+      "PKM-0906",
+      "PKM-0907",
+      "PKM-0909",
+      "PKM-0910",
+      "PKM-0912",
+      "PKM-0921",
+      "PKM-0935",
+      "PKM-0950",
+      "PKM-0962",
+      "PKM-0968",
+      "PKM-0984",
+      "PKM-0990",
+      "PKM-1007",
+      "PKM-1008"
     ]
   }
 ]
