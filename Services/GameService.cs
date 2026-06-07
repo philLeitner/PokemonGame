@@ -588,6 +588,42 @@ public class GameService
                 return $"⛔ Liga-Zugang gesperrt! Du brauchst alle 8 Orden – es fehlen noch {fehlend}.";
         }
 
+        // ─── Generierter Modus: Boss-Zugang und Arenen-Reihenfolge prüfen ───
+        if (IstGenerierteKartenModus && AktuelleGenerierteKarte != null)
+        {
+            var karte = AktuelleGenerierteKarte;
+
+            // Boss-Zugang: braucht N Arenen besiegt UND alle vorherigen Bosse
+            if (ziel.Arena != null && karte.BossIds.Contains(zielOrtId))
+            {
+                int bossNr = karte.BossIds.IndexOf(zielOrtId); // 0-basiert
+                int benötigteArenen = (bossNr + 1) * karte.StädteProBoss;
+                int besiegteArenen = karte.BesiegteArenen.Count;
+                // Vorherige Bosse müssen alle besiegt sein
+                int vorherigeBosseBesiegt = karte.BossIds.Take(bossNr).Count(b => karte.BesiegteArenen.Contains(b));
+                if (vorherigeBosseBesiegt < bossNr)
+                    return $"⛔ Gesperrt! Zuerst Boss {vorherigeBosseBesiegt + 1} besiegen.";
+                if (besiegteArenen < benötigteArenen)
+                    return $"⛔ Gesperrt! Du brauchst {benötigteArenen} Arenen besiegt – du hast {besiegteArenen}.";
+            }
+
+            // Arenen-Reihenfolge: Arena N ist gesperrt wenn Arena N-1 noch nicht besiegt
+            if (ziel.Arena != null && karte.StadtIds.Contains(zielOrtId) && !karte.BossIds.Contains(zielOrtId))
+            {
+                int arenaIdx = karte.StadtIds.IndexOf(zielOrtId); // 0-basiert
+                if (arenaIdx > 0)
+                {
+                    string vorherige = karte.StadtIds[arenaIdx - 1];
+                    if (!karte.BesiegteArenen.Contains(vorherige))
+                    {
+                        var vorOrt = AlleOrte.FirstOrDefault(o => o.Id == vorherige);
+                        string vorName = vorOrt?.Name ?? $"Arena {arenaIdx}";
+                        return $"⛔ Gesperrt! Zuerst {vorName} besiegen.";
+                    }
+                }
+            }
+        }
+
         // Richtung vom aktuellen Ort zum Ziel bestimmen
         string? richtung = RichtungZumZiel(aktOrt, zielOrtId);
         if (richtung == null) return null; // kein direkter Nachbar → keine Richtungssperre

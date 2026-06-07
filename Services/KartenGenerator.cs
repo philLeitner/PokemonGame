@@ -70,10 +70,12 @@ public class GenerierteKarte
     public HashSet<string> BesiegteArenen { get; set; } = new();
     public Dictionary<string, (int X, int Y)> OrtKoordinaten { get; set; } = new();
     public Dictionary<string, int> OrtDistanzen { get; set; } = new();
-    public List<string> StadtIds { get; set; } = new();
+    public List<string> StadtIds { get; set; } = new();   // Arenen in Reihenfolge
     public List<string> BossIds { get; set; } = new();
     public List<string> StartIds { get; set; } = new();
     public int StädteProBoss { get; set; } = 3;
+    // Anzahl besiegter Arenen (Orden erhalten) – für Boss-Zugang und Reihenfolge
+    public int BesiegteArenenAnzahl => BesiegteArenen.Count;
 }
 
 // ─── Generator ───────────────────────────────────────────────────────────────
@@ -757,11 +759,13 @@ public class KartenGenerator
     private static void AddLocksAfterCities(List<Ebene> ebenen, int lockChance, Random rng)
     {
         foreach (var e in ebenen) e.Locks.Clear();
-        var cityIds = ebenen.Where(e => e.IstStadt).Select(e => e.Id).ToList();
+        var cityIds = ebenen.Where(e => e.IstStadt && !e.IstBoss).Select(e => e.Id).ToList();
         if (cityIds.Count == 0) return;
         var dist = CalcDistances(ebenen);
         var seen = new HashSet<string>();
 
+        // Alle Kanten sammeln und nach Tiefe sortieren (wie HTML v16)
+        var edges = new List<(int a, int b, string dir, int depth)>();
         foreach (var a in ebenen)
         {
             foreach (var (dir, b) in a.Exits)
@@ -771,14 +775,41 @@ public class KartenGenerator
                 seen.Add(k);
                 // Hauptpfad frei lassen
                 if (ebenen[a.Id].IstHauptpfad && ebenen[b].IstHauptpfad && Math.Abs(a.Id - b) == 1) continue;
-                if (!Chance(lockChance, rng)) continue;
                 int depth = Math.Max(dist.TryGetValue(a.Id, out int da) ? da : 0, dist.TryGetValue(b, out int db) ? db : 0);
-                var possible = cityIds.Where(c => (dist.TryGetValue(c, out int dc) ? dc : 0) < depth - 1).ToList();
-                if (possible.Count == 0) continue;
-                int lockCity = possible[rng.Next(possible.Count)];
-                ebenen[a.Id].Locks[dir] = lockCity;
-                ebenen[b].Locks[Opposite[dir]] = lockCity;
+                edges.Add((a.Id, b, dir, depth));
             }
+        }
+        edges.Sort((e1, e2) => e1.depth.CompareTo(e2.depth));
+
+        foreach (var (a, b, dir, depth) in edges)
+        {
+            if (!Chance(lockChance, rng)) continue;
+            var possible = cityIds.Where(c => (dist.TryGetValue(c, out int dc) ? dc : 0) < depth - 1).ToList();
+            if (possible.Count == 0) continue;
+            int lockCity = possible[rng.Next(possible.Count)];
+            ebenen[a].Locks[dir] = lockCity;
+            ebenen[b].Locks[Opposite[dir]] = lockCity;
+        }
+
+        // Jede Arena soll einen Sinn haben: ungenutzte Arenen bekommen nachträglich eine Sperre
+        var used = new HashSet<int>();
+        foreach (var e in ebenen)
+            foreach (var lk in e.Locks.Values)
+                used.Add(lk);
+
+        foreach (var city in cityIds)
+        {
+            if (used.Contains(city)) continue;
+            int cityDist = dist.TryGetValue(city, out int cd) ? cd : 0;
+            // Spätere Kante finden die noch keine Sperre hat
+            var later = edges.Where(e =>
+                e.depth > cityDist + 2 &&
+                !ebenen[e.a].Locks.ContainsKey(e.dir)).ToList();
+            if (later.Count == 0) continue;
+            var pick = later[rng.Next(later.Count)];
+            ebenen[pick.a].Locks[pick.dir] = city;
+            ebenen[pick.b].Locks[Opposite[pick.dir]] = city;
+            used.Add(city);
         }
     }
 
