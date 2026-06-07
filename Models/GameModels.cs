@@ -315,10 +315,11 @@ public class GesprächsNPC
 /// <summary>Sperre für eine einzelne Reiserichtung (Nord/Süd/Ost/West)</summary>
 public class RichtungsSperre
 {
-    public int MinOrden     { get; set; } = 0;    // 0 = kein Orden-Limit
-    public string? ItemId   { get; set; } = null; // Item-ID die benötigt wird
-    public string? ItemName { get; set; } = null; // Anzeigename des Items
-    public string? Hinweis  { get; set; } = null; // Freitext-Hinweis für den Spieler
+    public int MinOrden          { get; set; } = 0;    // 0 = kein Orden-Limit
+    public string? ItemId        { get; set; } = null; // Item-ID die benötigt wird
+    public string? ItemName      { get; set; } = null; // Anzeigename des Items
+    public string? Hinweis       { get; set; } = null; // Freitext-Hinweis für den Spieler
+    public string? BenötigtOrdenName { get; set; } = null; // Orden-Name der benötigt wird
 }
 
 public class Arena

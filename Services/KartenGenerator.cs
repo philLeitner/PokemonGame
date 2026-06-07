@@ -405,11 +405,15 @@ public class KartenGenerator
                     }
                     ort.Verbindungen.Add(nachbarOrtId);
                 }
-                // Sperren
+                // Sperren aus Locks (zufällige Seitenwege)
                 foreach (var (dir, lockEbId) in eb.Locks)
                 {
                     if (!ebeneZuOrt.TryGetValue(lockEbId, out var lockOrt)) continue;
-                    var sperre = new RichtungsSperre { Hinweis = $"Benötigt: {lockOrt.Name}" };
+                    // Sperre benötigt Orden der Arena (nicht nur Stadtbesuch)
+                    string? ordenName = lockOrt.Arena?.OrdenName;
+                    var sperre = ordenName != null
+                        ? new RichtungsSperre { BenötigtOrdenName = ordenName, Hinweis = $"Benötigt Orden: {ordenName}" }
+                        : new RichtungsSperre { Hinweis = $"Benötigt: {lockOrt.Name}" };
                     switch (dir)
                     {
                         case "up":    ort.SperrNord = sperre; break;
@@ -725,18 +729,27 @@ public class KartenGenerator
         {
             int boss = bossIds[i];
             int bossDist = dist.TryGetValue(boss, out int bd) ? bd : 0;
-            var candidates = ebenen[boss].Exits.Values
+
+            // Start N muss DIREKT nach Boss N sein (direkter Nachbar mit größerer Distanz)
+            var direkteNachbarn = ebenen[boss].Exits.Values
                 .Where(n => !ebenen[n].IstStadt && !ebenen[n].IstBoss && !ebenen[n].IstStart
                     && dist.TryGetValue(n, out int nd) && nd > bossDist)
                 .ToList();
-            if (candidates.Count == 0)
-                candidates = ebenen[boss].Exits.Values
-                    .Where(n => !ebenen[n].IstStadt && !ebenen[n].IstBoss && !ebenen[n].IstStart)
-                    .ToList();
-            candidates.Sort((a, b) =>
-                (dist.TryGetValue(a, out int da) ? da : 0)
-                .CompareTo(dist.TryGetValue(b, out int db) ? db : 0));
-            var pick = candidates.FirstOrDefault();
+
+            // Bevorzuge Nachbarn die noch nicht Start sind und weiter vorne liegen
+            direkteNachbarn.Sort((a, b) =>
+                (dist.TryGetValue(b, out int db) ? db : 0)
+                .CompareTo(dist.TryGetValue(a, out int da) ? da : 0));
+
+            var pick = direkteNachbarn.FirstOrDefault();
+
+            // Fallback: irgendeinen Nachbar des Bosses nehmen
+            if (pick == default)
+            {
+                pick = ebenen[boss].Exits.Values
+                    .FirstOrDefault(n => !ebenen[n].IstBoss && !ebenen[n].IstStart);
+            }
+
             if (pick != default) { ebenen[pick].IstStart = true; ebenen[pick].NachBoss = boss; }
         }
     }

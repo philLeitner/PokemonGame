@@ -603,18 +603,23 @@ public class GameService
         };
         if (richtungsSperre != null)
         {
-            // Hinweis-Sperre: braucht eine bestimmte Stadt (generierter Modus)
-            if (!string.IsNullOrEmpty(richtungsSperre.Hinweis))
+            // Orden-Sperre: benötigt bestimmten Orden (Arena besiegt)
+            if (!string.IsNullOrEmpty(richtungsSperre.BenötigtOrdenName))
             {
-                // Ort-Name aus Hinweis extrahieren ("Benötigt: Stadt X")
-                string benötigteName = richtungsSperre.Hinweis.Replace("Benötigt: ", "").Trim();
-                // Prüfen ob der Spieler diesen Ort schon besucht/besiegt hat
+                if (!Spieler.Orden.Contains(richtungsSperre.BenötigtOrdenName))
+                    return $"⛔ Gesperrt! Du brauchst den Orden: {richtungsSperre.BenötigtOrdenName}";
+            }
+            // Hinweis-Sperre (Fallback: alte Logik)
+            else if (!string.IsNullOrEmpty(richtungsSperre.Hinweis) && richtungsSperre.BenötigtOrdenName == null)
+            {
+                string benötigteName = richtungsSperre.Hinweis
+                    .Replace("Benötigt Orden: ", "")
+                    .Replace("Benötigt: ", "").Trim();
                 var benötigtOrt = AlleOrte.FirstOrDefault(o => o.Name == benötigteName);
-                bool stadtGefunden = benötigtOrt != null &&
-                    ((AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(benötigtOrt.Id) == true) ||
-                     (benötigtOrt.Arena != null && Spieler.Orden.Contains(benötigtOrt.Arena.OrdenName)));
-                if (!stadtGefunden)
-                    return $"⛔ Gesperrt! Du brauchst zuerst: {benötigteName}";
+                bool gefunden = benötigtOrt != null &&
+                    (benötigtOrt.Arena != null && Spieler.Orden.Contains(benötigtOrt.Arena.OrdenName));
+                if (!gefunden)
+                    return $"⛔ Gesperrt! Zuerst Arena besiegen: {benötigteName}";
             }
             // Item-Sperre
             if (!string.IsNullOrEmpty(richtungsSperre.ItemId))
@@ -645,15 +650,24 @@ public class GameService
                 "West" => ziel.SperrWest,
                 _      => null
             };
-            if (zielSperre != null && !string.IsNullOrEmpty(zielSperre.Hinweis))
+            if (zielSperre != null)
             {
-                string benötigteName2 = zielSperre.Hinweis.Replace("Benötigt: ", "").Trim();
-                var benötigtOrt2 = AlleOrte.FirstOrDefault(o => o.Name == benötigteName2);
-                bool stadtGefunden2 = benötigtOrt2 != null &&
-                    ((AktuelleGenerierteKarte?.FreigeschalteteOrte.Contains(benötigtOrt2.Id) == true) ||
-                     (benötigtOrt2.Arena != null && Spieler.Orden.Contains(benötigtOrt2.Arena.OrdenName)));
-                if (!stadtGefunden2)
-                    return $"⛔ Gesperrt! Du brauchst zuerst: {benötigteName2}";
+                if (!string.IsNullOrEmpty(zielSperre.BenötigtOrdenName))
+                {
+                    if (!Spieler.Orden.Contains(zielSperre.BenötigtOrdenName))
+                        return $"⛔ Gesperrt! Du brauchst den Orden: {zielSperre.BenötigtOrdenName}";
+                }
+                else if (!string.IsNullOrEmpty(zielSperre.Hinweis))
+                {
+                    string benötigteName2 = zielSperre.Hinweis
+                        .Replace("Benötigt Orden: ", "")
+                        .Replace("Benötigt: ", "").Trim();
+                    var benötigtOrt2 = AlleOrte.FirstOrDefault(o => o.Name == benötigteName2);
+                    bool gefunden2 = benötigtOrt2 != null &&
+                        (benötigtOrt2.Arena != null && Spieler.Orden.Contains(benötigtOrt2.Arena.OrdenName));
+                    if (!gefunden2)
+                        return $"⛔ Gesperrt! Zuerst Arena besiegen: {benötigteName2}";
+                }
             }
         }
 
