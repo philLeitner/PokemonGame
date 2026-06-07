@@ -280,6 +280,53 @@ public class KartenGenerator
 
     private static Ort KopiereOrt(Ort original, int ordenOffset)
     {
+        // TIEFE KOPIE: WildMonster, Trainer-Teams und Arena werden neu erstellt
+        // damit der Generator die Level ändern kann ohne die Originaldaten zu verändern
+        var wildKopie = original.WildMonster?
+            .Select(w => new WildBegegnung
+            {
+                MonsterId = w.MonsterId,
+                MinLevel  = w.MinLevel,
+                MaxLevel  = w.MaxLevel,
+                Chance    = w.Chance
+            }).ToList();
+
+        var trainerKopie = original.Trainer?
+            .Select(t => new TrainerKampf
+            {
+                Id           = t.Id,
+                Name         = t.Name,
+                Klasse       = t.Klasse,
+                Belohnung    = t.Belohnung,
+                Dialogvor    = t.Dialogvor,
+                DialogNach   = t.DialogNach,
+                MussBesiegt  = t.MussBesiegt,
+                SperrtRichtung = t.SperrtRichtung,
+                Team = t.Team.Select(m => new MonsterTeamEintrag
+                {
+                    MonsterId = m.MonsterId,
+                    Level     = m.Level
+                }).ToList()
+            }).ToList();
+
+        Arena? arenaKopie = null;
+        if (original.Arena != null)
+        {
+            arenaKopie = new Arena
+            {
+                OrdenName          = original.Arena.OrdenName,
+                OrdenNr            = original.Arena.OrdenNr + ordenOffset,
+                Leiter             = original.Arena.Leiter,
+                TypSpezialisierung = original.Arena.TypSpezialisierung,
+                Beschreibung       = original.Arena.Beschreibung,
+                Team = original.Arena.Team.Select(m => new MonsterTeamEintrag
+                {
+                    MonsterId = m.MonsterId,
+                    Level     = m.Level
+                }).ToList()
+            };
+        }
+
         return new Ort
         {
             Id               = original.Id,
@@ -289,10 +336,10 @@ public class KartenGenerator
             GridX            = original.GridX,
             GridY            = original.GridY,
             Beschreibung     = original.Beschreibung,
-            Arena            = original.Arena,
-            WildMonster      = original.WildMonster,
+            Arena            = arenaKopie,
+            WildMonster      = wildKopie,
             Verbindungen     = new List<string>(),
-            Trainer          = original.Trainer,
+            Trainer          = trainerKopie,
             HatMonsterCenter = original.HatMonsterCenter,
             HatMarkt         = original.HatMarkt,
             MarktAngebot     = original.MarktAngebot,
