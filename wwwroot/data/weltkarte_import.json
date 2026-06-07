@@ -84,7 +84,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "KAN-0002",
@@ -191,7 +192,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0003",
@@ -375,7 +377,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0007",
@@ -524,7 +527,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0011",
@@ -714,7 +718,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0016",
@@ -916,7 +921,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0028",
@@ -1082,7 +1088,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0036",
@@ -1233,7 +1240,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0041",
@@ -1387,7 +1395,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0004",
@@ -1532,7 +1541,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0005",
@@ -1651,7 +1661,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0006",
@@ -1804,7 +1815,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0008",
@@ -1967,7 +1979,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0009",
@@ -2130,7 +2143,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0010",
@@ -2244,7 +2258,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0012",
@@ -2391,7 +2406,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0013",
@@ -2498,7 +2514,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0014",
@@ -2617,7 +2634,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0015",
@@ -2736,7 +2754,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0017",
@@ -2856,7 +2875,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0018",
@@ -2969,7 +2989,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0019",
@@ -3093,7 +3114,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0020",
@@ -3212,7 +3234,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0021",
@@ -3325,7 +3348,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0022",
@@ -3461,7 +3485,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0023",
@@ -3573,7 +3598,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0024",
@@ -3748,7 +3774,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0025",
@@ -3868,7 +3895,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0026",
@@ -3988,7 +4016,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0027",
@@ -4107,7 +4136,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0029",
@@ -4235,7 +4265,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0030",
@@ -4347,7 +4378,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0031",
@@ -4482,7 +4514,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0032",
@@ -4595,7 +4628,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0033",
@@ -4737,7 +4771,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0034",
@@ -4878,7 +4913,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0035",
@@ -4997,7 +5033,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0037",
@@ -5115,7 +5152,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0038",
@@ -5229,7 +5267,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0039",
@@ -5342,7 +5381,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0040",
@@ -5457,7 +5497,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0043",
@@ -5570,7 +5611,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0044",
@@ -5717,7 +5759,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0045",
@@ -5848,7 +5891,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0047",
@@ -5955,7 +5999,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0050",
@@ -6102,7 +6147,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0051",
@@ -6321,7 +6367,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0052",
@@ -6560,7 +6607,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0053",
@@ -6638,7 +6686,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0054",
@@ -6754,7 +6803,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0055",
@@ -6870,7 +6920,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0056",
@@ -6986,7 +7037,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0057",
@@ -7102,7 +7154,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0058",
@@ -7218,7 +7271,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0059",
@@ -7334,7 +7388,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0060",
@@ -7472,7 +7527,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0001",
@@ -7562,7 +7618,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "JOH-0002",
@@ -7664,7 +7721,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0003",
@@ -7811,7 +7869,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0004",
@@ -7930,7 +7989,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0005",
@@ -8049,7 +8109,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0006",
@@ -8237,7 +8298,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0008",
@@ -8357,7 +8419,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0009",
@@ -8476,7 +8539,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0010",
@@ -8592,7 +8656,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0011",
@@ -8711,7 +8776,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0012",
@@ -8803,7 +8869,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0014",
@@ -8921,7 +8988,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0015",
@@ -9020,7 +9088,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0016",
@@ -9133,7 +9202,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0018",
@@ -9257,7 +9327,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0019",
@@ -9377,7 +9448,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0020",
@@ -9502,7 +9574,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0021",
@@ -9593,7 +9666,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0022",
@@ -9729,7 +9803,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0023",
@@ -9882,7 +9957,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0025",
@@ -10000,7 +10076,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0026",
@@ -10118,7 +10195,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0027",
@@ -10237,7 +10315,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0028",
@@ -10350,7 +10429,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0030",
@@ -10428,7 +10508,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0031",
@@ -10558,7 +10639,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0032",
@@ -10684,7 +10766,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0033",
@@ -10809,7 +10892,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0035",
@@ -10928,7 +11012,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0036",
@@ -11024,7 +11109,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0037",
@@ -11140,7 +11226,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0038",
@@ -11258,7 +11345,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0039",
@@ -11356,7 +11444,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0040",
@@ -11475,7 +11564,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0042",
@@ -11593,7 +11683,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0043",
@@ -11712,7 +11803,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0044",
@@ -11830,7 +11922,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0045",
@@ -11949,7 +12042,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0046",
@@ -12068,7 +12162,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0047",
@@ -12209,7 +12304,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0048",
@@ -12299,7 +12395,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0049",
@@ -12358,7 +12455,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0050",
@@ -12416,7 +12514,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0051",
@@ -12466,7 +12565,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0052",
@@ -12524,7 +12624,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0053",
@@ -12572,7 +12673,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0054",
@@ -12621,7 +12723,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0055",
@@ -12860,7 +12963,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0056",
@@ -12976,7 +13080,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0057",
@@ -13024,7 +13129,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0058",
@@ -13072,7 +13178,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0059",
@@ -13121,7 +13228,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "JOH-0060",
@@ -13167,7 +13275,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0001",
@@ -13258,7 +13367,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "HOE-0002",
@@ -13396,7 +13506,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0003",
@@ -13516,7 +13627,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0004",
@@ -13632,7 +13744,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0005",
@@ -13751,7 +13864,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0007",
@@ -13868,7 +13982,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0008",
@@ -14012,7 +14127,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0010",
@@ -14137,7 +14253,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0011",
@@ -14263,7 +14380,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0012",
@@ -14388,7 +14506,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0013",
@@ -14491,7 +14610,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0014",
@@ -14622,7 +14742,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0016",
@@ -14862,7 +14983,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0017",
@@ -14981,7 +15103,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0018",
@@ -15100,7 +15223,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0019",
@@ -15219,7 +15343,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0020",
@@ -15337,7 +15462,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0021",
@@ -15456,7 +15582,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0023",
@@ -15575,7 +15702,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0024",
@@ -15693,7 +15821,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0025",
@@ -15812,7 +15941,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0026",
@@ -15930,7 +16060,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0027",
@@ -16050,7 +16181,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0028",
@@ -16170,7 +16302,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0029",
@@ -16289,7 +16422,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0030",
@@ -16396,7 +16530,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0031",
@@ -16515,7 +16650,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0033",
@@ -16634,7 +16770,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0034",
@@ -16753,7 +16890,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0035",
@@ -16872,7 +17010,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0036",
@@ -16991,7 +17130,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0037",
@@ -17110,7 +17250,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0038",
@@ -17234,7 +17375,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0040",
@@ -17354,7 +17496,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0041",
@@ -17466,7 +17609,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0042",
@@ -17580,7 +17724,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0043",
@@ -17677,7 +17822,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0044",
@@ -17790,7 +17936,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0045",
@@ -17902,7 +18049,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0046",
@@ -18014,7 +18162,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0047",
@@ -18133,7 +18282,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0048",
@@ -18251,7 +18401,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0049",
@@ -18370,7 +18521,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0050",
@@ -18489,7 +18641,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0052",
@@ -18608,7 +18761,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0053",
@@ -18726,7 +18880,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0054",
@@ -18845,7 +19000,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0055",
@@ -18989,7 +19145,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0056",
@@ -19107,7 +19264,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0057",
@@ -19226,7 +19384,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0058",
@@ -19345,7 +19504,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0059",
@@ -19452,7 +19612,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0060",
@@ -19571,7 +19732,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0061",
@@ -19690,7 +19852,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0062",
@@ -19809,7 +19972,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0063",
@@ -19928,7 +20092,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0064",
@@ -20053,7 +20218,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0065",
@@ -20172,7 +20338,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0066",
@@ -20291,7 +20458,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0067",
@@ -20409,7 +20577,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0068",
@@ -20474,7 +20643,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0069",
@@ -20522,7 +20692,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0070",
@@ -20620,7 +20791,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0071",
@@ -20859,7 +21031,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0072",
@@ -20925,7 +21098,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0073",
@@ -20971,7 +21145,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "HOE-0074",
@@ -21028,7 +21203,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0001",
@@ -21118,7 +21294,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "SIN-0002",
@@ -21257,7 +21434,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0003",
@@ -21375,7 +21553,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0004",
@@ -21497,7 +21676,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0005",
@@ -21622,7 +21802,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0006",
@@ -21745,7 +21926,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0007",
@@ -21870,7 +22052,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0008",
@@ -21991,7 +22174,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0010",
@@ -22111,7 +22295,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0011",
@@ -22246,7 +22431,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0012",
@@ -22369,7 +22555,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0013",
@@ -22609,7 +22796,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0014",
@@ -22733,7 +22921,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0015",
@@ -22852,7 +23041,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0016",
@@ -22968,7 +23158,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0018",
@@ -23086,7 +23277,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0019",
@@ -23205,7 +23397,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0020",
@@ -23328,7 +23521,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0021",
@@ -23445,7 +23639,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0022",
@@ -23564,7 +23759,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0024",
@@ -23683,7 +23879,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0025",
@@ -23801,7 +23998,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0026",
@@ -23920,7 +24118,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0027",
@@ -24038,7 +24237,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0028",
@@ -24158,7 +24358,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0029",
@@ -24257,7 +24458,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0030",
@@ -24377,7 +24579,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0031",
@@ -24496,7 +24699,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0033",
@@ -24614,7 +24818,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0034",
@@ -24733,7 +24938,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0035",
@@ -24852,7 +25058,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0037",
@@ -24972,7 +25179,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0038",
@@ -25091,7 +25299,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0039",
@@ -25210,7 +25419,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0040",
@@ -25329,7 +25539,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0041",
@@ -25449,7 +25660,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0042",
@@ -25567,7 +25779,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0044",
@@ -25685,7 +25898,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0045",
@@ -25804,7 +26018,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0047",
@@ -25922,7 +26137,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0048",
@@ -26040,7 +26256,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0049",
@@ -26160,7 +26377,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0050",
@@ -26279,7 +26497,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0051",
@@ -26419,7 +26638,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0052",
@@ -26543,7 +26763,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0053",
@@ -26661,7 +26882,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0054",
@@ -26900,7 +27122,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0055",
@@ -27018,7 +27241,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0056",
@@ -27136,7 +27360,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0057",
@@ -27254,7 +27479,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0058",
@@ -27373,7 +27599,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0059",
@@ -27431,7 +27658,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0060",
@@ -27489,7 +27717,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0061",
@@ -27546,7 +27775,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0062",
@@ -27670,7 +27900,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0063",
@@ -27728,7 +27959,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0064",
@@ -27785,7 +28017,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "SIN-0065",
@@ -27848,7 +28081,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0001",
@@ -27938,7 +28172,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "UNO-0002",
@@ -28097,7 +28332,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0003",
@@ -28216,7 +28452,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0004",
@@ -28375,7 +28612,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0006",
@@ -28504,7 +28742,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0007",
@@ -28629,7 +28868,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0008",
@@ -28749,7 +28989,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0010",
@@ -28879,7 +29120,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0011",
@@ -29004,7 +29246,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0013",
@@ -29133,7 +29376,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0014",
@@ -29311,7 +29555,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0015",
@@ -29567,7 +29812,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0016",
@@ -29632,7 +29878,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0018",
@@ -29751,7 +29998,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0019",
@@ -29800,7 +30048,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0021",
@@ -29848,7 +30097,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0022",
@@ -29967,7 +30217,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0023",
@@ -30033,7 +30284,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0025",
@@ -30081,7 +30333,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0026",
@@ -30200,7 +30453,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0027",
@@ -30324,7 +30578,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0029",
@@ -30447,7 +30702,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0030",
@@ -30566,7 +30822,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0031",
@@ -30615,7 +30872,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0032",
@@ -30735,7 +30993,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0033",
@@ -30870,7 +31129,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0034",
@@ -30994,7 +31254,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0035",
@@ -31043,7 +31304,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0036",
@@ -31282,7 +31544,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0037",
@@ -31368,7 +31631,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0038",
@@ -31458,7 +31722,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0039",
@@ -31565,7 +31830,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0040",
@@ -31613,7 +31879,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0041",
@@ -31662,7 +31929,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0042",
@@ -31760,7 +32028,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0043",
@@ -31808,7 +32077,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0044",
@@ -31856,7 +32126,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0045",
@@ -31904,7 +32175,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0046",
@@ -32029,7 +32301,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0047",
@@ -32077,7 +32350,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0048",
@@ -32125,7 +32399,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0049",
@@ -32182,7 +32457,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0050",
@@ -32230,7 +32506,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0051",
@@ -32287,7 +32564,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0052",
@@ -32335,7 +32613,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0053",
@@ -32384,7 +32663,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "UNO-0054",
@@ -32433,7 +32713,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0001",
@@ -32523,7 +32804,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "KAL-0002",
@@ -32704,7 +32986,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0003",
@@ -32823,7 +33106,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0004",
@@ -33004,7 +33288,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0005",
@@ -33129,7 +33414,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0006",
@@ -33278,7 +33564,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0008",
@@ -33456,7 +33743,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0010",
@@ -33618,7 +33906,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0011",
@@ -33734,7 +34023,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0012",
@@ -33896,7 +34186,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0013",
@@ -34135,7 +34426,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0014",
@@ -34254,7 +34546,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0015",
@@ -34303,7 +34596,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0016",
@@ -34422,7 +34716,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0017",
@@ -34471,7 +34766,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0018",
@@ -34581,7 +34877,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0019",
@@ -34700,7 +34997,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0021",
@@ -34824,7 +35122,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0022",
@@ -34923,7 +35222,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0023",
@@ -35042,7 +35342,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0025",
@@ -35090,7 +35391,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0026",
@@ -35209,7 +35511,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0028",
@@ -35328,7 +35631,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0029",
@@ -35447,7 +35751,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0031",
@@ -35566,7 +35871,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0032",
@@ -35615,7 +35921,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0033",
@@ -35734,7 +36041,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0034",
@@ -35799,7 +36107,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0036",
@@ -35918,7 +36227,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0037",
@@ -36037,7 +36347,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0038",
@@ -36086,7 +36397,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0039",
@@ -36199,7 +36511,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0040",
@@ -36264,7 +36577,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0041",
@@ -36377,7 +36691,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0042",
@@ -36512,7 +36827,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0043",
@@ -36625,7 +36941,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0044",
@@ -36674,7 +36991,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0045",
@@ -36913,7 +37231,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0046",
@@ -36996,7 +37315,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0047",
@@ -37053,7 +37373,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0048",
@@ -37110,7 +37431,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0049",
@@ -37159,7 +37481,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0050",
@@ -37207,7 +37530,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0051",
@@ -37264,7 +37588,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0052",
@@ -37338,7 +37663,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAL-0053",
@@ -37414,7 +37740,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0001",
@@ -37502,7 +37829,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "ALO-0002",
@@ -37639,7 +37967,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0003",
@@ -37763,7 +38092,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0004",
@@ -37883,7 +38213,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0005",
@@ -38021,7 +38352,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0006",
@@ -38141,7 +38473,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0007",
@@ -38263,7 +38596,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0008",
@@ -38384,7 +38718,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0009",
@@ -38633,7 +38968,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0010",
@@ -38682,7 +39018,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0011",
@@ -38740,7 +39077,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0012",
@@ -38854,7 +39192,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0013",
@@ -38912,7 +39251,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0014",
@@ -38961,7 +39301,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0015",
@@ -39075,7 +39416,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0016",
@@ -39133,7 +39475,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0017",
@@ -39247,7 +39590,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0018",
@@ -39296,7 +39640,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0019",
@@ -39417,7 +39762,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0020",
@@ -39535,7 +39881,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0021",
@@ -39592,7 +39939,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0022",
@@ -39713,7 +40061,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0023",
@@ -39771,7 +40120,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0024",
@@ -39851,7 +40201,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0025",
@@ -39909,7 +40260,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0026",
@@ -39958,7 +40310,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0027",
@@ -40016,7 +40369,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0028",
@@ -40074,7 +40428,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0029",
@@ -40122,7 +40477,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0030",
@@ -40215,7 +40571,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0031",
@@ -40311,7 +40668,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0032",
@@ -40377,7 +40735,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0033",
@@ -40425,7 +40784,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0034",
@@ -40483,7 +40843,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0035",
@@ -40541,7 +40902,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0036",
@@ -40589,7 +40951,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0037",
@@ -40709,7 +41072,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0038",
@@ -40823,7 +41187,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0039",
@@ -40880,7 +41245,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0040",
@@ -40937,7 +41303,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0041",
@@ -40994,7 +41361,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0042",
@@ -41049,7 +41417,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0043",
@@ -41140,7 +41509,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "ALO-0044",
@@ -41186,7 +41556,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0001",
@@ -41276,7 +41647,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "GAL-0002",
@@ -41409,7 +41781,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0003",
@@ -41528,7 +41901,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0004",
@@ -41649,7 +42023,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0005",
@@ -41773,7 +42148,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0007",
@@ -41899,7 +42275,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0008",
@@ -42025,7 +42402,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0009",
@@ -42155,7 +42533,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0010",
@@ -42280,7 +42659,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0012",
@@ -42402,7 +42782,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0013",
@@ -42523,7 +42904,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0014",
@@ -42763,7 +43145,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0015",
@@ -42812,7 +43195,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0016",
@@ -42861,7 +43245,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0017",
@@ -42910,7 +43295,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0018",
@@ -42976,7 +43362,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0019",
@@ -43025,7 +43412,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0020",
@@ -43074,7 +43462,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0021",
@@ -43123,7 +43512,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0022",
@@ -43172,7 +43562,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0024",
@@ -43307,7 +43698,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0025",
@@ -43356,7 +43748,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0026",
@@ -43405,7 +43798,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0027",
@@ -43503,7 +43897,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0028",
@@ -43742,7 +44137,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0029",
@@ -43817,7 +44213,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0030",
@@ -43922,7 +44319,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "GAL-0031",
@@ -44043,7 +44441,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0001",
@@ -44133,7 +44532,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": true
   },
   {
     "Id": "PAL-0002",
@@ -44278,7 +44678,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0003",
@@ -44396,7 +44797,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0011",
@@ -44537,7 +44939,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0012",
@@ -44655,7 +45058,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0013",
@@ -44892,7 +45296,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0014",
@@ -44956,7 +45361,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0015",
@@ -45025,7 +45431,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0016",
@@ -45094,7 +45501,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0017",
@@ -45190,7 +45598,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0018",
@@ -45286,7 +45695,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0019",
@@ -45382,7 +45792,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0020",
@@ -45478,7 +45889,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0021",
@@ -45574,7 +45986,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0022",
@@ -45691,7 +46104,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0023",
@@ -45737,7 +46151,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0024",
@@ -45783,7 +46198,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0025",
@@ -46022,7 +46438,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0026",
@@ -46140,7 +46557,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "PAL-0027",
@@ -46258,7 +46676,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0061",
@@ -46383,7 +46802,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0062",
@@ -46486,7 +46906,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0063",
@@ -46650,7 +47071,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0064",
@@ -46774,7 +47196,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0065",
@@ -46903,7 +47326,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0066",
@@ -47016,7 +47440,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0067",
@@ -47129,7 +47554,8 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   },
   {
     "Id": "KAN-0068",
@@ -47237,6 +47663,7 @@
     "SperrNW": null,
     "SperrNO": null,
     "SperrSW": null,
-    "SperrSO": null
+    "SperrSO": null,
+    "IstStartOrt": false
   }
 ]

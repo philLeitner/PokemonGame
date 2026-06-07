@@ -105,15 +105,20 @@ public class KartenGenerator
             // Arenen in fester Reihenfolge (nach OrdenNr), Nicht-Arenen zufällig mischen
             var arenaOrte = nichtLigaOrte.Where(o => o.Arena != null)
                 .OrderBy(o => o.Arena!.OrdenNr).ToList();
-            var nichtArenaOrte = nichtLigaOrte.Where(o => o.Arena == null).ToList();
-            // Fisher-Yates Shuffle der Nicht-Arena-Orte
+            // Startort (IstStartOrt=true) immer als ersten Ort – aus dem Shuffle herausnehmen
+            var startOrt = nichtLigaOrte.FirstOrDefault(o => o.Arena == null && o.IstStartOrt);
+            var nichtArenaOrte = nichtLigaOrte.Where(o => o.Arena == null && !o.IstStartOrt).ToList();
+            // Fisher-Yates Shuffle der Nicht-Arena-Orte (Startort bleibt fix)
             for (int s = nichtArenaOrte.Count - 1; s > 0; s--)
             {
                 int j = rng.Next(s + 1);
                 (nichtArenaOrte[s], nichtArenaOrte[j]) = (nichtArenaOrte[j], nichtArenaOrte[s]);
             }
-            // Orte zusammenbauen: Nicht-Arena-Orte gleichmäßig zwischen Arenen verteilen
+            // Orte zusammenbauen: Startort immer zuerst, dann Nicht-Arena-Orte zwischen Arenen
             var gemischteOrte = new List<Ort>();
+            // Startort als allerersten Ort einfügen
+            if (startOrt != null)
+                gemischteOrte.Add(startOrt);
             int nichtArenaProAbschnitt = arenaOrte.Count > 0
                 ? nichtArenaOrte.Count / (arenaOrte.Count + 1)
                 : nichtArenaOrte.Count;
@@ -345,6 +350,7 @@ public class KartenGenerator
             MarktAngebot     = original.MarktAngebot,
             NPCs             = original.NPCs,
             IstUnterirdisch  = original.IstUnterirdisch,
+            IstStartOrt      = original.IstStartOrt,
             LigaZugang       = false,
             BenötigtItem     = null,
             MinOrdenFürZugang = ordenOffset,

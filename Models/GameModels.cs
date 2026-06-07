@@ -280,6 +280,7 @@ public class Ort
     public string? BenötigtItemName { get; set; } = null;   // Anzeigename des benötigten Items
     public string? BenötigtItemQuelle { get; set; } = null; // Wo man das benötigte Item bekommt
     public bool IstUnterirdisch { get; set; } = false;      // Unterirdische Gänge: immer zugänglich
+    public bool IstStartOrt { get; set; } = false;           // Startort der Region (Prof. Eich etc.) – immer erster Ort
     public bool LigaZugang { get; set; } = false;           // Nur mit allen 8 Kanto-Orden zugänglich
     public string? Teleport { get; set; }                   // Teleport-Ziel (Ort-ID)
     public string? Untergrund { get; set; }                 // Unterirdischer Gang (Ort-ID)
