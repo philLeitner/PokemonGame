@@ -134,8 +134,8 @@ public class KartenGenerator
 
             int total = Math.Max(20, regCfg.BasisEbenen);
             int bossCount = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
-            int städteProBoss = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
-            int totalCitiesWanted = Math.Min(Math.Max(0, total - 2 - bossCount), städteProBoss * bossCount);
+            int städteProBoss = bossCount; // Arenen = Städte, kein separater Städte-Zähler
+            int totalCitiesWanted = 0; // Keine separaten Städte mehr
 
             // Trainer-Pool direkt aus regionen.json
             var trainerPool = regCfg.TrainerPool.Select(t => new TrainerKampf
@@ -169,11 +169,6 @@ public class KartenGenerator
                 {
                     bossZähler++;
                     ortId = $"{regId}-GEN-BOSS{bossZähler:D2}";
-                }
-                else if (eb.IstStadt)
-                {
-                    stadtZähler++;
-                    ortId = $"{regId}-GEN-STADT{stadtZähler:D2}";
                 }
                 else
                 {
@@ -348,16 +343,7 @@ public class KartenGenerator
                         };
                     }
                 }
-                else if (eb.IstStadt)
-                {
-                    stadtZähler++;
-                    name = $"Stadt {stadtZähler}";
-                    typ = "stadt"; farbe = "red";
-                    hatMonsterCenter = true;
-                    hatMarkt = stadtZähler % 2 == 0;
-                    trainer = HoleTrainerFürLevel(trainerPool, dist, rng, 1, 3);
-                    wildMonster = HoleWildMonsterFürLevel(wildPool, dist, rng, 2, 4);
-                }
+                // IstStadt ohne IstBoss gibt es nicht mehr – Arenen sind die Städte
                 else
                 {
                     ebeneZähler++;
@@ -438,8 +424,7 @@ public class KartenGenerator
                 meta.OrtKoordinaten[ortId] = (eb.X, eb.Y);
                 int d = distanzen.TryGetValue(eb.Id, out int dv) ? (dv == int.MaxValue ? 999 : dv) : 0;
                 meta.OrtDistanzen[ortId] = d;
-                if (eb.IstStadt) meta.StadtIds.Add(ortId);
-                if (eb.IstBoss)  meta.BossIds.Add(ortId);
+                if (eb.IstBoss)  { meta.StadtIds.Add(ortId); meta.BossIds.Add(ortId); }
                 if (eb.IstStart) meta.StartIds.Add(ortId);
             }
             meta.StädteProBoss = städteProBoss;
@@ -584,10 +569,7 @@ public class KartenGenerator
         // Umnummerieren nach Karten-Distanz (wie HTML)
         ebenen = RenumberByMapDistance(ebenen, mainEnd, rng);
 
-        // Städte platzieren
-        PlaceCities(ebenen, totalCitiesWanted, rng);
-
-        // Bosse platzieren
+        // Bosse platzieren (Arenen = Städte, keine separaten Städte mehr)
         PlaceBosses(ebenen, bossCount, städteProBoss, rng);
 
         // Startpunkte setzen
@@ -656,66 +638,63 @@ public class KartenGenerator
 
     private static void PlaceBosses(List<Ebene> ebenen, int count, int citiesPerBoss, Random rng)
     {
-        foreach (var e in ebenen) e.IstBoss = false;
+        foreach (var e in ebenen) { e.IstBoss = false; e.IstStadt = false; }
         if (count <= 0) return;
-        var cityIds = ebenen.Where(e => e.IstStadt).Select(e => e.Id).ToList();
         var dist = CalcDistances(ebenen);
         var chosen = new List<int>();
 
+        // Gesamtdistanz des Graphen
+        int maxDist = dist.Values.Where(d => d < int.MaxValue).DefaultIfEmpty(1).Max();
+
+        // Kein Boss darf direkter Nachbar eines anderen Bosses sein
+        bool KeinBossNachbar(int id) =>
+            !ebenen[id].Exits.Values.Any(n => ebenen[n].IstBoss);
+
+        // Kein Boss direkt nach Startpunkt (Ebene 0)
+        bool KeinStartNachbar(int id) =>
+            !ebenen[id].Exits.Values.Any(n => n == 0) && id != 0;
+
+        // Hat Nachbar mit größerer Distanz (für Vorwärts-Bewegung)
         bool HasForwardNeighbor(int id)
         {
             int d = dist.TryGetValue(id, out int dd) ? dd : 0;
             return ebenen[id].Exits.Values.Any(n =>
-                dist.TryGetValue(n, out int nd) && nd > d && !ebenen[n].IstStadt && !ebenen[n].IstBoss && n != 0);
+                dist.TryGetValue(n, out int nd) && nd > d && !ebenen[n].IstBoss && n != 0);
         }
 
-        // Kein Boss darf direkter Nachbar eines anderen Bosses sein
-        bool KeinBossNachbar(int id)
-        {
-            return !ebenen[id].Exits.Values.Any(n => ebenen[n].IstBoss);
-        }
-
-        bool CityDistOk(int id, int minD)
-        {
-            foreach (var o in chosen)
-            {
-                int dx = Math.Abs(ebenen[id].X - ebenen[o].X) + Math.Abs(ebenen[id].Y - ebenen[o].Y);
-                if (dx < minD) return false;
-            }
-            return true;
-        }
-
+        // Bosse gleichmäßig über den Graphen verteilen
         for (int i = 1; i <= count; i++)
         {
-            int needCities = Math.Min(i * citiesPerBoss, cityIds.Count);
-            int cityForBoss = needCities > 0 ? cityIds[Math.Max(0, needCities - 1)] : 0;
-            int minD = dist.TryGetValue(cityForBoss, out int cd) ? cd : 0;
+            // Ziel-Distanz für diesen Boss: gleichmäßig verteilt
+            double targetFraction = (double)i / (count + 1);
+            int targetDist = (int)(maxDist * targetFraction);
 
-            List<Ebene> candidates;
-            if (i < count)
-            {
-                candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
-                    && dist.TryGetValue(e.Id, out int dd) && dd >= minD
-                    && CityDistOk(e.Id, 4) && HasForwardNeighbor(e.Id) && KeinBossNachbar(e.Id)).ToList();
-                candidates.Sort((a, b) =>
-                    Math.Abs((dist.TryGetValue(a.Id, out int da) ? da : 0) - minD)
-                    .CompareTo(Math.Abs((dist.TryGetValue(b.Id, out int db) ? db : 0) - minD)));
-            }
-            else
-            {
-                candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
+            // Kandidaten: nicht Start, nicht Boss, nicht direkter Nachbar von Boss/Start
+            var candidates = ebenen
+                .Where(e => e.Id != 0 && !e.IstBoss
                     && dist.TryGetValue(e.Id, out int dd) && dd < int.MaxValue
-                    && KeinBossNachbar(e.Id)).ToList();
-                candidates.Sort((a, b) =>
-                    (dist.TryGetValue(b.Id, out int db) ? db : 0)
-                    .CompareTo(dist.TryGetValue(a.Id, out int da) ? da : 0));
-            }
+                    && KeinBossNachbar(e.Id)
+                    && KeinStartNachbar(e.Id))
+                .ToList();
+
+            if (i < count)
+                candidates = candidates.Where(e => HasForwardNeighbor(e.Id)).ToList();
+
+            // Nächsten Kandidaten zur Ziel-Distanz wählen
+            candidates.Sort((a, b) =>
+                Math.Abs((dist.TryGetValue(a.Id, out int da) ? da : 0) - targetDist)
+                .CompareTo(Math.Abs((dist.TryGetValue(b.Id, out int db) ? db : 0) - targetDist)));
 
             var pick = candidates.FirstOrDefault()
-                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && HasForwardNeighbor(e.Id) && KeinBossNachbar(e.Id))
-                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && KeinBossNachbar(e.Id))
-                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss);
-            if (pick != null) { pick.IstBoss = true; chosen.Add(pick.Id); }
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstBoss && KeinBossNachbar(e.Id))
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstBoss);
+
+            if (pick != null)
+            {
+                pick.IstBoss = true;
+                pick.IstStadt = true; // Arenen sind die Städte
+                chosen.Add(pick.Id);
+            }
         }
     }
 
@@ -759,7 +738,7 @@ public class KartenGenerator
     private static void AddLocksAfterCities(List<Ebene> ebenen, int lockChance, Random rng)
     {
         foreach (var e in ebenen) e.Locks.Clear();
-        var cityIds = ebenen.Where(e => e.IstStadt && !e.IstBoss).Select(e => e.Id).ToList();
+        var cityIds = ebenen.Where(e => e.IstBoss).Select(e => e.Id).ToList(); // Arenen sind die Städte
         if (cityIds.Count == 0) return;
         var dist = CalcDistances(ebenen);
         var seen = new HashSet<string>();

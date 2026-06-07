@@ -597,41 +597,13 @@ public class GameService
             if (ziel.Arena != null && karte.BossIds.Contains(zielOrtId))
             {
                 int bossNr = karte.BossIds.IndexOf(zielOrtId); // 0-basiert
-                // Vorherige Bosse müssen alle besiegt sein
-                int vorherigeBosseBesiegt = karte.BossIds.Take(bossNr).Count(b => karte.BesiegteArenen.Contains(b));
-                if (vorherigeBosseBesiegt < bossNr)
-                    return $"⛔ Gesperrt! Zuerst Boss {vorherigeBosseBesiegt + 1} besiegen.";
-                // Arenen die VOR diesem Boss liegen müssen alle besiegt sein
-                // StadtIds enthält alle Arenen in Reihenfolge; die zum aktuellen Boss-Block gehören
-                int arenenVorBoss = bossNr * karte.StädteProBoss; // Arenen aus vorherigen Blöcken
-                int arenenDieserBlock = Math.Min(karte.StädteProBoss,
-                    karte.StadtIds.Count - arenenVorBoss); // Arenen in diesem Block
-                // Nur Arenen die nicht selbst Bosse sind
-                var arenenVorDiesemBoss = karte.StadtIds
-                    .Where(id => !karte.BossIds.Contains(id))
-                    .Skip(arenenVorBoss)
-                    .Take(arenenDieserBlock)
-                    .ToList();
-                int nochNichtBesiegt = arenenVorDiesemBoss.Count(id => !karte.BesiegteArenen.Contains(id));
+                // Alle vorherigen Arenen müssen besiegt sein (Reihenfolge)
+                int nochNichtBesiegt = karte.BossIds.Take(bossNr).Count(id => !karte.BesiegteArenen.Contains(id));
                 if (nochNichtBesiegt > 0)
                     return $"⛔ Gesperrt! Du brauchst noch {nochNichtBesiegt} Arena(en) besiegen.";
             }
 
-            // Arenen-Reihenfolge: Arena N ist gesperrt wenn Arena N-1 noch nicht besiegt
-            if (ziel.Arena != null && karte.StadtIds.Contains(zielOrtId) && !karte.BossIds.Contains(zielOrtId))
-            {
-                int arenaIdx = karte.StadtIds.IndexOf(zielOrtId); // 0-basiert
-                if (arenaIdx > 0)
-                {
-                    string vorherige = karte.StadtIds[arenaIdx - 1];
-                    if (!karte.BesiegteArenen.Contains(vorherige))
-                    {
-                        var vorOrt = AlleOrte.FirstOrDefault(o => o.Id == vorherige);
-                        string vorName = vorOrt?.Name ?? $"Arena {arenaIdx}";
-                        return $"⛔ Gesperrt! Zuerst {vorName} besiegen.";
-                    }
-                }
-            }
+
         }
 
         // Richtung vom aktuellen Ort zum Ziel bestimmen
