@@ -409,13 +409,17 @@ public class GameService
     {
         if (!IstGenerierteKartenModus || AktuelleGenerierteKarte == null)
             return (0, 0);
-        int idx = AktuelleGenerierteKarte.OrtReihenfolge.IndexOf(ortId);
-        if (idx < 0) return (0, 0);
-        // Index in der Reihenfolge = Level (1-basiert: Index 0 = Level 1)
-        int basis = idx + 1;
+        // Distanz vom Startort (Anzahl Schritte) = Level-Basis
+        if (!AktuelleGenerierteKarte.OrtDistanzen.TryGetValue(ortId, out int distanz))
+        {
+            // Fallback: Index in Reihenfolge
+            distanz = AktuelleGenerierteKarte.OrtReihenfolge.IndexOf(ortId);
+            if (distanz < 0) return (0, 0);
+        }
+        int basis = distanz + 1; // Distanz 0 = Level 1
         int min = basis;
-        int max = basis + 1; // kleiner Zufallsbereich
-        if (istArena) { min += 2; max += 3; } // Arenen etwas stärker
+        int max = basis + 1;
+        if (istArena) { min += 2; max += 3; }
         return (min, max);
     }
 

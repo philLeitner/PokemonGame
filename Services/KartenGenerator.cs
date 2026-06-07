@@ -42,6 +42,8 @@ public class GenerierteKarte
     public HashSet<string> BesiegteArenen { get; set; } = new();
     /// <summary>X/Y-Koordinaten für die grafische Netzansicht (OrtId → (GridX, GridY))</summary>
     public Dictionary<string, (int X, int Y)> OrtKoordinaten { get; set; } = new();
+    /// <summary>Kürzeste Distanz vom Startort (Anzahl Schritte) → bestimmt das Level</summary>
+    public Dictionary<string, int> OrtDistanzen { get; set; } = new();
 }
 
 // ─── Generator ───────────────────────────────────────────────────────────────
@@ -214,6 +216,30 @@ public class KartenGenerator
 
         meta.StartOrtId = ergebnis.FirstOrDefault()?.Id ?? "";
         meta.OrtReihenfolge = ergebnis.Select(o => o.Id).ToList();
+
+        // BFS: kürzeste Distanz vom Startort berechnen (= Level-Basis)
+        if (!string.IsNullOrEmpty(meta.StartOrtId))
+        {
+            var ortMap = ergebnis.ToDictionary(o => o.Id);
+            var queue = new Queue<string>();
+            queue.Enqueue(meta.StartOrtId);
+            meta.OrtDistanzen[meta.StartOrtId] = 0;
+            while (queue.Count > 0)
+            {
+                var aktId = queue.Dequeue();
+                if (!ortMap.TryGetValue(aktId, out var akt)) continue;
+                int aktDist = meta.OrtDistanzen[aktId];
+                foreach (var nachbarId in new[] { akt.Nord, akt.Sued, akt.Ost, akt.West }
+                    .Where(n => !string.IsNullOrEmpty(n)))
+                {
+                    if (!meta.OrtDistanzen.ContainsKey(nachbarId!))
+                    {
+                        meta.OrtDistanzen[nachbarId!] = aktDist + 1;
+                        queue.Enqueue(nachbarId!);
+                    }
+                }
+            }
+        }
 
         // Fog-of-War: Orte bis zur ersten Arena (inkl.) freischalten
         int ersteArenaIdx = ergebnis.FindIndex(o => o.Arena != null);
