@@ -61,82 +61,342 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0003",
-      "PKM-0004",
-      "PKM-0006",
-      "PKM-0007",
-      "PKM-0010",
-      "PKM-0013",
-      "PKM-0016",
-      "PKM-0019",
-      "PKM-0021",
-      "PKM-0023",
-      "PKM-0025",
-      "PKM-0027",
-      "PKM-0029",
-      "PKM-0032",
-      "PKM-0037",
-      "PKM-0041",
-      "PKM-0043",
-      "PKM-0046",
-      "PKM-0050",
-      "PKM-0052",
-      "PKM-0054",
-      "PKM-0056",
-      "PKM-0058",
-      "PKM-0060",
-      "PKM-0063",
-      "PKM-0066",
-      "PKM-0069",
-      "PKM-0072",
-      "PKM-0074",
-      "PKM-0077",
-      "PKM-0079",
-      "PKM-0081",
-      "PKM-0083",
-      "PKM-0084",
-      "PKM-0086",
-      "PKM-0088",
-      "PKM-0090",
-      "PKM-0092",
-      "PKM-0095",
-      "PKM-0098",
-      "PKM-0100",
-      "PKM-0102",
-      "PKM-0104",
-      "PKM-0105",
-      "PKM-0109",
-      "PKM-0111",
-      "PKM-0113",
-      "PKM-0114",
-      "PKM-0115",
-      "PKM-0120",
-      "PKM-0127",
-      "PKM-0130",
-      "PKM-0144",
-      "PKM-0145",
-      "PKM-0146",
-      "PKM-0147",
-      "PKM-0150",
-      "PKM-0154",
-      "PKM-0157",
-      "PKM-0160",
-      "PKM-0231",
-      "PKM-0246",
-      "PKM-0459",
-      "PKM-0495",
-      "PKM-0498",
-      "PKM-0501",
-      "PKM-0506",
-      "PKM-0551",
-      "PKM-0585",
-      "PKM-0650",
-      "PKM-0653",
-      "PKM-0656",
-      "PKM-0661",
-      "PKM-0704",
-      "PKM-0819"
+      {
+        "Id": "PKM-0016",
+        "MinLevel": 2,
+        "MaxLevel": 32,
+        "Chance": 45
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 2,
+        "MaxLevel": 32,
+        "Chance": 45
+      },
+      {
+        "Id": "PKM-0010",
+        "MinLevel": 3,
+        "MaxLevel": 8,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0021",
+        "MinLevel": 3,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0013",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0011",
+        "MinLevel": 4,
+        "MaxLevel": 6,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0014",
+        "MinLevel": 4,
+        "MaxLevel": 6,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0025",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0027",
+        "MinLevel": 6,
+        "MaxLevel": 32,
+        "Chance": 35
+      },
+      {
+        "Id": "PKM-0032",
+        "MinLevel": 6,
+        "MaxLevel": 7,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0029",
+        "MinLevel": 6,
+        "MaxLevel": 7,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0041",
+        "MinLevel": 6,
+        "MaxLevel": 32,
+        "Chance": 40
+      },
+      {
+        "Id": "PKM-0035",
+        "MinLevel": 8,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0046",
+        "MinLevel": 8,
+        "MaxLevel": 10,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0074",
+        "MinLevel": 6,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0023",
+        "MinLevel": 6,
+        "MaxLevel": 46,
+        "Chance": 40
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 10,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0063",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0043",
+        "MinLevel": 12,
+        "MaxLevel": 24,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0069",
+        "MinLevel": 12,
+        "MaxLevel": 20,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0060",
+        "MinLevel": 13,
+        "MaxLevel": 15,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0039",
+        "MinLevel": 14,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0072",
+        "MinLevel": 22,
+        "MaxLevel": 36,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0066",
+        "MinLevel": 6,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0081",
+        "MinLevel": 22,
+        "MaxLevel": 30,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0082",
+        "MinLevel": 22,
+        "MaxLevel": 30,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0100",
+        "MinLevel": 22,
+        "MaxLevel": 28,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0092",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 35
+      },
+      {
+        "Id": "PKM-0093",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0052",
+        "MinLevel": 18,
+        "MaxLevel": 22,
+        "Chance": 40
+      },
+      {
+        "Id": "PKM-0017",
+        "MinLevel": 25,
+        "MaxLevel": 32,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0084",
+        "MinLevel": 25,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0111",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0112",
+        "MinLevel": 25,
+        "MaxLevel": 46,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0115",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0113",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0127",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0114",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0128",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0083",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0086",
+        "MinLevel": 28,
+        "MaxLevel": 36,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0090",
+        "MinLevel": 28,
+        "MaxLevel": 36,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0144",
+        "MinLevel": 50,
+        "MaxLevel": 50,
+        "Chance": 100
+      },
+      {
+        "Id": "PKM-0050",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 90
+      },
+      {
+        "Id": "PKM-0051",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0095",
+        "MinLevel": 40,
+        "MaxLevel": 46,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0024",
+        "MinLevel": 40,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0150",
+        "MinLevel": 70,
+        "MaxLevel": 70,
+        "Chance": 100
+      },
+      {
+        "Id": "PKM-0109",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0110",
+        "MinLevel": 28,
+        "MaxLevel": 32,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0087",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0091",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0059",
+        "MinLevel": 34,
+        "MaxLevel": 42,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0130",
+        "MinLevel": 34,
+        "MaxLevel": 42,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0065",
+        "MinLevel": 34,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0075",
+        "MinLevel": 6,
+        "MaxLevel": 12,
+        "Chance": 25
+      }
     ],
     "TrainerPool": [
       {
@@ -3199,55 +3459,210 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0010",
-      "PKM-0016",
-      "PKM-0017",
-      "PKM-0019",
-      "PKM-0025",
-      "PKM-0029",
-      "PKM-0032",
-      "PKM-0041",
-      "PKM-0054",
-      "PKM-0058",
-      "PKM-0059",
-      "PKM-0060",
-      "PKM-0062",
-      "PKM-0069",
-      "PKM-0072",
-      "PKM-0074",
-      "PKM-0111",
-      "PKM-0113",
-      "PKM-0115",
-      "PKM-0123",
-      "PKM-0127",
-      "PKM-0128",
-      "PKM-0129",
-      "PKM-0130",
-      "PKM-0131",
-      "PKM-0133",
-      "PKM-0147",
-      "PKM-0152",
-      "PKM-0155",
-      "PKM-0158",
-      "PKM-0161",
-      "PKM-0163",
-      "PKM-0183",
-      "PKM-0185",
-      "PKM-0187",
-      "PKM-0193",
-      "PKM-0194",
-      "PKM-0199",
-      "PKM-0207",
-      "PKM-0220",
-      "PKM-0231",
-      "PKM-0234",
-      "PKM-0236",
-      "PKM-0238",
-      "PKM-0241",
-      "PKM-0246",
-      "PKM-0249",
-      "PKM-0250"
+      {
+        "Id": "PKM-0161",
+        "MinLevel": 2,
+        "MaxLevel": 5,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0163",
+        "MinLevel": 2,
+        "MaxLevel": 42,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0191",
+        "MinLevel": 3,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0016",
+        "MinLevel": 2,
+        "MaxLevel": 6,
+        "Chance": 35
+      },
+      {
+        "Id": "PKM-0043",
+        "MinLevel": 4,
+        "MaxLevel": 9,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0069",
+        "MinLevel": 4,
+        "MaxLevel": 7,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0187",
+        "MinLevel": 5,
+        "MaxLevel": 15,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0179",
+        "MinLevel": 7,
+        "MaxLevel": 42,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0183",
+        "MinLevel": 10,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0214",
+        "MinLevel": 13,
+        "MaxLevel": 15,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0204",
+        "MinLevel": 13,
+        "MaxLevel": 15,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0072",
+        "MinLevel": 22,
+        "MaxLevel": 90,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0086",
+        "MinLevel": 22,
+        "MaxLevel": 36,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0090",
+        "MinLevel": 22,
+        "MaxLevel": 26,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0074",
+        "MinLevel": 25,
+        "MaxLevel": 42,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0075",
+        "MinLevel": 25,
+        "MaxLevel": 32,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0054",
+        "MinLevel": 25,
+        "MaxLevel": 32,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0147",
+        "MinLevel": 20,
+        "MaxLevel": 40,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0148",
+        "MinLevel": 20,
+        "MaxLevel": 40,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0130",
+        "MinLevel": 20,
+        "MaxLevel": 60,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0185",
+        "MinLevel": 17,
+        "MaxLevel": 10,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0066",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0095",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0112",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0149",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0220",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 40
+      },
+      {
+        "Id": "PKM-0221",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0087",
+        "MinLevel": 32,
+        "MaxLevel": 36,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0207",
+        "MinLevel": 20,
+        "MaxLevel": 25,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0129",
+        "MinLevel": 20,
+        "MaxLevel": 25,
+        "Chance": 60
+      },
+      {
+        "Id": "PKM-0059",
+        "MinLevel": 50,
+        "MaxLevel": 60,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0131",
+        "MinLevel": 50,
+        "MaxLevel": 60,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0143",
+        "MinLevel": 50,
+        "MaxLevel": 60,
+        "Chance": 10
+      }
     ],
     "TrainerPool": [
       {
@@ -5025,58 +5440,180 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0019",
-      "PKM-0072",
-      "PKM-0111",
-      "PKM-0113",
-      "PKM-0115",
-      "PKM-0127",
-      "PKM-0147",
-      "PKM-0227",
-      "PKM-0231",
-      "PKM-0246",
-      "PKM-0252",
-      "PKM-0253",
-      "PKM-0254",
-      "PKM-0255",
-      "PKM-0256",
-      "PKM-0257",
-      "PKM-0258",
-      "PKM-0261",
-      "PKM-0263",
-      "PKM-0270",
-      "PKM-0273",
-      "PKM-0278",
-      "PKM-0282",
-      "PKM-0285",
-      "PKM-0287",
-      "PKM-0300",
-      "PKM-0302",
-      "PKM-0304",
-      "PKM-0318",
-      "PKM-0322",
-      "PKM-0327",
-      "PKM-0328",
-      "PKM-0331",
-      "PKM-0333",
-      "PKM-0337",
-      "PKM-0338",
-      "PKM-0352",
-      "PKM-0353",
-      "PKM-0355",
-      "PKM-0357",
-      "PKM-0359",
-      "PKM-0361",
-      "PKM-0363",
-      "PKM-0369",
-      "PKM-0371",
-      "PKM-0377",
-      "PKM-0378",
-      "PKM-0379",
-      "PKM-0382",
-      "PKM-0383",
-      "PKM-0384"
+      {
+        "Id": "PKM-0261",
+        "MinLevel": 2,
+        "MaxLevel": 50,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0263",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0265",
+        "MinLevel": 2,
+        "MaxLevel": 50,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0273",
+        "MinLevel": 3,
+        "MaxLevel": 32,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0270",
+        "MinLevel": 10,
+        "MaxLevel": 50,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0328",
+        "MinLevel": 20,
+        "MaxLevel": 28,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0329",
+        "MinLevel": 20,
+        "MaxLevel": 28,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0027",
+        "MinLevel": 20,
+        "MaxLevel": 28,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0050",
+        "MinLevel": 20,
+        "MaxLevel": 28,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0111",
+        "MinLevel": 20,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0074",
+        "MinLevel": 26,
+        "MaxLevel": 50,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0075",
+        "MinLevel": 26,
+        "MaxLevel": 30,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0322",
+        "MinLevel": 18,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0072",
+        "MinLevel": 34,
+        "MaxLevel": 44,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0086",
+        "MinLevel": 34,
+        "MaxLevel": 44,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0090",
+        "MinLevel": 34,
+        "MaxLevel": 44,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0112",
+        "MinLevel": 25,
+        "MaxLevel": 50,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0115",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0113",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0127",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0114",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0128",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0083",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0318",
+        "MinLevel": 35,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 46,
+        "MaxLevel": 50,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0066",
+        "MinLevel": 46,
+        "MaxLevel": 50,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0095",
+        "MinLevel": 46,
+        "MaxLevel": 50,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0377",
+        "MinLevel": 40,
+        "MaxLevel": 40,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0384",
+        "MinLevel": 70,
+        "MaxLevel": 1,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -7793,32 +8330,114 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0019",
-      "PKM-0041",
-      "PKM-0072",
-      "PKM-0092",
-      "PKM-0114",
-      "PKM-0220",
-      "PKM-0234",
-      "PKM-0304",
-      "PKM-0387",
-      "PKM-0389",
-      "PKM-0390",
-      "PKM-0392",
-      "PKM-0393",
-      "PKM-0396",
-      "PKM-0420",
-      "PKM-0436",
-      "PKM-0455",
-      "PKM-0459",
-      "PKM-0480",
-      "PKM-0481",
-      "PKM-0482",
-      "PKM-0483",
-      "PKM-0484",
-      "PKM-0485",
-      "PKM-0487"
+      {
+        "Id": "PKM-0396",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0399",
+        "MinLevel": 2,
+        "MaxLevel": 52,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0401",
+        "MinLevel": 2,
+        "MaxLevel": 52,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0387",
+        "MinLevel": 5,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0403",
+        "MinLevel": 3,
+        "MaxLevel": 52,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0420",
+        "MinLevel": 10,
+        "MaxLevel": 22,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0421",
+        "MinLevel": 18,
+        "MaxLevel": 22,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0418",
+        "MinLevel": 18,
+        "MaxLevel": 22,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0436",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0041",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 48,
+        "MaxLevel": 55,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0074",
+        "MinLevel": 48,
+        "MaxLevel": 55,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0066",
+        "MinLevel": 48,
+        "MaxLevel": 55,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0095",
+        "MinLevel": 48,
+        "MaxLevel": 55,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0112",
+        "MinLevel": 48,
+        "MaxLevel": 55,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0072",
+        "MinLevel": 25,
+        "MaxLevel": 46,
+        "Chance": 60
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 50,
+        "MaxLevel": 70,
+        "Chance": 100
+      },
+      {
+        "Id": "PKM-0485",
+        "MinLevel": 70,
+        "MaxLevel": 70,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -10244,51 +10863,216 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0016",
-      "PKM-0019",
-      "PKM-0021",
-      "PKM-0023",
-      "PKM-0027",
-      "PKM-0039",
-      "PKM-0043",
-      "PKM-0052",
-      "PKM-0056",
-      "PKM-0058",
-      "PKM-0060",
-      "PKM-0072",
-      "PKM-0081",
-      "PKM-0109",
-      "PKM-0459",
-      "PKM-0495",
-      "PKM-0498",
-      "PKM-0501",
-      "PKM-0504",
-      "PKM-0506",
-      "PKM-0509",
-      "PKM-0511",
-      "PKM-0517",
-      "PKM-0519",
-      "PKM-0551",
-      "PKM-0554",
-      "PKM-0562",
-      "PKM-0571",
-      "PKM-0585",
-      "PKM-0599",
-      "PKM-0602",
-      "PKM-0613",
-      "PKM-0621",
-      "PKM-0635",
-      "PKM-0637",
-      "PKM-0638",
-      "PKM-0643",
-      "PKM-0644",
-      "PKM-0646",
-      "PKM-0650",
-      "PKM-0653",
-      "PKM-0656",
-      "PKM-0661",
-      "PKM-0819"
+      {
+        "Id": "PKM-0506",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0509",
+        "MinLevel": 2,
+        "MaxLevel": 30,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0519",
+        "MinLevel": 2,
+        "MaxLevel": 38,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0016",
+        "MinLevel": 2,
+        "MaxLevel": 5,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 2,
+        "MaxLevel": 5,
+        "Chance": 45
+      },
+      {
+        "Id": "PKM-0504",
+        "MinLevel": 4,
+        "MaxLevel": 45,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0522",
+        "MinLevel": 4,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0052",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0021",
+        "MinLevel": 3,
+        "MaxLevel": 12,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0517",
+        "MinLevel": 17,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0551",
+        "MinLevel": 16,
+        "MaxLevel": 38,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0552",
+        "MinLevel": 18,
+        "MaxLevel": 38,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0511",
+        "MinLevel": 18,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0585",
+        "MinLevel": 26,
+        "MaxLevel": 30,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0586",
+        "MinLevel": 26,
+        "MaxLevel": 30,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0109",
+        "MinLevel": 16,
+        "MaxLevel": 20,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0027",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0023",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0058",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0661",
+        "MinLevel": 7,
+        "MaxLevel": 9,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0819",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0554",
+        "MinLevel": 22,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0562",
+        "MinLevel": 30,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0637",
+        "MinLevel": 70,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0599",
+        "MinLevel": 25,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0602",
+        "MinLevel": 25,
+        "MaxLevel": 15,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0074",
+        "MinLevel": 30,
+        "MaxLevel": 34,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0075",
+        "MinLevel": 30,
+        "MaxLevel": 34,
+        "Chance": 25
+      },
+      {
+        "Id": "PKM-0621",
+        "MinLevel": 35,
+        "MaxLevel": 40,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0635",
+        "MinLevel": 40,
+        "MaxLevel": 46,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0646",
+        "MinLevel": 75,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0459",
+        "MinLevel": 40,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0571",
+        "MinLevel": 30,
+        "MaxLevel": 5,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0638",
+        "MinLevel": 42,
+        "MaxLevel": 1,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -11734,47 +12518,216 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0010",
-      "PKM-0016",
-      "PKM-0019",
-      "PKM-0021",
-      "PKM-0023",
-      "PKM-0025",
-      "PKM-0027",
-      "PKM-0039",
-      "PKM-0043",
-      "PKM-0052",
-      "PKM-0056",
-      "PKM-0058",
-      "PKM-0060",
-      "PKM-0069",
-      "PKM-0072",
-      "PKM-0081",
-      "PKM-0249",
-      "PKM-0352",
-      "PKM-0459",
-      "PKM-0460",
-      "PKM-0495",
-      "PKM-0498",
-      "PKM-0501",
-      "PKM-0504",
-      "PKM-0506",
-      "PKM-0509",
-      "PKM-0551",
-      "PKM-0571",
-      "PKM-0585",
-      "PKM-0650",
-      "PKM-0653",
-      "PKM-0656",
-      "PKM-0661",
-      "PKM-0696",
-      "PKM-0698",
-      "PKM-0704",
-      "PKM-0716",
-      "PKM-0717",
-      "PKM-0718",
-      "PKM-0819"
+      {
+        "Id": "PKM-0661",
+        "MinLevel": 2,
+        "MaxLevel": 46,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0664",
+        "MinLevel": 2,
+        "MaxLevel": 46,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0667",
+        "MinLevel": 2,
+        "MaxLevel": 46,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0016",
+        "MinLevel": 2,
+        "MaxLevel": 8,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 2,
+        "MaxLevel": 5,
+        "Chance": 45
+      },
+      {
+        "Id": "PKM-0506",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0504",
+        "MinLevel": 4,
+        "MaxLevel": 45,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0509",
+        "MinLevel": 2,
+        "MaxLevel": 4,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0674",
+        "MinLevel": 6,
+        "MaxLevel": 46,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0052",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0056",
+        "MinLevel": 3,
+        "MaxLevel": 5,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0021",
+        "MinLevel": 3,
+        "MaxLevel": 12,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0676",
+        "MinLevel": 14,
+        "MaxLevel": 18,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0039",
+        "MinLevel": 6,
+        "MaxLevel": 8,
+        "Chance": 5
+      },
+      {
+        "Id": "PKM-0027",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0023",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0058",
+        "MinLevel": 8,
+        "MaxLevel": 12,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0551",
+        "MinLevel": 16,
+        "MaxLevel": 20,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0819",
+        "MinLevel": 8,
+        "MaxLevel": 26,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0043",
+        "MinLevel": 13,
+        "MaxLevel": 15,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0060",
+        "MinLevel": 13,
+        "MaxLevel": 15,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0585",
+        "MinLevel": 20,
+        "MaxLevel": 24,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0696",
+        "MinLevel": 18,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0698",
+        "MinLevel": 18,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0460",
+        "MinLevel": 35,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0459",
+        "MinLevel": 35,
+        "MaxLevel": 40,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0072",
+        "MinLevel": 30,
+        "MaxLevel": 50,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0086",
+        "MinLevel": 42,
+        "MaxLevel": 50,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0090",
+        "MinLevel": 42,
+        "MaxLevel": 50,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0571",
+        "MinLevel": 35,
+        "MaxLevel": 5,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0352",
+        "MinLevel": 38,
+        "MaxLevel": 42,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0716",
+        "MinLevel": 50,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0717",
+        "MinLevel": 50,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0718",
+        "MinLevel": 70,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0249",
+        "MinLevel": 70,
+        "MaxLevel": 1,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -13404,33 +14357,120 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0019",
-      "PKM-0020",
-      "PKM-0058",
-      "PKM-0105",
-      "PKM-0551",
-      "PKM-0621",
-      "PKM-0722",
-      "PKM-0725",
-      "PKM-0728",
-      "PKM-0734",
-      "PKM-0735",
-      "PKM-0738",
-      "PKM-0742",
-      "PKM-0744",
-      "PKM-0746",
-      "PKM-0753",
-      "PKM-0754",
-      "PKM-0757",
-      "PKM-0758",
-      "PKM-0778",
-      "PKM-0782",
-      "PKM-0784",
-      "PKM-0785",
-      "PKM-0786",
-      "PKM-0787",
-      "PKM-0788"
+      {
+        "Id": "PKM-0722",
+        "MinLevel": 2,
+        "MaxLevel": 30,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0725",
+        "MinLevel": 2,
+        "MaxLevel": 30,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0728",
+        "MinLevel": 2,
+        "MaxLevel": 30,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0742",
+        "MinLevel": 5,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0731",
+        "MinLevel": 10,
+        "MaxLevel": 30,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0734",
+        "MinLevel": 10,
+        "MaxLevel": 30,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0744",
+        "MinLevel": 12,
+        "MaxLevel": 44,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0746",
+        "MinLevel": 16,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0058",
+        "MinLevel": 20,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0757",
+        "MinLevel": 20,
+        "MaxLevel": 24,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0753",
+        "MinLevel": 20,
+        "MaxLevel": 24,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0786",
+        "MinLevel": 60,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0551",
+        "MinLevel": 26,
+        "MaxLevel": 32,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0782",
+        "MinLevel": 40,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0621",
+        "MinLevel": 40,
+        "MaxLevel": 44,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 55,
+        "MaxLevel": 55,
+        "Chance": 1
+      },
+      {
+        "Id": "PKM-0785",
+        "MinLevel": 60,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0787",
+        "MinLevel": 60,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0788",
+        "MinLevel": 60,
+        "MaxLevel": 1,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -14487,23 +15527,66 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0019",
-      "PKM-0263",
-      "PKM-0810",
-      "PKM-0812",
-      "PKM-0813",
-      "PKM-0815",
-      "PKM-0816",
-      "PKM-0819",
-      "PKM-0835",
-      "PKM-0838",
-      "PKM-0856",
-      "PKM-0859",
-      "PKM-0875",
-      "PKM-0888",
-      "PKM-0889",
-      "PKM-0890"
+      {
+        "Id": "PKM-0810",
+        "MinLevel": 2,
+        "MaxLevel": 58,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0813",
+        "MinLevel": 2,
+        "MaxLevel": 58,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0816",
+        "MinLevel": 2,
+        "MaxLevel": 58,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0263",
+        "MinLevel": 5,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0819",
+        "MinLevel": 8,
+        "MaxLevel": 58,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0821",
+        "MinLevel": 18,
+        "MaxLevel": 34,
+        "Chance": 10
+      },
+      {
+        "Id": "PKM-0838",
+        "MinLevel": 15,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0856",
+        "MinLevel": 35,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0859",
+        "MinLevel": 35,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0890",
+        "MinLevel": 60,
+        "MaxLevel": 1,
+        "Chance": 0
+      }
     ],
     "TrainerPool": [
       {
@@ -15621,23 +16704,78 @@
       }
     ],
     "MonsterPool": [
-      "PKM-0001",
-      "PKM-0019",
-      "PKM-0872",
-      "PKM-0906",
-      "PKM-0907",
-      "PKM-0909",
-      "PKM-0910",
-      "PKM-0912",
-      "PKM-0921",
-      "PKM-0935",
-      "PKM-0950",
-      "PKM-0962",
-      "PKM-0968",
-      "PKM-0984",
-      "PKM-0990",
-      "PKM-1007",
-      "PKM-1008"
+      {
+        "Id": "PKM-0906",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 50
+      },
+      {
+        "Id": "PKM-0909",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 30
+      },
+      {
+        "Id": "PKM-0912",
+        "MinLevel": 2,
+        "MaxLevel": 55,
+        "Chance": 20
+      },
+      {
+        "Id": "PKM-0921",
+        "MinLevel": 5,
+        "MaxLevel": 30,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0935",
+        "MinLevel": 5,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0915",
+        "MinLevel": 8,
+        "MaxLevel": 55,
+        "Chance": 15
+      },
+      {
+        "Id": "PKM-0872",
+        "MinLevel": 35,
+        "MaxLevel": 20,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0984",
+        "MinLevel": 60,
+        "MaxLevel": 10,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0990",
+        "MinLevel": 60,
+        "MaxLevel": 10,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-1007",
+        "MinLevel": 68,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-1008",
+        "MinLevel": 68,
+        "MaxLevel": 1,
+        "Chance": 0
+      },
+      {
+        "Id": "PKM-0019",
+        "MinLevel": 55,
+        "MaxLevel": 70,
+        "Chance": 100
+      }
     ],
     "TrainerPool": [
       {
