@@ -663,6 +663,12 @@ public class KartenGenerator
                 dist.TryGetValue(n, out int nd) && nd > d && !ebenen[n].IstStadt && !ebenen[n].IstBoss && n != 0);
         }
 
+        // Kein Boss darf direkter Nachbar eines anderen Bosses sein
+        bool KeinBossNachbar(int id)
+        {
+            return !ebenen[id].Exits.Values.Any(n => ebenen[n].IstBoss);
+        }
+
         bool CityDistOk(int id, int minD)
         {
             foreach (var o in chosen)
@@ -684,7 +690,7 @@ public class KartenGenerator
             {
                 candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
                     && dist.TryGetValue(e.Id, out int dd) && dd >= minD
-                    && CityDistOk(e.Id, 4) && HasForwardNeighbor(e.Id)).ToList();
+                    && CityDistOk(e.Id, 4) && HasForwardNeighbor(e.Id) && KeinBossNachbar(e.Id)).ToList();
                 candidates.Sort((a, b) =>
                     Math.Abs((dist.TryGetValue(a.Id, out int da) ? da : 0) - minD)
                     .CompareTo(Math.Abs((dist.TryGetValue(b.Id, out int db) ? db : 0) - minD)));
@@ -692,14 +698,16 @@ public class KartenGenerator
             else
             {
                 candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
-                    && dist.TryGetValue(e.Id, out int dd) && dd < int.MaxValue).ToList();
+                    && dist.TryGetValue(e.Id, out int dd) && dd < int.MaxValue
+                    && KeinBossNachbar(e.Id)).ToList();
                 candidates.Sort((a, b) =>
                     (dist.TryGetValue(b.Id, out int db) ? db : 0)
                     .CompareTo(dist.TryGetValue(a.Id, out int da) ? da : 0));
             }
 
             var pick = candidates.FirstOrDefault()
-                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && HasForwardNeighbor(e.Id))
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && HasForwardNeighbor(e.Id) && KeinBossNachbar(e.Id))
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && KeinBossNachbar(e.Id))
                 ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss);
             if (pick != null) { pick.IstBoss = true; chosen.Add(pick.Id); }
         }
