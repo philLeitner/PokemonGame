@@ -14,7 +14,9 @@
         </div>
 
         <div class="menu-buttons">
+            @* Klassisch-Modus daweil ausgeblendet:
             <button class="btn-start" @onclick="SpielStarten">▶ Neues Spiel (Klassisch)</button>
+            *@
             @if (Game.AlleRegionen.Any())
             {
                 <button class="btn-start btn-gen-karte" @onclick="GenerierteKarteStarten">🗺️ Generierte Karte</button>
