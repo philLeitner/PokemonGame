@@ -1586,9 +1586,36 @@ public class GameService
             Notify();
         }
 
-        string dialog = (bereitsGesprochen && npc.DialogNachGeschenk != null)
-            ? npc.DialogNachGeschenk
-            : npc.Dialog;
+        // Professor gibt Karte nach Wizard-Abschluss (beim zweiten Gespräch)
+        bool karteSchonErhalten = Spieler.Inventar.Any(i => i.ItemId == "ITEM-KARTE-GEN");
+        if (npc.IstProfessor && WizardAbgeschlossen && bereitsGesprochen && !karteSchonErhalten)
+        {
+            Spieler.ItemHinzufügen("ITEM-KARTE-GEN", "Abenteuer-Karte", "🗺️");
+            itemName = "Abenteuer-Karte";
+            itemEmoji = "🗺️";
+            Notify();
+        }
+
+        string dialog;
+        if (npc.IstProfessor && WizardAbgeschlossen && bereitsGesprochen && itemName != null)
+        {
+            // Professor übergibt die Karte
+            dialog = $"Ah, da bist du ja wieder! Hier, nimm diese Karte – sie zeigt dir alle Orte deiner Reise. " +
+                     $"Viel Erfolg auf deinem Abenteuer! Dieses Spiel wurde von Phil Leitner mit viel Herzblut entwickelt. Ich drücke dir die Daumen! 🍀";
+        }
+        else if (npc.IstProfessor && WizardAbgeschlossen && karteSchonErhalten)
+        {
+            // Professor nach Karten-Übergabe – normaler Dialog
+            dialog = $"Schön, dich zu sehen! Schau auf deine Karte, wenn du die Übersicht verlierst. Viel Erfolg!";
+        }
+        else if (bereitsGesprochen && npc.DialogNachGeschenk != null)
+        {
+            dialog = npc.DialogNachGeschenk;
+        }
+        else
+        {
+            dialog = npc.Dialog;
+        }
 
         return (dialog, itemName, itemEmoji);
     }

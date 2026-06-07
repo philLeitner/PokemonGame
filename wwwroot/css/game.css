@@ -4948,3 +4948,14 @@ input:checked + .toggle-slider-klein::before {
     box-shadow: 0 4px 12px rgba(34,197,94,0.4);
 }
 .btn-wizard-fertig:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(34,197,94,0.5); }
+
+/* Abenteuer-Karte Badge */
+.vollkarte-alle-badge {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff !important;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}

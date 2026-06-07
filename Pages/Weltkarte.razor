@@ -389,6 +389,7 @@
     var vollkarteRegion = vollkarteRegionId;
     var istGenModus = Game.IstGenerierteKartenModus && Game.AktuelleGenerierteKarte != null;
     var genMeta = Game.AktuelleGenerierteKarte;
+    var alleFreischalten = vollkarteAlleFreischalten;
 
     // Klassischer Modus: Ortsliste nach Region
     var vollkarteOrteKlassisch = (string.IsNullOrEmpty(vollkarteRegion)
@@ -401,7 +402,14 @@
                 <h3>🗺️ @vollkarteName</h3>
                 @if (istGenModus)
                 {
-                    <span class="vollkarte-anzahl">@genMeta!.FreigeschalteteOrte.Count / @genMeta.OrtReihenfolge.Count freigeschaltet</span>
+                    @if (alleFreischalten)
+                    {
+                        <span class="vollkarte-anzahl vollkarte-alle-badge">🗺️ Gesamte Karte</span>
+                    }
+                    else
+                    {
+                        <span class="vollkarte-anzahl">@genMeta!.FreigeschalteteOrte.Count / @genMeta.OrtReihenfolge.Count freigeschaltet</span>
+                    }
                 }
                 else
                 {
@@ -442,18 +450,18 @@
                                     {
                                         if (!coords.TryGetValue(ort.Id, out var posA)) continue;
                                         int ax = netzOffX(posA.X) + 45; int ay = netzOffY(posA.Y) + 20;
-                                        bool freiA = genMeta.FreigeschalteteOrte.Contains(ort.Id);
+                                        bool freiA = alleFreischalten || genMeta.FreigeschalteteOrte.Contains(ort.Id);
                                         // Ost-Verbindung
                                         if (!string.IsNullOrEmpty(ort.Ost) && coords.TryGetValue(ort.Ost, out var posB))
                                         {
-                                            bool freiB = genMeta.FreigeschalteteOrte.Contains(ort.Ost);
+                                            bool freiB = alleFreischalten || genMeta.FreigeschalteteOrte.Contains(ort.Ost);
                                             string lc = (freiA && freiB) ? "#4b5563" : "#1f2937";
                                             <line x1="@ax" y1="@ay" x2="@(netzOffX(posB.X)+45)" y2="@(netzOffY(posB.Y)+20)" stroke="@lc" stroke-width="2" />
                                         }
                                         // Süd-Verbindung
                                         if (!string.IsNullOrEmpty(ort.Sued) && coords.TryGetValue(ort.Sued, out var posC))
                                         {
-                                            bool freiC = genMeta.FreigeschalteteOrte.Contains(ort.Sued);
+                                            bool freiC = alleFreischalten || genMeta.FreigeschalteteOrte.Contains(ort.Sued);
                                             string lc = (freiA && freiC) ? "#4b5563" : "#1f2937";
                                             <line x1="@ax" y1="@ay" x2="@(netzOffX(posC.X)+45)" y2="@(netzOffY(posC.Y)+20)" stroke="@lc" stroke-width="2" />
                                         }
@@ -463,7 +471,7 @@
                                 @foreach (var ort in alleGenOrte)
                                 {
                                     if (!coords.TryGetValue(ort.Id, out var pos)) continue;
-                                    bool istFrei = genMeta.FreigeschalteteOrte.Contains(ort.Id);
+                                    bool istFrei = alleFreischalten || genMeta.FreigeschalteteOrte.Contains(ort.Id);
                                     bool istHier = ort.Id == Game.Spieler.AktuellerOrt;
                                     bool hatOrden = ort.Arena != null && Game.Spieler.Orden.Contains(ort.Arena.OrdenName);
                                     bool istArena = ort.Arena != null;
@@ -808,6 +816,7 @@
     private bool vollkarteOffen = false;
     private string? vollkarteRegionId = null;
     private string vollkarteName = "";
+    private bool vollkarteAlleFreischalten = false; // true = Karte zeigt alle Orte (Abenteuer-Karte)
     // Seed-Code Kopieren
     private bool seedKopiertMeldung = false;
 
@@ -991,8 +1000,21 @@
             || item.Name.EndsWith("-Karte", StringComparison.OrdinalIgnoreCase)
             || item.Name.EndsWith("karte", StringComparison.OrdinalIgnoreCase);
         if (!istKarteItem) return;
+
+        // Abenteuer-Karte (generierte Karte) → zeigt ALLE Orte der generierten Karte
+        if (item.ItemId == "ITEM-KARTE-GEN" && Game.IstGenerierteKartenModus)
+        {
+            vollkarteName = "Abenteuer-Karte";
+            vollkarteRegionId = null; // null = alle Orte
+            vollkarteAlleFreischalten = true; // Karte zeigt alle Orte (kein Fog-of-War)
+            rucksackOffen = false;
+            vollkarteOffen = true;
+            return;
+        }
+
         // Region aus Item-Name ableiten (z.B. "Kanto-Karte" → "KAN")
         vollkarteName = item.Name;
+        vollkarteAlleFreischalten = false;
         vollkarteRegionId = item.Name switch
         {
             var n when n.Contains("Kanto",  StringComparison.OrdinalIgnoreCase) => "KAN",
@@ -1010,7 +1032,7 @@
         vollkarteOffen = true;
     }
 
-    private void VollkarteSchliessen() => vollkarteOffen = false;
+    private void VollkarteSchliessen() { vollkarteOffen = false; vollkarteAlleFreischalten = false; }
 
     private bool neuGenBestaetigung = false;
 
