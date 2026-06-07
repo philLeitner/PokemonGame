@@ -169,10 +169,11 @@ public class KartenGenerator
 
         meta.StartOrtId = ergebnis.FirstOrDefault()?.Id ?? "";
         meta.OrtReihenfolge = ergebnis.Select(o => o.Id).ToList();
-        // Erste 5 Orte freigeschaltet (Fog-of-War)
-        int ersteFrei = Math.Min(5, ergebnis.Count);
-        meta.FreigeschalteBisIndex = ersteFrei - 1;
-        for (int i = 0; i < ersteFrei; i++)
+        // Fog-of-War: Orte bis zur ersten Arena (inkl.) freischalten
+        int ersteArenaIdx = ergebnis.FindIndex(o => o.Arena != null);
+        int bisIdx = ersteArenaIdx >= 0 ? ersteArenaIdx : Math.Min(4, ergebnis.Count - 1);
+        meta.FreigeschalteBisIndex = bisIdx;
+        for (int i = 0; i <= bisIdx; i++)
             meta.FreigeschalteteOrte.Add(ergebnis[i].Id);
 
         return (ergebnis, meta);
