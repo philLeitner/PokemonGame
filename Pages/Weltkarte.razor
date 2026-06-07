@@ -351,12 +351,20 @@
                 {
                     @foreach (var item in Game.Spieler.Inventar)
                     {
-                        <div class="rucksack-item">
-                            <span class="item-emoji">@item.Emoji</span>
+                        var itm = item;
+                        bool istKarteItem = itm.ItemId.StartsWith("ITEM-KARTE", StringComparison.OrdinalIgnoreCase)
+                            || itm.Name.EndsWith("-Karte", StringComparison.OrdinalIgnoreCase)
+                            || itm.Name.EndsWith("karte", StringComparison.OrdinalIgnoreCase);
+                        <div class="rucksack-item @(istKarteItem ? "karte-item" : "")" @onclick="() => RucksackItemKlick(itm)">
+                            <span class="item-emoji">@itm.Emoji</span>
                             <div class="item-info">
-                                <span class="item-name">@item.Name</span>
-                                <span class="item-menge">×@item.Menge</span>
+                                <span class="item-name">@itm.Name</span>
+                                <span class="item-menge">×@itm.Menge</span>
                             </div>
+                            @if (istKarteItem)
+                            {
+                                <span class="karte-item-hinweis">🗺️ Anzeigen</span>
+                            }
                         </div>
                     }
                 }
@@ -365,6 +373,59 @@
     </div>
 }
 
+@if (vollkarteOffen)
+{
+    var vollkarteRegion = vollkarteRegionId;
+    var vollkarteOrte = string.IsNullOrEmpty(vollkarteRegion)
+        ? Game.AlleOrte
+        : Game.AlleOrte.Where(o => o.Id.StartsWith(vollkarteRegion + "-", StringComparison.OrdinalIgnoreCase)).ToList();
+    <div class="meldung-overlay" @onclick="VollkarteSchliessen">
+        <div class="vollkarte-box" @onclick:stopPropagation="true">
+            <div class="markt-header">
+                <h3>🗺️ @vollkarteName</h3>
+                <span class="vollkarte-anzahl">@vollkarteOrte.Count Orte</span>
+                <button class="btn-schliessen" @onclick="VollkarteSchliessen">✕</button>
+            </div>
+            <div class="vollkarte-inhalt">
+                <!-- Legende -->
+                <div class="vollkarte-legende">
+                    <span class="vk-leg"><span class="vk-dot" style="background:#6366f1"></span>Stadt</span>
+                    <span class="vk-leg"><span class="vk-dot" style="background:#22c55e"></span>Route</span>
+                    <span class="vk-leg"><span class="vk-dot" style="background:#78716c"></span>Höhle</span>
+                    <span class="vk-leg"><span class="vk-dot" style="background:#16a34a"></span>Wald</span>
+                    <span class="vk-leg"><span class="vk-dot" style="background:#f59e0b"></span>Arena</span>
+                </div>
+                <!-- Ortsliste -->
+                <div class="vollkarte-liste">
+                    @foreach (var ort in vollkarteOrte)
+                    {
+                        var o = ort;
+                        bool istHier = o.Id == Game.Spieler.AktuellerOrt;
+                        bool hatOrden = o.Arena != null && Game.Spieler.Orden.Contains(o.Arena.OrdenName);
+                        string farbe = o.Arena != null ? "#f59e0b"
+                            : o.Typ == "stadt" ? "#6366f1"
+                            : o.Typ == "route" ? "#22c55e"
+                            : o.Typ == "hoehle" ? "#78716c"
+                            : o.Typ == "wald" ? "#16a34a"
+                            : "#4b5563";
+                        <div class="vollkarte-ort @(istHier ? "hier" : "")" style="border-left: 3px solid @farbe"
+                             @onclick="() => VollkarteOrtWählen(o)">
+                            <span class="vk-icon">@OrtIcon(o)</span>
+                            <div class="vk-info">
+                                <span class="vk-name">@o.Name</span>
+                                @if (o.Arena != null)
+                                {
+                                    <span class="vk-arena">🏅 @o.Arena.OrdenName @(hatOrden ? "✓" : "")</span>
+                                }
+                            </div>
+                            @if (istHier) { <span class="vk-hier">📍 Du bist hier</span> }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
 @if (marktOffen)
 {
     var ortRef2 = Game.AktuellerOrt ?? (ausgewähltOrt != null ? Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrt.Id) : null);
@@ -421,6 +482,10 @@
     private bool rucksackOffen = false;
     private string aktiveKategorie = "Alle";
     private string kaufMeldung = "";
+    // Vollkarte
+    private bool vollkarteOffen = false;
+    private string? vollkarteRegionId = null;
+    private string vollkarteName = "";
 
     // NPC Dialog
     private string? npcDialog;
@@ -532,6 +597,40 @@
 
     private void RucksackOeffnen() => rucksackOffen = true;
     private void RucksackSchließen() => rucksackOffen = false;
+
+    private void RucksackItemKlick(InventarItem item)
+    {
+        bool istKarteItem = item.ItemId.StartsWith("ITEM-KARTE", StringComparison.OrdinalIgnoreCase)
+            || item.Name.EndsWith("-Karte", StringComparison.OrdinalIgnoreCase)
+            || item.Name.EndsWith("karte", StringComparison.OrdinalIgnoreCase);
+        if (!istKarteItem) return;
+        // Region aus Item-Name ableiten (z.B. "Kanto-Karte" → "KAN")
+        vollkarteName = item.Name;
+        vollkarteRegionId = item.Name switch
+        {
+            var n when n.Contains("Kanto",  StringComparison.OrdinalIgnoreCase) => "KAN",
+            var n when n.Contains("Johto",  StringComparison.OrdinalIgnoreCase) => "JOH",
+            var n when n.Contains("Hoenn",  StringComparison.OrdinalIgnoreCase) => "HOE",
+            var n when n.Contains("Sinnoh", StringComparison.OrdinalIgnoreCase) => "SIN",
+            var n when n.Contains("Unova",  StringComparison.OrdinalIgnoreCase) => "UNO",
+            var n when n.Contains("Kalos",  StringComparison.OrdinalIgnoreCase) => "KAL",
+            var n when n.Contains("Alola",  StringComparison.OrdinalIgnoreCase) => "ALO",
+            var n when n.Contains("Galar",  StringComparison.OrdinalIgnoreCase) => "GAL",
+            var n when n.Contains("Paldea", StringComparison.OrdinalIgnoreCase) => "PAL",
+            _ => null // alle Orte anzeigen
+        };
+        rucksackOffen = false;
+        vollkarteOffen = true;
+    }
+
+    private void VollkarteSchliessen() => vollkarteOffen = false;
+
+    private void VollkarteOrtWählen(Ort ort)
+    {
+        vollkarteOffen = false;
+        ausgewähltOrtId = ort.Id;
+        ausgewähltOrt = ort;
+    }
 
     private void TrainerKämpfen(TrainerKampf trainer) => Game.TrainerKampfStarten(trainer);
     private void ArenaKämpfen(Ort ort) => Game.ArenaKampfStarten(ort);
