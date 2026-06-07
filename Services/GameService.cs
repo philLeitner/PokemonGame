@@ -659,17 +659,8 @@ public class GameService
     {
         var spezies = AlleMonster.FirstOrDefault(m => m.Id == begegnung.MonsterId);
         if (spezies == null) return;
-        // Im generierten Modus: Level nach Ebenen-Position, nicht nach Ort-Daten
-        int level;
-        if (IstGenerierteKartenModus && !string.IsNullOrEmpty(Spieler.AktuellerOrt))
-        {
-            var (eMin, eMax) = EbenenLevelBerechnen(Spieler.AktuellerOrt, istArena: false);
-            level = eMin > 0 ? _rng.Next(eMin, eMax + 1) : _rng.Next(begegnung.MinLevel, begegnung.MaxLevel + 1);
-        }
-        else
-        {
-            level = _rng.Next(begegnung.MinLevel, begegnung.MaxLevel + 1);
-        }
+        // Level kommt direkt aus begegnung (im generierten Modus bereits vom Generator gesetzt)
+        int level = _rng.Next(begegnung.MinLevel, begegnung.MaxLevel + 1);
         var gegner = MonsterInstanz.VonSpezies(spezies, level, AlleAttacken);
         var spielerMonster = Spieler.AktivesMonster;
         if (spielerMonster == null) return;
@@ -734,14 +725,8 @@ public class GameService
         var ersteMonsterId = effektiverTrainer.Team[0].MonsterId;
         var spezies = AlleMonster.FirstOrDefault(m => m.Id == ersteMonsterId)
                       ?? AlleMonster[_rng.Next(AlleMonster.Count)];
-        // Im generierten Modus: Level nach Ebenen-Position des aktuellen Ortes
-        int trainerLevel = effektiverTrainer.Team[0].Level;
-        if (IstGenerierteKartenModus && !string.IsNullOrEmpty(Spieler.AktuellerOrt))
-        {
-            var (eMin, eMax) = EbenenLevelBerechnen(Spieler.AktuellerOrt, istArena: false);
-            if (eMin > 0) trainerLevel = _rng.Next(eMin, eMax + 2); // Trainer etwas stärker als Wild
-        }
-        var gegner = MonsterInstanz.VonSpezies(spezies, trainerLevel, AlleAttacken);
+        // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
+        var gegner = MonsterInstanz.VonSpezies(spezies, effektiverTrainer.Team[0].Level, AlleAttacken);
 
         AktuellerKampf = new KampfZustand
         {
@@ -771,14 +756,8 @@ public class GameService
         if (erstesGegnerMonster == null) return;
         var spezies = AlleMonster.FirstOrDefault(m => m.Id == erstesGegnerMonster.MonsterId)
                       ?? AlleMonster[_rng.Next(AlleMonster.Count)];
-        // Im generierten Modus: Level nach Ebenen-Position
-        int arenaLevel = erstesGegnerMonster.Level;
-        if (IstGenerierteKartenModus)
-        {
-            var (eMin, eMax) = EbenenLevelBerechnen(ort.Id, istArena: true);
-            if (eMin > 0) arenaLevel = _rng.Next(eMin, eMax + 1);
-        }
-        var gegner = MonsterInstanz.VonSpezies(spezies, arenaLevel, AlleAttacken);
+        // Level kommt direkt aus Arena-Team (im generierten Modus bereits vom Generator gesetzt)
+        var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
 
         // Arena als Trainer-Kampf mit Orden-Belohnung
         var arenaTrainer = new TrainerKampf
@@ -1245,20 +1224,8 @@ public class GameService
                 var nächsterEintrag = AktuellerKampf.AktuellerTrainer.Team[AktuellerKampf.TrainerMonsterIndex];
                 var nächsteSpezies = AlleMonster.FirstOrDefault(m => m.Id == nächsterEintrag.MonsterId)
                                      ?? AlleMonster[_rng.Next(AlleMonster.Count)];
-                // Im generierten Modus: Level nach Ebenen-Position skalieren
-                int nächstesLevel = nächsterEintrag.Level;
-                if (IstGenerierteKartenModus && AktuellerKampf.OrtId != null)
-                {
-                    bool istArena = AktuellerKampf.Typ == KampfTyp.Arena;
-                    var (eMin, eMax) = EbenenLevelBerechnen(AktuellerKampf.OrtId, istArena);
-                    if (eMin > 0) nächstesLevel = _rng.Next(eMin, eMax + (istArena ? 1 : 2));
-                }
-                else if (IstGenerierteKartenModus && !string.IsNullOrEmpty(Spieler.AktuellerOrt))
-                {
-                    var (eMin, eMax) = EbenenLevelBerechnen(Spieler.AktuellerOrt, false);
-                    if (eMin > 0) nächstesLevel = _rng.Next(eMin, eMax + 2);
-                }
-                var nächsterGegner = MonsterInstanz.VonSpezies(nächsteSpezies, nächstesLevel, AlleAttacken);
+                // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
+                var nächsterGegner = MonsterInstanz.VonSpezies(nächsteSpezies, nächsterEintrag.Level, AlleAttacken);
                 AktuellerKampf.GegnerMonster = nächsterGegner;
                 AktuellerKampf.Log.Add($"🔄 {AktuellerKampf.GegnerName} schickt {nächsterGegner.Name} (Lv.{nächsterGegner.Level})!");
                 AktuellerKampf.Phase = KampfPhase.SpielerZug;

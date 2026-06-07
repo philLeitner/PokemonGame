@@ -241,6 +241,33 @@ public class KartenGenerator
             }
         }
 
+        // Level direkt in die Ort-Objekte schreiben (Distanz = Level-Basis)
+        foreach (var ort in ergebnis)
+        {
+            if (!meta.OrtDistanzen.TryGetValue(ort.Id, out int dist)) continue;
+            bool istArena = ort.Arena != null;
+            int minLvl = dist + 1;
+            int maxLvl = dist + 2;
+            if (istArena) { minLvl += 2; maxLvl += 3; }
+
+            // WildMonster-Level überschreiben
+            if (ort.WildMonster != null)
+                foreach (var w in ort.WildMonster)
+                { w.MinLevel = minLvl; w.MaxLevel = maxLvl; }
+
+            // Trainer-Team-Level überschreiben
+            if (ort.Trainer != null)
+                foreach (var t in ort.Trainer)
+                    if (t.Team != null)
+                        foreach (var m in t.Team)
+                            m.Level = minLvl + 1; // Trainer etwas stärker
+
+            // Arena-Team-Level überschreiben
+            if (ort.Arena?.Team != null)
+                foreach (var m in ort.Arena.Team)
+                    m.Level = maxLvl + 1;
+        }
+
         // Fog-of-War: Orte bis zur ersten Arena (inkl.) freischalten
         int ersteArenaIdx = ergebnis.FindIndex(o => o.Arena != null);
         int bisIdx = ersteArenaIdx >= 0 ? ersteArenaIdx : Math.Min(4, ergebnis.Count - 1);
