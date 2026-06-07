@@ -40,13 +40,11 @@ public class GenerierteKarte
     public HashSet<string> FreigeschalteteOrte { get; set; } = new();
     /// <summary>IDs der bereits besiegten Arena-Orte</summary>
     public HashSet<string> BesiegteArenen { get; set; } = new();
+    /// <summary>X/Y-Koordinaten für die grafische Netzansicht (OrtId → (GridX, GridY))</summary>
+    public Dictionary<string, (int X, int Y)> OrtKoordinaten { get; set; } = new();
 }
 
 // ─── Generator ───────────────────────────────────────────────────────────────
-/// <summary>
-/// Nimmt die echten Orte aus AlleOrte (weltkarte_import.json) für die gewählten Regionen,
-/// setzt die Verbindungen (Nord/Süd/Ost/West) neu und gibt eine spielfertige Ortsliste zurück.
-/// </summary>
 public class KartenGenerator
 {
     private static readonly char[] SeedChars =
@@ -69,12 +67,6 @@ public class KartenGenerator
         return Math.Abs(hash);
     }
 
-    /// <summary>
-    /// Generiert eine Karte aus den echten Orten der gewählten Regionen.
-    /// - Nimmt alle Orte der Region aus AlleOrte (nach ID-Prefix, z.B. "KAN-")
-    /// - Setzt Nord/Süd/Ost/West-Verbindungen neu (Hauptpfad + Abzweigungen)
-    /// - Gibt die modifizierten Ort-Kopien zurück (Original-AlleOrte bleibt unverändert)
-    /// </summary>
     public static (List<Ort> Orte, GenerierteKarte Meta) Generiere(
         string seedCode,
         List<string> regionsReihenfolge,
@@ -90,24 +82,23 @@ public class KartenGenerator
         };
 
         int ordenOffset = 0;
+        // Für Koordinaten: aktueller X-Offset (Hauptpfad läuft horizontal)
+        int globalX = 0;
 
         foreach (var regId in regionsReihenfolge)
         {
             var regCfg = alleRegionen.FirstOrDefault(r => r.Id == regId);
             if (regCfg == null) continue;
 
-            // Alle Orte dieser Region aus weltkarte_import.json holen (nach ID-Prefix)
             var regionOrte = alleOrte
                 .Where(o => o.Id.StartsWith(regId + "-", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(o => o.Id) // nach ID sortieren (KAN-0001, KAN-0002, ...)
+                .OrderBy(o => o.Id)
                 .ToList();
 
             if (!regionOrte.Any()) continue;
 
-            // Tiefe Kopien erstellen (Original nicht verändern)
             var kopien = regionOrte.Select(o => KopiereOrt(o, ordenOffset)).ToList();
 
-            // Alle alten Verbindungen löschen
             foreach (var k in kopien)
             {
                 k.Nord = null; k.Sued = null; k.Ost = null; k.West = null;
@@ -116,7 +107,6 @@ public class KartenGenerator
                 k.MinOrdenFürZugang = ordenOffset;
             }
 
-            // Arenen finden und MinOrden setzen
             int arenaIdx = 0;
             foreach (var k in kopien)
             {
@@ -127,31 +117,48 @@ public class KartenGenerator
                 }
             }
 
-            // Verbindungen neu setzen: Hauptpfad Süd→Nord
+            // Hauptpfad: Ost→West (horizontal), Y=0
             for (int i = 0; i < kopien.Count - 1; i++)
             {
                 var a = kopien[i];
                 var b = kopien[i + 1];
-                a.Sued = b.Id;
-                b.Nord = a.Id;
+                a.Ost  = b.Id;
+                b.West = a.Id;
             }
 
-            // Seitenabzweigungen: alle 4–7 Orte eine Ost/West-Verbindung (Abkürzung)
+            // X/Y-Koordinaten für Hauptpfad setzen
+            for (int i = 0; i < kopien.Count; i++)
+            {
+                meta.OrtKoordinaten[kopien[i].Id] = (globalX + i, 0);
+            }
+
+            // Seitenabzweigungen: nach oben (Y=-1) oder unten (Y=+1)
+            // Jede Abzweigung ist ein einzelner Ort der über Nord/Süd erreichbar ist
+            int abzweigRichtung = 1; // abwechselnd oben/unten
             for (int i = 2; i < kopien.Count - 2; i += rng.Next(4, 8))
             {
-                int zielIdx = Math.Min(i + rng.Next(1, 4), kopien.Count - 1);
+                int zielIdx = Math.Min(i + rng.Next(2, 5), kopien.Count - 1);
                 var a = kopien[i];
                 var b = kopien[zielIdx];
-                if (string.IsNullOrEmpty(a.Ost) && string.IsNullOrEmpty(b.West))
+
+                // Abzweigung: a bekommt eine Nord- oder Süd-Verbindung zu b
+                // (b wird dadurch "oben" oder "unten" vom Hauptpfad)
+                if (abzweigRichtung > 0 && string.IsNullOrEmpty(a.Nord) && string.IsNullOrEmpty(b.Sued))
                 {
-                    a.Ost  = b.Id;
-                    b.West = a.Id;
+                    a.Nord = b.Id;
+                    b.Sued = a.Id;
+                    // b bekommt Y=-1 (oben), X = Mitte zwischen a und zielIdx
+                    int midX = (meta.OrtKoordinaten[a.Id].X + meta.OrtKoordinaten[b.Id].X) / 2;
+                    meta.OrtKoordinaten[b.Id] = (midX, -1);
                 }
-                else if (string.IsNullOrEmpty(a.West) && string.IsNullOrEmpty(b.Ost))
+                else if (abzweigRichtung < 0 && string.IsNullOrEmpty(a.Sued) && string.IsNullOrEmpty(b.Nord))
                 {
-                    a.West = b.Id;
-                    b.Ost  = a.Id;
+                    a.Sued = b.Id;
+                    b.Nord = a.Id;
+                    int midX = (meta.OrtKoordinaten[a.Id].X + meta.OrtKoordinaten[b.Id].X) / 2;
+                    meta.OrtKoordinaten[b.Id] = (midX, 1);
                 }
+                abzweigRichtung = -abzweigRichtung;
             }
 
             // Regionen verbinden: letzter Ort der vorherigen Region → erster Ort dieser Region
@@ -159,16 +166,18 @@ public class KartenGenerator
             {
                 var letzter = ergebnis.Last();
                 var erster  = kopien.First();
-                letzter.Sued = erster.Id;
-                erster.Nord  = letzter.Id;
+                letzter.Ost = erster.Id;
+                erster.West = letzter.Id;
             }
 
             ergebnis.AddRange(kopien);
             ordenOffset += regCfg.Arenaleiter.Count;
+            globalX += kopien.Count + 1; // +1 Abstand zwischen Regionen
         }
 
         meta.StartOrtId = ergebnis.FirstOrDefault()?.Id ?? "";
         meta.OrtReihenfolge = ergebnis.Select(o => o.Id).ToList();
+
         // Fog-of-War: Orte bis zur ersten Arena (inkl.) freischalten
         int ersteArenaIdx = ergebnis.FindIndex(o => o.Arena != null);
         int bisIdx = ersteArenaIdx >= 0 ? ersteArenaIdx : Math.Min(4, ergebnis.Count - 1);
@@ -179,7 +188,6 @@ public class KartenGenerator
         return (ergebnis, meta);
     }
 
-    /// <summary>Erstellt eine tiefe Kopie eines Ortes (Original bleibt unverändert).</summary>
     private static Ort KopiereOrt(Ort original, int ordenOffset)
     {
         return new Ort
@@ -191,7 +199,7 @@ public class KartenGenerator
             GridX            = original.GridX,
             GridY            = original.GridY,
             Beschreibung     = original.Beschreibung,
-            Arena            = original.Arena,   // Arena-Referenz behalten (Name, Typ, Orden)
+            Arena            = original.Arena,
             WildMonster      = original.WildMonster,
             Verbindungen     = new List<string>(),
             Trainer          = original.Trainer,
@@ -200,11 +208,10 @@ public class KartenGenerator
             MarktAngebot     = original.MarktAngebot,
             NPCs             = original.NPCs,
             IstUnterirdisch  = original.IstUnterirdisch,
-            LigaZugang       = false, // Liga-Zugang in generierter Karte deaktiviert
-            BenötigtItem     = null,  // Item-Sperren in generierter Karte deaktiviert
+            LigaZugang       = false,
+            BenötigtItem     = null,
             MinOrdenFürZugang = ordenOffset,
             MaxOrdenFürSperre = 0,
-            // Verbindungen werden danach neu gesetzt
             Nord = null, Sued = null, Ost = null, West = null,
             NordTyp = "normal", SuedTyp = "normal", OstTyp = "normal", WestTyp = "normal",
             NordMinOrden = 0, SuedMinOrden = 0, OstMinOrden = 0, WestMinOrden = 0,

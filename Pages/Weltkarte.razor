@@ -388,53 +388,157 @@
 @if (vollkarteOffen)
 {
     var vollkarteRegion = vollkarteRegionId;
-    var vollkarteOrte = string.IsNullOrEmpty(vollkarteRegion)
+    var istGenModus = Game.IstGenerierteKartenModus && Game.AktuelleGenerierteKarte != null;
+    var genMeta = Game.AktuelleGenerierteKarte;
+
+    // Klassischer Modus: Ortsliste nach Region
+    var vollkarteOrteKlassisch = (string.IsNullOrEmpty(vollkarteRegion)
         ? Game.AlleOrte
-        : Game.AlleOrte.Where(o => o.Id.StartsWith(vollkarteRegion + "-", StringComparison.OrdinalIgnoreCase)).ToList();
+        : Game.AlleOrte.Where(o => o.Id.StartsWith(vollkarteRegion + "-", StringComparison.OrdinalIgnoreCase)).ToList());
+
     <div class="meldung-overlay" @onclick="VollkarteSchliessen">
-        <div class="vollkarte-box" @onclick:stopPropagation="true">
+        <div class="vollkarte-box @(istGenModus ? "vollkarte-netz" : "")" @onclick:stopPropagation="true">
             <div class="markt-header">
                 <h3>🗺️ @vollkarteName</h3>
-                <span class="vollkarte-anzahl">@vollkarteOrte.Count Orte</span>
+                @if (istGenModus)
+                {
+                    <span class="vollkarte-anzahl">@genMeta!.FreigeschalteteOrte.Count / @genMeta.OrtReihenfolge.Count freigeschaltet</span>
+                }
+                else
+                {
+                    <span class="vollkarte-anzahl">@vollkarteOrteKlassisch.Count Orte</span>
+                }
                 <button class="btn-schliessen" @onclick="VollkarteSchliessen">✕</button>
             </div>
-            <div class="vollkarte-inhalt">
-                <!-- Legende -->
-                <div class="vollkarte-legende">
-                    <span class="vk-leg"><span class="vk-dot" style="background:#6366f1"></span>Stadt</span>
-                    <span class="vk-leg"><span class="vk-dot" style="background:#22c55e"></span>Route</span>
-                    <span class="vk-leg"><span class="vk-dot" style="background:#78716c"></span>Höhle</span>
-                    <span class="vk-leg"><span class="vk-dot" style="background:#16a34a"></span>Wald</span>
-                    <span class="vk-leg"><span class="vk-dot" style="background:#f59e0b"></span>Arena</span>
-                </div>
-                <!-- Ortsliste -->
-                <div class="vollkarte-liste">
-                    @foreach (var ort in vollkarteOrte)
+
+            @if (istGenModus && genMeta != null)
+            {
+                <!-- Grafische Netzansicht (wie HTML-Generator) -->
+                @{
+                    var coords = genMeta.OrtKoordinaten;
+                    if (coords.Count > 0)
                     {
-                        var o = ort;
-                        bool istHier = o.Id == Game.Spieler.AktuellerOrt;
-                        bool hatOrden = o.Arena != null && Game.Spieler.Orden.Contains(o.Arena.OrdenName);
-                        string farbe = o.Arena != null ? "#f59e0b"
-                            : o.Typ == "stadt" ? "#6366f1"
-                            : o.Typ == "route" ? "#22c55e"
-                            : o.Typ == "hoehle" ? "#78716c"
-                            : o.Typ == "wald" ? "#16a34a"
-                            : "#4b5563";
-                        <div class="vollkarte-ort @(istHier ? "hier" : "")" style="border-left: 3px solid @farbe"
-                             @onclick="() => VollkarteOrtWählen(o)">
-                            <span class="vk-icon">@OrtIcon(o)</span>
-                            <div class="vk-info">
-                                <span class="vk-name">@o.Name</span>
-                                @if (o.Arena != null)
+                        int minX = coords.Values.Min(c => c.X);
+                        int maxX = coords.Values.Max(c => c.X);
+                        int minY = coords.Values.Min(c => c.Y);
+                        int maxY = coords.Values.Max(c => c.Y);
+                        int TILE = 110; int PAD = 60;
+                        int svgW = (maxX - minX + 1) * TILE + PAD * 2;
+                        int svgH = (maxY - minY + 1) * TILE + PAD * 2;
+                        int OffX(int x) => (x - minX) * TILE + PAD;
+                        int OffY(int y) => (y - minY) * TILE + PAD;
+                        var alleGenOrte = genMeta.OrtReihenfolge
+                            .Select(id => Game.AlleOrte.FirstOrDefault(o => o.Id == id))
+                            .Where(o => o != null).Cast<Ort>().ToList();
+                        <div class="vollkarte-netz-scroll">
+                            <div class="vollkarte-legende">
+                                <span class="vk-leg"><span class="vk-dot" style="background:#6366f1"></span>Stadt</span>
+                                <span class="vk-leg"><span class="vk-dot" style="background:#22c55e"></span>Route</span>
+                                <span class="vk-leg"><span class="vk-dot" style="background:#78716c"></span>Höhle</span>
+                                <span class="vk-leg"><span class="vk-dot" style="background:#16a34a"></span>Wald</span>
+                                <span class="vk-leg"><span class="vk-dot" style="background:#f59e0b"></span>Arena</span>
+                                <span class="vk-leg"><span class="vk-dot" style="background:#374151"></span>Unbekannt</span>
+                            </div>
+                            <div class="vk-netz-container" style="width:@(svgW)px; height:@(svgH)px; position:relative;">
+                                <!-- SVG-Linien -->
+                                <svg style="position:absolute;top:0;left:0;width:@(svgW)px;height:@(svgH)px;pointer-events:none;">
+                                    @foreach (var ort in alleGenOrte)
+                                    {
+                                        if (!coords.TryGetValue(ort.Id, out var posA)) continue;
+                                        int ax = OffX(posA.X) + 45; int ay = OffY(posA.Y) + 20;
+                                        bool freiA = genMeta.FreigeschalteteOrte.Contains(ort.Id);
+                                        // Ost-Verbindung
+                                        if (!string.IsNullOrEmpty(ort.Ost) && coords.TryGetValue(ort.Ost, out var posB))
+                                        {
+                                            bool freiB = genMeta.FreigeschalteteOrte.Contains(ort.Ost);
+                                            string lc = (freiA && freiB) ? "#4b5563" : "#1f2937";
+                                            <line x1="@ax" y1="@ay" x2="@(OffX(posB.X)+45)" y2="@(OffY(posB.Y)+20)" stroke="@lc" stroke-width="2" />
+                                        }
+                                        // Süd-Verbindung
+                                        if (!string.IsNullOrEmpty(ort.Sued) && coords.TryGetValue(ort.Sued, out var posC))
+                                        {
+                                            bool freiC = genMeta.FreigeschalteteOrte.Contains(ort.Sued);
+                                            string lc = (freiA && freiC) ? "#4b5563" : "#1f2937";
+                                            <line x1="@ax" y1="@ay" x2="@(OffX(posC.X)+45)" y2="@(OffY(posC.Y)+20)" stroke="@lc" stroke-width="2" />
+                                        }
+                                    }
+                                </svg>
+                                <!-- Ort-Boxen -->
+                                @foreach (var ort in alleGenOrte)
                                 {
-                                    <span class="vk-arena">🏅 @o.Arena.OrdenName @(hatOrden ? "✓" : "")</span>
+                                    if (!coords.TryGetValue(ort.Id, out var pos)) continue;
+                                    bool istFrei = genMeta.FreigeschalteteOrte.Contains(ort.Id);
+                                    bool istHier = ort.Id == Game.Spieler.AktuellerOrt;
+                                    bool hatOrden = ort.Arena != null && Game.Spieler.Orden.Contains(ort.Arena.OrdenName);
+                                    bool istArena = ort.Arena != null;
+                                    bool istBesiegt = istArena && genMeta.BesiegteArenen.Contains(ort.Id);
+                                    string boxClass = "vk-netz-box"
+                                        + (istHier ? " vk-hier" : "")
+                                        + (istArena ? " vk-arena-box" : "")
+                                        + (istBesiegt ? " vk-besiegt" : "")
+                                        + (!istFrei ? " vk-fog" : "");
+                                    int bx = OffX(pos.X); int by = OffY(pos.Y);
+                                    <div class="@boxClass"
+                                         style="left:@(bx)px; top:@(by)px;"
+                                         @onclick="() => { if(istFrei) VollkarteOrtWählen(ort); }">
+                                        @if (!istFrei)
+                                        {
+                                            <span class="vk-netz-nr">?</span>
+                                            <span class="vk-netz-name">???</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="vk-netz-icon">@OrtIcon(ort)</span>
+                                            <span class="vk-netz-name">@ort.Name</span>
+                                            @if (istArena) { <span class="vk-netz-orden">@(hatOrden ? "✓" : "🏆")</span> }
+                                            @if (istHier) { <span class="vk-netz-hier">►</span> }
+                                        }
+                                    </div>
                                 }
                             </div>
-                            @if (istHier) { <span class="vk-hier">📍 Du bist hier</span> }
                         </div>
                     }
+                }
+            }
+            else
+            {
+                <!-- Klassische Listansicht -->
+                <div class="vollkarte-inhalt">
+                    <div class="vollkarte-legende">
+                        <span class="vk-leg"><span class="vk-dot" style="background:#6366f1"></span>Stadt</span>
+                        <span class="vk-leg"><span class="vk-dot" style="background:#22c55e"></span>Route</span>
+                        <span class="vk-leg"><span class="vk-dot" style="background:#78716c"></span>Höhle</span>
+                        <span class="vk-leg"><span class="vk-dot" style="background:#16a34a"></span>Wald</span>
+                        <span class="vk-leg"><span class="vk-dot" style="background:#f59e0b"></span>Arena</span>
+                    </div>
+                    <div class="vollkarte-liste">
+                        @foreach (var ort in vollkarteOrteKlassisch)
+                        {
+                            var o = ort;
+                            bool istHier = o.Id == Game.Spieler.AktuellerOrt;
+                            bool hatOrden = o.Arena != null && Game.Spieler.Orden.Contains(o.Arena.OrdenName);
+                            string farbe = o.Arena != null ? "#f59e0b"
+                                : o.Typ == "stadt" ? "#6366f1"
+                                : o.Typ == "route" ? "#22c55e"
+                                : o.Typ == "hoehle" ? "#78716c"
+                                : o.Typ == "wald" ? "#16a34a"
+                                : "#4b5563";
+                            <div class="vollkarte-ort @(istHier ? "hier" : "")" style="border-left: 3px solid @farbe"
+                                 @onclick="() => VollkarteOrtWählen(o)">
+                                <span class="vk-icon">@OrtIcon(o)</span>
+                                <div class="vk-info">
+                                    <span class="vk-name">@o.Name</span>
+                                    @if (o.Arena != null)
+                                    {
+                                        <span class="vk-arena">🏅 @o.Arena.OrdenName @(hatOrden ? "✓" : "")</span>
+                                    }
+                                </div>
+                                @if (istHier) { <span class="vk-hier">📍 Du bist hier</span> }
+                            </div>
+                        }
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 }
