@@ -1,7 +1,7 @@
 [
   {
     "Id": "KAN-0001",
-    "Name": "Pallet Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 13,
@@ -90,7 +90,7 @@
   },
   {
     "Id": "KAN-0002",
-    "Name": "Route 1",
+    "Name": "Straße 13",
     "Typ": "ort",
     "Farbe": "gray",
     "GridX": 12,
@@ -198,7 +198,7 @@
   },
   {
     "Id": "KAN-0003",
-    "Name": "Vertania",
+    "Name": "Stadt 1",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 10,
@@ -383,7 +383,7 @@
   },
   {
     "Id": "KAN-0007",
-    "Name": "Marmoria",
+    "Name": "Stadt 2",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 11,
@@ -533,7 +533,7 @@
   },
   {
     "Id": "KAN-0011",
-    "Name": "Azuria",
+    "Name": "Stadt 3",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 7,
@@ -724,7 +724,7 @@
   },
   {
     "Id": "KAN-0016",
-    "Name": "Orania",
+    "Name": "Stadt 4",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 4,
@@ -927,7 +927,7 @@
   },
   {
     "Id": "KAN-0028",
-    "Name": "Prismania",
+    "Name": "Stadt 6",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 4,
@@ -1094,7 +1094,7 @@
   },
   {
     "Id": "KAN-0036",
-    "Name": "Fuchsania",
+    "Name": "Stadt 7",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 6,
@@ -1246,7 +1246,7 @@
   },
   {
     "Id": "KAN-0041",
-    "Name": "Zinnober",
+    "Name": "Stadt 8",
     "Typ": "stadt",
     "Farbe": "purple",
     "GridX": 5,
@@ -1401,7 +1401,7 @@
   },
   {
     "Id": "KAN-0004",
-    "Name": "Route 22",
+    "Name": "Straße 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 12,
@@ -1547,7 +1547,7 @@
   },
   {
     "Id": "KAN-0005",
-    "Name": "Route 2",
+    "Name": "Straße 15",
     "Typ": "ort",
     "Farbe": "gray",
     "GridX": 11,
@@ -1667,7 +1667,7 @@
   },
   {
     "Id": "KAN-0006",
-    "Name": "Viridan-Wald",
+    "Name": "Wald 1",
     "Typ": "wald",
     "Farbe": "green",
     "GridX": 10,
@@ -1821,7 +1821,7 @@
   },
   {
     "Id": "KAN-0008",
-    "Name": "Route 3",
+    "Name": "Höhle 3",
     "Typ": "hoehle",
     "Farbe": "gray",
     "GridX": 9,
@@ -1985,7 +1985,7 @@
   },
   {
     "Id": "KAN-0009",
-    "Name": "Mond-Berg",
+    "Name": "Höhle 4",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 8,
@@ -2149,7 +2149,7 @@
   },
   {
     "Id": "KAN-0010",
-    "Name": "Route 4",
+    "Name": "Straße 1",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 8,
@@ -2264,7 +2264,7 @@
   },
   {
     "Id": "KAN-0012",
-    "Name": "Route 24",
+    "Name": "Straße 2",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 7,
@@ -2412,7 +2412,7 @@
   },
   {
     "Id": "KAN-0013",
-    "Name": "Route 25",
+    "Name": "Straße 3",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 6,
@@ -2520,7 +2520,7 @@
   },
   {
     "Id": "KAN-0014",
-    "Name": "Route 5",
+    "Name": "Straße 4",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 7,
@@ -2640,7 +2640,7 @@
   },
   {
     "Id": "KAN-0015",
-    "Name": "Route 6",
+    "Name": "Straße 5",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 5,
@@ -2760,7 +2760,7 @@
   },
   {
     "Id": "KAN-0017",
-    "Name": "S.S. Anne",
+    "Name": "Stadt 5",
     "Typ": "stadt",
     "Farbe": "teal",
     "GridX": 4,
@@ -2881,7 +2881,7 @@
   },
   {
     "Id": "KAN-0018",
-    "Name": "Route 11",
+    "Name": "Straße 6",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 5,
@@ -2995,7 +2995,7 @@
   },
   {
     "Id": "KAN-0019",
-    "Name": "Route 12",
+    "Name": "Straße 16",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 5,
@@ -3120,7 +3120,7 @@
   },
   {
     "Id": "KAN-0020",
-    "Name": "Route 9",
+    "Name": "Straße 7",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 3,
@@ -3240,7 +3240,7 @@
   },
   {
     "Id": "KAN-0021",
-    "Name": "Route 10",
+    "Name": "Straße 8",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 3,
@@ -3354,7 +3354,7 @@
   },
   {
     "Id": "KAN-0022",
-    "Name": "Fels-Tunnel",
+    "Name": "Höhle 5",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 4,
@@ -3491,7 +3491,7 @@
   },
   {
     "Id": "KAN-0023",
-    "Name": "Kraftwerk",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 6,
@@ -3604,7 +3604,7 @@
   },
   {
     "Id": "KAN-0024",
-    "Name": "Lavandia",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 6,
@@ -3780,7 +3780,7 @@
   },
   {
     "Id": "KAN-0025",
-    "Name": "Pokémon-Turm",
+    "Name": "Höhle 6",
     "Typ": "hoehle",
     "Farbe": "teal",
     "GridX": 6,
@@ -3901,7 +3901,7 @@
   },
   {
     "Id": "KAN-0026",
-    "Name": "Route 8",
+    "Name": "Straße 9",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 4,
@@ -4022,7 +4022,7 @@
   },
   {
     "Id": "KAN-0027",
-    "Name": "Route 7",
+    "Name": "Straße 17",
     "Typ": "ort",
     "Farbe": "gray",
     "GridX": 3,
@@ -4142,7 +4142,7 @@
   },
   {
     "Id": "KAN-0029",
-    "Name": "Rocket-Versteck",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": -1,
@@ -4271,7 +4271,7 @@
   },
   {
     "Id": "KAN-0030",
-    "Name": "Route 16",
+    "Name": "Straße 18",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": -1,
@@ -4384,7 +4384,7 @@
   },
   {
     "Id": "KAN-0031",
-    "Name": "Route 17",
+    "Name": "Straße 19",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 5,
@@ -4520,7 +4520,7 @@
   },
   {
     "Id": "KAN-0032",
-    "Name": "Route 18",
+    "Name": "Straße 20",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 6,
@@ -4634,7 +4634,7 @@
   },
   {
     "Id": "KAN-0033",
-    "Name": "Route 13",
+    "Name": "Straße 10",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 4,
@@ -4777,7 +4777,7 @@
   },
   {
     "Id": "KAN-0034",
-    "Name": "Route 14",
+    "Name": "Straße 11",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 4,
@@ -4919,7 +4919,7 @@
   },
   {
     "Id": "KAN-0035",
-    "Name": "Route 15",
+    "Name": "Straße 12",
     "Typ": "route",
     "Farbe": "gray",
     "GridX": 4,
@@ -5039,7 +5039,7 @@
   },
   {
     "Id": "KAN-0037",
-    "Name": "Safari-Zone",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 2,
@@ -5158,7 +5158,7 @@
   },
   {
     "Id": "KAN-0038",
-    "Name": "Route 19",
+    "Name": "Straße 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 5,
@@ -5273,7 +5273,7 @@
   },
   {
     "Id": "KAN-0039",
-    "Name": "Route 20",
+    "Name": "Straße 22",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 7,
@@ -5387,7 +5387,7 @@
   },
   {
     "Id": "KAN-0040",
-    "Name": "Eisinseln",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": -1,
@@ -5503,7 +5503,7 @@
   },
   {
     "Id": "KAN-0043",
-    "Name": "Route 21",
+    "Name": "Straße 23",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 7,
@@ -5617,7 +5617,7 @@
   },
   {
     "Id": "KAN-0044",
-    "Name": "Saffronia",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 7,
@@ -5765,7 +5765,7 @@
   },
   {
     "Id": "KAN-0045",
-    "Name": "Silph AG",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 5,
@@ -5897,7 +5897,7 @@
   },
   {
     "Id": "KAN-0047",
-    "Name": "Digda-Höhle",
+    "Name": "Höhle 7",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 3,
@@ -6005,7 +6005,7 @@
   },
   {
     "Id": "KAN-0050",
-    "Name": "Route 23",
+    "Name": "Straße 24",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 7,
@@ -6373,7 +6373,7 @@
   },
   {
     "Id": "KAN-0052",
-    "Name": "Indigo-Plateau",
+    "Name": "Liga",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 13,
@@ -6613,7 +6613,7 @@
   },
   {
     "Id": "KAN-0053",
-    "Name": "Azuria-Höhle",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 8,
@@ -6692,7 +6692,7 @@
   },
   {
     "Id": "KAN-0054",
-    "Name": "One Island (Eiland Eins)",
+    "Name": "Insel 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -6809,7 +6809,7 @@
   },
   {
     "Id": "KAN-0055",
-    "Name": "Two Island (Eiland Zwei)",
+    "Name": "Insel 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -6926,7 +6926,7 @@
   },
   {
     "Id": "KAN-0056",
-    "Name": "Three Island (Eiland Drei)",
+    "Name": "Insel 3",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -7043,7 +7043,7 @@
   },
   {
     "Id": "KAN-0057",
-    "Name": "Four Island (Eiland Vier)",
+    "Name": "Insel 4",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -7160,7 +7160,7 @@
   },
   {
     "Id": "KAN-0058",
-    "Name": "Five Island (Eiland Fünf)",
+    "Name": "Insel 5",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -7277,7 +7277,7 @@
   },
   {
     "Id": "KAN-0059",
-    "Name": "Six Island (Eiland Sechs)",
+    "Name": "Insel 6",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -7394,7 +7394,7 @@
   },
   {
     "Id": "KAN-0060",
-    "Name": "Seven Island (Eiland Sieben)",
+    "Name": "Insel 7",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": -1,
@@ -7533,7 +7533,7 @@
   },
   {
     "Id": "JOH-0001",
-    "Name": "New Bark Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -7636,7 +7636,7 @@
   },
   {
     "Id": "JOH-0002",
-    "Name": "Route 29",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -7739,7 +7739,7 @@
   },
   {
     "Id": "JOH-0003",
-    "Name": "Cherrygrove City",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -7887,7 +7887,7 @@
   },
   {
     "Id": "JOH-0004",
-    "Name": "Route 30",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -8007,7 +8007,7 @@
   },
   {
     "Id": "JOH-0005",
-    "Name": "Route 31",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -8127,7 +8127,7 @@
   },
   {
     "Id": "JOH-0006",
-    "Name": "Violet City",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -8316,7 +8316,7 @@
   },
   {
     "Id": "JOH-0008",
-    "Name": "Sprout Tower",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -8437,7 +8437,7 @@
   },
   {
     "Id": "JOH-0009",
-    "Name": "Route 32",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -8557,7 +8557,7 @@
   },
   {
     "Id": "JOH-0010",
-    "Name": "Ruins of Alph",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -8674,7 +8674,7 @@
   },
   {
     "Id": "JOH-0011",
-    "Name": "Union Cave",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -8794,7 +8794,7 @@
   },
   {
     "Id": "JOH-0012",
-    "Name": "Route 33",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -8887,7 +8887,7 @@
   },
   {
     "Id": "JOH-0014",
-    "Name": "Slowpoke Well",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -9006,7 +9006,7 @@
   },
   {
     "Id": "JOH-0015",
-    "Name": "Ilex Forest",
+    "Name": "Wald 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9106,7 +9106,7 @@
   },
   {
     "Id": "JOH-0016",
-    "Name": "Route 34",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9220,7 +9220,7 @@
   },
   {
     "Id": "JOH-0018",
-    "Name": "Goldenrod Radio Tower",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9345,7 +9345,7 @@
   },
   {
     "Id": "JOH-0019",
-    "Name": "Goldenrod Underground",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9466,7 +9466,7 @@
   },
   {
     "Id": "JOH-0020",
-    "Name": "Route 35",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -9592,7 +9592,7 @@
   },
   {
     "Id": "JOH-0021",
-    "Name": "National Park",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9684,7 +9684,7 @@
   },
   {
     "Id": "JOH-0022",
-    "Name": "Route 36",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9821,7 +9821,7 @@
   },
   {
     "Id": "JOH-0023",
-    "Name": "Route 37",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -9975,7 +9975,7 @@
   },
   {
     "Id": "JOH-0025",
-    "Name": "Burned Tower",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -10094,7 +10094,7 @@
   },
   {
     "Id": "JOH-0026",
-    "Name": "Bell Tower",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -10213,7 +10213,7 @@
   },
   {
     "Id": "JOH-0027",
-    "Name": "Route 38",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -10333,7 +10333,7 @@
   },
   {
     "Id": "JOH-0028",
-    "Name": "Route 39",
+    "Name": "Straße 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -10447,7 +10447,7 @@
   },
   {
     "Id": "JOH-0030",
-    "Name": "Olivine Lighthouse",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -10526,7 +10526,7 @@
   },
   {
     "Id": "JOH-0031",
-    "Name": "Route 40",
+    "Name": "Straße 12",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -10657,7 +10657,7 @@
   },
   {
     "Id": "JOH-0032",
-    "Name": "Route 41",
+    "Name": "Straße 13",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -10784,7 +10784,7 @@
   },
   {
     "Id": "JOH-0033",
-    "Name": "Whirl Islands",
+    "Name": "Insel 1",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -10910,7 +10910,7 @@
   },
   {
     "Id": "JOH-0035",
-    "Name": "Route 47",
+    "Name": "Straße 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -11030,7 +11030,7 @@
   },
   {
     "Id": "JOH-0036",
-    "Name": "Route 48",
+    "Name": "Straße 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -11127,7 +11127,7 @@
   },
   {
     "Id": "JOH-0037",
-    "Name": "Safari Zone",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -11244,7 +11244,7 @@
   },
   {
     "Id": "JOH-0038",
-    "Name": "Cliff Cave",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -11363,7 +11363,7 @@
   },
   {
     "Id": "JOH-0039",
-    "Name": "Route 42",
+    "Name": "Straße 16",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -11462,7 +11462,7 @@
   },
   {
     "Id": "JOH-0040",
-    "Name": "Mt. Mortar",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -11582,7 +11582,7 @@
   },
   {
     "Id": "JOH-0042",
-    "Name": "Team Rocket HQ",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -11701,7 +11701,7 @@
   },
   {
     "Id": "JOH-0043",
-    "Name": "Route 43",
+    "Name": "Straße 17",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -11821,7 +11821,7 @@
   },
   {
     "Id": "JOH-0044",
-    "Name": "Lake of Rage",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -11940,7 +11940,7 @@
   },
   {
     "Id": "JOH-0045",
-    "Name": "Route 44",
+    "Name": "Straße 18",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -12060,7 +12060,7 @@
   },
   {
     "Id": "JOH-0046",
-    "Name": "Ice Path",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -12180,7 +12180,7 @@
   },
   {
     "Id": "JOH-0047",
-    "Name": "Blackthorn City",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -12322,7 +12322,7 @@
   },
   {
     "Id": "JOH-0048",
-    "Name": "Dragon's Den",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -12413,7 +12413,7 @@
   },
   {
     "Id": "JOH-0049",
-    "Name": "Route 45",
+    "Name": "Straße 19",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -12473,7 +12473,7 @@
   },
   {
     "Id": "JOH-0050",
-    "Name": "Route 46",
+    "Name": "Straße 20",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -12532,7 +12532,7 @@
   },
   {
     "Id": "JOH-0051",
-    "Name": "Route 27",
+    "Name": "Straße 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -12583,7 +12583,7 @@
   },
   {
     "Id": "JOH-0052",
-    "Name": "Tohjo Falls",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -12642,7 +12642,7 @@
   },
   {
     "Id": "JOH-0053",
-    "Name": "Route 26",
+    "Name": "Straße 22",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -12691,7 +12691,7 @@
   },
   {
     "Id": "JOH-0054",
-    "Name": "Victory Road (Johto)",
+    "Name": "Siegesstraße",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -12741,7 +12741,7 @@
   },
   {
     "Id": "JOH-0055",
-    "Name": "Indigo Plateau",
+    "Name": "Liga",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -12981,7 +12981,7 @@
   },
   {
     "Id": "JOH-0056",
-    "Name": "Mt. Silver",
+    "Name": "Sonderort 20",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -13098,7 +13098,7 @@
   },
   {
     "Id": "JOH-0057",
-    "Name": "Route 28",
+    "Name": "Straße 23",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -13147,7 +13147,7 @@
   },
   {
     "Id": "JOH-0058",
-    "Name": "Battle Frontier (Johto)",
+    "Name": "Sonderort 21",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -13196,7 +13196,7 @@
   },
   {
     "Id": "JOH-0059",
-    "Name": "Frontier Access",
+    "Name": "Sonderort 22",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -13246,7 +13246,7 @@
   },
   {
     "Id": "JOH-0060",
-    "Name": "Sinjoh Ruins",
+    "Name": "Sonderort 23",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -13293,7 +13293,7 @@
   },
   {
     "Id": "HOE-0001",
-    "Name": "Littleroot Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -13397,7 +13397,7 @@
   },
   {
     "Id": "HOE-0002",
-    "Name": "Route 101",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -13536,7 +13536,7 @@
   },
   {
     "Id": "HOE-0003",
-    "Name": "Oldale Town",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -13657,7 +13657,7 @@
   },
   {
     "Id": "HOE-0004",
-    "Name": "Route 103",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -13774,7 +13774,7 @@
   },
   {
     "Id": "HOE-0005",
-    "Name": "Route 102",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -13894,7 +13894,7 @@
   },
   {
     "Id": "HOE-0007",
-    "Name": "Route 104",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -14012,7 +14012,7 @@
   },
   {
     "Id": "HOE-0008",
-    "Name": "Petalburg Woods",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -14157,7 +14157,7 @@
   },
   {
     "Id": "HOE-0010",
-    "Name": "Route 116",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -14283,7 +14283,7 @@
   },
   {
     "Id": "HOE-0011",
-    "Name": "Rusturf Tunnel",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -14410,7 +14410,7 @@
   },
   {
     "Id": "HOE-0012",
-    "Name": "Route 115",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -14536,7 +14536,7 @@
   },
   {
     "Id": "HOE-0013",
-    "Name": "Route 117",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -14640,7 +14640,7 @@
   },
   {
     "Id": "HOE-0014",
-    "Name": "Verdanturf Town",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -14772,7 +14772,7 @@
   },
   {
     "Id": "HOE-0016",
-    "Name": "Route 110",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15013,7 +15013,7 @@
   },
   {
     "Id": "HOE-0017",
-    "Name": "Slateport City",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -15133,7 +15133,7 @@
   },
   {
     "Id": "HOE-0018",
-    "Name": "Route 109",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15253,7 +15253,7 @@
   },
   {
     "Id": "HOE-0019",
-    "Name": "Route 108",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15373,7 +15373,7 @@
   },
   {
     "Id": "HOE-0020",
-    "Name": "Abandoned Ship",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15492,7 +15492,7 @@
   },
   {
     "Id": "HOE-0021",
-    "Name": "Route 107",
+    "Name": "Straße 11",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15612,7 +15612,7 @@
   },
   {
     "Id": "HOE-0023",
-    "Name": "Route 106",
+    "Name": "Straße 12",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15732,7 +15732,7 @@
   },
   {
     "Id": "HOE-0024",
-    "Name": "Granite Cave",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -15851,7 +15851,7 @@
   },
   {
     "Id": "HOE-0025",
-    "Name": "Route 105",
+    "Name": "Straße 13",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -15971,7 +15971,7 @@
   },
   {
     "Id": "HOE-0026",
-    "Name": "Island Cave",
+    "Name": "Insel 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -16090,7 +16090,7 @@
   },
   {
     "Id": "HOE-0027",
-    "Name": "Route 111",
+    "Name": "Straße 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -16211,7 +16211,7 @@
   },
   {
     "Id": "HOE-0028",
-    "Name": "Route 112",
+    "Name": "Straße 15",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -16332,7 +16332,7 @@
   },
   {
     "Id": "HOE-0029",
-    "Name": "Fiery Path",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -16452,7 +16452,7 @@
   },
   {
     "Id": "HOE-0030",
-    "Name": "Mt. Chimney",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -16560,7 +16560,7 @@
   },
   {
     "Id": "HOE-0031",
-    "Name": "Jagged Pass",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -16680,7 +16680,7 @@
   },
   {
     "Id": "HOE-0033",
-    "Name": "Route 113",
+    "Name": "Straße 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -16800,7 +16800,7 @@
   },
   {
     "Id": "HOE-0034",
-    "Name": "Fallarbor Town",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -16920,7 +16920,7 @@
   },
   {
     "Id": "HOE-0035",
-    "Name": "Route 114",
+    "Name": "Straße 17",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -17040,7 +17040,7 @@
   },
   {
     "Id": "HOE-0036",
-    "Name": "Meteor Falls",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -17160,7 +17160,7 @@
   },
   {
     "Id": "HOE-0037",
-    "Name": "Route 118",
+    "Name": "Straße 18",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -17280,7 +17280,7 @@
   },
   {
     "Id": "HOE-0038",
-    "Name": "Route 119",
+    "Name": "Straße 19",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -17405,7 +17405,7 @@
   },
   {
     "Id": "HOE-0040",
-    "Name": "Route 120",
+    "Name": "Straße 20",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -17526,7 +17526,7 @@
   },
   {
     "Id": "HOE-0041",
-    "Name": "Ancient Tomb",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -17639,7 +17639,7 @@
   },
   {
     "Id": "HOE-0042",
-    "Name": "Route 121",
+    "Name": "Straße 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -17754,7 +17754,7 @@
   },
   {
     "Id": "HOE-0043",
-    "Name": "Safari Zone",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -17852,7 +17852,7 @@
   },
   {
     "Id": "HOE-0044",
-    "Name": "Lilycove City",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -17966,7 +17966,7 @@
   },
   {
     "Id": "HOE-0045",
-    "Name": "Team Aqua Hideout",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -18079,7 +18079,7 @@
   },
   {
     "Id": "HOE-0046",
-    "Name": "Team Magma Hideout",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -18192,7 +18192,7 @@
   },
   {
     "Id": "HOE-0047",
-    "Name": "Route 122",
+    "Name": "Straße 22",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -18312,7 +18312,7 @@
   },
   {
     "Id": "HOE-0048",
-    "Name": "Mt. Pyre",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -18431,7 +18431,7 @@
   },
   {
     "Id": "HOE-0049",
-    "Name": "Route 123",
+    "Name": "Straße 23",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -18551,7 +18551,7 @@
   },
   {
     "Id": "HOE-0050",
-    "Name": "Route 124",
+    "Name": "Straße 24",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -18671,7 +18671,7 @@
   },
   {
     "Id": "HOE-0052",
-    "Name": "Route 125",
+    "Name": "Straße 25",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -18791,7 +18791,7 @@
   },
   {
     "Id": "HOE-0053",
-    "Name": "Shoal Cave",
+    "Name": "Höhle 3",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -18910,7 +18910,7 @@
   },
   {
     "Id": "HOE-0054",
-    "Name": "Route 126",
+    "Name": "Straße 26",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19030,7 +19030,7 @@
   },
   {
     "Id": "HOE-0055",
-    "Name": "Sootopolis City",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -19175,7 +19175,7 @@
   },
   {
     "Id": "HOE-0056",
-    "Name": "Cave of Origin",
+    "Name": "Höhle 4",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -19294,7 +19294,7 @@
   },
   {
     "Id": "HOE-0057",
-    "Name": "Route 127",
+    "Name": "Straße 27",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19414,7 +19414,7 @@
   },
   {
     "Id": "HOE-0058",
-    "Name": "Route 128",
+    "Name": "Straße 28",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19534,7 +19534,7 @@
   },
   {
     "Id": "HOE-0059",
-    "Name": "Seafloor Cavern",
+    "Name": "Höhle 5",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19642,7 +19642,7 @@
   },
   {
     "Id": "HOE-0060",
-    "Name": "Route 129",
+    "Name": "Straße 29",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19762,7 +19762,7 @@
   },
   {
     "Id": "HOE-0061",
-    "Name": "Route 130",
+    "Name": "Straße 30",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -19882,7 +19882,7 @@
   },
   {
     "Id": "HOE-0062",
-    "Name": "Route 131",
+    "Name": "Straße 31",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20002,7 +20002,7 @@
   },
   {
     "Id": "HOE-0063",
-    "Name": "Pacifidlog Town",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -20122,7 +20122,7 @@
   },
   {
     "Id": "HOE-0064",
-    "Name": "Route 132",
+    "Name": "Straße 32",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20248,7 +20248,7 @@
   },
   {
     "Id": "HOE-0065",
-    "Name": "Route 133",
+    "Name": "Straße 33",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20368,7 +20368,7 @@
   },
   {
     "Id": "HOE-0066",
-    "Name": "Route 134",
+    "Name": "Straße 34",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20488,7 +20488,7 @@
   },
   {
     "Id": "HOE-0067",
-    "Name": "Sealed Chamber",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20607,7 +20607,7 @@
   },
   {
     "Id": "HOE-0068",
-    "Name": "Desert Ruins",
+    "Name": "Sonderort 20",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -20673,7 +20673,7 @@
   },
   {
     "Id": "HOE-0069",
-    "Name": "Route 119 (Süd)",
+    "Name": "Straße 35",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -20722,7 +20722,7 @@
   },
   {
     "Id": "HOE-0070",
-    "Name": "Weather Institute",
+    "Name": "Sonderort 21",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -20821,7 +20821,7 @@
   },
   {
     "Id": "HOE-0071",
-    "Name": "Ever Grande City",
+    "Name": "Sonderort 22",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -21061,7 +21061,7 @@
   },
   {
     "Id": "HOE-0072",
-    "Name": "Victory Road (Hoenn)",
+    "Name": "Siegesstraße",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -21128,7 +21128,7 @@
   },
   {
     "Id": "HOE-0073",
-    "Name": "Battle Resort",
+    "Name": "Sonderort 23",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -21175,7 +21175,7 @@
   },
   {
     "Id": "HOE-0074",
-    "Name": "Sky Pillar",
+    "Name": "Sonderort 24",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -21233,7 +21233,7 @@
   },
   {
     "Id": "SIN-0001",
-    "Name": "Twinleaf Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -21336,7 +21336,7 @@
   },
   {
     "Id": "SIN-0002",
-    "Name": "Route 201",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -21476,7 +21476,7 @@
   },
   {
     "Id": "SIN-0003",
-    "Name": "Lake Verity",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -21595,7 +21595,7 @@
   },
   {
     "Id": "SIN-0004",
-    "Name": "Sandgem Town",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -21718,7 +21718,7 @@
   },
   {
     "Id": "SIN-0005",
-    "Name": "Route 202",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -21844,7 +21844,7 @@
   },
   {
     "Id": "SIN-0006",
-    "Name": "Jubilife City",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -21968,7 +21968,7 @@
   },
   {
     "Id": "SIN-0007",
-    "Name": "Route 203",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -22094,7 +22094,7 @@
   },
   {
     "Id": "SIN-0008",
-    "Name": "Oreburgh Gate",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -22216,7 +22216,7 @@
   },
   {
     "Id": "SIN-0010",
-    "Name": "Oreburgh Mine",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -22337,7 +22337,7 @@
   },
   {
     "Id": "SIN-0011",
-    "Name": "Route 204",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -22473,7 +22473,7 @@
   },
   {
     "Id": "SIN-0012",
-    "Name": "Ravaged Path",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -22597,7 +22597,7 @@
   },
   {
     "Id": "SIN-0013",
-    "Name": "Floaroma Town",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -22838,7 +22838,7 @@
   },
   {
     "Id": "SIN-0014",
-    "Name": "Valley Windworks",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -22963,7 +22963,7 @@
   },
   {
     "Id": "SIN-0015",
-    "Name": "Route 205",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -23083,7 +23083,7 @@
   },
   {
     "Id": "SIN-0016",
-    "Name": "Eterna Forest",
+    "Name": "Wald 1",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -23200,7 +23200,7 @@
   },
   {
     "Id": "SIN-0018",
-    "Name": "Team Galaxis Gebäude (Eterna)",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -23319,7 +23319,7 @@
   },
   {
     "Id": "SIN-0019",
-    "Name": "Route 206",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -23439,7 +23439,7 @@
   },
   {
     "Id": "SIN-0020",
-    "Name": "Route 207",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -23563,7 +23563,7 @@
   },
   {
     "Id": "SIN-0021",
-    "Name": "Mt. Coronet",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -23681,7 +23681,7 @@
   },
   {
     "Id": "SIN-0022",
-    "Name": "Route 208",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -23801,7 +23801,7 @@
   },
   {
     "Id": "SIN-0024",
-    "Name": "Route 209",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -23921,7 +23921,7 @@
   },
   {
     "Id": "SIN-0025",
-    "Name": "Lost Tower",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -24040,7 +24040,7 @@
   },
   {
     "Id": "SIN-0026",
-    "Name": "Solaceon Town",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -24160,7 +24160,7 @@
   },
   {
     "Id": "SIN-0027",
-    "Name": "Solaceon Ruins",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -24279,7 +24279,7 @@
   },
   {
     "Id": "SIN-0028",
-    "Name": "Route 210",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -24400,7 +24400,7 @@
   },
   {
     "Id": "SIN-0029",
-    "Name": "Celestic Town",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -24500,7 +24500,7 @@
   },
   {
     "Id": "SIN-0030",
-    "Name": "Route 211",
+    "Name": "Straße 11",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -24621,7 +24621,7 @@
   },
   {
     "Id": "SIN-0031",
-    "Name": "Route 212",
+    "Name": "Straße 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -24741,7 +24741,7 @@
   },
   {
     "Id": "SIN-0033",
-    "Name": "Great Marsh",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -24860,7 +24860,7 @@
   },
   {
     "Id": "SIN-0034",
-    "Name": "Route 213",
+    "Name": "Straße 13",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -24980,7 +24980,7 @@
   },
   {
     "Id": "SIN-0035",
-    "Name": "Route 214",
+    "Name": "Straße 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25100,7 +25100,7 @@
   },
   {
     "Id": "SIN-0037",
-    "Name": "Team Galaxis HQ",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25221,7 +25221,7 @@
   },
   {
     "Id": "SIN-0038",
-    "Name": "Route 215",
+    "Name": "Straße 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25341,7 +25341,7 @@
   },
   {
     "Id": "SIN-0039",
-    "Name": "Route 216",
+    "Name": "Straße 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25461,7 +25461,7 @@
   },
   {
     "Id": "SIN-0040",
-    "Name": "Route 217",
+    "Name": "Straße 17",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25581,7 +25581,7 @@
   },
   {
     "Id": "SIN-0041",
-    "Name": "Acuity Lakefront",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -25702,7 +25702,7 @@
   },
   {
     "Id": "SIN-0042",
-    "Name": "Lake Acuity",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -25821,7 +25821,7 @@
   },
   {
     "Id": "SIN-0044",
-    "Name": "Snowpoint Temple",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -25940,7 +25940,7 @@
   },
   {
     "Id": "SIN-0045",
-    "Name": "Route 218",
+    "Name": "Straße 18",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -26060,7 +26060,7 @@
   },
   {
     "Id": "SIN-0047",
-    "Name": "Iron Island",
+    "Name": "Insel 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -26179,7 +26179,7 @@
   },
   {
     "Id": "SIN-0048",
-    "Name": "Lake Valor",
+    "Name": "Sonderort 20",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -26298,7 +26298,7 @@
   },
   {
     "Id": "SIN-0049",
-    "Name": "Valor Lakefront",
+    "Name": "Sonderort 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -26419,7 +26419,7 @@
   },
   {
     "Id": "SIN-0050",
-    "Name": "Route 222",
+    "Name": "Straße 19",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -26539,7 +26539,7 @@
   },
   {
     "Id": "SIN-0051",
-    "Name": "Sunyshore City",
+    "Name": "Sonderort 22",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -26680,7 +26680,7 @@
   },
   {
     "Id": "SIN-0052",
-    "Name": "Route 223",
+    "Name": "Straße 20",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -26805,7 +26805,7 @@
   },
   {
     "Id": "SIN-0053",
-    "Name": "Victory Road (Sinnoh)",
+    "Name": "Siegesstraße",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -26924,7 +26924,7 @@
   },
   {
     "Id": "SIN-0054",
-    "Name": "Pokémon League (Sinnoh)",
+    "Name": "Sonderort 23",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -27164,7 +27164,7 @@
   },
   {
     "Id": "SIN-0055",
-    "Name": "Spear Pillar",
+    "Name": "Sonderort 24",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -27283,7 +27283,7 @@
   },
   {
     "Id": "SIN-0056",
-    "Name": "Distortion World",
+    "Name": "Sonderort 25",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -27402,7 +27402,7 @@
   },
   {
     "Id": "SIN-0057",
-    "Name": "Turnback Cave",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -27521,7 +27521,7 @@
   },
   {
     "Id": "SIN-0058",
-    "Name": "Route 219",
+    "Name": "Straße 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -27641,7 +27641,7 @@
   },
   {
     "Id": "SIN-0059",
-    "Name": "Route 220",
+    "Name": "Straße 22",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -27700,7 +27700,7 @@
   },
   {
     "Id": "SIN-0060",
-    "Name": "Route 221",
+    "Name": "Straße 23",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -27759,7 +27759,7 @@
   },
   {
     "Id": "SIN-0061",
-    "Name": "Pal Park",
+    "Name": "Sonderort 26",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -27817,7 +27817,7 @@
   },
   {
     "Id": "SIN-0062",
-    "Name": "Battle Zone",
+    "Name": "Sonderort 27",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -27942,7 +27942,7 @@
   },
   {
     "Id": "SIN-0063",
-    "Name": "Route 225",
+    "Name": "Straße 24",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -28001,7 +28001,7 @@
   },
   {
     "Id": "SIN-0064",
-    "Name": "Route 226",
+    "Name": "Straße 25",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -28059,7 +28059,7 @@
   },
   {
     "Id": "SIN-0065",
-    "Name": "Stark Mountain",
+    "Name": "Sonderort 28",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -28123,7 +28123,7 @@
   },
   {
     "Id": "UNO-0001",
-    "Name": "Nuvema Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -28226,7 +28226,7 @@
   },
   {
     "Id": "UNO-0002",
-    "Name": "Route 1",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -28386,7 +28386,7 @@
   },
   {
     "Id": "UNO-0003",
-    "Name": "Accumula Town",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -28506,7 +28506,7 @@
   },
   {
     "Id": "UNO-0004",
-    "Name": "Route 2",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -28666,7 +28666,7 @@
   },
   {
     "Id": "UNO-0006",
-    "Name": "Dreamyard",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -28796,7 +28796,7 @@
   },
   {
     "Id": "UNO-0007",
-    "Name": "Route 3",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -28922,7 +28922,7 @@
   },
   {
     "Id": "UNO-0008",
-    "Name": "Wellspring Cave",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -29043,7 +29043,7 @@
   },
   {
     "Id": "UNO-0010",
-    "Name": "Pinwheel Forest",
+    "Name": "Wald 1",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -29174,7 +29174,7 @@
   },
   {
     "Id": "UNO-0011",
-    "Name": "Skyarrow Bridge",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -29300,7 +29300,7 @@
   },
   {
     "Id": "UNO-0013",
-    "Name": "Castelia Sewers",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -29430,7 +29430,7 @@
   },
   {
     "Id": "UNO-0014",
-    "Name": "Route 4",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -29609,7 +29609,7 @@
   },
   {
     "Id": "UNO-0015",
-    "Name": "Desert Resort",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -29866,7 +29866,7 @@
   },
   {
     "Id": "UNO-0016",
-    "Name": "Relic Castle",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -29932,7 +29932,7 @@
   },
   {
     "Id": "UNO-0018",
-    "Name": "Route 5",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30052,7 +30052,7 @@
   },
   {
     "Id": "UNO-0019",
-    "Name": "Driftveil Drawbridge",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30102,7 +30102,7 @@
   },
   {
     "Id": "UNO-0021",
-    "Name": "Cold Storage",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30151,7 +30151,7 @@
   },
   {
     "Id": "UNO-0022",
-    "Name": "Route 6",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -30271,7 +30271,7 @@
   },
   {
     "Id": "UNO-0023",
-    "Name": "Chargestone Cave",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -30338,7 +30338,7 @@
   },
   {
     "Id": "UNO-0025",
-    "Name": "Celestial Tower",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30387,7 +30387,7 @@
   },
   {
     "Id": "UNO-0026",
-    "Name": "Route 7",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30507,7 +30507,7 @@
   },
   {
     "Id": "UNO-0027",
-    "Name": "Twist Mountain",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -30632,7 +30632,7 @@
   },
   {
     "Id": "UNO-0029",
-    "Name": "Dragonspiral Tower",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30756,7 +30756,7 @@
   },
   {
     "Id": "UNO-0030",
-    "Name": "Route 8",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30876,7 +30876,7 @@
   },
   {
     "Id": "UNO-0031",
-    "Name": "Tubeline Bridge",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -30926,7 +30926,7 @@
   },
   {
     "Id": "UNO-0032",
-    "Name": "Route 9",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -31047,7 +31047,7 @@
   },
   {
     "Id": "UNO-0033",
-    "Name": "Opelucid City",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -31183,7 +31183,7 @@
   },
   {
     "Id": "UNO-0034",
-    "Name": "Route 10",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -31308,7 +31308,7 @@
   },
   {
     "Id": "UNO-0035",
-    "Name": "Victory Road (Unova)",
+    "Name": "Siegesstraße",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -31358,7 +31358,7 @@
   },
   {
     "Id": "UNO-0036",
-    "Name": "Pokémon League (Unova)",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -31598,7 +31598,7 @@
   },
   {
     "Id": "UNO-0037",
-    "Name": "N's Castle",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -31685,7 +31685,7 @@
   },
   {
     "Id": "UNO-0038",
-    "Name": "Aspertia City",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -31776,7 +31776,7 @@
   },
   {
     "Id": "UNO-0039",
-    "Name": "Virbank City",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -31884,7 +31884,7 @@
   },
   {
     "Id": "UNO-0040",
-    "Name": "Pokéstar Studios",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -31933,7 +31933,7 @@
   },
   {
     "Id": "UNO-0041",
-    "Name": "Floccesy Town",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -31983,7 +31983,7 @@
   },
   {
     "Id": "UNO-0042",
-    "Name": "Humilau City",
+    "Name": "Sonderort 20",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -32082,7 +32082,7 @@
   },
   {
     "Id": "UNO-0043",
-    "Name": "Join Avenue",
+    "Name": "Sonderort 21",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32131,7 +32131,7 @@
   },
   {
     "Id": "UNO-0044",
-    "Name": "PWT (Pokemon World Tournament)",
+    "Name": "Sonderort 22",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32180,7 +32180,7 @@
   },
   {
     "Id": "UNO-0045",
-    "Name": "Black City / White Forest",
+    "Name": "Wald 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32229,7 +32229,7 @@
   },
   {
     "Id": "UNO-0046",
-    "Name": "Giant Chasm",
+    "Name": "Sonderort 23",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -32355,7 +32355,7 @@
   },
   {
     "Id": "UNO-0047",
-    "Name": "Abyssal Ruins",
+    "Name": "Sonderort 24",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32404,7 +32404,7 @@
   },
   {
     "Id": "UNO-0048",
-    "Name": "Reversal Mountain",
+    "Name": "Sonderort 25",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -32453,7 +32453,7 @@
   },
   {
     "Id": "UNO-0049",
-    "Name": "Lostlorn Forest",
+    "Name": "Wald 3",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -32511,7 +32511,7 @@
   },
   {
     "Id": "UNO-0050",
-    "Name": "Liberty Garden",
+    "Name": "Sonderort 26",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32560,7 +32560,7 @@
   },
   {
     "Id": "UNO-0051",
-    "Name": "Mistralton Cave",
+    "Name": "Höhle 3",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -32618,7 +32618,7 @@
   },
   {
     "Id": "UNO-0052",
-    "Name": "Moor of Icirrus",
+    "Name": "Sonderort 27",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32667,7 +32667,7 @@
   },
   {
     "Id": "UNO-0053",
-    "Name": "Undella Town",
+    "Name": "Sonderort 28",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -32717,7 +32717,7 @@
   },
   {
     "Id": "UNO-0054",
-    "Name": "Village Bridge",
+    "Name": "Sonderort 29",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -32767,7 +32767,7 @@
   },
   {
     "Id": "KAL-0001",
-    "Name": "Vaniville Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -32870,7 +32870,7 @@
   },
   {
     "Id": "KAL-0002",
-    "Name": "Route 1",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -33052,7 +33052,7 @@
   },
   {
     "Id": "KAL-0003",
-    "Name": "Aquacorde Town",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -33172,7 +33172,7 @@
   },
   {
     "Id": "KAL-0004",
-    "Name": "Route 2",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -33354,7 +33354,7 @@
   },
   {
     "Id": "KAL-0005",
-    "Name": "Santalune Forest",
+    "Name": "Wald 1",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -33480,7 +33480,7 @@
   },
   {
     "Id": "KAL-0006",
-    "Name": "Route 3",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -33630,7 +33630,7 @@
   },
   {
     "Id": "KAL-0008",
-    "Name": "Route 4",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -33809,7 +33809,7 @@
   },
   {
     "Id": "KAL-0010",
-    "Name": "Route 5",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -33972,7 +33972,7 @@
   },
   {
     "Id": "KAL-0011",
-    "Name": "Camphrier Town",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -34089,7 +34089,7 @@
   },
   {
     "Id": "KAL-0012",
-    "Name": "Route 6",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -34252,7 +34252,7 @@
   },
   {
     "Id": "KAL-0013",
-    "Name": "Parfum Palace",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -34492,7 +34492,7 @@
   },
   {
     "Id": "KAL-0014",
-    "Name": "Route 7",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -34612,7 +34612,7 @@
   },
   {
     "Id": "KAL-0015",
-    "Name": "Connecting Cave",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -34662,7 +34662,7 @@
   },
   {
     "Id": "KAL-0016",
-    "Name": "Route 8",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -34782,7 +34782,7 @@
   },
   {
     "Id": "KAL-0017",
-    "Name": "Ambrette Town",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -34832,7 +34832,7 @@
   },
   {
     "Id": "KAL-0018",
-    "Name": "Glittering Cave",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -34943,7 +34943,7 @@
   },
   {
     "Id": "KAL-0019",
-    "Name": "Route 9",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35063,7 +35063,7 @@
   },
   {
     "Id": "KAL-0021",
-    "Name": "Route 10",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35188,7 +35188,7 @@
   },
   {
     "Id": "KAL-0022",
-    "Name": "Geosenge Town",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -35288,7 +35288,7 @@
   },
   {
     "Id": "KAL-0023",
-    "Name": "Route 11",
+    "Name": "Straße 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35408,7 +35408,7 @@
   },
   {
     "Id": "KAL-0025",
-    "Name": "Tower of Mastery",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35457,7 +35457,7 @@
   },
   {
     "Id": "KAL-0026",
-    "Name": "Route 12",
+    "Name": "Straße 12",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -35577,7 +35577,7 @@
   },
   {
     "Id": "KAL-0028",
-    "Name": "Route 13",
+    "Name": "Straße 13",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35697,7 +35697,7 @@
   },
   {
     "Id": "KAL-0029",
-    "Name": "Route 14",
+    "Name": "Straße 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35817,7 +35817,7 @@
   },
   {
     "Id": "KAL-0031",
-    "Name": "Route 15",
+    "Name": "Straße 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -35937,7 +35937,7 @@
   },
   {
     "Id": "KAL-0032",
-    "Name": "Dendemille Town",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -35987,7 +35987,7 @@
   },
   {
     "Id": "KAL-0033",
-    "Name": "Route 16",
+    "Name": "Straße 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -36107,7 +36107,7 @@
   },
   {
     "Id": "KAL-0034",
-    "Name": "Frost Cavern",
+    "Name": "Höhle 3",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -36173,7 +36173,7 @@
   },
   {
     "Id": "KAL-0036",
-    "Name": "Route 17",
+    "Name": "Straße 17",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -36293,7 +36293,7 @@
   },
   {
     "Id": "KAL-0037",
-    "Name": "Route 18",
+    "Name": "Straße 18",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -36413,7 +36413,7 @@
   },
   {
     "Id": "KAL-0038",
-    "Name": "Couriway Town",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -36463,7 +36463,7 @@
   },
   {
     "Id": "KAL-0039",
-    "Name": "Route 19",
+    "Name": "Straße 19",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -36577,7 +36577,7 @@
   },
   {
     "Id": "KAL-0040",
-    "Name": "Pokémon Village",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -36643,7 +36643,7 @@
   },
   {
     "Id": "KAL-0041",
-    "Name": "Route 20",
+    "Name": "Straße 20",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -36757,7 +36757,7 @@
   },
   {
     "Id": "KAL-0042",
-    "Name": "Snowbelle City",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -36893,7 +36893,7 @@
   },
   {
     "Id": "KAL-0043",
-    "Name": "Route 21",
+    "Name": "Straße 21",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -37007,7 +37007,7 @@
   },
   {
     "Id": "KAL-0044",
-    "Name": "Victory Road (Kalos)",
+    "Name": "Siegesstraße",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -37057,7 +37057,7 @@
   },
   {
     "Id": "KAL-0045",
-    "Name": "Pokémon League (Kalos)",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -37297,7 +37297,7 @@
   },
   {
     "Id": "KAL-0046",
-    "Name": "Team Flare Secret HQ",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -37381,7 +37381,7 @@
   },
   {
     "Id": "KAL-0047",
-    "Name": "Terminus Cave",
+    "Name": "Höhle 4",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -37439,7 +37439,7 @@
   },
   {
     "Id": "KAL-0048",
-    "Name": "Azure Bay",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -37497,7 +37497,7 @@
   },
   {
     "Id": "KAL-0049",
-    "Name": "Reflection Cave",
+    "Name": "Höhle 5",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -37547,7 +37547,7 @@
   },
   {
     "Id": "KAL-0050",
-    "Name": "Kalos Power Plant",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -37596,7 +37596,7 @@
   },
   {
     "Id": "KAL-0051",
-    "Name": "Sea Spirit's Den",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -37654,7 +37654,7 @@
   },
   {
     "Id": "KAL-0052",
-    "Name": "Kiloude City",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -37729,7 +37729,7 @@
   },
   {
     "Id": "KAL-0053",
-    "Name": "Battle Maison",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -37806,7 +37806,7 @@
   },
   {
     "Id": "ALO-0001",
-    "Name": "Iki Town",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -37907,7 +37907,7 @@
   },
   {
     "Id": "ALO-0002",
-    "Name": "Route 1 (Melemele)",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -38045,7 +38045,7 @@
   },
   {
     "Id": "ALO-0003",
-    "Name": "Hau'oli City",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -38170,7 +38170,7 @@
   },
   {
     "Id": "ALO-0004",
-    "Name": "Route 2 (Melemele)",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -38291,7 +38291,7 @@
   },
   {
     "Id": "ALO-0005",
-    "Name": "Verdant Cavern",
+    "Name": "Höhle 1",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -38430,7 +38430,7 @@
   },
   {
     "Id": "ALO-0006",
-    "Name": "Melemele Sea",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -38551,7 +38551,7 @@
   },
   {
     "Id": "ALO-0007",
-    "Name": "Ten Carat Hill",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -38674,7 +38674,7 @@
   },
   {
     "Id": "ALO-0008",
-    "Name": "Heahea City",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -38796,7 +38796,7 @@
   },
   {
     "Id": "ALO-0009",
-    "Name": "Route 4 (Akala)",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39046,7 +39046,7 @@
   },
   {
     "Id": "ALO-0010",
-    "Name": "Paniola Town",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -39096,7 +39096,7 @@
   },
   {
     "Id": "ALO-0011",
-    "Name": "Route 5 (Akala)",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39155,7 +39155,7 @@
   },
   {
     "Id": "ALO-0012",
-    "Name": "Brooklet Hill",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -39270,7 +39270,7 @@
   },
   {
     "Id": "ALO-0013",
-    "Name": "Route 6 (Akala)",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39329,7 +39329,7 @@
   },
   {
     "Id": "ALO-0014",
-    "Name": "Royal Avenue",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -39379,7 +39379,7 @@
   },
   {
     "Id": "ALO-0015",
-    "Name": "Wela Volcano Park",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39494,7 +39494,7 @@
   },
   {
     "Id": "ALO-0016",
-    "Name": "Route 8 (Akala)",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39553,7 +39553,7 @@
   },
   {
     "Id": "ALO-0017",
-    "Name": "Lush Jungle",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39668,7 +39668,7 @@
   },
   {
     "Id": "ALO-0018",
-    "Name": "Diglett's Tunnel",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -39718,7 +39718,7 @@
   },
   {
     "Id": "ALO-0019",
-    "Name": "Konikoni City",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -39840,7 +39840,7 @@
   },
   {
     "Id": "ALO-0020",
-    "Name": "Akala Outskirts",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -39959,7 +39959,7 @@
   },
   {
     "Id": "ALO-0021",
-    "Name": "Ruins of Life",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40017,7 +40017,7 @@
   },
   {
     "Id": "ALO-0022",
-    "Name": "Malie City",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -40139,7 +40139,7 @@
   },
   {
     "Id": "ALO-0023",
-    "Name": "Route 10 (Ula'ula)",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -40198,7 +40198,7 @@
   },
   {
     "Id": "ALO-0024",
-    "Name": "Mount Hokulani",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -40279,7 +40279,7 @@
   },
   {
     "Id": "ALO-0025",
-    "Name": "Route 11 (Ula'ula)",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40338,7 +40338,7 @@
   },
   {
     "Id": "ALO-0026",
-    "Name": "Tapu Village",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40388,7 +40388,7 @@
   },
   {
     "Id": "ALO-0027",
-    "Name": "Route 12 (Ula'ula)",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40447,7 +40447,7 @@
   },
   {
     "Id": "ALO-0028",
-    "Name": "Route 13 (Ula'ula)",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40506,7 +40506,7 @@
   },
   {
     "Id": "ALO-0029",
-    "Name": "Haina Desert",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40555,7 +40555,7 @@
   },
   {
     "Id": "ALO-0030",
-    "Name": "Po Town",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -40649,7 +40649,7 @@
   },
   {
     "Id": "ALO-0031",
-    "Name": "Aether Paradise",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40746,7 +40746,7 @@
   },
   {
     "Id": "ALO-0032",
-    "Name": "Ula'ula Meadow",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40813,7 +40813,7 @@
   },
   {
     "Id": "ALO-0033",
-    "Name": "Seafolk Village",
+    "Name": "Sonderort 20",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -40862,7 +40862,7 @@
   },
   {
     "Id": "ALO-0034",
-    "Name": "Poni Wilds",
+    "Name": "Sonderort 21",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -40921,7 +40921,7 @@
   },
   {
     "Id": "ALO-0035",
-    "Name": "Ancient Poni Path",
+    "Name": "Sonderort 22",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -40980,7 +40980,7 @@
   },
   {
     "Id": "ALO-0036",
-    "Name": "Poni Plains",
+    "Name": "Sonderort 23",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41029,7 +41029,7 @@
   },
   {
     "Id": "ALO-0037",
-    "Name": "Exeggutor Island",
+    "Name": "Insel 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41150,7 +41150,7 @@
   },
   {
     "Id": "ALO-0038",
-    "Name": "Vast Poni Canyon",
+    "Name": "Sonderort 24",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41265,7 +41265,7 @@
   },
   {
     "Id": "ALO-0039",
-    "Name": "Altar of the Sunne/Moone",
+    "Name": "Sonderort 25",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41323,7 +41323,7 @@
   },
   {
     "Id": "ALO-0040",
-    "Name": "Ruins of Conflict",
+    "Name": "Sonderort 26",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41381,7 +41381,7 @@
   },
   {
     "Id": "ALO-0041",
-    "Name": "Ruins of Abundance",
+    "Name": "Sonderort 27",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41439,7 +41439,7 @@
   },
   {
     "Id": "ALO-0042",
-    "Name": "Ruins of Hope",
+    "Name": "Sonderort 28",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41495,7 +41495,7 @@
   },
   {
     "Id": "ALO-0043",
-    "Name": "Battle Tree",
+    "Name": "Sonderort 29",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41587,7 +41587,7 @@
   },
   {
     "Id": "ALO-0044",
-    "Name": "Ultra Space",
+    "Name": "Sonderort 30",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41634,7 +41634,7 @@
   },
   {
     "Id": "GAL-0001",
-    "Name": "Postwick",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -41737,7 +41737,7 @@
   },
   {
     "Id": "GAL-0002",
-    "Name": "Route 1 (Galar)",
+    "Name": "Straße 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -41871,7 +41871,7 @@
   },
   {
     "Id": "GAL-0003",
-    "Name": "Wedgehurst",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -41991,7 +41991,7 @@
   },
   {
     "Id": "GAL-0004",
-    "Name": "Route 2 (Galar)",
+    "Name": "Straße 2",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -42113,7 +42113,7 @@
   },
   {
     "Id": "GAL-0005",
-    "Name": "Slumbering Weald",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -42238,7 +42238,7 @@
   },
   {
     "Id": "GAL-0007",
-    "Name": "Wild Area",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42365,7 +42365,7 @@
   },
   {
     "Id": "GAL-0008",
-    "Name": "Route 3 (Galar)",
+    "Name": "Straße 3",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42492,7 +42492,7 @@
   },
   {
     "Id": "GAL-0009",
-    "Name": "Galar Mine",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42623,7 +42623,7 @@
   },
   {
     "Id": "GAL-0010",
-    "Name": "Route 4 (Galar)",
+    "Name": "Straße 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42749,7 +42749,7 @@
   },
   {
     "Id": "GAL-0012",
-    "Name": "Route 5 (Galar)",
+    "Name": "Straße 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42872,7 +42872,7 @@
   },
   {
     "Id": "GAL-0013",
-    "Name": "Hulbury",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -42994,7 +42994,7 @@
   },
   {
     "Id": "GAL-0014",
-    "Name": "Route 6 (Galar)",
+    "Name": "Straße 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43235,7 +43235,7 @@
   },
   {
     "Id": "GAL-0015",
-    "Name": "Galar Mine No. 2",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43285,7 +43285,7 @@
   },
   {
     "Id": "GAL-0016",
-    "Name": "Stow-on-Side",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43335,7 +43335,7 @@
   },
   {
     "Id": "GAL-0017",
-    "Name": "Route 7 (Galar)",
+    "Name": "Straße 7",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43385,7 +43385,7 @@
   },
   {
     "Id": "GAL-0018",
-    "Name": "Glimwood Tangle",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "forest",
     "GridX": 0,
@@ -43452,7 +43452,7 @@
   },
   {
     "Id": "GAL-0019",
-    "Name": "Ballonlea",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43502,7 +43502,7 @@
   },
   {
     "Id": "GAL-0020",
-    "Name": "Route 8 (Galar)",
+    "Name": "Straße 8",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43552,7 +43552,7 @@
   },
   {
     "Id": "GAL-0021",
-    "Name": "Circhester",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43602,7 +43602,7 @@
   },
   {
     "Id": "GAL-0022",
-    "Name": "Route 9 (Galar)",
+    "Name": "Straße 9",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -43652,7 +43652,7 @@
   },
   {
     "Id": "GAL-0024",
-    "Name": "Hammerlocke",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -43788,7 +43788,7 @@
   },
   {
     "Id": "GAL-0025",
-    "Name": "Route 10 (Galar)",
+    "Name": "Straße 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43838,7 +43838,7 @@
   },
   {
     "Id": "GAL-0026",
-    "Name": "Wyndon",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43888,7 +43888,7 @@
   },
   {
     "Id": "GAL-0027",
-    "Name": "Rose Tower",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -43987,7 +43987,7 @@
   },
   {
     "Id": "GAL-0028",
-    "Name": "Pokémon League (Galar)",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -44227,7 +44227,7 @@
   },
   {
     "Id": "GAL-0029",
-    "Name": "Energy Plant",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -44303,7 +44303,7 @@
   },
   {
     "Id": "GAL-0030",
-    "Name": "Isle of Armor",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -44409,7 +44409,7 @@
   },
   {
     "Id": "GAL-0031",
-    "Name": "Crown Tundra",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -44531,7 +44531,7 @@
   },
   {
     "Id": "PAL-0001",
-    "Name": "Mesagoza",
+    "Name": "Startpunkt",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -44634,7 +44634,7 @@
   },
   {
     "Id": "PAL-0002",
-    "Name": "Poco Path",
+    "Name": "Sonderort 1",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -44780,7 +44780,7 @@
   },
   {
     "Id": "PAL-0003",
-    "Name": "Los Platos",
+    "Name": "Sonderort 2",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -44899,7 +44899,7 @@
   },
   {
     "Id": "PAL-0011",
-    "Name": "Glaseado Mountain",
+    "Name": "Sonderort 3",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -45041,7 +45041,7 @@
   },
   {
     "Id": "PAL-0012",
-    "Name": "Stony Cliff Titan",
+    "Name": "Sonderort 4",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45160,7 +45160,7 @@
   },
   {
     "Id": "PAL-0013",
-    "Name": "Open Sky Titan",
+    "Name": "Sonderort 5",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45398,7 +45398,7 @@
   },
   {
     "Id": "PAL-0014",
-    "Name": "Lurking Steel Titan",
+    "Name": "Sonderort 6",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45463,7 +45463,7 @@
   },
   {
     "Id": "PAL-0015",
-    "Name": "Quaking Earth Titan",
+    "Name": "Sonderort 7",
     "Typ": "ort",
     "Farbe": "cave",
     "GridX": 0,
@@ -45533,7 +45533,7 @@
   },
   {
     "Id": "PAL-0016",
-    "Name": "False Dragon Titan",
+    "Name": "Sonderort 8",
     "Typ": "ort",
     "Farbe": "blue",
     "GridX": 0,
@@ -45603,7 +45603,7 @@
   },
   {
     "Id": "PAL-0017",
-    "Name": "Team Star Scherengang-Basis",
+    "Name": "Sonderort 9",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45700,7 +45700,7 @@
   },
   {
     "Id": "PAL-0018",
-    "Name": "Team Star Flammengang-Basis",
+    "Name": "Sonderort 10",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45797,7 +45797,7 @@
   },
   {
     "Id": "PAL-0019",
-    "Name": "Team Star Giftgang-Basis",
+    "Name": "Sonderort 11",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45894,7 +45894,7 @@
   },
   {
     "Id": "PAL-0020",
-    "Name": "Team Star Feengang-Basis",
+    "Name": "Sonderort 12",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -45991,7 +45991,7 @@
   },
   {
     "Id": "PAL-0021",
-    "Name": "Team Star Kampfgang-Basis",
+    "Name": "Sonderort 13",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -46088,7 +46088,7 @@
   },
   {
     "Id": "PAL-0022",
-    "Name": "Area Zero",
+    "Name": "Sonderort 14",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -46206,7 +46206,7 @@
   },
   {
     "Id": "PAL-0023",
-    "Name": "Porto Marinada",
+    "Name": "Sonderort 15",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -46253,7 +46253,7 @@
   },
   {
     "Id": "PAL-0024",
-    "Name": "Zapapico",
+    "Name": "Sonderort 16",
     "Typ": "ort",
     "Farbe": "purple",
     "GridX": 0,
@@ -46300,7 +46300,7 @@
   },
   {
     "Id": "PAL-0025",
-    "Name": "Pokémon League (Paldea)",
+    "Name": "Sonderort 17",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -46540,7 +46540,7 @@
   },
   {
     "Id": "PAL-0026",
-    "Name": "Kitakami",
+    "Name": "Sonderort 18",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -46659,7 +46659,7 @@
   },
   {
     "Id": "PAL-0027",
-    "Name": "Blueberry Academy",
+    "Name": "Sonderort 19",
     "Typ": "ort",
     "Farbe": "green",
     "GridX": 0,
@@ -46778,7 +46778,7 @@
   },
   {
     "Id": "KAN-0061",
-    "Name": "Viridan-Wald.1",
+    "Name": "Wald 2",
     "Typ": "wald",
     "Farbe": "green",
     "GridX": 10,
@@ -46904,7 +46904,7 @@
   },
   {
     "Id": "KAN-0062",
-    "Name": "Viridan-Wald.2",
+    "Name": "Wald 3",
     "Typ": "wald",
     "Farbe": "green",
     "GridX": 9,
@@ -47008,7 +47008,7 @@
   },
   {
     "Id": "KAN-0063",
-    "Name": "Mond-Berg.1",
+    "Name": "Höhle 8",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 8,
@@ -47173,7 +47173,7 @@
   },
   {
     "Id": "KAN-0064",
-    "Name": "Mond-Berg.2",
+    "Name": "Höhle 9",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 9,
@@ -47298,7 +47298,7 @@
   },
   {
     "Id": "KAN-0065",
-    "Name": "Mond-Berg.3",
+    "Name": "Höhle 10",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 8,
@@ -47428,7 +47428,7 @@
   },
   {
     "Id": "KAN-0066",
-    "Name": "Fels-Tunnel.1",
+    "Name": "Höhle 11",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 5,
@@ -47542,7 +47542,7 @@
   },
   {
     "Id": "KAN-0067",
-    "Name": "Fels-Tunnel.2",
+    "Name": "Höhle 12",
     "Typ": "hoehle",
     "Farbe": "brown",
     "GridX": 6,
@@ -47656,7 +47656,7 @@
   },
   {
     "Id": "KAN-0068",
-    "Name": "Digda-Höhle.1",
+    "Name": "Höhle 2",
     "Typ": "ort",
     "Farbe": "brown",
     "GridX": 11,

@@ -16,13 +16,37 @@ public class RegionConfig
     public string Professor { get; set; } = "Professor";
     public string ProfessorEmoji { get; set; } = "👨‍🔬";
     public List<ArenaLeiterConfig> Arenaleiter { get; set; } = new();
+    public List<MonsterPoolEintrag> MonsterPool { get; set; } = new();
 }
-
 public class ArenaLeiterConfig
 {
     public string Name { get; set; } = "";
     public string Typ { get; set; } = "";
     public string Orden { get; set; } = "";
+}
+public class MonsterPoolEintrag
+{
+    public string Id { get; set; } = "";
+    public int MinLevel { get; set; } = 3;
+    public int MaxLevel { get; set; } = 60;
+    public int Chance { get; set; } = 10;
+}
+
+// ─── Interne Ebenen-Struktur (wie HTML-Generator) ────────────────────────────
+internal class Ebene
+{
+    public int Id { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
+    public Dictionary<string, int> Exits { get; set; } = new();  // "left"/"right"/"up"/"down" → Ebenen-ID
+    public Dictionary<string, int> Locks { get; set; } = new();  // Richtung → Stadt-Ebenen-ID
+    public bool IstStadt { get; set; }
+    public bool IstBoss { get; set; }
+    public bool IstStart { get; set; }
+    public bool IstHauptpfad { get; set; }
+    public bool IstSackgasse { get; set; }
+    public int? NachBoss { get; set; }  // Startpunkt: nach welchem Boss-Index
+    public bool Besucht { get; set; }
 }
 
 // ─── Generierte Karte (Metadaten für Speichern/Laden + Fog-of-War) ───────────
@@ -30,20 +54,17 @@ public class GenerierteKarte
 {
     public string SeedCode { get; set; } = "";
     public List<string> RegionsReihenfolge { get; set; } = new();
-    /// <summary>Startort-ID (erster Ort der generierten Karte)</summary>
     public string StartOrtId { get; set; } = "";
-    /// <summary>Alle generierten Ort-IDs in Reihenfolge (Hauptpfad)</summary>
     public List<string> OrtReihenfolge { get; set; } = new();
-    /// <summary>Bis zu welchem Index (in OrtReihenfolge) ist die Karte freigeschaltet</summary>
     public int FreigeschalteBisIndex { get; set; } = 5;
-    /// <summary>Welche Ort-IDs sind bereits freigeschaltet (für Fog-of-War)</summary>
     public HashSet<string> FreigeschalteteOrte { get; set; } = new();
-    /// <summary>IDs der bereits besiegten Arena-Orte</summary>
     public HashSet<string> BesiegteArenen { get; set; } = new();
-    /// <summary>X/Y-Koordinaten für die grafische Netzansicht (OrtId → (GridX, GridY))</summary>
     public Dictionary<string, (int X, int Y)> OrtKoordinaten { get; set; } = new();
-    /// <summary>Kürzeste Distanz vom Startort (Anzahl Schritte) → bestimmt das Level</summary>
     public Dictionary<string, int> OrtDistanzen { get; set; } = new();
+    public List<string> StadtIds { get; set; } = new();
+    public List<string> BossIds { get; set; } = new();
+    public List<string> StartIds { get; set; } = new();
+    public int StädteProBoss { get; set; } = 3;
 }
 
 // ─── Generator ───────────────────────────────────────────────────────────────
@@ -51,6 +72,15 @@ public class KartenGenerator
 {
     private static readonly char[] SeedChars =
         "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    private static readonly string[] Dirs = { "left", "right", "up", "down" };
+    private static readonly Dictionary<string, string> Opposite = new()
+    {
+        {"left","right"},{"right","left"},{"up","down"},{"down","up"}
+    };
+    private static readonly Dictionary<string, (int dx, int dy)> MovePos = new()
+    {
+        {"left",(-1,0)},{"right",(1,0)},{"up",(0,-1)},{"down",(0,1)}
+    };
 
     public static string GeneriereSeedCode()
     {
@@ -69,6 +99,7 @@ public class KartenGenerator
         return Math.Abs(hash);
     }
 
+    // ─── Haupt-Generierungsmethode ────────────────────────────────────────────
     public static (List<Ort> Orte, GenerierteKarte Meta) Generiere(
         string seedCode,
         List<string> regionsReihenfolge,
@@ -83,283 +114,718 @@ public class KartenGenerator
             RegionsReihenfolge = regionsReihenfolge
         };
 
-        int ordenOffset = 0;
-        // Für Koordinaten: aktueller X-Offset (Hauptpfad läuft horizontal)
-        int globalX = 0;
+        int globalOrdenOffset = 0;
 
         foreach (var regId in regionsReihenfolge)
         {
             var regCfg = alleRegionen.FirstOrDefault(r => r.Id == regId);
             if (regCfg == null) continue;
 
-                        var regionOrte = alleOrte
+            int total = Math.Max(20, regCfg.BasisEbenen);
+            int bossCount = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
+            int städteProBoss = 3;
+            int totalCitiesWanted = Math.Min(Math.Max(0, total - 2 - bossCount), städteProBoss * bossCount);
+
+            // Trainer-Pool aus weltkarte_import.json für diese Region
+            var regionOrte = alleOrte
                 .Where(o => o.Id.StartsWith(regId + "-", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(o => o.Id)
                 .ToList();
-            if (!regionOrte.Any()) continue;
+            var trainerPool = regionOrte
+                .SelectMany(o => o.Trainer ?? new List<TrainerKampf>())
+                .ToList();
+            var wildPool = regCfg.MonsterPool;
 
-            // Liga-Orte (LigaZugang=true) kommen immer ans Ende als Boss-Abschluss
-            var ligaOrte = regionOrte.Where(o => o.LigaZugang).OrderBy(o => o.Id).ToList();
-            var nichtLigaOrte = regionOrte.Where(o => !o.LigaZugang).ToList();
+            // ─── HTML-Algorithmus: Ebenen generieren ─────────────────────────
+            var ebenen = GeneriereEbenenStruktur(rng, total, bossCount, städteProBoss, totalCitiesWanted);
+            var distanzen = CalcDistances(ebenen);
 
-            // Arenen in fester Reihenfolge (nach OrdenNr), Nicht-Arenen zufällig mischen
-            var arenaOrte = nichtLigaOrte.Where(o => o.Arena != null)
-                .OrderBy(o => o.Arena!.OrdenNr).ToList();
-            // Startort (IstStartOrt=true) immer als ersten Ort – aus dem Shuffle herausnehmen
-            var startOrt = nichtLigaOrte.FirstOrDefault(o => o.Arena == null && o.IstStartOrt);
-            var nichtArenaOrte = nichtLigaOrte.Where(o => o.Arena == null && !o.IstStartOrt).ToList();
-            // Fisher-Yates Shuffle der Nicht-Arena-Orte (Startort bleibt fix)
-            for (int s = nichtArenaOrte.Count - 1; s > 0; s--)
+            // ─── Ebenen → Ort-Objekte ─────────────────────────────────────────
+            int stadtZähler = 0, bossZähler = 0, startZähler = 0, ebeneZähler = 0;
+            var ebeneZuOrtId = new Dictionary<int, string>();
+
+            // Erst IDs vergeben
+            foreach (var eb in ebenen)
             {
-                int j = rng.Next(s + 1);
-                (nichtArenaOrte[s], nichtArenaOrte[j]) = (nichtArenaOrte[j], nichtArenaOrte[s]);
-            }
-            // Orte zusammenbauen: Startort immer zuerst, dann Nicht-Arena-Orte zwischen Arenen
-            var gemischteOrte = new List<Ort>();
-            // Startort als allerersten Ort einfügen
-            if (startOrt != null)
-                gemischteOrte.Add(startOrt);
-            int nichtArenaProAbschnitt = arenaOrte.Count > 0
-                ? nichtArenaOrte.Count / (arenaOrte.Count + 1)
-                : nichtArenaOrte.Count;
-            int nichtArenaIdx = 0;
-            // Orte vor erster Arena
-            int vorErsteArena = Math.Max(1, nichtArenaProAbschnitt);
-            for (int s = 0; s < vorErsteArena && nichtArenaIdx < nichtArenaOrte.Count; s++, nichtArenaIdx++)
-                gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx]);
-            foreach (var arena in arenaOrte)
-            {
-                gemischteOrte.Add(arena);
-                int anzahl = Math.Max(1, nichtArenaProAbschnitt);
-                for (int s = 0; s < anzahl && nichtArenaIdx < nichtArenaOrte.Count; s++, nichtArenaIdx++)
-                    gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx]);
-            }
-            // Übrige Nicht-Arena-Orte ans Ende
-            while (nichtArenaIdx < nichtArenaOrte.Count)
-                gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx++]);
-
-            // Liga-Orte (Siegesstraße, Indigo-Plateau usw.) als festen Abschluss
-            gemischteOrte.AddRange(ligaOrte);
-
-            var kopien = gemischteOrte.Select(o => KopiereOrt(o, ordenOffset)).ToList();
-
-            foreach (var k in kopien)
-            {
-                k.Nord = null; k.Sued = null; k.Ost = null; k.West = null;
-                k.NordMinOrden = 0; k.SuedMinOrden = 0; k.OstMinOrden = 0; k.WestMinOrden = 0;
-                k.SperrNord = null; k.SperrSued = null; k.SperrOst = null; k.SperrWest = null;
-                k.MinOrdenFürZugang = ordenOffset;
-            }
-
-            int arenaIdx = 0;
-            foreach (var k in kopien)
-            {
-                if (k.Arena != null)
+                string ortId;
+                if (eb.IstStart)
                 {
-                    k.MinOrdenFürZugang = ordenOffset + arenaIdx;
-                    arenaIdx++;
+                    startZähler++;
+                    ortId = $"{regId}-GEN-START{startZähler:D2}";
                 }
-            }
-
-            // Hauptpfad: Ost→West (horizontal), Y=0
-            for (int i = 0; i < kopien.Count - 1; i++)
-            {
-                var a = kopien[i];
-                var b = kopien[i + 1];
-                a.Ost  = b.Id;
-                b.West = a.Id;
-            }
-
-            // X/Y-Koordinaten für Hauptpfad setzen
-            for (int i = 0; i < kopien.Count; i++)
-            {
-                meta.OrtKoordinaten[kopien[i].Id] = (globalX + i, 0);
-            }
-
-            // Seitenabzweigungen: nach oben (Y=-1) oder unten (Y=+1)
-            // Jede Abzweigung ist ein einzelner Ort der über Nord/Süd erreichbar ist
-            int abzweigRichtung = 1; // abwechselnd oben/unten
-            for (int i = 2; i < kopien.Count - 2; i += rng.Next(4, 8))
-            {
-                int zielIdx = Math.Min(i + rng.Next(2, 5), kopien.Count - 1);
-                var a = kopien[i];
-                var b = kopien[zielIdx];
-
-                // Abzweigung: a bekommt eine Nord- oder Süd-Verbindung zu b
-                // (b wird dadurch "oben" oder "unten" vom Hauptpfad)
-                if (abzweigRichtung > 0 && string.IsNullOrEmpty(a.Nord) && string.IsNullOrEmpty(b.Sued))
+                else if (eb.IstBoss)
                 {
-                    a.Nord = b.Id;
-                    b.Sued = a.Id;
-                    // b bekommt Y=-1 (oben), X = Mitte zwischen a und zielIdx
-                    int midX = (meta.OrtKoordinaten[a.Id].X + meta.OrtKoordinaten[b.Id].X) / 2;
-                    meta.OrtKoordinaten[b.Id] = (midX, -1);
+                    bossZähler++;
+                    ortId = $"{regId}-GEN-BOSS{bossZähler:D2}";
                 }
-                else if (abzweigRichtung < 0 && string.IsNullOrEmpty(a.Sued) && string.IsNullOrEmpty(b.Nord))
+                else if (eb.IstStadt)
                 {
-                    a.Sued = b.Id;
-                    b.Nord = a.Id;
-                    int midX = (meta.OrtKoordinaten[a.Id].X + meta.OrtKoordinaten[b.Id].X) / 2;
-                    meta.OrtKoordinaten[b.Id] = (midX, 1);
+                    stadtZähler++;
+                    ortId = $"{regId}-GEN-STADT{stadtZähler:D2}";
                 }
-                abzweigRichtung = -abzweigRichtung;
-            }
-
-            // Regionen verbinden: letzter Ort der vorherigen Region → erster Ort dieser Region
-            if (ergebnis.Any() && kopien.Any())
-            {
-                var letzter = ergebnis.Last();
-                var erster  = kopien.First();
-                letzter.Ost = erster.Id;
-                erster.West = letzter.Id;
-            }
-
-            ergebnis.AddRange(kopien);
-            ordenOffset += regCfg.Arenaleiter.Count;
-            globalX += kopien.Count + 1; // +1 Abstand zwischen Regionen
-        }
-
-        meta.StartOrtId = ergebnis.FirstOrDefault()?.Id ?? "";
-        meta.OrtReihenfolge = ergebnis.Select(o => o.Id).ToList();
-
-        // BFS: kürzeste Distanz vom Startort berechnen (= Level-Basis)
-        if (!string.IsNullOrEmpty(meta.StartOrtId))
-        {
-            var ortMap = ergebnis.ToDictionary(o => o.Id);
-            var queue = new Queue<string>();
-            queue.Enqueue(meta.StartOrtId);
-            meta.OrtDistanzen[meta.StartOrtId] = 0;
-            while (queue.Count > 0)
-            {
-                var aktId = queue.Dequeue();
-                if (!ortMap.TryGetValue(aktId, out var akt)) continue;
-                int aktDist = meta.OrtDistanzen[aktId];
-                foreach (var nachbarId in new[] { akt.Nord, akt.Sued, akt.Ost, akt.West }
-                    .Where(n => !string.IsNullOrEmpty(n)))
+                else
                 {
-                    if (!meta.OrtDistanzen.ContainsKey(nachbarId!))
+                    ebeneZähler++;
+                    ortId = $"{regId}-GEN-EBENE{ebeneZähler:D3}";
+                }
+                ebeneZuOrtId[eb.Id] = ortId;
+            }
+
+            // Zähler zurücksetzen für zweiten Durchlauf
+            stadtZähler = 0; bossZähler = 0; startZähler = 0; ebeneZähler = 0;
+            var ebeneZuOrt = new Dictionary<int, Ort>();
+            var arenaleiter = regCfg.Arenaleiter.ToList();
+
+            foreach (var eb in ebenen)
+            {
+                string ortId = ebeneZuOrtId[eb.Id];
+                string name, typ, farbe;
+                bool istStartOrt = false;
+                Arena? arena = null;
+                var trainer = new List<TrainerKampf>();
+                var wildMonster = new List<WildBegegnung>();
+                bool hatMonsterCenter = false, hatMarkt = false;
+                var npcs = new List<GesprächsNPC>();
+                int dist = distanzen.TryGetValue(eb.Id, out int dd) ? (dd == int.MaxValue ? 0 : dd) : 0;
+
+                if (eb.IstStart)
+                {
+                    startZähler++;
+                    name = startZähler == 1 ? "Startpunkt" : $"Start {startZähler}";
+                    typ = "ort"; farbe = "blue";
+                    istStartOrt = startZähler == 1;
+                    hatMonsterCenter = true;
+                    hatMarkt = true;
+
+                    if (startZähler == 1)
                     {
-                        meta.OrtDistanzen[nachbarId!] = aktDist + 1;
-                        queue.Enqueue(nachbarId!);
+                        // Professor-NPC beim ersten Startpunkt
+                        npcs.Add(new GesprächsNPC
+                        {
+                            Id = $"{regId}-PROF",
+                            Name = regCfg.Professor,
+                            Emoji = regCfg.ProfessorEmoji,
+                            Dialog = $"Herzlich willkommen! Ich bin {regCfg.Professor}. " +
+                                     $"Dieses Spiel wurde mit viel Leidenschaft entwickelt – es ist eine Liebeserklärung an die Welt der Monster-Abenteuer. " +
+                                     $"Deine Reise beginnt hier. Erkunde die Welt, besiege Bosse und werde zum Champion!",
+                            GibtItemId = null, // Karte erst nach Wizard
+                            GibtItemName = null,
+                            GibtItemEmoji = null,
+                            DialogNachGeschenk = null,
+                            IstProfessor = true
+                        });
+                    }
+                    else
+                    {
+                        hatMonsterCenter = true;
+                        npcs.Add(new GesprächsNPC
+                        {
+                            Id = $"{regId}-NPC-START{startZähler}",
+                            Name = "Assistent",
+                            Emoji = "🧑‍🔬",
+                            Dialog = $"Du hast Boss {startZähler - 1} besiegt! Weiter geht's – das nächste Kapitel wartet auf dich!"
+                        });
+                    }
+                }
+                else if (eb.IstBoss)
+                {
+                    bossZähler++;
+                    name = $"Boss {bossZähler}";
+                    typ = "stadt"; farbe = "black";
+                    hatMonsterCenter = true;
+
+                    var leiterCfg = bossZähler <= arenaleiter.Count ? arenaleiter[bossZähler - 1] : null;
+
+                    // Arenaleiter aus Pool
+                    var arenaTrainer = trainerPool
+                        .Where(t => t.Klasse == "Arena" || t.Klasse == "Hauptboss" || t.Klasse == "Endgegner")
+                        .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                        .Skip(bossZähler - 1)
+                        .FirstOrDefault();
+
+                    // Zwischenboss-Trainer (Vortrainer)
+                    var zwischen = trainerPool
+                        .Where(t => t.Klasse == "Zwischenboss")
+                        .OrderBy(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                        .Skip((bossZähler - 1) * 2)
+                        .Take(2)
+                        .ToList();
+                    trainer.AddRange(zwischen);
+
+                    if (arenaTrainer != null)
+                    {
+                        arena = new Arena
+                        {
+                            OrdenName = leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}",
+                            OrdenNr = bossZähler + globalOrdenOffset,
+                            Leiter = leiterCfg?.Name ?? arenaTrainer.Name,
+                            TypSpezialisierung = leiterCfg?.Typ ?? "",
+                            Team = arenaTrainer.Team.Select(m => new MonsterTeamEintrag
+                            {
+                                MonsterId = m.MonsterId, Level = m.Level
+                            }).ToList()
+                        };
+                    }
+                    else
+                    {
+                        arena = new Arena
+                        {
+                            OrdenName = leiterCfg?.Orden ?? $"Orden {bossZähler + globalOrdenOffset}",
+                            OrdenNr = bossZähler + globalOrdenOffset,
+                            Leiter = leiterCfg?.Name ?? $"Boss {bossZähler}",
+                            TypSpezialisierung = leiterCfg?.Typ ?? "",
+                            Team = new List<MonsterTeamEintrag>()
+                        };
+                    }
+                }
+                else if (eb.IstStadt)
+                {
+                    stadtZähler++;
+                    name = $"Stadt {stadtZähler}";
+                    typ = "stadt"; farbe = "red";
+                    hatMonsterCenter = true;
+                    hatMarkt = stadtZähler % 2 == 0;
+                    trainer = HoleTrainerFürLevel(trainerPool, dist, rng, 1, 3);
+                    wildMonster = HoleWildMonsterFürLevel(wildPool, dist, rng, 2, 4);
+                }
+                else
+                {
+                    ebeneZähler++;
+                    name = $"Ebene {ebeneZähler}";
+                    typ = "route";
+                    farbe = eb.IstSackgasse ? "gray" : "green";
+                    int trainerAnz = eb.IstSackgasse ? 1 : rng.Next(1, 4);
+                    trainer = HoleTrainerFürLevel(trainerPool, dist, rng, trainerAnz, trainerAnz);
+                    wildMonster = HoleWildMonsterFürLevel(wildPool, dist, rng, 2, 5);
+                }
+
+                var ort = new Ort
+                {
+                    Id = ortId,
+                    Name = name,
+                    Typ = typ,
+                    Farbe = farbe,
+                    GridX = eb.X,
+                    GridY = eb.Y,
+                    Arena = arena,
+                    Trainer = trainer,
+                    WildMonster = wildMonster,
+                    HatMonsterCenter = hatMonsterCenter,
+                    HatMarkt = hatMarkt,
+                    NPCs = npcs,
+                    IstStartOrt = istStartOrt,
+                    Verbindungen = new List<string>()
+                };
+
+                ebeneZuOrt[eb.Id] = ort;
+                ergebnis.Add(ort);
+            }
+
+            // Verbindungen setzen (Nord/Süd/Ost/West)
+            foreach (var eb in ebenen)
+            {
+                var ort = ebeneZuOrt[eb.Id];
+                foreach (var (dir, nachbarEbId) in eb.Exits)
+                {
+                    if (!ebeneZuOrtId.TryGetValue(nachbarEbId, out var nachbarOrtId)) continue;
+                    switch (dir)
+                    {
+                        case "up":    ort.Nord = nachbarOrtId; break;
+                        case "down":  ort.Sued = nachbarOrtId; break;
+                        case "right": ort.Ost  = nachbarOrtId; break;
+                        case "left":  ort.West = nachbarOrtId; break;
+                    }
+                    ort.Verbindungen.Add(nachbarOrtId);
+                }
+                // Sperren
+                foreach (var (dir, lockEbId) in eb.Locks)
+                {
+                    if (!ebeneZuOrt.TryGetValue(lockEbId, out var lockOrt)) continue;
+                    var sperre = new RichtungsSperre { Hinweis = $"Benötigt: {lockOrt.Name}" };
+                    switch (dir)
+                    {
+                        case "up":    ort.SperrNord = sperre; break;
+                        case "down":  ort.SperrSued = sperre; break;
+                        case "right": ort.SperrOst  = sperre; break;
+                        case "left":  ort.SperrWest = sperre; break;
                     }
                 }
             }
-        }
 
-        // Level direkt in die Ort-Objekte schreiben (Distanz = Level-Basis)
-        foreach (var ort in ergebnis)
-        {
-            if (!meta.OrtDistanzen.TryGetValue(ort.Id, out int dist)) continue;
-            bool istArena = ort.Arena != null;
-            int minLvl = dist + 1;
-            int maxLvl = dist + 2;
-            if (istArena) { minLvl += 2; maxLvl += 3; }
+            // Meta-Daten befüllen
+            var startEbene = ebenen.First(e => e.IstStart);
+            if (string.IsNullOrEmpty(meta.StartOrtId))
+                meta.StartOrtId = ebeneZuOrtId[startEbene.Id];
 
-            // WildMonster-Level überschreiben
-            if (ort.WildMonster != null)
+            foreach (var eb in ebenen)
+            {
+                var ortId = ebeneZuOrtId[eb.Id];
+                meta.OrtReihenfolge.Add(ortId);
+                meta.OrtKoordinaten[ortId] = (eb.X, eb.Y);
+                int d = distanzen.TryGetValue(eb.Id, out int dv) ? (dv == int.MaxValue ? 999 : dv) : 0;
+                meta.OrtDistanzen[ortId] = d;
+                if (eb.IstStadt) meta.StadtIds.Add(ortId);
+                if (eb.IstBoss)  meta.BossIds.Add(ortId);
+                if (eb.IstStart) meta.StartIds.Add(ortId);
+            }
+            meta.StädteProBoss = städteProBoss;
+
+            // Level in Ort-Objekte schreiben
+            foreach (var ort in ergebnis.Where(o => o.Id.StartsWith(regId + "-GEN-")))
+            {
+                if (!meta.OrtDistanzen.TryGetValue(ort.Id, out int dist2)) continue;
+                int minLvl = Math.Max(3, 3 + (int)(dist2 * 1.8));
+                int maxLvl = minLvl + 3;
+                bool istArena = ort.Arena != null;
+                if (istArena) { minLvl += 3; maxLvl += 5; }
+
                 foreach (var w in ort.WildMonster)
                 { w.MinLevel = minLvl; w.MaxLevel = maxLvl; }
-
-            // Trainer-Team-Level überschreiben
-            if (ort.Trainer != null)
                 foreach (var t in ort.Trainer)
-                    if (t.Team != null)
-                        foreach (var m in t.Team)
-                            m.Level = minLvl + 1; // Trainer etwas stärker
+                    foreach (var m in t.Team)
+                        m.Level = Math.Max(m.Level, minLvl + 1);
+                if (ort.Arena?.Team != null)
+                    foreach (var m in ort.Arena.Team)
+                        m.Level = Math.Max(m.Level, maxLvl + 2);
+            }
 
-            // Arena-Team-Level überschreiben
-            if (ort.Arena?.Team != null)
-                foreach (var m in ort.Arena.Team)
-                    m.Level = maxLvl + 1;
+            // Fog-of-War: Startpunkt + direkte Nachbarn
+            var startOrtObj = ebeneZuOrt[startEbene.Id];
+            meta.FreigeschalteteOrte.Add(startOrtObj.Id);
+            foreach (var nachbarId in startEbene.Exits.Values)
+                if (ebeneZuOrtId.TryGetValue(nachbarId, out var nId))
+                    meta.FreigeschalteteOrte.Add(nId);
+
+            globalOrdenOffset += bossCount;
         }
-
-        // Fog-of-War: Orte bis zur ersten Arena (inkl.) freischalten
-        int ersteArenaIdx = ergebnis.FindIndex(o => o.Arena != null);
-        int bisIdx = ersteArenaIdx >= 0 ? ersteArenaIdx : Math.Min(4, ergebnis.Count - 1);
-        meta.FreigeschalteBisIndex = bisIdx;
-        for (int i = 0; i <= bisIdx; i++)
-            meta.FreigeschalteteOrte.Add(ergebnis[i].Id);
 
         return (ergebnis, meta);
     }
 
-    private static Ort KopiereOrt(Ort original, int ordenOffset)
+    // ─── HTML-Algorithmus: Ebenen-Struktur generieren ────────────────────────
+    private static List<Ebene> GeneriereEbenenStruktur(
+        Random rng, int total, int bossCount, int städteProBoss, int totalCitiesWanted)
     {
-        // TIEFE KOPIE: WildMonster, Trainer-Teams und Arena werden neu erstellt
-        // damit der Generator die Level ändern kann ohne die Originaldaten zu verändern
-        var wildKopie = original.WildMonster?
-            .Select(w => new WildBegegnung
-            {
-                MonsterId = w.MonsterId,
-                MinLevel  = w.MinLevel,
-                MaxLevel  = w.MaxLevel,
-                Chance    = w.Chance
-            }).ToList();
+        var ebenen = Enumerable.Range(0, total).Select(i => new Ebene { Id = i }).ToList();
+        var occupied = new Dictionary<(int, int), int>();
 
-        var trainerKopie = original.Trainer?
-            .Select(t => new TrainerKampf
-            {
-                Id           = t.Id,
-                Name         = t.Name,
-                Klasse       = t.Klasse,
-                Belohnung    = t.Belohnung,
-                Dialogvor    = t.Dialogvor,
-                DialogNach   = t.DialogNach,
-                MussBesiegt  = t.MussBesiegt,
-                SperrtRichtung = t.SperrtRichtung,
-                Team = t.Team.Select(m => new MonsterTeamEintrag
-                {
-                    MonsterId = m.MonsterId,
-                    Level     = m.Level
-                }).ToList()
-            }).ToList();
+        void MarkOccupied(int id) => occupied[(ebenen[id].X, ebenen[id].Y)] = id;
+        bool FreeAt(int x, int y) => !occupied.ContainsKey((x, y));
+        int ExitCount(int id) => ebenen[id].Exits.Count;
 
-        Arena? arenaKopie = null;
-        if (original.Arena != null)
+        void Connect(int a, string dir, int b, int? lockCity = null)
         {
-            arenaKopie = new Arena
+            ebenen[a].Exits[dir] = b;
+            ebenen[b].Exits[Opposite[dir]] = a;
+            if (lockCity.HasValue)
             {
-                OrdenName          = original.Arena.OrdenName,
-                OrdenNr            = original.Arena.OrdenNr + ordenOffset,
-                Leiter             = original.Arena.Leiter,
-                TypSpezialisierung = original.Arena.TypSpezialisierung,
-                Beschreibung       = original.Arena.Beschreibung,
-                Team = original.Arena.Team.Select(m => new MonsterTeamEintrag
-                {
-                    MonsterId = m.MonsterId,
-                    Level     = m.Level
-                }).ToList()
-            };
+                ebenen[a].Locks[dir] = lockCity.Value;
+                ebenen[b].Locks[Opposite[dir]] = lockCity.Value;
+            }
         }
 
-        return new Ort
+        bool PlaceAndConnect(int a, int b, int? lockCity = null)
         {
-            Id               = original.Id,
-            Name             = original.Name,
-            Typ              = original.Typ,
-            Farbe            = original.Farbe,
-            GridX            = original.GridX,
-            GridY            = original.GridY,
-            Beschreibung     = original.Beschreibung,
-            Arena            = arenaKopie,
-            WildMonster      = wildKopie,
-            Verbindungen     = new List<string>(),
-            Trainer          = trainerKopie,
-            HatMonsterCenter = original.HatMonsterCenter,
-            HatMarkt         = original.HatMarkt,
-            MarktAngebot     = original.MarktAngebot,
-            NPCs             = original.NPCs,
-            IstUnterirdisch  = original.IstUnterirdisch,
-            IstStartOrt      = original.IstStartOrt,
-            LigaZugang       = false,
-            BenötigtItem     = null,
-            MinOrdenFürZugang = ordenOffset,
-            MaxOrdenFürSperre = 0,
-            Nord = null, Sued = null, Ost = null, West = null,
-            NordTyp = "normal", SuedTyp = "normal", OstTyp = "normal", WestTyp = "normal",
-            NordMinOrden = 0, SuedMinOrden = 0, OstMinOrden = 0, WestMinOrden = 0,
-        };
+            foreach (var dir in Shuffled(Dirs, rng))
+            {
+                var (dx, dy) = MovePos[dir];
+                int nx = ebenen[a].X + dx, ny = ebenen[a].Y + dy;
+                if (!ebenen[a].Exits.ContainsKey(dir) &&
+                    !ebenen[b].Exits.ContainsKey(Opposite[dir]) &&
+                    ExitCount(a) < 4 && ExitCount(b) < 4 &&
+                    FreeAt(nx, ny))
+                {
+                    ebenen[b].X = nx; ebenen[b].Y = ny;
+                    Connect(a, dir, b, lockCity);
+                    MarkOccupied(b);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Hauptpfad (Schlangenmuster wie HTML)
+        const int cols = 26;
+        ebenen[0].X = 0; ebenen[0].Y = 0; ebenen[0].IstHauptpfad = true; MarkOccupied(0);
+        int mainEnd = Math.Min(total - 1, Math.Max(10, (int)Math.Ceiling(total * 0.45)));
+        mainEnd = Math.Min(total - 1, Math.Max(mainEnd, totalCitiesWanted + bossCount + 4));
+
+        for (int i = 1; i <= mainEnd; i++)
+        {
+            int row = i / cols, pos = i % cols;
+            bool even = row % 2 == 0;
+            ebenen[i].X = even ? pos : cols - 1 - pos;
+            ebenen[i].Y = row * 2;
+            ebenen[i].IstHauptpfad = true;
+            MarkOccupied(i);
+            int dx = ebenen[i].X - ebenen[i - 1].X, dy = ebenen[i].Y - ebenen[i - 1].Y;
+            string dir = dx == 1 ? "right" : dx == -1 ? "left" : dy == 1 ? "down" : "up";
+            Connect(i - 1, dir, i);
+        }
+
+        // Seitenwege
+        int nextId = mainEnd + 1;
+        int AddBranch(int anchor, int start, int len, bool markDead)
+        {
+            int prev = anchor, cur = start, made = 0;
+            for (int s = 0; s < len && cur < total; s++)
+            {
+                if (!PlaceAndConnect(prev, cur)) break;
+                prev = cur; cur++; made++;
+            }
+            if (made > 0 && markDead) ebenen[prev].IstSackgasse = true;
+            return cur;
+        }
+
+        for (int anchor = 1; anchor <= mainEnd && nextId < total; anchor++)
+        {
+            if (Chance(32, rng) && nextId < total)
+                nextId = AddBranch(anchor, nextId, rng.Next(2, 7), !Chance(35, rng));
+            if (Chance(13, rng) && nextId < total)
+                nextId = AddBranch(anchor, nextId, rng.Next(1, 4), true);
+        }
+
+        // Verbleibende Ebenen anbinden
+        int safety = 0;
+        while (nextId < total && safety++ < total * 50)
+        {
+            var anchors = Enumerable.Range(0, nextId).Where(i => ExitCount(i) < 4).ToList();
+            int a = anchors.Count > 0 ? anchors[rng.Next(anchors.Count)] : rng.Next(0, mainEnd + 1);
+            int old = nextId;
+            nextId = AddBranch(a, nextId, rng.Next(1, 4), Chance(75, rng));
+            if (nextId == old && nextId < total)
+            {
+                ebenen[nextId].X = ebenen[a].X;
+                ebenen[nextId].Y = ebenen[a].Y + 3 + rng.Next(0, 10);
+                while (!FreeAt(ebenen[nextId].X, ebenen[nextId].Y)) ebenen[nextId].Y++;
+                MarkOccupied(nextId);
+                var freeDir = Shuffled(Dirs, rng).FirstOrDefault(d => !ebenen[a].Exits.ContainsKey(d)) ?? "down";
+                ebenen[a].Exits[freeDir] = nextId;
+                ebenen[nextId].Exits[Opposite[freeDir]] = a;
+                ebenen[nextId].IstSackgasse = true;
+                nextId++;
+            }
+        }
+
+        // Umnummerieren nach Karten-Distanz (wie HTML)
+        ebenen = RenumberByMapDistance(ebenen, mainEnd, rng);
+
+        // Städte platzieren
+        PlaceCities(ebenen, totalCitiesWanted, rng);
+
+        // Bosse platzieren
+        PlaceBosses(ebenen, bossCount, städteProBoss, rng);
+
+        // Startpunkte setzen
+        PlaceStartPoints(ebenen);
+
+        // Sperren hinzufügen
+        AddLocksAfterCities(ebenen, 28, rng);
+
+        ebenen[0].Besucht = true;
+        return ebenen;
     }
+
+    private static void PlaceCities(List<Ebene> ebenen, int count, Random rng)
+    {
+        foreach (var e in ebenen) e.IstStadt = false;
+        if (count <= 0) return;
+        var cityIds = new List<int>();
+        var dist = CalcDistances(ebenen);
+
+        // Stadt 1 immer auf Ebene 4 (wie HTML)
+        if (ebenen.Count > 4)
+        {
+            ebenen[4].IstStadt = true;
+            cityIds.Add(4);
+        }
+
+        bool CityDistOk(int id, int minD)
+        {
+            foreach (var o in cityIds)
+            {
+                int dx = Math.Abs(ebenen[id].X - ebenen[o].X) + Math.Abs(ebenen[id].Y - ebenen[o].Y);
+                if (dx < minD) return false;
+            }
+            return true;
+        }
+
+        var main = ebenen.Where(e => e.Id >= 5 && !e.IstStadt && e.IstHauptpfad).Select(e => e.Id).ToList();
+        var side = ebenen.Where(e => e.Id >= 5 && !e.IstStadt && !e.IstHauptpfad && !e.IstSackgasse).Select(e => e.Id).ToList();
+        var dead = ebenen.Where(e => e.Id >= 5 && !e.IstStadt && e.IstSackgasse).Select(e => e.Id).ToList();
+
+        int tMain = (int)Math.Round(count * 0.40);
+        int tSide = (int)Math.Round(count * 0.40);
+        int tDead = count - tMain - tSide;
+
+        void PickFrom(List<int> arr, ref int amount, int minDist)
+        {
+            foreach (var id in Shuffled(arr.ToArray(), rng))
+            {
+                if (cityIds.Count >= count || amount <= 0) break;
+                if (!ebenen[id].IstStadt && CityDistOk(id, minDist))
+                { ebenen[id].IstStadt = true; cityIds.Add(id); amount--; }
+            }
+        }
+
+        foreach (int minDist in new[] { 5, 4, 3, 2 })
+        {
+            PickFrom(main, ref tMain, minDist);
+            PickFrom(side, ref tSide, minDist);
+            PickFrom(dead, ref tDead, minDist);
+            if (cityIds.Count >= count) break;
+            int rem = count - cityIds.Count;
+            PickFrom(main.Concat(side).Concat(dead).ToList(), ref rem, minDist);
+            if (cityIds.Count >= count) break;
+        }
+    }
+
+    private static void PlaceBosses(List<Ebene> ebenen, int count, int citiesPerBoss, Random rng)
+    {
+        foreach (var e in ebenen) e.IstBoss = false;
+        if (count <= 0) return;
+        var cityIds = ebenen.Where(e => e.IstStadt).Select(e => e.Id).ToList();
+        var dist = CalcDistances(ebenen);
+        var chosen = new List<int>();
+
+        bool HasForwardNeighbor(int id)
+        {
+            int d = dist.TryGetValue(id, out int dd) ? dd : 0;
+            return ebenen[id].Exits.Values.Any(n =>
+                dist.TryGetValue(n, out int nd) && nd > d && !ebenen[n].IstStadt && !ebenen[n].IstBoss && n != 0);
+        }
+
+        bool CityDistOk(int id, int minD)
+        {
+            foreach (var o in chosen)
+            {
+                int dx = Math.Abs(ebenen[id].X - ebenen[o].X) + Math.Abs(ebenen[id].Y - ebenen[o].Y);
+                if (dx < minD) return false;
+            }
+            return true;
+        }
+
+        for (int i = 1; i <= count; i++)
+        {
+            int needCities = Math.Min(i * citiesPerBoss, cityIds.Count);
+            int cityForBoss = needCities > 0 ? cityIds[Math.Max(0, needCities - 1)] : 0;
+            int minD = dist.TryGetValue(cityForBoss, out int cd) ? cd : 0;
+
+            List<Ebene> candidates;
+            if (i < count)
+            {
+                candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
+                    && dist.TryGetValue(e.Id, out int dd) && dd >= minD
+                    && CityDistOk(e.Id, 4) && HasForwardNeighbor(e.Id)).ToList();
+                candidates.Sort((a, b) =>
+                    Math.Abs((dist.TryGetValue(a.Id, out int da) ? da : 0) - minD)
+                    .CompareTo(Math.Abs((dist.TryGetValue(b.Id, out int db) ? db : 0) - minD)));
+            }
+            else
+            {
+                candidates = ebenen.Where(e => e.Id != 0 && !e.IstStadt && !e.IstBoss
+                    && dist.TryGetValue(e.Id, out int dd) && dd < int.MaxValue).ToList();
+                candidates.Sort((a, b) =>
+                    (dist.TryGetValue(b.Id, out int db) ? db : 0)
+                    .CompareTo(dist.TryGetValue(a.Id, out int da) ? da : 0));
+            }
+
+            var pick = candidates.FirstOrDefault()
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss && HasForwardNeighbor(e.Id))
+                ?? ebenen.FirstOrDefault(e => e.Id != 0 && !e.IstStadt && !e.IstBoss);
+            if (pick != null) { pick.IstBoss = true; chosen.Add(pick.Id); }
+        }
+    }
+
+    private static void PlaceStartPoints(List<Ebene> ebenen)
+    {
+        foreach (var e in ebenen) e.IstStart = false;
+        if (ebenen.Count > 0) ebenen[0].IstStart = true;
+        var bossIds = ebenen.Where(e => e.IstBoss).Select(e => e.Id).ToList();
+        if (bossIds.Count == 0) return;
+        var dist = CalcDistances(ebenen);
+
+        for (int i = 0; i < bossIds.Count - 1; i++)
+        {
+            int boss = bossIds[i];
+            int bossDist = dist.TryGetValue(boss, out int bd) ? bd : 0;
+            var candidates = ebenen[boss].Exits.Values
+                .Where(n => !ebenen[n].IstStadt && !ebenen[n].IstBoss && !ebenen[n].IstStart
+                    && dist.TryGetValue(n, out int nd) && nd > bossDist)
+                .ToList();
+            if (candidates.Count == 0)
+                candidates = ebenen[boss].Exits.Values
+                    .Where(n => !ebenen[n].IstStadt && !ebenen[n].IstBoss && !ebenen[n].IstStart)
+                    .ToList();
+            candidates.Sort((a, b) =>
+                (dist.TryGetValue(a, out int da) ? da : 0)
+                .CompareTo(dist.TryGetValue(b, out int db) ? db : 0));
+            var pick = candidates.FirstOrDefault();
+            if (pick != default) { ebenen[pick].IstStart = true; ebenen[pick].NachBoss = boss; }
+        }
+    }
+
+    private static void AddLocksAfterCities(List<Ebene> ebenen, int lockChance, Random rng)
+    {
+        foreach (var e in ebenen) e.Locks.Clear();
+        var cityIds = ebenen.Where(e => e.IstStadt).Select(e => e.Id).ToList();
+        if (cityIds.Count == 0) return;
+        var dist = CalcDistances(ebenen);
+        var seen = new HashSet<string>();
+
+        foreach (var a in ebenen)
+        {
+            foreach (var (dir, b) in a.Exits)
+            {
+                string k = a.Id < b ? $"{a.Id}-{b}" : $"{b}-{a.Id}";
+                if (seen.Contains(k)) continue;
+                seen.Add(k);
+                // Hauptpfad frei lassen
+                if (ebenen[a.Id].IstHauptpfad && ebenen[b].IstHauptpfad && Math.Abs(a.Id - b) == 1) continue;
+                if (!Chance(lockChance, rng)) continue;
+                int depth = Math.Max(dist.TryGetValue(a.Id, out int da) ? da : 0, dist.TryGetValue(b, out int db) ? db : 0);
+                var possible = cityIds.Where(c => (dist.TryGetValue(c, out int dc) ? dc : 0) < depth - 1).ToList();
+                if (possible.Count == 0) continue;
+                int lockCity = possible[rng.Next(possible.Count)];
+                ebenen[a.Id].Locks[dir] = lockCity;
+                ebenen[b].Locks[Opposite[dir]] = lockCity;
+            }
+        }
+    }
+
+    private static List<Ebene> RenumberByMapDistance(List<Ebene> old, int mainEnd, Random rng)
+    {
+        var order = new List<int>();
+        var seen = new HashSet<int>();
+
+        void Add(int id) { if (!seen.Contains(id)) { seen.Add(id); order.Add(id); } }
+
+        double NeighborScore(int from, int n) =>
+            Math.Abs(old[from].X - old[n].X) + Math.Abs(old[from].Y - old[n].Y)
+            + (old[n].IstSackgasse ? 0.25 : 0) + n / 10000.0;
+
+        void TraverseSide(int id, int parent)
+        {
+            if (seen.Contains(id)) return;
+            Add(id);
+            var ns = old[id].Exits.Values.Where(n => n != parent && !seen.Contains(n))
+                .OrderBy(n => NeighborScore(id, n)).ToList();
+            foreach (var n in ns) TraverseSide(n, id);
+        }
+
+        int prefixEnd = Math.Min(4, Math.Min(mainEnd, old.Count - 1));
+        for (int i = 0; i <= prefixEnd; i++) Add(i);
+        for (int i = 1; i <= prefixEnd; i++)
+        {
+            var branches = old[i].Exits.Values.Where(n => !seen.Contains(n) &&
+                !(old[i].IstHauptpfad && old[n].IstHauptpfad && Math.Abs(i - n) == 1))
+                .OrderBy(n => NeighborScore(i, n)).ToList();
+            foreach (var b in branches) TraverseSide(b, i);
+        }
+        for (int i = prefixEnd + 1; i <= mainEnd && i < old.Count; i++)
+        {
+            Add(i);
+            var branches = old[i].Exits.Values.Where(n => !seen.Contains(n) &&
+                !(old[i].IstHauptpfad && old[n].IstHauptpfad && Math.Abs(i - n) == 1))
+                .OrderBy(n => NeighborScore(i, n)).ToList();
+            foreach (var b in branches) TraverseSide(b, i);
+        }
+        for (int i = 0; i < old.Count; i++) Add(i);
+
+        var mapOldToNew = new Dictionary<int, int>();
+        for (int newId = 0; newId < order.Count; newId++) mapOldToNew[order[newId]] = newId;
+
+        var newEbenen = Enumerable.Range(0, old.Count).Select(newId =>
+        {
+            int oldId = order[newId];
+            var o = old[oldId];
+            return new Ebene
+            {
+                Id = newId, X = o.X, Y = o.Y,
+                IstStadt = o.IstStadt, IstBoss = o.IstBoss, IstStart = o.IstStart,
+                IstHauptpfad = o.IstHauptpfad, IstSackgasse = o.IstSackgasse
+            };
+        }).ToList();
+
+        for (int newId = 0; newId < newEbenen.Count; newId++)
+        {
+            int oldId = order[newId];
+            foreach (var (dir, nb) in old[oldId].Exits)
+                if (mapOldToNew.TryGetValue(nb, out int newNb)) newEbenen[newId].Exits[dir] = newNb;
+            foreach (var (dir, lk) in old[oldId].Locks)
+                if (mapOldToNew.TryGetValue(lk, out int newLk)) newEbenen[newId].Locks[dir] = newLk;
+        }
+
+        return newEbenen;
+    }
+
+    private static Dictionary<int, int> CalcDistances(List<Ebene> ebenen)
+    {
+        var dist = new Dictionary<int, int>();
+        for (int i = 0; i < ebenen.Count; i++) dist[i] = int.MaxValue;
+        if (ebenen.Count == 0) return dist;
+        dist[0] = 0;
+        var q = new Queue<int>();
+        q.Enqueue(0);
+        while (q.Count > 0)
+        {
+            int id = q.Dequeue();
+            foreach (var n in ebenen[id].Exits.Values)
+                if (dist[n] == int.MaxValue) { dist[n] = dist[id] + 1; q.Enqueue(n); }
+        }
+        return dist;
+    }
+
+    // ─── Trainer-Zuweisung (level-basiert) ───────────────────────────────────
+    private static List<TrainerKampf> HoleTrainerFürLevel(
+        List<TrainerKampf> pool, int dist, Random rng, int min, int max)
+    {
+        int targetLevel = 3 + (int)(dist * 1.8);
+        int tolerance = 8;
+        var passend = pool
+            .Where(t => (t.Klasse == "Trainer" || t.Klasse == "Zwischenboss") && t.Team.Any())
+            .Where(t => Math.Abs(t.Team.Max(m => m.Level) - targetLevel) <= tolerance)
+            .ToList();
+        if (passend.Count == 0)
+            passend = pool.Where(t => t.Klasse == "Trainer" && t.Team.Any()).ToList();
+        int anzahl = min == max ? min : rng.Next(min, max + 1);
+        return passend.OrderBy(_ => rng.Next()).Take(anzahl).ToList();
+    }
+
+    private static List<WildBegegnung> HoleWildMonsterFürLevel(
+        List<MonsterPoolEintrag> pool, int dist, Random rng, int min, int max)
+    {
+        int targetLevel = 3 + (int)(dist * 1.8);
+        var passend = pool
+            .Where(e => e.MinLevel <= targetLevel + 5 && e.MaxLevel >= targetLevel - 5)
+            .ToList();
+        if (passend.Count == 0) passend = pool.ToList();
+        int anzahl = rng.Next(min, max + 1);
+        return passend.OrderBy(_ => rng.Next()).Take(anzahl)
+            .Select(e => new WildBegegnung
+            {
+                MonsterId = e.Id,
+                MinLevel = Math.Max(1, targetLevel - 2),
+                MaxLevel = targetLevel + 2,
+                Chance = e.Chance
+            }).ToList();
+    }
+
+    // ─── Hilfsmethoden ───────────────────────────────────────────────────────
+    private static bool Chance(int percent, Random rng) => rng.Next(100) < percent;
+
+    private static T[] Shuffled<T>(T[] arr, Random rng)
+    {
+        var copy = arr.ToArray();
+        for (int i = copy.Length - 1; i > 0; i--)
+        {
+            int j = rng.Next(i + 1);
+            (copy[i], copy[j]) = (copy[j], copy[i]);
+        }
+        return copy;
+    }
+
+    private static List<T> Shuffled<T>(IEnumerable<T> source, Random rng)
+        => Shuffled(source.ToArray(), rng).ToList();
 
     public static string ExportiereKartenCode(GenerierteKarte meta)
         => $"{meta.SeedCode}:{string.Join(",", meta.RegionsReihenfolge)}";
