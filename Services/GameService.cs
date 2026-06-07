@@ -1806,7 +1806,7 @@ public class AttackeRaw
     [JsonPropertyName("genauigkeit")] public int? Genauigkeit { get; set; }
     [JsonPropertyName("ap")] public int? Ap { get; set; }
     [JsonPropertyName("statuseffekt")] public string? Statuseffekt { get; set; }
-    [JsonPropertyName("statuseffekt_chance")] public int? StatuseffektChance { get; set; }
+    [JsonPropertyName("statuseffektChance")] public int? StatuseffektChance { get; set; }
     [JsonPropertyName("generation")] public int? Generation { get; set; }
 }
 
@@ -1819,14 +1819,14 @@ public class MonsterRaw
     [JsonPropertyName("stats")] public Dictionary<string, int>? Stats { get; set; }
     [JsonPropertyName("attacken")] public List<AttackenLernEintragRaw>? Attacken { get; set; }
     [JsonPropertyName("tm_attacken")] public List<string>? TmAttacken { get; set; }
-    [JsonPropertyName("entwickelt_zu")] public string? EntwickeltZu { get; set; }
-    [JsonPropertyName("entwicklung_name")] public string? EntwicklungName { get; set; }
-    [JsonPropertyName("entwicklung_level")] public int? EntwicklungLevel { get; set; }
+    [JsonPropertyName("entwickeltZu")] public string? EntwickeltZu { get; set; }
+    [JsonPropertyName("entwicklungName")] public string? EntwicklungName { get; set; }
+    [JsonPropertyName("entwicklungLevel")] public int? EntwicklungLevel { get; set; }
     [JsonPropertyName("fangrate")] public int Fangrate { get; set; } = 45;
 }
 
 public class AttackenLernEintragRaw
 {
-    [JsonPropertyName("attacke_id")] public string AttackeId { get; set; } = "";
+    [JsonPropertyName("AttackeId")] public string AttackeId { get; set; } = "";
     [JsonPropertyName("level")] public int Level { get; set; }
 }
