@@ -64,6 +64,12 @@
             }
         </div>
 
+        @if (Game.IstGenerierteKartenModus)
+        {
+            <button class="btn-generieren btn-neu-generieren" @onclick="NeuGenerierenBestaetigen">
+                🎲 Reload / neu generieren
+            </button>
+        }
         @if (Game.IstEigeneMapModus)
         {
             <button class="btn-hauptmenu btn-eigene-map-verlassen" @onclick="ZumNormalenSpielstandWechseln">
@@ -632,6 +638,14 @@
     }
 
     private void VollkarteSchliessen() => vollkarteOffen = false;
+
+    private bool neuGenBestaetigung = false;
+
+    private void NeuGenerierenBestaetigen()
+    {
+        // Direkt neu generieren (gleiche Regionen, neuer Seed)
+        Game.NeuGenerieren();
+    }
 
     private async Task SeedKodierenKopieren()
     {

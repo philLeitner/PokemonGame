@@ -306,6 +306,31 @@ public class GameService
     // Original-Orte für Rückkehr zum klassischen Modus
     private List<Ort>? _originalOrte = null;
 
+    /// <summary>Gleiche Regionen, neuer Seed – Spieler-Fortschritt wird zurückgesetzt.</summary>
+    public void NeuGenerieren()
+    {
+        if (AktuelleGenerierteKarte == null || _originalOrte == null) return;
+        // Regionen aus der aktuellen Karte merken
+        var regionsReihenfolge = AktuelleGenerierteKarte.RegionsReihenfolge;
+        // Spieler-Fortschritt zurücksetzen (Team behalten, Orden/Fortschritt weg)
+        var spielerName = Spieler.Name;
+        var team = Spieler.Team;
+        var starter = Spieler.StarterMonsterId;
+        Spieler = new Spieler { Name = spielerName, StarterMonsterId = starter };
+        Spieler.Team.AddRange(team);
+        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", 5);
+        Spieler.ItemHinzufügen("trank", "Trank", "🧪", 3);
+        // Neue Karte mit neuem Seed generieren
+        var neuerSeed = KartenGenerator.GeneriereSeedCode();
+        var (neueOrte, meta) = KartenGenerator.Generiere(neuerSeed, regionsReihenfolge, AlleRegionen, _originalOrte);
+        AktuelleGenerierteKarte = meta;
+        AlleOrte = neueOrte;
+        if (!string.IsNullOrEmpty(meta.StartOrtId))
+            Spieler.AktuellerOrt = meta.StartOrtId;
+        Phase = SpielPhase.Weltkarte;
+        Notify();
+    }
+
     /// <summary>Stellt die Original-Weltkarte wieder her (nach generierter Karte).</summary>
     public void GenerierteKarteBeenden()
     {
