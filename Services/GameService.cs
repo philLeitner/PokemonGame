@@ -411,11 +411,11 @@ public class GameService
             return (0, 0);
         int idx = AktuelleGenerierteKarte.OrtReihenfolge.IndexOf(ortId);
         if (idx < 0) return (0, 0);
-        // Position 0 = Level 2, jede Position +1
-        int basis = 2 + idx;
+        // Index in der Reihenfolge = Level (1-basiert: Index 0 = Level 1)
+        int basis = idx + 1;
         int min = basis;
-        int max = basis + 2;
-        if (istArena) { min += 3; max += 5; }
+        int max = basis + 1; // kleiner Zufallsbereich
+        if (istArena) { min += 2; max += 3; } // Arenen etwas stärker
         return (min, max);
     }
 
