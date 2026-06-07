@@ -4085,3 +4085,342 @@ input:checked + .toggle-slider-klein::before {
     margin-top: 0.5rem;
     flex-wrap: wrap;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   REGIONSAUSWAHL
+═══════════════════════════════════════════════════════════════ */
+.regionswahl-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    color: #e2e8f0;
+}
+.regionswahl-header { margin-bottom: 1.5rem; }
+.regionswahl-titel {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 0.4rem 0;
+}
+.regionswahl-untertitel { color: #94a3b8; font-size: 0.95rem; margin: 0; }
+
+.ausgewaehlte-reihenfolge {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+.ausgewaehlte-reihenfolge h3 {
+    font-size: 1rem; color: #94a3b8; margin: 0 0 0.75rem 0; font-weight: 600;
+}
+.reihenfolge-liste { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.reihenfolge-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: #0f172a; border: 1px solid #475569;
+    border-radius: 8px; padding: 0.4rem 0.75rem;
+    cursor: pointer; transition: background 0.15s, border-color 0.15s; font-size: 0.9rem;
+}
+.reihenfolge-item:hover { background: #1e293b; border-color: #ef4444; }
+.reihenfolge-nr {
+    background: #3b82f6; color: #fff; font-weight: 700; font-size: 0.75rem;
+    width: 1.4rem; height: 1.4rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.reihenfolge-name { color: #e2e8f0; }
+.reihenfolge-entfernen { color: #ef4444; font-size: 0.8rem; margin-left: 0.2rem; }
+
+.regionen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.region-karte {
+    background: #1e293b; border: 2px solid #334155; border-radius: 12px;
+    overflow: hidden; cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.region-karte:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+.region-karte.ausgewaehlt {
+    box-shadow: 0 0 0 2px #3b82f6, 0 6px 20px rgba(59,130,246,0.3);
+    transform: translateY(-2px);
+}
+.region-karte-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0.8rem;
+}
+.region-emoji { font-size: 1.5rem; }
+.region-nummer {
+    background: rgba(0,0,0,0.4); color: #fff; font-weight: 700; font-size: 0.85rem;
+    width: 1.6rem; height: 1.6rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.region-karte-body { padding: 0.75rem; }
+.region-karte-name { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.4rem; }
+.region-karte-info { display: flex; gap: 0.75rem; font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.5rem; }
+.region-starter-liste { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.region-starter-chip {
+    background: #0f172a; border: 1px solid #334155; border-radius: 4px;
+    padding: 0.15rem 0.4rem; font-size: 0.72rem; color: #94a3b8;
+}
+
+.seed-bereich {
+    background: #1e293b; border: 1px solid #334155; border-radius: 10px;
+    padding: 1rem; margin-bottom: 1.5rem;
+}
+.seed-zeile { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.seed-zeile label { color: #94a3b8; font-size: 0.9rem; white-space: nowrap; }
+.seed-input {
+    flex: 1; min-width: 200px; background: #0f172a; border: 1px solid #475569;
+    border-radius: 6px; color: #e2e8f0; padding: 0.4rem 0.75rem;
+    font-size: 0.9rem; font-family: monospace;
+}
+.seed-input:focus { outline: none; border-color: #3b82f6; }
+.btn-seed-import {
+    background: #3b82f6; color: #fff; border: none; border-radius: 6px;
+    padding: 0.4rem 0.9rem; font-size: 0.85rem; cursor: pointer; transition: background 0.15s;
+}
+.btn-seed-import:hover { background: #2563eb; }
+.import-fehler { color: #f87171; font-size: 0.85rem; margin-top: 0.5rem; }
+.seed-hinweis { color: #64748b; font-size: 0.8rem; margin-top: 0.5rem; }
+
+.regionswahl-aktionen { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+.btn-zurueck {
+    background: #1e293b; color: #94a3b8; border: 1px solid #334155;
+    border-radius: 8px; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer;
+}
+.btn-zurueck:hover { background: #334155; color: #e2e8f0; }
+.btn-zufaellig {
+    background: #1e293b; color: #a78bfa; border: 1px solid #7c3aed;
+    border-radius: 8px; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer;
+}
+.btn-zufaellig:hover { background: #2d1b69; }
+.btn-starten {
+    background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff;
+    border: none; border-radius: 8px; padding: 0.6rem 1.5rem;
+    font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s, transform 0.1s;
+}
+.btn-starten:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-starten.disabled, .btn-starten:disabled {
+    background: #334155; color: #64748b; cursor: not-allowed; transform: none;
+}
+.btn-gen-karte { background: linear-gradient(135deg, #7c3aed, #4f46e5) !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   GENERIERTE KARTE
+═══════════════════════════════════════════════════════════════ */
+.karte-seed-anzeige {
+    font-size: 0.75rem; color: #64748b; font-family: monospace;
+    margin-left: 1rem; vertical-align: middle;
+}
+.gen-karte-container {
+    display: grid; grid-template-columns: 260px 1fr; gap: 1rem;
+    height: calc(100vh - 140px); min-height: 400px;
+}
+.gen-ebenen-liste {
+    background: #0f172a; border: 1px solid #1e293b;
+    border-radius: 10px; overflow-y: auto; padding: 0.5rem;
+}
+.gen-region-trennlinie {
+    font-size: 0.7rem; font-weight: 700; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 0.6rem 0.5rem 0.3rem;
+    border-top: 1px solid #1e293b; margin-top: 0.3rem;
+}
+.gen-region-trennlinie:first-child { border-top: none; margin-top: 0; }
+.gen-ebene-zeile {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.45rem 0.6rem; border-radius: 7px; cursor: pointer;
+    transition: background 0.12s; border-left: 3px solid transparent; margin-bottom: 2px;
+}
+.gen-ebene-zeile:hover { background: #1e293b; }
+.gen-ebene-zeile.aktuell { background: #1e3a5f; border-left-color: #3b82f6 !important; }
+.gen-ebene-zeile.nebel { opacity: 0.35; cursor: default; pointer-events: none; }
+.gen-ebene-icon {
+    font-size: 0.72rem; font-weight: 700; color: #64748b;
+    min-width: 38px; text-align: center; background: #1e293b;
+    border-radius: 4px; padding: 0.15rem 0.3rem;
+}
+.gen-ebene-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.gen-ebene-name {
+    font-size: 0.82rem; color: #e2e8f0; font-weight: 500;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.gen-ebene-name.nebel-text { color: #475569; font-style: italic; }
+.gen-ebene-typ { font-size: 0.7rem; color: #94a3b8; }
+.gen-ebene-typ.arena { color: #fbbf24; }
+.gen-ebene-typ.professor { color: #34d399; }
+.gen-ebene-hier, .gen-ebene-orden { font-size: 0.85rem; }
+
+.gen-ebene-details {
+    background: #0f172a; border: 1px solid #1e293b; border-radius: 10px;
+    padding: 1.25rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem;
+}
+.gen-detail-header {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding-left: 0.75rem; border-left: 4px solid #3b82f6;
+}
+.gen-detail-icon {
+    font-size: 0.78rem; font-weight: 700; color: #64748b;
+    background: #1e293b; border-radius: 6px; padding: 0.3rem 0.5rem;
+}
+.gen-detail-header h3 { font-size: 1.1rem; font-weight: 700; color: #f1f5f9; margin: 0 0 0.15rem 0; }
+.gen-detail-region { font-size: 0.75rem; color: #64748b; }
+.gen-detail-sektion { display: flex; flex-direction: column; gap: 0.6rem; }
+.gen-detail-npc {
+    background: #1e293b; border-radius: 8px; padding: 0.75rem;
+    font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;
+}
+.gen-arena-info { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.gen-arena-typ, .gen-arena-orden {
+    background: #1e293b; border-radius: 6px; padding: 0.3rem 0.7rem; font-size: 0.85rem; color: #e2e8f0;
+}
+.gen-arena-typ { border-left: 3px solid #f97316; }
+.gen-arena-orden { border-left: 3px solid #fbbf24; }
+.gen-orden-erhalten { color: #34d399; font-weight: 600; font-size: 0.9rem; }
+.gen-kein-team { color: #f87171; font-size: 0.9rem; }
+.gen-alle-ohnmaechtig {
+    background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px;
+    padding: 0.75rem; color: #fca5a5; font-size: 0.9rem;
+}
+.gen-ort-beschreibung { color: #94a3b8; font-size: 0.9rem; margin: 0; }
+.gen-starter-wahl h4 { font-size: 0.85rem; color: #94a3b8; margin: 0 0 0.4rem 0; font-weight: 600; }
+.gen-starter-liste { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gen-starter-chip {
+    background: #1e293b; border: 1px solid #334155; border-radius: 6px;
+    padding: 0.25rem 0.6rem; font-size: 0.82rem; color: #a3e635;
+}
+.gen-detail-leer { color: #475569; font-size: 0.9rem; text-align: center; padding: 2rem; }
+.gen-karten-code {
+    margin-top: auto; background: #1e293b; border-radius: 8px; padding: 0.75rem; font-size: 0.8rem;
+}
+.gen-karten-code label { display: block; color: #64748b; margin-bottom: 0.3rem; font-size: 0.75rem; }
+.gen-karten-code code { color: #a78bfa; font-family: monospace; word-break: break-all; font-size: 0.78rem; }
+.gen-aktionen { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.btn-heilen {
+    background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff;
+    border: none; border-radius: 7px; padding: 0.5rem 1rem;
+    font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.btn-heilen:hover { opacity: 0.85; }
+.btn-karte-update {
+    background: #1e3a5f; color: #93c5fd; border: 1px solid #1d4ed8;
+    border-radius: 7px; padding: 0.5rem 1rem; font-size: 0.88rem; cursor: pointer;
+}
+.btn-karte-update:hover { background: #1e40af; }
+.btn-kampf {
+    background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff;
+    border: none; border-radius: 7px; padding: 0.55rem 1.1rem;
+    font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s, transform 0.1s;
+}
+.btn-kampf:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════════════════════
+   NACH-ARENALEITER DIALOG
+═══════════════════════════════════════════════════════════════ */
+.nach-arena-container {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+    display: flex; align-items: center; justify-content: center; z-index: 200; padding: 1rem;
+}
+.nach-arena-box {
+    background: #0f172a; border: 1px solid #1e293b; border-radius: 16px;
+    padding: 2rem; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.nach-arena-header { text-align: center; margin-bottom: 1.5rem; }
+.nach-arena-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+.nach-arena-header h2 { font-size: 1.5rem; font-weight: 700; color: #fbbf24; margin: 0 0 0.4rem 0; }
+.nach-arena-leiter { color: #94a3b8; font-size: 0.95rem; margin: 0 0 0.5rem 0; }
+.nach-arena-orden {
+    display: inline-block; background: linear-gradient(135deg, #78350f, #92400e);
+    border: 1px solid #b45309; border-radius: 8px; padding: 0.4rem 1rem;
+    color: #fde68a; font-weight: 700; font-size: 0.9rem;
+}
+.nach-arena-schritt h3 { font-size: 1.1rem; font-weight: 700; color: #f1f5f9; margin: 0 0 0.5rem 0; }
+.nach-arena-erklaerung { color: #94a3b8; font-size: 0.9rem; margin: 0 0 1rem 0; }
+
+.level-optionen { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.level-option {
+    background: #1e293b; border: 2px solid #334155; border-radius: 10px;
+    padding: 0.9rem; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.level-option:hover { border-color: #3b82f6; background: #1e3a5f; }
+.level-option.ausgewaehlt { border-color: #3b82f6; background: #1e3a5f; box-shadow: 0 0 0 1px #3b82f6; }
+.level-option-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.level-option-buchstabe {
+    background: #3b82f6; color: #fff; font-weight: 700; font-size: 0.9rem;
+    width: 1.6rem; height: 1.6rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.level-option-name { font-weight: 700; color: #f1f5f9; font-size: 0.95rem; }
+.level-option-beschreibung { font-size: 0.8rem; color: #94a3b8; margin: 0 0 0.5rem 0; line-height: 1.4; }
+.level-option-vorteil { font-size: 0.75rem; color: #64748b; line-height: 1.6; }
+
+.starter-optionen {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.6rem; margin-bottom: 0.75rem;
+}
+.starter-karte {
+    background: #1e293b; border: 2px solid #334155; border-radius: 8px;
+    padding: 0.7rem; cursor: pointer; text-align: center; transition: border-color 0.15s, background 0.15s;
+}
+.starter-karte:hover { border-color: #22c55e; background: #14532d; }
+.starter-karte.ausgewaehlt { border-color: #22c55e; background: #14532d; box-shadow: 0 0 0 1px #22c55e; }
+.starter-karte-name { display: block; font-weight: 700; color: #f1f5f9; font-size: 0.88rem; margin-bottom: 0.2rem; }
+.starter-karte-typ { font-size: 0.72rem; color: #94a3b8; }
+.starter-aktionen { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.btn-starter-nehmen {
+    background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff;
+    border: none; border-radius: 7px; padding: 0.5rem 1rem; font-size: 0.88rem; font-weight: 600; cursor: pointer;
+}
+.btn-starter-nehmen:hover { opacity: 0.85; }
+.btn-starter-zufaellig {
+    background: #1e293b; color: #a78bfa; border: 1px solid #7c3aed;
+    border-radius: 7px; padding: 0.5rem 0.9rem; font-size: 0.85rem; cursor: pointer;
+}
+.btn-starter-zufaellig:hover { background: #2d1b69; }
+.btn-starter-nein {
+    background: #1e293b; color: #64748b; border: 1px solid #334155;
+    border-radius: 7px; padding: 0.5rem 0.9rem; font-size: 0.85rem; cursor: pointer;
+}
+.btn-starter-nein:hover { background: #334155; color: #94a3b8; }
+
+.team-einlagern-liste { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.75rem; }
+.einlagern-eintrag {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: #1e293b; border: 2px solid #334155; border-radius: 8px;
+    padding: 0.5rem 0.75rem; cursor: pointer; transition: border-color 0.15s;
+}
+.einlagern-eintrag:hover { border-color: #475569; }
+.einlagern-eintrag.markiert { border-color: #f97316; background: #431407; }
+.einlagern-emoji { font-size: 1.1rem; }
+.einlagern-info { flex: 1; display: flex; align-items: center; gap: 0.5rem; }
+.einlagern-name { font-weight: 600; color: #e2e8f0; font-size: 0.9rem; }
+.einlagern-level { font-size: 0.78rem; color: #64748b; }
+.einlagern-kp-balken { width: 60px; height: 5px; background: #334155; border-radius: 3px; overflow: hidden; }
+.einlagern-check { font-size: 1rem; }
+.einlagern-hinweis { color: #f97316; font-size: 0.82rem; margin: 0 0 0.5rem 0; }
+.einlagern-aktionen { margin-top: 0.5rem; }
+.btn-einlagern {
+    background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff;
+    border: none; border-radius: 8px; padding: 0.6rem 1.2rem;
+    font-size: 0.9rem; font-weight: 700; cursor: pointer; width: 100%;
+}
+.btn-einlagern:hover { opacity: 0.85; }
+
+.nach-arena-fertig { text-align: center; padding: 1rem; }
+.nach-arena-fertig p { color: #94a3b8; margin-bottom: 1rem; }
+.btn-weiter-spielen {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff;
+    border: none; border-radius: 8px; padding: 0.7rem 1.5rem;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+}
+.btn-weiter-spielen:hover { opacity: 0.85; }
+.btn-weiter {
+    background: #3b82f6; color: #fff; border: none; border-radius: 8px;
+    padding: 0.6rem 1.3rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; margin-top: 0.75rem;
+}
+.btn-weiter:hover { background: #2563eb; }
+.btn-weiter:disabled { background: #334155; color: #64748b; cursor: not-allowed; }
