@@ -337,7 +337,30 @@ public class GameService
         // Fog-of-War: nur freigeschaltete Orte betreten
         if (!AktuelleGenerierteKarte.FreigeschalteteOrte.Contains(ortId)) return;
         Spieler.AktuellerOrt = ortId;
+        // Fog-of-War: Betreten einer Arena-Stadt MIT Orden → nächste Orte freischalten
+        var ort = AlleOrte.FirstOrDefault(o => o.Id == ortId);
+        if (ort?.Arena != null && Spieler.Orden.Contains(ort.Arena.OrdenName))
+            FogOfWarFreischaltenNachOrt(ortId);
         Notify();
+    }
+
+    /// <summary>Schaltet alle Orte bis zur nächsten Arena frei (Fog-of-War nach Orden).</summary>
+    private void FogOfWarFreischaltenNachOrt(string arenaOrtId)
+    {
+        if (AktuelleGenerierteKarte == null) return;
+        var reihenfolge = AktuelleGenerierteKarte.OrtReihenfolge;
+        int aktIdx = reihenfolge.IndexOf(arenaOrtId);
+        if (aktIdx < 0) return;
+        int naechsteArenaIdx = -1;
+        for (int i = aktIdx + 1; i < reihenfolge.Count; i++)
+        {
+            var o = AlleOrte.FirstOrDefault(x => x.Id == reihenfolge[i]);
+            if (o?.Arena != null) { naechsteArenaIdx = i; break; }
+        }
+        int bisIdx = naechsteArenaIdx >= 0 ? naechsteArenaIdx : reihenfolge.Count - 1;
+        for (int i = 0; i <= bisIdx; i++)
+            AktuelleGenerierteKarte.FreigeschalteteOrte.Add(reihenfolge[i]);
+        AktuelleGenerierteKarte.FreigeschalteBisIndex = bisIdx;
     }
 
     /// <summary>Berechnet Gegner-Level basierend auf Spieler-Level (Option A: Skalierung).</summary>
@@ -355,28 +378,15 @@ public class GameService
     // GenerierteArenaKampfStarten wird nicht mehr benötigt –
     // der normale ArenaKampfStarten in Weltkarte.razor übernimmt das.
 
-    /// <summary>Wird nach Arenaleiter-Sieg aufgerufen: Karte freischalten, Dialog starten.</summary>
+    /// <summary>Wird nach Arenaleiter-Sieg aufgerufen: Orden vergeben, Fog-of-War freischalten, Dialog starten.</summary>
     public void GenerierteArenaGewonnen(Ort arenaOrt)
     {
         if (AktuelleGenerierteKarte == null) return;
         LetzterArenaLeiter = arenaOrt;
         AktuelleGenerierteKarte.BesiegteArenen.Add(arenaOrt.Id);
-
-        // Fog-of-War: nächste Orte bis zur nächsten Arena freischalten
-        var reihenfolge = AktuelleGenerierteKarte.OrtReihenfolge;
-        int aktIdx = reihenfolge.IndexOf(arenaOrt.Id);
-        // Nächste Arena in der Reihenfolge finden
-        int naechsteArenaIdx = -1;
-        for (int i = aktIdx + 1; i < reihenfolge.Count; i++)
-        {
-            var o = AlleOrte.FirstOrDefault(x => x.Id == reihenfolge[i]);
-            if (o?.Arena != null) { naechsteArenaIdx = i; break; }
-        }
-        int bisIdx = naechsteArenaIdx >= 0 ? naechsteArenaIdx : reihenfolge.Count - 1;
-        for (int i = 0; i <= bisIdx; i++)
-            AktuelleGenerierteKarte.FreigeschalteteOrte.Add(reihenfolge[i]);
-        AktuelleGenerierteKarte.FreigeschalteBisIndex = bisIdx;
-
+        // Fog-of-War: sofort freischalten (Orden wird durch KampfBeendet vergeben,
+        // zusätzlich beim Betreten der Arena-Stadt erneut geprüft)
+        FogOfWarFreischaltenNachOrt(arenaOrt.Id);
         // Nach-Arenaleiter-Dialog
         Phase = SpielPhase.NachArenaLeiter;
         Notify();
