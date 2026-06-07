@@ -419,7 +419,6 @@ public enum SpielPhase
     StarterWahl,
     Weltkarte,
     Kampf,
-    MapEditor,
     Einstellungen,
     ZähneShop,
     EigeneMapStart,  // Dialog: Spielstand kopieren oder neu starten

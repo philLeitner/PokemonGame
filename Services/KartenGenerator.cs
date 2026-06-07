@@ -17,6 +17,7 @@ public class RegionConfig
     public string ProfessorEmoji { get; set; } = "👨‍🔬";
     public List<ArenaLeiterConfig> Arenaleiter { get; set; } = new();
     public List<MonsterPoolEintrag> MonsterPool { get; set; } = new();
+    public List<TrainerPoolEintrag> TrainerPool { get; set; } = new();
 }
 public class ArenaLeiterConfig
 {
@@ -30,6 +31,14 @@ public class MonsterPoolEintrag
     public int MinLevel { get; set; } = 3;
     public int MaxLevel { get; set; } = 60;
     public int Chance { get; set; } = 10;
+}
+public class TrainerPoolEintrag
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Klasse { get; set; } = "Trainer";
+    public int Belohnung { get; set; } = 100;
+    public List<MonsterTeamEintrag> Team { get; set; } = new();
 }
 
 // ─── Interne Ebenen-Struktur (wie HTML-Generator) ────────────────────────────
@@ -104,7 +113,7 @@ public class KartenGenerator
         string seedCode,
         List<string> regionsReihenfolge,
         List<RegionConfig> alleRegionen,
-        List<Ort> alleOrte)
+        List<Ort>? alleOrte = null)
     {
         var rng = new Random(SeedZuInt(seedCode));
         var ergebnis = new List<Ort>();
@@ -126,13 +135,15 @@ public class KartenGenerator
             int städteProBoss = 3;
             int totalCitiesWanted = Math.Min(Math.Max(0, total - 2 - bossCount), städteProBoss * bossCount);
 
-            // Trainer-Pool aus weltkarte_import.json für diese Region
-            var regionOrte = alleOrte
-                .Where(o => o.Id.StartsWith(regId + "-", StringComparison.OrdinalIgnoreCase))
-                .ToList();
-            var trainerPool = regionOrte
-                .SelectMany(o => o.Trainer ?? new List<TrainerKampf>())
-                .ToList();
+            // Trainer-Pool direkt aus regionen.json
+            var trainerPool = regCfg.TrainerPool.Select(t => new TrainerKampf
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Klasse = t.Klasse,
+                Belohnung = t.Belohnung,
+                Team = t.Team
+            }).ToList();
             var wildPool = regCfg.MonsterPool;
 
             // ─── HTML-Algorithmus: Ebenen generieren ─────────────────────────

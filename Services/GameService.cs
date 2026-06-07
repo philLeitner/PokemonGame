@@ -135,50 +135,13 @@ public class GameService
                 }).ToList();
             }
 
-            // Orte laden: zuerst LocalStorage prüfen (mit Versions-Check)
-            LadeStatus = "Lade Weltkarte...";
-            Notify();
-            const string ortVersion = "verbindung_v7";
-            var gespeicherteOrtVersion = await _ls.GetItemAsync("editor_orte_version");
-            if (gespeicherteOrtVersion == ortVersion)
-            {
-                var ortJson = await _ls.GetItemAsync("editor_orte");
-                if (!string.IsNullOrEmpty(ortJson))
-                {
-                    try
-                    {
-                        var geladen = System.Text.Json.JsonSerializer.Deserialize<List<Ort>>(ortJson,
-                            new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                        if (geladen?.Any() == true) { AlleOrte = geladen; goto OrteLaden_Fertig; }
-                    }
-                    catch { }
-                }
-            }
-            // Fallback: JSON per HTTP laden (funktioniert in Blazor WASM / GitHub Pages)
-            var ortOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var orteHttp = await _http.GetFromJsonAsync<List<Ort>>("data/weltkarte_import.json", ortOpts);
-            if (orteHttp?.Any() == true)
-            {
-                AlleOrte = orteHttp;
-                // Im LocalStorage speichern für nächsten Start
-                await _ls.SetItemAsync("editor_orte_version", ortVersion);
-                var neueOrteJson = System.Text.Json.JsonSerializer.Serialize(AlleOrte,
-                    new System.Text.Json.JsonSerializerOptions { PropertyNamingPolicy = null });
-                await _ls.SetItemAsync("editor_orte", neueOrteJson);
-            }
-            OrteLaden_Fertig:
-
-            // Regionen laden
+            // Regionen laden (enthält TrainerPool + MonsterPool)
             LadeStatus = "Lade Regionen...";
             Notify();
-            try
-            {
-                var regOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var regionen = await _http.GetFromJsonAsync<List<RegionConfig>>("data/regionen.json", regOpts);
-                if (regionen?.Any() == true)
-                    AlleRegionen = regionen;
-            }
-            catch { /* Regionen optional */ }
+            var regOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var regionen = await _http.GetFromJsonAsync<List<RegionConfig>>("data/regionen.json", regOpts);
+            if (regionen?.Any() == true)
+                AlleRegionen = regionen;
 
             DatenGeladen = true;
             LadeStatus = "Fertig!";
@@ -202,7 +165,7 @@ public class GameService
     public void ZuHauptmenü() { Phase = SpielPhase.Hauptmenü; Notify(); }
     public void ZuStarterWahl() { Phase = SpielPhase.StarterWahl; Notify(); }
     public void ZuWeltkarte() { Phase = SpielPhase.Weltkarte; Notify(); }
-    public void ZuMapEditor() { Phase = SpielPhase.MapEditor; Notify(); }
+    // Map-Editor entfernt - Generator macht alles automatisch
     public void ZuEinstellungen() { Phase = SpielPhase.Einstellungen; Notify(); }
 
     /// <summary>Wechselt in den Eigene-Map-Modus. Zeigt zuerst den Start-Dialog.</summary>
@@ -285,14 +248,14 @@ public class GameService
     /// </summary>
     public void KarteGenerieren(string seedCode, List<string> regionsReihenfolge)
     {
-        if (!AlleRegionen.Any() || !AlleOrte.Any()) return;
+        if (!AlleRegionen.Any()) return;
 
         // Original-Orte sichern (für Rückkehr zum klassischen Modus)
         if (_originalOrte == null)
             _originalOrte = new List<Ort>(AlleOrte);
 
         var (neueOrte, meta) = KartenGenerator.Generiere(
-            seedCode, regionsReihenfolge, AlleRegionen, _originalOrte);
+            seedCode, regionsReihenfolge, AlleRegionen);
 
         AktuelleGenerierteKarte = meta;
 
