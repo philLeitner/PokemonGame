@@ -67,9 +67,7 @@
                 </button>
             </div>
         }
-
-        <!-- Schritt 2: Neuer Starter? -->
-        @else if (schritt == 2)
+        else if (schritt == 2)
         {
             @{
                 var region = Game.LetzterArenaLeiter != null
@@ -122,9 +120,7 @@
                 }
             </div>
         }
-
-        <!-- Schritt 3: Monster einlagern? -->
-        @else if (schritt == 3)
+        else if (schritt == 3)
         {
             <div class="nach-arena-schritt">
                 <h3>📦 Monster einlagern?</h3>
@@ -168,9 +164,7 @@
                 </div>
             </div>
         }
-
-        <!-- Fertig -->
-        @else if (schritt >= 4)
+        else if (schritt >= 4)
         {
             <div class="nach-arena-fertig">
                 <p>Viel Erfolg auf deinem weiteren Abenteuer!</p>
