@@ -4535,3 +4535,56 @@ input:checked + .toggle-slider-klein::before {
     white-space: nowrap;
     margin-left: auto;
 }
+
+/* ── Generieren-Button (orange, auffällig) ─────────────────────────────── */
+.btn-generieren {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #1a1a2e;
+    border: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+.btn-generieren:hover:not(.disabled) {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.55);
+}
+.btn-generieren:active:not(.disabled) { transform: scale(0.97); }
+.btn-generieren.disabled {
+    background: #4a4a5a;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ── Seed-Kopier-Button im Weltkarte-Header ────────────────────────────── */
+.btn-seed-kopieren {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #c8d0e0;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+}
+.btn-seed-kopieren:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+}
+.btn-seed-kopieren:active { transform: scale(0.96); }
+.seed-kopier-icon {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}

@@ -1,5 +1,7 @@
 @inject GameService Game
+@inject IJSRuntime JS
 @implements IDisposable
+@using MonsterKampf.Services
 
 <div class="weltkarte-screen">
     <!-- Linke Sidebar: Spieler-Info -->
@@ -86,7 +88,11 @@
                 <span>🗺️ Generierte Karte</span>
                 @if (Game.AktuelleGenerierteKarte != null)
                 {
-                    <span class="karte-seed-anzeige">🔑 @(Game.AktuelleGenerierteKarte.SeedCode.Length > 8 ? Game.AktuelleGenerierteKarte.SeedCode[..8] + "..." : Game.AktuelleGenerierteKarte.SeedCode)</span>
+                    <button class="btn-seed-kopieren" title="Karten-Code kopieren"
+                            @onclick="SeedKodierenKopieren">
+                        🔑 @(Game.AktuelleGenerierteKarte.SeedCode.Length > 8 ? Game.AktuelleGenerierteKarte.SeedCode[..8] + "..." : Game.AktuelleGenerierteKarte.SeedCode)
+                        <span class="seed-kopier-icon">@(seedKopiertMeldung ? "✓" : "📋")</span>
+                    </button>
                 }
             }
             else
@@ -486,6 +492,8 @@
     private bool vollkarteOffen = false;
     private string? vollkarteRegionId = null;
     private string vollkarteName = "";
+    // Seed-Code Kopieren
+    private bool seedKopiertMeldung = false;
 
     // NPC Dialog
     private string? npcDialog;
@@ -624,6 +632,18 @@
     }
 
     private void VollkarteSchliessen() => vollkarteOffen = false;
+
+    private async Task SeedKodierenKopieren()
+    {
+        if (Game.AktuelleGenerierteKarte == null) return;
+        var code = KartenGenerator.ExportiereKartenCode(Game.AktuelleGenerierteKarte);
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", code);
+        seedKopiertMeldung = true;
+        StateHasChanged();
+        await Task.Delay(2000);
+        seedKopiertMeldung = false;
+        StateHasChanged();
+    }
 
     private void VollkarteOrtWählen(Ort ort)
     {

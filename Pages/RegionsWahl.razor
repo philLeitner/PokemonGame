@@ -100,15 +100,15 @@
         @if (AusgewählteRegionen.Count >= 1)
         {
             <button class="btn-zufaellig" @onclick="ZufälligeRegionenHinzufügen">🎲 Zufällig auffüllen</button>
-            <button class="btn-starten" @onclick="SpielStarten">
-                🚀 Spiel starten (@AusgewählteRegionen.Count Region@(AusgewählteRegionen.Count == 1 ? "" : "en"))
+            <button class="btn-generieren" @onclick="SpielStarten">
+                🎲 Neu generieren &amp; starten (@AusgewählteRegionen.Count Region@(AusgewählteRegionen.Count == 1 ? "" : "en"))
             </button>
         }
         else
         {
             <button class="btn-zufaellig" @onclick="AlleZufällig">🎲 Alle zufällig</button>
-            <button class="btn-starten disabled" disabled>
-                🚀 Mindestens 1 Region wählen
+            <button class="btn-generieren disabled" disabled>
+                🎲 Mindestens 1 Region wählen
             </button>
         }
     </div>
