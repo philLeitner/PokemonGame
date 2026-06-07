@@ -96,10 +96,14 @@ public class KartenGenerator
                 .ToList();
             if (!regionOrte.Any()) continue;
 
+            // Liga-Orte (LigaZugang=true) kommen immer ans Ende als Boss-Abschluss
+            var ligaOrte = regionOrte.Where(o => o.LigaZugang).OrderBy(o => o.Id).ToList();
+            var nichtLigaOrte = regionOrte.Where(o => !o.LigaZugang).ToList();
+
             // Arenen in fester Reihenfolge (nach OrdenNr), Nicht-Arenen zufällig mischen
-            var arenaOrte = regionOrte.Where(o => o.Arena != null)
+            var arenaOrte = nichtLigaOrte.Where(o => o.Arena != null)
                 .OrderBy(o => o.Arena!.OrdenNr).ToList();
-            var nichtArenaOrte = regionOrte.Where(o => o.Arena == null).ToList();
+            var nichtArenaOrte = nichtLigaOrte.Where(o => o.Arena == null).ToList();
             // Fisher-Yates Shuffle der Nicht-Arena-Orte
             for (int s = nichtArenaOrte.Count - 1; s > 0; s--)
             {
@@ -126,6 +130,9 @@ public class KartenGenerator
             // Übrige Nicht-Arena-Orte ans Ende
             while (nichtArenaIdx < nichtArenaOrte.Count)
                 gemischteOrte.Add(nichtArenaOrte[nichtArenaIdx++]);
+
+            // Liga-Orte (Siegesstraße, Indigo-Plateau usw.) als festen Abschluss
+            gemischteOrte.AddRange(ligaOrte);
 
             var kopien = gemischteOrte.Select(o => KopiereOrt(o, ordenOffset)).ToList();
 
