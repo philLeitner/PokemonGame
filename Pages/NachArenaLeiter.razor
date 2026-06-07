@@ -1,0 +1,267 @@
+@using MonsterKampf.Models
+@using MonsterKampf.Services
+@inject GameService Game
+@implements IDisposable
+
+<div class="nach-arena-container">
+    <div class="nach-arena-box">
+        <!-- Header -->
+        <div class="nach-arena-header">
+            <span class="nach-arena-icon">🏆</span>
+            <h2>Arena besiegt!</h2>
+            @if (Game.LetzterArenaLeiter != null)
+            {
+                <p class="nach-arena-leiter">
+                    @Game.LetzterArenaLeiter.ArenaLeiterName wurde besiegt!
+                </p>
+                <div class="nach-arena-orden">
+                    🏅 @Game.LetzterArenaLeiter.OrdenName erhalten!
+                </div>
+            }
+        </div>
+
+        <!-- Schritt 1: Level-Option -->
+        @if (schritt == 1)
+        {
+            <div class="nach-arena-schritt">
+                <h3>⚡ Level-Option wählen</h3>
+                <p class="nach-arena-erklaerung">
+                    Wie soll dein Abenteuer weitergehen?
+                </p>
+                <div class="level-optionen">
+                    <div class="level-option @(gewählteLevelOption == "A" ? "ausgewaehlt" : "")"
+                         @onclick='() => gewählteLevelOption = "A"'>
+                        <div class="level-option-header">
+                            <span class="level-option-buchstabe">A</span>
+                            <span class="level-option-name">Skalierung</span>
+                        </div>
+                        <p class="level-option-beschreibung">
+                            Deine Monster behalten ihr Level. Gegner skalieren mit dir mit.
+                            <br/>
+                            <em>Formel: Gegner-Level = Basis + (Spieler-Level - 5)</em>
+                        </p>
+                        <div class="level-option-vorteil">
+                            ✅ Stärker werden macht Sinn<br/>
+                            ⚠️ Gegner werden auch stärker
+                        </div>
+                    </div>
+                    <div class="level-option @(gewählteLevelOption == "B" ? "ausgewaehlt" : "")"
+                         @onclick='() => gewählteLevelOption = "B"'>
+                        <div class="level-option-header">
+                            <span class="level-option-buchstabe">B</span>
+                            <span class="level-option-name">Neustart</span>
+                        </div>
+                        <p class="level-option-beschreibung">
+                            Alle Monster werden auf Level 5 zurückgesetzt.
+                            Gegner bleiben auf Basis-Level.
+                        </p>
+                        <div class="level-option-vorteil">
+                            ✅ Frischer Start<br/>
+                            ⚠️ Verlust aller Level-Fortschritte
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-weiter" @onclick="SchritteWeiter"
+                        disabled="@(gewählteLevelOption == null)">
+                    Weiter →
+                </button>
+            </div>
+        }
+
+        <!-- Schritt 2: Neuer Starter? -->
+        else if (schritt == 2)
+        {
+            @{
+                var region = Game.LetzterArenaLeiter != null
+                    ? Game.GetRegionFürEbene(Game.LetzterArenaLeiter)
+                    : null;
+            }
+            <div class="nach-arena-schritt">
+                <h3>🐾 Neuer Starter?</h3>
+                <p class="nach-arena-erklaerung">
+                    Möchtest du einen neuen Starter für die nächste Region wählen?
+                </p>
+                @if (region != null)
+                {
+                    <div class="starter-optionen">
+                        @for (int i = 0; i < region.StarterNamen.Count; i++)
+                        {
+                            var idx = i;
+                            var name = region.StarterNamen[i];
+                            var id = region.Starter.ElementAtOrDefault(i) ?? "";
+                            var monId = id.StartsWith("#") ? $"PKM-{id.TrimStart('#').PadLeft(4, '0')}" : id;
+                            var mon = Game.AlleMonster.FirstOrDefault(m => m.Id == monId);
+                            <div class="starter-karte @(gewählterStarterId == monId ? "ausgewaehlt" : "")"
+                                 @onclick="() => gewählterStarterId = monId">
+                                <span class="starter-karte-name">@name</span>
+                                @if (mon != null)
+                                {
+                                    <span class="starter-karte-typ">@string.Join("/", mon.Typen)</span>
+                                }
+                            </div>
+                        }
+                    </div>
+                    <div class="starter-aktionen">
+                        @if (!string.IsNullOrEmpty(gewählterStarterId))
+                        {
+                            <button class="btn-starter-nehmen" @onclick="StarterNehmen">
+                                🐾 Starter nehmen
+                            </button>
+                        }
+                        <button class="btn-starter-zufaellig" @onclick="StarterZufaellig">
+                            🎲 Zufälligen Starter
+                        </button>
+                        <button class="btn-starter-nein" @onclick="SchritteWeiter">
+                            ❌ Kein neuer Starter
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <button class="btn-weiter" @onclick="SchritteWeiter">Weiter →</button>
+                }
+            </div>
+        }
+
+        <!-- Schritt 3: Monster einlagern? -->
+        else if (schritt == 3)
+        {
+            <div class="nach-arena-schritt">
+                <h3>📦 Monster einlagern?</h3>
+                <p class="nach-arena-erklaerung">
+                    Du kannst Monster in die Box einlagern, um Platz für neue zu machen.
+                    Dein Team kann max. 6 Monster haben.
+                </p>
+                <div class="team-einlagern-liste">
+                    @foreach (var mon in Game.Spieler.Team)
+                    {
+                        var m = mon;
+                        bool istMarkiert = einlagernIds.Contains(m.Name + m.Level);
+                        <div class="einlagern-eintrag @(istMarkiert ? "markiert" : "")"
+                             @onclick="() => EinlagernToggle(m)">
+                            <span class="einlagern-emoji">@GetTypEmoji(m.Typen.FirstOrDefault() ?? "")</span>
+                            <div class="einlagern-info">
+                                <span class="einlagern-name">@m.Name</span>
+                                <span class="einlagern-level">Lv.@m.Level</span>
+                            </div>
+                            <div class="einlagern-kp-balken">
+                                <div class="kp-fill @KpFarbe(m)"
+                                     style="width: @(m.MaxKp > 0 ? (m.AktuelleKp * 100 / m.MaxKp) : 0)%"></div>
+                            </div>
+                            @if (istMarkiert)
+                            {
+                                <span class="einlagern-check">📦</span>
+                            }
+                        </div>
+                    }
+                </div>
+                @if (einlagernIds.Any())
+                {
+                    <p class="einlagern-hinweis">
+                        @einlagernIds.Count Monster werden eingelagert.
+                    </p>
+                }
+                <div class="einlagern-aktionen">
+                    <button class="btn-einlagern" @onclick="EinlagernBestaetigen">
+                        ✅ Bestätigen und weiterspielen
+                    </button>
+                </div>
+            </div>
+        }
+
+        <!-- Fertig -->
+        else if (schritt >= 4)
+        {
+            <div class="nach-arena-fertig">
+                <p>Viel Erfolg auf deinem weiteren Abenteuer!</p>
+                <button class="btn-weiter-spielen" @onclick="Abschliessen">
+                    🗺️ Zur Karte
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private int schritt = 1;
+    private string? gewählteLevelOption = null;
+    private string? gewählterStarterId = null;
+    private HashSet<string> einlagernIds = new();
+
+    protected override void OnInitialized()
+    {
+        Game.OnChange += StateHasChanged;
+    }
+    public void Dispose() => Game.OnChange -= StateHasChanged;
+
+    private void SchritteWeiter()
+    {
+        if (schritt == 1 && gewählteLevelOption != null)
+        {
+            Game.NachArenaLeiterLevelOptionWählen(gewählteLevelOption == "A");
+        }
+        schritt++;
+    }
+
+    private void StarterNehmen()
+    {
+        if (!string.IsNullOrEmpty(gewählterStarterId))
+        {
+            Game.NeuenStarterWählen(gewählterStarterId);
+        }
+        schritt++;
+    }
+
+    private void StarterZufaellig()
+    {
+        var region = Game.LetzterArenaLeiter != null
+            ? Game.GetRegionFürEbene(Game.LetzterArenaLeiter)
+            : null;
+        if (region?.Starter.Any() == true)
+        {
+            var rng = new Random();
+            var id = region.Starter[rng.Next(region.Starter.Count)];
+            var monId = id.StartsWith("#") ? $"PKM-{id.TrimStart('#').PadLeft(4, '0')}" : id;
+            Game.NeuenStarterWählen(monId);
+        }
+        schritt++;
+    }
+
+    private void EinlagernToggle(MonsterInstanz mon)
+    {
+        var key = mon.Name + mon.Level;
+        if (einlagernIds.Contains(key))
+            einlagernIds.Remove(key);
+        else if (Game.Spieler.Team.Count - einlagernIds.Count > 1) // mind. 1 im Team
+            einlagernIds.Add(key);
+    }
+
+    private void EinlagernBestaetigen()
+    {
+        // Monster einlagern
+        var zuEinlagern = Game.Spieler.Team
+            .Where(m => einlagernIds.Contains(m.Name + m.Level))
+            .ToList();
+        foreach (var mon in zuEinlagern)
+        {
+            Game.Spieler.Team.Remove(mon);
+            Game.Spieler.Box.Add(mon);
+        }
+        Game.Notify();
+        schritt++;
+    }
+
+    private void Abschliessen()
+    {
+        Game.NachArenaLeiterAbschliessen();
+    }
+
+    private string GetTypEmoji(string typ) =>
+        TypeChart.TypEmojis.GetValueOrDefault(typ, "?");
+
+    private string KpFarbe(MonsterInstanz mon)
+    {
+        float pct = mon.MaxKp > 0 ? (float)mon.AktuelleKp / mon.MaxKp : 0;
+        return pct > 0.5f ? "kp-gruen" : pct > 0.25f ? "kp-gelb" : "kp-rot";
+    }
+}

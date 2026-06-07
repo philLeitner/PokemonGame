@@ -1,0 +1,198 @@
+@page "/regionswahl"
+@using MonsterKampf.Models
+@using MonsterKampf.Services
+@inject GameService Game
+
+<div class="regionswahl-container">
+    <div class="regionswahl-header">
+        <h1 class="regionswahl-titel">🗺️ Regionsauswahl</h1>
+        <p class="regionswahl-untertitel">
+            Wähle deine Regionen aus. Die Reihenfolge bestimmt, in welcher Reihenfolge du sie bereist.
+        </p>
+    </div>
+
+    <!-- Ausgewählte Reihenfolge -->
+    @if (AusgewählteRegionen.Any())
+    {
+        <div class="ausgewaehlte-reihenfolge">
+            <h3>📋 Deine Reihenfolge:</h3>
+            <div class="reihenfolge-liste">
+                @for (int i = 0; i < AusgewählteRegionen.Count; i++)
+                {
+                    var reg = AusgewählteRegionen[i];
+                    var nr = i + 1;
+                    <div class="reihenfolge-item" @onclick="() => RegionEntfernen(reg.Id)">
+                        <span class="reihenfolge-nr">@nr</span>
+                        <span class="reihenfolge-name">Region @nr</span>
+                        <span class="reihenfolge-entfernen" title="Entfernen">✕</span>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Regionen-Grid -->
+    <div class="regionen-grid">
+        @foreach (var region in Game.AlleRegionen)
+        {
+            var ausgewählt = AusgewählteRegionen.Any(r => r.Id == region.Id);
+            var position = AusgewählteRegionen.FindIndex(r => r.Id == region.Id) + 1;
+            <div class="region-karte @(ausgewählt ? "ausgewaehlt" : "")"
+                 style="border-color: @region.Farbe; @(ausgewählt ? $"background: {region.Farbe}22;" : "")"
+                 @onclick="() => RegionToggle(region)">
+                <div class="region-karte-header" style="background: @region.Farbe;">
+                    <span class="region-emoji">@region.Emoji</span>
+                    @if (ausgewählt)
+                    {
+                        <span class="region-nummer">@position</span>
+                    }
+                </div>
+                <div class="region-karte-body">
+                    <div class="region-karte-name">
+                        @if (ausgewählt)
+                        {
+                            <strong>Region @position</strong>
+                        }
+                        else
+                        {
+                            <span>???</span>
+                        }
+                    </div>
+                    <div class="region-karte-info">
+                        <span>⚔️ @region.Arenaleiter.Count Arenen</span>
+                        <span>🗺️ ~@region.BasisEbenen Gebiete</span>
+                    </div>
+                    <div class="region-starter-liste">
+                        @foreach (var starterName in region.StarterNamen.Take(3))
+                        {
+                            <span class="region-starter-chip">@starterName</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Seed-Code und Import -->
+    <div class="seed-bereich">
+        <div class="seed-zeile">
+            <label>🔑 Karten-Code (optional):</label>
+            <input type="text" class="seed-input" placeholder="Eigenen Code eingeben..."
+                   @bind="SeedCodeEingabe" maxlength="40" />
+            @if (!string.IsNullOrWhiteSpace(SeedCodeEingabe))
+            {
+                <button class="btn-seed-import" @onclick="KartenCodeImportieren">📥 Importieren</button>
+            }
+        </div>
+        @if (!string.IsNullOrEmpty(ImportFehler))
+        {
+            <div class="import-fehler">⚠️ @ImportFehler</div>
+        }
+        <div class="seed-hinweis">
+            💡 Teile deinen Karten-Code mit Freunden, damit sie dieselbe Karte spielen können.
+        </div>
+    </div>
+
+    <!-- Aktions-Buttons -->
+    <div class="regionswahl-aktionen">
+        <button class="btn-zurueck" @onclick="Game.ZuHauptmenü">← Zurück</button>
+
+        @if (AusgewählteRegionen.Count >= 1)
+        {
+            <button class="btn-zufaellig" @onclick="ZufälligeRegionenHinzufügen">🎲 Zufällig auffüllen</button>
+            <button class="btn-starten" @onclick="SpielStarten">
+                🚀 Spiel starten (@AusgewählteRegionen.Count Region@(AusgewählteRegionen.Count == 1 ? "" : "en"))
+            </button>
+        }
+        else
+        {
+            <button class="btn-zufaellig" @onclick="AlleZufällig">🎲 Alle zufällig</button>
+            <button class="btn-starten disabled" disabled>
+                🚀 Mindestens 1 Region wählen
+            </button>
+        }
+    </div>
+</div>
+
+@code {
+    private List<RegionConfig> AusgewählteRegionen = new();
+    private string SeedCodeEingabe = "";
+    private string ImportFehler = "";
+
+    private void RegionToggle(RegionConfig region)
+    {
+        var vorhandene = AusgewählteRegionen.FirstOrDefault(r => r.Id == region.Id);
+        if (vorhandene != null)
+            AusgewählteRegionen.Remove(vorhandene);
+        else
+            AusgewählteRegionen.Add(region);
+        ImportFehler = "";
+    }
+
+    private void RegionEntfernen(string regionId)
+    {
+        AusgewählteRegionen.RemoveAll(r => r.Id == regionId);
+    }
+
+    private void ZufälligeRegionenHinzufügen()
+    {
+        var rng = new Random();
+        var nichtAusgewählt = Game.AlleRegionen.Where(r => !AusgewählteRegionen.Any(a => a.Id == r.Id)).ToList();
+        var anzahl = Math.Min(3, nichtAusgewählt.Count);
+        for (int i = 0; i < anzahl; i++)
+        {
+            var idx = rng.Next(nichtAusgewählt.Count);
+            AusgewählteRegionen.Add(nichtAusgewählt[idx]);
+            nichtAusgewählt.RemoveAt(idx);
+        }
+    }
+
+    private void AlleZufällig()
+    {
+        var rng = new Random();
+        AusgewählteRegionen = Game.AlleRegionen.OrderBy(_ => rng.Next()).Take(3).ToList();
+    }
+
+    private void KartenCodeImportieren()
+    {
+        ImportFehler = "";
+        var result = KartenGenerator.ImportiereKartenCode(SeedCodeEingabe.Trim());
+        if (result == null)
+        {
+            ImportFehler = "Ungültiger Karten-Code. Format: SEED:REG1,REG2,...";
+            return;
+        }
+        var (seed, regIds) = result.Value;
+        var gefundeneRegionen = regIds
+            .Select(id => Game.AlleRegionen.FirstOrDefault(r => r.Id == id))
+            .Where(r => r != null).Cast<RegionConfig>().ToList();
+        if (!gefundeneRegionen.Any())
+        {
+            ImportFehler = "Keine gültigen Regionen im Code gefunden.";
+            return;
+        }
+        AusgewählteRegionen = gefundeneRegionen;
+        SeedCodeEingabe = seed + ":" + string.Join(",", regIds);
+    }
+
+    private void SpielStarten()
+    {
+        if (!AusgewählteRegionen.Any()) return;
+
+        // Seed aus Eingabe oder neu generieren
+        string seed;
+        if (!string.IsNullOrWhiteSpace(SeedCodeEingabe))
+        {
+            var importResult = KartenGenerator.ImportiereKartenCode(SeedCodeEingabe.Trim());
+            seed = importResult?.Seed ?? KartenGenerator.GeneriereSeedCode();
+        }
+        else
+        {
+            seed = KartenGenerator.GeneriereSeedCode();
+        }
+
+        var regionsIds = AusgewählteRegionen.Select(r => r.Id).ToList();
+        Game.KarteGenerieren(seed, regionsIds);
+        Game.ZuWeltkarte();
+    }
+}

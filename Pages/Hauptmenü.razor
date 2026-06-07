@@ -14,7 +14,11 @@
         </div>
 
         <div class="menu-buttons">
-            <button class="btn-start" @onclick="SpielStarten">▶ Neues Spiel</button>
+            <button class="btn-start" @onclick="SpielStarten">▶ Neues Spiel (Klassisch)</button>
+            @if (Game.AlleRegionen.Any())
+            {
+                <button class="btn-start btn-gen-karte" @onclick="GenerierteKarteStarten">🗺️ Generierte Karte</button>
+            }
             @if (Game.HatSpeicherstand)
             {
                 <button class="btn-laden" @onclick="SpielLaden">📂 Spiel laden</button>
@@ -44,6 +48,12 @@
     {
         if (string.IsNullOrWhiteSpace(spielerName)) spielerName = "Trainer";
         Game.SpielStarten(spielerName.Trim());
+    }
+
+    private void GenerierteKarteStarten()
+    {
+        if (string.IsNullOrWhiteSpace(spielerName)) spielerName = "Trainer";
+        Game.GenerierteKarteSpielStarten(spielerName.Trim());
     }
 
     private async Task SpielLaden()

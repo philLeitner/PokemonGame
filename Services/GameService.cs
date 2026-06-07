@@ -26,6 +26,16 @@ public class GameService
     public Dictionary<string, TypInfo> AlleTypen { get; private set; } = new();
     public List<Ort> AlleOrte { get; private set; } = new();
 
+    // ── Regionen / Prozedurale Karte ─────────────────────────────────────────
+    public List<RegionConfig> AlleRegionen { get; private set; } = new();
+    public GenerierteKarte? AktuelleGenerierteKarte { get; private set; } = null;
+    public bool IstGenerierteKartenModus => AktuelleGenerierteKarte != null;
+    public GenerierteEbene? AktuelleGenerierteEbene =>
+        AktuelleGenerierteKarte?.Ebenen.ElementAtOrDefault(AktuelleGenerierteKarte.AktuelleEbeneIndex);
+    // Nach-Arenaleiter-Dialog-Daten
+    public GenerierteEbene? LetzterArenaLeiter { get; private set; } = null;
+    public bool NachArenaLeiterLevelA { get; private set; } = true;
+
     // ── Spielzustand ─────────────────────────────────────────────────────────
     public SpielPhase Phase { get; private set; } = SpielPhase.Laden;
     public Spieler Spieler { get; private set; } = new();
@@ -155,6 +165,19 @@ public class GameService
                 await _ls.SetItemAsync("editor_orte", neueOrteJson);
             }
             OrteLaden_Fertig:
+
+            // Regionen laden
+            LadeStatus = "Lade Regionen...";
+            Notify();
+            try
+            {
+                var regOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var regionen = await _http.GetFromJsonAsync<List<RegionConfig>>("data/regionen.json", regOpts);
+                if (regionen?.Any() == true)
+                    AlleRegionen = regionen;
+            }
+            catch { /* Regionen optional */ }
+
             DatenGeladen = true;
             LadeStatus = "Fertig!";
 
@@ -185,6 +208,9 @@ public class GameService
     public void ZuAdminPanel() { Phase = SpielPhase.AdminPanel; Notify(); }
     public void ZuPokédex() { Phase = SpielPhase.Pokédex; Notify(); }
     public void ZuMonsterEditor() { Phase = SpielPhase.MonsterEditor; Notify(); }
+    public void ZuRegionsWahl() { Phase = SpielPhase.RegionsWahl; Notify(); }
+    public void ZuNachArenaLeiter() { Phase = SpielPhase.NachArenaLeiter; Notify(); }
+    public void ZuStarterWahlNeuRegion() { Phase = SpielPhase.StarterWahlNeuRegion; Notify(); }
 
     /// <summary>Startet die Eigene Map: entweder Spielstand kopieren oder neu starten.</summary>
     public async Task EigeneMapStarten(bool spielstandKopieren)
@@ -249,6 +275,179 @@ public class GameService
         Notify();
         return $"✅ {info.Emoji} {info.Name} gekauft!";
     }
+    // ── Prozedurale Karte ─────────────────────────────────────────────────────
+
+    /// <summary>Generiert eine neue Karte aus Seed + Regionsauswahl und startet das Spiel.</summary>
+    public void KarteGenerieren(string seedCode, List<string> regionsReihenfolge)
+    {
+        if (!AlleRegionen.Any()) return;
+        AktuelleGenerierteKarte = KartenGenerator.Generiere(seedCode, regionsReihenfolge, AlleRegionen);
+        AktuelleGenerierteKarte.AktuelleEbeneIndex = 0;
+        AktuelleGenerierteKarte.FreigeschalteBisIndex = 0;
+        Notify();
+    }
+
+    /// <summary>Startet ein neues Spiel im Regionen-Modus (geht zur Regionsauswahl).</summary>
+    public void GenerierteKarteSpielStarten(string spielerName)
+    {
+        Spieler = new Spieler { Name = spielerName };
+        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", 5);
+        Spieler.ItemHinzufügen("trank", "Trank", "🧪", 3);
+        Phase = SpielPhase.RegionsWahl;
+        Notify();
+    }
+
+    /// <summary>Betritt eine Ebene der generierten Karte (per Klick auf der Karte).</summary>
+    public void GenerierteEbeneBetreten(int ebeneIndex)
+    {
+        if (AktuelleGenerierteKarte == null) return;
+        var ebene = AktuelleGenerierteKarte.Ebenen.ElementAtOrDefault(ebeneIndex);
+        if (ebene == null) return;
+        // Fog-of-War: nur bis FreigeschalteBisIndex+1 zugänglich
+        if (ebeneIndex > AktuelleGenerierteKarte.FreigeschalteBisIndex + 1) return;
+        AktuelleGenerierteKarte.AktuelleEbeneIndex = ebeneIndex;
+        Notify();
+    }
+
+    /// <summary>Berechnet Gegner-Level basierend auf Spieler-Level (Option A: Skalierung).</summary>
+    public int GegnerLevelBerechnen(int basisLevel)
+    {
+        if (!IstGenerierteKartenModus || !NachArenaLeiterLevelA) return basisLevel;
+        var spielerLevel = Spieler.Team
+            .Where(m => !m.IstOhnmächtig)
+            .Select(m => m.Level)
+            .DefaultIfEmpty(5)
+            .Max();
+        return basisLevel + Math.Max(0, spielerLevel - 5);
+    }
+
+    /// <summary>Startet einen Kampf gegen den Arenaleiter der aktuellen Ebene (generierte Karte).</summary>
+    public void GenerierteArenaKampfStarten(GenerierteEbene arena)
+    {
+        if (arena.Typ != EbenenTyp.Arenaleiter) return;
+        var spielerMonster = Spieler.AktivesMonster;
+        if (spielerMonster == null) return;
+        // Gegner-Level: Orden-Nummer × 8 + 5, skaliert mit Spieler-Level
+        int basisLevel = arena.OrdenNummer * 8 + 5;
+        int gegnerLevel = GegnerLevelBerechnen(basisLevel);
+        // Zufälliges Monster für den Arenaleiter
+        var gegnerSpezies = AlleMonster[_rng.Next(AlleMonster.Count)];
+        var gegner = MonsterInstanz.VonSpezies(gegnerSpezies, gegnerLevel, AlleAttacken);
+        var trainer = new TrainerKampf
+        {
+            Id = $"gen_arena_{arena.Id}",
+            Name = arena.ArenaLeiterName ?? "Arena-Leiter",
+            Klasse = "Arena-Leiter",
+            Belohnung = 2000 + arena.OrdenNummer * 1000,
+            Team = new List<MonsterTeamEintrag> { new() { MonsterId = gegnerSpezies.Id, Level = gegnerLevel } },
+            Dialogvor = $"Ich bin {arena.ArenaLeiterName}, Meister des {arena.ArenaTyp}-Typs!",
+            DialogNach = $"{arena.OrdenName} erhalten!",
+        };
+        AktuellerKampf = new KampfZustand
+        {
+            Typ = KampfTyp.Arena,
+            SpielerMonster = spielerMonster,
+            GegnerMonster = gegner,
+            GegnerName = $"Arena-Leiter {arena.ArenaLeiterName}",
+            Phase = KampfPhase.Intro,
+            Log = new() { $"🏆 Arena-Leiter {arena.ArenaLeiterName} fordert dich heraus!" },
+            OrtId = arena.Id,
+            BelohnungGeld = trainer.Belohnung,
+            AktuellerTrainer = trainer,
+            TrainerMonsterIndex = 0,
+        };
+        LetzterArenaLeiter = arena;
+        Phase = SpielPhase.Kampf;
+        Notify();
+    }
+
+    /// <summary>Wird nach Arenaleiter-Sieg aufgerufen: Orden vergeben, Karte freischalten, Dialog starten.</summary>
+    public void GenerierteArenaGewonnen()
+    {
+        if (AktuelleGenerierteKarte == null || LetzterArenaLeiter == null) return;
+        // Orden vergeben
+        var ordenName = LetzterArenaLeiter.OrdenName ?? $"Orden {LetzterArenaLeiter.OrdenNummer}";
+        if (!Spieler.Orden.Contains(ordenName))
+            Spieler.Orden.Add(ordenName);
+        // Karte freischalten (bis zur nächsten Arena)
+        var naechsteArena = AktuelleGenerierteKarte.Ebenen
+            .Skip(AktuelleGenerierteKarte.AktuelleEbeneIndex + 1)
+            .FirstOrDefault(e => e.Typ == EbenenTyp.Arenaleiter || e.Typ == EbenenTyp.Professor);
+        if (naechsteArena != null)
+            AktuelleGenerierteKarte.FreigeschalteBisIndex = naechsteArena.Index;
+        else
+            AktuelleGenerierteKarte.FreigeschalteBisIndex = AktuelleGenerierteKarte.Ebenen.Count - 1;
+        // Nach-Arenaleiter-Dialog
+        Phase = SpielPhase.NachArenaLeiter;
+        Notify();
+    }
+
+    /// <summary>Nach-Arenaleiter-Dialog: Level-Option A (Skalierung) oder B (Reset auf 5) wählen.</summary>
+    public void NachArenaLeiterLevelOptionWählen(bool optionA)
+    {
+        NachArenaLeiterLevelA = optionA;
+        if (!optionA)
+        {
+            // Option B: alle Monster auf Level 5 zurücksetzen
+            foreach (var mon in Spieler.Team)
+            {
+                var spezies = AlleMonster.FirstOrDefault(m => m.Id == mon.SpeziesId);
+                if (spezies != null)
+                {
+                    var neu = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
+                    mon.Level = 5;
+                    mon.MaxKp = neu.MaxKp;
+                    mon.AktuelleKp = neu.MaxKp;
+                    mon.Angriff = neu.Angriff;
+                    mon.Verteidigung = neu.Verteidigung;
+                    mon.SpezialAngriff = neu.SpezialAngriff;
+                    mon.SpezialVerteidigung = neu.SpezialVerteidigung;
+                    mon.Initiative = neu.Initiative;
+                }
+            }
+        }
+        Notify();
+    }
+
+    /// <summary>Neuen Starter für die nächste Region wählen.</summary>
+    public void NeuenStarterWählen(string monsterId)
+    {
+        var spezies = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
+        if (spezies == null) return;
+        // Level = schwächstes Monster im Team (oder 5)
+        int neuesLevel = Spieler.Team
+            .Where(m => !m.IstOhnmächtig)
+            .Select(m => m.Level)
+            .DefaultIfEmpty(5)
+            .Min();
+        var starter = MonsterInstanz.VonSpezies(spezies, neuesLevel, AlleAttacken);
+        Spieler.Team.Add(starter);
+        Phase = SpielPhase.Weltkarte;
+        Notify();
+    }
+
+    /// <summary>Nach-Arenaleiter-Dialog abschließen und zur Weltkarte zurückkehren.</summary>
+    public void NachArenaLeiterAbschliessen()
+    {
+        LetzterArenaLeiter = null;
+        Phase = SpielPhase.Weltkarte;
+        Notify();
+    }
+
+    /// <summary>Gibt die RegionConfig für eine Ebene zurück.</summary>
+    public RegionConfig? GetRegionFürEbene(GenerierteEbene ebene)
+        => AlleRegionen.FirstOrDefault(r => r.Id == ebene.RegionId);
+
+    /// <summary>Gibt die Starter-Optionen für eine bestimmte Region zurück.</summary>
+    public List<MonsterData> GetStarterFürRegion(string regionId)
+    {
+        var region = AlleRegionen.FirstOrDefault(r => r.Id == regionId);
+        if (region == null) return new();
+        return region.Starter
+            .Select(id => AlleMonster.FirstOrDefault(m => m.Id == id || m.Id == $"PKM-{id.TrimStart('#')}"))
+            .Where(m => m != null).Cast<MonsterData>().ToList();
+    }
+
     // ── Spiel starten ────────────────────────────────────────────────────────
     public void SpielStarten(string spielerName)
     {

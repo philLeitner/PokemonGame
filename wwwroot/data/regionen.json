@@ -1,0 +1,200 @@
+[
+  {
+    "Id": "KAN",
+    "Name": "Kanto",
+    "Generation": 1,
+    "Farbe": "#e74c3c",
+    "Emoji": "🔴",
+    "BasisEbenen": 95,
+    "Starter": ["#001", "#004", "#007"],
+    "StarterNamen": ["Bisasam", "Glumanda", "Schiggy"],
+    "Professor": "Prof. Eich",
+    "ProfessorEmoji": "👨‍🔬",
+    "Arenaleiter": [
+      { "Name": "Rocko", "Typ": "Gestein", "Orden": "Granitorden" },
+      { "Name": "Misty", "Typ": "Wasser", "Orden": "Kaskadenorden" },
+      { "Name": "Leutnant Surge", "Typ": "Elektro", "Orden": "Donnerorden" },
+      { "Name": "Erika", "Typ": "Pflanze", "Orden": "Regenbogenorden" },
+      { "Name": "Koga", "Typ": "Gift", "Orden": "Seelenorden" },
+      { "Name": "Sabrina", "Typ": "Psycho", "Orden": "Sumpforden" },
+      { "Name": "Pyro", "Typ": "Feuer", "Orden": "Vulkanorden" },
+      { "Name": "Giovanni", "Typ": "Boden", "Orden": "Erdorden" }
+    ]
+  },
+  {
+    "Id": "JOH",
+    "Name": "Johto",
+    "Generation": 2,
+    "Farbe": "#f39c12",
+    "Emoji": "🟡",
+    "BasisEbenen": 55,
+    "Starter": ["#152", "#155", "#158"],
+    "StarterNamen": ["Endivie", "Feurigel", "Karnimani"],
+    "Professor": "Prof. Birk",
+    "ProfessorEmoji": "👴",
+    "Arenaleiter": [
+      { "Name": "Falkner", "Typ": "Flug", "Orden": "Flügelorden" },
+      { "Name": "Bugsy", "Typ": "Käfer", "Orden": "Bienenorden" },
+      { "Name": "Whitney", "Typ": "Normal", "Orden": "Normalorden" },
+      { "Name": "Morty", "Typ": "Geist", "Orden": "Nebelorden" },
+      { "Name": "Chuck", "Typ": "Kampf", "Orden": "Sturmorden" },
+      { "Name": "Jasmine", "Typ": "Stahl", "Orden": "Mineralorden" },
+      { "Name": "Pryce", "Typ": "Eis", "Orden": "Gletscherorden" },
+      { "Name": "Clair", "Typ": "Drache", "Orden": "Aufstiegsorden" }
+    ]
+  },
+  {
+    "Id": "HOE",
+    "Name": "Hoenn",
+    "Generation": 3,
+    "Farbe": "#27ae60",
+    "Emoji": "🟢",
+    "BasisEbenen": 70,
+    "Starter": ["#252", "#255", "#258"],
+    "StarterNamen": ["Geckarbor", "Flemmli", "Hydropi"],
+    "Professor": "Prof. Birk",
+    "ProfessorEmoji": "🧑‍🔬",
+    "Arenaleiter": [
+      { "Name": "Roxanne", "Typ": "Gestein", "Orden": "Steinorden" },
+      { "Name": "Brawly", "Typ": "Kampf", "Orden": "Knöchelorden" },
+      { "Name": "Wattson", "Typ": "Elektro", "Orden": "Dynamoorden" },
+      { "Name": "Flannery", "Typ": "Feuer", "Orden": "Hitzorden" },
+      { "Name": "Norman", "Typ": "Normal", "Orden": "Gleichgewichtsorden" },
+      { "Name": "Winona", "Typ": "Flug", "Orden": "Federorden" },
+      { "Name": "Tate & Liza", "Typ": "Psycho", "Orden": "Geistorden" },
+      { "Name": "Juan", "Typ": "Wasser", "Orden": "Regenorden" }
+    ]
+  },
+  {
+    "Id": "SIN",
+    "Name": "Sinnoh",
+    "Generation": 4,
+    "Farbe": "#2980b9",
+    "Emoji": "🔵",
+    "BasisEbenen": 63,
+    "Starter": ["#387", "#390", "#393"],
+    "StarterNamen": ["Chelast", "Panflam", "Plinfa"],
+    "Professor": "Prof. Eibe",
+    "ProfessorEmoji": "👩‍🔬",
+    "Arenaleiter": [
+      { "Name": "Rocko", "Typ": "Gestein", "Orden": "Kohleorden" },
+      { "Name": "Gardenia", "Typ": "Pflanze", "Orden": "Waldorden" },
+      { "Name": "Maylene", "Typ": "Kampf", "Orden": "Kobalorden" },
+      { "Name": "Crasher Wake", "Typ": "Wasser", "Orden": "Wellenbrechorden" },
+      { "Name": "Fantina", "Typ": "Geist", "Orden": "Reliktorden" },
+      { "Name": "Byron", "Typ": "Stahl", "Orden": "Mineorden" },
+      { "Name": "Candice", "Typ": "Eis", "Orden": "Eisorden" },
+      { "Name": "Volkner", "Typ": "Elektro", "Orden": "Leuchtturmorden" }
+    ]
+  },
+  {
+    "Id": "UNO",
+    "Name": "Einall",
+    "Generation": 5,
+    "Farbe": "#8e44ad",
+    "Emoji": "🟣",
+    "BasisEbenen": 42,
+    "Starter": ["#495", "#498", "#501"],
+    "StarterNamen": ["Serpifeu", "Floink", "Ottaro"],
+    "Professor": "Prof. Esche",
+    "ProfessorEmoji": "🧓",
+    "Arenaleiter": [
+      { "Name": "Chili/Cilan/Cress", "Typ": "Feuer/Pflanze/Wasser", "Orden": "Triorden" },
+      { "Name": "Lenora", "Typ": "Normal", "Orden": "Grundorden" },
+      { "Name": "Burgh", "Typ": "Käfer", "Orden": "Insektenorden" },
+      { "Name": "Elesa", "Typ": "Elektro", "Orden": "Voltorden" },
+      { "Name": "Clay", "Typ": "Boden", "Orden": "Quaderorden" },
+      { "Name": "Skyla", "Typ": "Flug", "Orden": "Jetorden" },
+      { "Name": "Brycen", "Typ": "Eis", "Orden": "Gefrierorden" },
+      { "Name": "Iris/Drayden", "Typ": "Drache", "Orden": "Legendenorden" }
+    ]
+  },
+  {
+    "Id": "KAL",
+    "Name": "Kalos",
+    "Generation": 6,
+    "Farbe": "#16a085",
+    "Emoji": "🩵",
+    "BasisEbenen": 36,
+    "Starter": ["#650", "#653", "#656"],
+    "StarterNamen": ["Igamaro", "Fynx", "Froxy"],
+    "Professor": "Prof. Platan",
+    "ProfessorEmoji": "👨‍💼",
+    "Arenaleiter": [
+      { "Name": "Viola", "Typ": "Käfer", "Orden": "Insektenorden" },
+      { "Name": "Grant", "Typ": "Gestein", "Orden": "Klippen orden" },
+      { "Name": "Korrina", "Typ": "Kampf", "Orden": "Rollschuhoroden" },
+      { "Name": "Ramos", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
+      { "Name": "Clemont", "Typ": "Elektro", "Orden": "Voltorden" },
+      { "Name": "Valerie", "Typ": "Fee", "Orden": "Feenorden" },
+      { "Name": "Olympia", "Typ": "Psycho", "Orden": "Psychoorden" },
+      { "Name": "Wulfric", "Typ": "Eis", "Orden": "Eisorden" }
+    ]
+  },
+  {
+    "Id": "ALO",
+    "Name": "Alola",
+    "Generation": 7,
+    "Farbe": "#e67e22",
+    "Emoji": "🟠",
+    "BasisEbenen": 28,
+    "Starter": ["#722", "#725", "#728"],
+    "StarterNamen": ["Bauz", "Flamiau", "Robball"],
+    "Professor": "Prof. Kukui",
+    "ProfessorEmoji": "🏄",
+    "Arenaleiter": [
+      { "Name": "Ilima", "Typ": "Normal", "Orden": "Normalorden" },
+      { "Name": "Lana", "Typ": "Wasser", "Orden": "Wasserorden" },
+      { "Name": "Kiawe", "Typ": "Feuer", "Orden": "Feuerorden" },
+      { "Name": "Mallow", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
+      { "Name": "Sophocles", "Typ": "Elektro", "Orden": "Elektroorden" },
+      { "Name": "Acerola", "Typ": "Geist", "Orden": "Geistorden" },
+      { "Name": "Nanu", "Typ": "Unlicht", "Orden": "Unlichtorden" },
+      { "Name": "Hapu", "Typ": "Boden", "Orden": "Bodenorden" }
+    ]
+  },
+  {
+    "Id": "GAL",
+    "Name": "Galar",
+    "Generation": 8,
+    "Farbe": "#c0392b",
+    "Emoji": "❤️",
+    "BasisEbenen": 40,
+    "Starter": ["#810", "#813", "#816"],
+    "StarterNamen": ["Zacian", "Grookey", "Scorbunny"],
+    "Professor": "Prof. Magnolia",
+    "ProfessorEmoji": "👩‍💼",
+    "Arenaleiter": [
+      { "Name": "Milo", "Typ": "Pflanze", "Orden": "Grasorden" },
+      { "Name": "Nessa", "Typ": "Wasser", "Orden": "Wasserorden" },
+      { "Name": "Kabu", "Typ": "Feuer", "Orden": "Feuerorden" },
+      { "Name": "Bea/Allister", "Typ": "Kampf/Geist", "Orden": "Kampforden" },
+      { "Name": "Opal", "Typ": "Fee", "Orden": "Feenorden" },
+      { "Name": "Gordie/Melony", "Typ": "Gestein/Eis", "Orden": "Steinorden" },
+      { "Name": "Piers", "Typ": "Unlicht", "Orden": "Unlichtorden" },
+      { "Name": "Raihan", "Typ": "Drache", "Orden": "Drachenorden" }
+    ]
+  },
+  {
+    "Id": "PAL",
+    "Name": "Paldea",
+    "Generation": 9,
+    "Farbe": "#1abc9c",
+    "Emoji": "🌊",
+    "BasisEbenen": 32,
+    "Starter": ["#906", "#909", "#912"],
+    "StarterNamen": ["Felori", "Krokel", "Kwaks"],
+    "Professor": "Prof. Platan",
+    "ProfessorEmoji": "🎓",
+    "Arenaleiter": [
+      { "Name": "Katy", "Typ": "Käfer", "Orden": "Käferorden" },
+      { "Name": "Brassius", "Typ": "Pflanze", "Orden": "Pflanzenorden" },
+      { "Name": "Iono", "Typ": "Elektro", "Orden": "Elektroorden" },
+      { "Name": "Kofu", "Typ": "Wasser", "Orden": "Wasserorden" },
+      { "Name": "Larry", "Typ": "Normal", "Orden": "Normalorden" },
+      { "Name": "Ryme", "Typ": "Geist", "Orden": "Geistorden" },
+      { "Name": "Tulip", "Typ": "Psycho", "Orden": "Psychoorden" },
+      { "Name": "Grusha", "Typ": "Eis", "Orden": "Eisorden" }
+    ]
+  }
+]

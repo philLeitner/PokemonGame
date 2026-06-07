@@ -422,7 +422,10 @@ public enum SpielPhase
     EigeneMapStart,  // Dialog: Spielstand kopieren oder neu starten
     AdminPanel,      // Admin-Bereich: Level, Orden, Stats ändern (kein Passwort)
     Pokédex,          // Monsterübersicht
-    MonsterEditor      // Monster-Daten bearbeiten
+    MonsterEditor,      // Monster-Daten bearbeiten
+    RegionsWahl,         // Regionsauswahl für prozedurale Karte
+    NachArenaLeiter,     // Dialog nach Arenaleiter-Sieg (neuer Starter, Level A/B)
+    StarterWahlNeuRegion // Starter-Auswahl für neue Region
 }
 
 // ─── Speicherstand ────────────────────────────────────────────────────────────
