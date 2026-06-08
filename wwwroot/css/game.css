@@ -5111,3 +5111,51 @@ input:checked + .toggle-slider-klein::before {
 .rw-bottom-right .regionswahl-aktionen button {
     width: 100%;
 }
+
+/* ── Rucksack Registerkarten ─────────────────────────── */
+.rucksack-box-neu { max-width: 600px; width: 96vw; }
+.rucksack-tabs {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 10px 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 4px;
+}
+.rucksack-tab {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+  color: #aaa; border-radius: 20px; padding: 4px 12px; font-size: 0.78rem;
+  cursor: pointer; transition: all 0.15s;
+}
+.rucksack-tab:hover { background: rgba(255,255,255,0.13); color: #fff; }
+.rucksack-tab.aktiv { background: #f59e0b; border-color: #f59e0b; color: #000; font-weight: 700; }
+.rucksack-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.rucksack-item:hover { background: rgba(255,255,255,0.05); }
+.item-beschreibung { font-size: 0.72rem; color: #aaa; display: block; margin-top: 2px; }
+.item-menge-badge { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1px 7px; font-size: 0.75rem; margin-left: 6px; }
+.rucksack-item-aktionen { margin-left: auto; flex-shrink: 0; }
+.btn-item-verwenden {
+  background: #22c55e; color: #000; border: none; border-radius: 8px;
+  padding: 5px 12px; font-size: 0.78rem; cursor: pointer; font-weight: 600; transition: all 0.15s;
+}
+.btn-item-verwenden:hover { background: #16a34a; color: #fff; }
+.btn-ausrüsten { background: #6366f1 !important; color: #fff !important; }
+.btn-ausrüsten:hover { background: #4f46e5 !important; }
+
+/* ── Ausrüst-Dialog ──────────────────────────────────── */
+.ausrüst-dialog {
+  background: rgba(255,255,255,0.07); border-radius: 10px;
+  padding: 14px 16px; margin: 8px 16px; border: 1px solid rgba(255,255,255,0.15);
+}
+.ausrüst-dialog p { margin: 0 0 10px; font-size: 0.9rem; }
+.ausrüst-team { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.ausrüst-mon-btn {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; border-radius: 8px; padding: 6px 14px; font-size: 0.82rem;
+  cursor: pointer; transition: all 0.15s; display: flex; flex-direction: column; align-items: flex-start;
+}
+.ausrüst-mon-btn:hover { background: rgba(255,255,255,0.18); }
+.ausrüst-mon-btn.aktiv { border-color: #f59e0b; background: rgba(245,158,11,0.2); }
+.mon-item-badge { font-size: 0.7rem; color: #f59e0b; margin-top: 2px; }
+.btn-abbrechen {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: #aaa; border-radius: 8px; padding: 5px 14px; font-size: 0.8rem; cursor: pointer;
+}
+.btn-abbrechen:hover { background: rgba(255,0,0,0.2); color: #fff; }

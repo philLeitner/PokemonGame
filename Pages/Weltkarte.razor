@@ -347,35 +347,97 @@
 <!-- Rucksack-Overlay -->
 @if (rucksackOffen)
 {
+    // Rucksack-Kategorien
+    var rucksackKategorien = new[] { "Alle", "Heilitems", "Pokébälle", "Statusprobleme", "Ausrüstung", "Sonstiges" };
+    var gefilterteItems = Game.Spieler.Inventar.Where(i => {
+        if (aktiveRucksackTab == "Alle") return true;
+        var d = Game.GetItemDef(i.ItemId);
+        string kat = d?.Kategorie ?? i.Kategorie;
+        return kat == aktiveRucksackTab;
+    }).ToList();
     <div class="meldung-overlay" @onclick="RucksackSchließen">
-        <div class="rucksack-box" @onclick:stopPropagation="true">
+        <div class="rucksack-box rucksack-box-neu" @onclick:stopPropagation="true">
             <div class="markt-header">
                 <h3>🎒 Rucksack</h3>
+                <span class="markt-geld">💰 @Game.Spieler.Geld Münzen</span>
                 <button class="btn-schliessen" @onclick="RucksackSchließen">✕</button>
             </div>
-            <div class="rucksack-items">
-                @if (!Game.Spieler.Inventar.Any())
+            <!-- Registerkarten -->
+            <div class="rucksack-tabs">
+                @foreach (var tab in rucksackKategorien)
                 {
-                    <p class="rucksack-leer">Dein Rucksack ist leer.</p>
+                    var t = tab;
+                    int anzahl = t == "Alle" ? Game.Spieler.Inventar.Count
+                        : Game.Spieler.Inventar.Count(i => { var d = Game.GetItemDef(i.ItemId); return (d?.Kategorie ?? i.Kategorie) == t; });
+                    <button class="rucksack-tab @(aktiveRucksackTab == t ? "aktiv" : "")" @onclick="() => aktiveRucksackTab = t">
+                        @t @(anzahl > 0 ? $"({anzahl})" : "")
+                    </button>
+                }
+            </div>
+            <!-- Ausrüstungs-Dialog: Monster wählen -->
+            @if (ausrüstItemId != null)
+            {
+                var ausrüstDef = Game.GetItemDef(ausrüstItemId);
+                <div class="ausrüst-dialog">
+                    <p>🐎 <strong>@ausrüstDef?.Name</strong> welchem Monster geben?</p>
+                    <div class="ausrüst-team">
+                        @foreach (var mon in Game.Spieler.Team)
+                        {
+                            var m = mon;
+                            bool trägtSchon = m.GetrageneItemId == ausrüstItemId;
+                            <button class="ausrüst-mon-btn" style="@(trägtSchon ? "border-color:#f59e0b;background:rgba(245,158,11,0.2)" : "")" @onclick="() => ItemAusrüstenMon(m)">
+                                @m.AngezeigterName Lv.@m.Level
+                                @if (!string.IsNullOrEmpty(m.GetrageneItemId))
+                                {
+                                    var getItem = Game.GetItemDef(m.GetrageneItemId);
+                                    <span class="mon-item-badge">@getItem?.Emoji @getItem?.Name</span>
+                                }
+                            </button>
+                        }
+                    </div>
+                    <button class="btn-abbrechen" @onclick="() => ausrüstItemId = null">Abbrechen</button>
+                </div>
+            }
+            <!-- Item-Liste -->
+            <div class="rucksack-items">
+                @if (!gefilterteItems.Any())
+                {
+                    <p class="rucksack-leer">Keine Items in dieser Kategorie.</p>
                 }
                 else
                 {
-                    @foreach (var item in Game.Spieler.Inventar)
+                    @foreach (var item in gefilterteItems)
                     {
                         var itm = item;
+                        var itemDef = Game.GetItemDef(itm.ItemId);
                         bool istKarteItem = itm.ItemId.StartsWith("ITEM-KARTE", StringComparison.OrdinalIgnoreCase)
                             || itm.Name.EndsWith("-Karte", StringComparison.OrdinalIgnoreCase)
                             || itm.Name.EndsWith("karte", StringComparison.OrdinalIgnoreCase);
-                        <div class="rucksack-item @(istKarteItem ? "karte-item" : "")" @onclick="() => RucksackItemKlick(itm)">
+                        bool istAusrüstung = itemDef?.Effekt.Typ == "Ausrüstung";
+                        bool istVerwendbar = !istKarteItem && itemDef != null && itemDef.Effekt.Typ != "Keine";
+                        <div class="rucksack-item @(istKarteItem ? "karte-item" : "")">
                             <span class="item-emoji">@itm.Emoji</span>
                             <div class="item-info">
-                                <span class="item-name">@itm.Name</span>
-                                <span class="item-menge">×@itm.Menge</span>
+                                <span class="item-name">@itm.Name <span class="item-menge-badge">×@itm.Menge</span></span>
+                                @if (itemDef != null)
+                                {
+                                    <span class="item-beschreibung">@itemDef.Beschreibung</span>
+                                }
                             </div>
-                            @if (istKarteItem)
-                            {
-                                <span class="karte-item-hinweis">🗺️ Anzeigen</span>
-                            }
+                            <div class="rucksack-item-aktionen">
+                                @if (istKarteItem)
+                                {
+                                    <button class="btn-item-verwenden" @onclick="() => RucksackItemKlick(itm)">🗺️ Anzeigen</button>
+                                }
+                                else if (istAusrüstung)
+                                {
+                                    <button class="btn-item-verwenden btn-ausrüsten" @onclick="() => ausrüstItemId = itm.ItemId">⚔️ Ausrüsten</button>
+                                }
+                                else if (istVerwendbar && Game.Spieler.Team.Any())
+                                {
+                                    <button class="btn-item-verwenden" @onclick="() => RucksackItemAnwenden(itm)">✅ Verwenden</button>
+                                }
+                            </div>
                         </div>
                     }
                 }
@@ -761,40 +823,91 @@
     var ortRef2 = Game.AktuellerOrt ?? (ausgewähltOrt != null ? Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrt.Id) : null);
     if (ortRef2 != null)
     {
+    // Im generierten Modus: Items aus AlleItems; klassisch: MarktAngebot
+    var marktItemDefs = Game.IstGenerierteKartenModus
+        ? Game.AlleItems.Where(i => i.KaufPreis > 0).ToList()
+        : Game.AlleItems.Where(i => ortRef2.MarktAngebot.Any(s => s.Id == i.Id) || i.KaufPreis > 0).ToList();
+    var marktKategorien = marktItemDefs.Select(i => i.Kategorie).Distinct().OrderBy(k => k).ToList();
     <div class="meldung-overlay" @onclick="MarktSchließen">
-        <div class="markt-box" @onclick:stopPropagation="true">
+        <div class="markt-box markt-box-neu" @onclick:stopPropagation="true">
             <div class="markt-header">
                 <h3>🏪 Markt – @ortRef2.Name</h3>
                 <span class="markt-geld">💰 @Game.Spieler.Geld Münzen</span>
                 <button class="btn-schliessen" @onclick="MarktSchließen">✕</button>
             </div>
-            <div class="markt-kategorien">
-                @foreach (var kat in ortRef2.MarktAngebot.Select(i => i.Kategorie).Distinct())
-                {
-                    <button class="markt-kat-btn @(aktiveKategorie == kat ? "aktiv" : "")" @onclick="() => aktiveKategorie = kat">@kat</button>
-                }
-                <button class="markt-kat-btn @(aktiveKategorie == "Alle" ? "aktiv" : "")" @onclick='() => aktiveKategorie = "Alle"'>Alle</button>
+            <!-- Kaufen / Verkaufen Tabs -->
+            <div class="markt-tabs">
+                <button class="markt-tab @(marktModus == "kaufen" ? "aktiv" : "")" @onclick='() => { marktModus = "kaufen"; kaufMeldung = ""; }'>🛒 Kaufen</button>
+                <button class="markt-tab @(marktModus == "verkaufen" ? "aktiv" : "")" @onclick='() => { marktModus = "verkaufen"; kaufMeldung = ""; }'>💸 Verkaufen</button>
             </div>
-            <div class="markt-items">
-                @foreach (var item in ortRef2.MarktAngebot.Where(i => aktiveKategorie == "Alle" || i.Kategorie == aktiveKategorie))
-                {
-                    var it = item;
-                    bool kannKaufen = Game.Spieler.Geld >= it.Preis;
-                    <div class="markt-item @(!kannKaufen ? "zu-teuer" : "")">
-                        <span class="item-emoji">@it.Emoji</span>
-                        <div class="item-info">
-                            <span class="item-name">@it.Name</span>
-                            <span class="item-beschreibung">@it.Beschreibung</span>
+            @if (marktModus == "kaufen")
+            {
+                <!-- Kategorie-Filter -->
+                <div class="markt-kategorien">
+                    <button class="markt-kat-btn @(aktiveKategorie == "Alle" ? "aktiv" : "")" @onclick='() => aktiveKategorie = "Alle"'>Alle</button>
+                    @foreach (var kat in marktKategorien)
+                    {
+                        var k = kat;
+                        <button class="markt-kat-btn @(aktiveKategorie == k ? "aktiv" : "")" @onclick="() => aktiveKategorie = k">@k</button>
+                    }
+                </div>
+                <div class="markt-items">
+                    @foreach (var itemDef in marktItemDefs.Where(i => aktiveKategorie == "Alle" || i.Kategorie == aktiveKategorie))
+                    {
+                        var it = itemDef;
+                        bool kannKaufen = Game.Spieler.Geld >= it.KaufPreis;
+                        <div class="markt-item @(!kannKaufen ? "zu-teuer" : "")">
+                            <span class="item-emoji">@it.Emoji</span>
+                            <div class="item-info">
+                                <span class="item-name">@it.Name</span>
+                                <span class="item-beschreibung">@it.Beschreibung</span>
+                                <span class="item-preis">💰 @it.KaufPreis Münzen</span>
+                            </div>
+                            <div class="item-kauf">
+                                <input type="number" class="mengen-input" min="1" max="99"
+                                    value="@(marktMengen.TryGetValue(it.Id, out int mv) ? mv : 1)"
+                                    @onchange="e => { if (int.TryParse(e.Value?.ToString(), out int v)) marktMengen[it.Id] = Math.Max(1, Math.Min(99, v)); }" />
+                                <button class="btn-kaufen" @onclick="() => ItemKaufenNeu(it)" disabled="@(!kannKaufen)">
+                                    @(kannKaufen ? "Kaufen" : "Zu teuer")
+                                </button>
+                            </div>
                         </div>
-                        <div class="item-kauf">
-                            <span class="item-preis">💰 @it.Preis</span>
-                            <button class="btn-kaufen" @onclick="() => ItemKaufen(it)" disabled="@(!kannKaufen)">
-                                @(kannKaufen ? "Kaufen" : "Zu teuer")
-                            </button>
-                        </div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <!-- Verkaufen -->
+                <div class="markt-items">
+                    @if (!Game.Spieler.Inventar.Any(i => { var d = Game.GetItemDef(i.ItemId); return d != null && d.VerkaufPreis > 0; }))
+                    {
+                        <p class="rucksack-leer">Keine verkaufbaren Items im Rucksack.</p>
+                    }
+                    else
+                    {
+                        @foreach (var invItem in Game.Spieler.Inventar.Where(i => { var d = Game.GetItemDef(i.ItemId); return d != null && d.VerkaufPreis > 0; }))
+                        {
+                            var inv = invItem;
+                            var def = Game.GetItemDef(inv.ItemId)!;
+                            <div class="markt-item">
+                                <span class="item-emoji">@inv.Emoji</span>
+                                <div class="item-info">
+                                    <span class="item-name">@inv.Name <span class="item-menge-badge">×@inv.Menge</span></span>
+                                    <span class="item-beschreibung">Verkaufspreis: 💰 @def.VerkaufPreis Münzen</span>
+                                </div>
+                                <div class="item-kauf">
+                                    <input type="number" class="mengen-input" min="1" max="@inv.Menge"
+                                        value="@(marktMengen.TryGetValue(inv.ItemId + "_v", out int vv) ? vv : 1)"
+                                        @onchange="@(async e => { if (int.TryParse(e.Value?.ToString(), out int vx)) { var key = inv.ItemId + "_v"; marktMengen[key] = Math.Max(1, Math.Min(inv.Menge, vx)); } })" />
+                                    <button class="btn-kaufen btn-verkaufen" @onclick="() => ItemVerkaufenNeu(inv.ItemId)">
+                                        Verkaufen
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            }
             @if (!string.IsNullOrEmpty(kaufMeldung))
             {
                 <div class="kauf-meldung">@kaufMeldung</div>
@@ -812,6 +925,11 @@
     private bool rucksackOffen = false;
     private string aktiveKategorie = "Alle";
     private string kaufMeldung = "";
+    private string marktModus = "kaufen"; // "kaufen" oder "verkaufen"
+    private Dictionary<string, int> marktMengen = new();
+    private string aktiveRucksackTab = "Alle"; // Rucksack-Registerkarte
+    private string? ausgerüstetMonsterFürItem = null; // Monster-ID für Ausrüstungs-Dialog
+    private string? ausrüstItemId = null;
     // Vollkarte
     private bool vollkarteOffen = false;
     private string? vollkarteRegionId = null;
@@ -1110,6 +1228,60 @@
         await Task.Delay(2500);
         if (kaufMeldung.StartsWith("✅"))
             kaufMeldung = "";
+    }
+
+    private async Task ItemKaufenNeu(ItemDef item)
+    {
+        int menge = marktMengen.TryGetValue(item.Id, out int m) ? m : 1;
+        kaufMeldung = Game.ItemKaufen(item, menge);
+        await Task.Delay(2500);
+        if (kaufMeldung.StartsWith("✅"))
+            kaufMeldung = "";
+    }
+
+    private async Task ItemVerkaufenNeu(string itemId)
+    {
+        int menge = marktMengen.TryGetValue(itemId + "_v", out int m) ? m : 1;
+        kaufMeldung = Game.ItemVerkaufen(itemId, menge);
+        await Task.Delay(2500);
+        if (kaufMeldung.StartsWith("✅"))
+            kaufMeldung = "";
+    }
+
+    private async Task RucksackItemAnwenden(InventarItem item)
+    {
+        var def = Game.GetItemDef(item.ItemId);
+        if (def == null) return;
+        // Ausrüstungsitems → Monster auswählen
+        if (def.Effekt.Typ == "Ausrüstung")
+        {
+            ausrüstItemId = item.ItemId;
+            return;
+        }
+        // Heilung/Status: auf erstes krankes Monster anwenden
+        var ziel = Game.Spieler.Team.FirstOrDefault(m => m.AktuelleKp < m.MaxKp || (m.Status != null && m.Status != "none"));
+        if (ziel == null) ziel = Game.Spieler.Team.FirstOrDefault();
+        if (ziel == null) return;
+        meldung = Game.ItemAnwenden(item.ItemId, ziel);
+        await Task.Delay(100);
+    }
+
+    private void ItemAusrüsten(string monsterKey)
+    {
+        if (ausrüstItemId == null) return;
+        var parts = monsterKey.Split('_');
+        string speziesId = string.Join("_", parts[..^1]);
+        int level = int.TryParse(parts[^1], out int lv) ? lv : -1;
+        var mon = Game.Spieler.Team.FirstOrDefault(m => m.SpeziesId == speziesId && m.Level == level)
+                  ?? Game.Spieler.Team.FirstOrDefault(m => m.SpeziesId == speziesId);
+        if (mon != null) meldung = Game.ItemAusrüsten(mon, ausrüstItemId);
+        ausrüstItemId = null;
+    }
+    private void ItemAusrüstenMon(MonsterInstanz mon)
+    {
+        if (ausrüstItemId == null) return;
+        meldung = Game.ItemAusrüsten(mon, ausrüstItemId);
+        ausrüstItemId = null;
     }
 
     private string OrtIcon(Ort ort) => ort.Typ switch

@@ -287,6 +287,7 @@ public class KartenGenerator
 
                     typ = "stadt";
                     hatMonsterCenter = true;
+                    hatMarkt = true; // Jede Arena hat einen Markt
 
                     // Zwischenboss-Trainer (Vortrainer) nur bei normalen Arenen
                     if (!istLetzterBoss && !istVorletzter)

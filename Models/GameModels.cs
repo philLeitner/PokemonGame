@@ -76,6 +76,7 @@ public class MonsterInstanz
     public string? EntwickeltZu { get; set; }
     public string? EntwicklungName { get; set; }
     public int? EntwicklungLevel { get; set; }
+    public string? GetrageneItemId { get; set; } = null; // Item das das Monster trägt
     public bool IstOhnmächtig => AktuelleKp <= 0;
     public string AngezeigterName => !string.IsNullOrEmpty(Spitzname) ? Spitzname : Name;
 
@@ -204,13 +205,13 @@ public class Spieler
     public InventarItem? GetItem(string itemId) => Inventar.FirstOrDefault(i => i.ItemId == itemId);
     public int GetItemMenge(string itemId) => GetItem(itemId)?.Menge ?? 0;
 
-    public void ItemHinzufügen(string itemId, string name, string emoji, int menge = 1)
+    public void ItemHinzufügen(string itemId, string name, string emoji, string kategorie = "Sonstiges", int menge = 1)
     {
         var vorhandenes = Inventar.FirstOrDefault(i => i.ItemId == itemId);
         if (vorhandenes != null)
             vorhandenes.Menge += menge;
         else
-            Inventar.Add(new InventarItem { ItemId = itemId, Name = name, Emoji = emoji, Menge = menge });
+            Inventar.Add(new InventarItem { ItemId = itemId, Name = name, Emoji = emoji, Kategorie = kategorie, Menge = menge });
     }
 
     public bool ItemVerwenden(string itemId)
@@ -224,6 +225,24 @@ public class Spieler
 }
 
 // ─── Items / Shop ─────────────────────────────────────────────────────────────
+public class ItemEffekt
+{
+    public string Typ { get; set; } = "Keine";
+    public int Wert { get; set; } = 0;
+    public string? StatusTyp { get; set; } = null;
+    public string? Stat { get; set; } = null;
+}
+public class ItemDef
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Emoji { get; set; } = "💊";
+    public string Kategorie { get; set; } = "Sonstiges";
+    public string Beschreibung { get; set; } = "";
+    public int KaufPreis { get; set; } = 0;
+    public int VerkaufPreis { get; set; } = 0;
+    public ItemEffekt Effekt { get; set; } = new();
+}
 public class ShopItem
 {
     public string Id { get; set; } = "";
@@ -240,6 +259,7 @@ public class InventarItem
     public string ItemId { get; set; } = "";
     public string Name { get; set; } = "";
     public string Emoji { get; set; } = "💊";
+    public string Kategorie { get; set; } = "Sonstiges";
     public int Menge { get; set; }
 }
 

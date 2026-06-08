@@ -25,6 +25,8 @@ public class GameService
     public List<AttackeData> AlleAttacken { get; private set; } = new();
     public Dictionary<string, TypInfo> AlleTypen { get; private set; } = new();
     public List<Ort> AlleOrte { get; private set; } = new();
+    public List<ItemDef> AlleItems { get; private set; } = new();
+    public ItemDef? GetItemDef(string id) => AlleItems.FirstOrDefault(i => i.Id == id);
 
     // ── Regionen / Prozedurale Karte ─────────────────────────────────────────
     public List<RegionConfig> AlleRegionen { get; private set; } = new();
@@ -134,6 +136,14 @@ public class GameService
                     Fangrate = m.Fangrate > 0 ? m.Fangrate : 45,
                 }).ToList();
             }
+
+            // Items laden
+            LadeStatus = "Lade Items...";
+            Notify();
+            var itemOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var itemDefs = await _http.GetFromJsonAsync<List<ItemDef>>("data/items.json", itemOpts);
+            if (itemDefs?.Any() == true)
+                AlleItems = itemDefs;
 
             // Regionen laden (enthält TrainerPool + MonsterPool)
             LadeStatus = "Lade Regionen...";
@@ -312,8 +322,8 @@ public class GameService
         var starter = Spieler.StarterMonsterId;
         Spieler = new Spieler { Name = spielerName, StarterMonsterId = starter };
         Spieler.Team.AddRange(team);
-        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", 5);
-        Spieler.ItemHinzufügen("trank", "Trank", "🧪", 3);
+        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", "Pokébälle", 5);
+        Spieler.ItemHinzufügen("trank", "Trank", "🧪", "Heilitems", 3);
         // Neue Karte mit neuem Seed generieren
         var neuerSeed = KartenGenerator.GeneriereSeedCode();
         var (neueOrte, meta) = KartenGenerator.Generiere(neuerSeed, regionsReihenfolge, AlleRegionen, _originalOrte);
@@ -343,8 +353,8 @@ public class GameService
     public void GenerierteKarteSpielStarten(string spielerName)
     {
         Spieler = new Spieler { Name = spielerName };
-        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", 5);
-        Spieler.ItemHinzufügen("trank", "Trank", "🧪", 3);
+        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", "Pokébälle", 5);
+        Spieler.ItemHinzufügen("trank", "Trank", "🧪", "Heilitems", 3);
         Phase = SpielPhase.RegionsWahl;
         Notify();
     }
@@ -597,8 +607,8 @@ public class GameService
     {
         Spieler = new Spieler { Name = spielerName };
         // Starter-Items mitgeben
-        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", 5);
-        Spieler.ItemHinzufügen("trank", "Trank", "🧪", 3);
+        Spieler.ItemHinzufügen("monsterball", "Monsterball", "⚪", "Pokébälle", 5);
+        Spieler.ItemHinzufügen("trank", "Trank", "🧪", "Heilitems", 3);
         Phase = SpielPhase.StarterWahl;
         Notify();
     }
@@ -1802,14 +1812,153 @@ public class GameService
     }
 
     // ── Markt ─────────────────────────────────────────────────────
+    // Legacy-Überladung für ShopItem (rückwärtskompatibel)
     public string ItemKaufen(ShopItem item)
     {
         if (Spieler.Geld < item.Preis)
             return $"❌ Nicht genug Geld! Du brauchst {item.Preis} Münzen, hast aber nur {Spieler.Geld}.";
         Spieler.Geld -= item.Preis;
-        Spieler.ItemHinzufügen(item.Id, item.Name, item.Emoji);
+        Spieler.ItemHinzufügen(item.Id, item.Name, item.Emoji, item.Kategorie);
         Notify();
         return $"✅ {item.Emoji} {item.Name} gekauft! Verbleibendes Geld: {Spieler.Geld} Münzen.";
+    }
+    public string ItemKaufen(ItemDef item, int menge = 1)
+    {
+        int gesamtPreis = item.KaufPreis * menge;
+        if (Spieler.Geld < gesamtPreis)
+            return $"❌ Nicht genug Geld! Du brauchst {gesamtPreis} Münzen, hast aber nur {Spieler.Geld}.";
+        Spieler.Geld -= gesamtPreis;
+        Spieler.ItemHinzufügen(item.Id, item.Name, item.Emoji, item.Kategorie, menge);
+        Notify();
+        return $"✅ {item.Emoji} {item.Name} ×{menge} gekauft! Verbleibendes Geld: {Spieler.Geld} Münzen.";
+    }
+    public string ItemVerkaufen(string itemId, int menge = 1)
+    {
+        var invItem = Spieler.GetItem(itemId);
+        if (invItem == null || invItem.Menge < menge)
+            return $"❌ Du hast nicht genug davon.";
+        var def = GetItemDef(itemId);
+        if (def == null) return "❌ Unbekanntes Item.";
+        if (def.VerkaufPreis <= 0) return "❌ Dieses Item kann nicht verkauft werden.";
+        int einnahmen = def.VerkaufPreis * menge;
+        invItem.Menge -= menge;
+        if (invItem.Menge <= 0) Spieler.Inventar.Remove(invItem);
+        Spieler.Geld += einnahmen;
+        Notify();
+        return $"✅ {def.Emoji} {def.Name} ×{menge} verkauft! +{einnahmen} Münzen. Geld: {Spieler.Geld} Münzen.";
+    }
+    public string ItemAnwenden(string itemId, MonsterInstanz ziel)
+    {
+        var def = GetItemDef(itemId);
+        if (def == null) return "❌ Unbekanntes Item.";
+        var invItem = Spieler.GetItem(itemId);
+        if (invItem == null || invItem.Menge <= 0) return "❌ Du hast dieses Item nicht.";
+        var effekt = def.Effekt;
+        string ergebnis = effekt.Typ switch
+        {
+            "HeilKP" => HeilKP(ziel, effekt.Wert),
+            "HeilKPVoll" => HeilKP(ziel, ziel.MaxKp),
+            "Beleben" => Beleben(ziel, effekt.Wert),
+            "BelebenVoll" => Beleben(ziel, 100),
+            "HeilAP" => HeilAP(ziel, effekt.Wert),
+            "HeilAPVoll" => HeilAP(ziel, -1),
+            "HeilStatus" => HeilStatus(ziel, effekt.StatusTyp),
+            "HeilAlleStatus" => HeilAlleStatus(ziel),
+            "HeilTeamAlles" => HeilTeamAlles(),
+            _ => $"❓ {def.Name} hat keinen direkten Effekt."
+        };
+        if (!ergebnis.StartsWith("❌"))
+            Spieler.ItemVerwenden(itemId);
+        Notify();
+        return ergebnis;
+    }
+    private string HeilKP(MonsterInstanz m, int menge)
+    {
+        if (m.IstOhnmächtig) return $"❌ {m.AngezeigterName} ist ohnmächtig!";
+        if (m.AktuelleKp >= m.MaxKp) return $"❌ {m.AngezeigterName} hat schon volle KP!";
+        int vorher = m.AktuelleKp;
+        m.AktuelleKp = Math.Min(m.MaxKp, m.AktuelleKp + menge);
+        return $"✅ {m.AngezeigterName} hat {m.AktuelleKp - vorher} KP erhalten. ({m.AktuelleKp}/{m.MaxKp})";
+    }
+    private string Beleben(MonsterInstanz m, int prozent)
+    {
+        if (!m.IstOhnmächtig) return $"❌ {m.AngezeigterName} ist nicht ohnmächtig!";
+        m.AktuelleKp = prozent >= 100 ? m.MaxKp : Math.Max(1, (int)(m.MaxKp * prozent / 100f));
+        m.Status = "none";
+        return $"✅ {m.AngezeigterName} wurde belebt! ({m.AktuelleKp}/{m.MaxKp} KP)";
+    }
+    private string HeilAP(MonsterInstanz m, int menge)
+    {
+        foreach (var a in m.Attacken)
+        {
+            if (menge < 0) a.AktuelleAp = a.MaxAp;
+            else a.AktuelleAp = Math.Min(a.MaxAp, a.AktuelleAp + menge);
+        }
+        return $"✅ AP von {m.AngezeigterName} wiederhergestellt.";
+    }
+    private string HeilStatus(MonsterInstanz m, string? statusTyp)
+    {
+        if (m.Status == "none") return $"❌ {m.AngezeigterName} hat kein Statusproblem.";
+        if (statusTyp != null)
+        {
+            bool passt = statusTyp.ToLower() switch
+            {
+                "vergiftet" => m.Status == "vergiftet",
+                "verbrannt" => m.Status == "verbrannt",
+                "eingefroren" => m.Status == "eingefroren",
+                "gelähmt" => m.Status == "gelähmt",
+                "schläft" => m.Status == "eingeschlafen",
+                _ => true
+            };
+            if (!passt) return $"❌ {m.AngezeigterName} hat nicht dieses Statusproblem.";
+        }
+        string alterStatus = m.Status;
+        m.Status = "none";
+        m.StatusZähler = 0;
+        return $"✅ {m.AngezeigterName} ist nicht mehr {alterStatus}.";
+    }
+    private string HeilAlleStatus(MonsterInstanz m)
+    {
+        m.Status = "none";
+        m.StatusZähler = 0;
+        return $"✅ Alle Statusprobleme von {m.AngezeigterName} geheilt.";
+    }
+    private string HeilTeamAlles()
+    {
+        foreach (var m in Spieler.Team)
+        {
+            if (!m.IstOhnmächtig) m.AktuelleKp = m.MaxKp;
+            m.Status = "none";
+            m.StatusZähler = 0;
+            foreach (var a in m.Attacken) a.AktuelleAp = a.MaxAp;
+        }
+        return "✅ Das gesamte Team wurde vollständig geheilt!";
+    }
+    public string ItemAusrüsten(MonsterInstanz monster, string? itemId)
+    {
+        if (itemId == null)
+        {
+            if (monster.GetrageneItemId == null) return "❌ Dieses Monster trägt kein Item.";
+            var altDef = GetItemDef(monster.GetrageneItemId);
+            monster.GetrageneItemId = null;
+            Notify();
+            return $"✅ {altDef?.Emoji ?? ""} {altDef?.Name ?? "Item"} wurde abgenommen.";
+        }
+        var def = GetItemDef(itemId);
+        if (def == null) return "❌ Unbekanntes Item.";
+        if (def.Kategorie != "Ausrüstung") return "❌ Nur Ausrüstungsitems können getragen werden.";
+        var invItem = Spieler.GetItem(itemId);
+        if (invItem == null || invItem.Menge <= 0) return "❌ Du hast dieses Item nicht.";
+        if (monster.GetrageneItemId != null)
+        {
+            var altDef = GetItemDef(monster.GetrageneItemId);
+            if (altDef != null)
+                Spieler.ItemHinzufügen(altDef.Id, altDef.Name, altDef.Emoji, altDef.Kategorie);
+        }
+        Spieler.ItemVerwenden(itemId);
+        monster.GetrageneItemId = itemId;
+        Notify();
+        return $"✅ {def.Emoji} {def.Name} wurde {monster.AngezeigterName} gegeben.";
     }
 
     // ── Spielstand speichern ──────────────────────────────────────────────────
