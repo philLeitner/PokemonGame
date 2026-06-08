@@ -11,128 +11,140 @@
         </p>
     </div>
 
-    <!-- Live-Zusammenfassung -->
-    @if (AusgewählteRegionen.Any())
-    {
-        int gesamtEbenen = AusgewählteRegionen.Sum(r => r.BasisEbenen);
-        int städteProBoss = AusgewählteRegionen.Count > 0 ? AusgewählteRegionen.Max(r => r.Arenaleiter.Count) : 8;
-        int bosse = AusgewählteRegionen.Count;
-        <div class="gen-vorschau">
-            <div class="gen-vorschau-item">
-                <span class="gen-vorschau-label">🗺️ Ebenen</span>
-                <span class="gen-vorschau-wert">@gesamtEbenen</span>
-            </div>
-            <div class="gen-vorschau-item">
-                <span class="gen-vorschau-label">🏙️ Städte pro Boss</span>
-                <span class="gen-vorschau-wert">@städteProBoss</span>
-            </div>
-            <div class="gen-vorschau-item">
-                <span class="gen-vorschau-label">⚔️ Bosse</span>
-                <span class="gen-vorschau-wert">@bosse</span>
-            </div>
+    <!-- Obere Zeile: Reihenfolge links + Statistik rechts -->
+    <div class="rw-top-row">
+        <div class="rw-top-left">
+            @if (AusgewählteRegionen.Any())
+            {
+                <div class="ausgewaehlte-reihenfolge">
+                    <h3>📋 Deine Reihenfolge:</h3>
+                    <div class="reihenfolge-liste">
+                        @for (int i = 0; i < AusgewählteRegionen.Count; i++)
+                        {
+                            var reg = AusgewählteRegionen[i];
+                            var nr = i + 1;
+                            <div class="reihenfolge-item" @onclick="() => RegionEntfernen(reg.Id)">
+                                <span class="reihenfolge-nr">@nr</span>
+                                <span class="reihenfolge-name">Region @nr</span>
+                                <span class="reihenfolge-entfernen" title="Entfernen">✕</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="rw-keine-auswahl">Klicke auf eine Region um sie auszuwählen.</div>
+            }
         </div>
-    }
+        <div class="rw-top-right">
+            @if (AusgewählteRegionen.Any())
+            {
+                int gesamtEbenen = AusgewählteRegionen.Sum(r => r.BasisEbenen);
+                int städteProBoss = AusgewählteRegionen.Count > 0 ? AusgewählteRegionen.Max(r => r.Arenaleiter.Count) : 8;
+                int bosse = AusgewählteRegionen.Count;
+                <div class="gen-vorschau gen-vorschau-vertikal">
+                    <div class="gen-vorschau-item">
+                        <span class="gen-vorschau-label">🗺️ Ebenen</span>
+                        <span class="gen-vorschau-wert">@gesamtEbenen</span>
+                    </div>
+                    <div class="gen-vorschau-item">
+                        <span class="gen-vorschau-label">🏙️ Städte pro Boss</span>
+                        <span class="gen-vorschau-wert">@städteProBoss</span>
+                    </div>
+                    <div class="gen-vorschau-item">
+                        <span class="gen-vorschau-label">⚔️ Bosse</span>
+                        <span class="gen-vorschau-wert">@bosse</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 
-    <!-- Ausgewählte Reihenfolge -->
-    @if (AusgewählteRegionen.Any())
-    {
-        <div class="ausgewaehlte-reihenfolge">
-            <h3>📋 Deine Reihenfolge:</h3>
-            <div class="reihenfolge-liste">
-                @for (int i = 0; i < AusgewählteRegionen.Count; i++)
+    <!-- Untere Zeile: Regions-Grid links + Seed/Buttons rechts -->
+    <div class="rw-bottom-row">
+        <div class="rw-bottom-left">
+            <!-- Regionen-Grid -->
+            <div class="regionen-grid">
+                @foreach (var region in Game.AlleRegionen)
                 {
-                    var reg = AusgewählteRegionen[i];
-                    var nr = i + 1;
-                    <div class="reihenfolge-item" @onclick="() => RegionEntfernen(reg.Id)">
-                        <span class="reihenfolge-nr">@nr</span>
-                        <span class="reihenfolge-name">Region @nr</span>
-                        <span class="reihenfolge-entfernen" title="Entfernen">✕</span>
+                    var ausgewählt = AusgewählteRegionen.Any(r => r.Id == region.Id);
+                    var position = AusgewählteRegionen.FindIndex(r => r.Id == region.Id) + 1;
+                    <div class="region-karte @(ausgewählt ? "ausgewaehlt" : "")"
+                         style="border-color: @region.Farbe; @(ausgewählt ? $"background: {region.Farbe}22;" : "")"
+                         @onclick="() => RegionToggle(region)">
+                        <div class="region-karte-header" style="background: @region.Farbe;">
+                            <span class="region-emoji">@region.Emoji</span>
+                            @if (ausgewählt)
+                            {
+                                <span class="region-nummer">@position</span>
+                            }
+                        </div>
+                        <div class="region-karte-body">
+                            <div class="region-karte-name">
+                                @if (ausgewählt)
+                                {
+                                    <strong>Region @position</strong>
+                                }
+                                else
+                                {
+                                    <span>???</span>
+                                }
+                            </div>
+                            <div class="region-karte-info">
+                                <span>⚔️ @region.Arenaleiter.Count Arenen</span>
+                                <span>🗺️ ~@region.BasisEbenen Gebiete</span>
+                            </div>
+                            <div class="region-starter-liste">
+                                @foreach (var starterName in region.StarterNamen.Take(3))
+                                {
+                                    <span class="region-starter-chip">@starterName</span>
+                                }
+                            </div>
+                        </div>
                     </div>
                 }
             </div>
         </div>
-    }
-
-    <!-- Regionen-Grid -->
-    <div class="regionen-grid">
-        @foreach (var region in Game.AlleRegionen)
-        {
-            var ausgewählt = AusgewählteRegionen.Any(r => r.Id == region.Id);
-            var position = AusgewählteRegionen.FindIndex(r => r.Id == region.Id) + 1;
-            <div class="region-karte @(ausgewählt ? "ausgewaehlt" : "")"
-                 style="border-color: @region.Farbe; @(ausgewählt ? $"background: {region.Farbe}22;" : "")"
-                 @onclick="() => RegionToggle(region)">
-                <div class="region-karte-header" style="background: @region.Farbe;">
-                    <span class="region-emoji">@region.Emoji</span>
-                    @if (ausgewählt)
+        <div class="rw-bottom-right">
+            <!-- Seed-Code und Import -->
+            <div class="seed-bereich">
+                <div class="seed-zeile">
+                    <label>🔑 Karten-Code (optional):</label>
+                    <input type="text" class="seed-input" placeholder="Eigenen Code eingeben..."
+                           @bind="SeedCodeEingabe" maxlength="40" />
+                    @if (!string.IsNullOrWhiteSpace(SeedCodeEingabe))
                     {
-                        <span class="region-nummer">@position</span>
+                        <button class="btn-seed-import" @onclick="KartenCodeImportieren">📥 Importieren</button>
                     }
                 </div>
-                <div class="region-karte-body">
-                    <div class="region-karte-name">
-                        @if (ausgewählt)
-                        {
-                            <strong>Region @position</strong>
-                        }
-                        else
-                        {
-                            <span>???</span>
-                        }
-                    </div>
-                    <div class="region-karte-info">
-                        <span>⚔️ @region.Arenaleiter.Count Arenen</span>
-                        <span>🗺️ ~@region.BasisEbenen Gebiete</span>
-                    </div>
-                    <div class="region-starter-liste">
-                        @foreach (var starterName in region.StarterNamen.Take(3))
-                        {
-                            <span class="region-starter-chip">@starterName</span>
-                        }
-                    </div>
+                @if (!string.IsNullOrEmpty(ImportFehler))
+                {
+                    <div class="import-fehler">⚠️ @ImportFehler</div>
+                }
+                <div class="seed-hinweis">
+                    💡 Teile deinen Karten-Code mit Freunden, damit sie dieselbe Karte spielen können.
                 </div>
             </div>
-        }
-    </div>
-
-    <!-- Seed-Code und Import -->
-    <div class="seed-bereich">
-        <div class="seed-zeile">
-            <label>🔑 Karten-Code (optional):</label>
-            <input type="text" class="seed-input" placeholder="Eigenen Code eingeben..."
-                   @bind="SeedCodeEingabe" maxlength="40" />
-            @if (!string.IsNullOrWhiteSpace(SeedCodeEingabe))
-            {
-                <button class="btn-seed-import" @onclick="KartenCodeImportieren">📥 Importieren</button>
-            }
+            <!-- Aktions-Buttons -->
+            <div class="regionswahl-aktionen">
+                <button class="btn-zurueck" @onclick="Game.ZuHauptmenü">← Zurück</button>
+                @if (AusgewählteRegionen.Count >= 1)
+                {
+                    <button class="btn-zufaellig" @onclick="ZufälligeRegionenHinzufügen">🎲 Zufällig auffüllen</button>
+                    <button class="btn-generieren" @onclick="SpielStarten">
+                        🎲 Neu generieren &amp; starten (@AusgewählteRegionen.Count Region@(AusgewählteRegionen.Count == 1 ? "" : "en"))
+                    </button>
+                }
+                else
+                {
+                    <button class="btn-zufaellig" @onclick="AlleZufällig">🎲 Alle zufällig</button>
+                    <button class="btn-generieren disabled" disabled>
+                        🎲 Mindestens 1 Region wählen
+                    </button>
+                }
+            </div>
         </div>
-        @if (!string.IsNullOrEmpty(ImportFehler))
-        {
-            <div class="import-fehler">⚠️ @ImportFehler</div>
-        }
-        <div class="seed-hinweis">
-            💡 Teile deinen Karten-Code mit Freunden, damit sie dieselbe Karte spielen können.
-        </div>
-    </div>
-
-    <!-- Aktions-Buttons -->
-    <div class="regionswahl-aktionen">
-        <button class="btn-zurueck" @onclick="Game.ZuHauptmenü">← Zurück</button>
-
-        @if (AusgewählteRegionen.Count >= 1)
-        {
-            <button class="btn-zufaellig" @onclick="ZufälligeRegionenHinzufügen">🎲 Zufällig auffüllen</button>
-            <button class="btn-generieren" @onclick="SpielStarten">
-                🎲 Neu generieren &amp; starten (@AusgewählteRegionen.Count Region@(AusgewählteRegionen.Count == 1 ? "" : "en"))
-            </button>
-        }
-        else
-        {
-            <button class="btn-zufaellig" @onclick="AlleZufällig">🎲 Alle zufällig</button>
-            <button class="btn-generieren disabled" disabled>
-                🎲 Mindestens 1 Region wählen
-            </button>
-        }
     </div>
 </div>
 
