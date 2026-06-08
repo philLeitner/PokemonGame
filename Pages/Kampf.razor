@@ -340,8 +340,9 @@
                 {
                     <div class="item-liste">
                         @{
+                            // Bälle (ITEM-011 bis ITEM-019) und Ausrüstung aus dem Kampf-Item-Panel ausfiltern
                             var kampfItems = Game.Spieler.Inventar
-                                .Where(i => i.Menge > 0 && i.ItemId != "monsterball" && i.ItemId != "superball" && i.ItemId != "hyperball" && i.ItemId != "meisterball")
+                                .Where(i => i.Menge > 0 && i.Kategorie != "Pokébälle" && i.Kategorie != "Ausrüstung")
                                 .ToList();
                         }
                         @if (!kampfItems.Any())
@@ -403,14 +404,14 @@
                 </div>
                 <div class="ball-liste">
                     @foreach (var ball in new[] {
-                        ("monsterball", "⚪", "Monsterball"),
-                        ("superball", "🔵", "Superball"),
-                        ("hyperball", "🟡", "Hyperball"),
-                        ("meisterball", "🟣", "Meisterball")
+                        ("ITEM-011", "⚪", "Pokéball"),
+                        ("ITEM-012", "🔵", "Superball"),
+                        ("ITEM-013", "🔴", "Hyperball"),
+                        ("ITEM-014", "🟣", "Meisterball")
                     })
                     {
                         int menge = Game.Spieler.GetItemMenge(ball.Item1);
-                        <button class="btn-ball @(menge == 0 ? "kein-ap" : "")"
+                        <button class="@("btn-ball" + (menge == 0 ? " kein-ap" : ""))"
                                 disabled="@(menge == 0)"
                                 @onclick="() => BallWerfen(ball.Item1)">
                             <span>@ball.Item2 @ball.Item3</span>

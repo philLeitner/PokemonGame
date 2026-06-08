@@ -35,6 +35,8 @@ public class GameService
     // Nach-Arenaleiter-Dialog-Daten
     public Ort? LetzterArenaLeiter { get; private set; } = null;
     public bool NachArenaLeiterLevelA { get; private set; } = true;
+    /// <summary>True wenn der NachArenaLeiter-Dialog nach einem Liga-Sieg (Regionswechsel) gezeigt wird</summary>
+    public bool IstNachLigaRegionswechsel { get; private set; } = false;
 
     // ── Spielzustand ─────────────────────────────────────────────────────────
     public SpielPhase Phase { get; private set; } = SpielPhase.Laden;
@@ -483,6 +485,7 @@ public class GameService
     /// <summary>Liga-Abschluss: zur nächsten Region wechseln (NachArenaLeiter-Wizard).</summary>
     public void LigaAbschlussNächsteRegion()
     {
+        IstNachLigaRegionswechsel = true;  // Level-Option Popup zeigen
         Phase = SpielPhase.NachArenaLeiter;
         Notify();
     }
@@ -578,9 +581,10 @@ public class GameService
     }
 
     /// <summary>Nach-Arenaleiter-Dialog abschließen und zur Weltkarte zurückkehren.</summary>
-    public void NachArenaLeiterAbschliessen()
+    public void NachArenaLeiterAbschließen()
     {
         LetzterArenaLeiter = null;
+        IstNachLigaRegionswechsel = false;  // zurücksetzen
         Phase = SpielPhase.Weltkarte;
         Notify();
     }
@@ -850,6 +854,17 @@ public class GameService
         var spielerMonster = Spieler.AktivesMonster;
         if (spielerMonster == null) return;
 
+        // Monster als gesehen markieren
+        Spieler.GeseheneMonster.Add(spezies.Id);
+        // Attacken des Gegners als gesehen speichern
+        if (!Spieler.GeseheneAttacken.ContainsKey(spezies.Id))
+            Spieler.GeseheneAttacken[spezies.Id] = new List<string>();
+        foreach (var atk in gegner.Attacken)
+        {
+            if (!Spieler.GeseheneAttacken[spezies.Id].Contains(atk.Id))
+                Spieler.GeseheneAttacken[spezies.Id].Add(atk.Id);
+        }
+
         AktuellerKampf = new KampfZustand
         {
             Typ = KampfTyp.Wild,
@@ -912,6 +927,9 @@ public class GameService
                       ?? AlleMonster[_rng.Next(AlleMonster.Count)];
         // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
         var gegner = MonsterInstanz.VonSpezies(spezies, effektiverTrainer.Team[0].Level, AlleAttacken);
+
+        // Monster als gesehen markieren
+        MonsterAlsGesehenMarkieren(spezies.Id, gegner);
 
         AktuellerKampf = new KampfZustand
         {
@@ -1145,76 +1163,102 @@ public class GameService
             return;
         }
 
-        bool verwendet = false;
-        switch (itemId)
+        // Fluchtseil separat behandeln
+        var itemDef = GetItemDef(itemId);
+        if (itemDef?.Name == "Fluchtseil" || itemDef?.Effekt.Typ == "Flucht")
         {
-            case "trank":
-                if (!ziel.IstOhnmächtig && ziel.AktuelleKp < ziel.MaxKp)
-                {
-                    int heilung = 20;
-                    ziel.AktuelleKp = Math.Min(ziel.MaxKp, ziel.AktuelleKp + heilung);
-                    AktuellerKampf.Log.Add($"💊 Trank verwendet! {ziel.AngezeigterName} erhält {heilung} KP.");
+            if (AktuellerKampf.Typ == KampfTyp.Wild)
+            {
+                AktuellerKampf.Log.Add("🧵 Fluchtseil verwendet! Du bist geflohen!");
+                Spieler.ItemVerwenden(itemId);
+                AktuellerKampf.SpielerGewonnen = false;
+                AktuellerKampf.Phase = KampfPhase.Beendet;
+                Notify();
+                return;
+            }
+            AktuellerKampf.Log.Add("❌ Fluchtseil funktioniert nicht in Trainer-Kämpfen!");
+            Notify();
+            return;
+        }
+        // Bälle gehören nicht hierher (eigene MonsterFangen-Methode)
+        if (itemDef?.Effekt.Typ == "Fangen")
+        {
+            AktuellerKampf.Log.Add("❌ Dieses Item kann jetzt nicht verwendet werden!");
+            Notify();
+            return;
+        }
+        // Alle anderen Items über ItemAnwenden-Logik verarbeiten
+        bool verwendet = false;
+        string ergebnis = "";
+        if (itemDef != null)
+        {
+            var effekt = itemDef.Effekt;
+            switch (effekt.Typ)
+            {
+                case "HeilKP":
+                    if (!ziel.IstOhnmächtig && ziel.AktuelleKp < ziel.MaxKp)
+                    {
+                        int heilung = Math.Min(effekt.Wert, ziel.MaxKp - ziel.AktuelleKp);
+                        ziel.AktuelleKp += heilung;
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {itemDef.Name} verwendet! {ziel.AngezeigterName} erhält {heilung} KP.");
+                        verwendet = true;
+                    }
+                    break;
+                case "HeilKPVoll":
+                    if (!ziel.IstOhnmächtig && ziel.AktuelleKp < ziel.MaxKp)
+                    {
+                        int heilung = ziel.MaxKp - ziel.AktuelleKp;
+                        ziel.AktuelleKp = ziel.MaxKp;
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {itemDef.Name} verwendet! {ziel.AngezeigterName} vollständig geheilt (+{heilung} KP).");
+                        verwendet = true;
+                    }
+                    break;
+                case "Beleben":
+                    if (ziel.IstOhnmächtig)
+                    {
+                        ziel.AktuelleKp = Math.Max(1, ziel.MaxKp * effekt.Wert / 100);
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {ziel.AngezeigterName} wurde belebt!");
+                        verwendet = true;
+                    }
+                    break;
+                case "BelebenVoll":
+                    if (ziel.IstOhnmächtig)
+                    {
+                        ziel.AktuelleKp = ziel.MaxKp;
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {ziel.AngezeigterName} wurde vollständig belebt!");
+                        verwendet = true;
+                    }
+                    break;
+                case "HeilAP":
+                    foreach (var atk in ziel.Attacken) atk.AktuelleAp = Math.Min(atk.MaxAp, atk.AktuelleAp + effekt.Wert);
+                    AktuellerKampf.Log.Add($"{itemDef.Emoji} AP von {ziel.AngezeigterName} aufgefüllt!");
                     verwendet = true;
-                }
-                break;
-            case "supertrank":
-                if (!ziel.IstOhnmächtig && ziel.AktuelleKp < ziel.MaxKp)
-                {
-                    int heilung = 50;
-                    ziel.AktuelleKp = Math.Min(ziel.MaxKp, ziel.AktuelleKp + heilung);
-                    AktuellerKampf.Log.Add($"💊 Supertrank verwendet! {ziel.AngezeigterName} erhält {heilung} KP.");
+                    break;
+                case "HeilAPVoll":
+                    foreach (var atk in ziel.Attacken) atk.AktuelleAp = atk.MaxAp;
+                    AktuellerKampf.Log.Add($"{itemDef.Emoji} Alle AP von {ziel.AngezeigterName} vollständig aufgefüllt!");
                     verwendet = true;
-                }
-                break;
-            case "hypertrank":
-                if (!ziel.IstOhnmächtig && ziel.AktuelleKp < ziel.MaxKp)
-                {
-                    int heilung = 200;
-                    ziel.AktuelleKp = Math.Min(ziel.MaxKp, ziel.AktuelleKp + heilung);
-                    AktuellerKampf.Log.Add($"💊 Hypertrank verwendet! {ziel.AngezeigterName} erhält {heilung} KP.");
+                    break;
+                case "HeilStatus":
+                    if (ziel.Status != null && ziel.Status != "none")
+                    {
+                        string altStatus = ziel.Status;
+                        ziel.Status = "none";
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {ziel.AngezeigterName} ist nicht mehr {altStatus}!");
+                        verwendet = true;
+                    }
+                    break;
+                case "HeilAlles":
+                    ziel.Status = "none";
+                    ziel.AktuelleKp = ziel.MaxKp;
+                    foreach (var atk in ziel.Attacken) atk.AktuelleAp = atk.MaxAp;
+                    AktuellerKampf.Log.Add($"{itemDef.Emoji} {ziel.AngezeigterName} vollständig geheilt!");
                     verwendet = true;
-                }
-                break;
-            case "antidot":
-                if (ziel.Status == "vergiftet") { ziel.Status = "none"; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} ist nicht mehr vergiftet!"); verwendet = true; }
-                break;
-            case "paralysheiler":
-                if (ziel.Status == "gelähmt") { ziel.Status = "none"; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} ist nicht mehr gelähmt!"); verwendet = true; }
-                break;
-            case "brandheiler":
-                if (ziel.Status == "verbrannt") { ziel.Status = "none"; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} ist nicht mehr verbrannt!"); verwendet = true; }
-                break;
-            case "weckpille":
-                if (ziel.Status == "eingeschlafen") { ziel.Status = "none"; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} ist aufgewacht!"); verwendet = true; }
-                break;
-            case "auftaupille":
-                if (ziel.Status == "eingefroren") { ziel.Status = "none"; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} ist aufgetaut!"); verwendet = true; }
-                break;
-            case "vollheiler":
-                if (!ziel.IstOhnmächtig) { ziel.Status = "none"; ziel.AktuelleKp = ziel.MaxKp; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} vollständig geheilt!"); verwendet = true; }
-                break;
-            case "belebung":
-                if (ziel.IstOhnmächtig) { ziel.AktuelleKp = ziel.MaxKp / 2; AktuellerKampf.Log.Add($"✅ {ziel.AngezeigterName} wurde belebt!"); verwendet = true; }
-                break;
-            case "ap-trank":
-                foreach (var atk in ziel.Attacken) atk.AktuelleAp = Math.Min(atk.MaxAp, atk.AktuelleAp + 10);
-                AktuellerKampf.Log.Add($"✅ AP von {ziel.AngezeigterName} aufgefüllt!"); verwendet = true;
-                break;
-            case "fluchtseil":
-                if (AktuellerKampf.Typ == KampfTyp.Wild)
-                {
-                    AktuellerKampf.Log.Add("🧵 Fluchtseil verwendet! Du bist geflohen!");
-                    Spieler.ItemVerwenden(itemId);
-                    AktuellerKampf.SpielerGewonnen = false;
-                    AktuellerKampf.Phase = KampfPhase.Beendet;
-                    Notify();
-                    return;
-                }
-                AktuellerKampf.Log.Add("❌ Fluchtseil funktioniert nicht in Trainer-Kämpfen!");
-                break;
-            case "sprudelwasser":
-                AktuellerKampf.Log.Add("❌ Sprudelwasser kann hier nicht verwendet werden!");
-                break;
+                    break;
+                default:
+                    AktuellerKampf.Log.Add($"❌ {itemDef.Name} kann hier nicht verwendet werden!");
+                    break;
+            }
         }
 
         if (verwendet)
@@ -1256,15 +1300,15 @@ public class GameService
         Spieler.ItemVerwenden(ballId);
         AktuellerKampf.Phase = KampfPhase.Fangen;
         var gegner = AktuellerKampf.GegnerMonster;
-        string ballEmoji = ballId switch { "superball" => "🔵", "hyperball" => "🟡", "meisterball" => "🟣", _ => "⚪" };
-        string ballName  = ballId switch { "superball" => "Superball", "hyperball" => "Hyperball", "meisterball" => "Meisterball", _ => "Monsterball" };
+        string ballEmoji = ballId switch { "ITEM-012" => "🔵", "ITEM-013" => "🔴", "ITEM-014" => "🟣", _ => "⚪" };
+        string ballName  = ballId switch { "ITEM-012" => "Superball", "ITEM-013" => "Hyperball", "ITEM-014" => "Meisterball", _ => "Pokéball" };
         AktuellerKampf.Log.Add($"{ballEmoji} Du wirfst einen {ballName} nach {gegner.Name}...");
         Notify();
         await Task.Delay(1200);
         // ─ Widerstand berechnen ─
         int widerstand = FangWiderstand(gegner.Fangrate);
         // ─ Ball-Kraft ─
-        int ballKraft = ballId switch { "superball" => 2, "hyperball" => 4, "meisterball" => 99, _ => 1 };
+        int ballKraft = ballId switch { "ITEM-012" => 2, "ITEM-013" => 4, "ITEM-014" => 99, _ => 1 };
         // ─ HP-Schwäche-Bonus ─
         float hpProzent = gegner.MaxKp > 0 ? (float)gegner.AktuelleKp / gegner.MaxKp : 1f;
         int hpBonus = hpProzent < 0.10f ? 3 : hpProzent < 0.25f ? 2 : hpProzent < 0.50f ? 1 : 0;
@@ -1411,6 +1455,7 @@ public class GameService
                                      ?? AlleMonster[_rng.Next(AlleMonster.Count)];
                 // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
                 var nächsterGegner = MonsterInstanz.VonSpezies(nächsteSpezies, nächsterEintrag.Level, AlleAttacken);
+                MonsterAlsGesehenMarkieren(nächsteSpezies.Id, nächsterGegner);
                 AktuellerKampf.GegnerMonster = nächsterGegner;
                 AktuellerKampf.Log.Add($"🔄 {AktuellerKampf.GegnerName} schickt {nächsterGegner.Name} (Lv.{nächsterGegner.Level})!");
                 AktuellerKampf.Phase = KampfPhase.SpielerZug;
@@ -1592,6 +1637,18 @@ public class GameService
         AktuellerKampf.EntwickeltSichZuName = null;
         AktuellerKampf.Phase = KampfPhase.Beendet;
         Notify();
+    }
+
+    private void MonsterAlsGesehenMarkieren(string speziesId, MonsterInstanz instanz)
+    {
+        Spieler.GeseheneMonster.Add(speziesId);
+        if (!Spieler.GeseheneAttacken.ContainsKey(speziesId))
+            Spieler.GeseheneAttacken[speziesId] = new List<string>();
+        foreach (var atk in instanz.Attacken)
+        {
+            if (!Spieler.GeseheneAttacken[speziesId].Contains(atk.Id))
+                Spieler.GeseheneAttacken[speziesId].Add(atk.Id);
+        }
     }
 
     private void PrüfeLevelUp(MonsterInstanz mon)

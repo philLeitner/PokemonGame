@@ -434,8 +434,10 @@ public class KartenGenerator
             foreach (var ort in ergebnis.Where(o => o.Id.StartsWith(regId + "-GEN-")))
             {
                 if (!meta.OrtDistanzen.TryGetValue(ort.Id, out int dist2)) continue;
-                int minLvl = Math.Max(3, 3 + (int)(dist2 * 1.8));
-                int maxLvl = minLvl + 3;
+                // Startgebiet: Lv.2-5, dann +1.8 pro Schritt
+                int baseLvl = Math.Max(2, 2 + (int)(dist2 * 1.8));
+                int minLvl = baseLvl;
+                int maxLvl = baseLvl + 3;
                 bool istArena = ort.Arena != null;
                 if (istArena) { minLvl += 3; maxLvl += 5; }
 
@@ -443,7 +445,7 @@ public class KartenGenerator
                 { w.MinLevel = minLvl; w.MaxLevel = maxLvl; }
                 foreach (var t in ort.Trainer)
                     foreach (var m in t.Team)
-                        m.Level = minLvl + 1;  // immer auf Ebenen-Level setzen
+                        m.Level = baseLvl + 1;  // gleiche Formel wie wilde Pokémon
                 if (ort.Arena?.Team != null)
                     foreach (var m in ort.Arena.Team)
                         m.Level = maxLvl + 2;  // Arena-Leiter immer auf Arena-Level
@@ -937,13 +939,23 @@ public class KartenGenerator
     private static List<WildBegegnung> HoleWildMonsterFürLevel(
         List<MonsterPoolEintrag> pool, int dist, Random rng, int min, int max)
     {
-        int targetLevel = 3 + (int)(dist * 1.8);
+        int targetLevel = 2 + (int)(dist * 1.8);
         var passend = pool
             .Where(e => e.MinLevel <= targetLevel + 5 && e.MaxLevel >= targetLevel - 5)
             .ToList();
         if (passend.Count == 0) passend = pool.ToList();
         int anzahl = rng.Next(min, max + 1);
-        return passend.OrderBy(_ => rng.Next()).Take(anzahl)
+        // Gewichtete Auswahl: Monster mit höherer Chance werden öfter ausgewählt
+        // Chance 255 = häufig (Rattfratz), Chance 3 = selten (Garados)
+        var gewichtet = new List<MonsterPoolEintrag>();
+        foreach (var e in passend)
+        {
+            int gewicht = Math.Max(1, e.Chance / 30); // 255→3 Einträge, 3→1 Eintrag
+            for (int i = 0; i < gewicht; i++) gewichtet.Add(e);
+        }
+        var ausgewählt = gewichtet.OrderBy(_ => rng.Next())
+            .DistinctBy(e => e.Id).Take(anzahl).ToList();
+        return ausgewählt
             .Select(e => new WildBegegnung
             {
                 MonsterId = e.Id,

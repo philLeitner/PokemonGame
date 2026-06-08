@@ -175,7 +175,9 @@
 </div>
 
 @code {
-    private int schritt = 1;
+    // Schritt 1 = Level-Option (nur nach Liga), 2 = Starter, 3 = Einlagern, 4 = Fertig
+    // Nach normaler Arena: direkt bei Schritt 2 starten
+    private int schritt = 2; // Standard: kein Level-Option-Dialog
     private string? gewählteLevelOption = null;
     private string? gewählterStarterId = null;
     private HashSet<string> einlagernIds = new();
@@ -183,6 +185,9 @@
     protected override void OnInitialized()
     {
         Game.OnChange += StateHasChanged;
+        // Level-Option nur nach Liga-Abschluss zeigen
+        // (LigaAbschlussNächsteRegion setzt IstNachLiga = true)
+        schritt = Game.IstNachLigaRegionswechsel ? 1 : 2;
     }
     public void Dispose() => Game.OnChange -= StateHasChanged;
 
@@ -245,7 +250,7 @@
 
     private void Abschliessen()
     {
-        Game.NachArenaLeiterAbschliessen();
+        Game.NachArenaLeiterAbschließen();
     }
 
     private string GetTypEmoji(string typ) =>

@@ -296,37 +296,99 @@ body {
 .btn-markt:hover { background: linear-gradient(135deg, #9333ea, #a855f7); transform: translateY(-1px); }
 
 /* Markt Modal */
+/* ═══ Markt & Rucksack: Gemeinsames Design-System ════════════════════════ */
 .markt-box {
-  background: #1a1a2e; border: 1px solid var(--border); border-radius: var(--radius-gross);
-  padding: 1.5rem; width: 90%; max-width: 560px; max-height: 80vh; display: flex; flex-direction: column; gap: 1rem;
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 0;
+  width: 90%; max-width: 580px; max-height: 85vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);
+  overflow: hidden;
 }
-.markt-header { display: flex; align-items: center; gap: 1rem; }
-.markt-header h3 { flex: 1; font-size: 1.2rem; font-weight: 700; }
-.markt-geld { color: #f5a623; font-weight: 700; font-size: 1rem; }
-.btn-schliessen { background: rgba(255,255,255,0.1); border: none; color: white; width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
-.btn-schliessen:hover { background: rgba(255,255,255,0.2); }
-.markt-kategorien { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.markt-kat-btn { padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-mittel); cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
-.markt-kat-btn.aktiv { background: var(--akzent); color: white; border-color: var(--akzent); }
-.markt-kat-btn:hover:not(.aktiv) { background: rgba(255,255,255,0.08); }
-.markt-items { overflow-y: auto; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.markt-box-neu { max-width: 600px; width: 96vw; }
+.markt-header {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.markt-header h3 { flex: 1; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
+.markt-geld {
+  display: flex; align-items: center; gap: 0.35rem;
+  color: #f5a623; font-weight: 700; font-size: 0.95rem;
+  background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.25);
+  padding: 0.25rem 0.7rem; border-radius: 20px;
+}
+.btn-schliessen {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  color: #aaa; width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer;
+  font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.btn-schliessen:hover { background: rgba(255,80,80,0.25); color: #ff6b6b; border-color: rgba(255,80,80,0.4); }
+/* Kaufen/Verkaufen Tabs */
+.markt-tabs {
+  display: flex; gap: 0; padding: 0.75rem 1.2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.markt-tab {
+  padding: 0.45rem 1.2rem; background: transparent; border: none;
+  color: #888; cursor: pointer; font-size: 0.88rem; font-weight: 600;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: all 0.15s;
+}
+.markt-tab:hover { color: #ccc; }
+.markt-tab.aktiv { color: #fff; border-bottom-color: #7e22ce; }
+/* Kategorie-Filter */
+.markt-kategorien {
+  display: flex; gap: 0.4rem; flex-wrap: wrap;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.markt-kat-btn {
+  padding: 0.25rem 0.75rem; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12); background: transparent;
+  color: #888; cursor: pointer; font-size: 0.78rem; font-weight: 500;
+  transition: all 0.15s;
+}
+.markt-kat-btn.aktiv { background: rgba(126,34,206,0.35); color: #d8b4fe; border-color: rgba(126,34,206,0.5); }
+.markt-kat-btn:hover:not(.aktiv) { background: rgba(255,255,255,0.08); color: #ddd; }
+/* Item-Liste */
+.markt-items { overflow-y: auto; display: flex; flex-direction: column; gap: 0; flex: 1; padding: 0.5rem 0; }
 .markt-item {
   display: flex; align-items: center; gap: 1rem;
-  padding: 0.75rem 1rem; background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border); border-radius: var(--radius); transition: all 0.2s;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s;
 }
-.markt-item:hover:not(.zu-teuer) { background: rgba(255,255,255,0.08); }
-.markt-item.zu-teuer { opacity: 0.45; }
-.item-emoji { font-size: 1.6rem; }
-.item-info { flex: 1; }
-.item-name { display: block; font-weight: 700; font-size: 0.95rem; }
-.item-beschreibung { display: block; font-size: 0.75rem; color: var(--text-mittel); margin-top: 0.15rem; }
-.item-kauf { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; }
-.item-preis { color: #f5a623; font-weight: 700; font-size: 0.9rem; }
-.btn-kaufen { padding: 0.35rem 0.9rem; background: #7e22ce; color: white; border: none; border-radius: var(--radius); cursor: pointer; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; }
-.btn-kaufen:hover:not(:disabled) { background: #9333ea; }
-.btn-kaufen:disabled { background: #374151; cursor: not-allowed; }
-.kauf-meldung { padding: 0.75rem 1rem; border-radius: var(--radius); background: rgba(78,205,196,0.15); border: 1px solid #4ecdc4; color: #4ecdc4; font-size: 0.9rem; font-weight: 600; text-align: center; }
+.markt-item:last-child { border-bottom: none; }
+.markt-item:hover:not(.zu-teuer) { background: rgba(255,255,255,0.05); }
+.markt-item.zu-teuer { opacity: 0.4; }
+.item-emoji { font-size: 1.8rem; flex-shrink: 0; width: 2.2rem; text-align: center; }
+.item-info { flex: 1; min-width: 0; }
+.item-name { display: block; font-weight: 700; font-size: 0.92rem; color: #e2e8f0; }
+.item-beschreibung { display: block; font-size: 0.73rem; color: #718096; margin-top: 0.15rem; line-height: 1.4; }
+.item-preis { display: block; color: #f5a623; font-weight: 700; font-size: 0.82rem; margin-top: 0.2rem; }
+.item-kauf { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; flex-shrink: 0; }
+.mengen-input {
+  width: 56px; padding: 0.3rem 0.5rem; text-align: center;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; color: #fff; font-size: 0.85rem;
+}
+.btn-kaufen {
+  padding: 0.4rem 1rem; background: linear-gradient(135deg, #7e22ce, #9333ea);
+  color: white; border: none; border-radius: 8px; cursor: pointer;
+  font-size: 0.8rem; font-weight: 700; transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-kaufen:hover:not(:disabled) { background: linear-gradient(135deg, #9333ea, #a855f7); transform: translateY(-1px); }
+.btn-kaufen:active:not(:disabled) { transform: scale(0.97); }
+.btn-kaufen:disabled { background: rgba(55,65,81,0.6); cursor: not-allowed; color: #666; }
+.btn-verkaufen { background: linear-gradient(135deg, #059669, #10b981) !important; }
+.btn-verkaufen:hover:not(:disabled) { background: linear-gradient(135deg, #10b981, #34d399) !important; }
+.kauf-meldung { padding: 0.75rem 1.2rem; margin: 0 1.2rem 0.8rem; border-radius: 10px; background: rgba(78,205,196,0.12); border: 1px solid rgba(78,205,196,0.35); color: #4ecdc4; font-size: 0.85rem; font-weight: 600; text-align: center; }
 .aktueller-ort-label { color: #4ecdc4; font-weight: 600; align-self: center; }
 .wild-liste { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .wild-liste h4 { width: 100%; font-size: 0.85rem; color: var(--text-mittel); margin-bottom: 0.25rem; }
@@ -1734,36 +1796,39 @@ body {
 
 /* Rucksack Overlay Box */
 .rucksack-box {
-    background: #1e293b;
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 0;
     max-width: 380px;
     width: 90%;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);
+    overflow: hidden;
+    display: flex; flex-direction: column;
 }
 .rucksack-items {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
-    max-height: 400px;
+    gap: 0;
+    flex: 1;
     overflow-y: auto;
+    padding: 0.4rem 0;
 }
 .rucksack-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    padding: 0.6rem 0.8rem;
+    gap: 0.85rem;
+    padding: 0.75rem 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
 }
-.rucksack-item .item-emoji { font-size: 1.5rem; }
-.rucksack-item .item-info { flex: 1; }
-.rucksack-item .item-name { font-weight: 600; color: #e2e8f0; font-size: 0.9rem; display: block; }
+.rucksack-item:last-child { border-bottom: none; }
+.rucksack-item:hover { background: rgba(255,255,255,0.04); }
+.rucksack-item .item-emoji { font-size: 1.7rem; flex-shrink: 0; width: 2rem; text-align: center; }
+.rucksack-item .item-info { flex: 1; min-width: 0; }
+.rucksack-item .item-name { font-weight: 700; color: #e2e8f0; font-size: 0.9rem; display: block; }
 .rucksack-item .item-menge { color: #94a3b8; font-size: 0.8rem; }
-.rucksack-leer { color: #64748b; text-align: center; padding: 1rem; }
+.rucksack-leer { color: #64748b; text-align: center; padding: 2rem 1rem; font-size: 0.88rem; }
 
 /* ═══ MapEditor: Kompass-Verbindungen ════════════════════════════════════ */
 .editor-kompass {
@@ -3062,6 +3127,8 @@ input:checked + .toggle-slider-klein::before {
 }
 .pokedex-karte.unbekannt { opacity: 0.5; }
 .pokedex-karte.unbekannt:hover { opacity: 0.7; }
+.pokedex-karte.gesehen { opacity: 0.8; }
+.pokedex-karte.gesehen:hover { opacity: 1; }
 
 .pokedex-nr {
   font-size: 0.65rem;
@@ -3074,6 +3141,35 @@ input:checked + .toggle-slider-klein::before {
 .pokedex-bild-container {
   width: 68px; height: 68px;
   display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+/* Gesehen-Bild: ausgegraut/entsättigt */
+.gesehen-bild {
+  filter: grayscale(60%) brightness(0.8);
+}
+/* Status-Badge auf der Karte (Team/Box/Gesehen) */
+.karte-status-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 2px 3px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.karte-status-badge.team { background: rgba(99,179,237,0.85); }
+.karte-status-badge.box { background: rgba(160,174,192,0.6); }
+.karte-status-badge.gesehen-badge { background: rgba(104,211,145,0.6); }
+/* Detail-Panel gesehen Badge */
+.gesehen-badge-detail {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(104,211,145,0.2);
+  color: #68d391;
+  border: 1px solid rgba(104,211,145,0.3);
 }
 .pokedex-bild {
   width: 68px; height: 68px;
@@ -4132,7 +4228,7 @@ input:checked + .toggle-slider-klein::before {
 
 .regionen-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -5113,31 +5209,38 @@ input:checked + .toggle-slider-klein::before {
 }
 
 /* ── Rucksack Registerkarten ─────────────────────────── */
-.rucksack-box-neu { max-width: 600px; width: 96vw; }
+.rucksack-box-neu { max-width: 600px; width: 96vw; max-height: 85vh; }
 .rucksack-tabs {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  padding: 10px 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 4px;
+  display: flex; flex-wrap: wrap; gap: 5px;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .rucksack-tab {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
-  color: #aaa; border-radius: 20px; padding: 4px 12px; font-size: 0.78rem;
+  background: transparent; border: 1px solid rgba(255,255,255,0.1);
+  color: #888; border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.78rem; font-weight: 500;
   cursor: pointer; transition: all 0.15s;
 }
-.rucksack-tab:hover { background: rgba(255,255,255,0.13); color: #fff; }
-.rucksack-tab.aktiv { background: #f59e0b; border-color: #f59e0b; color: #000; font-weight: 700; }
-.rucksack-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.07); }
-.rucksack-item:hover { background: rgba(255,255,255,0.05); }
-.item-beschreibung { font-size: 0.72rem; color: #aaa; display: block; margin-top: 2px; }
-.item-menge-badge { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1px 7px; font-size: 0.75rem; margin-left: 6px; }
+.rucksack-tab:hover { background: rgba(255,255,255,0.08); color: #ddd; }
+.rucksack-tab.aktiv { background: rgba(245,158,11,0.25); border-color: rgba(245,158,11,0.5); color: #fbbf24; font-weight: 700; }
+/* Override: rucksack-item in rucksack-box-neu nutzt die neue Zeilen-Darstellung */
+.rucksack-box-neu .rucksack-item { display: flex; align-items: center; gap: 10px; padding: 0.75rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.rucksack-box-neu .rucksack-item:hover { background: rgba(255,255,255,0.04); }
+.item-beschreibung { font-size: 0.72rem; color: #718096; display: block; margin-top: 2px; line-height: 1.4; }
+.item-menge-badge {
+  background: rgba(255,255,255,0.12); border-radius: 10px;
+  padding: 1px 7px; font-size: 0.72rem; margin-left: 6px;
+  color: #94a3b8; font-weight: 600;
+}
 .rucksack-item-aktionen { margin-left: auto; flex-shrink: 0; }
 .btn-item-verwenden {
-  background: #22c55e; color: #000; border: none; border-radius: 8px;
-  padding: 5px 12px; font-size: 0.78rem; cursor: pointer; font-weight: 600; transition: all 0.15s;
+  background: linear-gradient(135deg, #059669, #10b981); color: #fff; border: none; border-radius: 8px;
+  padding: 0.35rem 0.85rem; font-size: 0.78rem; cursor: pointer; font-weight: 700; transition: all 0.15s;
 }
-.btn-item-verwenden:hover { background: #16a34a; color: #fff; }
-.btn-ausrüsten { background: #6366f1 !important; color: #fff !important; }
-.btn-ausrüsten:hover { background: #4f46e5 !important; }
+.btn-item-verwenden:hover { background: linear-gradient(135deg, #10b981, #34d399); transform: translateY(-1px); }
+.btn-item-verwenden:active { transform: scale(0.97); }
+.btn-ausrüsten { background: linear-gradient(135deg, #4f46e5, #6366f1) !important; color: #fff !important; }
+.btn-ausrüsten:hover { background: linear-gradient(135deg, #6366f1, #818cf8) !important; }
 
 /* ── Ausrüst-Dialog ──────────────────────────────────── */
 .ausrüst-dialog {

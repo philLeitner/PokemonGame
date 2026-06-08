@@ -60,19 +60,30 @@
                 @foreach (var mon in gefiltert)
                 {
                     bool istGefangen = IstGefangen(mon.Id);
+                    bool istGesehen = IstGesehen(mon.Id);
                     bool istAusgewaehlt = ausgewähltId == mon.Id;
                     int nr = GetNummer(mon.Id);
-                    <div class="pokedex-karte @(istAusgewaehlt ? "ausgewaehlt" : "") @(!istGefangen ? "unbekannt" : "")"
+                    string kartenKlasse = istGefangen ? "gefangen" : istGesehen ? "gesehen" : "unbekannt";
+                    <div class="pokedex-karte @(istAusgewaehlt ? "ausgewaehlt" : "") @kartenKlasse"
                          @onclick="() => AuswaehlenKlick(mon)">
                         <span class="pokedex-nr">#@nr.ToString("D3")</span>
                         @if (istGefangen)
                         {
+                            <!-- Gefangen: alles sichtbar + Team/Box Badge -->
                             <div class="pokedex-bild-container">
                                 <img class="pokedex-bild" src="@mon.Bild" alt="@mon.Name"
                                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                                 <div class="pokedex-bild-fallback" style="display:none">
                                     @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
                                 </div>
+                                @if (IstImTeam(mon.Id))
+                                {
+                                    <span class="karte-status-badge team">⚔️</span>
+                                }
+                                else
+                                {
+                                    <span class="karte-status-badge box">📦</span>
+                                }
                             </div>
                             <span class="pokedex-name">@mon.Name</span>
                             <div class="pokedex-typen-mini">
@@ -85,8 +96,31 @@
                                 }
                             </div>
                         }
+                        else if (istGesehen)
+                        {
+                            <!-- Gesehen: Bild sichtbar, Name sichtbar, Typen sichtbar, aber ausgegraut -->
+                            <div class="pokedex-bild-container">
+                                <img class="pokedex-bild gesehen-bild" src="@mon.Bild" alt="@mon.Name"
+                                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                                <div class="pokedex-bild-fallback" style="display:none">
+                                    @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
+                                </div>
+                                <span class="karte-status-badge gesehen-badge">👁️</span>
+                            </div>
+                            <span class="pokedex-name">@mon.Name</span>
+                            <div class="pokedex-typen-mini">
+                                @foreach (var typ in mon.Typen)
+                                {
+                                    <span class="typ-badge-mini"
+                                          style="background:@TypeChart.TypFarben.GetValueOrDefault(typ,"#888"); opacity:0.6">
+                                        @typ
+                                    </span>
+                                }
+                            </div>
+                        }
                         else
                         {
+                            <!-- Nicht gesehen: alles versteckt -->
                             <div class="pokedex-unbekannt-bild">❓</div>
                             <span class="pokedex-name unbekannt-name">???</span>
                         }
@@ -107,13 +141,14 @@
             else
             {
                 bool istGefangen2 = IstGefangen(ausgewähltMon.Id);
+                bool istGesehen2 = IstGesehen(ausgewähltMon.Id);
                 int nr2 = GetNummer(ausgewähltMon.Id);
 
                 <!-- Detail-Header -->
                 <div class="detail-header">
-                    @if (istGefangen2)
+                    @if (istGefangen2 || istGesehen2)
                     {
-                        <img class="detail-bild-gross" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name"
+                        <img class="detail-bild-gross @(istGesehen2 && !istGefangen2 ? "gesehen-bild" : "")" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name"
                              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                         <div class="detail-bild-fallback" style="display:none">
                             @TypeChart.TypEmojis.GetValueOrDefault(ausgewähltMon.Typen.FirstOrDefault() ?? "", "❓")
@@ -125,41 +160,48 @@
                     }
                     <div class="detail-info">
                         <div class="detail-nr">#@nr2.ToString("D3") · @GetRegionName(nr2)</div>
-                        <div class="detail-name">@(istGefangen2 ? ausgewähltMon.Name : "????")</div>
-                        @if (istGefangen2)
+                        <div class="detail-name">@(istGefangen2 || istGesehen2 ? ausgewähltMon.Name : "????")</div>
+                        @if (istGefangen2 || istGesehen2)
                         {
                             <div class="detail-typen">
                                 @foreach (var typ in ausgewähltMon.Typen)
                                 {
                                     <span class="typ-badge-mini"
-                                          style="background:@TypeChart.TypFarben.GetValueOrDefault(typ,"#888"); font-size:0.78rem; padding:0.15rem 0.5rem">
+                                          style="background:@TypeChart.TypFarben.GetValueOrDefault(typ,"#888"); font-size:0.78rem; padding:0.15rem 0.5rem; @(istGesehen2 && !istGefangen2 ? "opacity:0.7" : "")">
                                         @TypeChart.TypEmojis.GetValueOrDefault(typ,"") @typ
                                     </span>
                                 }
                             </div>
                             <div class="detail-badges">
-                                @if (IstImTeam(ausgewähltMon.Id))
+                                @if (istGefangen2)
                                 {
-                                    <span class="team-badge">⚔️ Im Team</span>
+                                    @if (IstImTeam(ausgewähltMon.Id))
+                                    {
+                                        <span class="team-badge">⚔️ Im Team</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="gefangen-badge">📦 Gefangen</span>
+                                    }
                                 }
                                 else
                                 {
-                                    <span class="gefangen-badge">📦 Gefangen</span>
+                                    <span class="gesehen-badge-detail">👁️ Gesehen</span>
                                 }
                             </div>
                         }
                         else
                         {
                             <div class="detail-badges">
-                                <span style="font-size:0.78rem;color:var(--text-dunkel)">❓ Noch nicht gefangen</span>
+                                <span style="font-size:0.78rem;color:var(--text-dunkel)">❓ Noch nicht entdeckt</span>
                             </div>
                         }
                     </div>
                 </div>
 
-                @if (istGefangen2)
+                @if (istGefangen2 || istGesehen2)
                 {
-                    <!-- Fundorte -->
+                    <!-- Fundorte (bei gesehen + gefangen) -->
                     var fundorte = GetFundorte(ausgewähltMon.Id);
                     if (fundorte.Any())
                     {
@@ -174,7 +216,44 @@
                         </div>
                     }
 
-                    <!-- Basiswerte -->
+                    @if (!istGefangen2)
+                    {
+                        <!-- Gesehen: nur gesehene Attacken anzeigen -->
+                        var geseheneAtkIds = Game.Spieler.GeseheneAttacken.GetValueOrDefault(ausgewähltMon.Id, new List<string>());
+                        @if (geseheneAtkIds.Any())
+                        {
+                            <div class="detail-sektion">
+                                <div class="detail-sektion-titel">⚔️ Gesehene Attacken</div>
+                                <table class="attacken-tabelle">
+                                    <thead>
+                                        <tr><th>Name</th><th>Typ</th><th>Stärke</th><th>Treffer</th><th>AP</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var atkId in geseheneAtkIds)
+                                        {
+                                            var ad2 = Game.AlleAttacken.FirstOrDefault(a => a.Id == atkId);
+                                            @if (ad2 != null)
+                                            {
+                                                string tf2 = TypeChart.TypFarben.GetValueOrDefault(ad2.Typ, "#888");
+                                                <tr>
+                                                    <td>@ad2.Name</td>
+                                                    <td><span class="attacke-typ-badge-dex" style="background:@tf2">@TypeChart.TypEmojis.GetValueOrDefault(ad2.Typ,"") @ad2.Typ</span></td>
+                                                    <td class="attacke-wert">@(ad2.Staerke > 0 ? ad2.Staerke.ToString() : "—")</td>
+                                                    <td class="attacke-wert">@(ad2.Genauigkeit.HasValue ? $"{ad2.Genauigkeit}%" : "—")</td>
+                                                    <td class="attacke-wert">@ad2.Ap</td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                                <p style="font-size:0.72rem;color:var(--text-dunkel);margin-top:0.4rem;font-style:italic">⚠️ Nur die im Kampf gesehenen Attacken. Fange es für alle Attacken!</p>
+                            </div>
+                        }
+                    }
+
+                    @if (istGefangen2)
+                    {
+                    <!-- Basiswerte (nur bei gefangen) -->
                     <div class="detail-sektion">
                         <div class="detail-sektion-titel">📊 Basiswerte</div>
                         @foreach (var stat in ausgewähltMon.Stats)
@@ -207,7 +286,7 @@
                         </div>
                     </div>
 
-                    <!-- Attacken -->
+                    <!-- Attacken (alle lernbaren) -->
                     <div class="detail-sektion">
                         <div class="detail-sektion-titel">⚔️ Lernbare Attacken</div>
                         <table class="attacken-tabelle">
@@ -245,6 +324,7 @@
                             </tbody>
                         </table>
                     </div>
+                    } <!-- Ende istGefangen2 Block -->
 
                     <!-- Entwicklung -->
                     var entwicklungData = !string.IsNullOrEmpty(ausgewähltMon.EntwickeltZu) ? Game.AlleMonster.FirstOrDefault(m => m.Id == ausgewähltMon.EntwickeltZu) : null;
@@ -339,25 +419,12 @@
                 }
                 else
                 {
-                    <!-- Nicht gefangen: Fundorte als Hinweis -->
-                    var fundorte2 = GetFundorte(ausgewähltMon.Id);
+                    <!-- Nicht gesehen: Nichts bekannt -->
                     <div class="detail-sektion">
                         <p class="noch-nicht-gefangen">
-                            Du hast dieses Monster noch nicht gefangen.<br />
-                            Erkunde die Welt um es zu entdecken!
+                            ❓ Dieses Monster wurde noch nicht entdeckt.<br />
+                            Erkunde die Welt um es zu finden!
                         </p>
-                        @if (fundorte2.Any())
-                        {
-                            <div style="margin-top:0.6rem">
-                                <div class="detail-sektion-titel">💡 Mögliche Fundorte</div>
-                                <div class="fundort-liste">
-                                    @foreach (var ort in fundorte2)
-                                    {
-                                        <span class="fundort-chip">@ort</span>
-                                    }
-                                </div>
-                            </div>
-                        }
                     </div>
                 }
             }
@@ -463,6 +530,7 @@
     }
 
     private bool IstGefangen(string monsterId) => gefangeneIds.Contains(monsterId);
+    private bool IstGesehen(string monsterId) => Game.Spieler.GeseheneMonster.Contains(monsterId);
     private bool IstImTeam(string monsterId) => Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
 
     private int GetNummer(string id)

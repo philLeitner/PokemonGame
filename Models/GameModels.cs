@@ -182,6 +182,10 @@ public class Spieler
     public List<InventarItem> Inventar { get; set; } = new();
     public int AktivesMonsterIndex { get; set; } = 0;  // Welches Monster gerade aktiv ist
     public List<string> BesproacheneNPCs { get; set; } = new(); // NPCs mit denen gesprochen wurde
+    /// <summary>Monster-IDs die der Spieler im Kampf gesehen hat (aber nicht gefangen)</summary>
+    public HashSet<string> GeseheneMonster { get; set; } = new();
+    /// <summary>Gesehene Attacken pro Monster: MonsterId -> Liste von AttackeIds</summary>
+    public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
 
     public MonsterInstanz? AktivesMonster
     {

@@ -15,7 +15,48 @@
       "spezialverteidigung": 65,
       "initiative": 45
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 3
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0077",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0075",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0079",
+        "Level": 20
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0076",
+        "Level": 39
+      },
+      {
+        "AttackeId": "MOV-0046",
+        "Level": 45
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0002",
     "entwicklungName": "Mavarar",
@@ -41,7 +82,48 @@
       "spezialverteidigung": 80,
       "initiative": 60
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 3
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0077",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0075",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0079",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0076",
+        "Level": 44
+      },
+      {
+        "AttackeId": "MOV-0046",
+        "Level": 53
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0003",
     "entwicklungName": "Tuvamerk",
@@ -67,7 +149,48 @@
       "spezialverteidigung": 100,
       "initiative": 80
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 3
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0077",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0075",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0022",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0079",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0076",
+        "Level": 44
+      },
+      {
+        "AttackeId": "MOV-0046",
+        "Level": 53
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": [
       "MOV-0851",
@@ -89,7 +212,40 @@
       "spezialverteidigung": 50,
       "initiative": 65
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0082",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0053",
+        "Level": 46
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0005",
     "entwicklungName": "Glituix",
@@ -114,7 +270,40 @@
       "spezialverteidigung": 65,
       "initiative": 80
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0082",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0053",
+        "Level": 46
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 58
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0006",
     "entwicklungName": "Kalelork",
@@ -140,7 +329,44 @@
       "spezialverteidigung": 85,
       "initiative": 100
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0082",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0053",
+        "Level": 46
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 58
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 64
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": [
       "MOV-0851",
@@ -163,7 +389,52 @@
       "spezialverteidigung": 64,
       "initiative": 43
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 4
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 10
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 46
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0008",
     "entwicklungName": "Schalolurk",
@@ -189,7 +460,52 @@
       "spezialverteidigung": 80,
       "initiative": 58
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 4
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 10
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 44
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 52
+      }
+    ],
     "fangrate": 45,
     "entwickeltZu": "PKM-0009",
     "entwicklungName": "Faluruck",
@@ -215,7 +531,56 @@
       "spezialverteidigung": 105,
       "initiative": 78
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 4
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 10
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 44
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 52
+      },
+      {
+        "AttackeId": "MOV-0056",
+        "Level": 59
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": [
       "MOV-0851",
@@ -238,7 +603,16 @@
       "spezialverteidigung": 20,
       "initiative": 45
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0011",
     "entwicklungName": "Luxamesh",
@@ -260,7 +634,12 @@
       "spezialverteidigung": 25,
       "initiative": 30
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0012",
     "entwicklungName": "Ophalald",
@@ -283,7 +662,28 @@
       "spezialverteidigung": 80,
       "initiative": 70
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0079",
+        "Level": 12
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0046",
+        "Level": 22
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": []
   },
@@ -303,7 +703,16 @@
       "spezialverteidigung": 20,
       "initiative": 50
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0014",
     "entwicklungName": "Vornimunz",
@@ -326,7 +735,12 @@
       "spezialverteidigung": 25,
       "initiative": 35
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0015",
     "entwicklungName": "Gurixelf",
@@ -349,7 +763,44 @@
       "spezialverteidigung": 80,
       "initiative": 75
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 12
+      },
+      {
+        "AttackeId": "MOV-0042",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 20
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 25
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 30
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 40
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": []
   },
@@ -369,7 +820,36 @@
       "spezialverteidigung": 35,
       "initiative": 56
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 5
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0017",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 36
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0017",
     "entwicklungName": "Morgumirk",
@@ -392,7 +872,36 @@
       "spezialverteidigung": 50,
       "initiative": 71
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 5
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0017",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 40
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0018",
     "entwicklungName": "Fluruxack",
@@ -415,7 +924,40 @@
       "spezialverteidigung": 70,
       "initiative": 101
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 5
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0017",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0097",
+        "Level": 44
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": []
   },
@@ -434,7 +976,36 @@
       "spezialverteidigung": 35,
       "initiative": 72
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0020",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 34
+      },
+      {
+        "AttackeId": "MOV-0038",
+        "Level": 42
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0020",
     "entwicklungName": "Guronum",
@@ -456,7 +1027,36 @@
       "spezialverteidigung": 70,
       "initiative": 97
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0020",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 27
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 41
+      },
+      {
+        "AttackeId": "MOV-0038",
+        "Level": 54
+      }
+    ],
     "fangrate": 127,
     "tm_attacken": []
   },
@@ -476,7 +1076,40 @@
       "spezialverteidigung": 31,
       "initiative": 70
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 43
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0022",
     "entwicklungName": "Liruris",
@@ -499,7 +1132,44 @@
       "spezialverteidigung": 61,
       "initiative": 100
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0016",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0015",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0019",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 43
+      },
+      {
+        "AttackeId": "MOV-0097",
+        "Level": 50
+      }
+    ],
     "fangrate": 90,
     "tm_attacken": []
   },
@@ -518,7 +1188,32 @@
       "spezialverteidigung": 54,
       "initiative": 55
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0023",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 10
+      },
+      {
+        "AttackeId": "MOV-0035",
+        "Level": 17
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 31
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0024",
     "entwicklungName": "Esherax",
@@ -543,7 +1238,36 @@
       "spezialverteidigung": 79,
       "initiative": 80
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0023",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 10
+      },
+      {
+        "AttackeId": "MOV-0035",
+        "Level": 17
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 27
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 47
+      }
+    ],
     "fangrate": 90,
     "tm_attacken": [
       "MOV-0851",
@@ -565,7 +1289,40 @@
       "spezialverteidigung": 50,
       "initiative": 90
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0084",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 26
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 33
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 41
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 50
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0026",
     "entwicklungName": "Valunork",
@@ -591,7 +1348,36 @@
       "spezialverteidigung": 80,
       "initiative": 110
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0084",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 26
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 33
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 50
+      }
+    ],
     "fangrate": 75,
     "tm_attacken": [
       "MOV-0851",
@@ -615,7 +1401,36 @@
       "spezialverteidigung": 30,
       "initiative": 40
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 11
+      },
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 17
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 38
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0028",
     "entwicklungName": "Borerinz",
@@ -639,7 +1454,36 @@
       "spezialverteidigung": 55,
       "initiative": 65
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 11
+      },
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 17
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 27
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 46
+      }
+    ],
     "fangrate": 90,
     "tm_attacken": [
       "MOV-0851"
@@ -660,7 +1504,36 @@
       "spezialverteidigung": 40,
       "initiative": 41
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 41
+      }
+    ],
     "fangrate": 235,
     "entwickeltZu": "PKM-0030",
     "entwicklungName": "Gurexock",
@@ -682,7 +1555,36 @@
       "spezialverteidigung": 55,
       "initiative": 56
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 50
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0031",
     "entwicklungName": "Quroonz",
@@ -704,7 +1606,36 @@
       "spezialverteidigung": 85,
       "initiative": 76
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 50
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 58
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": []
   },
@@ -723,7 +1654,36 @@
       "spezialverteidigung": 40,
       "initiative": 50
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0023",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 41
+      }
+    ],
     "fangrate": 235,
     "entwickeltZu": "PKM-0033",
     "entwicklungName": "Torix",
@@ -745,7 +1705,36 @@
       "spezialverteidigung": 55,
       "initiative": 65
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0023",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 50
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0034",
     "entwicklungName": "Uldoxir",
@@ -767,7 +1756,36 @@
       "spezialverteidigung": 75,
       "initiative": 85
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0040",
+        "Level": 8
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0041",
+        "Level": 23
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 50
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 58
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": []
   },
@@ -786,7 +1804,44 @@
       "spezialverteidigung": 65,
       "initiative": 35
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 18
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 39
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 48
+      }
+    ],
     "fangrate": 150,
     "entwickeltZu": "PKM-0036",
     "entwicklungName": "Lirenen",
@@ -811,7 +1866,44 @@
       "spezialverteidigung": 90,
       "initiative": 60
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 18
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 39
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 50
+      }
+    ],
     "fangrate": 25,
     "tm_attacken": [
       "MOV-0851",
@@ -834,7 +1926,40 @@
       "spezialverteidigung": 65,
       "initiative": 65
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 42
+      },
+      {
+        "AttackeId": "MOV-0053",
+        "Level": 55
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0038",
     "entwicklungName": "Lorolack",
@@ -857,7 +1982,40 @@
       "spezialverteidigung": 100,
       "initiative": 100
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 28
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 42
+      },
+      {
+        "AttackeId": "MOV-0053",
+        "Level": 55
+      }
+    ],
     "fangrate": 75,
     "tm_attacken": [
       "MOV-0851"
@@ -879,7 +2037,40 @@
       "spezialverteidigung": 25,
       "initiative": 20
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 49
+      }
+    ],
     "fangrate": 170,
     "entwickeltZu": "PKM-0040",
     "entwicklungName": "Wexirelf",
@@ -908,7 +2099,40 @@
       "spezialverteidigung": 50,
       "initiative": 45
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 14
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 49
+      }
+    ],
     "fangrate": 50,
     "tm_attacken": [
       "MOV-0851",
@@ -935,7 +2159,12 @@
       "spezialverteidigung": 40,
       "initiative": 55
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 1
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0042",
     "entwicklungName": "Joranir",
@@ -958,7 +2187,40 @@
       "spezialverteidigung": 75,
       "initiative": 90
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0093",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 20
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 27
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0093",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 42
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 50
+      }
+    ],
     "fangrate": 90,
     "entwickeltZu": "PKM-0169",
     "entwicklungName": "Uldurath",
@@ -980,7 +2242,40 @@
       "spezialverteidigung": 65,
       "initiative": 30
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0093",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 20
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 27
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0093",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 42
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 50
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0044",
     "entwicklungName": "Mavemurk",
@@ -1006,7 +2301,40 @@
       "spezialverteidigung": 75,
       "initiative": 40
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0106",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0002",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0070",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 46
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0045",
     "entwicklungName": "Bororeld",
@@ -1031,7 +2359,36 @@
       "spezialverteidigung": 90,
       "initiative": 50
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0002",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0070",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 46
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": [
       "MOV-0851",
@@ -1054,7 +2411,40 @@
       "spezialverteidigung": 55,
       "initiative": 25
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0001",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0002",
+        "Level": 7
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 13
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 22
+      },
+      {
+        "AttackeId": "MOV-0070",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 38
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 46
+      },
+      {
+        "AttackeId": "MOV-0021",
+        "Level": 52
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0047",
     "entwicklungName": "Joroxomp",
@@ -1716,7 +3106,44 @@
       "spezialverteidigung": 30,
       "initiative": 20
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 11
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 21
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 26
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 41
+      }
+    ],
     "fangrate": 255,
     "entwickeltZu": "PKM-0075",
     "entwicklungName": "Sevureld",
@@ -1741,7 +3168,44 @@
       "spezialverteidigung": 45,
       "initiative": 35
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 11
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 21
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 26
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 41
+      }
+    ],
     "fangrate": 120,
     "entwickeltZu": "PKM-0076",
     "entwicklungName": "Eshomalf",
@@ -1766,7 +3230,48 @@
       "spezialverteidigung": 65,
       "initiative": 45
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0028",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 11
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 21
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 26
+      },
+      {
+        "AttackeId": "MOV-0074",
+        "Level": 31
+      },
+      {
+        "AttackeId": "MOV-0027",
+        "Level": 36
+      },
+      {
+        "AttackeId": "MOV-0080",
+        "Level": 41
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 48
+      }
+    ],
     "fangrate": 45,
     "tm_attacken": [
       "MOV-0851",
@@ -1788,7 +3293,40 @@
       "spezialverteidigung": 65,
       "initiative": 90
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0070",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 48
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0078",
     "entwicklungName": "Ralamar",
@@ -1810,7 +3348,40 @@
       "spezialverteidigung": 80,
       "initiative": 105
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0033",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0045",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0043",
+        "Level": 9
+      },
+      {
+        "AttackeId": "MOV-0044",
+        "Level": 16
+      },
+      {
+        "AttackeId": "MOV-0070",
+        "Level": 24
+      },
+      {
+        "AttackeId": "MOV-0052",
+        "Level": 32
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 40
+      },
+      {
+        "AttackeId": "MOV-0089",
+        "Level": 48
+      }
+    ],
     "fangrate": 60,
     "tm_attacken": []
   },
@@ -1830,7 +3401,44 @@
       "spezialverteidigung": 40,
       "initiative": 15
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 25
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 30
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 33
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 37
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 45
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0080",
     "entwicklungName": "Umbrinerk",
@@ -1857,7 +3465,44 @@
       "spezialverteidigung": 80,
       "initiative": 30
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0010",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 15
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 19
+      },
+      {
+        "AttackeId": "MOV-0034",
+        "Level": 25
+      },
+      {
+        "AttackeId": "MOV-0099",
+        "Level": 30
+      },
+      {
+        "AttackeId": "MOV-0065",
+        "Level": 33
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 37
+      },
+      {
+        "AttackeId": "MOV-0055",
+        "Level": 45
+      }
+    ],
     "fangrate": 75,
     "tm_attacken": [
       "MOV-0851",
@@ -1882,7 +3527,40 @@
       "spezialverteidigung": 55,
       "initiative": 45
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 21
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 25
+      },
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 41
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 50
+      }
+    ],
     "fangrate": 190,
     "entwickeltZu": "PKM-0082",
     "entwicklungName": "Sevenark",
@@ -1907,7 +3585,40 @@
       "spezialverteidigung": 70,
       "initiative": 70
     },
-    "attacken": [],
+    "attacken": [
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 1
+      },
+      {
+        "AttackeId": "MOV-0086",
+        "Level": 21
+      },
+      {
+        "AttackeId": "MOV-0025",
+        "Level": 25
+      },
+      {
+        "AttackeId": "MOV-0100",
+        "Level": 29
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 35
+      },
+      {
+        "AttackeId": "MOV-0087",
+        "Level": 41
+      },
+      {
+        "AttackeId": "MOV-0026",
+        "Level": 50
+      }
+    ],
     "fangrate": 60,
     "entwickeltZu": "PKM-0462",
     "entwicklungName": "Aereyx",
