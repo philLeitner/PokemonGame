@@ -192,7 +192,8 @@ body {
 .spieler-info { padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
 .spieler-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
 .geld { color: #f5a623; font-weight: 600; }
-.orden-liste { display: flex; gap: 0.25rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.orden-liste { display: flex; gap: 0.25rem; flex-wrap: nowrap; overflow-x: auto; margin-top: 0.5rem; scrollbar-width: none; }
+.orden-liste::-webkit-scrollbar { display: none; }
 .orden-badge { font-size: 1.2rem; }
 .keine-orden { color: var(--text-dunkel); font-size: 0.8rem; }
 .team-liste h4 { font-size: 0.9rem; color: var(--text-mittel); margin-bottom: 0.5rem; }
@@ -202,6 +203,12 @@ body {
   background: rgba(255,255,255,0.03); margin-bottom: 0.4rem;
 }
 .team-eintrag.ohnmächtig { opacity: 0.4; }
+.team-eintrag { cursor: grab; transition: background 0.15s, opacity 0.15s; }
+.team-eintrag:active { cursor: grabbing; }
+.team-eintrag.drag-aktiv { opacity: 0.4; border: 1px dashed var(--primary); }
+.team-eintrag.drop-ziel { background: rgba(var(--primary-rgb, 99,102,241), 0.15); border: 1px solid var(--primary); }
+.drag-handle { font-size: 0.9rem; color: var(--text-dunkel); cursor: grab; padding-right: 0.1rem; }
+.team-anzahl { font-size: 0.75rem; color: var(--text-mittel); font-weight: 400; }
 .team-emoji { font-size: 1.2rem; }
 .team-info { flex: 1; }
 .team-name { display: block; font-size: 0.85rem; font-weight: 600; }

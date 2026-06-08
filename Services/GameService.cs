@@ -968,7 +968,7 @@ public class GameService
             Id = $"arena_{ort.Id}",
             Name = ort.Arena.Leiter,
             Klasse = "Arena-Leiter",
-            Belohnung = 2000 + ort.Arena.OrdenNr * 1000,
+            Belohnung = 500 + ort.Arena.OrdenNr * 200,
             Team = ort.Arena.Team,
             Dialogvor = $"Ich bin {ort.Arena.Leiter}, Meister des {ort.Arena.TypSpezialisierung}-Typs!",
             DialogNach = ort.Arena.OrdenName + " erhalten!",
@@ -1017,10 +1017,21 @@ public class GameService
             int schaden = SchadenBerechnen(spielerMon, gegnerMon, attacke);
             float multi = TypeChart.GetVerteidigungsMultiplikator(attacke.Typ, gegnerMon.Typen);
             gegnerMon.AktuelleKp = Math.Max(0, gegnerMon.AktuelleKp - schaden);
-            AktuellerKampf.Log.Add($"⚔️ {spielerMon.AngezeigterName} setzt {attacke.Name} ein! ({schaden} Schaden)");
-            if (multi >= 2f) AktuellerKampf.Log.Add("💥 Das ist sehr effektiv!");
-            else if (multi <= 0f) AktuellerKampf.Log.Add("🛡️ Das hat keine Wirkung...");
-            else if (multi < 1f) AktuellerKampf.Log.Add("😐 Das ist nicht sehr effektiv...");
+
+            // Sondereffekte (Stat-Boosts, Flucht, etc.) für Status-Attacken
+            bool hatSondereffekt = AttackeSondereffektAusführen(attacke, spielerMon, gegnerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf);
+
+            if (schaden > 0)
+            {
+                AktuellerKampf.Log.Add($"⚔️ {spielerMon.AngezeigterName} setzt {attacke.Name} ein! ({schaden} Schaden)");
+                if (multi >= 2f) AktuellerKampf.Log.Add("💥 Das ist sehr effektiv!");
+                else if (multi <= 0f) AktuellerKampf.Log.Add("🛡️ Das hat keine Wirkung...");
+                else if (multi < 1f) AktuellerKampf.Log.Add("😐 Das ist nicht sehr effektiv...");
+            }
+            else if (!hatSondereffekt)
+            {
+                AktuellerKampf.Log.Add($"⚔️ {spielerMon.AngezeigterName} setzt {attacke.Name} ein!");
+            }
 
             // Status-Effekt durch Attacke (aus Attacken-Daten)
             if (schaden > 0 && !string.IsNullOrEmpty(attacke.Statuseffekt))
@@ -1035,6 +1046,16 @@ public class GameService
                 int chance = attacke.StatuseffektChance ?? 100;
                 if (_rng.Next(100) < chance)
                     VersuchemStatusEffektDirekt(gegnerMon, attacke.Statuseffekt, AktuellerKampf.Log);
+            }
+
+            // Heuler/Brüller: Gegner flieht (nur wilder Kampf)
+            if ((attacke.Id == "MOV-0045" || attacke.Id == "MOV-0046") && !AktuellerKampf.IstTrainerKampf)
+            {
+                AktuellerKampf.Log.Add($"💨 {gegnerMon.Name} ist geflohen!");
+                Notify();
+                await Task.Delay(800);
+                KampfBeenden();
+                return;
             }
         }
         else
@@ -1756,11 +1777,75 @@ public class GameService
         if (neuerStatus != null) VersuchemStatusEffektDirekt(ziel, neuerStatus, log);
     }
 
+    /// <summary>Führt Sondereffekte von Status-Attacken aus (Stat-Boosts, Flucht, etc.). Gibt true zurück wenn ein Effekt ausgeführt wurde.</summary>
+    private bool AttackeSondereffektAusführen(AttackeInstanz attacke, MonsterInstanz angreifer, MonsterInstanz ziel, List<string> log, bool istTrainerKampf)
+    {
+        // Stat-Boosts für den Angreifer (selbst)
+        switch (attacke.Id)
+        {
+            case "MOV-0014": // Schwerttanz: Angriff +2
+                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+            case "MOV-0028": // Sandwirbel: Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0074": // Wachstum: Angriff+SpAngriff +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+            case "MOV-0096": // Meditation: Angriff +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log); return true;
+            case "MOV-0097": // Agilität: Initiative +2
+                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
+            case "MOV-0106": // Härtner: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0133": // Amnesie: SpVerteidigung +2
+                StatStufeAnpassen(angreifer, "spverteidigung", 2, log); return true;
+            case "MOV-0110": // Verhärtung: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0113": // Fluch: Angriff+Verteidigung +1, Initiative -1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
+                StatStufeAnpassen(angreifer, "initiative", -1, log); return true;
+            case "MOV-0104": // Doppelteam: Ausweichen +1 (als Genauigkeit Gegner -1)
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0111": // Schrei: Angriff Gegner -1
+                StatStufeAnpassen(ziel, "angriff", -1, log); return true;
+            case "MOV-0186": // Nasenschleim: SpAngriff Gegner -1
+                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+            case "MOV-0187": // Schleimschleuder: SpAngriff Gegner -1
+                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+        }
+        return false;
+    }
+
+    private void StatStufeAnpassen(MonsterInstanz mon, string stat, int delta, List<string> log)
+    {
+        string statName = stat switch {
+            "angriff" => "Angriff", "verteidigung" => "Verteidigung",
+            "spangriff" => "Sp.Angriff", "spverteidigung" => "Sp.Verteidigung",
+            "initiative" => "Initiative", "genauigkeit" => "Genauigkeit", _ => stat
+        };
+        string richtung = delta > 0 ? "stieg" : "sank";
+        string stufe = Math.Abs(delta) >= 2 ? " stark" : "";
+        switch (stat)
+        {
+            case "angriff": mon.StatStufeAngriff = Math.Clamp(mon.StatStufeAngriff + delta, -6, 6); break;
+            case "verteidigung": mon.StatStufeVerteidigung = Math.Clamp(mon.StatStufeVerteidigung + delta, -6, 6); break;
+            case "spangriff": mon.StatStufeSpAngriff = Math.Clamp(mon.StatStufeSpAngriff + delta, -6, 6); break;
+            case "spverteidigung": mon.StatStufeSpVerteidigung = Math.Clamp(mon.StatStufeSpVerteidigung + delta, -6, 6); break;
+            case "initiative": mon.StatStufeInitiative = Math.Clamp(mon.StatStufeInitiative + delta, -6, 6); break;
+            case "genauigkeit": mon.StatStufeGenauigkeit = Math.Clamp(mon.StatStufeGenauigkeit + delta, -6, 6); break;
+        }
+        log.Add($"✨ {mon.AngezeigterName}s {statName} {richtung}{stufe}!");
+    }
+
     private int SchadenBerechnen(MonsterInstanz angreifer, MonsterInstanz verteidiger, AttackeInstanz attacke)
     {
         if (attacke.Staerke == null || attacke.Staerke == 0) return 0;
-        int atk = attacke.Kategorie == "Physisch" ? angreifer.Angriff : angreifer.SpezialAngriff;
-        int def = attacke.Kategorie == "Physisch" ? verteidiger.Verteidigung : verteidiger.SpezialVerteidigung;
+        int atkBasis = attacke.Kategorie == "Physisch" ? angreifer.Angriff : angreifer.SpezialAngriff;
+        int defBasis = attacke.Kategorie == "Physisch" ? verteidiger.Verteidigung : verteidiger.SpezialVerteidigung;
+        int atkStufe = attacke.Kategorie == "Physisch" ? angreifer.StatStufeAngriff : angreifer.StatStufeSpAngriff;
+        int defStufe = attacke.Kategorie == "Physisch" ? verteidiger.StatStufeVerteidigung : verteidiger.StatStufeSpVerteidigung;
+        int atk = MonsterInstanz.MitStatStufe(atkBasis, atkStufe);
+        int def = MonsterInstanz.MitStatStufe(defBasis, defStufe);
         // Verbrennung: Angriff halbiert
         if (angreifer.Status == "verbrannt" && attacke.Kategorie == "Physisch") atk /= 2;
         float multi = TypeChart.GetVerteidigungsMultiplikator(attacke.Typ, verteidiger.Typen);

@@ -403,7 +403,7 @@
         "Id": "KAN-RIV-001",
         "Name": "Blau",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0001",
@@ -423,7 +423,7 @@
         "Id": "KAN-T-002a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 15,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -435,7 +435,7 @@
         "Id": "KAN-T-002b",
         "Name": "Lass Elaine",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -451,7 +451,7 @@
         "Id": "KAN-ZB-003a",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0051",
@@ -467,7 +467,7 @@
         "Id": "KAN-ZB-003b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 270,
         "Team": [
           {
             "MonsterId": "PKM-0023",
@@ -483,7 +483,7 @@
         "Id": "KAN-AL-003",
         "Name": "Giovanni",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0111",
@@ -511,7 +511,7 @@
         "Id": "KAN-ZB-007a",
         "Name": "Camper Liam",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 55,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -527,7 +527,7 @@
         "Id": "KAN-AL-007",
         "Name": "Rocko",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -543,7 +543,7 @@
         "Id": "KAN-ZB-011a",
         "Name": "Schwimmer Luis",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0120",
@@ -559,7 +559,7 @@
         "Id": "KAN-ZB-011b",
         "Name": "Picknickerin Diana",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 95,
         "Team": [
           {
             "MonsterId": "PKM-0116",
@@ -571,7 +571,7 @@
         "Id": "KAN-AL-011",
         "Name": "Misty",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 105,
         "Team": [
           {
             "MonsterId": "PKM-0120",
@@ -587,7 +587,7 @@
         "Id": "KAN-ZB-016a",
         "Name": "Soldat Jaime",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0100",
@@ -603,7 +603,7 @@
         "Id": "KAN-ZB-016b",
         "Name": "Soldat Brooks",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 95,
         "Team": [
           {
             "MonsterId": "PKM-0100",
@@ -619,7 +619,7 @@
         "Id": "KAN-AL-016",
         "Name": "Leutnant Surge",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0100",
@@ -639,7 +639,7 @@
         "Id": "KAN-ZB-028a",
         "Name": "Schönheit Tamia",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0071",
@@ -655,7 +655,7 @@
         "Id": "KAN-ZB-028b",
         "Name": "Schönheit Bridget",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 135,
         "Team": [
           {
             "MonsterId": "PKM-0045",
@@ -671,7 +671,7 @@
         "Id": "KAN-AL-028",
         "Name": "Erika",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0071",
@@ -691,7 +691,7 @@
         "Id": "KAN-ZB-036a",
         "Name": "Ninja-Boy Lao",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0048",
@@ -707,7 +707,7 @@
         "Id": "KAN-ZB-036b",
         "Name": "Schönheit Cassandra",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0048",
@@ -723,7 +723,7 @@
         "Id": "KAN-AL-036",
         "Name": "Koga",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0048",
@@ -743,7 +743,7 @@
         "Id": "KAN-ZB-041a",
         "Name": "Feuer-Brecher Atsushi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0058",
@@ -775,7 +775,7 @@
         "Id": "KAN-AL-041",
         "Name": "Pyro",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 235,
         "Team": [
           {
             "MonsterId": "PKM-0058",
@@ -799,7 +799,7 @@
         "Id": "KAN-RIV-004a",
         "Name": "Blau",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0001",
@@ -819,7 +819,7 @@
         "Id": "KAN-T-004a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -835,7 +835,7 @@
         "Id": "KAN-T-004b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -851,7 +851,7 @@
         "Id": "KAN-T-005a",
         "Name": "Youngster Ben",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -867,7 +867,7 @@
         "Id": "KAN-T-005b",
         "Name": "Lass Iris",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -883,7 +883,7 @@
         "Id": "KAN-T-006a",
         "Name": "Käfersammler Rick",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0010",
@@ -899,7 +899,7 @@
         "Id": "KAN-T-006b",
         "Name": "Käfersammler Doug",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 35,
         "Team": [
           {
             "MonsterId": "PKM-0011",
@@ -915,7 +915,7 @@
         "Id": "KAN-T-006c",
         "Name": "Käfersammler Anthony",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0013",
@@ -935,7 +935,7 @@
         "Id": "KAN-T-008a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -951,7 +951,7 @@
         "Id": "KAN-T-008b",
         "Name": "Göre Lisa",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -967,7 +967,7 @@
         "Id": "KAN-T-008c",
         "Name": "Youngster Calvin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -983,7 +983,7 @@
         "Id": "KAN-T-008d",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -999,7 +999,7 @@
         "Id": "KAN-T-009a",
         "Name": "Super Nerd Jovan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1015,7 +1015,7 @@
         "Id": "KAN-T-009b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -1031,7 +1031,7 @@
         "Id": "KAN-T-009c",
         "Name": "Nerd Miguel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1047,7 +1047,7 @@
         "Id": "KAN-T-009d",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 55,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -1063,7 +1063,7 @@
         "Id": "KAN-T-010a",
         "Name": "Lass Haley",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 65,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1079,7 +1079,7 @@
         "Id": "KAN-T-010b",
         "Name": "Wanderer Demetrius",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -1095,7 +1095,7 @@
         "Id": "KAN-T-012a",
         "Name": "Camper Ethan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0063",
@@ -1111,7 +1111,7 @@
         "Id": "KAN-T-012b",
         "Name": "Picknickerin Dana",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0043",
@@ -1127,7 +1127,7 @@
         "Id": "KAN-T-012c",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -1143,7 +1143,7 @@
         "Id": "KAN-T-013a",
         "Name": "Camper Florian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0063",
@@ -1159,7 +1159,7 @@
         "Id": "KAN-T-013b",
         "Name": "Lass Dani",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1175,7 +1175,7 @@
         "Id": "KAN-T-014a",
         "Name": "Pokémon Breeder Adrian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0043",
@@ -1191,7 +1191,7 @@
         "Id": "KAN-T-014b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1207,7 +1207,7 @@
         "Id": "KAN-T-015a",
         "Name": "Jr. Trainerin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1223,7 +1223,7 @@
         "Id": "KAN-T-015b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0043",
@@ -1239,7 +1239,7 @@
         "Id": "KAN-T-017a",
         "Name": "Sailor Huey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 85,
         "Team": [
           {
             "MonsterId": "PKM-0054",
@@ -1255,7 +1255,7 @@
         "Id": "KAN-T-017b",
         "Name": "Gentleman Tucker",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -1271,7 +1271,7 @@
         "Id": "KAN-RIV-017",
         "Name": "Blau",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0017",
@@ -1291,7 +1291,7 @@
         "Id": "KAN-T-018a",
         "Name": "Gentleman Dirk",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -1307,7 +1307,7 @@
         "Id": "KAN-T-018b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -1323,7 +1323,7 @@
         "Id": "KAN-T-019a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -1339,7 +1339,7 @@
         "Id": "KAN-T-019b",
         "Name": "Bird Keeper Donald",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -1355,7 +1355,7 @@
         "Id": "KAN-T-020a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1371,7 +1371,7 @@
         "Id": "KAN-T-020b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -1387,7 +1387,7 @@
         "Id": "KAN-T-021a",
         "Name": "Bird Keeper Sebastian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -1403,7 +1403,7 @@
         "Id": "KAN-T-021b",
         "Name": "Hiker Kenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1419,7 +1419,7 @@
         "Id": "KAN-T-022a",
         "Name": "Pokémaniac Steve",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0095",
@@ -1435,7 +1435,7 @@
         "Id": "KAN-T-022b",
         "Name": "Hiker Marcos",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1451,7 +1451,7 @@
         "Id": "KAN-T-022c",
         "Name": "Hiker Alan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -1467,7 +1467,7 @@
         "Id": "KAN-T-023a",
         "Name": "Stromer Zac",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0081",
@@ -1483,7 +1483,7 @@
         "Id": "KAN-T-023b",
         "Name": "Stromer Brent",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0100",
@@ -1499,7 +1499,7 @@
         "Id": "KAN-T-024a",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -1515,7 +1515,7 @@
         "Id": "KAN-T-024b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1531,7 +1531,7 @@
         "Id": "KAN-T-025a",
         "Name": "Channeler Laurel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0092",
@@ -1547,7 +1547,7 @@
         "Id": "KAN-T-025b",
         "Name": "Channeler Carly",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0092",
@@ -1563,7 +1563,7 @@
         "Id": "KAN-RIV-025",
         "Name": "Blau",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 135,
         "Team": [
           {
             "MonsterId": "PKM-0017",
@@ -1583,7 +1583,7 @@
         "Id": "KAN-T-026a",
         "Name": "Gambler Darian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -1599,7 +1599,7 @@
         "Id": "KAN-T-026b",
         "Name": "Lass Paige",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1615,7 +1615,7 @@
         "Id": "KAN-T-027a",
         "Name": "Pokémon Breeder Brigitte",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -1631,7 +1631,7 @@
         "Id": "KAN-T-027b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0056",
@@ -1647,7 +1647,7 @@
         "Id": "KAN-T-029a",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -1663,7 +1663,7 @@
         "Id": "KAN-T-029b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1679,7 +1679,7 @@
         "Id": "KAN-T-029c",
         "Name": "Giovanni",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0111",
@@ -1707,7 +1707,7 @@
         "Id": "KAN-T-030a",
         "Name": "Biker Jaren",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1723,7 +1723,7 @@
         "Id": "KAN-T-030b",
         "Name": "Biker Ernest",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0023",
@@ -1739,7 +1739,7 @@
         "Id": "KAN-T-031a",
         "Name": "Biker Virgil",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1755,7 +1755,7 @@
         "Id": "KAN-T-031b",
         "Name": "Biker Alex",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0023",
@@ -1771,7 +1771,7 @@
         "Id": "KAN-T-031c",
         "Name": "Biker Jared",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1787,7 +1787,7 @@
         "Id": "KAN-T-032a",
         "Name": "Bird Keeper Jacob",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -1803,7 +1803,7 @@
         "Id": "KAN-T-032b",
         "Name": "Bird Keeper Donald",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0084",
@@ -1819,7 +1819,7 @@
         "Id": "KAN-T-033a",
         "Name": "Bird Keeper Edwin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -1835,7 +1835,7 @@
         "Id": "KAN-T-033b",
         "Name": "Lass Crissy",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1851,7 +1851,7 @@
         "Id": "KAN-T-033c",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -1867,7 +1867,7 @@
         "Id": "KAN-T-034a",
         "Name": "Bird Keeper Chester",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0084",
@@ -1883,7 +1883,7 @@
         "Id": "KAN-T-034b",
         "Name": "Biker Ernest",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -1899,7 +1899,7 @@
         "Id": "KAN-T-034c",
         "Name": "Lass Crissy",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1915,7 +1915,7 @@
         "Id": "KAN-T-035a",
         "Name": "Jr. Trainer Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -1931,7 +1931,7 @@
         "Id": "KAN-T-035b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0043",
@@ -1947,7 +1947,7 @@
         "Id": "KAN-T-037a",
         "Name": "Safari-Wächter",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0111",
@@ -1963,7 +1963,7 @@
         "Id": "KAN-T-038a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -1979,7 +1979,7 @@
         "Id": "KAN-T-038b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -1995,7 +1995,7 @@
         "Id": "KAN-T-039a",
         "Name": "Schwimmer David",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -2011,7 +2011,7 @@
         "Id": "KAN-T-039b",
         "Name": "Schwimmerin Sharon",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -2027,7 +2027,7 @@
         "Id": "KAN-T-040a",
         "Name": "Stromer Zac",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0081",
@@ -2043,7 +2043,7 @@
         "Id": "KAN-T-040b",
         "Name": "Stromer Brent",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0100",
@@ -2059,7 +2059,7 @@
         "Id": "KAN-T-043a",
         "Name": "Schwimmer David",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -2075,7 +2075,7 @@
         "Id": "KAN-T-043b",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -2091,7 +2091,7 @@
         "Id": "KAN-ZB-044a",
         "Name": "Psycho-Mädchen Doris",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0063",
@@ -2107,7 +2107,7 @@
         "Id": "KAN-ZB-044b",
         "Name": "Psycho-Mädchen Tanya",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0096",
@@ -2123,7 +2123,7 @@
         "Id": "KAN-AL-044",
         "Name": "Sabrina",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 215,
         "Team": [
           {
             "MonsterId": "PKM-0064",
@@ -2143,7 +2143,7 @@
         "Id": "KAN-T-045a",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0023",
@@ -2159,7 +2159,7 @@
         "Id": "KAN-T-045b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -2175,7 +2175,7 @@
         "Id": "KAN-RIV-045",
         "Name": "Blau",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0017",
@@ -2203,7 +2203,7 @@
         "Id": "KAN-T-047a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0050",
@@ -2219,7 +2219,7 @@
         "Id": "KAN-T-047b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 115,
         "Team": [
           {
             "MonsterId": "PKM-0050",
@@ -2235,7 +2235,7 @@
         "Id": "KAN-T-050a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2251,7 +2251,7 @@
         "Id": "KAN-T-050b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2267,7 +2267,7 @@
         "Id": "KAN-T-050c",
         "Name": "Schönheit Cassandra",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0048",
@@ -2283,7 +2283,7 @@
         "Id": "KAN-T-051a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2299,7 +2299,7 @@
         "Id": "KAN-T-051b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2315,7 +2315,7 @@
         "Id": "KAN-T-051c",
         "Name": "Pokémon-Trainer Macy",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2331,7 +2331,7 @@
         "Id": "KAN-T-051d",
         "Name": "Pokémon-Trainer Alize",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2347,7 +2347,7 @@
         "Id": "KAN-T-051e",
         "Name": "Pokémon-Trainer Demetrius",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2363,7 +2363,7 @@
         "Id": "KAN-T-051f",
         "Name": "Pokémon-Trainer Camille",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0130",
@@ -2379,7 +2379,7 @@
         "Id": "KAN-HB-052a",
         "Name": "Lorelei",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0087",
@@ -2407,7 +2407,7 @@
         "Id": "KAN-HB-052b",
         "Name": "Bruno",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0095",
@@ -2435,7 +2435,7 @@
         "Id": "KAN-HB-052c",
         "Name": "Agathe",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0094",
@@ -2463,7 +2463,7 @@
         "Id": "KAN-HB-052d",
         "Name": "Siegfried",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 330,
         "Team": [
           {
             "MonsterId": "PKM-0149",
@@ -2491,7 +2491,7 @@
         "Id": "KAN-EG-052",
         "Name": "Blau",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 325,
         "Team": [
           {
             "MonsterId": "PKM-0018",
@@ -2523,7 +2523,7 @@
         "Id": "KAN-T-053a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2539,7 +2539,7 @@
         "Id": "KAN-T-054a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -2555,7 +2555,7 @@
         "Id": "KAN-T-054b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -2571,7 +2571,7 @@
         "Id": "KAN-T-055a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0021",
@@ -2587,7 +2587,7 @@
         "Id": "KAN-T-055b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -2603,7 +2603,7 @@
         "Id": "KAN-T-056a",
         "Name": "Biker Jaren",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -2619,7 +2619,7 @@
         "Id": "KAN-T-056b",
         "Name": "Biker Ernest",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -2635,7 +2635,7 @@
         "Id": "KAN-T-057a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2651,7 +2651,7 @@
         "Id": "KAN-T-057b",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -2667,7 +2667,7 @@
         "Id": "KAN-T-058a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2683,7 +2683,7 @@
         "Id": "KAN-T-058b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2731,7 +2731,7 @@
         "Id": "KAN-T-060a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -2747,7 +2747,7 @@
         "Id": "KAN-T-060b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -2763,7 +2763,7 @@
         "Id": "KAN-T-060c",
         "Name": "Schönheit Cassandra",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0048",
@@ -2779,7 +2779,7 @@
         "Id": "KAN-T-061a",
         "Name": "Käfersammler Rick",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0010",
@@ -2795,7 +2795,7 @@
         "Id": "KAN-T-061b",
         "Name": "Käfersammler Doug",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 35,
         "Team": [
           {
             "MonsterId": "PKM-0011",
@@ -2811,7 +2811,7 @@
         "Id": "KAN-T-062a",
         "Name": "Käfersammler Anthony",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0013",
@@ -2827,7 +2827,7 @@
         "Id": "KAN-T-063a",
         "Name": "Super Nerd Jovan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2843,7 +2843,7 @@
         "Id": "KAN-T-063b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -2859,7 +2859,7 @@
         "Id": "KAN-T-063c",
         "Name": "Nerd Miguel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2875,7 +2875,7 @@
         "Id": "KAN-T-063d",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 55,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -2891,7 +2891,7 @@
         "Id": "KAN-T-064a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2907,7 +2907,7 @@
         "Id": "KAN-T-064b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2923,7 +2923,7 @@
         "Id": "KAN-T-065a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2939,7 +2939,7 @@
         "Id": "KAN-T-065b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -2955,7 +2955,7 @@
         "Id": "KAN-T-066a",
         "Name": "Hiker Marcos",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -2971,7 +2971,7 @@
         "Id": "KAN-T-066b",
         "Name": "Pokémaniac Steve",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0095",
@@ -2987,7 +2987,7 @@
         "Id": "KAN-T-067a",
         "Name": "Hiker Alan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -3003,7 +3003,7 @@
         "Id": "KAN-T-067b",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -3019,7 +3019,7 @@
         "Id": "KAN-T-068a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0050",
@@ -3035,7 +3035,7 @@
         "Id": "KAN-T-068b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0050",
@@ -3321,7 +3321,7 @@
         "Id": "JOH-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0019",
@@ -3337,7 +3337,7 @@
         "Id": "JOH-RIV-002",
         "Name": "Silver",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0155",
@@ -3357,7 +3357,7 @@
         "Id": "JOH-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0161",
@@ -3373,7 +3373,7 @@
         "Id": "JOH-T-003b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3389,7 +3389,7 @@
         "Id": "JOH-T-004a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3405,7 +3405,7 @@
         "Id": "JOH-T-004b",
         "Name": "Youngster Mikey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0161",
@@ -3421,7 +3421,7 @@
         "Id": "JOH-ZB-005a",
         "Name": "Bird Keeper Rod",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 35,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -3437,7 +3437,7 @@
         "Id": "JOH-AL-005",
         "Name": "Falkner",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -3453,7 +3453,7 @@
         "Id": "JOH-T-006a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3469,7 +3469,7 @@
         "Id": "JOH-T-006b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -3485,7 +3485,7 @@
         "Id": "JOH-T-006c",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0179",
@@ -3501,7 +3501,7 @@
         "Id": "JOH-ZB-008a",
         "Name": "Käfersammler Al",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0013",
@@ -3517,7 +3517,7 @@
         "Id": "JOH-ZB-008b",
         "Name": "Käfersammler Rob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 65,
         "Team": [
           {
             "MonsterId": "PKM-0014",
@@ -3533,7 +3533,7 @@
         "Id": "JOH-AL-008",
         "Name": "Bugsy",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0213",
@@ -3553,7 +3553,7 @@
         "Id": "JOH-T-009a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -3569,7 +3569,7 @@
         "Id": "JOH-T-009b",
         "Name": "Youngster Ian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0161",
@@ -3585,7 +3585,7 @@
         "Id": "JOH-ZB-010a",
         "Name": "Schönheit Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -3601,7 +3601,7 @@
         "Id": "JOH-ZB-010b",
         "Name": "Schönheit Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 85,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -3617,7 +3617,7 @@
         "Id": "JOH-AL-010",
         "Name": "Whitney",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -3633,7 +3633,7 @@
         "Id": "JOH-T-011a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3649,7 +3649,7 @@
         "Id": "JOH-T-011b",
         "Name": "Polizist Keith",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0209",
@@ -3665,7 +3665,7 @@
         "Id": "JOH-T-014a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -3681,7 +3681,7 @@
         "Id": "JOH-T-014b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3697,7 +3697,7 @@
         "Id": "JOH-ZB-015a",
         "Name": "Pokémon-Trainer Lass",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0081",
@@ -3713,7 +3713,7 @@
         "Id": "JOH-AL-015",
         "Name": "Jasmine",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0081",
@@ -3733,7 +3733,7 @@
         "Id": "JOH-T-016a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -3749,7 +3749,7 @@
         "Id": "JOH-T-016b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -3765,7 +3765,7 @@
         "Id": "JOH-T-018a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -3781,7 +3781,7 @@
         "Id": "JOH-T-018b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -3797,7 +3797,7 @@
         "Id": "JOH-ZB-019a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0220",
@@ -3813,7 +3813,7 @@
         "Id": "JOH-ZB-019b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 155,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -3829,7 +3829,7 @@
         "Id": "JOH-AL-019",
         "Name": "Pryce",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 155,
         "Team": [
           {
             "MonsterId": "PKM-0220",
@@ -3849,7 +3849,7 @@
         "Id": "JOH-T-020a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -3865,7 +3865,7 @@
         "Id": "JOH-T-020b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -3881,7 +3881,7 @@
         "Id": "JOH-T-021a",
         "Name": "Drachenbändiger Clair",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0147",
@@ -3897,7 +3897,7 @@
         "Id": "JOH-ZB-022a",
         "Name": "Drachenbändiger Liza",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0147",
@@ -3913,7 +3913,7 @@
         "Id": "JOH-ZB-022b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0148",
@@ -3985,7 +3985,7 @@
         "Id": "JOH-T-023c",
         "Name": "Pokémon-Trainer Macy",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0149",
@@ -4001,7 +4001,7 @@
         "Id": "JOH-T-025a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4017,7 +4017,7 @@
         "Id": "JOH-T-025b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4033,7 +4033,7 @@
         "Id": "JOH-T-026a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4049,7 +4049,7 @@
         "Id": "JOH-T-026b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0035",
@@ -4065,7 +4065,7 @@
         "Id": "JOH-T-027a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4081,7 +4081,7 @@
         "Id": "JOH-T-027b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4097,7 +4097,7 @@
         "Id": "JOH-T-028a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -4113,7 +4113,7 @@
         "Id": "JOH-T-028b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -4129,7 +4129,7 @@
         "Id": "JOH-T-030a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -4145,7 +4145,7 @@
         "Id": "JOH-T-031a",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0041",
@@ -4161,7 +4161,7 @@
         "Id": "JOH-T-031b",
         "Name": "Team Rocket Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -4177,7 +4177,7 @@
         "Id": "JOH-T-031c",
         "Name": "Archer",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0110",
@@ -4197,7 +4197,7 @@
         "Id": "JOH-T-032a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4213,7 +4213,7 @@
         "Id": "JOH-T-032b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4229,7 +4229,7 @@
         "Id": "JOH-T-033a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4245,7 +4245,7 @@
         "Id": "JOH-T-033b",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -4261,7 +4261,7 @@
         "Id": "JOH-T-035a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4277,7 +4277,7 @@
         "Id": "JOH-T-035b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4293,7 +4293,7 @@
         "Id": "JOH-T-036a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4309,7 +4309,7 @@
         "Id": "JOH-T-037a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4325,7 +4325,7 @@
         "Id": "JOH-T-037b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4341,7 +4341,7 @@
         "Id": "JOH-T-038a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4357,7 +4357,7 @@
         "Id": "JOH-T-038b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4373,7 +4373,7 @@
         "Id": "JOH-T-039a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4389,7 +4389,7 @@
         "Id": "JOH-T-040a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4405,7 +4405,7 @@
         "Id": "JOH-T-040b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4453,7 +4453,7 @@
         "Id": "JOH-T-043a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -4469,7 +4469,7 @@
         "Id": "JOH-T-043b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4485,7 +4485,7 @@
         "Id": "JOH-T-044a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0163",
@@ -4501,7 +4501,7 @@
         "Id": "JOH-T-044b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4517,7 +4517,7 @@
         "Id": "JOH-T-045a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -4533,7 +4533,7 @@
         "Id": "JOH-T-045b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0183",
@@ -4549,7 +4549,7 @@
         "Id": "JOH-T-046a",
         "Name": "Skater Jill",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0220",
@@ -4565,7 +4565,7 @@
         "Id": "JOH-T-046b",
         "Name": "Skater Deandre",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -4581,7 +4581,7 @@
         "Id": "JOH-ZB-047a",
         "Name": "Drachenbändiger Liza",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0147",
@@ -4597,7 +4597,7 @@
         "Id": "JOH-ZB-047b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0148",
@@ -4613,7 +4613,7 @@
         "Id": "JOH-AL-047",
         "Name": "Clair",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 205,
         "Team": [
           {
             "MonsterId": "PKM-0148",
@@ -4653,7 +4653,7 @@
         "Id": "JOH-HB-055a",
         "Name": "Willi",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0178",
@@ -4681,7 +4681,7 @@
         "Id": "JOH-HB-055b",
         "Name": "Koga",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0110",
@@ -4709,7 +4709,7 @@
         "Id": "JOH-HB-055c",
         "Name": "Bruno",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0095",
@@ -4737,7 +4737,7 @@
         "Id": "JOH-HB-055d",
         "Name": "Melanie",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 245,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -4765,7 +4765,7 @@
         "Id": "JOH-EG-055",
         "Name": "Champ",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0245",
@@ -4797,7 +4797,7 @@
         "Id": "JOH-EG-056",
         "Name": "Red",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 410,
         "Team": [
           {
             "MonsterId": "PKM-0025",
@@ -5069,7 +5069,7 @@
         "Id": "HOE-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5085,7 +5085,7 @@
         "Id": "HOE-ZB-002a",
         "Name": "Schülerin Tisha",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -5101,7 +5101,7 @@
         "Id": "HOE-ZB-002b",
         "Name": "Schüler Josh",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -5117,7 +5117,7 @@
         "Id": "HOE-AL-002",
         "Name": "Roxanne",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0299",
@@ -5137,7 +5137,7 @@
         "Id": "HOE-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5153,7 +5153,7 @@
         "Id": "HOE-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0265",
@@ -5169,7 +5169,7 @@
         "Id": "HOE-ZB-004a",
         "Name": "Schönheit Shirley",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0289",
@@ -5185,7 +5185,7 @@
         "Id": "HOE-ZB-004b",
         "Name": "Schönheit Camille",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 135,
         "Team": [
           {
             "MonsterId": "PKM-0289",
@@ -5201,7 +5201,7 @@
         "Id": "HOE-AL-004",
         "Name": "Norman",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0289",
@@ -5217,7 +5217,7 @@
         "Id": "HOE-T-005a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5233,7 +5233,7 @@
         "Id": "HOE-T-005b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -5249,7 +5249,7 @@
         "Id": "HOE-ZB-007a",
         "Name": "Kampf-Schüler Yoshi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0296",
@@ -5265,7 +5265,7 @@
         "Id": "HOE-ZB-007b",
         "Name": "Kampf-Schüler Nob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0296",
@@ -5281,7 +5281,7 @@
         "Id": "HOE-AL-007",
         "Name": "Brawly",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0296",
@@ -5297,7 +5297,7 @@
         "Id": "HOE-T-008a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5313,7 +5313,7 @@
         "Id": "HOE-T-008b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0265",
@@ -5329,7 +5329,7 @@
         "Id": "HOE-T-008c",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5345,7 +5345,7 @@
         "Id": "HOE-T-010a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -5361,7 +5361,7 @@
         "Id": "HOE-T-010b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5377,7 +5377,7 @@
         "Id": "HOE-ZB-011a",
         "Name": "Bird Keeper Donald",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0276",
@@ -5393,7 +5393,7 @@
         "Id": "HOE-ZB-011b",
         "Name": "Bird Keeper Edwin",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0333",
@@ -5409,7 +5409,7 @@
         "Id": "HOE-AL-011",
         "Name": "Winona",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 165,
         "Team": [
           {
             "MonsterId": "PKM-0333",
@@ -5433,7 +5433,7 @@
         "Id": "HOE-T-012a",
         "Name": "Pokémon-Ranger Aria",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5449,7 +5449,7 @@
         "Id": "HOE-T-012b",
         "Name": "Pokémon-Ranger Logan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -5465,7 +5465,7 @@
         "Id": "HOE-ZB-013a",
         "Name": "Psycho-Mädchen Doris",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0343",
@@ -5481,7 +5481,7 @@
         "Id": "HOE-AL-013",
         "Name": "Tate & Liza",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0343",
@@ -5497,7 +5497,7 @@
         "Id": "HOE-ZB-014a",
         "Name": "Schwimmer Richard",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -5513,7 +5513,7 @@
         "Id": "HOE-ZB-014b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -5529,7 +5529,7 @@
         "Id": "HOE-AL-014",
         "Name": "Wallace",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -5557,7 +5557,7 @@
         "Id": "HOE-HB-016a",
         "Name": "Sidney",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0262",
@@ -5585,7 +5585,7 @@
         "Id": "HOE-HB-016b",
         "Name": "Phoebe",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 255,
         "Team": [
           {
             "MonsterId": "PKM-0302",
@@ -5613,7 +5613,7 @@
         "Id": "HOE-HB-016c",
         "Name": "Glacia",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 265,
         "Team": [
           {
             "MonsterId": "PKM-0362",
@@ -5641,7 +5641,7 @@
         "Id": "HOE-HB-016d",
         "Name": "Drake",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0330",
@@ -5669,7 +5669,7 @@
         "Id": "HOE-EG-016",
         "Name": "Steven",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0376",
@@ -5701,7 +5701,7 @@
         "Id": "HOE-T-017a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5717,7 +5717,7 @@
         "Id": "HOE-T-017b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -5733,7 +5733,7 @@
         "Id": "HOE-T-018a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5749,7 +5749,7 @@
         "Id": "HOE-T-018b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5765,7 +5765,7 @@
         "Id": "HOE-T-019a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5781,7 +5781,7 @@
         "Id": "HOE-T-019b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -5797,7 +5797,7 @@
         "Id": "HOE-T-020a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5813,7 +5813,7 @@
         "Id": "HOE-T-020b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5829,7 +5829,7 @@
         "Id": "HOE-T-021a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5845,7 +5845,7 @@
         "Id": "HOE-T-021b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5861,7 +5861,7 @@
         "Id": "HOE-T-023a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5877,7 +5877,7 @@
         "Id": "HOE-T-023b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5893,7 +5893,7 @@
         "Id": "HOE-T-024a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5909,7 +5909,7 @@
         "Id": "HOE-T-024b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5925,7 +5925,7 @@
         "Id": "HOE-T-025a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5941,7 +5941,7 @@
         "Id": "HOE-T-025b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -5957,7 +5957,7 @@
         "Id": "HOE-T-026a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -5973,7 +5973,7 @@
         "Id": "HOE-T-026b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -5989,7 +5989,7 @@
         "Id": "HOE-T-027a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -6005,7 +6005,7 @@
         "Id": "HOE-T-027b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6021,7 +6021,7 @@
         "Id": "HOE-T-028a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -6037,7 +6037,7 @@
         "Id": "HOE-T-028b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6053,7 +6053,7 @@
         "Id": "HOE-T-029a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6069,7 +6069,7 @@
         "Id": "HOE-T-029b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6085,7 +6085,7 @@
         "Id": "HOE-T-030a",
         "Name": "Team Magma Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0322",
@@ -6101,7 +6101,7 @@
         "Id": "HOE-T-030b",
         "Name": "Maxie",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0322",
@@ -6121,7 +6121,7 @@
         "Id": "HOE-T-031a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6137,7 +6137,7 @@
         "Id": "HOE-T-031b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6153,7 +6153,7 @@
         "Id": "HOE-T-033a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6169,7 +6169,7 @@
         "Id": "HOE-T-033b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6185,7 +6185,7 @@
         "Id": "HOE-T-034a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6201,7 +6201,7 @@
         "Id": "HOE-T-034b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6217,7 +6217,7 @@
         "Id": "HOE-T-035a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6233,7 +6233,7 @@
         "Id": "HOE-T-035b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -6249,7 +6249,7 @@
         "Id": "HOE-T-036a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6265,7 +6265,7 @@
         "Id": "HOE-T-036b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6313,7 +6313,7 @@
         "Id": "HOE-T-038a",
         "Name": "Rivale Wally",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0335",
@@ -6333,7 +6333,7 @@
         "Id": "HOE-T-038b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6381,7 +6381,7 @@
         "Id": "HOE-T-041a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -6397,7 +6397,7 @@
         "Id": "HOE-T-041b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -6445,7 +6445,7 @@
         "Id": "HOE-T-044a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -6461,7 +6461,7 @@
         "Id": "HOE-T-044b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -6477,7 +6477,7 @@
         "Id": "HOE-T-045a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -6493,7 +6493,7 @@
         "Id": "HOE-T-045b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -6509,7 +6509,7 @@
         "Id": "HOE-T-046a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -6525,7 +6525,7 @@
         "Id": "HOE-T-046b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -6541,7 +6541,7 @@
         "Id": "HOE-T-047a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6557,7 +6557,7 @@
         "Id": "HOE-T-047b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6573,7 +6573,7 @@
         "Id": "HOE-T-048a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6589,7 +6589,7 @@
         "Id": "HOE-T-048b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -6605,7 +6605,7 @@
         "Id": "HOE-T-049a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6621,7 +6621,7 @@
         "Id": "HOE-T-049b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6637,7 +6637,7 @@
         "Id": "HOE-T-050a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6653,7 +6653,7 @@
         "Id": "HOE-T-050b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6669,7 +6669,7 @@
         "Id": "HOE-T-052a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6685,7 +6685,7 @@
         "Id": "HOE-T-052b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6701,7 +6701,7 @@
         "Id": "HOE-T-053a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6717,7 +6717,7 @@
         "Id": "HOE-T-053b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6733,7 +6733,7 @@
         "Id": "HOE-T-054a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6749,7 +6749,7 @@
         "Id": "HOE-T-054b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -6765,7 +6765,7 @@
         "Id": "HOE-ZB-055a",
         "Name": "Schwimmer Richard",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -6781,7 +6781,7 @@
         "Id": "HOE-ZB-055b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 215,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -6797,7 +6797,7 @@
         "Id": "HOE-AL-055",
         "Name": "Wallace",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -6825,7 +6825,7 @@
         "Id": "HOE-T-056a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6841,7 +6841,7 @@
         "Id": "HOE-T-056b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6857,7 +6857,7 @@
         "Id": "HOE-T-057a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6873,7 +6873,7 @@
         "Id": "HOE-T-057b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -6889,7 +6889,7 @@
         "Id": "HOE-T-058a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6905,7 +6905,7 @@
         "Id": "HOE-T-058b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6921,7 +6921,7 @@
         "Id": "HOE-T-059a",
         "Name": "Team Magma Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0322",
@@ -6937,7 +6937,7 @@
         "Id": "HOE-T-059b",
         "Name": "Maxie",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0322",
@@ -6957,7 +6957,7 @@
         "Id": "HOE-T-060a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -6973,7 +6973,7 @@
         "Id": "HOE-T-060b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -6989,7 +6989,7 @@
         "Id": "HOE-T-061a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7005,7 +7005,7 @@
         "Id": "HOE-T-061b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -7021,7 +7021,7 @@
         "Id": "HOE-T-062a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -7037,7 +7037,7 @@
         "Id": "HOE-T-062b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7053,7 +7053,7 @@
         "Id": "HOE-T-063a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7069,7 +7069,7 @@
         "Id": "HOE-T-063b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -7085,7 +7085,7 @@
         "Id": "HOE-T-064a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -7101,7 +7101,7 @@
         "Id": "HOE-T-064b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -7117,7 +7117,7 @@
         "Id": "HOE-T-065a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7133,7 +7133,7 @@
         "Id": "HOE-T-065b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0263",
@@ -7149,7 +7149,7 @@
         "Id": "HOE-T-066a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -7165,7 +7165,7 @@
         "Id": "HOE-T-066b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7181,7 +7181,7 @@
         "Id": "HOE-T-067a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0261",
@@ -7197,7 +7197,7 @@
         "Id": "HOE-T-067b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0270",
@@ -7213,7 +7213,7 @@
         "Id": "HOE-T-070a",
         "Name": "Team Aqua Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -7229,7 +7229,7 @@
         "Id": "HOE-T-070b",
         "Name": "Archie",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0350",
@@ -7249,7 +7249,7 @@
         "Id": "HOE-HB-071a",
         "Name": "Sidney",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0262",
@@ -7277,7 +7277,7 @@
         "Id": "HOE-HB-071b",
         "Name": "Phoebe",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 265,
         "Team": [
           {
             "MonsterId": "PKM-0302",
@@ -7305,7 +7305,7 @@
         "Id": "HOE-HB-071c",
         "Name": "Glacia",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0362",
@@ -7333,7 +7333,7 @@
         "Id": "HOE-HB-071d",
         "Name": "Drake",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 285,
         "Team": [
           {
             "MonsterId": "PKM-0330",
@@ -7361,7 +7361,7 @@
         "Id": "HOE-EG-071",
         "Name": "Steven",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0376",
@@ -7393,7 +7393,7 @@
         "Id": "HOE-K-006",
         "Name": "Wally",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0282",
@@ -7579,7 +7579,7 @@
         "Id": "SIN-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -7595,7 +7595,7 @@
         "Id": "SIN-ZB-002a",
         "Name": "Bergsteiger Hiker",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -7611,7 +7611,7 @@
         "Id": "SIN-ZB-002b",
         "Name": "Bergsteiger Hiker",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 55,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -7627,7 +7627,7 @@
         "Id": "SIN-AL-002",
         "Name": "Roark",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0408",
@@ -7647,7 +7647,7 @@
         "Id": "SIN-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -7663,7 +7663,7 @@
         "Id": "SIN-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 25,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -7679,7 +7679,7 @@
         "Id": "SIN-ZB-004a",
         "Name": "Schönheit Tamia",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -7695,7 +7695,7 @@
         "Id": "SIN-ZB-004b",
         "Name": "Schönheit Bridget",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 95,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -7711,7 +7711,7 @@
         "Id": "SIN-AL-004",
         "Name": "Gardenia",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -7731,7 +7731,7 @@
         "Id": "SIN-T-005a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -7747,7 +7747,7 @@
         "Id": "SIN-T-005b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -7763,7 +7763,7 @@
         "Id": "SIN-ZB-006a",
         "Name": "Kampf-Schüler Yoshi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -7779,7 +7779,7 @@
         "Id": "SIN-ZB-006b",
         "Name": "Kampf-Schüler Nob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0107",
@@ -7795,7 +7795,7 @@
         "Id": "SIN-AL-006",
         "Name": "Maylene",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -7815,7 +7815,7 @@
         "Id": "SIN-T-007a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -7831,7 +7831,7 @@
         "Id": "SIN-T-007b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -7847,7 +7847,7 @@
         "Id": "SIN-ZB-008a",
         "Name": "Schwimmer Richard",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0418",
@@ -7863,7 +7863,7 @@
         "Id": "SIN-ZB-008b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0418",
@@ -7879,7 +7879,7 @@
         "Id": "SIN-AL-008",
         "Name": "Crasher Wake",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0418",
@@ -7899,7 +7899,7 @@
         "Id": "SIN-ZB-010a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0436",
@@ -7915,7 +7915,7 @@
         "Id": "SIN-ZB-010b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0436",
@@ -7931,7 +7931,7 @@
         "Id": "SIN-AL-010",
         "Name": "Byron",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0436",
@@ -7951,7 +7951,7 @@
         "Id": "SIN-ZB-011a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0459",
@@ -7967,7 +7967,7 @@
         "Id": "SIN-ZB-011b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0459",
@@ -7983,7 +7983,7 @@
         "Id": "SIN-AL-011",
         "Name": "Candice",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0459",
@@ -8023,7 +8023,7 @@
         "Id": "SIN-ZB-012b",
         "Name": "Stromer Brent",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 205,
         "Team": [
           {
             "MonsterId": "PKM-0404",
@@ -8039,7 +8039,7 @@
         "Id": "SIN-AL-012",
         "Name": "Volkner",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0404",
@@ -8063,7 +8063,7 @@
         "Id": "SIN-HB-013a",
         "Name": "Aaron",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 285,
         "Team": [
           {
             "MonsterId": "PKM-0414",
@@ -8091,7 +8091,7 @@
         "Id": "SIN-HB-013b",
         "Name": "Bertha",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 295,
         "Team": [
           {
             "MonsterId": "PKM-0450",
@@ -8119,7 +8119,7 @@
         "Id": "SIN-HB-013c",
         "Name": "Flint",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0136",
@@ -8147,7 +8147,7 @@
         "Id": "SIN-HB-013d",
         "Name": "Lucian",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -8175,7 +8175,7 @@
         "Id": "SIN-EG-013",
         "Name": "Cynthia",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 330,
         "Team": [
           {
             "MonsterId": "PKM-0445",
@@ -8207,7 +8207,7 @@
         "Id": "SIN-T-014a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8223,7 +8223,7 @@
         "Id": "SIN-T-014b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8239,7 +8239,7 @@
         "Id": "SIN-T-015a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8255,7 +8255,7 @@
         "Id": "SIN-T-015b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -8271,7 +8271,7 @@
         "Id": "SIN-T-016a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8287,7 +8287,7 @@
         "Id": "SIN-T-016b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8303,7 +8303,7 @@
         "Id": "SIN-T-018a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8319,7 +8319,7 @@
         "Id": "SIN-T-018b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -8335,7 +8335,7 @@
         "Id": "SIN-T-019a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8351,7 +8351,7 @@
         "Id": "SIN-T-019b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8367,7 +8367,7 @@
         "Id": "SIN-T-020a",
         "Name": "Rivale Barry",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0398",
@@ -8387,7 +8387,7 @@
         "Id": "SIN-T-020b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8403,7 +8403,7 @@
         "Id": "SIN-T-021a",
         "Name": "Team Galaxis Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8419,7 +8419,7 @@
         "Id": "SIN-T-021b",
         "Name": "Cyrus",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8439,7 +8439,7 @@
         "Id": "SIN-T-022a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8455,7 +8455,7 @@
         "Id": "SIN-T-022b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8471,7 +8471,7 @@
         "Id": "SIN-T-024a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8487,7 +8487,7 @@
         "Id": "SIN-T-024b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8503,7 +8503,7 @@
         "Id": "SIN-T-025a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8519,7 +8519,7 @@
         "Id": "SIN-T-025b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8535,7 +8535,7 @@
         "Id": "SIN-T-026a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8551,7 +8551,7 @@
         "Id": "SIN-T-026b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -8567,7 +8567,7 @@
         "Id": "SIN-T-027a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8583,7 +8583,7 @@
         "Id": "SIN-T-027b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8599,7 +8599,7 @@
         "Id": "SIN-T-028a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8615,7 +8615,7 @@
         "Id": "SIN-T-028b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8631,7 +8631,7 @@
         "Id": "SIN-T-029a",
         "Name": "Team Galaxis Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8647,7 +8647,7 @@
         "Id": "SIN-T-029b",
         "Name": "Cyrus",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8667,7 +8667,7 @@
         "Id": "SIN-T-030a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8683,7 +8683,7 @@
         "Id": "SIN-T-030b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -8699,7 +8699,7 @@
         "Id": "SIN-T-031a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8715,7 +8715,7 @@
         "Id": "SIN-T-031b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8795,7 +8795,7 @@
         "Id": "SIN-T-035a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8811,7 +8811,7 @@
         "Id": "SIN-T-035b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8827,7 +8827,7 @@
         "Id": "SIN-T-037a",
         "Name": "Team Galaxis Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8843,7 +8843,7 @@
         "Id": "SIN-T-037b",
         "Name": "Team Galaxis Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8859,7 +8859,7 @@
         "Id": "SIN-T-037c",
         "Name": "Cyrus",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0442",
@@ -8879,7 +8879,7 @@
         "Id": "SIN-T-038a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8895,7 +8895,7 @@
         "Id": "SIN-T-038b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8911,7 +8911,7 @@
         "Id": "SIN-T-039a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8927,7 +8927,7 @@
         "Id": "SIN-T-039b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -8943,7 +8943,7 @@
         "Id": "SIN-T-040a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -8959,7 +8959,7 @@
         "Id": "SIN-T-040b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8975,7 +8975,7 @@
         "Id": "SIN-T-041a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -8991,7 +8991,7 @@
         "Id": "SIN-T-041b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9007,7 +9007,7 @@
         "Id": "SIN-T-042a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9023,7 +9023,7 @@
         "Id": "SIN-T-042b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -9039,7 +9039,7 @@
         "Id": "SIN-T-044a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9055,7 +9055,7 @@
         "Id": "SIN-T-044b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9071,7 +9071,7 @@
         "Id": "SIN-T-045a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9087,7 +9087,7 @@
         "Id": "SIN-T-045b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -9103,7 +9103,7 @@
         "Id": "SIN-T-047a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9119,7 +9119,7 @@
         "Id": "SIN-T-047b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9135,7 +9135,7 @@
         "Id": "SIN-T-048a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9151,7 +9151,7 @@
         "Id": "SIN-T-048b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -9167,7 +9167,7 @@
         "Id": "SIN-T-049a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9183,7 +9183,7 @@
         "Id": "SIN-T-049b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9199,7 +9199,7 @@
         "Id": "SIN-T-050a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9215,7 +9215,7 @@
         "Id": "SIN-T-050b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9231,7 +9231,7 @@
         "Id": "SIN-ZB-051a",
         "Name": "Stromer Zac",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0404",
@@ -9247,7 +9247,7 @@
         "Id": "SIN-ZB-051b",
         "Name": "Stromer Brent",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0404",
@@ -9263,7 +9263,7 @@
         "Id": "SIN-AL-051",
         "Name": "Volkner",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0404",
@@ -9287,7 +9287,7 @@
         "Id": "SIN-T-052a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -9303,7 +9303,7 @@
         "Id": "SIN-T-052b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -9319,7 +9319,7 @@
         "Id": "SIN-T-053a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9335,7 +9335,7 @@
         "Id": "SIN-T-053b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9351,7 +9351,7 @@
         "Id": "SIN-HB-054a",
         "Name": "Aaron",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 295,
         "Team": [
           {
             "MonsterId": "PKM-0414",
@@ -9379,7 +9379,7 @@
         "Id": "SIN-HB-054b",
         "Name": "Bertha",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0450",
@@ -9407,7 +9407,7 @@
         "Id": "SIN-HB-054c",
         "Name": "Flint",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0136",
@@ -9435,7 +9435,7 @@
         "Id": "SIN-HB-054d",
         "Name": "Lucian",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -9463,7 +9463,7 @@
         "Id": "SIN-EG-054",
         "Name": "Cynthia",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 340,
         "Team": [
           {
             "MonsterId": "PKM-0445",
@@ -9495,7 +9495,7 @@
         "Id": "SIN-T-055a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9511,7 +9511,7 @@
         "Id": "SIN-T-055b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9527,7 +9527,7 @@
         "Id": "SIN-T-056a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9543,7 +9543,7 @@
         "Id": "SIN-T-056b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0401",
@@ -9559,7 +9559,7 @@
         "Id": "SIN-T-057a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9575,7 +9575,7 @@
         "Id": "SIN-T-057b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9591,7 +9591,7 @@
         "Id": "SIN-T-058a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0396",
@@ -9607,7 +9607,7 @@
         "Id": "SIN-T-058b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -9623,7 +9623,7 @@
         "Id": "SIN-T-062a",
         "Name": "Pokémon-Trainer Jonathan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0059",
@@ -9639,7 +9639,7 @@
         "Id": "SIN-T-062b",
         "Name": "Pokémon-Trainer Phillip",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0065",
@@ -9931,7 +9931,7 @@
         "Id": "UNO-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0506",
@@ -9947,7 +9947,7 @@
         "Id": "UNO-ZB-002a",
         "Name": "Kellner Cilan",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0511",
@@ -9963,7 +9963,7 @@
         "Id": "UNO-AL-002",
         "Name": "Cilan",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0512",
@@ -9979,7 +9979,7 @@
         "Id": "UNO-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0506",
@@ -9995,7 +9995,7 @@
         "Id": "UNO-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 30,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10011,7 +10011,7 @@
         "Id": "UNO-ZB-004a",
         "Name": "Schönheit Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10027,7 +10027,7 @@
         "Id": "UNO-AL-004",
         "Name": "Lenora",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10043,7 +10043,7 @@
         "Id": "UNO-ZB-006a",
         "Name": "Käfersammler Al",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0540",
@@ -10059,7 +10059,7 @@
         "Id": "UNO-ZB-006b",
         "Name": "Käfersammler Rob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 115,
         "Team": [
           {
             "MonsterId": "PKM-0541",
@@ -10075,7 +10075,7 @@
         "Id": "UNO-AL-006",
         "Name": "Burgh",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0540",
@@ -10095,7 +10095,7 @@
         "Id": "UNO-T-007a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0506",
@@ -10111,7 +10111,7 @@
         "Id": "UNO-T-007b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10127,7 +10127,7 @@
         "Id": "UNO-ZB-008a",
         "Name": "Stromer Zac",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0602",
@@ -10143,7 +10143,7 @@
         "Id": "UNO-ZB-008b",
         "Name": "Stromer Brent",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 135,
         "Team": [
           {
             "MonsterId": "PKM-0602",
@@ -10159,7 +10159,7 @@
         "Id": "UNO-AL-008",
         "Name": "Elesa",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0602",
@@ -10179,7 +10179,7 @@
         "Id": "UNO-ZB-010a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10195,7 +10195,7 @@
         "Id": "UNO-ZB-010b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10211,7 +10211,7 @@
         "Id": "UNO-AL-010",
         "Name": "Clay",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 165,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10231,7 +10231,7 @@
         "Id": "UNO-T-011a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0585",
@@ -10247,7 +10247,7 @@
         "Id": "UNO-T-011b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0506",
@@ -10263,7 +10263,7 @@
         "Id": "UNO-ZB-013a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0615",
@@ -10279,7 +10279,7 @@
         "Id": "UNO-ZB-013b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0615",
@@ -10295,7 +10295,7 @@
         "Id": "UNO-AL-013",
         "Name": "Brycen",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0615",
@@ -10331,7 +10331,7 @@
         "Id": "UNO-ZB-014b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 205,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -10347,7 +10347,7 @@
         "Id": "UNO-AL-014",
         "Name": "Drayden",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -10367,7 +10367,7 @@
         "Id": "UNO-HB-015a",
         "Name": "Shauntal",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 280,
         "Team": [
           {
             "MonsterId": "PKM-0609",
@@ -10395,7 +10395,7 @@
         "Id": "UNO-HB-015b",
         "Name": "Marshal",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 280,
         "Team": [
           {
             "MonsterId": "PKM-0538",
@@ -10423,7 +10423,7 @@
         "Id": "UNO-HB-015c",
         "Name": "Grimsley",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 280,
         "Team": [
           {
             "MonsterId": "PKM-0625",
@@ -10451,7 +10451,7 @@
         "Id": "UNO-HB-015d",
         "Name": "Caitlin",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 280,
         "Team": [
           {
             "MonsterId": "PKM-0518",
@@ -10479,7 +10479,7 @@
         "Id": "UNO-EG-015",
         "Name": "Iris",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0149",
@@ -10511,7 +10511,7 @@
         "Id": "UNO-T-018a",
         "Name": "Pokémon Breeder Adrian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10527,7 +10527,7 @@
         "Id": "UNO-T-018b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10543,7 +10543,7 @@
         "Id": "UNO-T-022a",
         "Name": "Jr. Trainerin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10559,7 +10559,7 @@
         "Id": "UNO-T-022b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10575,7 +10575,7 @@
         "Id": "UNO-T-026a",
         "Name": "Pokémon Breeder Brigitte",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10591,7 +10591,7 @@
         "Id": "UNO-T-026b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10607,7 +10607,7 @@
         "Id": "UNO-T-027a",
         "Name": "Rivale Bianca",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0579",
@@ -10627,7 +10627,7 @@
         "Id": "UNO-T-027b",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -10643,7 +10643,7 @@
         "Id": "UNO-T-029a",
         "Name": "Team Plasma N",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0612",
@@ -10663,7 +10663,7 @@
         "Id": "UNO-T-029b",
         "Name": "Team Plasma Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10679,7 +10679,7 @@
         "Id": "UNO-T-030a",
         "Name": "Gambler Darian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -10695,7 +10695,7 @@
         "Id": "UNO-T-030b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10711,7 +10711,7 @@
         "Id": "UNO-T-032a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -10727,7 +10727,7 @@
         "Id": "UNO-T-032b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -10759,7 +10759,7 @@
         "Id": "UNO-ZB-033b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 205,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -10775,7 +10775,7 @@
         "Id": "UNO-AL-033",
         "Name": "Drayden",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -10795,7 +10795,7 @@
         "Id": "UNO-T-034a",
         "Name": "Rivale Tierno",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10815,7 +10815,7 @@
         "Id": "UNO-T-034b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -10831,7 +10831,7 @@
         "Id": "UNO-HB-036a",
         "Name": "Shauntal",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0609",
@@ -10859,7 +10859,7 @@
         "Id": "UNO-HB-036b",
         "Name": "Marshal",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0538",
@@ -10887,7 +10887,7 @@
         "Id": "UNO-HB-036c",
         "Name": "Grimsley",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0625",
@@ -10915,7 +10915,7 @@
         "Id": "UNO-HB-036d",
         "Name": "Caitlin",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0518",
@@ -10943,7 +10943,7 @@
         "Id": "UNO-EG-036",
         "Name": "Iris",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0149",
@@ -10975,7 +10975,7 @@
         "Id": "UNO-T-037a",
         "Name": "Team Plasma Ghetsis",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0625",
@@ -11003,7 +11003,7 @@
         "Id": "UNO-RIV-038",
         "Name": "Hugh",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0503",
@@ -11023,7 +11023,7 @@
         "Id": "UNO-T-039a",
         "Name": "Team Plasma Zinzolin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0625",
@@ -11039,7 +11039,7 @@
         "Id": "UNO-T-039b",
         "Name": "Team Plasma Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -11055,7 +11055,7 @@
         "Id": "UNO-RIV-042",
         "Name": "Hugh",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0503",
@@ -11075,7 +11075,7 @@
         "Id": "UNO-T-042a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -11091,7 +11091,7 @@
         "Id": "UNO-T-046a",
         "Name": "Team Plasma Ghetsis",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0625",
@@ -11119,7 +11119,7 @@
         "Id": "UNO-T-046b",
         "Name": "Team Plasma Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -11411,7 +11411,7 @@
         "Id": "KAL-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -11427,7 +11427,7 @@
         "Id": "KAL-ZB-002a",
         "Name": "Käfersammler Rick",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -11443,7 +11443,7 @@
         "Id": "KAL-ZB-002b",
         "Name": "Käfersammler Doug",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 45,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -11459,7 +11459,7 @@
         "Id": "KAL-AL-002",
         "Name": "Viola",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -11475,7 +11475,7 @@
         "Id": "KAL-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -11491,7 +11491,7 @@
         "Id": "KAL-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 40,
         "Team": [
           {
             "MonsterId": "PKM-0667",
@@ -11507,7 +11507,7 @@
         "Id": "KAL-ZB-004a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -11523,7 +11523,7 @@
         "Id": "KAL-ZB-004b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 85,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -11539,7 +11539,7 @@
         "Id": "KAL-AL-004",
         "Name": "Grant",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0696",
@@ -11555,7 +11555,7 @@
         "Id": "KAL-T-005a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -11571,7 +11571,7 @@
         "Id": "KAL-T-005b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 90,
         "Team": [
           {
             "MonsterId": "PKM-0667",
@@ -11587,7 +11587,7 @@
         "Id": "KAL-ZB-006a",
         "Name": "Kampf-Schüler Yoshi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -11603,7 +11603,7 @@
         "Id": "KAL-ZB-006b",
         "Name": "Kampf-Schüler Nob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 115,
         "Team": [
           {
             "MonsterId": "PKM-0107",
@@ -11619,7 +11619,7 @@
         "Id": "KAL-AL-006",
         "Name": "Korrina",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0701",
@@ -11635,7 +11635,7 @@
         "Id": "KAL-ZB-008a",
         "Name": "Schönheit Tamia",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -11651,7 +11651,7 @@
         "Id": "KAL-ZB-008b",
         "Name": "Schönheit Bridget",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -11667,7 +11667,7 @@
         "Id": "KAL-AL-008",
         "Name": "Ramos",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0707",
@@ -11687,7 +11687,7 @@
         "Id": "KAL-ZB-010a",
         "Name": "Fee-Trainerin Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -11703,7 +11703,7 @@
         "Id": "KAL-ZB-010b",
         "Name": "Fee-Trainerin Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -11755,7 +11755,7 @@
         "Id": "KAL-ZB-011b",
         "Name": "Psycho-Mädchen Tanya",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 205,
         "Team": [
           {
             "MonsterId": "PKM-0677",
@@ -11771,7 +11771,7 @@
         "Id": "KAL-AL-011",
         "Name": "Olympia",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0677",
@@ -11787,7 +11787,7 @@
         "Id": "KAL-ZB-012a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -11803,7 +11803,7 @@
         "Id": "KAL-ZB-012b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -11819,7 +11819,7 @@
         "Id": "KAL-AL-012",
         "Name": "Wulfric",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -11839,7 +11839,7 @@
         "Id": "KAL-HB-013a",
         "Name": "Malva",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 355,
         "Team": [
           {
             "MonsterId": "PKM-0136",
@@ -11867,7 +11867,7 @@
         "Id": "KAL-HB-013b",
         "Name": "Siebold",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 355,
         "Team": [
           {
             "MonsterId": "PKM-0130",
@@ -11895,7 +11895,7 @@
         "Id": "KAL-HB-013c",
         "Name": "Wikstrom",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 355,
         "Team": [
           {
             "MonsterId": "PKM-0681",
@@ -11923,7 +11923,7 @@
         "Id": "KAL-HB-013d",
         "Name": "Drasna",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 355,
         "Team": [
           {
             "MonsterId": "PKM-0715",
@@ -11951,7 +11951,7 @@
         "Id": "KAL-EG-013",
         "Name": "Diantha",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 375,
         "Team": [
           {
             "MonsterId": "PKM-0655",
@@ -11983,7 +11983,7 @@
         "Id": "KAL-T-014a",
         "Name": "Pokémon Breeder Brigitte",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -11999,7 +11999,7 @@
         "Id": "KAL-T-014b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0667",
@@ -12015,7 +12015,7 @@
         "Id": "KAL-T-016a",
         "Name": "Gambler Darian",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -12031,7 +12031,7 @@
         "Id": "KAL-T-016b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12047,7 +12047,7 @@
         "Id": "KAL-T-018a",
         "Name": "Team Flare Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12063,7 +12063,7 @@
         "Id": "KAL-T-018b",
         "Name": "Team Flare Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0667",
@@ -12079,7 +12079,7 @@
         "Id": "KAL-T-019a",
         "Name": "Hiker Lenny",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -12095,7 +12095,7 @@
         "Id": "KAL-T-019b",
         "Name": "Hiker Eric",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12111,7 +12111,7 @@
         "Id": "KAL-T-021a",
         "Name": "Rivale Tierno",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12131,7 +12131,7 @@
         "Id": "KAL-T-021b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12147,7 +12147,7 @@
         "Id": "KAL-T-022a",
         "Name": "Team Flare Lysandre",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0697",
@@ -12183,7 +12183,7 @@
         "Id": "KAL-T-023a",
         "Name": "Gentleman Dirk",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0052",
@@ -12199,7 +12199,7 @@
         "Id": "KAL-T-023b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12215,7 +12215,7 @@
         "Id": "KAL-T-026a",
         "Name": "Fisher Justin",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0098",
@@ -12231,7 +12231,7 @@
         "Id": "KAL-T-026b",
         "Name": "Bird Keeper Donald",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -12279,7 +12279,7 @@
         "Id": "KAL-T-029a",
         "Name": "Bird Keeper Chester",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0084",
@@ -12295,7 +12295,7 @@
         "Id": "KAL-T-029b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12311,7 +12311,7 @@
         "Id": "KAL-T-031a",
         "Name": "Jr. Trainer Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12327,7 +12327,7 @@
         "Id": "KAL-T-031b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0667",
@@ -12343,7 +12343,7 @@
         "Id": "KAL-T-033a",
         "Name": "Biker Jaren",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -12359,7 +12359,7 @@
         "Id": "KAL-T-033b",
         "Name": "Biker Ernest",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12375,7 +12375,7 @@
         "Id": "KAL-T-036a",
         "Name": "Biker Virgil",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0109",
@@ -12391,7 +12391,7 @@
         "Id": "KAL-T-036b",
         "Name": "Biker Alex",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0661",
@@ -12407,7 +12407,7 @@
         "Id": "KAL-T-037a",
         "Name": "Bird Keeper Jacob",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0016",
@@ -12423,7 +12423,7 @@
         "Id": "KAL-T-037b",
         "Name": "Bird Keeper Donald",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0084",
@@ -12439,7 +12439,7 @@
         "Id": "KAL-T-039a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -12455,7 +12455,7 @@
         "Id": "KAL-T-039b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -12471,7 +12471,7 @@
         "Id": "KAL-T-041a",
         "Name": "Schwimmer David",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -12487,7 +12487,7 @@
         "Id": "KAL-T-041b",
         "Name": "Schwimmerin Sharon",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -12503,7 +12503,7 @@
         "Id": "KAL-ZB-042a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -12519,7 +12519,7 @@
         "Id": "KAL-ZB-042b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 235,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -12535,7 +12535,7 @@
         "Id": "KAL-AL-042",
         "Name": "Wulfric",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0712",
@@ -12555,7 +12555,7 @@
         "Id": "KAL-T-043a",
         "Name": "Schwimmer Richard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0086",
@@ -12571,7 +12571,7 @@
         "Id": "KAL-T-043b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0090",
@@ -12587,7 +12587,7 @@
         "Id": "KAL-HB-045a",
         "Name": "Malva",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 365,
         "Team": [
           {
             "MonsterId": "PKM-0136",
@@ -12615,7 +12615,7 @@
         "Id": "KAL-HB-045b",
         "Name": "Siebold",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 365,
         "Team": [
           {
             "MonsterId": "PKM-0130",
@@ -12643,7 +12643,7 @@
         "Id": "KAL-HB-045c",
         "Name": "Wikstrom",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 365,
         "Team": [
           {
             "MonsterId": "PKM-0681",
@@ -12671,7 +12671,7 @@
         "Id": "KAL-HB-045d",
         "Name": "Drasna",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 365,
         "Team": [
           {
             "MonsterId": "PKM-0715",
@@ -12699,7 +12699,7 @@
         "Id": "KAL-EG-045",
         "Name": "Diantha",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 385,
         "Team": [
           {
             "MonsterId": "PKM-0655",
@@ -12731,7 +12731,7 @@
         "Id": "KAL-K-031",
         "Name": "Lysandre (final)",
         "Klasse": "Team Flare",
-        "Belohnung": 200,
+        "Belohnung": 245,
         "Team": [
           {
             "MonsterId": "PKM-0717",
@@ -12743,7 +12743,7 @@
         "Id": "KAL-RIV-052",
         "Name": "Serena",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 325,
         "Team": [
           {
             "MonsterId": "PKM-0655",
@@ -12763,7 +12763,7 @@
         "Id": "KAL-T-053a",
         "Name": "Battle Chatelaine Nita",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0655",
@@ -12963,7 +12963,7 @@
         "Id": "ALO-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0722",
@@ -12979,7 +12979,7 @@
         "Id": "ALO-ZB-002a",
         "Name": "Kampf-Schüler Yoshi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -12995,7 +12995,7 @@
         "Id": "ALO-ZB-002b",
         "Name": "Kampf-Schüler Nob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 65,
         "Team": [
           {
             "MonsterId": "PKM-0107",
@@ -13011,7 +13011,7 @@
         "Id": "ALO-AL-002",
         "Name": "Hala",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0701",
@@ -13031,7 +13031,7 @@
         "Id": "ALO-T-003a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0722",
@@ -13047,7 +13047,7 @@
         "Id": "ALO-T-003b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0728",
@@ -13063,7 +13063,7 @@
         "Id": "ALO-ZB-004a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -13079,7 +13079,7 @@
         "Id": "ALO-ZB-004b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 115,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -13095,7 +13095,7 @@
         "Id": "ALO-AL-004",
         "Name": "Olivia",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0744",
@@ -13115,7 +13115,7 @@
         "Id": "ALO-T-005a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0722",
@@ -13131,7 +13131,7 @@
         "Id": "ALO-T-005b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0728",
@@ -13147,7 +13147,7 @@
         "Id": "ALO-ZB-006a",
         "Name": "Detektiv Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13163,7 +13163,7 @@
         "Id": "ALO-ZB-006b",
         "Name": "Detektiv Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 155,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13179,7 +13179,7 @@
         "Id": "ALO-AL-006",
         "Name": "Nanu",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13199,7 +13199,7 @@
         "Id": "ALO-T-007a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0722",
@@ -13215,7 +13215,7 @@
         "Id": "ALO-T-007b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0728",
@@ -13231,7 +13231,7 @@
         "Id": "ALO-ZB-008a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -13247,7 +13247,7 @@
         "Id": "ALO-ZB-008b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -13283,7 +13283,7 @@
         "Id": "ALO-HB-009a",
         "Name": "Molayne",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0476",
@@ -13311,7 +13311,7 @@
         "Id": "ALO-HB-009b",
         "Name": "Olivia",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0744",
@@ -13339,7 +13339,7 @@
         "Id": "ALO-HB-009c",
         "Name": "Acerola",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0752",
@@ -13367,7 +13367,7 @@
         "Id": "ALO-HB-009d",
         "Name": "Kahili",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0730",
@@ -13395,7 +13395,7 @@
         "Id": "ALO-EG-009",
         "Name": "Kukui",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 340,
         "Team": [
           {
             "MonsterId": "PKM-0745",
@@ -13427,7 +13427,7 @@
         "Id": "ALO-K-011",
         "Name": "Lana (Totem: Wishiwashi)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0746",
@@ -13439,7 +13439,7 @@
         "Id": "ALO-T-004",
         "Name": "Totem Wishiwashi",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0746",
@@ -13451,7 +13451,7 @@
         "Id": "ALO-K-012",
         "Name": "Kiawe (Totem: Marowak)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0105",
@@ -13463,7 +13463,7 @@
         "Id": "ALO-T-005",
         "Name": "Totem Salazzle",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0758",
@@ -13475,7 +13475,7 @@
         "Id": "ALO-K-013",
         "Name": "Mallow (Totem: Lurantis)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0754",
@@ -13487,7 +13487,7 @@
         "Id": "ALO-T-006",
         "Name": "Totem Lurantis",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0754",
@@ -13499,7 +13499,7 @@
         "Id": "ALO-ZB-019a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -13515,7 +13515,7 @@
         "Id": "ALO-ZB-019b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 125,
         "Team": [
           {
             "MonsterId": "PKM-0074",
@@ -13531,7 +13531,7 @@
         "Id": "ALO-AL-019",
         "Name": "Olivia",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 150,
         "Team": [
           {
             "MonsterId": "PKM-0744",
@@ -13551,7 +13551,7 @@
         "Id": "ALO-T-020a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0722",
@@ -13567,7 +13567,7 @@
         "Id": "ALO-T-020b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 120,
         "Team": [
           {
             "MonsterId": "PKM-0728",
@@ -13583,7 +13583,7 @@
         "Id": "ALO-ZB-022a",
         "Name": "Detektiv Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13599,7 +13599,7 @@
         "Id": "ALO-ZB-022b",
         "Name": "Detektiv Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 165,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13615,7 +13615,7 @@
         "Id": "ALO-AL-022",
         "Name": "Nanu",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13635,7 +13635,7 @@
         "Id": "ALO-K-014",
         "Name": "Sophocles (Totem: Vikavolt)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 145,
         "Team": [
           {
             "MonsterId": "PKM-0738",
@@ -13647,7 +13647,7 @@
         "Id": "ALO-T-030a",
         "Name": "Team Skull Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -13695,7 +13695,7 @@
         "Id": "ALO-T-031b",
         "Name": "Lusamine",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0730",
@@ -13715,7 +13715,7 @@
         "Id": "ALO-K-015",
         "Name": "Acerola (Totem: Mimikyu)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 175,
         "Team": [
           {
             "MonsterId": "PKM-0778",
@@ -13727,7 +13727,7 @@
         "Id": "ALO-ZB-037a",
         "Name": "Hiker Lenny",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -13743,7 +13743,7 @@
         "Id": "ALO-ZB-037b",
         "Name": "Hiker Eric",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 195,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -13759,7 +13759,7 @@
         "Id": "ALO-AL-037",
         "Name": "Hapu",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0750",
@@ -13779,7 +13779,7 @@
         "Id": "ALO-K-016",
         "Name": "Hapu (Totem: Kommo-o)",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0784",
@@ -13791,7 +13791,7 @@
         "Id": "ALO-T-012",
         "Name": "Totem Kommo-o",
         "Klasse": "Prüfung",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0784",
@@ -13803,7 +13803,7 @@
         "Id": "ALO-T-043a",
         "Name": "Red",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 440,
         "Team": [
           {
             "MonsterId": "PKM-0025",
@@ -13961,7 +13961,7 @@
         "Id": "GAL-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -13977,7 +13977,7 @@
         "Id": "GAL-ZB-002a",
         "Name": "Schönheit Tamia",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -13993,7 +13993,7 @@
         "Id": "GAL-ZB-002b",
         "Name": "Schönheit Bridget",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 85,
         "Team": [
           {
             "MonsterId": "PKM-0420",
@@ -14009,7 +14009,7 @@
         "Id": "GAL-AL-002",
         "Name": "Milo",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 100,
         "Team": [
           {
             "MonsterId": "PKM-0820",
@@ -14025,7 +14025,7 @@
         "Id": "GAL-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -14041,7 +14041,7 @@
         "Id": "GAL-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 60,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14057,7 +14057,7 @@
         "Id": "GAL-ZB-004a",
         "Name": "Schwimmer Richard",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14073,7 +14073,7 @@
         "Id": "GAL-ZB-004b",
         "Name": "Schwimmerin Denise",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 115,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14089,7 +14089,7 @@
         "Id": "GAL-AL-004",
         "Name": "Nessa",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 130,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14109,7 +14109,7 @@
         "Id": "GAL-T-005a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -14125,7 +14125,7 @@
         "Id": "GAL-T-005b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 110,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14141,7 +14141,7 @@
         "Id": "GAL-T-007a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -14157,7 +14157,7 @@
         "Id": "GAL-T-007b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14173,7 +14173,7 @@
         "Id": "GAL-ZB-008a",
         "Name": "Kampf-Schüler Yoshi",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 160,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -14189,7 +14189,7 @@
         "Id": "GAL-ZB-008b",
         "Name": "Kampf-Schüler Nob",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 165,
         "Team": [
           {
             "MonsterId": "PKM-0107",
@@ -14205,7 +14205,7 @@
         "Id": "GAL-AL-008",
         "Name": "Bea",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0820",
@@ -14229,7 +14229,7 @@
         "Id": "GAL-ZB-009a",
         "Name": "Fee-Trainerin Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -14245,7 +14245,7 @@
         "Id": "GAL-ZB-009b",
         "Name": "Fee-Trainerin Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 185,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -14281,7 +14281,7 @@
         "Id": "GAL-T-010a",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -14297,7 +14297,7 @@
         "Id": "GAL-T-010b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 170,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14313,7 +14313,7 @@
         "Id": "GAL-ZB-012a",
         "Name": "Detektiv Lois",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -14329,7 +14329,7 @@
         "Id": "GAL-ZB-012b",
         "Name": "Detektiv Carrie",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 225,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -14345,7 +14345,7 @@
         "Id": "GAL-AL-012",
         "Name": "Piers",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -14365,7 +14365,7 @@
         "Id": "GAL-ZB-013a",
         "Name": "Drachenbändiger Liza",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -14381,7 +14381,7 @@
         "Id": "GAL-ZB-013b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 245,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -14397,7 +14397,7 @@
         "Id": "GAL-AL-013",
         "Name": "Raihan",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 260,
         "Team": [
           {
             "MonsterId": "PKM-0844",
@@ -14417,7 +14417,7 @@
         "Id": "GAL-HB-014a",
         "Name": "Marnie",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -14445,7 +14445,7 @@
         "Id": "GAL-HB-014b",
         "Name": "Bede",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0826",
@@ -14473,7 +14473,7 @@
         "Id": "GAL-HB-014c",
         "Name": "Nessa",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14501,7 +14501,7 @@
         "Id": "GAL-HB-014d",
         "Name": "Raihan",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0844",
@@ -14529,7 +14529,7 @@
         "Id": "GAL-EG-014",
         "Name": "Leon",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 360,
         "Team": [
           {
             "MonsterId": "PKM-0823",
@@ -14561,7 +14561,7 @@
         "Id": "GAL-ZB-024a",
         "Name": "Drachenbändiger Liza",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -14577,7 +14577,7 @@
         "Id": "GAL-ZB-024b",
         "Name": "Drachenbändiger Paul",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 255,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -14593,7 +14593,7 @@
         "Id": "GAL-AL-024",
         "Name": "Raihan",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 270,
         "Team": [
           {
             "MonsterId": "PKM-0844",
@@ -14613,7 +14613,7 @@
         "Id": "GAL-T-027a",
         "Name": "Oleana",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 270,
         "Team": [
           {
             "MonsterId": "PKM-0826",
@@ -14633,7 +14633,7 @@
         "Id": "GAL-T-027b",
         "Name": "Rose Tower Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -14649,7 +14649,7 @@
         "Id": "GAL-HB-028a",
         "Name": "Marnie",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -14677,7 +14677,7 @@
         "Id": "GAL-HB-028b",
         "Name": "Bede",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0826",
@@ -14705,7 +14705,7 @@
         "Id": "GAL-HB-028c",
         "Name": "Nessa",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 320,
         "Team": [
           {
             "MonsterId": "PKM-0816",
@@ -14733,7 +14733,7 @@
         "Id": "GAL-HB-028d",
         "Name": "Raihan",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0844",
@@ -14761,7 +14761,7 @@
         "Id": "GAL-EG-028",
         "Name": "Leon",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 370,
         "Team": [
           {
             "MonsterId": "PKM-0823",
@@ -14793,7 +14793,7 @@
         "Id": "GAL-K-031",
         "Name": "Eternatus",
         "Klasse": "Eternatus",
-        "Belohnung": 200,
+        "Belohnung": 300,
         "Team": [
           {
             "MonsterId": "PKM-0890",
@@ -14805,7 +14805,7 @@
         "Id": "GAL-T-030a",
         "Name": "Dojo Schüler Hyde",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0106",
@@ -14821,7 +14821,7 @@
         "Id": "GAL-T-030b",
         "Name": "Mustard",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 310,
         "Team": [
           {
             "MonsterId": "PKM-0106",
@@ -14841,7 +14841,7 @@
         "Id": "GAL-T-031a",
         "Name": "Peony",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 320,
         "Team": [
           {
             "MonsterId": "PKM-0373",
@@ -14861,7 +14861,7 @@
         "Id": "GAL-T-031b",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 290,
         "Team": [
           {
             "MonsterId": "PKM-0810",
@@ -15015,7 +15015,7 @@
         "Id": "PAL-T-001a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 20,
         "Team": [
           {
             "MonsterId": "PKM-0906",
@@ -15031,7 +15031,7 @@
         "Id": "PAL-ZB-002a",
         "Name": "Käfersammler Rick",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 70,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -15047,7 +15047,7 @@
         "Id": "PAL-ZB-002b",
         "Name": "Käfersammler Doug",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 75,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -15063,7 +15063,7 @@
         "Id": "PAL-AL-002",
         "Name": "Katy",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 80,
         "Team": [
           {
             "MonsterId": "PKM-0664",
@@ -15083,7 +15083,7 @@
         "Id": "PAL-T-003a",
         "Name": "Youngster Joey",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0906",
@@ -15099,7 +15099,7 @@
         "Id": "PAL-T-003b",
         "Name": "Lass Reli",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 50,
         "Team": [
           {
             "MonsterId": "PKM-0912",
@@ -15115,7 +15115,7 @@
         "Id": "PAL-ZB-011a",
         "Name": "Psycho-Mädchen Doris",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0677",
@@ -15131,7 +15131,7 @@
         "Id": "PAL-ZB-011b",
         "Name": "Psycho-Mädchen Tanya",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 215,
         "Team": [
           {
             "MonsterId": "PKM-0677",
@@ -15147,7 +15147,7 @@
         "Id": "PAL-AL-011",
         "Name": "Tulip",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0935",
@@ -15167,7 +15167,7 @@
         "Id": "PAL-ZB-012a",
         "Name": "Skater Jill",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0459",
@@ -15183,7 +15183,7 @@
         "Id": "PAL-ZB-012b",
         "Name": "Skater Deandre",
         "Klasse": "Zwischenboss",
-        "Belohnung": 200,
+        "Belohnung": 235,
         "Team": [
           {
             "MonsterId": "PKM-0459",
@@ -15199,7 +15199,7 @@
         "Id": "PAL-AL-012",
         "Name": "Grusha",
         "Klasse": "Arena",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0940",
@@ -15219,7 +15219,7 @@
         "Id": "PAL-HB-013a",
         "Name": "Rika",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -15247,7 +15247,7 @@
         "Id": "PAL-HB-013b",
         "Name": "Poppy",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0436",
@@ -15275,7 +15275,7 @@
         "Id": "PAL-HB-013c",
         "Name": "Larry",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -15303,7 +15303,7 @@
         "Id": "PAL-HB-013d",
         "Name": "Hassel",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 305,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -15331,7 +15331,7 @@
         "Id": "PAL-EG-013",
         "Name": "Geeta",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 335,
         "Team": [
           {
             "MonsterId": "PKM-0945",
@@ -15363,7 +15363,7 @@
         "Id": "PAL-K-042",
         "Name": "Orthworm",
         "Klasse": "Titan",
-        "Belohnung": 200,
+        "Belohnung": 140,
         "Team": [
           {
             "MonsterId": "PKM-0968",
@@ -15375,7 +15375,7 @@
         "Id": "PAL-K-043",
         "Name": "Great Tusk/Iron Treads",
         "Klasse": "Titan",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0984",
@@ -15391,7 +15391,7 @@
         "Id": "PAL-T-016a",
         "Name": "Tatsugiri+Dondozo Titan",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0978",
@@ -15427,7 +15427,7 @@
         "Id": "PAL-T-017b",
         "Name": "Team Star Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 180,
         "Team": [
           {
             "MonsterId": "PKM-0197",
@@ -15443,7 +15443,7 @@
         "Id": "PAL-T-018a",
         "Name": "Team Star Mela",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0819",
@@ -15463,7 +15463,7 @@
         "Id": "PAL-T-018b",
         "Name": "Team Star Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 190,
         "Team": [
           {
             "MonsterId": "PKM-0819",
@@ -15479,7 +15479,7 @@
         "Id": "PAL-T-019a",
         "Name": "Team Star Atticus",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0049",
@@ -15515,7 +15515,7 @@
         "Id": "PAL-T-020a",
         "Name": "Team Star Ortega",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 230,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -15535,7 +15535,7 @@
         "Id": "PAL-T-020b",
         "Name": "Team Star Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 210,
         "Team": [
           {
             "MonsterId": "PKM-0683",
@@ -15551,7 +15551,7 @@
         "Id": "PAL-T-021a",
         "Name": "Team Star Eri",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 240,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -15571,7 +15571,7 @@
         "Id": "PAL-T-021b",
         "Name": "Team Star Rüpel",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 220,
         "Team": [
           {
             "MonsterId": "PKM-0066",
@@ -15587,7 +15587,7 @@
         "Id": "PAL-T-022a",
         "Name": "Rivale Arven",
         "Klasse": "Rivale",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0906",
@@ -15607,7 +15607,7 @@
         "Id": "PAL-HB-025a",
         "Name": "Rika",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0551",
@@ -15635,7 +15635,7 @@
         "Id": "PAL-HB-025b",
         "Name": "Poppy",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0436",
@@ -15663,7 +15663,7 @@
         "Id": "PAL-HB-025c",
         "Name": "Larry",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0519",
@@ -15691,7 +15691,7 @@
         "Id": "PAL-HB-025d",
         "Name": "Hassel",
         "Klasse": "Hauptboss",
-        "Belohnung": 200,
+        "Belohnung": 315,
         "Team": [
           {
             "MonsterId": "PKM-0611",
@@ -15719,7 +15719,7 @@
         "Id": "PAL-EG-025",
         "Name": "Geeta",
         "Klasse": "Endgegner",
-        "Belohnung": 200,
+        "Belohnung": 345,
         "Team": [
           {
             "MonsterId": "PKM-0945",
@@ -15751,7 +15751,7 @@
         "Id": "PAL-T-026a",
         "Name": "Wanderer Liam",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0906",
@@ -15767,7 +15767,7 @@
         "Id": "PAL-T-026b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 250,
         "Team": [
           {
             "MonsterId": "PKM-0912",
@@ -15783,7 +15783,7 @@
         "Id": "PAL-T-027a",
         "Name": "BB League Schüler Aria",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0906",
@@ -15799,7 +15799,7 @@
         "Id": "PAL-T-027b",
         "Name": "Pokémon Breeder Gwen",
         "Klasse": "Trainer",
-        "Belohnung": 200,
+        "Belohnung": 275,
         "Team": [
           {
             "MonsterId": "PKM-0912",

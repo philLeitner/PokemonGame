@@ -22,10 +22,18 @@
         </div>
 
         <div class="team-liste">
-            <h4>Mein Team</h4>
-            @foreach (var mon in Game.Spieler.Team)
+            <h4>Mein Team <span class="team-anzahl">(@Game.Spieler.Team.Count/6)</span></h4>
+            @for (int ti = 0; ti < Game.Spieler.Team.Count; ti++)
             {
-                <div class="team-eintrag @(mon.IstOhnmächtig ? "ohnmächtig" : "")">
+                var mon = Game.Spieler.Team[ti];
+                var idx = ti;
+                <div class="team-eintrag @(mon.IstOhnmächtig ? "ohnmächtig" : "") @(DragIndex == idx ? "drag-aktiv" : "") @(DropIndex == idx ? "drop-ziel" : "")"
+                     draggable="true"
+                     @ondragstart="() => DragStart(idx)"
+                     @ondragover:preventDefault
+                     @ondragover="() => DragOver(idx)"
+                     @ondrop="() => DragDrop()">
+                    <span class="drag-handle" title="Reihenfolge ändern">☰</span>
                     <span class="team-emoji">@GetTypEmoji(mon.Typen.FirstOrDefault() ?? "")</span>
                     <div class="team-info">
                         <span class="team-name">@mon.Name</span>
@@ -81,7 +89,6 @@
             <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
         }
         <button class="btn-pokedex-klein" @onclick="Game.ZuPokédex">📖 Pokédex</button>
-        <button class="btn-monster-editor-klein" @onclick="Game.ZuMonsterEditor">🐾 Monster-Editor</button>
         <button class="btn-admin-klein" @onclick="Game.ZuAdminPanel">🔧 Admin</button>
     </div>
 
@@ -921,6 +928,22 @@
     private string? ausgewähltOrtId;
     private Ort? ausgewähltOrt;
     private string? meldung;
+    // Drag & Drop Team-Reihenfolge
+    private int DragIndex = -1;
+    private int DropIndex = -1;
+    private void DragStart(int idx) { DragIndex = idx; DropIndex = -1; }
+    private void DragOver(int idx) { DropIndex = idx; }
+    private void DragDrop()
+    {
+        if (DragIndex < 0 || DropIndex < 0 || DragIndex == DropIndex) { DragIndex = DropIndex = -1; return; }
+        var team = Game.Spieler.Team;
+        var item = team[DragIndex];
+        team.RemoveAt(DragIndex);
+        team.Insert(DropIndex, item);
+        Game.Spieler.AktivesMonsterIndex = 0;
+        Game.Notify();
+        DragIndex = DropIndex = -1;
+    }
     private bool marktOffen = false;
     private bool rucksackOffen = false;
     private string aktiveKategorie = "Alle";

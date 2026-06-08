@@ -79,6 +79,24 @@ public class MonsterInstanz
     public string? GetrageneItemId { get; set; } = null; // Item das das Monster trägt
     public bool IstOhnmächtig => AktuelleKp <= 0;
     public string AngezeigterName => !string.IsNullOrEmpty(Spitzname) ? Spitzname : Name;
+    // Stat-Stufen für Kampf (-6 bis +6), werden nach dem Kampf zurückgesetzt
+    public int StatStufeAngriff { get; set; } = 0;
+    public int StatStufeVerteidigung { get; set; } = 0;
+    public int StatStufeSpAngriff { get; set; } = 0;
+    public int StatStufeSpVerteidigung { get; set; } = 0;
+    public int StatStufeInitiative { get; set; } = 0;
+    public int StatStufeGenauigkeit { get; set; } = 0;
+    /// <summary>Berechnet den effektiven Wert mit Stat-Stufe (Multiplikator 2/8 bis 8/2)</summary>
+    public static int MitStatStufe(int basisWert, int stufe)
+    {
+        stufe = Math.Clamp(stufe, -6, 6);
+        float[] multi = { 2f/8, 2f/7, 2f/6, 2f/5, 2f/4, 2f/3, 1f, 3f/2, 4f/2, 5f/2, 6f/2, 7f/2, 8f/2 };
+        return Math.Max(1, (int)(basisWert * multi[stufe + 6]));
+    }
+    public void StatStufeZurücksetzen()
+    {
+        StatStufeAngriff = StatStufeVerteidigung = StatStufeSpAngriff = StatStufeSpVerteidigung = StatStufeInitiative = StatStufeGenauigkeit = 0;
+    }
 
     public static MonsterInstanz VonSpezies(MonsterData spezies, int level, List<AttackeData> alleAttacken)
     {
@@ -425,6 +443,7 @@ public class KampfZustand
     public TrainerKampf? AktuellerTrainer { get; set; }
     // Fangen
     public bool KannFangen => Typ == KampfTyp.Wild;
+    public bool IstTrainerKampf => Typ == KampfTyp.Trainer;
     // Evolution nach Kampf
     public MonsterInstanz? EntwickeltSichMonster { get; set; }
     public string? EntwickeltSichZuName { get; set; }

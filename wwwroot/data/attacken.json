@@ -86,7 +86,7 @@
     "staerke": 75,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -99,7 +99,7 @@
     "staerke": 75,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -112,7 +112,7 @@
     "staerke": 75,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -437,7 +437,7 @@
     "staerke": 85,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 1
   },
@@ -515,7 +515,7 @@
     "staerke": 15,
     "genauigkeit": 100,
     "ap": 35,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 30,
     "generation": 1
   },
@@ -528,7 +528,7 @@
     "staerke": 25,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 20,
     "generation": 1
   },
@@ -606,7 +606,7 @@
     "staerke": 0,
     "genauigkeit": 55,
     "ap": 15,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -619,7 +619,7 @@
     "staerke": 0,
     "genauigkeit": 55,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -671,7 +671,7 @@
     "staerke": 40,
     "genauigkeit": 100,
     "ap": 25,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -684,7 +684,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -749,7 +749,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -762,7 +762,7 @@
     "staerke": 110,
     "genauigkeit": 70,
     "ap": 5,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -775,7 +775,7 @@
     "staerke": 65,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -996,7 +996,7 @@
     "staerke": 0,
     "genauigkeit": 75,
     "ap": 35,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1009,7 +1009,7 @@
     "staerke": 0,
     "genauigkeit": 75,
     "ap": 30,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1022,7 +1022,7 @@
     "staerke": 0,
     "genauigkeit": 75,
     "ap": 15,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1087,7 +1087,7 @@
     "staerke": 40,
     "genauigkeit": 100,
     "ap": 30,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -1100,7 +1100,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -1113,7 +1113,7 @@
     "staerke": 0,
     "genauigkeit": 90,
     "ap": 20,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1126,7 +1126,7 @@
     "staerke": 110,
     "genauigkeit": 70,
     "ap": 10,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 1
   },
@@ -1191,7 +1191,7 @@
     "staerke": 0,
     "genauigkeit": 90,
     "ap": 10,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1204,7 +1204,7 @@
     "staerke": 50,
     "genauigkeit": 100,
     "ap": 25,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -1230,7 +1230,7 @@
     "staerke": 0,
     "genauigkeit": 60,
     "ap": 20,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1412,7 +1412,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1581,7 +1581,7 @@
     "staerke": 30,
     "genauigkeit": 100,
     "ap": 30,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 1
   },
@@ -1594,7 +1594,7 @@
     "staerke": 30,
     "genauigkeit": 70,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 40,
     "generation": 1
   },
@@ -1607,7 +1607,7 @@
     "staerke": 65,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 30,
     "generation": 1
   },
@@ -1633,7 +1633,7 @@
     "staerke": 110,
     "genauigkeit": 85,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 1
   },
@@ -1776,7 +1776,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 30,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1802,7 +1802,7 @@
     "staerke": 0,
     "genauigkeit": 90,
     "ap": 40,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1841,7 +1841,7 @@
     "staerke": 0,
     "genauigkeit": 75,
     "ap": 10,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -1893,7 +1893,7 @@
     "staerke": 70,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 20,
     "generation": 1
   },
@@ -1906,7 +1906,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 1
   },
@@ -2231,7 +2231,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 25,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 2
   },
@@ -2348,7 +2348,7 @@
     "staerke": 40,
     "genauigkeit": 100,
     "ap": 25,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 2
   },
@@ -2413,7 +2413,7 @@
     "staerke": 0,
     "genauigkeit": 75,
     "ap": 10,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 2
   },
@@ -2439,7 +2439,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 30,
     "generation": 2
   },
@@ -2491,7 +2491,7 @@
     "staerke": 120,
     "genauigkeit": 50,
     "ap": 5,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 100,
     "generation": 2
   },
@@ -2504,7 +2504,7 @@
     "staerke": 0,
     "genauigkeit": 0,
     "ap": 40,
-    "statuseffekt": "keine Immunität",
+    "statuseffekt": "keine_immunitaet",
     "statuseffektChance": 0,
     "generation": 2
   },
@@ -2686,7 +2686,7 @@
     "staerke": 0,
     "genauigkeit": 85,
     "ap": 15,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 2
   },
@@ -2712,7 +2712,7 @@
     "staerke": 65,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 2
   },
@@ -2764,7 +2764,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verlieben",
+    "statuseffekt": "verliebt",
     "statuseffektChance": 0,
     "generation": 2
   },
@@ -2868,7 +2868,7 @@
     "staerke": 100,
     "genauigkeit": 95,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 50,
     "generation": 2
   },
@@ -2894,7 +2894,7 @@
     "staerke": 100,
     "genauigkeit": 50,
     "ap": 5,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 100,
     "generation": 2
   },
@@ -2920,7 +2920,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 2
   },
@@ -3336,7 +3336,7 @@
     "staerke": 95,
     "genauigkeit": 90,
     "ap": 10,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 3
   },
@@ -3375,7 +3375,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -3388,7 +3388,7 @@
     "staerke": 0,
     "genauigkeit": 85,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -3570,7 +3570,7 @@
     "staerke": 0,
     "genauigkeit": 0,
     "ap": 20,
-    "statuseffekt": "verwurzeln",
+    "statuseffekt": "verwurzelt",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -3869,7 +3869,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -3882,7 +3882,7 @@
     "staerke": 85,
     "genauigkeit": 90,
     "ap": 10,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 3
   },
@@ -3960,7 +3960,7 @@
     "staerke": 50,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 50,
     "generation": 3
   },
@@ -4103,7 +4103,7 @@
     "staerke": 0,
     "genauigkeit": 0,
     "ap": 40,
-    "statuseffekt": "keine Immunität",
+    "statuseffekt": "keine_immunitaet",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -4155,7 +4155,7 @@
     "staerke": 0,
     "genauigkeit": 55,
     "ap": 15,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 3
   },
@@ -4207,7 +4207,7 @@
     "staerke": 75,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 10,
     "generation": 3
   },
@@ -4415,7 +4415,7 @@
     "staerke": 85,
     "genauigkeit": 85,
     "ap": 5,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 3
   },
@@ -4441,7 +4441,7 @@
     "staerke": 50,
     "genauigkeit": 100,
     "ap": 25,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 10,
     "generation": 3
   },
@@ -4467,7 +4467,7 @@
     "staerke": 120,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 10,
     "generation": 3
   },
@@ -4571,7 +4571,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 20,
     "generation": 3
   },
@@ -4636,7 +4636,7 @@
     "staerke": 0,
     "genauigkeit": 0,
     "ap": 40,
-    "statuseffekt": "keine Immunität",
+    "statuseffekt": "keine_immunitaet",
     "statuseffektChance": 0,
     "generation": 4
   },
@@ -5117,7 +5117,7 @@
     "staerke": 120,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 4
   },
@@ -5130,7 +5130,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 4
   },
@@ -5169,7 +5169,7 @@
     "staerke": 80,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 30,
     "generation": 4
   },
@@ -5481,7 +5481,7 @@
     "staerke": 65,
     "genauigkeit": 95,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 10,
     "generation": 4
   },
@@ -5494,7 +5494,7 @@
     "staerke": 65,
     "genauigkeit": 95,
     "ap": 15,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 4
   },
@@ -5507,7 +5507,7 @@
     "staerke": 65,
     "genauigkeit": 95,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 4
   },
@@ -5598,7 +5598,7 @@
     "staerke": 90,
     "genauigkeit": 85,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 20,
     "generation": 4
   },
@@ -5650,7 +5650,7 @@
     "staerke": 80,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 4
   },
@@ -5663,7 +5663,7 @@
     "staerke": 80,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 4
   },
@@ -5715,7 +5715,7 @@
     "staerke": 70,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 10,
     "generation": 4
   },
@@ -5728,7 +5728,7 @@
     "staerke": 120,
     "genauigkeit": 80,
     "ap": 5,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 30,
     "generation": 4
   },
@@ -5819,7 +5819,7 @@
     "staerke": 65,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 100,
     "generation": 4
   },
@@ -6027,7 +6027,7 @@
     "staerke": 0,
     "genauigkeit": 50,
     "ap": 10,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 0,
     "generation": 4
   },
@@ -6261,7 +6261,7 @@
     "staerke": 95,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 10,
     "generation": 5
   },
@@ -6534,7 +6534,7 @@
     "staerke": 80,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 5
   },
@@ -6716,7 +6716,7 @@
     "staerke": 100,
     "genauigkeit": 50,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 100,
     "generation": 5
   },
@@ -7041,7 +7041,7 @@
     "staerke": 110,
     "genauigkeit": 70,
     "ap": 10,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 30,
     "generation": 5
   },
@@ -7080,7 +7080,7 @@
     "staerke": 100,
     "genauigkeit": 100,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 5
   },
@@ -7106,7 +7106,7 @@
     "staerke": 75,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "einschläfern",
+    "statuseffekt": "eingeschlafen",
     "statuseffektChance": 10,
     "generation": 5
   },
@@ -7145,7 +7145,7 @@
     "staerke": 130,
     "genauigkeit": 85,
     "ap": 5,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 20,
     "generation": 5
   },
@@ -7158,7 +7158,7 @@
     "staerke": 130,
     "genauigkeit": 85,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 20,
     "generation": 5
   },
@@ -7184,7 +7184,7 @@
     "staerke": 140,
     "genauigkeit": 90,
     "ap": 5,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 5
   },
@@ -7197,7 +7197,7 @@
     "staerke": 140,
     "genauigkeit": 90,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 5
   },
@@ -7444,7 +7444,7 @@
     "staerke": 70,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 6
   },
@@ -7691,7 +7691,7 @@
     "staerke": 110,
     "genauigkeit": 95,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 6
   },
@@ -7912,7 +7912,7 @@
     "staerke": 20,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 100,
     "generation": 6
   },
@@ -8731,7 +8731,7 @@
     "staerke": 0,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 100,
     "generation": 7
   },
@@ -9095,7 +9095,7 @@
     "staerke": 175,
     "genauigkeit": 0,
     "ap": 1,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 100,
     "generation": 7
   },
@@ -9485,7 +9485,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 15,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 30,
     "generation": 7
   },
@@ -9537,7 +9537,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "lähmen",
+    "statuseffekt": "gelähmt",
     "statuseffektChance": 100,
     "generation": 7
   },
@@ -9550,7 +9550,7 @@
     "staerke": 60,
     "genauigkeit": 100,
     "ap": 20,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 100,
     "generation": 7
   },
@@ -10135,7 +10135,7 @@
     "staerke": 120,
     "genauigkeit": 90,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 10,
     "generation": 8
   },
@@ -10265,7 +10265,7 @@
     "staerke": 90,
     "genauigkeit": 95,
     "ap": 10,
-    "statuseffekt": "verwirren",
+    "statuseffekt": "verwirrt",
     "statuseffektChance": 20,
     "generation": 8
   },
@@ -10408,7 +10408,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "vergiften",
+    "statuseffekt": "vergiftet",
     "statuseffektChance": 20,
     "generation": 8
   },
@@ -10486,7 +10486,7 @@
     "staerke": 70,
     "genauigkeit": 100,
     "ap": 5,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 100,
     "generation": 8
   },
@@ -10590,7 +10590,7 @@
     "staerke": 70,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "verbrennen",
+    "statuseffekt": "verbrannt",
     "statuseffektChance": 30,
     "generation": 8
   },
@@ -10668,7 +10668,7 @@
     "staerke": 90,
     "genauigkeit": 100,
     "ap": 10,
-    "statuseffekt": "einfrieren",
+    "statuseffekt": "eingefroren",
     "statuseffektChance": 10,
     "generation": 8
   },
