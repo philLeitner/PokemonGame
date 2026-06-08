@@ -1,0 +1,1 @@
+Auf Ebene 1 hat das gegnerische Trainer-Pokémon (Onix) Level 50. Im weiteren Verlauf der Karte scheinen die Level der Trainer-Pokémon anzusteigen, da das Pokémon (Kleinstein) auf Ebene 2 bereits Level 51 erreicht hat.

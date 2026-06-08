@@ -443,10 +443,10 @@ public class KartenGenerator
                 { w.MinLevel = minLvl; w.MaxLevel = maxLvl; }
                 foreach (var t in ort.Trainer)
                     foreach (var m in t.Team)
-                        m.Level = Math.Max(m.Level, minLvl + 1);
+                        m.Level = minLvl + 1;  // immer auf Ebenen-Level setzen
                 if (ort.Arena?.Team != null)
                     foreach (var m in ort.Arena.Team)
-                        m.Level = Math.Max(m.Level, maxLvl + 2);
+                        m.Level = maxLvl + 2;  // Arena-Leiter immer auf Arena-Level
             }
 
             // Fog-of-War: Startpunkt + direkte Nachbarn
