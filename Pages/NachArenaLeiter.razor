@@ -175,9 +175,9 @@
 </div>
 
 @code {
-    // Schritt 1 = Level-Option (nur nach Liga), 2 = Starter, 3 = Einlagern, 4 = Fertig
-    // Nach normaler Arena: direkt bei Schritt 2 starten
-    private int schritt = 2; // Standard: kein Level-Option-Dialog
+    // Schritt 1 = Level-Option (nur nach Liga), 2 = Neuer Starter (nur nach Liga), 3 = Einlagern, 4 = Fertig
+    // Nach normaler Arena: direkt bei Schritt 3 starten (nur Einlagern)
+    private int schritt = 3; // Standard: direkt zum Einlagern
     private string? gewählteLevelOption = null;
     private string? gewählterStarterId = null;
     private HashSet<string> einlagernIds = new();
@@ -185,9 +185,8 @@
     protected override void OnInitialized()
     {
         Game.OnChange += StateHasChanged;
-        // Level-Option nur nach Liga-Abschluss zeigen
-        // (LigaAbschlussNächsteRegion setzt IstNachLiga = true)
-        schritt = Game.IstNachLigaRegionswechsel ? 1 : 2;
+        // Level-Option + Starter nur nach Liga-Abschluss zeigen
+        schritt = Game.IstNachLigaRegionswechsel ? 1 : 3;
     }
     public void Dispose() => Game.OnChange -= StateHasChanged;
 
