@@ -630,7 +630,9 @@ public class GameService
         if (spezies == null) return;
         var starter = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
         Spieler.Team.Add(starter);
-        Spieler.StarterMonsterId = monsterId; // Starter merken für Rivale-Blau-Konter
+        Spieler.StarterMonsterId = monsterId;
+        Spieler.GefangeneMonster.Add(monsterId);  // Starter dauerhaft als gefangen markieren
+        Spieler.GeseheneMonster.Add(monsterId);
         Spieler.AktuellerOrt = "KAN-0001";
         Phase = SpielPhase.Weltkarte;
         Notify();
@@ -1348,6 +1350,9 @@ public class GameService
         if (gefangen)
         {
             AktuellerKampf.Log.Add($"🎉 {gegner.Name} wurde gefangen!");
+            // Dauerhaft als gefangen im Pokédex markieren
+            Spieler.GefangeneMonster.Add(gegner.SpeziesId);
+            Spieler.GeseheneMonster.Add(gegner.SpeziesId);
             if (Spieler.Team.Count < 6)
                 Spieler.Team.Add(gegner);
             else
@@ -1633,6 +1638,7 @@ public class GameService
         await Task.Delay(2000);
 
         // Evolution durchführen
+        string alteSpeziesId = mon.SpeziesId; // Alte ID merken für Pokédex
         mon.SpeziesId = neueSpezies.Id;
         mon.Name = neueSpezies.Name;
         mon.Typen = new List<string>(neueSpezies.Typen);
@@ -1653,6 +1659,11 @@ public class GameService
             if (atk != null && !mon.Attacken.Any(a => a.Id == atk.Id) && mon.Attacken.Count < 4)
                 mon.Attacken.Add(new AttackeInstanz { Id = atk.Id, Name = atk.Name, Typ = atk.Typ, Kategorie = atk.Kategorie, Staerke = atk.Staerke, Genauigkeit = atk.Genauigkeit, MaxAp = atk.Ap ?? 10, AktuelleAp = atk.Ap ?? 10 });
         }
+        // Pokédex: alte Vorstufe bleibt dauerhaft als gefangen, neue Stufe wird als gefangen markiert
+        Spieler.GefangeneMonster.Add(alteSpeziesId);
+        Spieler.GefangeneMonster.Add(neueSpezies.Id);
+        Spieler.GeseheneMonster.Add(alteSpeziesId);
+        Spieler.GeseheneMonster.Add(neueSpezies.Id);
 
         AktuellerKampf.EntwickeltSichMonster = null;
         AktuellerKampf.EntwickeltSichZuName = null;
@@ -2106,6 +2117,10 @@ public class GameService
     // ── Spielstand speichern ──────────────────────────────────────────────────
     public async Task SpielstandSpeichern()
     {
+        // GefangeneMonster aus aktuellem Team/Box synchronisieren (für ältere Spielstände)
+        foreach (var m in Spieler.Team.Concat(Spieler.Box))
+            Spieler.GefangeneMonster.Add(m.SpeziesId);
+
         var save = new SpielstandDaten
         {
             SpielerName = Spieler.Name,
@@ -2120,6 +2135,10 @@ public class GameService
                 ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge
             }).ToList(),
             BesproacheneNPCs = new List<string>(Spieler.BesproacheneNPCs),
+            GeseheneMonster = Spieler.GeseheneMonster.ToList(),
+            GefangeneMonster = Spieler.GefangeneMonster.ToList(),
+            GeseheneAttacken = Spieler.GeseheneAttacken
+                .ToDictionary(kv => kv.Key, kv => new List<string>(kv.Value)),
         };
         var json = JsonSerializer.Serialize(save);
         await _ls.SetItemAsync(LS_SAVEGAME, json);
@@ -2163,10 +2182,24 @@ public class GameService
                 {
                     ItemId = i.ItemId, Name = i.Name, Emoji = i.Emoji, Menge = i.Menge
                 }).ToList() ?? new(),
+                GeseheneMonster = save.GeseheneMonster != null
+                    ? new HashSet<string>(save.GeseheneMonster) : new(),
+                GefangeneMonster = save.GefangeneMonster != null
+                    ? new HashSet<string>(save.GefangeneMonster) : new(),
+                GeseheneAttacken = save.GeseheneAttacken != null
+                    ? save.GeseheneAttacken.ToDictionary(kv => kv.Key, kv => kv.Value) : new(),
             };
 
             Spieler.Team.AddRange(save.Team?.Select(GespeichertesZuMonster) ?? []);
             Spieler.Box.AddRange(save.Box?.Select(GespeichertesZuMonster) ?? []);
+
+            // Rückwärtskompatibilität: aktuelle Team/Box-Monster immer als gefangen markieren
+            foreach (var m in Spieler.Team.Concat(Spieler.Box))
+            {
+                Spieler.GefangeneMonster.Add(m.SpeziesId);
+                Spieler.GeseheneMonster.Add(m.SpeziesId);
+            }
+
             Phase = SpielPhase.Weltkarte;
             Notify();
         }

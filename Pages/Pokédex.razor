@@ -179,9 +179,13 @@
                                     {
                                         <span class="team-badge">⚔️ Im Team</span>
                                     }
+                                    else if (IstInBox(ausgewähltMon.Id))
+                                    {
+                                        <span class="gefangen-badge">📦 In der Box</span>
+                                    }
                                     else
                                     {
-                                        <span class="gefangen-badge">📦 Gefangen</span>
+                                        <span class="gefangen-badge">✅ Früher gefangen</span>
                                     }
                                 }
                                 else
@@ -475,10 +479,11 @@
 
     private void AktualisierenGefangen()
     {
-        gefangeneIds = new HashSet<string>(
-            Game.Spieler.Team.Select(m => m.SpeziesId)
-            .Concat(Game.Spieler.Box.Select(m => m.SpeziesId))
-        );
+        // GefangeneMonster enthält alle jemals gefangenen Monster (auch Vorstufen nach Evolution)
+        gefangeneIds = new HashSet<string>(Game.Spieler.GefangeneMonster);
+        // Aktuelles Team/Box auch immer drin (Rückwärtskompatibilität)
+        foreach (var m in Game.Spieler.Team.Concat(Game.Spieler.Box))
+            gefangeneIds.Add(m.SpeziesId);
         gefangenCount = Game.AlleMonster.Count(m => gefangeneIds.Contains(m.Id));
     }
 
@@ -532,6 +537,7 @@
     private bool IstGefangen(string monsterId) => gefangeneIds.Contains(monsterId);
     private bool IstGesehen(string monsterId) => Game.Spieler.GeseheneMonster.Contains(monsterId);
     private bool IstImTeam(string monsterId) => Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
+    private bool IstInBox(string monsterId) => Game.Spieler.Box.Any(m => m.SpeziesId == monsterId);
 
     private int GetNummer(string id)
     {

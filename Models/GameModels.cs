@@ -202,6 +202,8 @@ public class Spieler
     public List<string> BesproacheneNPCs { get; set; } = new(); // NPCs mit denen gesprochen wurde
     /// <summary>Monster-IDs die der Spieler im Kampf gesehen hat (aber nicht gefangen)</summary>
     public HashSet<string> GeseheneMonster { get; set; } = new();
+    /// <summary>Monster-IDs die der Spieler jemals gefangen/erhalten hat – bleibt auch nach Evolution erhalten!</summary>
+    public HashSet<string> GefangeneMonster { get; set; } = new();
     /// <summary>Gesehene Attacken pro Monster: MonsterId -> Liste von AttackeIds</summary>
     public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
 
@@ -487,6 +489,10 @@ public class SpielstandDaten
     public List<GespeichertesMonster> Box { get; set; } = new();
     public List<GespeichertesItem> Inventar { get; set; } = new();
     public List<string> BesproacheneNPCs { get; set; } = new();
+    // Pokédex-Fortschritt
+    public List<string> GeseheneMonster { get; set; } = new();
+    public List<string> GefangeneMonster { get; set; } = new();
+    public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
 }
 
 public class GespeichertesMonster
