@@ -448,7 +448,7 @@ public class KartenGenerator
                         m.Level = baseLvl + 1;  // gleiche Formel wie wilde Pokémon
                 if (ort.Arena?.Team != null)
                     foreach (var m in ort.Arena.Team)
-                        m.Level = maxLvl + 2;  // Arena-Leiter immer auf Arena-Level
+                        m.Level = baseLvl + 2;  // Arena-Leiter: baseLvl + 2 (nicht maxLvl + 2!)
             }
 
             // Fog-of-War: Startpunkt + direkte Nachbarn
