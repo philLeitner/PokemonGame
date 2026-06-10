@@ -1173,7 +1173,7 @@
       },
       {
         "Id": "KAN-T-014a",
-        "Name": "Pokémon Breeder Adrian",
+        "Name": "Monster-Züchter Adrian",
         "Klasse": "Trainer",
         "Belohnung": 75,
         "Team": [
@@ -1221,7 +1221,7 @@
       },
       {
         "Id": "KAN-T-015b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 80,
         "Team": [
@@ -1613,7 +1613,7 @@
       },
       {
         "Id": "KAN-T-027a",
-        "Name": "Pokémon Breeder Brigitte",
+        "Name": "Monster-Züchter Brigitte",
         "Klasse": "Trainer",
         "Belohnung": 120,
         "Team": [
@@ -1929,7 +1929,7 @@
       },
       {
         "Id": "KAN-T-035b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -2233,7 +2233,7 @@
       },
       {
         "Id": "KAN-T-050a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -2249,7 +2249,7 @@
       },
       {
         "Id": "KAN-T-050b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -2281,7 +2281,7 @@
       },
       {
         "Id": "KAN-T-051a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -2297,7 +2297,7 @@
       },
       {
         "Id": "KAN-T-051b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -2313,7 +2313,7 @@
       },
       {
         "Id": "KAN-T-051c",
-        "Name": "Pokémon-Trainer Macy",
+        "Name": "Monster-Trainer Macy",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -2329,7 +2329,7 @@
       },
       {
         "Id": "KAN-T-051d",
-        "Name": "Pokémon-Trainer Alize",
+        "Name": "Monster-Trainer Alize",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -2345,7 +2345,7 @@
       },
       {
         "Id": "KAN-T-051e",
-        "Name": "Pokémon-Trainer Demetrius",
+        "Name": "Monster-Trainer Demetrius",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -2361,7 +2361,7 @@
       },
       {
         "Id": "KAN-T-051f",
-        "Name": "Pokémon-Trainer Camille",
+        "Name": "Monster-Trainer Camille",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -2521,7 +2521,7 @@
       },
       {
         "Id": "KAN-T-053a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 275,
         "Team": [
@@ -2585,7 +2585,7 @@
       },
       {
         "Id": "KAN-T-055b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 160,
         "Team": [
@@ -2633,7 +2633,7 @@
       },
       {
         "Id": "KAN-T-057a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -2665,7 +2665,7 @@
       },
       {
         "Id": "KAN-T-058a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 190,
         "Team": [
@@ -2681,7 +2681,7 @@
       },
       {
         "Id": "KAN-T-058b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 190,
         "Team": [
@@ -2697,7 +2697,7 @@
       },
       {
         "Id": "KAN-T-059a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -2729,7 +2729,7 @@
       },
       {
         "Id": "KAN-T-060a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -2745,7 +2745,7 @@
       },
       {
         "Id": "KAN-T-060b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -3483,7 +3483,7 @@
       },
       {
         "Id": "JOH-T-006c",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 45,
         "Team": [
@@ -3551,7 +3551,7 @@
       },
       {
         "Id": "JOH-T-009a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 70,
         "Team": [
@@ -3663,7 +3663,7 @@
       },
       {
         "Id": "JOH-T-014a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 100,
         "Team": [
@@ -3695,7 +3695,7 @@
       },
       {
         "Id": "JOH-ZB-015a",
-        "Name": "Pokémon-Trainer Lass",
+        "Name": "Monster-Trainer Lass",
         "Klasse": "Zwischenboss",
         "Belohnung": 140,
         "Team": [
@@ -3863,7 +3863,7 @@
       },
       {
         "Id": "JOH-T-020b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 160,
         "Team": [
@@ -3951,7 +3951,7 @@
       },
       {
         "Id": "JOH-T-023a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -3967,7 +3967,7 @@
       },
       {
         "Id": "JOH-T-023b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -3983,7 +3983,7 @@
       },
       {
         "Id": "JOH-T-023c",
-        "Name": "Pokémon-Trainer Macy",
+        "Name": "Monster-Trainer Macy",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -4015,7 +4015,7 @@
       },
       {
         "Id": "JOH-T-025b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 80,
         "Team": [
@@ -4063,7 +4063,7 @@
       },
       {
         "Id": "JOH-T-027a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 100,
         "Team": [
@@ -4211,7 +4211,7 @@
       },
       {
         "Id": "JOH-T-032b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -4275,7 +4275,7 @@
       },
       {
         "Id": "JOH-T-035b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 170,
         "Team": [
@@ -4323,7 +4323,7 @@
       },
       {
         "Id": "JOH-T-037b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -4339,7 +4339,7 @@
       },
       {
         "Id": "JOH-T-038a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -4403,7 +4403,7 @@
       },
       {
         "Id": "JOH-T-040b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 190,
         "Team": [
@@ -4435,7 +4435,7 @@
       },
       {
         "Id": "JOH-T-042b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -4467,7 +4467,7 @@
       },
       {
         "Id": "JOH-T-043b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 170,
         "Team": [
@@ -4499,7 +4499,7 @@
       },
       {
         "Id": "JOH-T-044b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -4531,7 +4531,7 @@
       },
       {
         "Id": "JOH-T-045b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -5327,7 +5327,7 @@
       },
       {
         "Id": "HOE-T-008c",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 75,
         "Team": [
@@ -5747,7 +5747,7 @@
       },
       {
         "Id": "HOE-T-018b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 90,
         "Team": [
@@ -5795,7 +5795,7 @@
       },
       {
         "Id": "HOE-T-020a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 100,
         "Team": [
@@ -5843,7 +5843,7 @@
       },
       {
         "Id": "HOE-T-021b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -5859,7 +5859,7 @@
       },
       {
         "Id": "HOE-T-023a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 120,
         "Team": [
@@ -5907,7 +5907,7 @@
       },
       {
         "Id": "HOE-T-024b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 130,
         "Team": [
@@ -5955,7 +5955,7 @@
       },
       {
         "Id": "HOE-T-026a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 140,
         "Team": [
@@ -6067,7 +6067,7 @@
       },
       {
         "Id": "HOE-T-029b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -6135,7 +6135,7 @@
       },
       {
         "Id": "HOE-T-031b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 160,
         "Team": [
@@ -6151,7 +6151,7 @@
       },
       {
         "Id": "HOE-T-033a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 170,
         "Team": [
@@ -6199,7 +6199,7 @@
       },
       {
         "Id": "HOE-T-034b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -6247,7 +6247,7 @@
       },
       {
         "Id": "HOE-T-036a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 190,
         "Team": [
@@ -6295,7 +6295,7 @@
       },
       {
         "Id": "HOE-T-037b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -6331,7 +6331,7 @@
       },
       {
         "Id": "HOE-T-038b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 190,
         "Team": [
@@ -6347,7 +6347,7 @@
       },
       {
         "Id": "HOE-T-040a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -6555,7 +6555,7 @@
       },
       {
         "Id": "HOE-T-047b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -6603,7 +6603,7 @@
       },
       {
         "Id": "HOE-T-049a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -6651,7 +6651,7 @@
       },
       {
         "Id": "HOE-T-050b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -6667,7 +6667,7 @@
       },
       {
         "Id": "HOE-T-052a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -6715,7 +6715,7 @@
       },
       {
         "Id": "HOE-T-053b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 240,
         "Team": [
@@ -6839,7 +6839,7 @@
       },
       {
         "Id": "HOE-T-056b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 240,
         "Team": [
@@ -6887,7 +6887,7 @@
       },
       {
         "Id": "HOE-T-058a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -6971,7 +6971,7 @@
       },
       {
         "Id": "HOE-T-060b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7019,7 +7019,7 @@
       },
       {
         "Id": "HOE-T-062a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7067,7 +7067,7 @@
       },
       {
         "Id": "HOE-T-063b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7083,7 +7083,7 @@
       },
       {
         "Id": "HOE-T-064a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7099,7 +7099,7 @@
       },
       {
         "Id": "HOE-T-064b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7147,7 +7147,7 @@
       },
       {
         "Id": "HOE-T-066a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7195,7 +7195,7 @@
       },
       {
         "Id": "HOE-T-067b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -7745,7 +7745,7 @@
       },
       {
         "Id": "SIN-T-005b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 75,
         "Team": [
@@ -7813,7 +7813,7 @@
       },
       {
         "Id": "SIN-T-007a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -8221,7 +8221,7 @@
       },
       {
         "Id": "SIN-T-014b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 70,
         "Team": [
@@ -8269,7 +8269,7 @@
       },
       {
         "Id": "SIN-T-016a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 90,
         "Team": [
@@ -8333,7 +8333,7 @@
       },
       {
         "Id": "SIN-T-019a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -8453,7 +8453,7 @@
       },
       {
         "Id": "SIN-T-022b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 130,
         "Team": [
@@ -8469,7 +8469,7 @@
       },
       {
         "Id": "SIN-T-024a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 140,
         "Team": [
@@ -8517,7 +8517,7 @@
       },
       {
         "Id": "SIN-T-025b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -8565,7 +8565,7 @@
       },
       {
         "Id": "SIN-T-027a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 160,
         "Team": [
@@ -8613,7 +8613,7 @@
       },
       {
         "Id": "SIN-T-028b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 170,
         "Team": [
@@ -8697,7 +8697,7 @@
       },
       {
         "Id": "SIN-T-031a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 180,
         "Team": [
@@ -8761,7 +8761,7 @@
       },
       {
         "Id": "SIN-T-034a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 200,
         "Team": [
@@ -8809,7 +8809,7 @@
       },
       {
         "Id": "SIN-T-035b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 210,
         "Team": [
@@ -8893,7 +8893,7 @@
       },
       {
         "Id": "SIN-T-038b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -8941,7 +8941,7 @@
       },
       {
         "Id": "SIN-T-040a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 230,
         "Team": [
@@ -8989,7 +8989,7 @@
       },
       {
         "Id": "SIN-T-041b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 240,
         "Team": [
@@ -9053,7 +9053,7 @@
       },
       {
         "Id": "SIN-T-044b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -9117,7 +9117,7 @@
       },
       {
         "Id": "SIN-T-047b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -9165,7 +9165,7 @@
       },
       {
         "Id": "SIN-T-049a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -9213,7 +9213,7 @@
       },
       {
         "Id": "SIN-T-050b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -9285,7 +9285,7 @@
       },
       {
         "Id": "SIN-T-052a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9301,7 +9301,7 @@
       },
       {
         "Id": "SIN-T-052b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9333,7 +9333,7 @@
       },
       {
         "Id": "SIN-T-053b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9509,7 +9509,7 @@
       },
       {
         "Id": "SIN-T-055b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9557,7 +9557,7 @@
       },
       {
         "Id": "SIN-T-057a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9605,7 +9605,7 @@
       },
       {
         "Id": "SIN-T-058b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 260,
         "Team": [
@@ -9621,7 +9621,7 @@
       },
       {
         "Id": "SIN-T-062a",
-        "Name": "Pokémon-Trainer Jonathan",
+        "Name": "Monster-Trainer Jonathan",
         "Klasse": "Trainer",
         "Belohnung": 275,
         "Team": [
@@ -9637,7 +9637,7 @@
       },
       {
         "Id": "SIN-T-062b",
-        "Name": "Pokémon-Trainer Phillip",
+        "Name": "Monster-Trainer Phillip",
         "Klasse": "Trainer",
         "Belohnung": 275,
         "Team": [
@@ -10109,7 +10109,7 @@
       },
       {
         "Id": "UNO-T-007b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -10229,7 +10229,7 @@
       },
       {
         "Id": "UNO-T-011a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -10509,7 +10509,7 @@
       },
       {
         "Id": "UNO-T-018a",
-        "Name": "Pokémon Breeder Adrian",
+        "Name": "Monster-Züchter Adrian",
         "Klasse": "Trainer",
         "Belohnung": 140,
         "Team": [
@@ -10557,7 +10557,7 @@
       },
       {
         "Id": "UNO-T-022b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -10573,7 +10573,7 @@
       },
       {
         "Id": "UNO-T-026a",
-        "Name": "Pokémon Breeder Brigitte",
+        "Name": "Monster-Züchter Brigitte",
         "Klasse": "Trainer",
         "Belohnung": 160,
         "Team": [
@@ -11553,7 +11553,7 @@
       },
       {
         "Id": "KAL-T-005a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 90,
         "Team": [
@@ -11981,7 +11981,7 @@
       },
       {
         "Id": "KAL-T-014a",
-        "Name": "Pokémon Breeder Brigitte",
+        "Name": "Monster-Züchter Brigitte",
         "Klasse": "Trainer",
         "Belohnung": 140,
         "Team": [
@@ -12325,7 +12325,7 @@
       },
       {
         "Id": "KAL-T-031b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 220,
         "Team": [
@@ -13029,7 +13029,7 @@
       },
       {
         "Id": "ALO-T-003a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 70,
         "Team": [
@@ -13113,7 +13113,7 @@
       },
       {
         "Id": "ALO-T-005a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -13197,7 +13197,7 @@
       },
       {
         "Id": "ALO-T-007a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 150,
         "Team": [
@@ -13549,7 +13549,7 @@
       },
       {
         "Id": "ALO-T-020a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 120,
         "Team": [
@@ -14107,7 +14107,7 @@
       },
       {
         "Id": "GAL-T-005a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 110,
         "Team": [
@@ -14139,7 +14139,7 @@
       },
       {
         "Id": "GAL-T-007a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 140,
         "Team": [
@@ -14279,7 +14279,7 @@
       },
       {
         "Id": "GAL-T-010a",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 170,
         "Team": [
@@ -15765,7 +15765,7 @@
       },
       {
         "Id": "PAL-T-026b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 250,
         "Team": [
@@ -15797,7 +15797,7 @@
       },
       {
         "Id": "PAL-T-027b",
-        "Name": "Pokémon Breeder Gwen",
+        "Name": "Monster-Züchter Gwen",
         "Klasse": "Trainer",
         "Belohnung": 275,
         "Team": [

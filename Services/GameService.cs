@@ -1322,7 +1322,7 @@ public class GameService
         AktuellerKampf.Phase = KampfPhase.Fangen;
         var gegner = AktuellerKampf.GegnerMonster;
         string ballEmoji = ballId switch { "ITEM-012" => "🔵", "ITEM-013" => "🔴", "ITEM-014" => "🟣", _ => "⚪" };
-        string ballName  = ballId switch { "ITEM-012" => "Superball", "ITEM-013" => "Hyperball", "ITEM-014" => "Meisterball", _ => "Pokéball" };
+        string ballName  = ballId switch { "ITEM-012" => "Monsterball UR", "ITEM-013" => "Monsterball S", "ITEM-014" => "Monsterball SR", _ => "Monsterball R" };
         AktuellerKampf.Log.Add($"{ballEmoji} Du wirfst einen {ballName} nach {gegner.Name}...");
         Notify();
         await Task.Delay(1200);

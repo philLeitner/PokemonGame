@@ -239,7 +239,7 @@ public class KartenGenerator
                     bossZähler++;
                     var leiterCfg = bossZähler <= arenaleiter.Count ? arenaleiter[bossZähler - 1] : null;
 
-                    // Letzter Boss = Pokémon-Liga (Champion), vorletzter = Top 4
+                    // Letzter Boss = Monster-Liga (Champion), vorletzter = Top 4
                     bool istLetzterBoss  = bossZähler == bossCount;
                     bool istVorletzter   = bossZähler == bossCount - 1;
 
@@ -255,7 +255,7 @@ public class KartenGenerator
                                 .Where(t => t.Klasse == "Arena" || t.Klasse == "Hauptboss")
                                 .OrderByDescending(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
                                 .FirstOrDefault();
-                        name = "Pokémon-Liga";
+                        name = "Monster-Liga";
                         farbe = "#6a0dad";
                     }
                     else if (istVorletzter)

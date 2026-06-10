@@ -5321,3 +5321,91 @@ input:checked + .toggle-slider-klein::before {
   color: #aaa; border-radius: 8px; padding: 5px 14px; font-size: 0.8rem; cursor: pointer;
 }
 .btn-abbrechen:hover { background: rgba(255,0,0,0.2); color: #fff; }
+
+/* ── Typ-Effektivität Badges ─────────────────────────── */
+.effekt-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-left: 4px;
+  line-height: 1.5;
+}
+.effekt-immun {
+  background: #4b5563;
+  color: #d1d5db;
+  border: 1px solid #6b7280;
+}
+.effekt-schwach {
+  background: #dc2626;
+  color: #fff;
+  border: 1px solid #ef4444;
+}
+.effekt-stark {
+  background: #16a34a;
+  color: #fff;
+  border: 1px solid #22c55e;
+}
+
+/* ── Wechsel-Monster-Zeile (Name + Badge nebeneinander) ─ */
+.wechsel-mon-zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 6px;
+}
+.wechsel-mon-zeile .team-mon-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Hauptmenü Info-Leiste (schön) ───────────────────── */
+.menu-info-schoen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+.menu-info-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0 0.6rem;
+}
+.menu-info-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.menu-info-zahl {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #e94560;
+  line-height: 1.1;
+}
+.menu-info-label {
+  font-size: 0.65rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.menu-info-trenn {
+  color: rgba(255,255,255,0.2);
+  font-size: 1.2rem;
+  line-height: 1;
+  align-self: center;
+}

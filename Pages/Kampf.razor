@@ -236,8 +236,22 @@
                 <div class="team-wechsel-liste">
                     @foreach (var mon in Game.Spieler.Team.Where(m => !m.IstOhnmächtig && m != spielerMon))
                     {
+                        float defMulti2 = 1f;
+                        if (gegnerMon != null && mon.Typen.Count > 0)
+                        {
+                            foreach (var gt in gegnerMon.Typen)
+                                defMulti2 *= TypeChart.GetVerteidigungsMultiplikator(gt, mon.Typen);
+                        }
+                        string defBadgeKlasse2 = defMulti2 == 0f ? "effekt-immun" : defMulti2 <= 0.5f ? "effekt-stark" : defMulti2 >= 2f ? "effekt-schwach" : "";
+                        string defBadgeText2 = defMulti2 == 0f ? "✗ Immun" : defMulti2 <= 0.25f ? "×¼ Res." : defMulti2 <= 0.5f ? "×½ Res." : defMulti2 >= 4f ? "×4 Schwach" : defMulti2 >= 2f ? "×2 Schwach" : "";
                         <button class="btn-team-mon" @onclick="() => ErzwungenesWechseln(mon)">
-                            <span class="team-mon-name">@mon.AngezeigterName</span>
+                            <div class="wechsel-mon-zeile">
+                                <span class="team-mon-name">@mon.AngezeigterName</span>
+                                @if (!string.IsNullOrEmpty(defBadgeText2))
+                                {
+                                    <span class="effekt-badge @defBadgeKlasse2">@defBadgeText2</span>
+                                }
+                            </div>
                             <span class="team-mon-info">Lv.@mon.Level | @mon.AktuelleKp/@mon.MaxKp KP</span>
                         </button>
                     }
@@ -302,6 +316,29 @@
                                 @if (!attacke.Staerke.HasValue || attacke.Staerke == 0)
                                 {
                                     <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
+                                }
+                                @{
+                                    var gegnerTypenListe = gegnerMon?.Typen ?? new List<string>();
+                                    if (gegnerTypenListe.Count > 0 && attacke.Kategorie != "Status")
+                                    {
+                                        float effMulti = TypeChart.GetVerteidigungsMultiplikator(attacke.Typ, gegnerTypenListe);
+                                        if (effMulti == 0f)
+                                        {
+                                            <span class="effekt-badge effekt-immun">✗ Immun</span>
+                                        }
+                                        else if (effMulti <= 0.5f)
+                                        {
+                                            <span class="effekt-badge effekt-schwach">×@(effMulti < 0.4f ? "¼" : "½") Schwach</span>
+                                        }
+                                        else if (effMulti >= 4f)
+                                        {
+                                            <span class="effekt-badge effekt-stark">×4 Stark!</span>
+                                        }
+                                        else if (effMulti >= 2f)
+                                        {
+                                            <span class="effekt-badge effekt-stark">×2 Stark!</span>
+                                        }
+                                    }
                                 }
                                 @if (!string.IsNullOrEmpty(attacke.Statuseffekt))
                                 {
@@ -382,10 +419,24 @@
                     @foreach (var mon in Game.Spieler.Team)
                     {
                         bool istAktiv = mon == spielerMon;
+                        float defMulti = 1f;
+                        if (gegnerMon != null && mon.Typen.Count > 0)
+                        {
+                            foreach (var gt in gegnerMon.Typen)
+                                defMulti *= TypeChart.GetVerteidigungsMultiplikator(gt, mon.Typen);
+                        }
+                        string defBadgeKlasse = defMulti == 0f ? "effekt-immun" : defMulti <= 0.5f ? "effekt-stark" : defMulti >= 2f ? "effekt-schwach" : "";
+                        string defBadgeText = defMulti == 0f ? "✗ Immun" : defMulti <= 0.25f ? "×¼ Res." : defMulti <= 0.5f ? "×½ Res." : defMulti >= 4f ? "×4 Schwach" : defMulti >= 2f ? "×2 Schwach" : "";
                         <button class="btn-team-mon @(istAktiv ? "aktiv-mon" : "") @(mon.IstOhnmächtig ? "ohnmaechtig-mon" : "")"
                                 disabled="@(istAktiv || mon.IstOhnmächtig)"
                                 @onclick="() => WechsleMitGegnerZug(mon)">
-                            <span class="team-mon-name">@mon.AngezeigterName @(istAktiv ? "(aktiv)" : "")</span>
+                            <div class="wechsel-mon-zeile">
+                                <span class="team-mon-name">@mon.AngezeigterName @(istAktiv ? "(aktiv)" : "")</span>
+                                @if (!string.IsNullOrEmpty(defBadgeText) && !istAktiv && !mon.IstOhnmächtig)
+                                {
+                                    <span class="effekt-badge @defBadgeKlasse">@defBadgeText</span>
+                                }
+                            </div>
                             <span class="team-mon-info">Lv.@mon.Level | @mon.AktuelleKp/@mon.MaxKp KP @(mon.IstOhnmächtig ? "💀" : "")</span>
                         </button>
                     }
@@ -404,10 +455,10 @@
                 </div>
                 <div class="ball-liste">
                     @foreach (var ball in new[] {
-                        ("ITEM-011", "⚪", "Pokéball"),
-                        ("ITEM-012", "🔵", "Superball"),
-                        ("ITEM-013", "🔴", "Hyperball"),
-                        ("ITEM-014", "🟣", "Meisterball")
+                        ("ITEM-011", "⚪", "Monsterball R"),
+                        ("ITEM-012", "🔵", "Monsterball UR"),
+                        ("ITEM-013", "🔴", "Monsterball S"),
+                        ("ITEM-014", "🟣", "Monsterball SR")
                     })
                     {
                         int menge = Game.Spieler.GetItemMenge(ball.Item1);
@@ -624,8 +675,8 @@
     // ─ Fang-Hilfsmethoden ─
     private string GetBallEmoji(KampfZustand k)
     {
-        var log = k.Log.LastOrDefault(l => l.Contains("Superball") || l.Contains("Hyperball") || l.Contains("Meisterball") || l.Contains("Monsterball")) ?? "";
-        return log.Contains("Superball") ? "🔵" : log.Contains("Hyperball") ? "🟡" : log.Contains("Meisterball") ? "🟣" : "⚪";
+        var log = k.Log.LastOrDefault(l => l.Contains("Monsterball UR") || l.Contains("Monsterball S") || l.Contains("Monsterball SR") || l.Contains("Monsterball")) ?? "";
+        return log.Contains("Monsterball UR") ? "🔵" : log.Contains("Monsterball S") ? "🟡" : log.Contains("Monsterball SR") ? "🟣" : "⚪";
     }
     private int GegnerWiderstand(MonsterInstanz m)
     {
