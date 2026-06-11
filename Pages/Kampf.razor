@@ -167,15 +167,31 @@
             }
             else if (lernDialog_SicherheitsAbfrage != null)
             {
-                <!-- Sicherheitsabfrage: Wirklich nicht lernen? -->
-                <div class="attacke-lern-dialog">
-                    <div class="lern-dialog-titel">⚠️ Willst du @kampf.NeueAttacke.Name wirklich nicht lernen?</div>
-                    <p class="lern-dialog-text">@kampf.LernMonster.AngezeigterName vergisst @lernDialog_SicherheitsAbfrage.Name und lernt @kampf.NeueAttacke.Name nicht.</p>
-                    <div class="lern-dialog-buttons">
-                        <button class="lern-btn-ja" @onclick="AttackeLernenWirklichNicht">✅ Ja, nicht lernen</button>
-                        <button class="lern-btn-nein" @onclick="AttackeLernenZurueck">❌ Nein, zurück</button>
+                <!-- Sicherheitsabfrage: Wirklich diese Attacke vergessen? -->
+                @if (lernDialog_SicherheitsAbfrage.Name == "(keine)")
+                {
+                    <!-- Ablehnen bestätigen -->
+                    <div class="attacke-lern-dialog">
+                        <div class="lern-dialog-titel">⚠️ Willst du @kampf.NeueAttacke.Name wirklich nicht lernen?</div>
+                        <p class="lern-dialog-text">@kampf.LernMonster.AngezeigterName lernt @kampf.NeueAttacke.Name nicht.</p>
+                        <div class="lern-dialog-buttons">
+                            <button class="lern-btn-ja" @onclick="AttackeLernenWirklichNicht">✅ Ja, nicht lernen</button>
+                            <button class="lern-btn-nein" @onclick="AttackeLernenZurueck">❌ Nein, zurück</button>
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <!-- Attacke ersetzen bestätigen -->
+                    <div class="attacke-lern-dialog">
+                        <div class="lern-dialog-titel">⚠️ Willst du @lernDialog_SicherheitsAbfrage.Name wirklich vergessen?</div>
+                        <p class="lern-dialog-text">@kampf.LernMonster.AngezeigterName vergisst @lernDialog_SicherheitsAbfrage.Name und lernt @kampf.NeueAttacke.Name.</p>
+                        <div class="lern-dialog-buttons">
+                            <button class="lern-btn-ja" @onclick="AttackeLernenWirklichJa">✅ Ja, ersetzen</button>
+                            <button class="lern-btn-nein" @onclick="AttackeLernenZurueck">❌ Nein, zurück</button>
+                        </div>
+                    </div>
+                }
             }
             else
             {
@@ -650,6 +666,17 @@
     private void AttackeLernenAbbrechen()
     {
         // Zurück zur Hauptfrage
+        lernDialog_WelcheErsetzen = false;
+        lernDialog_SicherheitsAbfrage = null;
+    }
+
+    private void AttackeLernenWirklichJa()
+    {
+        // Attacke ersetzen bestätigt: alte Attacke vergessen, neue lernen
+        if (lernDialog_SicherheitsAbfrage != null)
+        {
+            _ = Game.AttackeLernenAbschliessen(lernDialog_SicherheitsAbfrage);
+        }
         lernDialog_WelcheErsetzen = false;
         lernDialog_SicherheitsAbfrage = null;
     }
