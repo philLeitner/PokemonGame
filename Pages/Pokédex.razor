@@ -71,7 +71,7 @@
                         {
                             <!-- Gefangen: alles sichtbar + Team/Box Badge -->
                             <div class="pokedex-bild-container">
-                                <img class="pokedex-bild" src="@mon.Bild" alt="@mon.Name"
+                                <img class="pokedex-bild" src="@GetMonsterBildPfad(mon.Id)" alt="@mon.Name"
                                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                                 <div class="pokedex-bild-fallback" style="display:none">
                                     @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
@@ -148,7 +148,7 @@
                 <div class="detail-header">
                     @if (istGefangen2 || istGesehen2)
                     {
-                        <img class="detail-bild-gross @(istGesehen2 && !istGefangen2 ? "gesehen-bild" : "")" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name"
+                        <img class="detail-bild-gross @(istGesehen2 && !istGefangen2 ? "gesehen-bild" : "")" src="@GetMonsterBildPfad(ausgewähltMon.Id)" alt="@ausgewähltMon.Name"
                              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                         <div class="detail-bild-fallback" style="display:none">
                             @TypeChart.TypEmojis.GetValueOrDefault(ausgewähltMon.Typen.FirstOrDefault() ?? "", "❓")
@@ -538,6 +538,8 @@
     private bool IstGesehen(string monsterId) => Game.Spieler.GeseheneMonster.Contains(monsterId);
     private bool IstImTeam(string monsterId) => Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
     private bool IstInBox(string monsterId) => Game.Spieler.Box.Any(m => m.SpeziesId == monsterId);
+
+    private string GetMonsterBildPfad(string monsterId) => $"/images/monster/{monsterId}.png";
 
     private int GetNummer(string id)
     {

@@ -5409,3 +5409,25 @@ input:checked + .toggle-slider-klein::before {
   line-height: 1;
   align-self: center;
 }
+
+/* ─ Monster-Bilder ─ */
+.monster-bild-sprite {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.pokedex-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.detail-bild-gross {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}

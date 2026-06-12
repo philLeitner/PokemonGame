@@ -46,10 +46,12 @@
                 </div>
             </div>
             <div class="monster-sprite gegner-sprite">
+                <img src="@GetMonsterBildPfad(gegnerMon.SpeziesId)" alt="@gegnerMon.Name" class="monster-bild-sprite"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                 @{
                     var gegnerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(gegnerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
                 }
-                <div class="monster-emoji-fallback" style="background: @gegnerTypFarbe">
+                <div class="monster-emoji-fallback" style="background: @gegnerTypFarbe;display:none">
                     <span class="monster-emoji-gross">@GetTypEmoji(gegnerMon.Typen.FirstOrDefault() ?? "")</span>
                 </div>
             </div>
@@ -58,10 +60,12 @@
         <!-- Spieler unten -->
         <div class="spieler-bereich">
             <div class="monster-sprite spieler-sprite">
+                <img src="@GetMonsterBildPfad(spielerMon.SpeziesId)" alt="@spielerMon.Name" class="monster-bild-sprite"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                 @{
                     var spielerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(spielerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
                 }
-                <div class="monster-emoji-fallback" style="background: @spielerTypFarbe">
+                <div class="monster-emoji-fallback" style="background: @spielerTypFarbe;display:none">
                     <span class="monster-emoji-gross spieler-emoji">@GetTypEmoji(spielerMon.Typen.FirstOrDefault() ?? "")</span>
                 </div>
             </div>
@@ -508,6 +512,9 @@
     // Attacken-Lern-Dialog Zustand
     private bool lernDialog_WelcheErsetzen = false;
     private AttackeInstanz? lernDialog_SicherheitsAbfrage = null;
+
+    // Helper-Methode für Monster-Bilder
+    private string GetMonsterBildPfad(string speziesId) => $"/images/monster/{speziesId}.png";
 
     protected override void OnInitialized()
     {
