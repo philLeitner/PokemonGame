@@ -137,14 +137,14 @@ public class KartenGenerator
             int städteProBoss = bossCount; // Arenen = Städte, kein separater Städte-Zähler
             int totalCitiesWanted = 0; // Keine separaten Städte mehr
 
-            // Trainer-Pool direkt aus regionen.json
+            // Trainer-Pool direkt aus regionen.json (tiefe Kopie damit Level-Änderungen nicht den Pool mutieren)
             var trainerPool = regCfg.TrainerPool.Select(t => new TrainerKampf
             {
                 Id = t.Id,
                 Name = t.Name,
                 Klasse = t.Klasse,
                 Belohnung = t.Belohnung,
-                Team = t.Team
+                Team = t.Team.Select(m => new MonsterTeamEintrag { MonsterId = m.MonsterId, Level = m.Level }).ToList()
             }).ToList();
             var wildPool = regCfg.MonsterPool;
 
