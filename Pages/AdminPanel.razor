@@ -169,6 +169,63 @@
                     <button class="admin-btn admin-btn-rot" @onclick="TrainerZurücksetzen">🔄 Alle Trainer zurücksetzen</button>
                 </div>
 
+                <!-- ══ Monster hinzufügen ══ -->
+                <div class="admin-section">
+                    <h2 class="admin-section-titel">🥑 Monster zum Team hinzufügen</h2>
+                    <div class="admin-monster-add">
+                        <div class="admin-control-row">
+                            <label>Suche:</label>
+                            <input type="text" class="admin-input" placeholder="Name oder ID (z.B. Glumanda)..."
+                                   @bind="monsterSuche" @bind:event="oninput" />
+                        </div>
+                        <div class="admin-control-row">
+                            <label>Level:</label>
+                            <div class="admin-number-input">
+                                <button @onclick="() => neuesMonsterLevel = Math.Max(1, neuesMonsterLevel - 1)">−</button>
+                                <span class="admin-number-wert">@neuesMonsterLevel</span>
+                                <button @onclick="() => neuesMonsterLevel = Math.Min(100, neuesMonsterLevel + 1)">+</button>
+                                <button @onclick="() => neuesMonsterLevel = 5" class="admin-preset-btn">Lv.5</button>
+                                <button @onclick="() => neuesMonsterLevel = 50" class="admin-preset-btn">Lv.50</button>
+                                <button @onclick="() => neuesMonsterLevel = 100" class="admin-preset-btn">Lv.100</button>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(monsterSuche))
+                        {
+                            var treffer = Game.AlleMonster
+                                .Where(m => m.Name.Contains(monsterSuche, StringComparison.OrdinalIgnoreCase)
+                                         || m.Id.Contains(monsterSuche, StringComparison.OrdinalIgnoreCase))
+                                .Take(12)
+                                .ToList();
+                            <div class="admin-monster-suchergebnis">
+                                @if (!treffer.Any())
+                                {
+                                    <p class="admin-keine-treffer">Kein Monster gefunden.</p>
+                                }
+                                else
+                                {
+                                    @foreach (var mon in treffer)
+                                    {
+                                        <div class="admin-monster-treffer-card">
+                                            <div class="admin-monster-treffer-info">
+                                                <span class="admin-monster-treffer-bild">@mon.Bild</span>
+                                                <div>
+                                                    <strong>@mon.Name</strong>
+                                                    <span class="admin-monster-treffer-id">@mon.Id</span>
+                                                    <span class="admin-monster-treffer-typen">@string.Join(" / ", mon.Typen)</span>
+                                                </div>
+                                            </div>
+                                            <button class="admin-btn admin-btn-gruen admin-btn-klein"
+                                                    @onclick="() => MonsterHinzufügen(mon.Id)">
+                                                + Team
+                                            </button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+
                 <!-- ══ Speichern ══ -->
                 <div class="admin-section admin-section-speichern">
                     <button class="admin-btn admin-btn-gruen admin-btn-gross" @onclick="Speichern">
@@ -191,6 +248,8 @@
     private string? meldung;
     private bool meldungFehler = false;
     private string zielOrtId = "";
+    private string monsterSuche = "";
+    private int neuesMonsterLevel = 5;
 
     // Alle Arenen aus der Karte (für Orden-Auswahl)
     private List<(string OrdenName, int OrdenNr, string OrtName)> AlleArenen =>
@@ -327,6 +386,28 @@
             Game.Notify();
             ZeigeMeldung($"🌀 Teleportiert nach {ort?.Name ?? zielOrtId}");
         }
+    }
+
+    // ── Monster hinzufügen ──────────────────────────────────────────────────────
+    private void MonsterHinzufügen(string speziesId)
+    {
+        var spezies = Game.AlleMonster.FirstOrDefault(s => s.Id == speziesId);
+        if (spezies == null) { ZeigeMeldung($"❌ Monster {speziesId} nicht gefunden!", true); return; }
+        int maxTeam = Game.MaxTeamGröße;
+        if (Game.Spieler.Team.Count >= maxTeam)
+        {
+            var boxMon = MonsterInstanz.VonSpezies(spezies, neuesMonsterLevel, Game.AlleAttacken);
+            Game.Spieler.Box.Add(boxMon);
+            ZeigeMeldung($"✅ {spezies.Name} Lv.{neuesMonsterLevel} in die Box gelegt (Team voll).");
+        }
+        else
+        {
+            var mon = MonsterInstanz.VonSpezies(spezies, neuesMonsterLevel, Game.AlleAttacken);
+            Game.Spieler.Team.Add(mon);
+            ZeigeMeldung($"✅ {spezies.Name} Lv.{neuesMonsterLevel} zum Team hinzugefügt!");
+        }
+        monsterSuche = "";
+        Game.Notify();
     }
 
     // ── Trainer ───────────────────────────────────────────────────────────────
