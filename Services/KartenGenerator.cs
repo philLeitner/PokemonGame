@@ -924,16 +924,30 @@ public class KartenGenerator
     private static List<TrainerKampf> HoleTrainerFürLevel(
         List<TrainerKampf> pool, int dist, Random rng, int min, int max)
     {
-        int targetLevel = 3 + (int)(dist * 1.8);
-        int tolerance = 8;
-        var passend = pool
+        int targetLevel = Math.Max(2, 3 + (int)(dist * 1.8));
+
+        // Alle Trainer aus dem Pool nehmen (Klasse Trainer oder Zwischenboss)
+        var kandidaten = pool
             .Where(t => (t.Klasse == "Trainer" || t.Klasse == "Zwischenboss") && t.Team.Any())
-            .Where(t => Math.Abs(t.Team.Max(m => m.Level) - targetLevel) <= tolerance)
             .ToList();
-        if (passend.Count == 0)
-            passend = pool.Where(t => t.Klasse == "Trainer" && t.Team.Any()).ToList();
+        if (kandidaten.Count == 0)
+            kandidaten = pool.Where(t => t.Team.Any()).ToList();
+
         int anzahl = min == max ? min : rng.Next(min, max + 1);
-        return passend.OrderBy(_ => rng.Next()).Take(anzahl).ToList();
+        var ausgewählt = kandidaten.OrderBy(_ => rng.Next()).Take(anzahl).ToList();
+
+        // Level ALLER Trainer-Monster auf targetLevel setzen (mit kleiner Variation)
+        foreach (var trainer in ausgewählt)
+        {
+            for (int i = 0; i < trainer.Team.Count; i++)
+            {
+                // Erstes Monster: genau targetLevel, weitere: +0 bis +2
+                int variation = i == 0 ? 0 : rng.Next(0, 3);
+                trainer.Team[i].Level = Math.Max(2, targetLevel + variation);
+            }
+        }
+
+        return ausgewählt;
     }
 
     private static List<WildBegegnung> HoleWildMonsterFürLevel(
