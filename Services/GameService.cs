@@ -1730,11 +1730,25 @@ public class GameService
     // ── Status-Effekte ────────────────────────────────────────────────────────
     private bool StatusErlaubtAngriff(MonsterInstanz mon, List<string> log)
     {
+        // Verliebt: 50% Chance nicht anzugreifen
+        if (mon.IstVerliebt && _rng.Next(2) == 0)
+        {
+            log.Add($"💕 {mon.AngezeigterName} ist zu verliebt um anzugreifen!");
+            return false;
+        }
+        // Verwirrt: 33% Chance sich selbst zu treffen
+        if (mon.IstVerwirrt && _rng.Next(3) == 0)
+        {
+            int selbstSchaden = Math.Max(1, mon.MaxKp / 10);
+            mon.AktuelleKp = Math.Max(0, mon.AktuelleKp - selbstSchaden);
+            log.Add($"😵 {mon.AngezeigterName} verletzt sich in der Verwirrung! (-{selbstSchaden} KP)");
+            return false;
+        }
         switch (mon.Status)
         {
             case "eingeschlafen":
                 mon.StatusZähler--;
-                if (mon.StatusZähler <= 0) { mon.Status = "none"; log.Add($"☀️ {mon.AngezeigterName} ist aufgewacht!"); return true; }
+                if (mon.StatusZähler <= 0) { mon.Status = "none"; mon.HatAlbtraum = false; log.Add($"☀️ {mon.AngezeigterName} ist aufgewacht!"); return true; }
                 log.Add($"💤 {mon.AngezeigterName} schläft..."); return false;
             case "eingefroren":
                 if (_rng.Next(5) == 0) { mon.Status = "none"; log.Add($"🔥 {mon.AngezeigterName} ist aufgetaut!"); return true; }
@@ -1760,11 +1774,83 @@ public class GameService
                 mon.AktuelleKp = Math.Max(0, mon.AktuelleKp - brandSchaden);
                 log.Add($"🔥 {mon.AngezeigterName} leidet unter Verbrennung! (-{brandSchaden} KP)");
                 break;
+            case "eingeschlafen":
+                // Albtraum: Schaden während Schlaf
+                if (mon.HatAlbtraum)
+                {
+                    int albtraumSchaden = Math.Max(1, mon.MaxKp / 4);
+                    mon.AktuelleKp = Math.Max(0, mon.AktuelleKp - albtraumSchaden);
+                    log.Add($"👻 {mon.AngezeigterName} leidet unter Albträumen! (-{albtraumSchaden} KP)");
+                }
+                break;
+        }
+        // Egelsamen: KP-Drain
+        if (mon.HatEgelsamen && mon.AktuelleKp > 0)
+        {
+            int egelSchaden = Math.Max(1, mon.MaxKp / 8);
+            mon.AktuelleKp = Math.Max(0, mon.AktuelleKp - egelSchaden);
+            log.Add($"🌱 {mon.AngezeigterName} verliert KP durch Egelsamen! (-{egelSchaden} KP)");
+        }
+        // Gähnen: nächste Runde einschlafen
+        if (mon.GähnenAktiv)
+        {
+            mon.GähnenAktiv = false;
+            if (mon.Status == "none")
+            {
+                mon.Status = "eingeschlafen";
+                mon.StatusZähler = _rng.Next(2, 5);
+                log.Add($"💤 {mon.AngezeigterName} ist vor Müdigkeit eingeschlafen!");
+            }
+        }
+        // Verwirrt: Zähler reduzieren
+        if (mon.IstVerwirrt)
+        {
+            mon.VerwirrtZähler--;
+            if (mon.VerwirrtZähler <= 0)
+                log.Add($"✨ {mon.AngezeigterName} ist nicht mehr verwirrt!");
         }
     }
 
     private void VersuchemStatusEffektDirekt(MonsterInstanz ziel, string neuerStatus, List<string> log)
     {
+        // Spezial-Status die nicht den Haupt-Status belegen
+        if (neuerStatus == "egelsamen")
+        {
+            if (ziel.HatEgelsamen) { log.Add($"🌱 {ziel.AngezeigterName} hat bereits Egelsamen!"); return; }
+            if (ziel.Typen.Contains("Pflanze")) { log.Add($"🌱 {ziel.AngezeigterName} ist immun gegen Egelsamen!"); return; }
+            ziel.HatEgelsamen = true;
+            log.Add($"🌱 {ziel.AngezeigterName} wurde mit Egelsamen bepflanzt!");
+            return;
+        }
+        if (neuerStatus == "albtraum")
+        {
+            if (ziel.Status != "eingeschlafen") { log.Add($"👻 Albtraum wirkt nur bei schlafenden Monstern!"); return; }
+            ziel.HatAlbtraum = true;
+            log.Add($"👻 {ziel.AngezeigterName} hat Albträume!");
+            return;
+        }
+        if (neuerStatus == "verwirrt")
+        {
+            if (ziel.IstVerwirrt) { log.Add($"😵 {ziel.AngezeigterName} ist bereits verwirrt!"); return; }
+            ziel.VerwirrtZähler = _rng.Next(2, 6);
+            log.Add($"😵 {ziel.AngezeigterName} ist verwirrt!");
+            return;
+        }
+        if (neuerStatus == "verliebt")
+        {
+            if (ziel.IstVerliebt) { log.Add($"💕 {ziel.AngezeigterName} ist bereits verliebt!"); return; }
+            ziel.IstVerliebt = true;
+            log.Add($"💕 {ziel.AngezeigterName} ist verliebt!");
+            return;
+        }
+        if (neuerStatus == "gähnen")
+        {
+            if (ziel.GähnenAktiv) { log.Add($"💤 {ziel.AngezeigterName} gähnt bereits!"); return; }
+            ziel.GähnenAktiv = true;
+            log.Add($"💤 {ziel.AngezeigterName} gähnt... Es wird müde!");
+            return;
+        }
+        // Haupt-Status (vergiftet, gelähmt, verbrannt, eingeschlafen, eingefroren)
         if (ziel.Status != "none") return;
         // Immunität: Feuer-Typen können nicht verbrennen, Eis-Typen nicht einfrieren, Gift-Typen nicht vergiftet werden
         if (neuerStatus == "verbrannt" && ziel.Typen.Contains("Brennen")) return;
@@ -1779,7 +1865,6 @@ public class GameService
             "gelähmt"       => $"⚡ {ziel.AngezeigterName} wurde gelähmt!",
             "vergiftet"     => $"☠️ {ziel.AngezeigterName} wurde vergiftet!",
             "eingeschlafen" => $"💤 {ziel.AngezeigterName} ist eingeschlafen!",
-            "verwirrt"      => $"😵 {ziel.AngezeigterName} ist verwirrt!",
             _ => ""
         });
     }

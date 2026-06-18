@@ -85,6 +85,17 @@ public class MonsterInstanz
     /// <summary>Wird von Brüller/Roar gesetzt: Signal für Gegner-Flucht</summary>
     [System.Text.Json.Serialization.JsonIgnore]
     public bool IstRoarFlucht { get; set; } = false;
+    /// <summary>Egelsamen: KP-Drain jede Runde</summary>
+    public bool HatEgelsamen { get; set; } = false;
+    /// <summary>Verwirrt: Runden-Zähler (2-5 Runden)</summary>
+    public int VerwirrtZähler { get; set; } = 0;
+    public bool IstVerwirrt => VerwirrtZähler > 0;
+    /// <summary>Verliebt: 50% Chance nicht anzugreifen</summary>
+    public bool IstVerliebt { get; set; } = false;
+    /// <summary>Gähnen: nächste Runde einschlafen</summary>
+    public bool GähnenAktiv { get; set; } = false;
+    /// <summary>Albtraum: Schaden während Schlaf</summary>
+    public bool HatAlbtraum { get; set; } = false;
     // Stat-Stufen für Kampf (-6 bis +6), werden nach dem Kampf zurückgesetzt
     public int StatStufeAngriff { get; set; } = 0;
     public int StatStufeVerteidigung { get; set; } = 0;
