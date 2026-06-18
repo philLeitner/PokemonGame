@@ -623,6 +623,9 @@ public enum ReliktTyp
     NurEigenTyp,            // Nur Attacken des eigenen Typs
     // Team-Handicaps
     MaxZweiMonster,         // Max. 2 Monster im Team
+    MaxDreiMonster,         // Max. 3 Monster im Team
+    MaxVierMonster,         // Max. 4 Monster im Team
+    MaxFünfMonster,         // Max. 5 Monster im Team
     KeineEntwicklung,       // Keine Entwicklung erlaubt
     ZufälligesTeam,         // Zufälliges Team bei Neustart
     NurWildeMonster,        // Nur wilde Monster fangen

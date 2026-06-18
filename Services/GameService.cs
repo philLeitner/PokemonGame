@@ -47,6 +47,19 @@ public class GameService
     public string LadeStatus { get; private set; } = "Initialisiere...";
     public bool HatSpeicherstand { get; private set; } = false;
     public SpielEinstellungen Einstellungen { get; private set; } = new();
+    /// <summary>Maximale Team-Größe basierend auf aktiven Relikten (Standard: 6)</summary>
+    public int MaxTeamGröße
+    {
+        get
+        {
+            if (Einstellungen.HatRelikt(ReliktTyp.NurEinMonster)) return 1;
+            if (Einstellungen.HatRelikt(ReliktTyp.MaxZweiMonster)) return 2;
+            if (Einstellungen.HatRelikt(ReliktTyp.MaxDreiMonster)) return 3;
+            if (Einstellungen.HatRelikt(ReliktTyp.MaxVierMonster)) return 4;
+            if (Einstellungen.HatRelikt(ReliktTyp.MaxFünfMonster)) return 5;
+            return 6;
+        }
+    }
     // Spiel gilt als abgeschlossen wenn der Spieler mindestens 8 Orden hat
     // (kann später auf alle Orden + Elite Vier + Rivale erweitert werden)
     public bool SpielAbgeschlossen => Spieler.Orden.Count >= 8;
@@ -1360,7 +1373,7 @@ public class GameService
             // Dauerhaft als gefangen im Pokédex markieren
             Spieler.GefangeneMonster.Add(gegner.SpeziesId);
             Spieler.GeseheneMonster.Add(gegner.SpeziesId);
-            if (Spieler.Team.Count < 6)
+            if (Spieler.Team.Count < MaxTeamGröße)
                 Spieler.Team.Add(gegner);
             else
             {

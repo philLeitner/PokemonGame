@@ -27,12 +27,14 @@ public static class ReliktDaten
         // ── Team-Handicaps ───────────────────────────────────────────────
         new(ReliktTyp.MaxZweiMonster,   "Team",  "👥", "Max. 2 Monster",
             "Du darfst maximal 2 Monster im Team haben.", 2),
+        new(ReliktTyp.MaxDreiMonster,   "Team",  "👥", "Max. 3 Monster",
+            "Du darfst maximal 3 Monster im Team haben.", 1),
+        new(ReliktTyp.MaxVierMonster,   "Team",  "👥", "Max. 4 Monster",
+            "Du darfst maximal 4 Monster im Team haben.", 1),
+        new(ReliktTyp.MaxFünfMonster,   "Team",  "👥", "Max. 5 Monster",
+            "Du darfst maximal 5 Monster im Team haben.", 1),
         new(ReliktTyp.KeineEntwicklung, "Team",  "🚷", "Keine Entwicklung",
             "Monster dürfen sich nicht entwickeln.", 3),
-        new(ReliktTyp.ZufälligesTeam,   "Team",  "🎲", "Zufälliges Team",
-            "Dein Team wird bei jedem Neustart zufällig zusammengestellt.", 2),
-        new(ReliktTyp.NurWildeMonster,  "Team",  "🌿", "Nur wilde Monster",
-            "Du darfst keine Starter wählen – nur wilde Monster fangen.", 2),
 
         // ── Welt-Handicaps ───────────────────────────────────────────────
         new(ReliktTyp.KeinMonsterCenter,"Welt",  "🏥", "Kein Monster Center",
