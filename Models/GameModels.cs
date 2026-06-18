@@ -462,7 +462,7 @@ public class KampfZustand
     public TrainerKampf? AktuellerTrainer { get; set; }
     // Fangen
     public bool KannFangen => Typ == KampfTyp.Wild;
-    public bool IstTrainerKampf => Typ == KampfTyp.Trainer;
+    public bool IstTrainerKampf => Typ == KampfTyp.Trainer || Typ == KampfTyp.Arena;
     // Evolution nach Kampf
     public MonsterInstanz? EntwickeltSichMonster { get; set; }
     public string? EntwickeltSichZuName { get; set; }
