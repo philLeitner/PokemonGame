@@ -925,8 +925,7 @@ public class GameService
         }
 
         var ersteMonsterId = effektiverTrainer.Team[0].MonsterId;
-        var spezies = AlleMonster.FirstOrDefault(m => m.Id == ersteMonsterId)
-                      ?? AlleMonster[_rng.Next(AlleMonster.Count)];
+        var spezies = TrainerMonsterSpeziesWählen(ersteMonsterId, effektiverTrainer.Team[0]);
         // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
         var gegner = MonsterInstanz.VonSpezies(spezies, effektiverTrainer.Team[0].Level, AlleAttacken);
 
@@ -959,8 +958,7 @@ public class GameService
 
         var erstesGegnerMonster = ort.Arena.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
-        var spezies = AlleMonster.FirstOrDefault(m => m.Id == erstesGegnerMonster.MonsterId)
-                      ?? AlleMonster[_rng.Next(AlleMonster.Count)];
+        var spezies = TrainerMonsterSpeziesWählen(erstesGegnerMonster.MonsterId, erstesGegnerMonster);
         // Level kommt direkt aus Arena-Team (im generierten Modus bereits vom Generator gesetzt)
         var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
 
@@ -1486,8 +1484,7 @@ public class GameService
             if (AktuellerKampf.TrainerMonsterIndex < AktuellerKampf.AktuellerTrainer.Team.Count)
             {
                 var nächsterEintrag = AktuellerKampf.AktuellerTrainer.Team[AktuellerKampf.TrainerMonsterIndex];
-                var nächsteSpezies = AlleMonster.FirstOrDefault(m => m.Id == nächsterEintrag.MonsterId)
-                                     ?? AlleMonster[_rng.Next(AlleMonster.Count)];
+                var nächsteSpezies = TrainerMonsterSpeziesWählen(nächsterEintrag.MonsterId, nächsterEintrag);
                 // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
                 var nächsterGegner = MonsterInstanz.VonSpezies(nächsteSpezies, nächsterEintrag.Level, AlleAttacken);
                 MonsterAlsGesehenMarkieren(nächsteSpezies.Id, nächsterGegner);
@@ -2059,11 +2056,44 @@ public class GameService
         return verfügbar[_rng.Next(verfügbar.Count)];
     }
 
-    // ── Wilde Begegnung ───────────────────────────────────────────────────────
-    public bool ZufallsBegegnungPrüfen(Ort ort) => ort.WildMonster.Any();
-
+        // ── Wilde Begegnung ───────────────────────────────────────────────────────
+    public bool ZufallsBegegnungPrüfen(Ort ort) => ort.WildMonster.Any() || Einstellungen.WildModus != WildMonsterModus.RouteGenau;
     public WildBegegnung? ZufälligesWildMonster(Ort ort)
     {
+        var modus = Einstellungen.WildModus;
+
+        // Zufällig (alle Generationen) oder Zufällig + Legendäre
+        if (modus == WildMonsterModus.Zufällig || modus == WildMonsterModus.ZufälligMitLegär)
+        {
+            // Pool: alle Monster, bei Zufällig ohne Legendäre (fangrate > 3)
+            var pool = modus == WildMonsterModus.ZufälligMitLegär
+                ? AlleMonster
+                : AlleMonster.Where(m => m.Fangrate > 3).ToList();
+
+            if (!pool.Any()) return null;
+
+            var zufälligeSpezies = pool[_rng.Next(pool.Count)];
+
+            // Level aus Ort-Bereich ableiten (falls vorhanden), sonst 2-60
+            int minLvl = ort.WildMonster.Any() ? ort.WildMonster.Min(w => w.MinLevel) : 2;
+            int maxLvl = ort.WildMonster.Any() ? ort.WildMonster.Max(w => w.MaxLevel) : 60;
+            // Legendäre: etwas höheres Level
+            if (zufälligeSpezies.Fangrate <= 3)
+            {
+                minLvl = Math.Max(minLvl, 40);
+                maxLvl = Math.Max(maxLvl, 70);
+            }
+
+            return new WildBegegnung
+            {
+                MonsterId = zufälligeSpezies.Id,
+                MinLevel = minLvl,
+                MaxLevel = maxLvl,
+                Chance = 100
+            };
+        }
+
+        // RouteGenau: Original-Logik
         if (!ort.WildMonster.Any()) return null;
         int gesamt = ort.WildMonster.Sum(w => w.Chance);
         int würfel = _rng.Next(1, gesamt + 1);
@@ -2074,6 +2104,37 @@ public class GameService
             if (würfel <= kumuliert) return w;
         }
         return ort.WildMonster.Last();
+    }
+
+    /// <summary>Wählt die Spezies für ein Trainer-Monster basierend auf dem TrainerModus.</summary>
+    private MonsterData TrainerMonsterSpeziesWählen(string monsterId, MonsterTeamEintrag eintrag)
+    {
+        var modus = Einstellungen.TrainerModus;
+
+        if (modus == TrainerMonsterModus.Zufällig)
+        {
+            // Zufälliges Monster aus allen Generationen (keine Legendären, fangrate > 3)
+            var pool = AlleMonster.Where(m => m.Fangrate > 3).ToList();
+            return pool.Any() ? pool[_rng.Next(pool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        if (modus == TrainerMonsterModus.ZufälligMitTypen)
+        {
+            // Zufälliges Monster mit gleichem Typ (alle Generationen)
+            var original = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
+            if (original != null && original.Typen.Any())
+            {
+                var ersterTyp = original.Typen[0];
+                var pool = AlleMonster.Where(m => m.Fangrate > 3 && m.Typen.Contains(ersterTyp)).ToList();
+                if (pool.Any()) return pool[_rng.Next(pool.Count)];
+            }
+            // Fallback: komplett zufällig
+            var fallback = AlleMonster.Where(m => m.Fangrate > 3).ToList();
+            return fallback.Any() ? fallback[_rng.Next(fallback.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        // Genau: definiertes Monster
+        return AlleMonster.FirstOrDefault(m => m.Id == monsterId) ?? AlleMonster[_rng.Next(AlleMonster.Count)];
     }
 
     // ── Monster Center ────────────────────────────────────────────────────────
