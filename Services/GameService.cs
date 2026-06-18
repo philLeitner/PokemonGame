@@ -1050,10 +1050,19 @@ public class GameService
                     VersuchemStatusEffektDirekt(gegnerMon, attacke.Statuseffekt, AktuellerKampf.Log);
             }
 
-            // Heuler/Brüller: Gegner flieht (nur wilder Kampf)
-            if ((attacke.Id == "MOV-0045" || attacke.Id == "MOV-0046") && !AktuellerKampf.IstTrainerKampf)
+            // Teleport: Spieler flieht (nur wilder Kampf)
+            if (spielerMon.IstTeleportFlucht)
             {
-                AktuellerKampf.Log.Add($"💨 {gegnerMon.Name} ist geflohen!");
+                spielerMon.IstTeleportFlucht = false;
+                Notify();
+                await Task.Delay(800);
+                KampfBeenden();
+                return;
+            }
+            // Roar/Brüller: Gegner flieht (nur wilder Kampf)
+            if (gegnerMon.IstRoarFlucht)
+            {
+                gegnerMon.IstRoarFlucht = false;
                 Notify();
                 await Task.Delay(800);
                 KampfBeenden();
@@ -1791,38 +1800,125 @@ public class GameService
     /// <summary>Führt Sondereffekte von Status-Attacken aus (Stat-Boosts, Flucht, etc.). Gibt true zurück wenn ein Effekt ausgeführt wurde.</summary>
     private bool AttackeSondereffektAusführen(AttackeInstanz attacke, MonsterInstanz angreifer, MonsterInstanz ziel, List<string> log, bool istTrainerKampf)
     {
-        // Stat-Boosts für den Angreifer (selbst)
         switch (attacke.Id)
         {
+            // ─── ANGREIFER STAT +2 ────────────────────────────────────────────
             case "MOV-0014": // Schwerttanz: Angriff +2
                 StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
-            case "MOV-0028": // Sandwirbel: Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0097": // Agilität: Initiative +2
+                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
+            case "MOV-0133": // Amnesie: SpVerteidigung +2
+                StatStufeAnpassen(angreifer, "spverteidigung", 2, log); return true;
+            case "MOV-0417": // Ränkeschmied (Nasty Plot): SpAngriff +2
+                StatStufeAnpassen(angreifer, "spangriff", 2, log); return true;
+            case "MOV-0367": // Klinge schärfen: Angriff +2
+                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+            case "MOV-0349": // Eisenabwehr: Verteidigung +2
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+            case "MOV-0334": // Eisenpanzer: Verteidigung +2
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+            case "MOV-0322": // Kosmik-Kraft: SpVerteidigung+SpAngriff +1
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+
+            // ─── ANGREIFER STAT +1 ────────────────────────────────────────────
             case "MOV-0074": // Wachstum: Angriff+SpAngriff +1
                 StatStufeAnpassen(angreifer, "angriff", 1, log);
                 StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
             case "MOV-0096": // Meditation: Angriff +1
                 StatStufeAnpassen(angreifer, "angriff", 1, log); return true;
-            case "MOV-0097": // Agilität: Initiative +2
-                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
             case "MOV-0106": // Härtner: Verteidigung +1
                 StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
-            case "MOV-0133": // Amnesie: SpVerteidigung +2
-                StatStufeAnpassen(angreifer, "spverteidigung", 2, log); return true;
             case "MOV-0110": // Verhärtung: Verteidigung +1
                 StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
-            case "MOV-0113": // Fluch: Angriff+Verteidigung +1, Initiative -1
+            case "MOV-0339": // Protzer (Bulk Up): Angriff+Verteidigung +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0347": // Gedankengut (Calm Mind): SpAngriff+SpVerteidigung +1
+                StatStufeAnpassen(angreifer, "spangriff", 1, log);
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
+            case "MOV-0526": // Kraftschub (Coil): Angriff+Verteidigung+Genauigkeit +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
+                StatStufeAnpassen(angreifer, "genauigkeit", 1, log); return true;
+
+            // ─── ANGREIFER STAT gemischt ──────────────────────────────────────
+            case "MOV-0174": // Fluch: Angriff+Verteidigung +1, Initiative -1
                 StatStufeAnpassen(angreifer, "angriff", 1, log);
                 StatStufeAnpassen(angreifer, "verteidigung", 1, log);
                 StatStufeAnpassen(angreifer, "initiative", -1, log); return true;
-            case "MOV-0104": // Doppelteam: Ausweichen +1 (als Genauigkeit Gegner -1)
+
+            // ─── GEGNER STAT -1 ───────────────────────────────────────────────
+            case "MOV-0028": // Sandwirbel: Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0039": // Rutenschlag (Tail Whip): Verteidigung Gegner -1
+                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
+            case "MOV-0045": // Heuler (Growl): Angriff Gegner -1
+                StatStufeAnpassen(ziel, "angriff", -1, log); return true;
+            case "MOV-0103": // Kreideschrei (Screech): Verteidigung Gegner -2
+                StatStufeAnpassen(ziel, "verteidigung", -2, log); return true;
+            case "MOV-0104": // Doppelteam: Ausweichen Gegner -1
                 StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
             case "MOV-0111": // Schrei: Angriff Gegner -1
                 StatStufeAnpassen(ziel, "angriff", -1, log); return true;
+            case "MOV-0141": // Blutsauger (Leer): Verteidigung Gegner -1
+                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
             case "MOV-0186": // Nasenschleim: SpAngriff Gegner -1
                 StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
             case "MOV-0187": // Schleimschleuder: SpAngriff Gegner -1
                 StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+            case "MOV-0204": // Charme: Angriff Gegner -2
+                StatStufeAnpassen(ziel, "angriff", -2, log); return true;
+            case "MOV-0252": // Mogelhieb (Fake Tears): SpVerteidigung Gegner -2
+                StatStufeAnpassen(ziel, "spverteidigung", -2, log); return true;
+            case "MOV-0260": // Schmeichler (Flatter): SpAngriff Gegner +1 (aber verwirrt)
+                StatStufeAnpassen(ziel, "spangriff", 1, log); return true;
+            case "MOV-0498": // Zermueben (Snarl): SpAngriff Gegner -1
+                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+            case "MOV-0493": // Wankelstrahl (Parting Shot): Angriff+SpAngriff Gegner -1
+                StatStufeAnpassen(ziel, "angriff", -1, log);
+                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+
+            // ─── HEILUNG (50% max KP) ────────────────────────────────────────────
+            case "MOV-0156": // Erholung (Recover): 50% max KP
+            case "MOV-0135": // Weichei (Soft-Boiled): 50% max KP
+            case "MOV-0235": // Synthese: 50% max KP
+            case "MOV-0236": // Mondschein: 50% max KP
+            case "MOV-0355": // Ruheort: 50% max KP
+            {
+                int heilung = Math.Max(1, angreifer.MaxKp / 2);
+                heilung = Math.Min(heilung, angreifer.MaxKp - angreifer.AktuelleKp);
+                if (heilung > 0)
+                {
+                    angreifer.AktuelleKp += heilung;
+                    log.Add($"💚 {angreifer.AngezeigterName} erholt sich! (+{heilung} KP)");
+                }
+                else
+                    log.Add($"💚 {angreifer.AngezeigterName} hat bereits volle KP!");
+                return true;
+            }
+
+            // ─── TELEPORT (Flucht aus wildem Kampf) ──────────────────────────
+            case "MOV-0100": // Teleport
+                if (!istTrainerKampf)
+                {
+                    log.Add($"🌀 {angreifer.AngezeigterName} teleportiert sich weg!");
+                    angreifer.IstTeleportFlucht = true; // Signal für Flucht
+                }
+                else
+                    log.Add($"🌀 Teleport hat im Trainerkampf keine Wirkung!");
+                return true;
+
+            // ─── ROAR / BRÜLLER (Gegner flieht / wechselt) ─────────────────────
+            case "MOV-0046": // Brüller (Roar)
+                if (!istTrainerKampf)
+                {
+                    log.Add($"📢 {ziel.Name} ist geflohen!");
+                    ziel.IstRoarFlucht = true; // Signal für Gegner-Flucht
+                }
+                else
+                    log.Add($"📢 {ziel.Name} wird zurückgerufen! (Trainer wechselt zum nächsten)");
+                return true;
         }
         return false;
     }

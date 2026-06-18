@@ -79,6 +79,12 @@ public class MonsterInstanz
     public string? GetrageneItemId { get; set; } = null; // Item das das Monster trägt
     public bool IstOhnmächtig => AktuelleKp <= 0;
     public string AngezeigterName => !string.IsNullOrEmpty(Spitzname) ? Spitzname : Name;
+    /// <summary>Wird von Teleport gesetzt: Signal für Flucht aus wildem Kampf</summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public bool IstTeleportFlucht { get; set; } = false;
+    /// <summary>Wird von Brüller/Roar gesetzt: Signal für Gegner-Flucht</summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public bool IstRoarFlucht { get; set; } = false;
     // Stat-Stufen für Kampf (-6 bis +6), werden nach dem Kampf zurückgesetzt
     public int StatStufeAngriff { get; set; } = 0;
     public int StatStufeVerteidigung { get; set; } = 0;
