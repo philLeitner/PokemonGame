@@ -346,7 +346,8 @@ public class GameService
         AlleOrte = neueOrte;
         if (!string.IsNullOrEmpty(meta.StartOrtId))
             Spieler.AktuellerOrt = meta.StartOrtId;
-        Phase = SpielPhase.Weltkarte;
+        // Wenn kein Team mehr → StarterWahl anzeigen
+        Phase = Spieler.Team.Count == 0 ? SpielPhase.StarterWahl : SpielPhase.Weltkarte;
         Notify();
     }
 

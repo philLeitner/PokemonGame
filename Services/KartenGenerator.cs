@@ -133,9 +133,11 @@ public class KartenGenerator
             if (regCfg == null) continue;
 
             int total = Math.Max(20, regCfg.BasisEbenen);
-            int bossCount = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
-            int städteProBoss = bossCount; // Arenen = Städte, kein separater Städte-Zähler
-            int totalCitiesWanted = 0; // Keine separaten Städte mehr
+            int arenaCount = regCfg.Arenaleiter.Count > 0 ? regCfg.Arenaleiter.Count : 8;
+            // +2: vorletzter Boss = Top 4, letzter Boss = Champion (extra nach den Arenen)
+            int bossCount = arenaCount + 2;
+            int städteProBoss = bossCount;
+            int totalCitiesWanted = 0;
 
             // Trainer-Pool direkt aus regionen.json (tiefe Kopie damit Level-Änderungen nicht den Pool mutieren)
             var trainerPool = regCfg.TrainerPool.Select(t => new TrainerKampf
@@ -237,11 +239,12 @@ public class KartenGenerator
                 else if (eb.IstBoss)
                 {
                     bossZähler++;
-                    var leiterCfg = bossZähler <= arenaleiter.Count ? arenaleiter[bossZähler - 1] : null;
-
-                    // Letzter Boss = Monster-Liga (Champion), vorletzter = Top 4
-                    bool istLetzterBoss  = bossZähler == bossCount;
-                    bool istVorletzter   = bossZähler == bossCount - 1;
+                    // Letzter Boss = Champion, vorletzter = Top 4, davor = normale Arenen
+                    bool istLetzterBoss  = bossZähler == bossCount;     // Champion
+                    bool istVorletzter   = bossZähler == bossCount - 1; // Top 4
+                    bool istNormaleArena = !istLetzterBoss && !istVorletzter;
+                    // leiterCfg nur für normale Arenen (bossZähler 1..arenaCount)
+                    var leiterCfg = istNormaleArena && bossZähler <= arenaleiter.Count ? arenaleiter[bossZähler - 1] : null;
 
                     // Trainer aus Pool nach Klasse auswählen
                     TrainerKampf? arenaTrainer;
@@ -478,6 +481,77 @@ public class KartenGenerator
             }
 
             globalOrdenOffset += bossCount;
+
+            // ─── Rivale-Stadt nach dem Champion generieren ───────────────────
+            var rivaleTrainer = trainerPool
+                .Where(t => t.Klasse == "Rivale")
+                .OrderByDescending(t => t.Team.Any() ? t.Team.Max(m => m.Level) : 0)
+                .FirstOrDefault();
+            if (rivaleTrainer != null)
+            {
+                // Champion-Ort finden (letzter Boss)
+                var championOrt = ergebnis
+                    .Where(o => o.Id.StartsWith(regId + "-GEN-BOSS") && o.Arena != null)
+                    .OrderByDescending(o => o.Arena!.OrdenNr)
+                    .FirstOrDefault();
+                if (championOrt != null)
+                {
+                    // Rivale-Stadt erstellen
+                    var rivaleOrtId = $"{regId}-GEN-RIVALE";
+                    int championDist = meta.OrtDistanzen.TryGetValue(championOrt.Id, out int cd) ? cd : 0;
+                    int rivaleLvl = Math.Max(2, 2 + (int)(championDist * 1.8)) + 3;
+                    var rivaleTeamKopie = new TrainerKampf
+                    {
+                        Id = rivaleTrainer.Id,
+                        Name = rivaleTrainer.Name,
+                        Klasse = "Rivale",
+                        Belohnung = rivaleTrainer.Belohnung,
+                        Team = rivaleTrainer.Team.Select(m => new MonsterTeamEintrag { MonsterId = m.MonsterId, Level = rivaleLvl }).ToList()
+                    };
+                    var rivaleOrt = new Ort
+                    {
+                        Id = rivaleOrtId,
+                        Name = $"Rivale: {rivaleTrainer.Name}",
+                        Typ = "stadt",
+                        Farbe = "#1a6b3a",
+                        GridX = championOrt.GridX + 1,
+                        GridY = championOrt.GridY,
+                        Arena = new Arena
+                        {
+                            OrdenName = "Rivale besiegt",
+                            OrdenNr = globalOrdenOffset + 1,
+                            Leiter = rivaleTrainer.Name,
+                            TypSpezialisierung = "",
+                            Team = rivaleTeamKopie.Team.Select(m => new MonsterTeamEintrag { MonsterId = m.MonsterId, Level = m.Level }).ToList()
+                        },
+                        Trainer = new List<TrainerKampf> { rivaleTeamKopie },
+                        WildMonster = new List<WildBegegnung>(),
+                        HatMonsterCenter = true,
+                        HatMarkt = true,
+                        NPCs = new List<GesprächsNPC>(),
+                        IstStartOrt = false,
+                        Verbindungen = new List<string>()
+                    };
+                    // Verbindung Champion → Rivale
+                    if (string.IsNullOrEmpty(championOrt.Ost))
+                    {
+                        championOrt.Ost = rivaleOrtId;
+                        rivaleOrt.West = championOrt.Id;
+                    }
+                    else
+                    {
+                        championOrt.Nord = rivaleOrtId;
+                        rivaleOrt.Sued = championOrt.Id;
+                    }
+                    championOrt.Verbindungen.Add(rivaleOrtId);
+                    rivaleOrt.Verbindungen.Add(championOrt.Id);
+                    ergebnis.Add(rivaleOrt);
+                    meta.OrtReihenfolge.Add(rivaleOrtId);
+                    meta.OrtKoordinaten[rivaleOrtId] = (rivaleOrt.GridX, rivaleOrt.GridY);
+                    meta.OrtDistanzen[rivaleOrtId] = championDist + 1;
+                    meta.StadtIds.Add(rivaleOrtId);
+                }
+            }
         }
 
         // Regionen verbinden: Startpunkt der Region N+1 direkt nach Liga von Region N
