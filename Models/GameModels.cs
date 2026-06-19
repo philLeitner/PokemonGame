@@ -223,6 +223,8 @@ public class Spieler
     public HashSet<string> GefangeneMonster { get; set; } = new();
     /// <summary>Gesehene Attacken pro Monster: MonsterId -> Liste von AttackeIds</summary>
     public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
+    /// <summary>Nuzlocke: Ort-IDs auf denen der Spieler bereits ein Monster gefangen hat</summary>
+    public HashSet<string> GefangeneMonsterProOrt { get; set; } = new();
 
     public MonsterInstanz? AktivesMonster
     {
@@ -463,7 +465,8 @@ public class KampfZustand
     public int TrainerMonsterIndex { get; set; } = 0;
     public TrainerKampf? AktuellerTrainer { get; set; }
     // Fangen
-    public bool KannFangen => Typ == KampfTyp.Wild;
+    public bool NuzlockeFangenGesperrt { get; set; } = false;
+    public bool KannFangen => Typ == KampfTyp.Wild && !NuzlockeFangenGesperrt;
     public bool IstTrainerKampf => Typ == KampfTyp.Trainer || Typ == KampfTyp.Arena;
     // Evolution nach Kampf
     public MonsterInstanz? EntwickeltSichMonster { get; set; }

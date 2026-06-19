@@ -63,6 +63,15 @@ public class GameService
     // Spiel gilt als abgeschlossen wenn der Spieler mindestens 8 Orden hat
     // (kann später auf alle Orden + Elite Vier + Rivale erweitert werden)
     public bool SpielAbgeschlossen => Spieler.Orden.Count >= 8;
+
+    /// <summary>Anzahl abgeschlossener Regionen (0-basiert, 0 = erste Region läuft)</summary>
+    public int AbgeschlosseneRegionenAnzahl { get; private set; } = 0;
+
+    /// <summary>Maximales Level für die aktuelle Region: Region 1 = 100, Region 2 = 200, usw.</summary>
+    public int AktuellesLevelCap => (AbgeschlosseneRegionenAnzahl + 1) * 100;
+
+    /// <summary>Gibt das Level-Cap für eine bestimmte Region zurück (1-basiert).</summary>
+    public static int LevelCapFürRegion(int regionNummer) => regionNummer * 100;
     /// <summary>Ob der Einrichtungs-Wizard nach dem Prof.-Dialog bereits abgeschlossen wurde</summary>
     public bool WizardAbgeschlossen { get; private set; } = false;
     public void WizardAbschliessen() { WizardAbgeschlossen = true; Notify(); }
@@ -411,13 +420,19 @@ public class GameService
     /// <summary>Berechnet Gegner-Level basierend auf Spieler-Level (Option A: Skalierung).</summary>
     public int GegnerLevelBerechnen(int basisLevel)
     {
-        if (!IstGenerierteKartenModus || !NachArenaLeiterLevelA) return basisLevel;
-        var spielerLevel = Spieler.Team
-            .Where(m => !m.IstOhnmächtig)
-            .Select(m => m.Level)
-            .DefaultIfEmpty(5)
-            .Max();
-        return basisLevel + Math.Max(0, spielerLevel - 5);
+        int level = basisLevel;
+        if (IstGenerierteKartenModus && NachArenaLeiterLevelA)
+        {
+            var spielerLevel = Spieler.Team
+                .Where(m => !m.IstOhnmächtig)
+                .Select(m => m.Level)
+                .DefaultIfEmpty(5)
+                .Max();
+            level = basisLevel + Math.Max(0, spielerLevel - 5);
+        }
+        // HöhereLevel-Relikt: alle Gegner +5 Level
+        if (Einstellungen.HatRelikt(ReliktTyp.HöhereLevel)) level += 5;
+        return level;
     }
 
     /// <summary>
@@ -499,6 +514,13 @@ public class GameService
     /// <summary>Liga-Abschluss: zur nächsten Region wechseln (NachArenaLeiter-Wizard).</summary>
     public void LigaAbschlussNächsteRegion()
     {
+        // Zähne für die abgeschlossene Region vergeben
+        int zähne = Einstellungen.GetGesamtZähne();
+        if (zähne > 0)
+        {
+            Spieler.ZähneWallet.Verdienen(zähne);
+        }
+        AbgeschlosseneRegionenAnzahl++;
         IstNachLigaRegionswechsel = true;  // Level-Option Popup zeigen
         Phase = SpielPhase.NachArenaLeiter;
         Notify();
@@ -544,6 +566,12 @@ public class GameService
     /// <summary>Liga-Abschluss: zum Hauptmenü zurück.</summary>
     public async Task LigaAbschlussHauptmenü(bool spielstandSpeichern)
     {
+        // Zähne für die letzte Region vergeben (falls noch nicht passiert)
+        int zähne = Einstellungen.GetGesamtZähne();
+        if (zähne > 0 && Spieler.ZähneWallet.GesamtZähne == 0)
+        {
+            Spieler.ZähneWallet.Verdienen(zähne);
+        }
         if (spielstandSpeichern)
             await SpielstandSpeichern();
         Phase = SpielPhase.Hauptmenü;
@@ -870,6 +898,16 @@ public class GameService
         var spielerMonster = Spieler.AktivesMonster;
         if (spielerMonster == null) return;
 
+        // NuzlockeLeicht / NuzlockeEinsFangen: nur 1 Monster pro Route fangen
+        // Wenn auf dieser Route schon ein Monster gefangen wurde → Fangen sperren
+        bool kannFangen = true;
+        if (Einstellungen.HatRelikt(ReliktTyp.NuzlockeLeicht) || Einstellungen.HatRelikt(ReliktTyp.NuzlockeEinsFangen))
+        {
+            string ortId = Spieler.AktuellerOrt ?? "";
+            if (Spieler.GefangeneMonsterProOrt.Contains(ortId))
+                kannFangen = false;
+        }
+
         // Monster als gesehen markieren
         Spieler.GeseheneMonster.Add(spezies.Id);
         // Attacken des Gegners als gesehen speichern
@@ -888,7 +926,8 @@ public class GameService
             GegnerMonster = gegner,
             GegnerName = $"Wildes {gegner.Name}",
             Phase = KampfPhase.Intro,
-            Log = new() { $"Ein wildes {gegner.Name} (Lv.{level}) erscheint!" }
+            Log = new() { $"Ein wildes {gegner.Name} (Lv.{level}) erscheint!" },
+            NuzlockeFangenGesperrt = !kannFangen
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1022,6 +1061,15 @@ public class GameService
             Notify();
             await Task.Delay(800);
             await GegnerZug();
+            return;
+        }
+
+        // NurEigenTyp-Relikt: Attacke muss zum eigenen Typ passen
+        if (Einstellungen.HatRelikt(ReliktTyp.NurEigenTyp) && !spielerMon.Typen.Contains(attacke.Typ))
+        {
+            AktuellerKampf.Log.Add($"❌ Relikt: {spielerMon.AngezeigterName} kann nur Attacken des eigenen Typs einsetzen!");
+            AktuellerKampf.Phase = KampfPhase.SpielerZug;
+            Notify();
             return;
         }
 
@@ -1339,6 +1387,18 @@ public class GameService
         if (AktuellerKampf == null) return;
         if (AktuellerKampf.Phase != KampfPhase.SpielerZug) return;
         if (!AktuellerKampf.KannFangen) { AktuellerKampf.Log.Add("❌ Vor einem Trainer-Kampf kann man nicht fangen!"); Notify(); return; }
+        // KeinFangen-Relikt
+        if (Einstellungen.HatRelikt(ReliktTyp.KeinFangen))
+        {
+            AktuellerKampf.Log.Add("❌ Relikt: Fangen ist verboten!");
+            Notify(); return;
+        }
+        // NurPokeball-Relikt: nur einfacher Ball erlaubt
+        if (Einstellungen.HatRelikt(ReliktTyp.NurPokeball) && ballId != "monsterball" && ballId != "ITEM-011")
+        {
+            AktuellerKampf.Log.Add("❌ Relikt: Nur einfache Monsterbälle erlaubt!");
+            Notify(); return;
+        }
         var item = Spieler.GetItem(ballId);
         if (item == null || item.Menge <= 0) { AktuellerKampf.Log.Add("❌ Kein Ball mehr!"); Notify(); return; }
         Spieler.ItemVerwenden(ballId);
@@ -1374,6 +1434,9 @@ public class GameService
             // Dauerhaft als gefangen im Pokédex markieren
             Spieler.GefangeneMonster.Add(gegner.SpeziesId);
             Spieler.GeseheneMonster.Add(gegner.SpeziesId);
+            // Nuzlocke: Ort als "bereits gefangen" markieren
+            if (!string.IsNullOrEmpty(Spieler.AktuellerOrt))
+                Spieler.GefangeneMonsterProOrt.Add(Spieler.AktuellerOrt);
             if (Spieler.Team.Count < MaxTeamGröße)
                 Spieler.Team.Add(gegner);
             else
@@ -1410,6 +1473,13 @@ public class GameService
         if (AktuellerKampf.Typ != KampfTyp.Wild)
         {
             AktuellerKampf.Log.Add("❌ Vor einem Trainer-Kampf kann man nicht fliehen!");
+            Notify();
+            return;
+        }
+        // KeinFliehen-Relikt
+        if (Einstellungen.HatRelikt(ReliktTyp.KeinFliehen))
+        {
+            AktuellerKampf.Log.Add("❌ Relikt: Du kannst nicht fliehen!");
             Notify();
             return;
         }
@@ -1471,6 +1541,10 @@ public class GameService
 
         // EXP berechnen
         int exp = gegner.Level * 50;
+        // WenigerXp-Relikt: 50% weniger XP
+        if (Einstellungen.HatRelikt(ReliktTyp.WenigerXp)) exp = Math.Max(1, exp / 2);
+        // ZähneUpgrade XpBoost: +50% XP
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.XpBoost)) exp = (int)(exp * 1.5f);
         AktuellerKampf.ErfahrungGewonnen = exp;
         spielerMon.ErfahrungsPunkte += exp;
         AktuellerKampf.Log.Add($"+{exp} EP für {spielerMon.AngezeigterName}");
@@ -1486,8 +1560,25 @@ public class GameService
         // Geld
         if (AktuellerKampf.BelohnungGeld > 0)
         {
-            Spieler.Geld += AktuellerKampf.BelohnungGeld;
-            AktuellerKampf.Log.Add($"💰 +{AktuellerKampf.BelohnungGeld} Münzen!");
+            int geld = AktuellerKampf.BelohnungGeld;
+            // KeinGeldNachKampf-Relikt: kein Geld nach Kampf
+            if (Einstellungen.HatRelikt(ReliktTyp.KeinGeldNachKampf))
+            {
+                geld = 0;
+                AktuellerKampf.Log.Add($"🚷 Relikt: Kein Geld nach Kampf!");
+            }
+            else
+            {
+                // WenigerGeld-Relikt: 50% weniger Geld
+                if (Einstellungen.HatRelikt(ReliktTyp.WenigerGeld)) geld = Math.Max(1, geld / 2);
+                // ZähneUpgrade GeldBoost: +50% Geld
+                if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.GeldBoost)) geld = (int)(geld * 1.5f);
+            }
+            if (geld > 0)
+            {
+                Spieler.Geld += geld;
+                AktuellerKampf.Log.Add($"💰 +{geld} Münzen!");
+            }
         }
 
         // Trainer: nächstes Monster?
@@ -1625,16 +1716,37 @@ public class GameService
         if (AktuellerKampf == null) return;
         AktuellerKampf.SpielerGewonnen = false;
         AktuellerKampf.Log.Add("💀 Alle Monster sind ohnmächtig...");
-        AktuellerKampf.Log.Add("Du wurdest besiegt und zum Monster Center gebracht.");
-        int verlust = Math.Min(Spieler.Geld / 2, 500);
-        Spieler.Geld -= verlust;
-        if (verlust > 0) AktuellerKampf.Log.Add($"-{verlust} Münzen verloren.");
-        // Alle Monster heilen
-        foreach (var mon in Spieler.Team)
+
+        // NuzlockeHart: ohnmächtige Monster werden dauerhaft aus dem Team entfernt
+        if (Einstellungen.HatRelikt(ReliktTyp.NuzlockeHart) || Einstellungen.HatRelikt(ReliktTyp.Nuzlocke))
         {
-            mon.AktuelleKp = mon.MaxKp;
-            mon.Status = "none";
-            foreach (var atk in mon.Attacken) atk.AktuelleAp = atk.MaxAp;
+            var ohnmächtige = Spieler.Team.Where(m => m.IstOhnmächtig).ToList();
+            foreach (var mon in ohnmächtige)
+            {
+                Spieler.Team.Remove(mon);
+                AktuellerKampf.Log.Add($"☠️ Nuzlocke: {mon.AngezeigterName} ist für immer verloren!");
+            }
+            if (!Spieler.Team.Any())
+            {
+                AktuellerKampf.Log.Add("🛑 Nuzlocke: Kein Monster mehr übrig! Spiel vorbei.");
+                AktuellerKampf.Phase = KampfPhase.Beendet;
+                Notify();
+                return;
+            }
+        }
+        else
+        {
+            // Normale Niederlage: alle heilen
+            AktuellerKampf.Log.Add("Du wurdest besiegt und zum Monster Center gebracht.");
+            int verlust = Math.Min(Spieler.Geld / 2, 500);
+            Spieler.Geld -= verlust;
+            if (verlust > 0) AktuellerKampf.Log.Add($"-{verlust} Münzen verloren.");
+            foreach (var mon in Spieler.Team)
+            {
+                mon.AktuelleKp = mon.MaxKp;
+                mon.Status = "none";
+                foreach (var atk in mon.Attacken) atk.AktuelleAp = atk.MaxAp;
+            }
         }
         AktuellerKampf.Phase = KampfPhase.Beendet;
         Notify();
@@ -1646,6 +1758,12 @@ public class GameService
         if (AktuellerKampf == null) return;
         if (string.IsNullOrEmpty(mon.EntwickeltZu)) { AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return; }
         if (!mon.EntwicklungLevel.HasValue || mon.Level < mon.EntwicklungLevel.Value) { AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return; }
+        // KeineEntwicklung-Relikt: Entwicklung blockieren
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineEntwicklung))
+        {
+            AktuellerKampf.Log.Add($"🚫 Relikt: {mon.AngezeigterName} kann sich nicht entwickeln!");
+            AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return;
+        }
 
         var neueSpezies = AlleMonster.FirstOrDefault(m => m.Id == mon.EntwickeltZu);
         if (neueSpezies == null) { AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return; }
@@ -1705,9 +1823,20 @@ public class GameService
 
     private void PrüfeLevelUp(MonsterInstanz mon)
     {
+        // Level-Cap: Region 1 = max 100, Region 2 = max 200, usw.
+        // Relikt-LevelKappe hat Vorrang
+        int maxLevel = AktuellesLevelCap;
+        if (Einstellungen.HatRelikt(ReliktTyp.LevelKappe20)) maxLevel = Math.Min(maxLevel, 20);
+        else if (Einstellungen.HatRelikt(ReliktTyp.LevelKappe40)) maxLevel = Math.Min(maxLevel, 40);
+        else if (Einstellungen.HatRelikt(ReliktTyp.LevelKappe60)) maxLevel = Math.Min(maxLevel, 60);
+
+        // WenigerXp-Relikt: 50% weniger Erfahrung
+        if (Einstellungen.HatRelikt(ReliktTyp.WenigerXp))
+            mon.ErfahrungsPunkte = (int)(mon.ErfahrungsPunkte * 0.5f);
+
         int nächstesLevel = mon.Level + 1;
         int benötigteExp = nächstesLevel * nächstesLevel * 10;
-        while (mon.ErfahrungsPunkte >= benötigteExp && mon.Level < 100)
+        while (mon.ErfahrungsPunkte >= benötigteExp && mon.Level < maxLevel)
         {
             mon.Level++;
             mon.ErfahrungsPunkte -= benötigteExp;
@@ -2154,6 +2283,9 @@ public class GameService
     // ── Monster Center ────────────────────────────────────────────────────────
     public string MonsterZentrumHeilen()
     {
+        // KeinHeilen / KeinMonsterCenter Relikt
+        if (Einstellungen.HatRelikt(ReliktTyp.KeinHeilen) || Einstellungen.HatRelikt(ReliktTyp.KeinMonsterCenter))
+            return "❌ Relikt: Monster-Center ist gesperrt! Du kannst hier nicht heilen. ";
         if (!Spieler.Team.Any()) return "Dein Team ist leer.";
         foreach (var mon in Spieler.Team)
         {

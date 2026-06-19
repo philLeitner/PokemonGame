@@ -50,6 +50,7 @@
                     <p>Du kommst jetzt in die nächste Region!</p>
                     @{
                         var nächsteRegion = Game.GetNächsteRegion();
+                        int zähneVerdient = Game.Einstellungen.GetGesamtZähne();
                     }
                     @if (nächsteRegion != null)
                     {
@@ -57,9 +58,27 @@
                             <span class="liga-region-name">@nächsteRegion.Name</span>
                         </div>
                     }
-                    <button class="btn-liga-weiter" @onclick="NächsteRegionStarten">
-                        🚀 In die nächste Region!
-                    </button>
+                    @if (zähneVerdient > 0)
+                    {
+                        <div class="liga-zaehne-info">
+                            <span class="liga-zaehne-icon">🦷</span>
+                            <span class="liga-zaehne-text">Du erhältst <strong>@zähneVerdient Zähne</strong> für diese Region!</span>
+                        </div>
+                        <div class="liga-optionen-grid">
+                            <button class="btn-liga-weiter" @onclick="ZumZähneShop">
+                                🦷 Zähne-Shop öffnen
+                            </button>
+                            <button class="btn-liga-nein" @onclick="NächsteRegionStarten">
+                                🚀 Direkt weiter
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <button class="btn-liga-weiter" @onclick="NächsteRegionStarten">
+                            🚀 In die nächste Region!
+                        </button>
+                    }
                 </div>
             }
             else
@@ -168,6 +187,13 @@
     private void NächsteRegionStarten()
     {
         Game.LigaAbschlussNächsteRegion();
+    }
+
+    private void ZumZähneShop()
+    {
+        // Zähne vergeben und zum Zähne-Shop wechseln (danach kommt der NachArenaLeiter-Wizard)
+        Game.LigaAbschlussNächsteRegion(); // setzt AbgeschlosseneRegionenAnzahl++ und gibt Zähne
+        Game.ZuZähneShop();
     }
 
     private void OptionBestätigen()

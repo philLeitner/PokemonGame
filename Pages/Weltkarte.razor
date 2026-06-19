@@ -2,6 +2,7 @@
 @inject IJSRuntime JS
 @implements IDisposable
 @using MonsterKampf.Services
+@using MonsterKampf.Models
 
 <div class="weltkarte-screen">
     <!-- Linke Sidebar: Spieler-Info -->
@@ -313,9 +314,18 @@
                                 }
                                 @if (ortRef3.HatMarkt || ortRef3.MarktAngebot.Any())
                                 {
-                                    <button class="btn-markt" @onclick="MarktOeffnen">
-                                        🏪 Markt (@ortRef3.MarktAngebot.Count Items)
-                                    </button>
+                                    @if (Game.Einstellungen.HatRelikt(ReliktTyp.KeinMarkt))
+                                    {
+                                        <button class="btn-markt" disabled title="Relikt: Markt gesperrt!">
+                                            🚫 Markt (gesperrt)
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn-markt" @onclick="MarktOeffnen">
+                                            🏪 Markt (@ortRef3.MarktAngebot.Count Items)
+                                        </button>
+                                    }
                                 }
                             </div>
                         }
