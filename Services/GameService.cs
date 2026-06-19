@@ -205,7 +205,15 @@ public class GameService
     /// <summary>Wechselt in den Eigene-Map-Modus. Zeigt zuerst den Start-Dialog.</summary>
     public void ZuEigeneMapStart() { Phase = SpielPhase.EigeneMapStart; Notify(); }
     public void ZuAdminPanel() { Phase = SpielPhase.AdminPanel; Notify(); }
-    public void ZuPokédex() { Phase = SpielPhase.Pokédex; Notify(); }
+    public void ZuPokédex()
+    {
+        if (Einstellungen.HatRelikt(ReliktTyp.KeinPokédex))
+        {
+            // Pokédex gesperrt – nicht wechseln, nur Meldung
+            return;
+        }
+        Phase = SpielPhase.Pokédex; Notify();
+    }
     public void ZuMonsterEditor() { Phase = SpielPhase.MonsterEditor; Notify(); }
     public void ZuRegionsWahl() { Phase = SpielPhase.RegionsWahl; Notify(); }
     public void ZuNachArenaLeiter() { Phase = SpielPhase.NachArenaLeiter; Notify(); }
@@ -668,6 +676,13 @@ public class GameService
 
     public void StarterWählen(string monsterId)
     {
+        // ZufälligerStarter-Relikt: Starter wird zufällig aus dem Pool gewählt
+        if (Einstellungen.HatRelikt(ReliktTyp.ZufälligerStarter))
+        {
+            var pool = GetStarterOptionen();
+            if (pool.Any())
+                monsterId = pool[_rng.Next(pool.Count)].Id;
+        }
         var spezies = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
         if (spezies == null) return;
         var starter = MonsterInstanz.VonSpezies(spezies, 5, AlleAttacken);
@@ -927,7 +942,8 @@ public class GameService
             GegnerName = $"Wildes {gegner.Name}",
             Phase = KampfPhase.Intro,
             Log = new() { $"Ein wildes {gegner.Name} (Lv.{level}) erscheint!" },
-            NuzlockeFangenGesperrt = !kannFangen
+            NuzlockeFangenGesperrt = !kannFangen,
+            ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -997,6 +1013,7 @@ public class GameService
             BelohnungGeld = effektiverTrainer.Belohnung,
             AktuellerTrainer = effektiverTrainer,
             TrainerMonsterIndex = 0,
+            ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1039,6 +1056,7 @@ public class GameService
             BelohnungGeld = arenaTrainer.Belohnung,
             AktuellerTrainer = arenaTrainer,
             TrainerMonsterIndex = 0,
+            ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1054,6 +1072,17 @@ public class GameService
 
         var spielerMon = AktuellerKampf.SpielerMonster;
         var gegnerMon = AktuellerKampf.GegnerMonster;
+
+        // ZufälligeAttacke-Relikt: zufällige Attacke mit AP > 0 wählen
+        if (Einstellungen.HatRelikt(ReliktTyp.ZufälligeAttacke))
+        {
+            var verfügbar = spielerMon.Attacken.Where(a => a.AktuelleAp > 0).ToList();
+            if (verfügbar.Any())
+            {
+                attacke = verfügbar[_rng.Next(verfügbar.Count)];
+                AktuellerKampf.Log.Add($"🎲 Relikt: {spielerMon.AngezeigterName} setzt zufällig {attacke.Name} ein!");
+            }
+        }
 
         // Status-Effekt vor Angriff prüfen (Lähmung, Schlaf, Eingefroren)
         if (!StatusErlaubtAngriff(spielerMon, AktuellerKampf.Log))
@@ -1152,6 +1181,14 @@ public class GameService
         var spielerMon = AktuellerKampf.SpielerMonster;
         var gegnerMon = AktuellerKampf.GegnerMonster;
 
+        // ImmerErstangriff-Relikt: Spieler greift immer zuerst an → Gegner-Zug überspringen wenn Spieler noch am Leben
+        if (Einstellungen.HatRelikt(ReliktTyp.ImmerErstangriff) && !spielerMon.IstOhnmächtig)
+        {
+            AktuellerKampf.Phase = KampfPhase.SpielerZug;
+            Notify();
+            return;
+        }
+
         // Status-Effekt des Gegners prüfen
         if (!StatusErlaubtAngriff(gegnerMon, AktuellerKampf.Log))
         {
@@ -1215,6 +1252,15 @@ public class GameService
         if (AktuellerKampf == null) return;
         if (neuesMonster.IstOhnmächtig) return;
 
+        // KeinMonsterWechsel-Relikt: kein freiwilliger Wechsel erlaubt
+        // Erzwungener Wechsel nach Ohnmacht (Phase == MonsterWechsel) ist immer erlaubt
+        if (Einstellungen.HatRelikt(ReliktTyp.KeinMonsterWechsel) && AktuellerKampf.Phase != KampfPhase.MonsterWechsel)
+        {
+            AktuellerKampf.Log.Add("❌ Relikt: Kein freiwilliger Monster-Wechsel erlaubt!");
+            Notify();
+            return;
+        }
+
         var altesMonster = AktuellerKampf.SpielerMonster;
         AktuellerKampf.SpielerMonster = neuesMonster;
         Spieler.AktivesMonsterIndex = Spieler.Team.IndexOf(neuesMonster);
@@ -1246,6 +1292,14 @@ public class GameService
     {
         if (AktuellerKampf == null) return;
         if (AktuellerKampf.Phase != KampfPhase.SpielerZug) return;
+
+        // KeineItemsImKampf-Relikt
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineItemsImKampf))
+        {
+            AktuellerKampf.Log.Add("❌ Relikt: Items können im Kampf nicht benutzt werden!");
+            Notify();
+            return;
+        }
 
         var item = Spieler.GetItem(itemId);
         if (item == null || item.Menge <= 0)
@@ -1437,7 +1491,13 @@ public class GameService
             // Nuzlocke: Ort als "bereits gefangen" markieren
             if (!string.IsNullOrEmpty(Spieler.AktuellerOrt))
                 Spieler.GefangeneMonsterProOrt.Add(Spieler.AktuellerOrt);
-            if (Spieler.Team.Count < MaxTeamGröße)
+            // StarterOnly-Relikt: nur Starter im Team, alles andere in Box
+            if (Einstellungen.HatRelikt(ReliktTyp.StarterOnly))
+            {
+                Spieler.Box.Add(gegner);
+                AktuellerKampf.Log.Add($"📦 {gegner.Name} wurde in die Box geschickt (Relikt: Starter-Only).");
+            }
+            else if (Spieler.Team.Count < MaxTeamGröße)
                 Spieler.Team.Add(gegner);
             else
             {
@@ -1764,6 +1824,11 @@ public class GameService
             AktuellerKampf.Log.Add($"🚫 Relikt: {mon.AngezeigterName} kann sich nicht entwickeln!");
             AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return;
         }
+        // KeineEntwickeltenMonster-Relikt: nach Evolution in Box verschieben
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineEntwickeltenMonster))
+        {
+            AktuellerKampf.Log.Add($"🐣 Relikt: {mon.AngezeigterName} wird nach der Entwicklung in die Box verschoben!");
+        }
 
         var neueSpezies = AlleMonster.FirstOrDefault(m => m.Id == mon.EntwickeltZu);
         if (neueSpezies == null) { AktuellerKampf.Phase = KampfPhase.Beendet; Notify(); return; }
@@ -1802,6 +1867,17 @@ public class GameService
         Spieler.GefangeneMonster.Add(neueSpezies.Id);
         Spieler.GeseheneMonster.Add(alteSpeziesId);
         Spieler.GeseheneMonster.Add(neueSpezies.Id);
+
+        // KeineEntwickeltenMonster-Relikt: entwickeltes Monster in Box verschieben
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineEntwickeltenMonster))
+        {
+            Spieler.Team.Remove(mon);
+            Spieler.Box.Add(mon);
+            AktuellerKampf.Log.Add($"📦 {mon.AngezeigterName} wurde in die Box verschoben (Relikt: Keine Entwicklungen im Team).");
+            // Wenn kein Monster mehr im Team: Kampf verloren
+            if (!Spieler.Team.Any(m => !m.IstOhnmächtig))
+                AktuellerKampf.Log.Add("🚨 Kein Monster mehr im Team!");
+        }
 
         AktuellerKampf.EntwickeltSichMonster = null;
         AktuellerKampf.EntwickeltSichZuName = null;
@@ -2189,7 +2265,11 @@ public class GameService
             return 0;
         }
         float schaden = ((2f * angreifer.Level / 5f + 2f) * attacke.Staerke.Value * atk / Math.Max(1, def)) / 50f + 2f;
-        return Math.Max(1, (int)(schaden * multi * stab * zufall));
+        int ergebnis2 = Math.Max(1, (int)(schaden * multi * stab * zufall));
+        // DoppelterSchaden-Relikt: Spieler erhält doppelten Schaden
+        if (Einstellungen.HatRelikt(ReliktTyp.DoppelterSchaden) && AktuellerKampf != null && verteidiger == AktuellerKampf.SpielerMonster)
+            ergebnis2 *= 2;
+        return ergebnis2;
     }
 
     private AttackeInstanz? GegnerAttackeWählen(MonsterInstanz gegner)
@@ -2356,9 +2436,10 @@ public class GameService
     // Legacy-Überladung für ShopItem (rückwärtskompatibel)
     public string ItemKaufen(ShopItem item)
     {
-        if (Spieler.Geld < item.Preis)
-            return $"❌ Nicht genug Geld! Du brauchst {item.Preis} Münzen, hast aber nur {Spieler.Geld}.";
-        Spieler.Geld -= item.Preis;
+        int preis = Einstellungen.HatRelikt(ReliktTyp.DoppelteMarktpreise) ? item.Preis * 2 : item.Preis;
+        if (Spieler.Geld < preis)
+            return $"❌ Nicht genug Geld! Du brauchst {preis} Münzen, hast aber nur {Spieler.Geld}.";
+        Spieler.Geld -= preis;
         Spieler.ItemHinzufügen(item.Id, item.Name, item.Emoji, item.Kategorie);
         Notify();
         return $"✅ {item.Emoji} {item.Name} gekauft! Verbleibendes Geld: {Spieler.Geld} Münzen.";
@@ -2366,6 +2447,7 @@ public class GameService
     public string ItemKaufen(ItemDef item, int menge = 1)
     {
         int gesamtPreis = item.KaufPreis * menge;
+        if (Einstellungen.HatRelikt(ReliktTyp.DoppelteMarktpreise)) gesamtPreis *= 2;
         if (Spieler.Geld < gesamtPreis)
             return $"❌ Nicht genug Geld! Du brauchst {gesamtPreis} Münzen, hast aber nur {Spieler.Geld}.";
         Spieler.Geld -= gesamtPreis;
@@ -2503,6 +2585,19 @@ public class GameService
     }
 
     // ── Spielstand speichern ──────────────────────────────────────────────────
+    public bool ManuellSpeichernErlaubt => !Einstellungen.HatRelikt(ReliktTyp.KeinManuelesSpeichern);
+
+    /// <summary>Wird vom Kampf-UI aufgerufen wenn das Zeitlimit abgelaufen ist.</summary>
+    public async Task ZeitlimitAbgelaufen()
+    {
+        if (AktuellerKampf == null) return;
+        AktuellerKampf.ZeitlimitAbgelaufen = true;
+        AktuellerKampf.Log.Add("⏱️ Zeit abgelaufen! Du hast den Kampf verloren!");
+        Notify();
+        await Task.Delay(1000);
+        KampfVerloren();
+    }
+
     public async Task SpielstandSpeichern()
     {
         // GefangeneMonster aus aktuellem Team/Box synchronisieren (für ältere Spielstände)

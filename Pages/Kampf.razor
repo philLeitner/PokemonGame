@@ -104,6 +104,17 @@
         </div>
     </div>
 
+    <!-- Zeitlimit-Anzeige -->
+    @if (kampf.ZeitlimitAktiv && !kampf.ZeitlimitAbgelaufen && kampf.Phase == KampfPhase.SpielerZug)
+    {
+        int minuten = kampf.ZeitlimitSekunden / 60;
+        int sekunden = kampf.ZeitlimitSekunden % 60;
+        string zeitFarbe = kampf.ZeitlimitSekunden <= 30 ? "#ff4444" : kampf.ZeitlimitSekunden <= 60 ? "#ff9900" : "#44cc44";
+        <div class="zeitlimit-anzeige" style="color: @zeitFarbe; border-color: @zeitFarbe">
+            ⏱️ @minuten:@sekunden.ToString("D2")
+        </div>
+    }
+
     <!-- Kampf-Log -->
     <div class="kampf-log" @ref="logRef">
         @foreach (var eintrag in kampf.Log.TakeLast(5))
@@ -513,6 +524,10 @@
     private bool lernDialog_WelcheErsetzen = false;
     private AttackeInstanz? lernDialog_SicherheitsAbfrage = null;
 
+    // Zeitlimit-Timer
+    private System.Threading.Timer? _zeitlimitTimer;
+    private bool _zeitlimitTimerGestartet = false;
+
     // Helper-Methode für Monster-Bilder
     private string GetMonsterBildPfad(string speziesId) => $"/sprites/monster/{speziesId}.png";
 
@@ -538,13 +553,36 @@
         }
     }
 
-    public void Dispose() => Game.OnChange -= StateHasChanged;
+    public void Dispose()
+    {
+        Game.OnChange -= StateHasChanged;
+        _zeitlimitTimer?.Dispose();
+    }
 
     private void KampfBeginnen()
     {
         if (Game.AktuellerKampf != null)
             Game.AktuellerKampf.Phase = KampfPhase.SpielerZug;
         aktivesPanel = "haupt";
+        // Zeitlimit-Timer starten wenn Relikt aktiv
+        if (Game.AktuellerKampf?.ZeitlimitAktiv == true && !_zeitlimitTimerGestartet)
+        {
+            _zeitlimitTimerGestartet = true;
+            _zeitlimitTimer = new System.Threading.Timer(async _ =>
+            {
+                if (Game.AktuellerKampf == null || Game.AktuellerKampf.ZeitlimitAbgelaufen) return;
+                Game.AktuellerKampf.ZeitlimitSekunden--;
+                if (Game.AktuellerKampf.ZeitlimitSekunden <= 0)
+                {
+                    _zeitlimitTimer?.Dispose();
+                    await InvokeAsync(async () => await Game.ZeitlimitAbgelaufen());
+                }
+                else
+                {
+                    await InvokeAsync(StateHasChanged);
+                }
+            }, null, 1000, 1000);
+        }
     }
 
     private async Task AttackeAusführen(AttackeInstanz attacke)

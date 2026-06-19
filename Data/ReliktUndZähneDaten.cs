@@ -51,6 +51,33 @@ public static class ReliktDaten
             "Ohnmächtige Monster sind permanent verloren.", 5),
         new(ReliktTyp.NuzlockeEinsFangen,"Nuzlocke","🎯", "Nuzlocke: Nur Erstes",
             "Pro Route darf nur das erste Monster gefangen werden.", 3),
+        // ── Neue Kampf-Handicaps ───────────────────────────────────────
+        new(ReliktTyp.ZufälligeAttacke,   "Kampf", "🎲", "Zufällige Attacke",
+            "Dein Monster wählt jede Runde automatisch eine zufällige Attacke.", 4),
+        new(ReliktTyp.KeineItemsImKampf,  "Kampf", "🚧", "Keine Items im Kampf",
+            "Tränke, Beeren und alle anderen Items können im Kampf nicht benutzt werden.", 3),
+        new(ReliktTyp.KeinMonsterWechsel, "Kampf", "🔒", "Kein Wechsel im Kampf",
+            "Kein freiwilliger Monster-Wechsel während eines Kampfes möglich.", 2),
+        new(ReliktTyp.DoppelterSchaden,   "Kampf", "💥", "Doppelter Schaden",
+            "Du erleidest immer doppelten Schaden von Gegnern.", 5),
+        new(ReliktTyp.ImmerErstangriff,   "Kampf", "⚡", "Immer Erstangriff",
+            "Dein Monster greift immer zuerst an – Gegner-Statusattacken wirken aber sofort.", 2),
+        // ── Neue Team-Handicaps ───────────────────────────────────────
+        new(ReliktTyp.StarterOnly,         "Team",  "🔒", "Starter-Only",
+            "Nur dein Starter darf im Team bleiben. Alle anderen müssen in die Box.", 4),
+        new(ReliktTyp.KeineEntwickeltenMonster, "Team", "🐣", "Keine Entwicklungen",
+            "Nur Basis-Stufe-Monster dürfen im Team sein. Entwicklungen müssen in die Box.", 3),
+        new(ReliktTyp.ZufälligerStarter,   "Team",  "🎰", "Zufälliger Starter",
+            "Dein Starter wird zufällig ausgewählt – keine manuelle Wahl möglich.", 2),
+        // ── Neue Welt-Handicaps ───────────────────────────────────────
+        new(ReliktTyp.KeinPokédex,         "Welt",  "📕", "Kein Pokédex",
+            "Die Monsterübersicht ist gesperrt. Du siehst keine Infos zu Monstern.", 2),
+        new(ReliktTyp.DoppelteMarktpreise, "Welt",  "💸", "Doppelte Marktpreise",
+            "Alle Items im Markt kosten doppelt so viel.", 3),
+        new(ReliktTyp.KeinManuelesSpeichern, "Welt", "🚷", "Kein manuelles Speichern",
+            "Manuelles Speichern ist gesperrt. Nur Auto-Save nach Arena-Siegen.", 2),
+        new(ReliktTyp.ZeitlimitProKampf,   "Kampf", "⏱️", "Zeitlimit pro Kampf",
+            "Jeder Kampf hat ein Zeitlimit von 3 Minuten. Läuft die Zeit ab, gilt der Kampf als verloren.", 4),
     };
 
     public static IEnumerable<ReliktInfo> GetNachKategorie(string kategorie) =>

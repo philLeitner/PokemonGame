@@ -473,6 +473,10 @@ public class KampfZustand
     public string? EntwickeltSichZuName { get; set; }
     // Flucht-Zähler (für Flucht-Formel)
     public int FluchtVersuche { get; set; } = 0;
+    // Zeitlimit-Relikt
+    public int ZeitlimitSekunden { get; set; } = 180; // 3 Minuten
+    public bool ZeitlimitAktiv { get; set; } = false;
+    public bool ZeitlimitAbgelaufen { get; set; } = false;
     // Attacken-Lern-Dialog
     public MonsterInstanz? LernMonster { get; set; }
     public AttackeData? NeueAttacke { get; set; }
@@ -652,6 +656,21 @@ public enum ReliktTyp
     // XP-Handicaps
     WenigerXp,              // 50% weniger Erfahrung
     KeinXpTeiler,           // Kein XP-Teiler erlaubt
+    // Neue Kampf-Handicaps
+    ZufälligeAttacke,       // Monster wählt zufällige Attacke
+    KeineItemsImKampf,      // Keine Items während Kampf
+    KeinMonsterWechsel,     // Kein freiwilliger Wechsel im Kampf
+    DoppelterSchaden,       // Spieler erhält doppelten Schaden
+    ImmerErstangriff,       // Spieler greift immer zuerst an
+    // Neue Team-Handicaps
+    StarterOnly,            // Nur Starter im Team erlaubt
+    KeineEntwickeltenMonster, // Nur Basis-Stufe erlaubt
+    ZufälligerStarter,      // Starter wird zufällig gewählt
+    // Neue Welt-Handicaps
+    KeinPokédex,            // Monsterübersicht gesperrt
+    DoppelteMarktpreise,    // Items kosten doppelt
+    KeinManuelesSpeichern,  // Kein manuelles Speichern
+    ZeitlimitProKampf,      // 3 Minuten pro Kampf, sonst verloren
 }
 
 // Positional record: new(Typ, Kategorie, Emoji, Name, Beschreibung, Zähne)

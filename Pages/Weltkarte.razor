@@ -66,7 +66,14 @@
         }
 
         <div class="speichern-buttons">
-            <button class="btn-speichern" @onclick="SpielstandSpeichernAktuell">💾 Speichern</button>
+            @if (Game.ManuellSpeichernErlaubt)
+            {
+                <button class="btn-speichern" @onclick="SpielstandSpeichernAktuell">💾 Speichern</button>
+            }
+            else
+            {
+                <button class="btn-speichern" disabled title="Relikt: Manuelles Speichern gesperrt!">🚫 Speichern</button>
+            }
             @if (!Game.IstEigeneMapModus)
             {
                 <button class="btn-laden" @onclick="SpielstandLaden">📂 Laden</button>
@@ -89,7 +96,14 @@
         {
             <button class="btn-hauptmenu" @onclick="Game.ZuHauptmenü">🏠 Hauptmenü</button>
         }
-        <button class="btn-pokedex-klein" @onclick="Game.ZuPokédex">📖 Monsterlexikon</button>
+        @if (Game.Einstellungen.HatRelikt(ReliktTyp.KeinPokédex))
+        {
+            <button class="btn-pokedex-klein" disabled title="Relikt: Monsterlexikon gesperrt!">🚫 Monsterlexikon</button>
+        }
+        else
+        {
+            <button class="btn-pokedex-klein" @onclick="Game.ZuPokédex">📖 Monsterlexikon</button>
+        }
         <button class="btn-admin-klein" @onclick="Game.ZuAdminPanel">🔧 Admin</button>
     </div>
 
