@@ -279,13 +279,22 @@
                                         🧑 @t2.Klasse @t2.Name
                                     </button>
                                 }
-                                @if (ortRef3.Arena != null)
+                                @if (ortRef3.Arena != null && !ortRef3.IstRivaleStadt)
                                 {
                                     bool bereitsGewonnen = Game.Spieler.Orden.Contains(ortRef3.Arena!.OrdenName);
                                     <button class="btn-arena @(bereitsGewonnen ? "gewonnen" : "")"
                                             @onclick="() => ArenaKämpfen(ortRef3)"
                                             disabled="@bereitsGewonnen">
                                         🏆 @(bereitsGewonnen ? $"✓ {ortRef3.Arena!.OrdenName}" : $"Arena: {ortRef3.Arena!.Leiter}")
+                                    </button>
+                                }
+                                @if (ortRef3.IstRivaleStadt && ortRef3.Arena != null)
+                                {
+                                    bool rivaleBesiegt = Game.Spieler.Orden.Contains(ortRef3.Arena!.OrdenName);
+                                    <button class="btn-arena @(rivaleBesiegt ? "gewonnen" : "")"
+                                            @onclick="() => ArenaKämpfen(ortRef3)"
+                                            disabled="@rivaleBesiegt">
+                                        ⚔️ @(rivaleBesiegt ? $"✓ Rivale besiegt" : $"Rivale: {ortRef3.Arena!.Leiter}")
                                     </button>
                                 }
                             </div>
@@ -542,8 +551,8 @@
                                     if (!coords.TryGetValue(ort.Id, out var pos)) continue;
                                     bool istFrei = alleFreischalten || genMeta.FreigeschalteteOrte.Contains(ort.Id);
                                     bool istHier = ort.Id == Game.Spieler.AktuellerOrt;
-                                    bool hatOrden = ort.Arena != null && Game.Spieler.Orden.Contains(ort.Arena.OrdenName);
-                                    bool istArena = ort.Arena != null;
+                                    bool hatOrden = ort.Arena != null && !ort.IstRivaleStadt && Game.Spieler.Orden.Contains(ort.Arena.OrdenName);
+                                    bool istArena = ort.Arena != null && !ort.IstRivaleStadt;
                                     bool istBesiegt = istArena && genMeta.BesiegteArenen.Contains(ort.Id);
                                     string boxClass = "vk-netz-box"
                                         + (istHier ? " vk-hier" : "")
@@ -564,6 +573,7 @@
                                             <span class="vk-netz-icon">@OrtIcon(ort)</span>
                                             <span class="vk-netz-name">@ort.Name</span>
                                             @if (istArena) { <span class="vk-netz-orden">@(hatOrden ? "✓" : "🏆")</span> }
+                                            @if (ort.IstRivaleStadt) { <span class="vk-netz-orden">⚔️</span> }
                                             @if (istHier) { <span class="vk-netz-hier">►</span> }
                                         }
                                     </div>
@@ -589,8 +599,8 @@
                         {
                             var o = ort;
                             bool istHier = o.Id == Game.Spieler.AktuellerOrt;
-                            bool hatOrden = o.Arena != null && Game.Spieler.Orden.Contains(o.Arena.OrdenName);
-                            string farbe = o.Arena != null ? "#f59e0b"
+                            bool hatOrden = o.Arena != null && !o.IstRivaleStadt && Game.Spieler.Orden.Contains(o.Arena.OrdenName);
+                            string farbe = o.Arena != null && !o.IstRivaleStadt ? "#f59e0b"
                                 : o.Typ == "stadt" ? "#6366f1"
                                 : o.Typ == "route" ? "#22c55e"
                                 : o.Typ == "hoehle" ? "#78716c"
@@ -601,9 +611,13 @@
                                 <span class="vk-icon">@OrtIcon(o)</span>
                                 <div class="vk-info">
                                     <span class="vk-name">@o.Name</span>
-                                    @if (o.Arena != null)
+                                    @if (o.Arena != null && !o.IstRivaleStadt)
                                     {
                                         <span class="vk-arena">🏅 @o.Arena.OrdenName @(hatOrden ? "✓" : "")</span>
+                                    }
+                                    @if (o.IstRivaleStadt)
+                                    {
+                                        <span class="vk-arena">⚔️ Rivale-Kampf</span>
                                     }
                                 </div>
                                 @if (istHier) { <span class="vk-hier">📍 Du bist hier</span> }
@@ -1309,7 +1323,7 @@
 
     private string OrtIcon(Ort ort) => ort.Typ switch
     {
-        "stadt"  => ort.Arena != null ? "🏆" : "🏙️",
+        "stadt"  => ort.Arena != null && !ort.IstRivaleStadt ? "🏆" : "🏙️",
         "route"  => "🌿",
         "hoehle" => "⛰️",
         "wald"   => "🌲",

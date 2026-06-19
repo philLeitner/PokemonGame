@@ -315,6 +315,8 @@ public class Ort
     public int GridY { get; set; }
     public string? Beschreibung { get; set; }
     public Arena? Arena { get; set; }
+    /// <summary>Rivale-Stadt nach der Liga – kein Arena-Badge, aber Rivale-Pflicht-Kampf</summary>
+    public bool IstRivaleStadt { get; set; } = false;
     public List<WildBegegnung> WildMonster { get; set; } = new();
     public List<string> Verbindungen { get; set; } = new();
     // Richtungs-Verbindungen für 3x3 Minimap

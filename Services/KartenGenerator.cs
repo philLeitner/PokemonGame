@@ -530,6 +530,7 @@ public class KartenGenerator
                         HatMarkt = true,
                         NPCs = new List<GesprächsNPC>(),
                         IstStartOrt = false,
+                        IstRivaleStadt = true,
                         Verbindungen = new List<string>()
                     };
                     // Verbindung Champion → Rivale
