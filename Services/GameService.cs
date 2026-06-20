@@ -57,7 +57,12 @@ public class GameService
             if (Einstellungen.HatRelikt(ReliktTyp.MaxDreiMonster)) return 3;
             if (Einstellungen.HatRelikt(ReliktTyp.MaxVierMonster)) return 4;
             if (Einstellungen.HatRelikt(ReliktTyp.MaxFünfMonster)) return 5;
-            return 6;
+            int basis = 6;
+            // MehrTeamSlots-Upgrade: +2 Team-Slots (max 8)
+            if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.MehrTeamSlots)) basis = Math.Min(8, basis + 2);
+            // ExtraSlot-Upgrade: +1 Team-Slot (max 7)
+            if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.ExtraSlot)) basis = Math.Min(8, basis + 1);
+            return basis;
         }
     }
     // Spiel gilt als abgeschlossen wenn der Spieler mindestens 8 Orden hat
@@ -279,6 +284,27 @@ public class GameService
             return $"❌ Nicht genug Zähne! Kosten: {info.Kosten}, Verfügbar: {Spieler.ZähneWallet.VerfügbareZähne}";
         Spieler.ZähneWallet.Ausgeben(info.Kosten);
         Spieler.ZähneWallet.GekaufteUpgrades.Add(upgrade);
+        // LevelBoost-Upgrades: sofort auf Team anwenden
+        switch (upgrade)
+        {
+            case ZähneUpgrade.LevelBoost5:
+                foreach (var m in Spieler.Team) { m.Level = Math.Min(m.Level + 5, AktuellesLevelCap); m.ErfahrungsPunkte = m.Level * m.Level * 100; }
+                break;
+            case ZähneUpgrade.LevelBoost10:
+                foreach (var m in Spieler.Team) { m.Level = Math.Min(m.Level + 10, AktuellesLevelCap); m.ErfahrungsPunkte = m.Level * m.Level * 100; }
+                break;
+            case ZähneUpgrade.LevelBoost20:
+                foreach (var m in Spieler.Team) { m.Level = Math.Min(m.Level + 20, AktuellesLevelCap); m.ErfahrungsPunkte = m.Level * m.Level * 100; }
+                break;
+            case ZähneUpgrade.LevelBoost25:
+                if (Spieler.Team.Any()) { var mon = Spieler.Team[0]; mon.Level = Math.Min(mon.Level + 25, AktuellesLevelCap); mon.ErfahrungsPunkte = mon.Level * mon.Level * 100; }
+                break;
+            case ZähneUpgrade.LevelBoost50:
+                if (Spieler.Team.Any()) { var mon = Spieler.Team[0]; mon.Level = Math.Min(mon.Level + 50, AktuellesLevelCap); mon.ErfahrungsPunkte = mon.Level * mon.Level * 100; }
+                break;
+            // StatBoost-Upgrades: dauerhafter +10% Bonus (wird bei KP-Berechnung berücksichtigt)
+            // Diese Upgrades werden passiv in der Stat-Berechnung ausgewertet
+        }
         Notify();
         return $"✅ {info.Emoji} {info.Name} gekauft!";
     }
@@ -690,6 +716,19 @@ public class GameService
         Spieler.StarterMonsterId = monsterId;
         Spieler.GefangeneMonster.Add(monsterId);  // Starter dauerhaft als gefangen markieren
         Spieler.GeseheneMonster.Add(monsterId);
+        // ZufälligesTeam-Relikt: 2 weitere zufällige Monster ins Team
+        if (Einstellungen.HatRelikt(ReliktTyp.ZufälligesTeam))
+        {
+            var extraPool = AlleMonster.Where(m => m.Id != monsterId && m.Fangrate >= 10)
+                                       .OrderBy(_ => _rng.Next()).Take(2).ToList();
+            foreach (var extra in extraPool)
+            {
+                var extraMon = MonsterInstanz.VonSpezies(extra, 5, AlleAttacken);
+                Spieler.Team.Add(extraMon);
+                Spieler.GefangeneMonster.Add(extra.Id);
+                Spieler.GeseheneMonster.Add(extra.Id);
+            }
+        }
         Spieler.AktuellerOrt = "KAN-0001";
         Phase = SpielPhase.Weltkarte;
         Notify();
@@ -1467,14 +1506,27 @@ public class GameService
         int widerstand = FangWiderstand(gegner.Fangrate);
         // ─ Ball-Kraft ─
         int ballKraft = ballId switch { "ITEM-012" => 2, "ITEM-013" => 4, "ITEM-014" => 99, _ => 1 };
+        // BessereBallle-Upgrade: Monsterball wirkt wie Superball (+1)
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.BessereBallle) && ballKraft == 1) ballKraft = 2;
+        // ProfiCatcher-Upgrade: Superball wirkt wie Hyperball (+2 statt +2)
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.ProfiCatcher) && ballKraft == 2) ballKraft = 4;
+        // BessereKugeln-Upgrade: alle Bälle +2 Fangkraft
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.BessereKugeln)) ballKraft += 2;
         // ─ HP-Schwäche-Bonus ─
         float hpProzent = gegner.MaxKp > 0 ? (float)gegner.AktuelleKp / gegner.MaxKp : 1f;
         int hpBonus = hpProzent < 0.10f ? 3 : hpProzent < 0.25f ? 2 : hpProzent < 0.50f ? 1 : 0;
         // ─ Status-Bonus ─
         int statusBonus = gegner.Status is "eingeschlafen" or "eingefroren" ? 3
                         : gegner.Status is "vergiftet" or "gelähmt" or "verbrannt" ? 1 : 0;
+        // LegendärBoost-Upgrade: +10% oder +20% Fangchance bei legendären Monstern (Fangrate <= 3)
+        int legendärBonus = 0;
+        if (gegner.Fangrate <= 3)
+        {
+            if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.LegendärBoost20)) legendärBonus = 3;
+            else if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.LegendärBoost10)) legendärBonus = 2;
+        }
         // ─ Gesamtkraft ─
-        int gesamtKraft = ballKraft + hpBonus + statusBonus;
+        int gesamtKraft = ballKraft + hpBonus + statusBonus + legendärBonus;
         // ─ Schutzwurf des Monsters (0 bis Widerstand-1) ─
         int schutzwurf = _rng.Next(0, widerstand);
         bool gefangen = gesamtKraft > schutzwurf;
@@ -1605,9 +1657,23 @@ public class GameService
         if (Einstellungen.HatRelikt(ReliktTyp.WenigerXp)) exp = Math.Max(1, exp / 2);
         // ZähneUpgrade XpBoost: +50% XP
         if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.XpBoost)) exp = (int)(exp * 1.5f);
+        // ZähneUpgrade MehrXp: +25% XP
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.MehrXp)) exp = (int)(exp * 1.25f);
         AktuellerKampf.ErfahrungGewonnen = exp;
         spielerMon.ErfahrungsPunkte += exp;
         AktuellerKampf.Log.Add($"+{exp} EP für {spielerMon.AngezeigterName}");
+        // ZähneUpgrade XpTeiler: alle anderen Team-Monster bekommen halbe XP (nur wenn KeinXpTeiler-Relikt nicht aktiv)
+        if (!Einstellungen.HatRelikt(ReliktTyp.KeinXpTeiler) &&
+            (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.XpTeiler) || Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.VollerXpTeiler)))
+        {
+            int teamExp = Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.VollerXpTeiler) ? exp : exp / 2;
+            foreach (var teamMon in Spieler.Team.Where(m => m != spielerMon && !m.IstOhnmächtig))
+            {
+                teamMon.ErfahrungsPunkte += teamExp;
+                PrüfeLevelUp(teamMon);
+                AktuellerKampf.Log.Add($"+{teamExp} EP für {teamMon.AngezeigterName} (XP-Teiler)");
+            }
+        }
 
                 // Level-Up prüfen
         PrüfeLevelUp(spielerMon);
@@ -1633,6 +1699,8 @@ public class GameService
                 if (Einstellungen.HatRelikt(ReliktTyp.WenigerGeld)) geld = Math.Max(1, geld / 2);
                 // ZähneUpgrade GeldBoost: +50% Geld
                 if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.GeldBoost)) geld = (int)(geld * 1.5f);
+                // ZähneUpgrade MehrGeld: +25% Geld
+                if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.MehrGeld)) geld = (int)(geld * 1.25f);
             }
             if (geld > 0)
             {
@@ -2437,6 +2505,7 @@ public class GameService
     public string ItemKaufen(ShopItem item)
     {
         int preis = Einstellungen.HatRelikt(ReliktTyp.DoppelteMarktpreise) ? item.Preis * 2 : item.Preis;
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.GünstigerMarkt)) preis = (int)(preis * 0.8f);
         if (Spieler.Geld < preis)
             return $"❌ Nicht genug Geld! Du brauchst {preis} Münzen, hast aber nur {Spieler.Geld}.";
         Spieler.Geld -= preis;
@@ -2448,6 +2517,7 @@ public class GameService
     {
         int gesamtPreis = item.KaufPreis * menge;
         if (Einstellungen.HatRelikt(ReliktTyp.DoppelteMarktpreise)) gesamtPreis *= 2;
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.GünstigerMarkt)) gesamtPreis = (int)(gesamtPreis * 0.8f);
         if (Spieler.Geld < gesamtPreis)
             return $"❌ Nicht genug Geld! Du brauchst {gesamtPreis} Münzen, hast aber nur {Spieler.Geld}.";
         Spieler.Geld -= gesamtPreis;
@@ -2499,6 +2569,8 @@ public class GameService
     {
         if (m.IstOhnmächtig) return $"❌ {m.AngezeigterName} ist ohnmächtig!";
         if (m.AktuelleKp >= m.MaxKp) return $"❌ {m.AngezeigterName} hat schon volle KP!";
+        // BessereHeilung-Upgrade: +25% Heilung
+        if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.BessereHeilung)) menge = (int)(menge * 1.25f);
         int vorher = m.AktuelleKp;
         m.AktuelleKp = Math.Min(m.MaxKp, m.AktuelleKp + menge);
         return $"✅ {m.AngezeigterName} hat {m.AktuelleKp - vorher} KP erhalten. ({m.AktuelleKp}/{m.MaxKp})";

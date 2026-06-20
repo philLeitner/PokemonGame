@@ -78,6 +78,13 @@ public static class ReliktDaten
             "Manuelles Speichern ist gesperrt. Nur Auto-Save nach Arena-Siegen.", 2),
         new(ReliktTyp.ZeitlimitProKampf,   "Kampf", "⏱️", "Zeitlimit pro Kampf",
             "Jeder Kampf hat ein Zeitlimit von 3 Minuten. Läuft die Zeit ab, gilt der Kampf als verloren.", 4),
+        // Weitere Handicaps
+        new(ReliktTyp.NurWildeMonster,     "Team",  "🌿", "Nur wilde Monster",
+            "Monster können nur in Wildkampf-Begegnungen gefangen werden (Trainer-Monster nicht fangbar).", 2),
+        new(ReliktTyp.ZufälligesTeam,      "Team",  "🎲", "Zufälliges Team",
+            "Du startest mit 3 zufälligen Monstern statt nur dem Starter.", 3),
+        new(ReliktTyp.KeinXpTeiler,        "XP",    "❌", "Kein XP-Teiler",
+            "Der XP-Teiler ist deaktiviert. Nur das aktive Monster erhält Erfahrungspunkte.", 1),
     };
 
     public static IEnumerable<ReliktInfo> GetNachKategorie(string kategorie) =>
