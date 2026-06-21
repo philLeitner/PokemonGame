@@ -480,7 +480,8 @@ public class KampfZustand
     // Attacken-Lern-Dialog
     public MonsterInstanz? LernMonster { get; set; }
     public AttackeData? NeueAttacke { get; set; }
-    public List<AttackeData> PendingNeueAttacken { get; set; } = new();
+    // Tupel: (Monster dem die Attacke gehört, die neue Attacke)
+    public List<(MonsterInstanz Monster, AttackeData Attacke)> PendingNeueAttacken { get; set; } = new();
 }
 
 // ─── Spiel-Phasen ─────────────────────────────────────────────────────────────

@@ -1686,8 +1686,9 @@ public class GameService
         // Neue Attacken-Dialog starten falls vorhanden
         if (AktuellerKampf.PendingNeueAttacken.Count > 0)
         {
-            AktuellerKampf.LernMonster = spielerMon;
-            AktuellerKampf.NeueAttacke = AktuellerKampf.PendingNeueAttacken[0];
+            // LernMonster aus Tupel lesen – so lernt immer das richtige Monster die Attacke
+            AktuellerKampf.LernMonster = AktuellerKampf.PendingNeueAttacken[0].Monster;
+            AktuellerKampf.NeueAttacke = AktuellerKampf.PendingNeueAttacken[0].Attacke;
         }
         // Geld
         if (AktuellerKampf.BelohnungGeld > 0)
@@ -1831,7 +1832,9 @@ public class GameService
         AktuellerKampf.PendingNeueAttacken.RemoveAt(0);
         if (AktuellerKampf.PendingNeueAttacken.Count > 0)
         {
-            AktuellerKampf.NeueAttacke = AktuellerKampf.PendingNeueAttacken[0];
+            // Nächstes Tupel: richtiges Monster UND richtige Attacke setzen
+            AktuellerKampf.LernMonster = AktuellerKampf.PendingNeueAttacken[0].Monster;
+            AktuellerKampf.NeueAttacke  = AktuellerKampf.PendingNeueAttacken[0].Attacke;
             Notify();
         }
         else
@@ -2008,7 +2011,7 @@ public class GameService
                 foreach (var neueAtk in neueAttackenAufDiesemLevel)
                 {
                     if (neueAtk != null)
-                        AktuellerKampf.PendingNeueAttacken.Add(neueAtk);
+                        AktuellerKampf.PendingNeueAttacken.Add((mon, neueAtk));
                 }
             }
 
