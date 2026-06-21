@@ -5,79 +5,122 @@
 @inject GameService Game
 
 @* ══════════════════════════════════════════════════════════════════════════════
-   ZÄHNE-SHOP
-   Design: Dark premium shop UI, category tabs, upgrade cards with cost
-   Nur zugänglich nach Spielabschluss (alle Orden + Elite Vier + Rivale)
+   ZÄHNE-SHOP — Premium Redesign
+   Design: Dark gold premium UI, glowing cards, animated header, category pills
 ══════════════════════════════════════════════════════════════════════════════ *@
 
-<div class="zaehne-shop">
-    <div class="shop-header">
-        <div class="shop-title-row">
-            <h1>🦷 Zähne-Shop</h1>
-            <div class="zähne-anzeige">
-                <span class="zähne-icon">🦷</span>
-                <span class="zähne-zahl">@Game.Spieler.ZähneWallet.VerfügbareZähne</span>
-                <span class="zähne-label">verfügbar</span>
-            </div>
-        </div>
-        <p class="shop-subtitle">Gib deine verdienten Zähne für mächtige Upgrades aus!</p>
-        <div class="zähne-stats">
-            <span>Gesamt verdient: <strong>@Game.Spieler.ZähneWallet.GesamtZähne 🦷</strong></span>
-            <span>Ausgegeben: <strong>@Game.Spieler.ZähneWallet.AusgegebeneZähne 🦷</strong></span>
-            <span>Bonus-Upgrades verfügbar: <strong>@Game.Spieler.ZähneWallet.BonusStatUpgradesVerfügbar</strong></span>
-        </div>
+<div class="zs-screen">
+
+    @* ── Hintergrund-Partikel ── *@
+    <div class="zs-bg">
+        <div class="zs-orb zs-orb-1"></div>
+        <div class="zs-orb zs-orb-2"></div>
+        <div class="zs-orb zs-orb-3"></div>
     </div>
 
-    @* Kategorie-Tabs *@
-    <div class="shop-tabs">
-        @foreach (var kat in MonsterKampf.Data.ZähneUpgradeDaten.GetKategorien())
+    <div class="zs-container">
+
+        @* ── Header ── *@
+        <div class="zs-header">
+            <div class="zs-header-left">
+                <div class="zs-logo">
+                    <span class="zs-logo-icon">🦷</span>
+                    <div>
+                        <h1 class="zs-titel">Zähne-Shop</h1>
+                        <p class="zs-subtitel">Tausche deine Zähne gegen mächtige Upgrades</p>
+                    </div>
+                </div>
+            </div>
+            <div class="zs-header-right">
+                <div class="zs-wallet">
+                    <div class="zs-wallet-row">
+                        <span class="zs-wallet-icon">🦷</span>
+                        <span class="zs-wallet-zahl">@Game.Spieler.ZähneWallet.VerfügbareZähne</span>
+                        <span class="zs-wallet-label">verfügbar</span>
+                    </div>
+                    <div class="zs-wallet-stats">
+                        <span>Gesamt: <strong>@Game.Spieler.ZähneWallet.GesamtZähne</strong></span>
+                        <span class="zs-dot">·</span>
+                        <span>Ausgegeben: <strong>@Game.Spieler.ZähneWallet.AusgegebeneZähne</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ── Toast-Meldung ── *@
+        @if (!string.IsNullOrEmpty(meldung))
         {
-            <button class="shop-tab @(aktiveKategorie == kat ? "active" : "")"
-                    @onclick="() => aktiveKategorie = kat">
-                @kat
+            <div class="zs-toast @(meldungErfolg ? "zs-toast-ok" : "zs-toast-err")">
+                @meldung
+            </div>
+        }
+
+        @* ── Kategorie-Tabs ── *@
+        <div class="zs-tabs">
+            @foreach (var kat in MonsterKampf.Data.ZähneUpgradeDaten.GetKategorien())
+            {
+                var k = kat;
+                int anzahl = MonsterKampf.Data.ZähneUpgradeDaten.GetNachKategorie(k).Count();
+                int gekauft = MonsterKampf.Data.ZähneUpgradeDaten.GetNachKategorie(k)
+                    .Count(u => Game.Spieler.ZähneWallet.HatUpgrade(u.Typ));
+                <button class="zs-tab @(aktiveKategorie == k ? "zs-tab-aktiv" : "")"
+                        @onclick="() => aktiveKategorie = k">
+                    <span class="zs-tab-name">@KategorieEmoji(k) @k</span>
+                    <span class="zs-tab-badge">@gekauft/@anzahl</span>
+                </button>
+            }
+        </div>
+
+        @* ── Upgrade-Grid ── *@
+        <div class="zs-grid">
+            @foreach (var upgrade in MonsterKampf.Data.ZähneUpgradeDaten.GetNachKategorie(aktiveKategorie))
+            {
+                bool kannKaufen = Game.Spieler.ZähneWallet.KannBezahlen(upgrade.Kosten);
+                bool bereitsGekauft = Game.Spieler.ZähneWallet.HatUpgrade(upgrade.Typ);
+                string cardClass = bereitsGekauft ? "zs-card zs-card-aktiv" :
+                                   !kannKaufen    ? "zs-card zs-card-gesperrt" :
+                                                    "zs-card zs-card-kaufbar";
+                <div class="@cardClass">
+                    <div class="zs-card-glow"></div>
+                    <div class="zs-card-emoji">@upgrade.Emoji</div>
+                    <div class="zs-card-body">
+                        <div class="zs-card-name">@upgrade.Name</div>
+                        <div class="zs-card-desc">@upgrade.Beschreibung</div>
+                    </div>
+                    <div class="zs-card-footer">
+                        <div class="zs-card-preis">
+                            <span class="zs-zahn-icon">🦷</span>
+                            <span class="zs-preis-zahl">@upgrade.Kosten</span>
+                        </div>
+                        @if (bereitsGekauft)
+                        {
+                            <div class="zs-badge-aktiv">✓ Aktiv</div>
+                        }
+                        else if (!kannKaufen)
+                        {
+                            <div class="zs-badge-gesperrt">Zu wenig 🦷</div>
+                        }
+                        else
+                        {
+                            <button class="zs-btn-kaufen" @onclick="() => UpgradeKaufen(upgrade.Typ)">
+                                Kaufen
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        @* ── Footer ── *@
+        <div class="zs-footer">
+            <button class="zs-btn-zurück" @onclick="ZurückZuHauptmenü">
+                ← Zurück zum Hauptmenü
             </button>
-        }
-    </div>
-
-    @* Upgrade-Karten *@
-    <div class="shop-upgrades">
-        @foreach (var upgrade in MonsterKampf.Data.ZähneUpgradeDaten.GetNachKategorie(aktiveKategorie))
-        {
-            bool kannKaufen = Game.Spieler.ZähneWallet.KannBezahlen(upgrade.Kosten);
-            bool bereitsGekauft = Game.Spieler.ZähneWallet.HatUpgrade(upgrade.Typ);
-            <div class="upgrade-card @(bereitsGekauft ? "gekauft" : "") @(!kannKaufen && !bereitsGekauft ? "zu-teuer" : "")">
-                <div class="upgrade-emoji">@upgrade.Emoji</div>
-                <div class="upgrade-info">
-                    <div class="upgrade-name">@upgrade.Name</div>
-                    <div class="upgrade-beschreibung">@upgrade.Beschreibung</div>
-                </div>
-                <div class="upgrade-rechts">
-                    <div class="upgrade-kosten">🦷 @upgrade.Kosten</div>
-                    @if (bereitsGekauft)
-                    {
-                        <div class="upgrade-status gekauft-badge">✓ Aktiv</div>
-                    }
-                    else if (!kannKaufen)
-                    {
-                        <button class="btn-upgrade disabled" disabled>Zu teuer</button>
-                    }
-                    else
-                    {
-                        <button class="btn-upgrade" @onclick="() => UpgradeKaufen(upgrade.Typ)">Kaufen</button>
-                    }
-                </div>
+            <div class="zs-footer-info">
+                Bonus-Upgrades verfügbar: <strong>@Game.Spieler.ZähneWallet.BonusStatUpgradesVerfügbar</strong>
             </div>
-        }
-    </div>
+        </div>
 
-    @* Meldung *@
-    @if (!string.IsNullOrEmpty(meldung))
-    {
-        <div class="shop-meldung @(meldungErfolg ? "erfolg" : "fehler")">@meldung</div>
-    }
-
-    <div class="shop-footer">
-        <button class="btn-shop-back" @onclick="ZurückZuHauptmenü">← Zurück zum Hauptmenü</button>
     </div>
 </div>
 
@@ -85,6 +128,7 @@
     private string aktiveKategorie = "Level";
     private string meldung = "";
     private bool meldungErfolg = true;
+    private System.Threading.CancellationTokenSource? toastCts;
 
     private async Task UpgradeKaufen(ZähneUpgrade typ)
     {
@@ -92,13 +136,30 @@
         meldungErfolg = ergebnis.StartsWith("✅");
         meldung = ergebnis;
         StateHasChanged();
-        await Task.Delay(2500);
-        meldung = "";
-        StateHasChanged();
+
+        toastCts?.Cancel();
+        toastCts = new System.Threading.CancellationTokenSource();
+        try
+        {
+            await Task.Delay(2500, toastCts.Token);
+            meldung = "";
+            StateHasChanged();
+        }
+        catch (TaskCanceledException) { }
     }
 
     private void ZurückZuHauptmenü()
     {
         Game.ZuHauptmenü();
     }
+
+    private string KategorieEmoji(string kat) => kat switch
+    {
+        "Level"    => "⬆️",
+        "Stats"    => "💪",
+        "XP & Geld"=> "✨",
+        "Fangen"   => "⚪",
+        "Bonus"    => "🎁",
+        _          => "🔹"
+    };
 }

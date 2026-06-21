@@ -5446,3 +5446,231 @@ input:checked + .toggle-slider-klein::before {
     object-fit: contain;
     object-position: center;
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ZÄHNE-SHOP — Premium Design
+   Farben: Gold (#f5a623), Dunkel (#0f0f1a), Glow-Effekte
+══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Vollbild-Wrapper ── */
+.zs-screen {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a14 0%, #12102a 40%, #0f1a2e 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ── Hintergrund-Orbs ── */
+.zs-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.zs-orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: 0.18; animation: zs-drift 12s ease-in-out infinite alternate;
+}
+.zs-orb-1 { width: 500px; height: 500px; background: #f5a623; top: -150px; left: -100px; animation-delay: 0s; }
+.zs-orb-2 { width: 350px; height: 350px; background: #9333ea; bottom: -100px; right: -80px; animation-delay: 4s; }
+.zs-orb-3 { width: 250px; height: 250px; background: #0ea5e9; top: 40%; left: 50%; animation-delay: 8s; }
+@keyframes zs-drift { from { transform: translate(0,0) scale(1); } to { transform: translate(30px, 20px) scale(1.1); } }
+
+/* ── Haupt-Container ── */
+.zs-container {
+  position: relative; z-index: 1;
+  max-width: 1100px; margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ── Header ── */
+.zs-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; margin-bottom: 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.zs-header-left { display: flex; align-items: center; }
+.zs-logo { display: flex; align-items: center; gap: 1.2rem; }
+.zs-logo-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 16px rgba(245,166,35,0.7));
+  animation: zs-pulse 2.5s ease-in-out infinite;
+}
+@keyframes zs-pulse { 0%,100% { filter: drop-shadow(0 0 12px rgba(245,166,35,0.6)); } 50% { filter: drop-shadow(0 0 28px rgba(245,166,35,1)); } }
+.zs-titel {
+  font-size: 2rem; font-weight: 900; letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #f5a623, #ffd700, #f5a623);
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: zs-shimmer 3s linear infinite;
+}
+@keyframes zs-shimmer { to { background-position: 200% center; } }
+.zs-subtitel { color: rgba(255,255,255,0.45); font-size: 0.9rem; margin-top: 0.2rem; }
+
+/* ── Wallet ── */
+.zs-wallet {
+  text-align: right;
+  background: rgba(245,166,35,0.08);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 14px;
+  padding: 0.9rem 1.4rem;
+}
+.zs-wallet-row { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; }
+.zs-wallet-icon { font-size: 1.6rem; }
+.zs-wallet-zahl { font-size: 2.2rem; font-weight: 900; color: #f5a623; line-height: 1; }
+.zs-wallet-label { font-size: 0.8rem; color: rgba(255,255,255,0.4); align-self: flex-end; padding-bottom: 0.2rem; }
+.zs-wallet-stats { display: flex; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.35rem; justify-content: flex-end; }
+.zs-wallet-stats strong { color: rgba(255,255,255,0.6); }
+.zs-dot { opacity: 0.4; }
+
+/* ── Toast ── */
+.zs-toast {
+  padding: 0.85rem 1.4rem; border-radius: 12px; margin-bottom: 1.2rem;
+  font-weight: 600; font-size: 0.95rem;
+  animation: zs-slide-in 0.25s cubic-bezier(0.23,1,0.32,1);
+  backdrop-filter: blur(8px);
+}
+@keyframes zs-slide-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.zs-toast-ok { background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4); color: #86efac; }
+.zs-toast-err { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: #fca5a5; }
+
+/* ── Kategorie-Tabs ── */
+.zs-tabs {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.zs-tab {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.1rem; border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55); font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; transition: all 0.18s ease;
+}
+.zs-tab:hover { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2); }
+.zs-tab-aktiv {
+  background: linear-gradient(135deg, rgba(245,166,35,0.2), rgba(255,215,0,0.12));
+  border-color: rgba(245,166,35,0.5);
+  color: #fbbf24;
+  box-shadow: 0 0 16px rgba(245,166,35,0.2);
+}
+.zs-tab-badge {
+  background: rgba(255,255,255,0.1); border-radius: 20px;
+  padding: 0.1rem 0.45rem; font-size: 0.72rem; font-weight: 700;
+  color: rgba(255,255,255,0.5);
+}
+.zs-tab-aktiv .zs-tab-badge { background: rgba(245,166,35,0.25); color: #fbbf24; }
+.zs-tab-name { white-space: nowrap; }
+
+/* ── Upgrade-Grid ── */
+.zs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Upgrade-Karte ── */
+.zs-card {
+  position: relative; overflow: hidden;
+  border-radius: 16px; padding: 1.3rem 1.3rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  display: flex; flex-direction: column; gap: 0.7rem;
+  transition: transform 0.18s cubic-bezier(0.23,1,0.32,1), box-shadow 0.18s ease, border-color 0.18s ease;
+  backdrop-filter: blur(8px);
+}
+.zs-card:hover { transform: translateY(-3px); }
+
+/* Kaufbar */
+.zs-card-kaufbar { border-color: rgba(245,166,35,0.2); }
+.zs-card-kaufbar:hover {
+  border-color: rgba(245,166,35,0.5);
+  box-shadow: 0 8px 32px rgba(245,166,35,0.15), 0 0 0 1px rgba(245,166,35,0.2);
+}
+.zs-card-kaufbar .zs-card-glow {
+  position: absolute; inset: 0; border-radius: 16px;
+  background: radial-gradient(ellipse at top left, rgba(245,166,35,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Bereits aktiv */
+.zs-card-aktiv {
+  border-color: rgba(34,197,94,0.35);
+  background: rgba(34,197,94,0.06);
+}
+.zs-card-aktiv .zs-card-glow {
+  position: absolute; inset: 0; border-radius: 16px;
+  background: radial-gradient(ellipse at top left, rgba(34,197,94,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Zu teuer */
+.zs-card-gesperrt { opacity: 0.5; filter: grayscale(0.4); }
+.zs-card-gesperrt .zs-card-glow { display: none; }
+
+/* ── Karten-Inhalt ── */
+.zs-card-emoji { font-size: 2.2rem; line-height: 1; }
+.zs-card-body { flex: 1; }
+.zs-card-name { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
+.zs-card-desc { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+/* ── Karten-Footer ── */
+.zs-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.zs-card-preis { display: flex; align-items: center; gap: 0.35rem; }
+.zs-zahn-icon { font-size: 1rem; }
+.zs-preis-zahl { font-size: 1.2rem; font-weight: 900; color: #f5a623; }
+
+/* ── Buttons ── */
+.zs-btn-kaufen {
+  padding: 0.45rem 1.1rem; border-radius: 8px; border: none;
+  background: linear-gradient(135deg, #f5a623, #e8920d);
+  color: #0a0a14; font-size: 0.85rem; font-weight: 800;
+  cursor: pointer; transition: all 0.15s ease;
+  box-shadow: 0 2px 12px rgba(245,166,35,0.35);
+}
+.zs-btn-kaufen:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(245,166,35,0.55); }
+.zs-btn-kaufen:active { transform: scale(0.97); }
+
+.zs-badge-aktiv {
+  padding: 0.35rem 0.85rem; border-radius: 8px;
+  background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.35);
+  color: #86efac; font-size: 0.82rem; font-weight: 700;
+}
+.zs-badge-gesperrt {
+  padding: 0.35rem 0.85rem; border-radius: 8px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3); font-size: 0.78rem; font-weight: 600;
+}
+
+/* ── Footer ── */
+.zs-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  flex-wrap: wrap; gap: 1rem;
+}
+.zs-btn-zurück {
+  padding: 0.7rem 1.5rem; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all 0.18s ease;
+}
+.zs-btn-zurück:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.25); }
+.zs-footer-info { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+.zs-footer-info strong { color: #f5a623; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .zs-header { flex-direction: column; align-items: flex-start; }
+  .zs-wallet { text-align: left; width: 100%; }
+  .zs-wallet-row { justify-content: flex-start; }
+  .zs-wallet-stats { justify-content: flex-start; }
+  .zs-grid { grid-template-columns: 1fr; }
+  .zs-titel { font-size: 1.5rem; }
+}
