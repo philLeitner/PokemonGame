@@ -105,12 +105,16 @@ public static class ZähneUpgradeDaten
     private static readonly List<ZähneUpgradeInfo> Alle = new()
     {
         // ── Level ────────────────────────────────────────────────────────
-        new(ZähneUpgrade.LevelBoost5,   "Level", "⬆️", "Level +5",
+        new(ZähneUpgrade.LevelBoost5,   "Level", "⬆️", "Level +5 (Team)",
             "Alle Monster im Team erhalten +5 Level.", 3),
-        new(ZähneUpgrade.LevelBoost10,  "Level", "⬆️⬆️", "Level +10",
+        new(ZähneUpgrade.LevelBoost10,  "Level", "⬆️⬆️", "Level +10 (Team)",
             "Alle Monster im Team erhalten +10 Level.", 6),
-        new(ZähneUpgrade.LevelBoost20,  "Level", "🚀", "Level +20",
+        new(ZähneUpgrade.LevelBoost20,  "Level", "🚀", "Level +20 (Team)",
             "Alle Monster im Team erhalten +20 Level.", 10),
+        new(ZähneUpgrade.LevelBoost25,  "Level", "⚡", "Level +25 (Starter)",
+            "Dein erstes Monster erhält +25 Level.", 5),
+        new(ZähneUpgrade.LevelBoost50,  "Level", "💥", "Level +50 (Starter)",
+            "Dein erstes Monster erhält +50 Level.", 10),
 
         // ── Stats ────────────────────────────────────────────────────────
         new(ZähneUpgrade.KpBoost,       "Stats", "❤️", "KP +10%",
@@ -127,20 +131,40 @@ public static class ZähneUpgradeDaten
         // ── XP & Geld ────────────────────────────────────────────────────
         new(ZähneUpgrade.XpBoost,       "XP & Geld", "✨", "XP +50%",
             "Alle Monster erhalten 50% mehr Erfahrungspunkte.", 4),
+        new(ZähneUpgrade.MehrXp,        "XP & Geld", "💫", "XP +25%",
+            "Alle Monster erhalten 25% mehr Erfahrungspunkte.", 2),
         new(ZähneUpgrade.XpTeiler,      "XP & Geld", "🔀", "XP-Teiler",
             "Alle Monster im Team erhalten XP, nicht nur das aktive.", 5),
+        new(ZähneUpgrade.VollerXpTeiler,"XP & Geld", "🔁", "Voller XP-Teiler",
+            "Alle Monster im Team erhalten die vollen XP nach jedem Kampf.", 8),
         new(ZähneUpgrade.GeldBoost,     "XP & Geld", "💰", "Geld +50%",
             "Du erhältst 50% mehr Geld nach Kämpfen.", 3),
+        new(ZähneUpgrade.MehrGeld,      "XP & Geld", "💵", "Geld +25%",
+            "Du erhältst 25% mehr Geld nach Kämpfen.", 2),
         new(ZähneUpgrade.GünstigerMarkt,"XP & Geld", "🏷️", "Günstigerer Markt",
-            "Alle Items im Markt kosten 30% weniger.", 4),
+            "Alle Items im Markt kosten 20% weniger.", 4),
+        new(ZähneUpgrade.BessereHeilung,"XP & Geld", "💊", "Bessere Heilung",
+            "Tränke heilen 25% mehr KP.", 3),
 
-        // ── Fangen ───────────────────────────────────────────────────────
+        // ── Fangen ────────────────────────────────────────────────────────
+        new(ZähneUpgrade.BessereBallle, "Fangen", "⚪→🔵", "Besserer Monsterball",
+            "Monsterball wirkt wie ein Superball.", 2),
+        new(ZähneUpgrade.ProfiCatcher,  "Fangen", "🔵→🟡", "Profi-Catcher",
+            "Superball wirkt wie ein Hyperball.", 3),
+        new(ZähneUpgrade.LegendärBoost10, "Fangen", "⭐", "Legendär-Boost",
+            "Legendäre Monster sind 2x leichter zu fangen.", 3),
+        new(ZähneUpgrade.LegendärBoost20, "Fangen", "🌟", "Legendär-Boost+",
+            "Legendäre Monster sind 3x leichter zu fangen.", 5),
+        new(ZähneUpgrade.Meisterball,   "Fangen", "🟣", "1 Meisterball",
+            "Du erhältst einen Meisterball, der garantiert fängt.", 5),
         new(ZähneUpgrade.BessereKugeln, "Fangen", "🎯", "Bessere Fangkugeln",
-            "Alle Fangkugeln haben 20% höhere Fangrate.", 3),
-        new(ZähneUpgrade.MehrTeamSlots, "Fangen", "➕", "Mehr Team-Slots",
+            "Alle Fangkugeln haben +2 Fangkraft.", 3),
+        new(ZähneUpgrade.MehrTeamSlots, "Fangen", "➕➕", "Mehr Team-Slots (+2)",
             "Dein Team kann 2 zusätzliche Monster aufnehmen (max. 8).", 5),
+        new(ZähneUpgrade.ExtraSlot,     "Fangen", "➕", "Extra Team-Slot (+1)",
+            "Dein Team kann 1 zusätzliches Monster aufnehmen.", 3),
 
-        // ── Bonus-Upgrades ────────────────────────────────────────────────
+        // ── Bonus-Upgrades ──────────────────────────────────────────────────
         new(ZähneUpgrade.BonusStatUpgrade, "Bonus", "🎁", "Bonus-Stat-Upgrade",
             "Wähle einen Stat eines Monsters und erhöhe ihn dauerhaft.", 2),
     };

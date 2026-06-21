@@ -302,6 +302,12 @@ public class GameService
             case ZähneUpgrade.LevelBoost50:
                 if (Spieler.Team.Any()) { var mon = Spieler.Team[0]; mon.Level = Math.Min(mon.Level + 50, AktuellesLevelCap); mon.ErfahrungsPunkte = mon.Level * mon.Level * 100; }
                 break;
+            case ZähneUpgrade.Meisterball:
+                // Meisterball ins Inventar legen
+                var mbItem = Spieler.Inventar.FirstOrDefault(i => i.ItemId == "item-011");
+                if (mbItem != null) mbItem.Menge++;
+                else Spieler.Inventar.Add(new InventarItem { ItemId = "item-011", Menge = 1 });
+                break;
             // StatBoost-Upgrades: dauerhafter +10% Bonus (wird bei KP-Berechnung berücksichtigt)
             // Diese Upgrades werden passiv in der Stat-Berechnung ausgewertet
         }
