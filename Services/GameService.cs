@@ -70,7 +70,7 @@ public class GameService
     public bool SpielAbgeschlossen => Spieler.Orden.Count >= 8;
 
     /// <summary>Anzahl abgeschlossener Regionen (0-basiert, 0 = erste Region läuft)</summary>
-    public int AbgeschlosseneRegionenAnzahl { get; private set; } = 0;
+    public int AbgeschlosseneRegionenAnzahl { get; set; } = 0;
 
     /// <summary>Maximales Level für die aktuelle Region: Region 1 = 100, Region 2 = 200, usw.</summary>
     public int AktuellesLevelCap => (AbgeschlosseneRegionenAnzahl + 1) * 100;
@@ -567,6 +567,24 @@ public class GameService
     }
 
     /// <summary>Liga-Abschluss: gleiche Map neu starten.</summary>
+    /// <summary>Liga-Abschluss: Neustart mit ausgewählten Monstern in Box.</summary>
+    public void LigaAbschlussNeustartMitAuswahl(List<MonsterInstanz> mitnehmen)
+    {
+        // Alle Monster sammeln
+        var alleMonster = Spieler.Team.Concat(Spieler.Box).ToList();
+        Spieler.Team.Clear();
+        Spieler.Box.Clear();
+        // Nur ausgewählte in die Box
+        foreach (var mon in alleMonster)
+        {
+            if (mitnehmen.Contains(mon))
+                Spieler.Box.Add(mon);
+            // Nicht ausgewählte werden freigelassen (nicht hinzugefügt)
+        }
+        // Rest des Resets
+        LigaAbschlussNeustart(true); // true = mitnehmen (Box ist schon befüllt)
+    }
+
     public void LigaAbschlussNeustart(bool monsterMitnehmen)
     {
         if (!monsterMitnehmen)
@@ -583,6 +601,23 @@ public class GameService
         }
         Spieler.Orden.Clear();
         Spieler.BesiegteTrainer.Clear();
+        Spieler.Geld = 3000; // Startgeld zurücksetzen
+        // Inventar zurücksetzen (Karte entfernen, aber Items behalten wenn Monster mitgenommen)
+        var karteItem = Spieler.Inventar.FirstOrDefault(i => i.ItemId == "ITEM-KARTE-GEN");
+        if (karteItem != null) Spieler.Inventar.Remove(karteItem);
+        // Prof. Eich Dialog zurücksetzen
+        WizardZurücksetzen();
+        // NPC-Gespräche zurücksetzen (damit Prof. Eich wieder angesprochen werden kann)
+        var startOrtId = AktuelleGenerierteKarte?.StartOrtId;
+        if (startOrtId != null)
+        {
+            var startOrt2 = AlleOrte.FirstOrDefault(o => o.Id == startOrtId);
+            if (startOrt2 != null)
+            {
+                foreach (var npc in startOrt2.NPCs)
+                    Spieler.BesproacheneNPCs.Remove(npc.Id);
+            }
+        }
         AktuelleGenerierteKarte?.BesiegteArenen.Clear();
         AktuelleGenerierteKarte?.FreigeschalteteOrte.Clear();
         // Startort zurücksetzen
@@ -599,6 +634,7 @@ public class GameService
             }
         }
         LetzterArenaLeiter = null;
+        AbgeschlosseneRegionenAnzahl = 0; // Regionen-Zähler zurücksetzen
         Phase = SpielPhase.Weltkarte;
         Notify();
     }
@@ -2567,6 +2603,7 @@ public class GameService
             "HeilStatus" => HeilStatus(ziel, effekt.StatusTyp),
             "HeilAlleStatus" => HeilAlleStatus(ziel),
             "HeilTeamAlles" => HeilTeamAlles(),
+            "Entwicklungsstein" => SteinAnwenden(ziel, effekt.StatusTyp ?? ""),
             _ => $"❓ {def.Name} hat keinen direkten Effekt."
         };
         if (!ergebnis.StartsWith("❌"))
@@ -2638,6 +2675,65 @@ public class GameService
         }
         return "✅ Das gesamte Team wurde vollständig geheilt!";
     }
+    private string SteinAnwenden(MonsterInstanz mon, string steinTyp)
+    {
+        if (string.IsNullOrEmpty(mon.EntwickeltZu))
+            return $"❌ {mon.AngezeigterName} kann sich nicht entwickeln.";
+        // Prüfen ob der Stein zum Trigger passt
+        var trigger = mon.EntwicklungTrigger ?? "";
+        if (!trigger.Equals(steinTyp, StringComparison.OrdinalIgnoreCase))
+        {
+            var steinName = steinTyp switch {
+                "mondstein" => "Mondstein", "feuerstein" => "Feuerstein", "wasserstein" => "Wasserstein",
+                "blattstein" => "Blattstein", "donnerstein" => "Donnerstein", "sonnenstein" => "Sonnenstein",
+                "glanstein" => "Glanstein", "finsterstein" => "Finsterstein", "eisstein" => "Eisstein",
+                _ => steinTyp
+            };
+            return $"❌ {mon.AngezeigterName} reagiert nicht auf den {steinName}.";
+        }
+        // Relikt-Checks
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineEntwicklung))
+            return $"🚫 Relikt: {mon.AngezeigterName} kann sich nicht entwickeln!";
+        var neueSpezies = AlleMonster.FirstOrDefault(m => m.Id == mon.EntwickeltZu);
+        if (neueSpezies == null) return $"❌ Entwicklungs-Daten nicht gefunden.";
+        // Evolution durchführen
+        string alteSpeziesId = mon.SpeziesId;
+        mon.SpeziesId = neueSpezies.Id;
+        mon.Name = neueSpezies.Name;
+        mon.Typen = new List<string>(neueSpezies.Typen);
+        mon.Bild = neueSpezies.Bild;
+        mon.EntwickeltZu = neueSpezies.EntwickeltZu;
+        mon.EntwicklungName = neueSpezies.EntwicklungName;
+        mon.EntwicklungLevel = neueSpezies.EntwicklungLevel;
+        mon.EntwicklungTrigger = neueSpezies.EntwicklungTrigger;
+        mon.Fangrate = neueSpezies.Fangrate;
+        // Stats verbessern
+        mon.MaxKp += 15; mon.AktuelleKp = Math.Min(mon.AktuelleKp + 15, mon.MaxKp);
+        mon.Angriff += 5; mon.Verteidigung += 5; mon.SpezialAngriff += 5;
+        mon.SpezialVerteidigung += 5; mon.Initiative += 5;
+        // Neue Attacken lernen
+        var neueAttacken = neueSpezies.Attacken.Where(a => a.Level <= mon.Level).OrderByDescending(a => a.Level).Take(4).ToList();
+        foreach (var eintrag in neueAttacken)
+        {
+            var atk = AlleAttacken.FirstOrDefault(a => a.Id == eintrag.AttackeId);
+            if (atk != null && !mon.Attacken.Any(a => a.Id == atk.Id) && mon.Attacken.Count < 4)
+                mon.Attacken.Add(new AttackeInstanz { Id = atk.Id, Name = atk.Name, Typ = atk.Typ, Kategorie = atk.Kategorie, Staerke = atk.Staerke, Genauigkeit = atk.Genauigkeit, MaxAp = atk.Ap ?? 10, AktuelleAp = atk.Ap ?? 10 });
+        }
+        // Pokédex aktualisieren
+        Spieler.GefangeneMonster.Add(alteSpeziesId);
+        Spieler.GefangeneMonster.Add(neueSpezies.Id);
+        Spieler.GeseheneMonster.Add(alteSpeziesId);
+        Spieler.GeseheneMonster.Add(neueSpezies.Id);
+        // KeineEntwickeltenMonster-Relikt: in Box verschieben
+        if (Einstellungen.HatRelikt(ReliktTyp.KeineEntwickeltenMonster))
+        {
+            Spieler.Team.Remove(mon);
+            Spieler.Box.Add(mon);
+        }
+        Notify();
+        return $"✨ {mon.AngezeigterName} hat sich zu {neueSpezies.Name} entwickelt!";
+    }
+
     public string ItemAusrüsten(MonsterInstanz monster, string? itemId)
     {
         if (itemId == null)

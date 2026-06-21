@@ -356,6 +356,10 @@
                                     {
                                         <span class="entwicklung-level">Lv.@vorstufe.EntwicklungLevel</span>
                                     }
+                                    else if (!string.IsNullOrEmpty(vorstufe.EntwicklungTrigger))
+                                    {
+                                        <span class="entwicklung-level">@TriggerIcon(vorstufe.EntwicklungTrigger)</span>
+                                    }
                                 </div>
                             }
 
@@ -373,6 +377,10 @@
                                     @if (ausgewähltMon.EntwicklungLevel.HasValue)
                                     {
                                         <span class="entwicklung-level">Lv.@ausgewähltMon.EntwicklungLevel</span>
+                                    }
+                                    else if (!string.IsNullOrEmpty(ausgewähltMon.EntwicklungTrigger))
+                                    {
+                                        <span class="entwicklung-level">@TriggerIcon(ausgewähltMon.EntwicklungTrigger)</span>
                                     }
                                 </div>
                                 <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklungData)">
@@ -398,6 +406,10 @@
                                             @if (entwicklungData.EntwicklungLevel.HasValue)
                                             {
                                                 <span class="entwicklung-level">Lv.@entwicklungData.EntwicklungLevel</span>
+                                            }
+                                            else if (!string.IsNullOrEmpty(entwicklungData.EntwicklungTrigger))
+                                            {
+                                                <span class="entwicklung-level">@TriggerIcon(entwicklungData.EntwicklungTrigger)</span>
                                             }
                                         </div>
                                         <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklung2)">
@@ -592,6 +604,22 @@
 
         return liste;
     }
+
+    private string TriggerIcon(string? trigger) => trigger?.ToLower() switch
+    {
+        "mondstein"    => "🌙 Mondstein",
+        "feuerstein"   => "🔥 Feuerstein",
+        "wasserstein"  => "💧 Wasserstein",
+        "blattstein"   => "🍃 Blattstein",
+        "donnerstein"  => "⚡ Donnerstein",
+        "sonnenstein"  => "☀️ Sonnenstein",
+        "glanstein"    => "✨ Glanstein",
+        "finsterstein" => "🌑 Finsterstein",
+        "eisstein"     => "❄️ Eisstein",
+        "tausch"       => "🔄 Tausch",
+        "freundschaft" => "💛 Freundschaft",
+        _              => "?"
+    };
 
     private void AuswaehlenKlick(MonsterData mon)
     {

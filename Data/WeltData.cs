@@ -63,6 +63,16 @@ public static class WeltData
         new() { Id="item-016", Name="X-Angriff",      Beschreibung="Erhöht Angriff.",       Preis=500,   Emoji="🗡️", Kategorie="Kampf",    WoBekommt="Märkte ab Arena 4" },
         new() { Id="item-017", Name="X-Verteidigung", Beschreibung="Erhöht Verteidigung.",  Preis=550,   Emoji="🛡️", Kategorie="Kampf",    WoBekommt="Märkte ab Arena 4" },
         new() { Id="item-018", Name="X-Initiative",   Beschreibung="Erhöht Initiative.",   Preis=350,   Emoji="💨", Kategorie="Kampf",    WoBekommt="Märkte ab Arena 3" },
+        // Entwicklungs-Steine
+        new() { Id="stein-mond",    Name="Mondstein",    Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2000, Emoji="🌙", Kategorie="Stein", WoBekommt="Märkte ab Arena 4" },
+        new() { Id="stein-feuer",   Name="Feuerstein",   Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2000, Emoji="🔥", Kategorie="Stein", WoBekommt="Märkte ab Arena 4" },
+        new() { Id="stein-wasser",  Name="Wasserstein",  Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2000, Emoji="💧", Kategorie="Stein", WoBekommt="Märkte ab Arena 4" },
+        new() { Id="stein-blatt",   Name="Blattstein",   Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2000, Emoji="🍃", Kategorie="Stein", WoBekommt="Märkte ab Arena 4" },
+        new() { Id="stein-donner",  Name="Donnerstein",  Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2000, Emoji="⚡", Kategorie="Stein", WoBekommt="Märkte ab Arena 4" },
+        new() { Id="stein-sonne",   Name="Sonnenstein",  Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2500, Emoji="☀️", Kategorie="Stein", WoBekommt="Märkte ab Arena 5" },
+        new() { Id="stein-glan",    Name="Glanstein",    Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2500, Emoji="✨", Kategorie="Stein", WoBekommt="Märkte ab Arena 5" },
+        new() { Id="stein-finster", Name="Finsterstein", Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2500, Emoji="🌑", Kategorie="Stein", WoBekommt="Märkte ab Arena 5" },
+        new() { Id="stein-eis",     Name="Eisstein",     Beschreibung="Löst Entwicklung bei bestimmten Monstern aus.",  Preis=2500, Emoji="❄️", Kategorie="Stein", WoBekommt="Märkte ab Arena 5" },
         // Spezial-Items (nicht kaufbar)
         new() { Id="ITEM-KARTE",   Name="Kanto-Karte",   Beschreibung="Zeigt die Kanto-Region.",   Preis=0, Emoji="🗺️", Kategorie="Spezial", WoBekommt="Prof. Eich in Pallet Town" },
         new() { Id="ITEM-SPRUDEL", Name="Sprudelwasser", Beschreibung="Schlüssel für Saffronia.", Preis=0, Emoji="💧", Kategorie="Spezial", WoBekommt="Direktor Hideo in Prismania" },

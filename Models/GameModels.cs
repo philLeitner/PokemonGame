@@ -41,6 +41,9 @@ public class MonsterData
     public string? EntwickeltZu { get; set; }
     public string? EntwicklungName { get; set; }
     public int? EntwicklungLevel { get; set; }
+    /// <summary>Entwicklungs-Auslöser: null/"level", "mondstein", "feuerstein", "wasserstein", "blattstein",
+    /// "donnerstein", "sonnenstein", "glanstein", "finsterstein", "eisstein", "tausch", "freundschaft"</summary>
+    public string? EntwicklungTrigger { get; set; }
     // Fangrate: 0-255 (höher = leichter zu fangen), Standard 45
     public int Fangrate { get; set; } = 45;
 }
@@ -76,6 +79,7 @@ public class MonsterInstanz
     public string? EntwickeltZu { get; set; }
     public string? EntwicklungName { get; set; }
     public int? EntwicklungLevel { get; set; }
+    public string? EntwicklungTrigger { get; set; }
     public string? GetrageneItemId { get; set; } = null; // Item das das Monster trägt
     public bool IstOhnmächtig => AktuelleKp <= 0;
     public string AngezeigterName => !string.IsNullOrEmpty(Spitzname) ? Spitzname : Name;
@@ -134,6 +138,7 @@ public class MonsterInstanz
             EntwickeltZu = spezies.EntwickeltZu,
             EntwicklungName = spezies.EntwicklungName,
             EntwicklungLevel = spezies.EntwicklungLevel,
+            EntwicklungTrigger = spezies.EntwicklungTrigger,
         };
         int basisKp = spezies.Stats.GetValueOrDefault("kp", 45);
         instanz.MaxKp = (int)((basisKp * 2 * level) / 100f) + level + 10;

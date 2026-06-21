@@ -5211,6 +5211,10 @@ input:checked + .toggle-slider-klein::before {
 .liga-monster-emoji { font-size: 1.2rem; }
 .liga-monster-name { flex: 1; font-weight: 600; color: #fff; text-align: left; }
 .liga-monster-level { color: #888; font-size: 0.85rem; }
+.liga-monster-auswahl { cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+.liga-monster-auswahl:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.liga-monster-auswahl.ausgewaehlt { border-color: #22c55e; background: rgba(34,197,94,0.12); }
+.liga-auswahl-check { font-size: 1.1rem; min-width: 1.5rem; }
 
 /* ─── RegionsWahl 2-Spalten Layout ───────────────────────────────────────── */
 .rw-top-row {

@@ -438,6 +438,29 @@
                     <button class="btn-abbrechen" @onclick="() => ausrüstItemId = null">Abbrechen</button>
                 </div>
             }
+            @if (steinItemId != null)
+            {
+                <div class="ausrüst-dialog">
+                    <p>@steinItemEmoji <strong>@steinItemName</strong> auf welches Monster anwenden?</p>
+                    <p style="font-size:0.8em;color:#aaa;">Nur kompatible Monster können sich entwickeln.</p>
+                    <div class="ausrüst-team">
+                        @foreach (var mon in Game.Spieler.Team)
+                        {
+                            var m = mon;
+                            bool kompatibel = !string.IsNullOrEmpty(m.EntwickeltZu) &&
+                                (m.EntwicklungTrigger ?? "").Equals(steinItemTrigger, StringComparison.OrdinalIgnoreCase);
+                            <button class="ausrüst-mon-btn" style="@(kompatibel ? "border-color:#22c55e;background:rgba(34,197,94,0.15)" : "opacity:0.5")" @onclick="() => SteinAufMonsterAnwenden(m)">
+                                @m.AngezeigterName Lv.@m.Level
+                                @if (kompatibel)
+                                {
+                                    <span class="mon-item-badge" style="background:#22c55e20;color:#22c55e">✨ kann sich entwickeln</span>
+                                }
+                            </button>
+                        }
+                    </div>
+                    <button class="btn-abbrechen" @onclick="() => steinItemId = null">Abbrechen</button>
+                </div>
+            }
             <!-- Item-Liste -->
             <div class="rucksack-items">
                 @if (!gefilterteItems.Any())
@@ -991,6 +1014,11 @@
     private string aktiveRucksackTab = "Alle"; // Rucksack-Registerkarte
     private string? ausgerüstetMonsterFürItem = null; // Monster-ID für Ausrüstungs-Dialog
     private string? ausrüstItemId = null;
+    // Stein-Anwenden
+    private string? steinItemId = null;
+    private string steinItemName = "";
+    private string steinItemEmoji = "";
+    private string steinItemTrigger = "";
     // Vollkarte
     private bool vollkarteOffen = false;
     private string? vollkarteRegionId = null;
@@ -1319,12 +1347,28 @@
             ausrüstItemId = item.ItemId;
             return;
         }
+        // Entwicklungssteine → Monster-Auswahl anzeigen
+        if (def.Effekt.Typ == "Entwicklungsstein")
+        {
+            steinItemId = item.ItemId;
+            steinItemName = def.Name;
+            steinItemEmoji = def.Emoji;
+            steinItemTrigger = def.Effekt.StatusTyp ?? "";
+            return;
+        }
         // Heilung/Status: auf erstes krankes Monster anwenden
         var ziel = Game.Spieler.Team.FirstOrDefault(m => m.AktuelleKp < m.MaxKp || (m.Status != null && m.Status != "none"));
         if (ziel == null) ziel = Game.Spieler.Team.FirstOrDefault();
         if (ziel == null) return;
         meldung = Game.ItemAnwenden(item.ItemId, ziel);
         await Task.Delay(100);
+    }
+
+    private void SteinAufMonsterAnwenden(MonsterInstanz mon)
+    {
+        if (steinItemId == null) return;
+        meldung = Game.ItemAnwenden(steinItemId, mon);
+        steinItemId = null;
     }
 
     private void ItemAusrüsten(string monsterKey)

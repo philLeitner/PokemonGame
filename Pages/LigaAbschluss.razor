@@ -130,38 +130,29 @@
         {
             <!-- Monster mitnehmen oder freilassen? -->
             <div class="liga-monster-option">
-                <h2>🐾 Deine Monster</h2>
-                <p>Was soll mit deinen Monstern passieren?</p>
+                <h2>🐾 Welche Monster mitnehmen?</h2>
+                <p>Wähle die Monster aus, die du in die Box mitnehmen möchtest. Nicht ausgewählte werden freigelassen.</p>
                 <div class="liga-monster-liste">
-                    @foreach (var mon in Game.Spieler.Team)
+                    @foreach (var mon in alleMonster)
                     {
-                        <div class="liga-monster-eintrag">
-                            <span class="liga-monster-emoji">@GetTypEmoji(mon.Typen.FirstOrDefault() ?? "")</span>
-                            <span class="liga-monster-name">@mon.AngezeigterName</span>
-                            <span class="liga-monster-level">Lv.@mon.Level</span>
+                        var m = mon;
+                        bool ausgewählt = ausgewählteMonster.Contains(m);
+                        <div class="liga-monster-eintrag liga-monster-auswahl @(ausgewählt ? "ausgewaehlt" : "")"
+                             @onclick="() => MonsterToggle(m)">
+                            <span class="liga-auswahl-check">@(ausgewählt ? "✅" : "⬜")</span>
+                            <span class="liga-monster-emoji">@GetTypEmoji(m.Typen.FirstOrDefault() ?? "")</span>
+                            <span class="liga-monster-name">@m.AngezeigterName</span>
+                            <span class="liga-monster-level">Lv.@m.Level</span>
                         </div>
                     }
                 </div>
-                <div class="liga-optionen-grid">
-                    <div class="liga-option @(monsterOption == "mitnehmen" ? "ausgewaehlt" : "")"
-                         @onclick='() => monsterOption = "mitnehmen"'>
-                        <div class="liga-option-icon">📦</div>
-                        <div class="liga-option-titel">Mitnehmen</div>
-                        <div class="liga-option-text">Monster kommen in die Box</div>
-                    </div>
-                    <div class="liga-option @(monsterOption == "freilassen" ? "ausgewaehlt" : "")"
-                         @onclick='() => monsterOption = "freilassen"'>
-                        <div class="liga-option-icon">🌿</div>
-                        <div class="liga-option-titel">Freilassen</div>
-                        <div class="liga-option-text">Monster werden gelöscht</div>
-                    </div>
+                <div class="liga-optionen-grid" style="margin-top:0.5rem">
+                    <button class="btn-liga-nein" @onclick="AlleAbwählen">Alle freilassen</button>
+                    <button class="btn-liga-ja" @onclick="AlleAuswählen">Alle mitnehmen</button>
                 </div>
-                @if (!string.IsNullOrEmpty(monsterOption))
-                {
-                    <button class="btn-liga-weiter" @onclick="NeustartBestätigen">
-                        ✅ Bestätigen und neu starten
-                    </button>
-                }
+                <button class="btn-liga-weiter" style="margin-top:1rem" @onclick="NeustartBestätigen">
+                    ✅ Bestätigen und neu starten (@ausgewählteMonster.Count mitgenommen)
+                </button>
             </div>
         }
     </div>
@@ -171,6 +162,8 @@
     private int schritt = 0;
     private string gewählteOption = "";
     private string monsterOption = "";
+    private List<MonsterInstanz> alleMonster = new();
+    private HashSet<MonsterInstanz> ausgewählteMonster = new();
 
     protected override void OnInitialized()
     {
@@ -196,20 +189,40 @@
         Game.ZuZähneShop();
     }
 
-    private void OptionBestätigen()
-    {
-        schritt = 2;
-    }
-
     private async Task ZumHauptmenü(bool speichern)
     {
         await Game.LigaAbschlussHauptmenü(speichern);
     }
 
+    private void OptionBestätigen()
+    {
+        // Monster-Liste für Auswahl vorbereiten
+        alleMonster = Game.Spieler.Team.Concat(Game.Spieler.Box).ToList();
+        ausgewählteMonster = new HashSet<MonsterInstanz>(alleMonster); // alle vorausgewählt
+        schritt = 2;
+    }
+
+    private void MonsterToggle(MonsterInstanz mon)
+    {
+        if (ausgewählteMonster.Contains(mon))
+            ausgewählteMonster.Remove(mon);
+        else
+            ausgewählteMonster.Add(mon);
+    }
+
+    private void AlleAuswählen()
+    {
+        ausgewählteMonster = new HashSet<MonsterInstanz>(alleMonster);
+    }
+
+    private void AlleAbwählen()
+    {
+        ausgewählteMonster.Clear();
+    }
+
     private void NeustartBestätigen()
     {
-        bool mitnehmen = monsterOption == "mitnehmen";
-        Game.LigaAbschlussNeustart(mitnehmen);
+        Game.LigaAbschlussNeustartMitAuswahl(ausgewählteMonster.ToList());
     }
 
     private string GetTypEmoji(string typ) => typ switch

@@ -3758,7 +3758,8 @@
       "MOV-0885",
       "MOV-0914",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "donnerstein"
   },
   {
     "id": "PKM-0026",
@@ -4680,7 +4681,8 @@
       "MOV-0590",
       "MOV-0599",
       "MOV-0707"
-    ]
+    ],
+    "entwicklungTrigger": "mondstein"
   },
   {
     "id": "PKM-0031",
@@ -5206,7 +5208,8 @@
       "MOV-0599",
       "MOV-0684",
       "MOV-0707"
-    ]
+    ],
+    "entwicklungTrigger": "mondstein"
   },
   {
     "id": "PKM-0034",
@@ -5732,7 +5735,8 @@
       "MOV-0851",
       "MOV-0886",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "mondstein"
   },
   {
     "id": "PKM-0036",
@@ -6212,7 +6216,8 @@
       "MOV-0595",
       "MOV-0807",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "feuerstein"
   },
   {
     "id": "PKM-0038",
@@ -6669,7 +6674,8 @@
       "MOV-0886",
       "MOV-0914",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "mondstein"
   },
   {
     "id": "PKM-0040",
@@ -7282,7 +7288,8 @@
       "MOV-0512",
       "MOV-0590",
       "MOV-0599"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0043",
@@ -7597,7 +7604,8 @@
       "MOV-0803",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "blattstein"
   },
   {
     "id": "PKM-0045",
@@ -10064,7 +10072,8 @@
       "MOV-0707",
       "MOV-0808",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0058",
@@ -10238,7 +10247,8 @@
       "MOV-0706",
       "MOV-0851",
       "MOV-0915"
-    ]
+    ],
+    "entwicklungTrigger": "feuerstein"
   },
   {
     "id": "PKM-0059",
@@ -10770,7 +10780,8 @@
       "MOV-0710",
       "MOV-0851",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "wasserstein"
   },
   {
     "id": "PKM-0062",
@@ -11303,7 +11314,8 @@
       "MOV-0605",
       "MOV-0678",
       "MOV-0683"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0065",
@@ -11946,7 +11958,8 @@
       "MOV-0590",
       "MOV-0612",
       "MOV-0707"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0068",
@@ -12484,7 +12497,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "blattstein"
   },
   {
     "id": "PKM-0071",
@@ -13464,7 +13478,8 @@
       "MOV-0776",
       "MOV-0851",
       "MOV-0912"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0076",
@@ -14804,7 +14819,8 @@
       "MOV-0604",
       "MOV-0796",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0083",
@@ -14995,7 +15011,8 @@
       "MOV-0669",
       "MOV-0675",
       "MOV-0693"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0084",
@@ -16274,7 +16291,8 @@
       "MOV-0861",
       "MOV-0883",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "wasserstein"
   },
   {
     "id": "PKM-0091",
@@ -16858,7 +16876,8 @@
       "MOV-0806",
       "MOV-0809",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0094",
@@ -17296,7 +17315,8 @@
       "MOV-0707",
       "MOV-0776",
       "MOV-0784"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0096",
@@ -18557,7 +18577,8 @@
       "MOV-0803",
       "MOV-0851",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "blattstein"
   },
   {
     "id": "PKM-0103",
@@ -19759,7 +19780,8 @@
       "MOV-0693",
       "MOV-0707",
       "MOV-0776"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0109",
@@ -20560,7 +20582,8 @@
       "MOV-0815",
       "MOV-0851",
       "MOV-0916"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0113",
@@ -20832,7 +20855,8 @@
       "MOV-0883",
       "MOV-0885",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0114",
@@ -21011,7 +21035,8 @@
       "MOV-0580",
       "MOV-0590",
       "MOV-0611"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0115",
@@ -21534,7 +21559,8 @@
       "MOV-0851",
       "MOV-0883",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0118",
@@ -21991,7 +22017,8 @@
       "MOV-0503",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "wasserstein"
   },
   {
     "id": "PKM-0121",
@@ -22619,7 +22646,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0124",
@@ -23017,7 +23045,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0916"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0126",
@@ -23207,7 +23236,8 @@
       "MOV-0815",
       "MOV-0851",
       "MOV-0915"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0127",
@@ -24222,7 +24252,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0134",
@@ -25082,7 +25113,8 @@
       "MOV-0598",
       "MOV-0683",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0138",
@@ -31694,7 +31726,8 @@
       "MOV-0604",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0173",
@@ -31873,7 +31906,8 @@
       "MOV-0851",
       "MOV-0886",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0174",
@@ -32011,7 +32045,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0175",
@@ -32202,7 +32237,8 @@
       "MOV-0590",
       "MOV-0595",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0176",
@@ -32422,7 +32458,8 @@
       "MOV-0595",
       "MOV-0605",
       "MOV-0684"
-    ]
+    ],
+    "entwicklungTrigger": "glanstein"
   },
   {
     "id": "PKM-0177",
@@ -34870,7 +34907,8 @@
       "MOV-0885",
       "MOV-0886",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0191",
@@ -35013,7 +35051,8 @@
       "MOV-0590",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "sonnenstein"
   },
   {
     "id": "PKM-0192",
@@ -35359,7 +35398,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0194",
@@ -36333,7 +36373,8 @@
       "MOV-0814",
       "MOV-0851",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "finsterstein"
   },
   {
     "id": "PKM-0199",
@@ -36746,7 +36787,8 @@
       "MOV-0851",
       "MOV-0883",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "finsterstein"
   },
   {
     "id": "PKM-0201",
@@ -37021,7 +37063,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0204",
@@ -37601,7 +37644,8 @@
       "MOV-0861",
       "MOV-0884",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0207",
@@ -37805,7 +37849,8 @@
       "MOV-0806",
       "MOV-0814",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0208",
@@ -38628,7 +38673,8 @@
       "MOV-0812",
       "MOV-0851",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0212",
@@ -39404,7 +39450,8 @@
       "MOV-0883",
       "MOV-0885",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0216",
@@ -39806,7 +39853,8 @@
       "MOV-0707",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0218",
@@ -40489,7 +40537,8 @@
       "MOV-0851",
       "MOV-0883",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0222",
@@ -42522,7 +42571,8 @@
       "MOV-0598",
       "MOV-0683",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0234",
@@ -42710,7 +42760,8 @@
       "MOV-0679",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0235",
@@ -48767,7 +48818,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0272",
@@ -49297,7 +49349,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "blattstein"
   },
   {
     "id": "PKM-0275",
@@ -53277,7 +53330,8 @@
       "MOV-0693",
       "MOV-0851",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0299",
@@ -53433,7 +53487,8 @@
       "MOV-0796",
       "MOV-0800",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0300",
@@ -53593,7 +53648,8 @@
       "MOV-0526",
       "MOV-0528",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "mondstein"
   },
   {
     "id": "PKM-0301",
@@ -56139,7 +56195,8 @@
       "MOV-0496",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "glanstein"
   },
   {
     "id": "PKM-0316",
@@ -61793,7 +61850,8 @@
       "MOV-0799",
       "MOV-0851",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0350",
@@ -62981,7 +63039,8 @@
       "MOV-0806",
       "MOV-0809",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0357",
@@ -64449,7 +64508,8 @@
       "MOV-0496",
       "MOV-0503",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "tausch"
   },
   {
     "id": "PKM-0367",
@@ -70940,7 +71000,8 @@
       "MOV-0496",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0407",
@@ -74336,7 +74397,8 @@
       "MOV-0583",
       "MOV-0590",
       "MOV-0612"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0428",
@@ -75409,7 +75471,8 @@
       "MOV-0605",
       "MOV-0851",
       "MOV-0917"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0434",
@@ -76330,7 +76393,8 @@
       "MOV-0707",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0439",
@@ -76530,7 +76594,8 @@
       "MOV-0605",
       "MOV-0611",
       "MOV-0678"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0440",
@@ -76676,7 +76741,8 @@
       "MOV-0590",
       "MOV-0851",
       "MOV-0883"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0441",
@@ -77733,7 +77799,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0447",
@@ -77931,7 +77998,8 @@
       "MOV-0851",
       "MOV-0885",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0448",
@@ -79883,7 +79951,8 @@
       "MOV-0512",
       "MOV-0523",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0459",
@@ -85872,7 +85941,8 @@
       "MOV-0851",
       "MOV-0886",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0490",
@@ -89316,7 +89386,8 @@
       "MOV-0512",
       "MOV-0526",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "blattstein"
   },
   {
     "id": "PKM-0512",
@@ -89521,7 +89592,8 @@
       "MOV-0512",
       "MOV-0526",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0514",
@@ -89729,7 +89801,8 @@
       "MOV-0512",
       "MOV-0526",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "wasserstein"
   },
   {
     "id": "PKM-0516",
@@ -89966,7 +90039,8 @@
       "MOV-0502",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0518",
@@ -90968,7 +91042,8 @@
       "MOV-0590",
       "MOV-0707",
       "MOV-0776"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0526",
@@ -91245,7 +91320,8 @@
       "MOV-0590",
       "MOV-0599",
       "MOV-0683"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0528",
@@ -92196,7 +92272,8 @@
       "MOV-0693",
       "MOV-0811",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0534",
@@ -93273,7 +93350,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0542",
@@ -93968,7 +94046,8 @@
       "MOV-0605",
       "MOV-0803",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "sonnenstein"
   },
   {
     "id": "PKM-0547",
@@ -94278,7 +94357,8 @@
       "MOV-0803",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "sonnenstein"
   },
   {
     "id": "PKM-0549",
@@ -98159,7 +98239,8 @@
       "MOV-0885",
       "MOV-0886",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "glanstein"
   },
   {
     "id": "PKM-0573",
@@ -100594,7 +100675,8 @@
       "MOV-0529",
       "MOV-0590",
       "MOV-0611"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0589",
@@ -102597,7 +102679,8 @@
       "MOV-0675",
       "MOV-0679",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "donnerstein"
   },
   {
     "id": "PKM-0604",
@@ -103376,7 +103459,8 @@
       "MOV-0809",
       "MOV-0851",
       "MOV-0915"
-    ]
+    ],
+    "entwicklungTrigger": "finsterstein"
   },
   {
     "id": "PKM-0609",
@@ -104734,7 +104818,8 @@
       "MOV-0522",
       "MOV-0590",
       "MOV-0611"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0617",
@@ -106274,7 +106359,8 @@
       "MOV-0796",
       "MOV-0808",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0626",
@@ -113291,7 +113377,8 @@
       "MOV-0885",
       "MOV-0886",
       "MOV-0914"
-    ]
+    ],
+    "entwicklungTrigger": "glanstein"
   },
   {
     "id": "PKM-0671",
@@ -114737,7 +114824,8 @@
       "MOV-0590",
       "MOV-0669",
       "MOV-0693"
-    ]
+    ],
+    "entwicklungTrigger": "finsterstein"
   },
   {
     "id": "PKM-0681",
@@ -115003,7 +115091,8 @@
       "MOV-0581",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0683",
@@ -115285,7 +115374,8 @@
       "MOV-0583",
       "MOV-0590",
       "MOV-0605"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0685",
@@ -116848,7 +116938,8 @@
       "MOV-0528",
       "MOV-0590",
       "MOV-0604"
-    ]
+    ],
+    "entwicklungTrigger": "sonnenstein"
   },
   {
     "id": "PKM-0695",
@@ -119099,7 +119190,8 @@
       "MOV-0809",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0709",
@@ -123673,7 +123765,8 @@
       "MOV-0806",
       "MOV-0851",
       "MOV-0884"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0738",
@@ -123994,7 +124087,8 @@
       "MOV-0851",
       "MOV-0886",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "eisstein"
   },
   {
     "id": "PKM-0740",
@@ -127271,7 +127365,8 @@
       "MOV-0813",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0763",
@@ -128677,7 +128772,8 @@
       "MOV-0496",
       "MOV-0526",
       "MOV-0590"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0773",
@@ -133260,7 +133356,8 @@
       "MOV-0497",
       "MOV-0590",
       "MOV-0599"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0804",
@@ -137445,7 +137542,8 @@
       "MOV-0213",
       "MOV-0851",
       "MOV-0884"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0841",
@@ -138868,7 +138966,8 @@
       "MOV-0514",
       "MOV-0526",
       "MOV-0710"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0853",
@@ -139100,7 +139199,8 @@
       "MOV-0566",
       "MOV-0809",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0855",
@@ -141071,7 +141171,8 @@
       "MOV-0581",
       "MOV-0605",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0869",
@@ -141512,7 +141613,8 @@
       "MOV-0806",
       "MOV-0851",
       "MOV-0884"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0873",
@@ -143032,7 +143134,8 @@
       "MOV-0796",
       "MOV-0851",
       "MOV-0913"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0885",
@@ -143950,7 +144053,8 @@
       "MOV-0514",
       "MOV-0526",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0892",
@@ -148150,7 +148254,8 @@
       "MOV-0811",
       "MOV-0851",
       "MOV-0918"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0923",
@@ -149745,7 +149850,8 @@
       "MOV-0394",
       "MOV-0488",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0936",
@@ -150134,7 +150240,8 @@
       "MOV-0604",
       "MOV-0851",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0939",
@@ -151120,7 +151227,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0947",
@@ -151751,7 +151859,8 @@
       "MOV-0803",
       "MOV-0851",
       "MOV-0885"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0952",
@@ -151978,7 +152087,8 @@
       "MOV-0806",
       "MOV-0851",
       "MOV-0884"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0954",
@@ -154636,7 +154746,8 @@
       "MOV-0861",
       "MOV-0883",
       "MOV-0886"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-0975",
@@ -157958,7 +158069,8 @@
       "MOV-0417",
       "MOV-0506",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-1000",
@@ -159619,7 +159731,8 @@
       "MOV-0851",
       "MOV-0884",
       "MOV-0913"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-1012",
@@ -159728,7 +159841,8 @@
       "MOV-0580",
       "MOV-0809",
       "MOV-0851"
-    ]
+    ],
+    "entwicklungTrigger": "freundschaft"
   },
   {
     "id": "PKM-1013",
