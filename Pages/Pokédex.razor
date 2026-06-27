@@ -339,16 +339,17 @@
                             @if (vorstufe != null)
                             {
                                 bool vsGefangen = IstGefangen(vorstufe.Id);
+                                bool vsGesehen = IstGesehen(vorstufe.Id);
                                 <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(vorstufe)">
-                                    @if (vsGefangen)
+                                    @if (vsGefangen || vsGesehen)
                                     {
-                                        <img class="entwicklung-bild" src="@vorstufe.BildUrl" alt="@vorstufe.Name" />
+                                        <img class="entwicklung-bild @(vsGesehen && !vsGefangen ? "gesehen-bild" : "")" src="@vorstufe.BildUrl" alt="@vorstufe.Name" />
                                     }
                                     else
                                     {
                                         <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;opacity:0.4">❓</div>
                                     }
-                                    <span class="entwicklung-name">@(vsGefangen ? vorstufe.Name : "???")</span>
+                                    <span class="entwicklung-name">@(vsGefangen || vsGesehen ? vorstufe.Name : "???")</span>
                                 </div>
                                 <div class="entwicklung-pfeil">
                                     <span>→</span>
@@ -372,6 +373,7 @@
                             @if (entwicklungData != null)
                             {
                                 bool e1Gefangen = IstGefangen(entwicklungData.Id);
+                                bool e1Gesehen = IstGesehen(entwicklungData.Id);
                                 <div class="entwicklung-pfeil">
                                     <span>→</span>
                                     @if (ausgewähltMon.EntwicklungLevel.HasValue)
@@ -384,15 +386,15 @@
                                     }
                                 </div>
                                 <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklungData)">
-                                    @if (e1Gefangen)
+                                    @if (e1Gefangen || e1Gesehen)
                                     {
-                                        <img class="entwicklung-bild" src="@entwicklungData.BildUrl" alt="@entwicklungData.Name" />
+                                        <img class="entwicklung-bild @(e1Gesehen && !e1Gefangen ? "gesehen-bild" : "")" src="@entwicklungData.BildUrl" alt="@entwicklungData.Name" />
                                     }
                                     else
                                     {
                                         <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;opacity:0.4">❓</div>
                                     }
-                                    <span class="entwicklung-name">@(e1Gefangen ? entwicklungData.Name : "???")</span>
+                                    <span class="entwicklung-name">@(e1Gefangen || e1Gesehen ? entwicklungData.Name : "???")</span>
                                 </div>
 
                                 @if (!string.IsNullOrEmpty(entwicklungData.EntwickeltZu))
@@ -401,6 +403,7 @@
                                     @if (entwicklung2 != null)
                                     {
                                         bool e2Gefangen = IstGefangen(entwicklung2.Id);
+                                        bool e2Gesehen = IstGesehen(entwicklung2.Id);
                                         <div class="entwicklung-pfeil">
                                             <span>→</span>
                                             @if (entwicklungData.EntwicklungLevel.HasValue)
@@ -413,15 +416,15 @@
                                             }
                                         </div>
                                         <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklung2)">
-                                            @if (e2Gefangen)
+                                            @if (e2Gefangen || e2Gesehen)
                                             {
-                                                <img class="entwicklung-bild" src="@entwicklung2.BildUrl" alt="@entwicklung2.Name" />
+                                                <img class="entwicklung-bild @(e2Gesehen && !e2Gefangen ? "gesehen-bild" : "")" src="@entwicklung2.BildUrl" alt="@entwicklung2.Name" />
                                             }
                                             else
                                             {
                                                 <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;opacity:0.4">❓</div>
                                             }
-                                            <span class="entwicklung-name">@(e2Gefangen ? entwicklung2.Name : "???")</span>
+                                            <span class="entwicklung-name">@(e2Gefangen || e2Gesehen ? entwicklung2.Name : "???")</span>
                                         </div>
                                     }
                                 }
