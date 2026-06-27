@@ -35,6 +35,20 @@ public class MonsterData
     public string Name { get; set; } = "";
     public List<string> Typen { get; set; } = new();
     public string Bild { get; set; } = "";
+
+    /// <summary>Gibt die vollständige GitHub Raw-URL für das Monster-Bild zurück.
+    /// Bilder liegen auf GitHub als 1.png, 2.png usw.</summary>
+    public string BildUrl
+    {
+        get
+        {
+            const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
+            if (Id.StartsWith("PKM-") && int.TryParse(Id.Substring(4), out int nr))
+                return $"{basis}{nr}.png";
+            return $"{basis}{Id}.png";
+        }
+    }
+
     public Dictionary<string, int> Stats { get; set; } = new();
     public List<AttackenLernEintrag> Attacken { get; set; } = new();
     public List<string> TmAttacken { get; set; } = new();
@@ -62,6 +76,19 @@ public class MonsterInstanz
     public string? Spitzname { get; set; }   // optionaler Spitzname
     public List<string> Typen { get; set; } = new();
     public string Bild { get; set; } = "";
+
+    /// <summary>Gibt die vollständige GitHub Raw-URL für das Monster-Bild zurück.</summary>
+    public string BildUrl
+    {
+        get
+        {
+            const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
+            if (SpeziesId.StartsWith("PKM-") && int.TryParse(SpeziesId.Substring(4), out int nr))
+                return $"{basis}{nr}.png";
+            return $"{basis}{SpeziesId}.png";
+        }
+    }
+
     public int Level { get; set; } = 5;
     public int MaxKp { get; set; }
     public int AktuelleKp { get; set; }

@@ -528,8 +528,15 @@
     private System.Threading.Timer? _zeitlimitTimer;
     private bool _zeitlimitTimerGestartet = false;
 
-    // Helper-Methode für Monster-Bilder
-    private string GetMonsterBildPfad(string speziesId) => $"/sprites/monster/{speziesId}.png";
+    // Monster-Bilder kommen über MonsterInstanz.BildUrl (GitHub Raw-URL)
+    private string GetMonsterBildPfad(string speziesId)
+    {
+        const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
+        if (speziesId != null && speziesId.StartsWith("PKM-") &&
+            int.TryParse(speziesId.Substring(4), out int nr))
+            return $"{basis}{nr}.png";
+        return $"{basis}{speziesId}.png";
+    }
 
     protected override void OnInitialized()
     {

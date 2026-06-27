@@ -100,7 +100,7 @@
                         {
                             <!-- Gesehen: Bild sichtbar, Name sichtbar, Typen sichtbar, aber ausgegraut -->
                             <div class="pokedex-bild-container">
-                                <img class="pokedex-bild gesehen-bild" src="@mon.Bild" alt="@mon.Name"
+                                <img class="pokedex-bild gesehen-bild" src="@mon.BildUrl" alt="@mon.Name"
                                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                                 <div class="pokedex-bild-fallback" style="display:none">
                                     @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
@@ -342,7 +342,7 @@
                                 <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(vorstufe)">
                                     @if (vsGefangen)
                                     {
-                                        <img class="entwicklung-bild" src="@vorstufe.Bild" alt="@vorstufe.Name" />
+                                        <img class="entwicklung-bild" src="@vorstufe.BildUrl" alt="@vorstufe.Name" />
                                     }
                                     else
                                     {
@@ -365,7 +365,7 @@
 
                             <!-- Aktuelles Monster -->
                             <div class="entwicklung-stufe aktuell">
-                                <img class="entwicklung-bild" src="@ausgewähltMon.Bild" alt="@ausgewähltMon.Name" />
+                                <img class="entwicklung-bild" src="@ausgewähltMon.BildUrl" alt="@ausgewähltMon.Name" />
                                 <span class="entwicklung-name">@ausgewähltMon.Name</span>
                             </div>
 
@@ -386,7 +386,7 @@
                                 <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklungData)">
                                     @if (e1Gefangen)
                                     {
-                                        <img class="entwicklung-bild" src="@entwicklungData.Bild" alt="@entwicklungData.Name" />
+                                        <img class="entwicklung-bild" src="@entwicklungData.BildUrl" alt="@entwicklungData.Name" />
                                     }
                                     else
                                     {
@@ -415,7 +415,7 @@
                                         <div class="entwicklung-stufe" @onclick="() => AuswaehlenKlick(entwicklung2)">
                                             @if (e2Gefangen)
                                             {
-                                                <img class="entwicklung-bild" src="@entwicklung2.Bild" alt="@entwicklung2.Name" />
+                                                <img class="entwicklung-bild" src="@entwicklung2.BildUrl" alt="@entwicklung2.Name" />
                                             }
                                             else
                                             {
@@ -551,7 +551,15 @@
     private bool IstImTeam(string monsterId) => Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
     private bool IstInBox(string monsterId) => Game.Spieler.Box.Any(m => m.SpeziesId == monsterId);
 
-    private string GetMonsterBildPfad(string monsterId) => $"/images/monster/{monsterId}.png";
+    // Monster-Bilder über MonsterData.BildUrl (GitHub Raw-URL)
+    private string GetMonsterBildPfad(string monsterId)
+    {
+        const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
+        if (monsterId != null && monsterId.StartsWith("PKM-") &&
+            int.TryParse(monsterId.Substring(4), out int nr))
+            return $"{basis}{nr}.png";
+        return $"{basis}{monsterId}.png";
+    }
 
     private int GetNummer(string id)
     {

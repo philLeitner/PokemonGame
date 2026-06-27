@@ -711,9 +711,9 @@
                             var m = mon;
                             bool gewählt = wizardGewählterStarterId == m.Id;
                             <div class="wizard-starter-karte @(gewählt ? "ausgewaehlt" : "")" @onclick="() => WizardStarterWählen(m.Id)">
-                                @if (!string.IsNullOrEmpty(m.Bild))
+                                @if (!string.IsNullOrEmpty(m.BildUrl))
                                 {
-                                    <img class="starter-bild" src="@m.Bild" alt="@m.Name" />
+                                    <img class="starter-bild" src="@m.BildUrl" alt="@m.Name" />
                                 }
                                 else
                                 {
