@@ -1195,10 +1195,8 @@ public class GameService
 
             if (schaden > 0)
             {
-                AktuellerKampf.Log.Add($"⚔️ {spielerMon.AngezeigterName} setzt {attacke.Name} ein! ({schaden} Schaden)");
-                if (multi >= 2f) AktuellerKampf.Log.Add("💥 Das ist sehr effektiv!");
-                else if (multi <= 0f) AktuellerKampf.Log.Add("🛡️ Das hat keine Wirkung...");
-                else if (multi < 1f) AktuellerKampf.Log.Add("😐 Das ist nicht sehr effektiv...");
+                string trefferText = multi >= 2f ? " — sehr effektiv!" : multi <= 0f ? " — keine Wirkung" : multi < 1f ? " — nicht sehr effektiv" : "";
+                AktuellerKampf.Log.Add($"⚔️ {spielerMon.AngezeigterName} setzt {attacke.Name} ein! {gegnerMon.AngezeigterName} erleidet {schaden} Schaden{trefferText}.");
             }
             else if (!hatSondereffekt)
             {
@@ -1284,10 +1282,29 @@ public class GameService
                 int gegnerSchaden = SchadenBerechnen(gegnerMon, spielerMon, gegnerAttacke);
                 float gegnerMulti = TypeChart.GetVerteidigungsMultiplikator(gegnerAttacke.Typ, spielerMon.Typen);
                 spielerMon.AktuelleKp = Math.Max(0, spielerMon.AktuelleKp - gegnerSchaden);
-                AktuellerKampf.Log.Add($"💢 {gegnerMon.Name} setzt {gegnerAttacke.Name} ein! ({gegnerSchaden} Schaden)");
-                if (gegnerMulti >= 2f) AktuellerKampf.Log.Add("💥 Das ist sehr effektiv!");
-                else if (gegnerMulti <= 0f) AktuellerKampf.Log.Add("🛡️ Das hat keine Wirkung...");
-                else if (gegnerMulti < 1f) AktuellerKampf.Log.Add("😐 Das ist nicht sehr effektiv...");
+                bool gegnerHatSonder = AttackeSondereffektAusführen(gegnerAttacke, gegnerMon, spielerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf);
+                if (gegnerSchaden > 0)
+                {
+                    string gTrefferText = gegnerMulti >= 2f ? " — sehr effektiv!" : gegnerMulti <= 0f ? " — keine Wirkung" : gegnerMulti < 1f ? " — nicht sehr effektiv" : "";
+                    AktuellerKampf.Log.Add($"💢 {gegnerMon.AngezeigterName} setzt {gegnerAttacke.Name} ein! {spielerMon.AngezeigterName} erleidet {gegnerSchaden} Schaden{gTrefferText}.");
+                }
+                else if (!gegnerHatSonder)
+                {
+                    AktuellerKampf.Log.Add($"💢 {gegnerMon.AngezeigterName} setzt {gegnerAttacke.Name} ein!");
+                }
+                // Status-Effekt durch Gegner-Attacke
+                if (gegnerSchaden > 0 && !string.IsNullOrEmpty(gegnerAttacke.Statuseffekt))
+                {
+                    int chance = gegnerAttacke.StatuseffektChance ?? 30;
+                    if (_rng.Next(100) < chance)
+                        VersuchemStatusEffektDirekt(spielerMon, gegnerAttacke.Statuseffekt, AktuellerKampf.Log);
+                }
+                else if (gegnerSchaden == 0 && !string.IsNullOrEmpty(gegnerAttacke.Statuseffekt))
+                {
+                    int chance = gegnerAttacke.StatuseffektChance ?? 100;
+                    if (_rng.Next(100) < chance)
+                        VersuchemStatusEffektDirekt(spielerMon, gegnerAttacke.Statuseffekt, AktuellerKampf.Log);
+                }
             }
         }
 
@@ -2333,6 +2350,139 @@ public class GameService
                 else
                     log.Add($"📢 {ziel.Name} wird zurückgerufen! (Trainer wechselt zum nächsten)");
                 return true;
+
+            // ─── ANGREIFER STAT +2 (weitere) ─────────────────────────────────────
+            case "MOV-0397": // Steinpolitur: Initiative +2
+                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
+            case "MOV-0159": // Schärfer: Angriff +2
+                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+            case "MOV-0151": // Säurepanzer: SpAngriff +2
+                StatStufeAnpassen(angreifer, "spangriff", 2, log); return true;
+            case "MOV-0112": // Barriere: Verteidigung +2
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+            case "MOV-0842": // Shelter: Verteidigung +2
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+
+            case "MOV-0837": // Victory Dance: Angriff+Verteidigung+Initiative +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
+                StatStufeAnpassen(angreifer, "initiative", 1, log); return true;
+            case "MOV-0868": // Fillet Away: Angriff+SpAngriff+Initiative +2, KP -50%
+            {
+                int verlust = Math.Max(1, angreifer.MaxKp / 2);
+                angreifer.AktuelleKp = Math.Max(1, angreifer.AktuelleKp - verlust);
+                StatStufeAnpassen(angreifer, "angriff", 2, log);
+                StatStufeAnpassen(angreifer, "spangriff", 2, log);
+                StatStufeAnpassen(angreifer, "initiative", 2, log);
+                log.Add($"💔 {angreifer.AngezeigterName} verliert {verlust} KP!");
+                return true;
+            }
+
+            // ─── ANGREIFER STAT +1 (weitere) ─────────────────────────────────────
+            case "MOV-0107": // Komprimator: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0116": // Energiefokus: Genauigkeit +1
+                StatStufeAnpassen(angreifer, "genauigkeit", 1, log); return true;
+            case "MOV-0113": // Lichtschild: SpVerteidigung +1
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
+            case "MOV-0115": // Reflektor: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0673": // Konzentration: Angriff+SpAngriff +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+            case "MOV-0811": // Coaching: Angriff+Verteidigung +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0775": // Seelentanz: SpAngriff +1
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+
+            // ─── GEGNER STAT -1 (weitere) ─────────────────────────────────────────
+            case "MOV-0081": // Fadenschuss: Initiative Gegner -1
+                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+            case "MOV-0108": // Rauchwolke: Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0043": // Silberblick: Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+
+            case "MOV-0749": // Teerschuss: Initiative Gegner -2
+                StatStufeAnpassen(ziel, "initiative", -2, log); return true;
+            case "MOV-0715": // Tränendrüse: SpAngriff+SpVerteidigung Gegner -1
+                StatStufeAnpassen(ziel, "spangriff", -1, log);
+                StatStufeAnpassen(ziel, "spverteidigung", -1, log); return true;
+            case "MOV-0608": // Kulleraugen: Verteidigung Gegner -1
+                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
+            case "MOV-0858": // Spicy Extract: SpAngriff Gegner +2, SpVerteidigung Gegner -2
+                StatStufeAnpassen(ziel, "spangriff", 2, log);
+                StatStufeAnpassen(ziel, "spverteidigung", -2, log); return true;
+            case "MOV-0913": // Drachenschrei: Initiative Gegner -1
+                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+
+            // ─── HEILUNG (weitere) ────────────────────────────────────────────────
+            case "MOV-0105": // Genesung: 50% max KP
+            case "MOV-0816": // Dschungelheilung: 50% max KP
+            case "MOV-0849": // Lunar Blessing: 50% max KP
+            {
+                int heilung2 = Math.Max(1, angreifer.MaxKp / 2);
+                heilung2 = Math.Min(heilung2, angreifer.MaxKp - angreifer.AktuelleKp);
+                if (heilung2 > 0)
+                {
+                    angreifer.AktuelleKp += heilung2;
+                    log.Add($"💚 {angreifer.AngezeigterName} erholt sich! (+{heilung2} KP)");
+                }
+                else
+                    log.Add($"💚 {angreifer.AngezeigterName} hat bereits volle KP!");
+                return true;
+            }
+            case "MOV-0791": // Lebenstropfen: 25% max KP
+            {
+                int heilung3 = Math.Max(1, angreifer.MaxKp / 4);
+                heilung3 = Math.Min(heilung3, angreifer.MaxKp - angreifer.AktuelleKp);
+                if (heilung3 > 0)
+                {
+                    angreifer.AktuelleKp += heilung3;
+                    log.Add($"💚 {angreifer.AngezeigterName} erholt sich ein wenig! (+{heilung3} KP)");
+                }
+                else
+                    log.Add($"💚 {angreifer.AngezeigterName} hat bereits volle KP!");
+                return true;
+            }
+
+            // ─── GEDULD (Physisch, 0 Stärke → zählt als Status) ─────────────────
+            case "MOV-0117": // Geduld: Angriff+SpAngriff +1
+                StatStufeAnpassen(angreifer, "angriff", 1, log);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+
+            // ─── WIRBELWIND (Flucht wild) ─────────────────────────────────────────
+            case "MOV-0018": // Wirbelwind
+                if (!istTrainerKampf)
+                {
+                    log.Add($"💨 {ziel.Name} wurde weggeblasen!");
+                    ziel.IstRoarFlucht = true;
+                }
+                else
+                    log.Add($"💨 Wirbelwind hat im Trainerkampf keine Wirkung!");
+                return true;
+
+            // ─── SONSTIGE (kein Effekt implementiert, aber Log-Text) ─────────────
+            case "MOV-0054": // Weißnebel: verhindert Stat-Senkung (vereinfacht: nichts)
+                log.Add($"🌫️ {angreifer.AngezeigterName} ist von Weißnebel umhüllt!"); return true;
+            case "MOV-0102": // Mimikry: keine Wirkung
+                log.Add($"🪞 {angreifer.AngezeigterName} setzt Mimikry ein!"); return true;
+
+            case "MOV-0114": // Dunkelnebel: Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0119": // Spiegeltrick: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0134": // Psykraft: SpAngriff +1
+                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+            case "MOV-0148": // Blitz (Status): Genauigkeit Gegner -1
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+            case "MOV-0150": // Platscher: Verteidigung +1
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+            case "MOV-0169": // Spinnennetz: Initiative Gegner -1
+                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+            case "MOV-0659": // Sandsammler: SpVerteidigung +1
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
         }
         return false;
     }

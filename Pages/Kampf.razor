@@ -346,7 +346,15 @@
                                 }
                                 @if (!attacke.Staerke.HasValue || attacke.Staerke == 0)
                                 {
-                                    <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
+                                    var sonderText = AttackeSondereffektText(attacke.Id ?? "");
+                                    @if (!string.IsNullOrEmpty(sonderText))
+                                    {
+                                        <span class="attacke-sondereffekt">✨ @sonderText</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="attacke-status-hinweis">🛡️ Kein direkter Schaden</span>
+                                    }
                                 }
                                 @{
                                     var gegnerTypenListe = gegnerMon?.Typen ?? new List<string>();
@@ -671,6 +679,89 @@
         "eingeschlafen" => "Kann einschläfern",
         "verwirrt"      => "Kann verwirren",
         _               => s
+    };
+
+    private string AttackeSondereffektText(string id) => id switch
+    {
+        // Angreifer Stat +2
+        "MOV-0014" => "Angriff +2",
+        "MOV-0097" => "Initiative +2",
+        "MOV-0133" => "Sp.Verteidigung +2",
+        "MOV-0417" => "Sp.Angriff +2",
+        "MOV-0367" => "Angriff +2",
+        "MOV-0349" => "Verteidigung +2",
+        "MOV-0334" => "Verteidigung +2",
+        "MOV-0322" => "Sp.Verteidigung +1, Sp.Angriff +1",
+        "MOV-0397" => "Initiative +2",
+        "MOV-0159" => "Angriff +2",
+        "MOV-0151" => "Sp.Angriff +2",
+        "MOV-0112" => "Verteidigung +2",
+        "MOV-0842" => "Verteidigung +2",
+        // Angreifer Stat +1
+        "MOV-0074" => "Angriff +1, Sp.Angriff +1",
+        "MOV-0096" => "Angriff +1",
+        "MOV-0106" => "Verteidigung +1",
+        "MOV-0110" => "Verteidigung +1",
+        "MOV-0339" => "Angriff +1, Verteidigung +1",
+        "MOV-0347" => "Sp.Angriff +1, Sp.Verteidigung +1",
+        "MOV-0526" => "Angriff +1, Verteidigung +1, Genauigkeit +1",
+        "MOV-0107" => "Verteidigung +1",
+        "MOV-0116" => "Genauigkeit +1",
+        "MOV-0113" => "Sp.Verteidigung +1",
+        "MOV-0115" => "Verteidigung +1",
+        "MOV-0673" => "Angriff +1, Sp.Angriff +1",
+        "MOV-0811" => "Angriff +1, Verteidigung +1",
+        "MOV-0775" => "Sp.Angriff +1",
+        "MOV-0117" => "Angriff +1, Sp.Angriff +1",
+        "MOV-0134" => "Sp.Angriff +1",
+        "MOV-0150" => "Verteidigung +1",
+        "MOV-0119" => "Verteidigung +1",
+        "MOV-0659" => "Sp.Verteidigung +1",
+        "MOV-0837" => "Angriff +1, Verteidigung +1, Initiative +1",
+        // Gemischt
+        "MOV-0174" => "Angriff +1, Verteidigung +1, Initiative -1",
+        "MOV-0868" => "Angriff +2, Sp.Angriff +2, Initiative +2 (KP -50%)",
+        "MOV-0858" => "Sp.Angriff Gegner +2, Sp.Verteidigung Gegner -2",
+        // Gegner Stat -1
+        "MOV-0028" => "Genauigkeit Gegner -1",
+        "MOV-0039" => "Verteidigung Gegner -1",
+        "MOV-0045" => "Angriff Gegner -1",
+        "MOV-0103" => "Verteidigung Gegner -2",
+        "MOV-0104" => "Genauigkeit Gegner -1",
+        "MOV-0111" => "Angriff Gegner -1",
+        "MOV-0141" => "Verteidigung Gegner -1",
+        "MOV-0186" => "Sp.Angriff Gegner -1",
+        "MOV-0187" => "Sp.Angriff Gegner -1",
+        "MOV-0204" => "Angriff Gegner -2",
+        "MOV-0252" => "Sp.Verteidigung Gegner -2",
+        "MOV-0260" => "Sp.Angriff Gegner +1",
+        "MOV-0498" => "Sp.Angriff Gegner -1",
+        "MOV-0493" => "Angriff Gegner -1, Sp.Angriff Gegner -1",
+        "MOV-0081" => "Initiative Gegner -1",
+        "MOV-0108" => "Genauigkeit Gegner -1",
+        "MOV-0043" => "Genauigkeit Gegner -1",
+        "MOV-0749" => "Initiative Gegner -2",
+        "MOV-0715" => "Sp.Angriff Gegner -1, Sp.Verteidigung Gegner -1",
+        "MOV-0608" => "Verteidigung Gegner -1",
+        "MOV-0913" => "Initiative Gegner -1",
+        "MOV-0114" => "Genauigkeit Gegner -1",
+        "MOV-0169" => "Initiative Gegner -1",
+        // Heilung
+        "MOV-0156" => "Heilt 50% KP",
+        "MOV-0135" => "Heilt 50% KP",
+        "MOV-0235" => "Heilt 50% KP",
+        "MOV-0236" => "Heilt 50% KP",
+        "MOV-0355" => "Heilt 50% KP",
+        "MOV-0105" => "Heilt 50% KP",
+        "MOV-0816" => "Heilt 50% KP",
+        "MOV-0849" => "Heilt 50% KP",
+        "MOV-0791" => "Heilt 25% KP",
+        // Sonstiges
+        "MOV-0100" => "Flieht aus Kampf",
+        "MOV-0046" => "Gegner flieht",
+        "MOV-0018" => "Gegner flieht",
+        "MOV-0054" => "Schützt vor Stat-Senkung",
+        _ => ""
     };
 
     // ─ Attacken-Lern-Dialog Methoden ─

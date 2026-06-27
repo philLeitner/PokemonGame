@@ -513,6 +513,15 @@ body {
 }
 .attacke-staerke { font-size: 0.85rem; color: #f5a623; font-weight: 700; }
 .attacke-genauigkeit { font-size: 0.85rem; color: #f87171; font-weight: 700; }
+.attacke-sondereffekt {
+    font-size: 0.7rem;
+    color: #fbbf24;
+    background: rgba(251,191,36,0.12);
+    border: 1px solid rgba(251,191,36,0.3);
+    border-radius: 4px;
+    padding: 1px 5px;
+    white-space: nowrap;
+}
 .attacke-status-hinweis { font-size: 0.82rem; color: rgba(255,255,255,0.45); font-style: italic; }
 .attacke-status-effekt { font-size: 0.82rem; color: #fbbf24; font-weight: 700; background: rgba(251,191,36,0.12); border-radius: 5px; padding: 0.1rem 0.4rem; }
 .kampf-extra-aktionen { display: flex; justify-content: flex-end; margin-top: 0.5rem; }
