@@ -100,7 +100,7 @@ public class GameService
             LadeStatus = "Lade Typen...";
             Notify();
             var typOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var typenRaw = await _http.GetFromJsonAsync<Dictionary<string, TypInfoRaw>>("data/typen.json", typOpts);
+            var typenRaw = await _http.GetFromJsonAsync<Dictionary<string, TypInfoRaw>>("assets/daten/typen.json", typOpts);
             if (typenRaw != null)
             {
                 foreach (var kv in typenRaw)
@@ -122,7 +122,7 @@ public class GameService
             LadeStatus = "Lade Attacken...";
             Notify();
             var attackOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var attackenRaw = await _http.GetFromJsonAsync<List<AttackeRaw>>("data/attacken.json", attackOpts);
+            var attackenRaw = await _http.GetFromJsonAsync<List<AttackeRaw>>("assets/daten/attacken.json", attackOpts);
             if (attackenRaw != null)
             {
                 AlleAttacken = attackenRaw.Select(a => new AttackeData
@@ -143,7 +143,7 @@ public class GameService
             LadeStatus = "Lade Monster...";
             Notify();
             var monsterOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var monsterRaw = await _http.GetFromJsonAsync<List<MonsterRaw>>("data/monster.json", monsterOpts);
+            var monsterRaw = await _http.GetFromJsonAsync<List<MonsterRaw>>("assets/daten/monster.json", monsterOpts);
             if (monsterRaw != null)
             {
                 AlleMonster = monsterRaw.Select(m => new MonsterData
@@ -170,7 +170,7 @@ public class GameService
             LadeStatus = "Lade Items...";
             Notify();
             var itemOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var itemDefs = await _http.GetFromJsonAsync<List<ItemDef>>("data/items.json", itemOpts);
+            var itemDefs = await _http.GetFromJsonAsync<List<ItemDef>>("assets/daten/items.json", itemOpts);
             if (itemDefs?.Any() == true)
                 AlleItems = itemDefs;
 
@@ -178,7 +178,7 @@ public class GameService
             LadeStatus = "Lade Regionen...";
             Notify();
             var regOpts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var regionen = await _http.GetFromJsonAsync<List<RegionConfig>>("data/regionen.json", regOpts);
+            var regionen = await _http.GetFromJsonAsync<List<RegionConfig>>("assets/daten/regionen.json", regOpts);
             if (regionen?.Any() == true)
                 AlleRegionen = regionen;
 

@@ -146,9 +146,9 @@
             var mon = ausgewähltesMonster;
             <div class="editor-detail-header">
                 <div class="editor-detail-bild">
-                    @if (!string.IsNullOrEmpty(mon.Bild))
+                    @if (!string.IsNullOrEmpty(mon.BildUrl))
                     {
-                        <img src="@mon.Bild" alt="@mon.Name" class="editor-monster-img" />
+                        <img src="@mon.BildUrl" alt="@mon.Name" class="editor-monster-img" />
                     }
                     else
                     {

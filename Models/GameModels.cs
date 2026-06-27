@@ -36,16 +36,14 @@ public class MonsterData
     public List<string> Typen { get; set; } = new();
     public string Bild { get; set; } = "";
 
-    /// <summary>Gibt die vollständige GitHub Raw-URL für das Monster-Bild zurück.
-    /// Bilder liegen auf GitHub als 1.png, 2.png usw.</summary>
+    /// <summary>Gibt den lokalen Pfad für das Monster-Bild zurück (assets/sprites/monster/1.png).</summary>
     public string BildUrl
     {
         get
         {
-            const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
             if (Id.StartsWith("PKM-") && int.TryParse(Id.Substring(4), out int nr))
-                return $"{basis}{nr}.png";
-            return $"{basis}{Id}.png";
+                return $"assets/sprites/monster/{nr}.png";
+            return $"assets/sprites/monster/{Id}.png";
         }
     }
 
@@ -77,15 +75,14 @@ public class MonsterInstanz
     public List<string> Typen { get; set; } = new();
     public string Bild { get; set; } = "";
 
-    /// <summary>Gibt die vollständige GitHub Raw-URL für das Monster-Bild zurück.</summary>
+    /// <summary>Gibt den lokalen Pfad für das Monster-Bild zurück (assets/sprites/monster/1.png).</summary>
     public string BildUrl
     {
         get
         {
-            const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
             if (SpeziesId.StartsWith("PKM-") && int.TryParse(SpeziesId.Substring(4), out int nr))
-                return $"{basis}{nr}.png";
-            return $"{basis}{SpeziesId}.png";
+                return $"assets/sprites/monster/{nr}.png";
+            return $"assets/sprites/monster/{SpeziesId}.png";
         }
     }
 

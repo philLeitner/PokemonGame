@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="monster-sprite gegner-sprite">
-                <img src="@GetMonsterBildPfad(gegnerMon.SpeziesId)" alt="@gegnerMon.Name" class="monster-bild-sprite"
+                <img src="@gegnerMon.BildUrl" alt="@gegnerMon.Name" class="monster-bild-sprite"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                 @{
                     var gegnerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(gegnerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
@@ -60,7 +60,7 @@
         <!-- Spieler unten -->
         <div class="spieler-bereich">
             <div class="monster-sprite spieler-sprite">
-                <img src="@GetMonsterBildPfad(spielerMon.SpeziesId)" alt="@spielerMon.Name" class="monster-bild-sprite"
+                <img src="@spielerMon.BildUrl" alt="@spielerMon.Name" class="monster-bild-sprite"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                 @{
                     var spielerTypFarbe = TypeChart.TypFarben.GetValueOrDefault(spielerMon.Typen.FirstOrDefault() ?? "", "#7c7c7c");
@@ -528,15 +528,7 @@
     private System.Threading.Timer? _zeitlimitTimer;
     private bool _zeitlimitTimerGestartet = false;
 
-    // Monster-Bilder kommen über MonsterInstanz.BildUrl (GitHub Raw-URL)
-    private string GetMonsterBildPfad(string speziesId)
-    {
-        const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
-        if (speziesId != null && speziesId.StartsWith("PKM-") &&
-            int.TryParse(speziesId.Substring(4), out int nr))
-            return $"{basis}{nr}.png";
-        return $"{basis}{speziesId}.png";
-    }
+    // Monster-Bilder: direkt über MonsterInstanz.BildUrl (GitHub Raw-URL)
 
     protected override void OnInitialized()
     {

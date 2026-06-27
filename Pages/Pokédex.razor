@@ -71,7 +71,7 @@
                         {
                             <!-- Gefangen: alles sichtbar + Team/Box Badge -->
                             <div class="pokedex-bild-container">
-                                <img class="pokedex-bild" src="@GetMonsterBildPfad(mon.Id)" alt="@mon.Name"
+                                <img class="pokedex-bild" src="@mon.BildUrl" alt="@mon.Name"
                                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                                 <div class="pokedex-bild-fallback" style="display:none">
                                     @TypeChart.TypEmojis.GetValueOrDefault(mon.Typen.FirstOrDefault() ?? "", "❓")
@@ -148,7 +148,7 @@
                 <div class="detail-header">
                     @if (istGefangen2 || istGesehen2)
                     {
-                        <img class="detail-bild-gross @(istGesehen2 && !istGefangen2 ? "gesehen-bild" : "")" src="@GetMonsterBildPfad(ausgewähltMon.Id)" alt="@ausgewähltMon.Name"
+                        <img class="detail-bild-gross @(istGesehen2 && !istGefangen2 ? "gesehen-bild" : "")" src="@ausgewähltMon.BildUrl" alt="@ausgewähltMon.Name"
                              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                         <div class="detail-bild-fallback" style="display:none">
                             @TypeChart.TypEmojis.GetValueOrDefault(ausgewähltMon.Typen.FirstOrDefault() ?? "", "❓")
@@ -551,15 +551,7 @@
     private bool IstImTeam(string monsterId) => Game.Spieler.Team.Any(m => m.SpeziesId == monsterId);
     private bool IstInBox(string monsterId) => Game.Spieler.Box.Any(m => m.SpeziesId == monsterId);
 
-    // Monster-Bilder über MonsterData.BildUrl (GitHub Raw-URL)
-    private string GetMonsterBildPfad(string monsterId)
-    {
-        const string basis = "https://raw.githubusercontent.com/philLeitner/PokemonGame/master/wwwroot/sprites/monster/";
-        if (monsterId != null && monsterId.StartsWith("PKM-") &&
-            int.TryParse(monsterId.Substring(4), out int nr))
-            return $"{basis}{nr}.png";
-        return $"{basis}{monsterId}.png";
-    }
+    // Monster-Bilder: direkt über MonsterData.BildUrl (GitHub Raw-URL)
 
     private int GetNummer(string id)
     {

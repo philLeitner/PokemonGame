@@ -933,7 +933,7 @@
         try
         {
             var opts = new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var geladen = await Http.GetFromJsonAsync<List<Ort>>("data/weltkarte_import.json", opts);
+            var geladen = await Http.GetFromJsonAsync<List<Ort>>("assets/daten/weltkarte_import.json", opts);
             if (geladen?.Any() == true) editorOrte = geladen;
         }
         catch
