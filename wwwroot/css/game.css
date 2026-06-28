@@ -419,11 +419,11 @@ body {
 .spieler-bereich { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding-right: 1rem; }
 .monster-info-leiste {
   background: rgba(0,0,0,0.6); border: 1px solid var(--border);
-  border-radius: var(--radius-gross); padding: 0.75rem 1rem; min-width: 220px;
+  border-radius: var(--radius-gross); padding: 0.6rem 1rem; min-width: 0;
   backdrop-filter: blur(8px);
 }
 .gegner-leiste { }
-.spieler-leiste { flex: 1; min-width: 0; }
+.spieler-leiste { flex: 1; min-width: 0; margin-right: 20px; }
 .monster-name-zeile { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
 .monster-name { font-size: 1rem; font-weight: 700; }
 .monster-level { font-size: 0.8rem; color: var(--text-mittel); }
@@ -438,7 +438,7 @@ body {
 @keyframes kp-blinken { 50% { opacity: 0.6; } }
 .kp-zahl { font-size: 0.75rem; color: var(--text-mittel); white-space: nowrap; }
 .monster-sprite { display: flex; align-items: center; justify-content: center; }
-.spieler-sprite { width: 130px; height: 130px; flex-shrink: 0; margin-left: 40px; }
+.spieler-sprite { width: 80px; height: 80px; flex-shrink: 0; margin-left: 20px; }
 .gegner-sprite { width: 130px; height: 130px; flex-shrink: 0; }
 .monster-emoji-fallback {
     width: 110px; height: 110px;
@@ -5441,8 +5441,7 @@ input:checked + .toggle-slider-klein::before {
 /* ─ Monster-Bilder ─ */
 .monster-bild-sprite {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 100%;
     object-fit: contain;
     object-position: center;
     image-rendering: pixelated;
