@@ -415,15 +415,33 @@ body {
   padding: 1rem; position: relative;
   background: linear-gradient(180deg, #0d1117 0%, #1a1a2e 40%, #2d1b69 60%, #1a1a2e 100%);
 }
-.gegner-bereich { display: flex; justify-content: flex-end; align-items: flex-start; gap: 1rem; }
-.spieler-bereich { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding-right: 1rem; }
+.gegner-bereich {
+    display: flex;
+    align-items: flex-start;
+    gap: 45%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+.spieler-bereich {
+    display: flex;
+    align-items: flex-end;
+    gap: 45%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
 .monster-info-leiste {
   background: rgba(0,0,0,0.6); border: 1px solid var(--border);
   border-radius: var(--radius-gross); padding: 0.6rem 1rem; min-width: 0;
   backdrop-filter: blur(8px);
 }
-.gegner-leiste { }
-.spieler-leiste { flex: 1; min-width: 0; margin-right: 20px; }
+.gegner-leiste { min-width: 280px; }
+.spieler-leiste { min-width: 280px; }
 .monster-name-zeile { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
 .monster-name { font-size: 1rem; font-weight: 700; }
 .monster-level { font-size: 0.8rem; color: var(--text-mittel); }
