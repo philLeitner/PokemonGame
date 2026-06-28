@@ -1,4 +1,5 @@
 @inject GameService Game
+@inject IJSRuntime JS
 @implements IDisposable
 
 @if (Game.AktuellerKampf == null)
@@ -551,6 +552,12 @@
             KampfBeginnen();
             StateHasChanged();
         }
+        // Auto-Scroll Kampf-Log nach unten
+        try
+        {
+            await JS.InvokeVoidAsync("eval", "(function(){var el=document.querySelector('.kampf-log');if(el)el.scrollTop=el.scrollHeight;})()");
+        }
+        catch { }
         // Auto-Weiter nach Kampfende
         if (!autoWeiterGestartet && Game.AktuellerKampf?.Phase == KampfPhase.Beendet)
         {

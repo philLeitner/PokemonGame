@@ -474,7 +474,7 @@ body {
 .spieler-emoji { transform: scaleX(-1); }
 .kampf-log {
   background: rgba(0,0,0,0.7); border-top: 1px solid var(--border);
-  padding: 0.75rem 1rem; min-height: 90px; max-height: 160px;
+  padding: 0.75rem 1rem; min-height: 60px; max-height: 100px;
   overflow-y: auto; flex-shrink: 0;
 }
 .log-eintrag { font-size: 0.95rem; color: var(--text-hell); margin-bottom: 0.25rem; }
