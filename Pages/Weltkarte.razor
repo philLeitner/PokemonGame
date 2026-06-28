@@ -792,16 +792,32 @@
                              @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.Zufällig; Game.Notify(); }">
                             <div class="wo-icon">🎲</div>
                             <div class="wo-text">
-                                <strong>Zufällige Teams (Level beibehalten)</strong>
-                                <span>Zufällige Monster, aber die Level bleiben gleich. Hat ein Trainer 3 Monster auf Lv.10/12/14, hat er auch zufällig 3 Monster auf genau diesen Leveln.</span>
+                                <strong>Zufälliges Team (nur diese Region)</strong>
+                                <span>Zufällige Monster aus der aktuellen Region, Level bleibt gleich.</span>
                             </div>
                         </div>
                         <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.ZufälligMitTypen ? "aktiv" : "")"
                              @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.ZufälligMitTypen; Game.Notify(); }">
                             <div class="wo-icon">🎨</div>
                             <div class="wo-text">
-                                <strong>Typen beibehalten</strong>
-                                <span>Zufällige Monster mit den gleichen Typen. Hat ein Trainer ein Wasser-Monster, bekommt er ein anderes zufälliges Wasser-Monster.</span>
+                                <strong>Typen beibehalten (nur diese Region)</strong>
+                                <span>Zufällige Monster mit gleichen Typen aus der aktuellen Region.</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.ZufälligAlleRegionen ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.ZufälligAlleRegionen; Game.Notify(); }">
+                            <div class="wo-icon">🌍</div>
+                            <div class="wo-text">
+                                <strong>Zufälliges Team (alle Regionen)</strong>
+                                <span>Zufällige Monster aus allen Regionen, Level bleibt gleich.</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.ZufälligMitTypenAlleRegionen ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.ZufälligMitTypenAlleRegionen; Game.Notify(); }">
+                            <div class="wo-icon">🎨</div>
+                            <div class="wo-text">
+                                <strong>Typen beibehalten (alle Regionen)</strong>
+                                <span>Zufällige Monster mit gleichen Typen aus allen Regionen.</span>
                             </div>
                         </div>
                     </div>

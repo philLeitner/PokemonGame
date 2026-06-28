@@ -608,9 +608,11 @@ public enum WildMonsterModus
 
 public enum TrainerMonsterModus
 {
-    Genau,              // Trainer hat definierte Monster
-    Zufällig,           // Trainer hat zufällige Monster (Level beibehalten)
-    ZufälligMitTypen    // Trainer hat zufällige Monster mit gleichen Typen
+    Genau,                      // Trainer hat definierte Monster
+    Zufällig,                   // Trainer hat zufällige Monster aus der Region (Level beibehalten)
+    ZufälligMitTypen,           // Trainer hat zufällige Monster mit gleichen Typen aus der Region
+    ZufälligAlleRegionen,       // Trainer hat zufällige Monster aus allen Regionen (Level beibehalten)
+    ZufälligMitTypenAlleRegionen // Trainer hat zufällige Monster mit gleichen Typen aus allen Regionen
 }
 
 public class SpielEinstellungen

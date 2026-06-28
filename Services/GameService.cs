@@ -2634,16 +2634,45 @@ public class GameService
     {
         var modus = Einstellungen.TrainerModus;
 
+        // Region des aktuellen Ortes ermitteln
+        var regionPrefix = Spieler.AktuellerOrt?.Length >= 3 ? Spieler.AktuellerOrt[..3] : "KAN";
+        var regionMonsterIds = AlleOrte
+            .Where(o => o.Id.StartsWith(regionPrefix, StringComparison.OrdinalIgnoreCase))
+            .SelectMany(o => o.WildMonster.Select(w => w.MonsterId))
+            .Distinct().ToHashSet();
+        var regionPool = AlleMonster.Where(m => regionMonsterIds.Contains(m.Id) && m.Fangrate > 3).ToList();
+        if (!regionPool.Any()) regionPool = AlleMonster.Where(m => m.Fangrate > 3).ToList();
+
         if (modus == TrainerMonsterModus.Zufällig)
         {
-            // Zufälliges Monster aus allen Generationen (keine Legendären, fangrate > 3)
+            // Zufälliges Monster aus der aktuellen Region
+            return regionPool.Any() ? regionPool[_rng.Next(regionPool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        if (modus == TrainerMonsterModus.ZufälligAlleRegionen)
+        {
+            // Zufälliges Monster aus allen Regionen
             var pool = AlleMonster.Where(m => m.Fangrate > 3).ToList();
             return pool.Any() ? pool[_rng.Next(pool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
         }
 
         if (modus == TrainerMonsterModus.ZufälligMitTypen)
         {
-            // Zufälliges Monster mit gleichem Typ (alle Generationen)
+            // Zufälliges Monster mit gleichem Typ aus der Region
+            var original = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
+            if (original != null && original.Typen.Any())
+            {
+                var ersterTyp = original.Typen[0];
+                var pool = regionPool.Where(m => m.Typen.Contains(ersterTyp)).ToList();
+                if (!pool.Any()) pool = regionPool;
+                if (pool.Any()) return pool[_rng.Next(pool.Count)];
+            }
+            return regionPool.Any() ? regionPool[_rng.Next(regionPool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        if (modus == TrainerMonsterModus.ZufälligMitTypenAlleRegionen)
+        {
+            // Zufälliges Monster mit gleichem Typ aus allen Regionen
             var original = AlleMonster.FirstOrDefault(m => m.Id == monsterId);
             if (original != null && original.Typen.Any())
             {
@@ -2651,7 +2680,6 @@ public class GameService
                 var pool = AlleMonster.Where(m => m.Fangrate > 3 && m.Typen.Contains(ersterTyp)).ToList();
                 if (pool.Any()) return pool[_rng.Next(pool.Count)];
             }
-            // Fallback: komplett zufällig
             var fallback = AlleMonster.Where(m => m.Fangrate > 3).ToList();
             return fallback.Any() ? fallback[_rng.Next(fallback.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
         }
