@@ -117,7 +117,7 @@
 
     <!-- Kampf-Log -->
     <div class="kampf-log" @ref="logRef">
-        @foreach (var eintrag in kampf.Log.TakeLast(5))
+        @foreach (var eintrag in kampf.Log)
         {
             <p class="log-eintrag">@eintrag</p>
         }
