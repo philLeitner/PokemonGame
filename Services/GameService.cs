@@ -1061,6 +1061,11 @@ public class GameService
             Log = new() { $"Ein wildes {gegner.Name} (Lv.{level}) erscheint!" },
             NuzlockeFangenGesperrt = !kannFangen,
             ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min),
+            ZeitlimitSekunden = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min) ? 60
+                              : Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min) ? 120
+                              : 180,
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1131,6 +1136,11 @@ public class GameService
             AktuellerTrainer = effektiverTrainer,
             TrainerMonsterIndex = 0,
             ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min),
+            ZeitlimitSekunden = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min) ? 60
+                              : Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min) ? 120
+                              : 180,
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1174,6 +1184,11 @@ public class GameService
             AktuellerTrainer = arenaTrainer,
             TrainerMonsterIndex = 0,
             ZeitlimitAktiv = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min)
+                          || Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min),
+            ZeitlimitSekunden = Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf1Min) ? 60
+                              : Einstellungen.HatRelikt(ReliktTyp.ZeitlimitProKampf2Min) ? 120
+                              : 180,
         };
         Phase = SpielPhase.Kampf;
         Notify();
@@ -1189,6 +1204,53 @@ public class GameService
 
         var spielerMon = AktuellerKampf.SpielerMonster;
         var gegnerMon = AktuellerKampf.GegnerMonster;
+
+        // Initiative-Vergleich: wer schneller ist greift zuerst an
+        // ImmerErstangriff-Relikt überschreibt dies (Spieler immer zuerst)
+        bool spielerZuerst = true;
+        if (!Einstellungen.HatRelikt(ReliktTyp.ImmerErstangriff))
+        {
+            int spielerInit = MonsterInstanz.MitStatStufe(spielerMon.Initiative, spielerMon.StatStufeInitiative);
+            int gegnerInit  = MonsterInstanz.MitStatStufe(gegnerMon.Initiative,  gegnerMon.StatStufeInitiative);
+            if (gegnerInit > spielerInit)
+            {
+                spielerZuerst = false;
+                AktuellerKampf.Log.Add($"⚡ {gegnerMon.AngezeigterName} ist schneller (Initiative {gegnerInit} vs {spielerInit})!");
+            }
+            else if (gegnerInit == spielerInit)
+            {
+                spielerZuerst = _rng.Next(2) == 0;
+                if (!spielerZuerst)
+                    AktuellerKampf.Log.Add($"⚡ {gegnerMon.AngezeigterName} greift zuerst an (gleiche Initiative, Zufall)!");
+            }
+        }
+
+        // Wenn Gegner schneller: erst Gegner angreifen, dann Spieler
+        if (!spielerZuerst)
+        {
+            // Gegner greift zuerst an
+            Notify();
+            await Task.Delay(400);
+            await GegnerZugOhneRunde(); // Gegner greift an ohne Runden-Ende
+            if (AktuellerKampf == null) return; // Kampf vorzeitig beendet
+            if (spielerMon.IstOhnmächtig)
+            {
+                // Spieler-Monster ohnmächtig nach Gegner-Erstangriff
+                var nächstes = Spieler.Team.FirstOrDefault(m => m != spielerMon && !m.IstOhnmächtig);
+                if (nächstes != null)
+                {
+                    AktuellerKampf.Log.Add($"💀 {spielerMon.AngezeigterName} ist ohnmächtig!");
+                    AktuellerKampf.Log.Add("Wähle dein nächstes Monster!");
+                    AktuellerKampf.Phase = KampfPhase.MonsterWechsel;
+                    Notify();
+                }
+                else
+                {
+                    KampfVerloren();
+                }
+                return;
+            }
+        }
 
         // ZufälligeAttacke-Relikt: zufällige Attacke mit AP > 0 wählen
         if (Einstellungen.HatRelikt(ReliktTyp.ZufälligeAttacke))
@@ -1380,6 +1442,56 @@ public class GameService
         Notify();
     }
 
+
+    // ── Gegner greift zuerst an (Initiative-Vorteil) ─────────────────────────
+    // Nur der Angriff des Gegners, KEIN Runden-Ende (Status-Schaden etc.)
+    private async Task GegnerZugOhneRunde()
+    {
+        if (AktuellerKampf == null) return;
+        var spielerMon = AktuellerKampf.SpielerMonster;
+        var gegnerMon  = AktuellerKampf.GegnerMonster;
+
+        // Status-Effekt des Gegners prüfen (Schläft, gelähmt etc.)
+        if (!StatusErlaubtAngriff(gegnerMon, AktuellerKampf.Log))
+        {
+            Notify();
+            await Task.Delay(400);
+            return;
+        }
+
+        var gegnerAttacke = GegnerAttackeWählen(gegnerMon);
+        if (gegnerAttacke != null)
+        {
+            int gegnerSchaden = SchadenBerechnen(gegnerMon, spielerMon, gegnerAttacke);
+            float gegnerMulti = TypeChart.GetVerteidigungsMultiplikator(gegnerAttacke.Typ, spielerMon.Typen);
+            spielerMon.AktuelleKp = Math.Max(0, spielerMon.AktuelleKp - gegnerSchaden);
+            bool gegnerHatSonder = AttackeSondereffektAusführen(gegnerAttacke, gegnerMon, spielerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf, gegnerAttacke.Name);
+            if (gegnerSchaden > 0)
+            {
+                string gTrefferText = gegnerMulti >= 2f ? " — sehr effektiv!" : gegnerMulti <= 0f ? " — keine Wirkung" : gegnerMulti < 1f ? " — nicht sehr effektiv" : "";
+                AktuellerKampf.Log.Add($"💢 {gegnerMon.AngezeigterName} setzt {gegnerAttacke.Name} ein! {spielerMon.AngezeigterName} erleidet {gegnerSchaden} Schaden{gTrefferText}.");
+            }
+            else if (!gegnerHatSonder)
+            {
+                AktuellerKampf.Log.Add($"💢 {gegnerMon.AngezeigterName} setzt {gegnerAttacke.Name} ein!");
+            }
+            if (gegnerSchaden > 0 && gegnerAttacke.Statuseffekt != null)
+            {
+                int chance = gegnerAttacke.StatuseffektChance ?? 30;
+                if (_rng.Next(100) < chance)
+                    VersuchemStatusEffektDirekt(spielerMon, gegnerAttacke.Statuseffekt, AktuellerKampf.Log);
+            }
+            else if (gegnerSchaden == 0 && gegnerAttacke.Statuseffekt != null)
+            {
+                int chance = gegnerAttacke.StatuseffektChance ?? 100;
+                if (_rng.Next(100) < chance)
+                    VersuchemStatusEffektDirekt(spielerMon, gegnerAttacke.Statuseffekt, AktuellerKampf.Log);
+            }
+        }
+        Notify();
+        await Task.Delay(600);
+    }
+
     // ── Monster wechseln ─────────────────────────────────────────────────────
     public async Task MonsterWechseln(MonsterInstanz neuesMonster)
     {
@@ -1399,6 +1511,10 @@ public class GameService
         AktuellerKampf.SpielerMonster = neuesMonster;
         Spieler.AktivesMonsterIndex = Spieler.Team.IndexOf(neuesMonster);
         AktuellerKampf.Log.Add($"🔄 {altesMonster.AngezeigterName} zurück! {neuesMonster.AngezeigterName} kämpft weiter!");
+
+        // XP-Tracking: altes Monster als "eingewechselt" markieren (für XP-Teiler-Logik)
+        if (!AktuellerKampf.EingewechselteMonster.Contains(altesMonster))
+            AktuellerKampf.EingewechselteMonster.Add(altesMonster);
 
         bool warMonsterWechselPhase = AktuellerKampf.Phase == KampfPhase.MonsterWechsel;
 
@@ -1755,14 +1871,48 @@ public class GameService
         // ZähneUpgrade MehrXp: +25% XP
         if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.MehrXp)) exp = (int)(exp * 1.25f);
         AktuellerKampf.ErfahrungGewonnen = exp;
-        spielerMon.ErfahrungsPunkte += exp;
-        AktuellerKampf.Log.Add($"+{exp} EP für {spielerMon.AngezeigterName}");
+
+        // ── XP-Verteilung: eingewechselte Monster ───────────────────────────────────
+        // KeinXpTeiler-Relikt: nur das besiegende Monster bekommt 100% XP
+        // Ohne Relikt: 50% für das besiegende Monster, 50% geteilt durch alle eingewechselten
+        var eingewechselte = AktuellerKampf.EingewechselteMonster
+            .Where(m => m != spielerMon && !m.IstOhnmächtig)
+            .Distinct()
+            .ToList();
+
+        bool hatKeinXpTeilerRelikt = Einstellungen.HatRelikt(ReliktTyp.KeinXpTeiler);
+
+        if (!hatKeinXpTeilerRelikt && eingewechselte.Count > 0)
+        {
+            // 50% für das besiegende Monster
+            int expBesieger = exp / 2;
+            // 50% aufgeteilt durch alle eingewechselten
+            int expTeilerGesamt = exp - expBesieger;
+            int expProEingewechseltes = Math.Max(1, expTeilerGesamt / eingewechselte.Count);
+
+            spielerMon.ErfahrungsPunkte += expBesieger;
+            AktuellerKampf.Log.Add($"+{expBesieger} EP für {spielerMon.AngezeigterName} (hat gesiegt)");
+
+            foreach (var einMon in eingewechselte)
+            {
+                einMon.ErfahrungsPunkte += expProEingewechseltes;
+                PrüfeLevelUp(einMon);
+                AktuellerKampf.Log.Add($"+{expProEingewechseltes} EP für {einMon.AngezeigterName} (eingewechselt)");
+            }
+        }
+        else
+        {
+            // Kein XP-Teiler-Relikt aktiv ODER keine eingewechselten Monster: 100% für das besiegende Monster
+            spielerMon.ErfahrungsPunkte += exp;
+            AktuellerKampf.Log.Add($"+{exp} EP für {spielerMon.AngezeigterName}");
+        }
+
         // ZähneUpgrade XpTeiler: alle anderen Team-Monster bekommen halbe XP (nur wenn KeinXpTeiler-Relikt nicht aktiv)
-        if (!Einstellungen.HatRelikt(ReliktTyp.KeinXpTeiler) &&
+        if (!hatKeinXpTeilerRelikt &&
             (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.XpTeiler) || Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.VollerXpTeiler)))
         {
             int teamExp = Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.VollerXpTeiler) ? exp : exp / 2;
-            foreach (var teamMon in Spieler.Team.Where(m => m != spielerMon && !m.IstOhnmächtig))
+            foreach (var teamMon in Spieler.Team.Where(m => m != spielerMon && !m.IstOhnmächtig && !eingewechselte.Contains(m)))
             {
                 teamMon.ErfahrungsPunkte += teamExp;
                 PrüfeLevelUp(teamMon);
@@ -2693,7 +2843,18 @@ public class GameService
     {
         // KeinHeilen / KeinMonsterCenter Relikt
         if (Einstellungen.HatRelikt(ReliktTyp.KeinHeilen) || Einstellungen.HatRelikt(ReliktTyp.KeinMonsterCenter))
-            return "❌ Relikt: Monster-Center ist gesperrt! Du kannst hier nicht heilen. ";
+            return "❌ Relikt: Monster-Center ist gesperrt! Du kannst hier nicht heilen. ";
+
+        // CenterLimit-Relikt: maximale Nutzungsanzahl prüfen
+        int centerMax = -1;
+        if (Einstellungen.HatRelikt(ReliktTyp.CenterLimit5))  centerMax = 5;
+        else if (Einstellungen.HatRelikt(ReliktTyp.CenterLimit10)) centerMax = 10;
+        else if (Einstellungen.HatRelikt(ReliktTyp.CenterLimit15)) centerMax = 15;
+        else if (Einstellungen.HatRelikt(ReliktTyp.CenterLimit20)) centerMax = 20;
+
+        if (centerMax >= 0 && Spieler.CenterNutzungen >= centerMax)
+            return $"❌ Relikt: Monster-Center-Limit erreicht! Du hast das Center bereits {Spieler.CenterNutzungen}x benutzt (Limit: {centerMax})";
+
         if (!Spieler.Team.Any()) return "Dein Team ist leer.";
         foreach (var mon in Spieler.Team)
         {
@@ -2702,6 +2863,16 @@ public class GameService
             mon.StatusZähler = 0;
             foreach (var atk in mon.Attacken) atk.AktuelleAp = atk.MaxAp;
         }
+
+        // CenterLimit-Zähler erhöhen
+        if (centerMax >= 0)
+        {
+            Spieler.CenterNutzungen++;
+            int verbleibend = centerMax - Spieler.CenterNutzungen;
+            Notify();
+            return $"✅ Alle {Spieler.Team.Count} Monster wurden geheilt! (Center noch {verbleibend}x nutzbar)";
+        }
+
         Notify();
         return $"✅ Alle {Spieler.Team.Count} Monster wurden vollständig geheilt!";
     }
@@ -3014,6 +3185,7 @@ public class GameService
             GefangeneMonster = Spieler.GefangeneMonster.ToList(),
             GeseheneAttacken = Spieler.GeseheneAttacken
                 .ToDictionary(kv => kv.Key, kv => new List<string>(kv.Value)),
+            CenterNutzungen = Spieler.CenterNutzungen,
         };
         var json = JsonSerializer.Serialize(save);
         await _ls.SetItemAsync(LS_SAVEGAME, json);
@@ -3063,6 +3235,7 @@ public class GameService
                     ? new HashSet<string>(save.GefangeneMonster) : new(),
                 GeseheneAttacken = save.GeseheneAttacken != null
                     ? save.GeseheneAttacken.ToDictionary(kv => kv.Key, kv => kv.Value) : new(),
+                CenterNutzungen = save.CenterNutzungen,
             };
 
             Spieler.Team.AddRange(save.Team?.Select(GespeichertesZuMonster) ?? []);

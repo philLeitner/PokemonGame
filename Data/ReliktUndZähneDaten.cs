@@ -64,11 +64,9 @@ public static class ReliktDaten
             "Dein Monster greift immer zuerst an – Gegner-Statusattacken wirken aber sofort.", 2),
         // ── Neue Team-Handicaps ───────────────────────────────────────
         new(ReliktTyp.StarterOnly,         "Team",  "🔒", "Starter-Only",
-            "Nur dein Starter darf im Team bleiben. Alle anderen müssen in die Box.", 4),
+            "Nur dein Starter darf im Team bleiben. Pro Region erhältst du 1 neuen Starter. Alle anderen Monster müssen in die Box.", 4),
         new(ReliktTyp.KeineEntwickeltenMonster, "Team", "🐣", "Keine Entwicklungen",
             "Nur Basis-Stufe-Monster dürfen im Team sein. Entwicklungen müssen in die Box.", 3),
-        new(ReliktTyp.ZufälligerStarter,   "Team",  "🎰", "Zufälliger Starter",
-            "Dein Starter wird zufällig ausgewählt – keine manuelle Wahl möglich.", 2),
         // ── Neue Welt-Handicaps ───────────────────────────────────────
         new(ReliktTyp.KeinPokédex,         "Welt",  "📕", "Kein Pokédex",
             "Die Monsterübersicht ist gesperrt. Du siehst keine Infos zu Monstern.", 2),
@@ -76,15 +74,23 @@ public static class ReliktDaten
             "Alle Items im Markt kosten doppelt so viel.", 3),
         new(ReliktTyp.KeinManuelesSpeichern, "Welt", "🚷", "Kein manuelles Speichern",
             "Manuelles Speichern ist gesperrt. Nur Auto-Save nach Arena-Siegen.", 2),
-        new(ReliktTyp.ZeitlimitProKampf,   "Kampf", "⏱️", "Zeitlimit pro Kampf",
+        new(ReliktTyp.ZeitlimitProKampf,   "Kampf", "⏱️", "Zeitlimit: 3 Minuten",
             "Jeder Kampf hat ein Zeitlimit von 3 Minuten. Läuft die Zeit ab, gilt der Kampf als verloren.", 4),
-        // Weitere Handicaps
-        new(ReliktTyp.NurWildeMonster,     "Team",  "🌿", "Nur wilde Monster",
-            "Monster können nur in Wildkampf-Begegnungen gefangen werden (Trainer-Monster nicht fangbar).", 2),
-        new(ReliktTyp.ZufälligesTeam,      "Team",  "🎲", "Zufälliges Team",
-            "Du startest mit 3 zufälligen Monstern statt nur dem Starter.", 3),
+        new(ReliktTyp.ZeitlimitProKampf2Min, "Kampf", "⏱️", "Zeitlimit: 2 Minuten",
+            "Jeder Kampf hat ein Zeitlimit von 2 Minuten. Läuft die Zeit ab, gilt der Kampf als verloren.", 5),
+        new(ReliktTyp.ZeitlimitProKampf1Min, "Kampf", "⏱️", "Zeitlimit: 1 Minute",
+            "Jeder Kampf hat ein Zeitlimit von 1 Minute. Läuft die Zeit ab, gilt der Kampf als verloren.", 7),
+        // ── Center-Limit-Handicaps ────────────────────────────────────
+        new(ReliktTyp.CenterLimit20,    "Welt",  "🏥", "Center-Limit: 20 Nutzungen",
+            "Das Monster Center darf insgesamt nur 20 Mal benutzt werden.", 2),
+        new(ReliktTyp.CenterLimit15,    "Welt",  "🏥", "Center-Limit: 15 Nutzungen",
+            "Das Monster Center darf insgesamt nur 15 Mal benutzt werden.", 3),
+        new(ReliktTyp.CenterLimit10,    "Welt",  "🏥", "Center-Limit: 10 Nutzungen",
+            "Das Monster Center darf insgesamt nur 10 Mal benutzt werden.", 4),
+        new(ReliktTyp.CenterLimit5,     "Welt",  "🏥", "Center-Limit: 5 Nutzungen",
+            "Das Monster Center darf insgesamt nur 5 Mal benutzt werden.", 6),
         new(ReliktTyp.KeinXpTeiler,        "XP",    "❌", "Kein XP-Teiler",
-            "Der XP-Teiler ist deaktiviert. Nur das aktive Monster erhält Erfahrungspunkte.", 1),
+            "Eingewechselte Monster erhalten keine XP. Nur das Monster, das den Gegner besiegt hat, erhält die vollen Erfahrungspunkte.", 1),
     };
 
     public static IEnumerable<ReliktInfo> GetNachKategorie(string kategorie) =>

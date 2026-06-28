@@ -254,6 +254,8 @@ public class Spieler
     public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
     /// <summary>Nuzlocke: Ort-IDs auf denen der Spieler bereits ein Monster gefangen hat</summary>
     public HashSet<string> GefangeneMonsterProOrt { get; set; } = new();
+    /// <summary>Anzahl der Monster-Center-Nutzungen (für CenterLimit-Relikt)</summary>
+    public int CenterNutzungen { get; set; } = 0;
 
     public MonsterInstanz? AktivesMonster
     {
@@ -502,6 +504,8 @@ public class KampfZustand
     public string? EntwickeltSichZuName { get; set; }
     // Flucht-Zähler (für Flucht-Formel)
     public int FluchtVersuche { get; set; } = 0;
+    /// <summary>Monster die im Kampf eingewechselt wurden (bekommen anteilig XP)</summary>
+    public HashSet<MonsterInstanz> EingewechselteMonster { get; set; } = new();
     // Zeitlimit-Relikt
     public int ZeitlimitSekunden { get; set; } = 180; // 3 Minuten
     public bool ZeitlimitAktiv { get; set; } = false;
@@ -549,6 +553,8 @@ public class SpielstandDaten
     public List<string> GeseheneMonster { get; set; } = new();
     public List<string> GefangeneMonster { get; set; } = new();
     public Dictionary<string, List<string>> GeseheneAttacken { get; set; } = new();
+    // Center-Limit-Relikt
+    public int CenterNutzungen { get; set; } = 0;
 }
 
 public class GespeichertesMonster
@@ -703,6 +709,13 @@ public enum ReliktTyp
     DoppelteMarktpreise,    // Items kosten doppelt
     KeinManuelesSpeichern,  // Kein manuelles Speichern
     ZeitlimitProKampf,      // 3 Minuten pro Kampf, sonst verloren
+    ZeitlimitProKampf2Min,   // 2 Minuten pro Kampf, sonst verloren
+    ZeitlimitProKampf1Min,   // 1 Minute pro Kampf, sonst verloren
+    // Center-Limit-Handicaps
+    CenterLimit20,           // Max. 20 Monster-Center-Nutzungen
+    CenterLimit15,           // Max. 15 Monster-Center-Nutzungen
+    CenterLimit10,           // Max. 10 Monster-Center-Nutzungen
+    CenterLimit5,            // Max. 5 Monster-Center-Nutzungen
 }
 
 // Positional record: new(Typ, Kategorie, Emoji, Name, Beschreibung, Zähne)
