@@ -1191,7 +1191,7 @@ public class GameService
             gegnerMon.AktuelleKp = Math.Max(0, gegnerMon.AktuelleKp - schaden);
 
             // Sondereffekte (Stat-Boosts, Flucht, etc.) für Status-Attacken
-            bool hatSondereffekt = AttackeSondereffektAusführen(attacke, spielerMon, gegnerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf);
+            bool hatSondereffekt = AttackeSondereffektAusführen(attacke, spielerMon, gegnerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf, attacke.Name);
 
             if (schaden > 0)
             {
@@ -1282,7 +1282,7 @@ public class GameService
                 int gegnerSchaden = SchadenBerechnen(gegnerMon, spielerMon, gegnerAttacke);
                 float gegnerMulti = TypeChart.GetVerteidigungsMultiplikator(gegnerAttacke.Typ, spielerMon.Typen);
                 spielerMon.AktuelleKp = Math.Max(0, spielerMon.AktuelleKp - gegnerSchaden);
-                bool gegnerHatSonder = AttackeSondereffektAusführen(gegnerAttacke, gegnerMon, spielerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf);
+                bool gegnerHatSonder = AttackeSondereffektAusführen(gegnerAttacke, gegnerMon, spielerMon, AktuellerKampf.Log, AktuellerKampf.IstTrainerKampf, gegnerAttacke.Name);
                 if (gegnerSchaden > 0)
                 {
                     string gTrefferText = gegnerMulti >= 2f ? " — sehr effektiv!" : gegnerMulti <= 0f ? " — keine Wirkung" : gegnerMulti < 1f ? " — nicht sehr effektiv" : "";
@@ -2229,86 +2229,86 @@ public class GameService
     }
 
     /// <summary>Führt Sondereffekte von Status-Attacken aus (Stat-Boosts, Flucht, etc.). Gibt true zurück wenn ein Effekt ausgeführt wurde.</summary>
-    private bool AttackeSondereffektAusführen(AttackeInstanz attacke, MonsterInstanz angreifer, MonsterInstanz ziel, List<string> log, bool istTrainerKampf)
+    private bool AttackeSondereffektAusführen(AttackeInstanz attacke, MonsterInstanz angreifer, MonsterInstanz ziel, List<string> log, bool istTrainerKampf, string? attackeName = null)
     {
         switch (attacke.Id)
         {
             // ─── ANGREIFER STAT +2 ────────────────────────────────────────────
             case "MOV-0014": // Schwerttanz: Angriff +2
-                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 2, log, attacke.Name); return true;
             case "MOV-0097": // Agilität: Initiative +2
-                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
+                StatStufeAnpassen(angreifer, "initiative", 2, log, attacke.Name); return true;
             case "MOV-0133": // Amnesie: SpVerteidigung +2
-                StatStufeAnpassen(angreifer, "spverteidigung", 2, log); return true;
+                StatStufeAnpassen(angreifer, "spverteidigung", 2, log, attacke.Name); return true;
             case "MOV-0417": // Ränkeschmied (Nasty Plot): SpAngriff +2
-                StatStufeAnpassen(angreifer, "spangriff", 2, log); return true;
+                StatStufeAnpassen(angreifer, "spangriff", 2, log, attacke.Name); return true;
             case "MOV-0367": // Klinge schärfen: Angriff +2
-                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 2, log, attacke.Name); return true;
             case "MOV-0349": // Eisenabwehr: Verteidigung +2
-                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log, attacke.Name); return true;
             case "MOV-0334": // Eisenpanzer: Verteidigung +2
-                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log, attacke.Name); return true;
             case "MOV-0322": // Kosmik-Kraft: SpVerteidigung+SpAngriff +1
-                StatStufeAnpassen(angreifer, "spverteidigung", 1, log);
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
 
             // ─── ANGREIFER STAT +1 ────────────────────────────────────────────
             case "MOV-0074": // Wachstum: Angriff+SpAngriff +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
             case "MOV-0096": // Meditation: Angriff +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name); return true;
             case "MOV-0106": // Härtner: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0110": // Verhärtung: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0339": // Protzer (Bulk Up): Angriff+Verteidigung +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0347": // Gedankengut (Calm Mind): SpAngriff+SpVerteidigung +1
-                StatStufeAnpassen(angreifer, "spangriff", 1, log);
-                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log, attacke.Name); return true;
             case "MOV-0526": // Kraftschub (Coil): Angriff+Verteidigung+Genauigkeit +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
-                StatStufeAnpassen(angreifer, "genauigkeit", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "genauigkeit", 1, log, attacke.Name); return true;
 
             // ─── ANGREIFER STAT gemischt ──────────────────────────────────────
             case "MOV-0174": // Fluch: Angriff+Verteidigung +1, Initiative -1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
-                StatStufeAnpassen(angreifer, "initiative", -1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "initiative", -1, log, attacke.Name); return true;
 
             // ─── GEGNER STAT -1 ───────────────────────────────────────────────
             case "MOV-0028": // Sandwirbel: Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
             case "MOV-0039": // Rutenschlag (Tail Whip): Verteidigung Gegner -1
-                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
+                StatStufeAnpassen(ziel, "verteidigung", -1, log, attacke.Name); return true;
             case "MOV-0045": // Heuler (Growl): Angriff Gegner -1
-                StatStufeAnpassen(ziel, "angriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "angriff", -1, log, attacke.Name); return true;
             case "MOV-0103": // Kreideschrei (Screech): Verteidigung Gegner -2
-                StatStufeAnpassen(ziel, "verteidigung", -2, log); return true;
+                StatStufeAnpassen(ziel, "verteidigung", -2, log, attacke.Name); return true;
             case "MOV-0104": // Doppelteam: Ausweichen Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
             case "MOV-0111": // Schrei: Angriff Gegner -1
-                StatStufeAnpassen(ziel, "angriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "angriff", -1, log, attacke.Name); return true;
             case "MOV-0141": // Blutsauger (Leer): Verteidigung Gegner -1
-                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
+                StatStufeAnpassen(ziel, "verteidigung", -1, log, attacke.Name); return true;
             case "MOV-0186": // Nasenschleim: SpAngriff Gegner -1
-                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", -1, log, attacke.Name); return true;
             case "MOV-0187": // Schleimschleuder: SpAngriff Gegner -1
-                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", -1, log, attacke.Name); return true;
             case "MOV-0204": // Charme: Angriff Gegner -2
-                StatStufeAnpassen(ziel, "angriff", -2, log); return true;
+                StatStufeAnpassen(ziel, "angriff", -2, log, attacke.Name); return true;
             case "MOV-0252": // Mogelhieb (Fake Tears): SpVerteidigung Gegner -2
-                StatStufeAnpassen(ziel, "spverteidigung", -2, log); return true;
+                StatStufeAnpassen(ziel, "spverteidigung", -2, log, attacke.Name); return true;
             case "MOV-0260": // Schmeichler (Flatter): SpAngriff Gegner +1 (aber verwirrt)
-                StatStufeAnpassen(ziel, "spangriff", 1, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", 1, log, attacke.Name); return true;
             case "MOV-0498": // Zermueben (Snarl): SpAngriff Gegner -1
-                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", -1, log, attacke.Name); return true;
             case "MOV-0493": // Wankelstrahl (Parting Shot): Angriff+SpAngriff Gegner -1
-                StatStufeAnpassen(ziel, "angriff", -1, log);
-                StatStufeAnpassen(ziel, "spangriff", -1, log); return true;
+                StatStufeAnpassen(ziel, "angriff", -1, log, attacke.Name);
+                StatStufeAnpassen(ziel, "spangriff", -1, log, attacke.Name); return true;
 
             // ─── HEILUNG (50% max KP) ────────────────────────────────────────────
             case "MOV-0156": // Erholung (Recover): 50% max KP
@@ -2353,69 +2353,69 @@ public class GameService
 
             // ─── ANGREIFER STAT +2 (weitere) ─────────────────────────────────────
             case "MOV-0397": // Steinpolitur: Initiative +2
-                StatStufeAnpassen(angreifer, "initiative", 2, log); return true;
+                StatStufeAnpassen(angreifer, "initiative", 2, log, attacke.Name); return true;
             case "MOV-0159": // Schärfer: Angriff +2
-                StatStufeAnpassen(angreifer, "angriff", 2, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 2, log, attacke.Name); return true;
             case "MOV-0151": // Säurepanzer: SpAngriff +2
-                StatStufeAnpassen(angreifer, "spangriff", 2, log); return true;
+                StatStufeAnpassen(angreifer, "spangriff", 2, log, attacke.Name); return true;
             case "MOV-0112": // Barriere: Verteidigung +2
-                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log, attacke.Name); return true;
             case "MOV-0842": // Shelter: Verteidigung +2
-                StatStufeAnpassen(angreifer, "verteidigung", 2, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 2, log, attacke.Name); return true;
 
             case "MOV-0837": // Victory Dance: Angriff+Verteidigung+Initiative +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log);
-                StatStufeAnpassen(angreifer, "initiative", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "initiative", 1, log, attacke.Name); return true;
             case "MOV-0868": // Fillet Away: Angriff+SpAngriff+Initiative +2, KP -50%
             {
                 int verlust = Math.Max(1, angreifer.MaxKp / 2);
                 angreifer.AktuelleKp = Math.Max(1, angreifer.AktuelleKp - verlust);
-                StatStufeAnpassen(angreifer, "angriff", 2, log);
-                StatStufeAnpassen(angreifer, "spangriff", 2, log);
-                StatStufeAnpassen(angreifer, "initiative", 2, log);
+                StatStufeAnpassen(angreifer, "angriff", 2, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spangriff", 2, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "initiative", 2, log, attacke.Name);
                 log.Add($"💔 {angreifer.AngezeigterName} verliert {verlust} KP!");
                 return true;
             }
 
             // ─── ANGREIFER STAT +1 (weitere) ─────────────────────────────────────
             case "MOV-0107": // Komprimator: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0116": // Energiefokus: Genauigkeit +1
-                StatStufeAnpassen(angreifer, "genauigkeit", 1, log); return true;
+                StatStufeAnpassen(angreifer, "genauigkeit", 1, log, attacke.Name); return true;
             case "MOV-0113": // Lichtschild: SpVerteidigung +1
-                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log, attacke.Name); return true;
             case "MOV-0115": // Reflektor: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0673": // Konzentration: Angriff+SpAngriff +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
             case "MOV-0811": // Coaching: Angriff+Verteidigung +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0775": // Seelentanz: SpAngriff +1
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
 
             // ─── GEGNER STAT -1 (weitere) ─────────────────────────────────────────
             case "MOV-0081": // Fadenschuss: Initiative Gegner -1
-                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+                StatStufeAnpassen(ziel, "initiative", -1, log, attacke.Name); return true;
             case "MOV-0108": // Rauchwolke: Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
             case "MOV-0043": // Silberblick: Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
 
             case "MOV-0749": // Teerschuss: Initiative Gegner -2
-                StatStufeAnpassen(ziel, "initiative", -2, log); return true;
+                StatStufeAnpassen(ziel, "initiative", -2, log, attacke.Name); return true;
             case "MOV-0715": // Tränendrüse: SpAngriff+SpVerteidigung Gegner -1
-                StatStufeAnpassen(ziel, "spangriff", -1, log);
-                StatStufeAnpassen(ziel, "spverteidigung", -1, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", -1, log, attacke.Name);
+                StatStufeAnpassen(ziel, "spverteidigung", -1, log, attacke.Name); return true;
             case "MOV-0608": // Kulleraugen: Verteidigung Gegner -1
-                StatStufeAnpassen(ziel, "verteidigung", -1, log); return true;
+                StatStufeAnpassen(ziel, "verteidigung", -1, log, attacke.Name); return true;
             case "MOV-0858": // Spicy Extract: SpAngriff Gegner +2, SpVerteidigung Gegner -2
-                StatStufeAnpassen(ziel, "spangriff", 2, log);
-                StatStufeAnpassen(ziel, "spverteidigung", -2, log); return true;
+                StatStufeAnpassen(ziel, "spangriff", 2, log, attacke.Name);
+                StatStufeAnpassen(ziel, "spverteidigung", -2, log, attacke.Name); return true;
             case "MOV-0913": // Drachenschrei: Initiative Gegner -1
-                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+                StatStufeAnpassen(ziel, "initiative", -1, log, attacke.Name); return true;
 
             // ─── HEILUNG (weitere) ────────────────────────────────────────────────
             case "MOV-0105": // Genesung: 50% max KP
@@ -2449,8 +2449,8 @@ public class GameService
 
             // ─── GEDULD (Physisch, 0 Stärke → zählt als Status) ─────────────────
             case "MOV-0117": // Geduld: Angriff+SpAngriff +1
-                StatStufeAnpassen(angreifer, "angriff", 1, log);
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "angriff", 1, log, attacke.Name);
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
 
             // ─── WIRBELWIND (Flucht wild) ─────────────────────────────────────────
             case "MOV-0018": // Wirbelwind
@@ -2470,24 +2470,24 @@ public class GameService
                 log.Add($"🪞 {angreifer.AngezeigterName} setzt Mimikry ein!"); return true;
 
             case "MOV-0114": // Dunkelnebel: Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
             case "MOV-0119": // Spiegeltrick: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0134": // Psykraft: SpAngriff +1
-                StatStufeAnpassen(angreifer, "spangriff", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spangriff", 1, log, attacke.Name); return true;
             case "MOV-0148": // Blitz (Status): Genauigkeit Gegner -1
-                StatStufeAnpassen(ziel, "genauigkeit", -1, log); return true;
+                StatStufeAnpassen(ziel, "genauigkeit", -1, log, attacke.Name); return true;
             case "MOV-0150": // Platscher: Verteidigung +1
-                StatStufeAnpassen(angreifer, "verteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "verteidigung", 1, log, attacke.Name); return true;
             case "MOV-0169": // Spinnennetz: Initiative Gegner -1
-                StatStufeAnpassen(ziel, "initiative", -1, log); return true;
+                StatStufeAnpassen(ziel, "initiative", -1, log, attacke.Name); return true;
             case "MOV-0659": // Sandsammler: SpVerteidigung +1
-                StatStufeAnpassen(angreifer, "spverteidigung", 1, log); return true;
+                StatStufeAnpassen(angreifer, "spverteidigung", 1, log, attacke.Name); return true;
         }
         return false;
     }
 
-    private void StatStufeAnpassen(MonsterInstanz mon, string stat, int delta, List<string> log)
+    private void StatStufeAnpassen(MonsterInstanz mon, string stat, int delta, List<string> log, string? attackeName = null)
     {
         string statName = stat switch {
             "angriff" => "Angriff", "verteidigung" => "Verteidigung",
@@ -2505,7 +2505,8 @@ public class GameService
             case "initiative": mon.StatStufeInitiative = Math.Clamp(mon.StatStufeInitiative + delta, -6, 6); break;
             case "genauigkeit": mon.StatStufeGenauigkeit = Math.Clamp(mon.StatStufeGenauigkeit + delta, -6, 6); break;
         }
-        log.Add($"✨ {mon.AngezeigterName}s {statName} {richtung}{stufe}!");
+        string attackeZusatz = attackeName != null ? $" ({attackeName})" : "";
+        log.Add($"✨ {mon.AngezeigterName}s {statName} {richtung}{stufe}{attackeZusatz}!");
     }
 
     private int SchadenBerechnen(MonsterInstanz angreifer, MonsterInstanz verteidiger, AttackeInstanz attacke)
