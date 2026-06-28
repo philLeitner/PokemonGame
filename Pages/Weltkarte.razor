@@ -736,15 +736,15 @@
                         }
                     </div>
                     <div class="wizard-starter-aktionen">
-                        <button class="btn-wizard-zufall @(wizardStarterZufälligModus ? "aktiv" : "")" @onclick="WizardStarterZufälligLaden">
-                            🎲 3 Zufällige Monster
+                        <button class="btn-wizard-zufall" @onclick="WizardStarterZufälligRegion">
+                            🗺️ Zufällig (nur diese Region)
                         </button>
-                        @if (wizardStarterZufälligModus)
-                        {
-                            <button class="btn-wizard-zufall" @onclick="WizardStarterZufälligLaden">
-                                🔄 Neu würfeln
-                            </button>
-                        }
+                        <button class="btn-wizard-zufall" @onclick="WizardStarterZufälligAlle">
+                            🌍 Zufällig (alle Regionen)
+                        </button>
+                        <button class="btn-wizard-zufall" @onclick="WizardStarterEchteStarter">
+                            ⭐ Zufällige Starter
+                        </button>
                     </div>
                 </div>
             }
@@ -770,14 +770,7 @@
                                 <span>Zufällige Monster aus dem gesamten Pool – Überraschungen garantiert!</span>
                             </div>
                         </div>
-                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.ZufälligMitLegär ? "aktiv" : "")"
-                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.ZufälligMitLegär; Game.Notify(); }">
-                            <div class="wo-icon">⭐</div>
-                            <div class="wo-text">
-                                <strong>Zufällig + Legendäre</strong>
-                                <span>Wie zufällig, aber auch legendäre Monster können auftauchen!</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             }
@@ -1194,6 +1187,29 @@
     private void WizardStarterZufälligLaden()
     {
         wizardStarterOptionen = Game.GetZufälligeStarterOptionen();
+        wizardGewählterStarterId = null;
+        wizardStarterZufälligModus = true;
+    }
+
+    private void WizardStarterZufälligRegion()
+    {
+        var regionId = (Game.Spieler.AktuellerOrt?.Length >= 3)
+            ? Game.Spieler.AktuellerOrt[..3] : "KAN";
+        wizardStarterOptionen = Game.GetZufälligeStarterNurRegion(regionId);
+        wizardGewählterStarterId = null;
+        wizardStarterZufälligModus = true;
+    }
+
+    private void WizardStarterZufälligAlle()
+    {
+        wizardStarterOptionen = Game.GetZufälligeStarterOptionen();
+        wizardGewählterStarterId = null;
+        wizardStarterZufälligModus = true;
+    }
+
+    private void WizardStarterEchteStarter()
+    {
+        wizardStarterOptionen = Game.GetZufälligeEchteStarter();
         wizardGewählterStarterId = null;
         wizardStarterZufälligModus = true;
     }

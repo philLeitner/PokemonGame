@@ -359,6 +359,42 @@ public class GameService
         return pool;
     }
 
+    /// <summary>3 zufällige Monster aus der aktuellen Region als Starter</summary>
+    public List<MonsterData> GetZufälligeStarterNurRegion(string regionId)
+    {
+        var region = AlleRegionen.FirstOrDefault(r => r.Id == regionId);
+        if (region == null) return GetZufälligeStarterOptionen();
+        // Alle Monster der Region aus den Gebieten sammeln
+        var regionMonsterIds = AlleOrte
+            .Where(o => o.Id.StartsWith(regionId, StringComparison.OrdinalIgnoreCase))
+            .SelectMany(o => o.WildMonster.Select(w => w.MonsterId))
+            .Distinct().ToHashSet();
+        var pool = AlleMonster
+            .Where(m => regionMonsterIds.Contains(m.Id) && m.Fangrate >= 10)
+            .OrderBy(_ => _rng.Next())
+            .Take(3)
+            .ToList();
+        if (pool.Count < 3)
+            pool = GetZufälligeStarterOptionen();
+        return pool;
+    }
+
+    /// <summary>3 echte Starter-Pokémon aus allen Regionen zufällig</summary>
+    public List<MonsterData> GetZufälligeEchteStarter()
+    {
+        var alleStarter = AlleRegionen
+            .SelectMany(r => r.Starter)
+            .Distinct()
+            .Select(id => AlleMonster.FirstOrDefault(m => m.Id == id || m.Id == $"PKM-{id.TrimStart('#')}"))
+            .Where(m => m != null).Cast<MonsterData>()
+            .OrderBy(_ => _rng.Next())
+            .Take(3)
+            .ToList();
+        if (alleStarter.Count < 3)
+            alleStarter = GetZufälligeStarterOptionen();
+        return alleStarter;
+    }
+
     /// <summary>Starter wählen im Wizard (ohne Phasenwechsel)</summary>
     public void StarterWählenImWizard(string monsterId)
     {
