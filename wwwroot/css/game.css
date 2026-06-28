@@ -410,7 +410,7 @@ body {
   background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
 }
 .kampf-arena {
-  flex: 0 0 auto; height: 42vh; min-height: 200px; max-height: 300px;
+  flex: 0 0 auto;
   display: flex; flex-direction: column; justify-content: space-between;
   padding: 1rem; position: relative;
   background: linear-gradient(180deg, #0d1117 0%, #1a1a2e 40%, #2d1b69 60%, #1a1a2e 100%);
@@ -492,6 +492,7 @@ body {
 .aktions-bereich {
   background: var(--bg-mittel); border-top: 1px solid var(--border);
   padding: 5px 20px; overflow-y: auto;
+  flex: 1 1 auto;
 }
 .attacken-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
