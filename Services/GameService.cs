@@ -546,17 +546,25 @@ public class GameService
         // Klassischer Modus: keine Änderung
         if (!IstGenerierteKartenModus || AktuelleGenerierteKarte == null)
             return Math.Max(2, eintragLevel);
-
-        var (min, max) = EbenenLevelBerechnen(ortId ?? string.Empty, istArena);
-        if (min <= 0)  // Ort nicht in Reihenfolge gefunden – Original beibehalten
+        if (string.IsNullOrEmpty(ortId))
             return Math.Max(2, eintragLevel);
 
-        int ebenenLevel = (min + max) / 2;
-        // Wenn das gespeicherte Level fehlt (<=1) oder mehr als 4 Stufen von der Ebene abweicht,
-        // erzwinge das Ebenen-Level. Sonst behalte das (bereits passende) Generator-Level.
-        if (eintragLevel <= 1 || Math.Abs(eintragLevel - ebenenLevel) > 4)
-            return Math.Max(2, ebenenLevel);
-        return Math.Max(2, eintragLevel);
+        // Distanz vom Startort ermitteln (gleiche Quelle wie der Generator)
+        if (!AktuelleGenerierteKarte.OrtDistanzen.TryGetValue(ortId, out int distanz))
+        {
+            distanz = AktuelleGenerierteKarte.OrtReihenfolge.IndexOf(ortId);
+            if (distanz < 0) return Math.Max(2, eintragLevel); // Ort unbekannt – Original
+        }
+
+        // EXAKT die gleiche Formel wie wilde Monster (KartenGenerator):
+        //   baseLvl = 2 + dist*1.8 ; Trainer = baseLvl + 1 ; Arena = baseLvl + 2
+        int baseLvl = Math.Max(2, 2 + (int)(distanz * 1.8));
+        int zielLevel = istArena ? baseLvl + 2 : baseLvl + 1;
+
+        // HöhereLevel-Relikt: Trainer ebenfalls anheben (konsistent mit Wild-Logik)
+        if (Einstellungen.HatRelikt(ReliktTyp.HöhereLevel)) zielLevel += 5;
+
+        return Math.Max(2, zielLevel);
     }
 
     // GenerierteArenaKampfStarten wird nicht mehr benötigt –
