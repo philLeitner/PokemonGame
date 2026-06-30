@@ -762,15 +762,22 @@
                                 <span>Nur die Monster die wirklich auf dieser Route vorkommen (wie im echten Spiel)</span>
                             </div>
                         </div>
-                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.Zufällig ? "aktiv" : "")"
-                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.Zufällig; Game.Notify(); }">
-                            <div class="wo-icon">🎲</div>
+                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.ZufälligNurRegion ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.ZufälligNurRegion; Game.Notify(); }">
+                            <div class="wo-icon">🗺️</div>
                             <div class="wo-text">
-                                <strong>Zufällig</strong>
-                                <span>Zufällige Monster aus dem gesamten Pool – Überraschungen garantiert!</span>
+                                <strong>Zufällig (nur diese Region)</strong>
+                                <span>Zufällige Monster aus der aktuellen Region – keine Monster aus anderen Regionen.</span>
                             </div>
                         </div>
-
+                        <div class="wizard-option @(Game.Einstellungen.WildModus == WildMonsterModus.Zufällig ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.WildModus = WildMonsterModus.Zufällig; Game.Notify(); }">
+                            <div class="wo-icon">🌍</div>
+                            <div class="wo-text">
+                                <strong>Zufällig (alle Generationen)</strong>
+                                <span>Zufällige Monster aus allen Regionen und Generationen – Überraschungen garantiert!</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             }
@@ -818,6 +825,22 @@
                             <div class="wo-text">
                                 <strong>Typen beibehalten (alle Regionen)</strong>
                                 <span>Zufällige Monster mit gleichen Typen aus allen Regionen.</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.WildeNurRegion ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.WildeNurRegion; Game.Notify(); }">
+                            <div class="wo-icon">🗺️</div>
+                            <div class="wo-text">
+                                <strong>Wilde Monster (nur diese Region)</strong>
+                                <span>Trainer kämpfen mit zufälligen wilden Monstern aus der aktuellen Region.</span>
+                            </div>
+                        </div>
+                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.WildeAlleGenerationen ? "aktiv" : "")"
+                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.WildeAlleGenerationen; Game.Notify(); }">
+                            <div class="wo-icon">🌍</div>
+                            <div class="wo-text">
+                                <strong>Wilde Monster (alle Generationen)</strong>
+                                <span>Trainer kämpfen mit zufälligen wilden Monstern aus allen Generationen.</span>
                             </div>
                         </div>
                     </div>
@@ -1164,12 +1187,8 @@
         wizardSchritt = 1;
         wizardGewählterStarterId = null;
         wizardStarterZufälligModus = false;
-        // Starter-Optionen der aktuellen Region laden
-        var regionId = (Game.Spieler.AktuellerOrt?.Length >= 3)
-            ? Game.Spieler.AktuellerOrt[..3] : "KAN";
-        wizardStarterOptionen = Game.GetStarterFürRegion(regionId);
-        if (!wizardStarterOptionen.Any())
-            wizardStarterOptionen = Game.GetStarterOptionen();
+        // Immer die echten Kanto-Starter (Glumanda, Shiggy, Bisasam) anzeigen
+        wizardStarterOptionen = Game.GetStarterOptionen();
         wizardAktiv = true;
     }
 

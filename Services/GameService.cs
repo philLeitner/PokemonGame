@@ -534,6 +534,31 @@ public class GameService
         return (min, max);
     }
 
+    /// <summary>
+    /// Liefert das korrekte, nach Ebene skalierte Level für ein Trainer-/Arena-Monster.
+    /// Genau wie bei wilden Monstern wird das Level aus der Ebenen-Distanz des aktuellen Orts abgeleitet.
+    /// Wenn das im Team gespeicherte Level grob unplausibel ist (0, oder weit von der Ebene entfernt),
+    /// wird es durch das Ebenen-Level ersetzt. So skalieren ALLE Trainer zuverlässig – auch wenn
+    /// der Generator einen Ort nicht erfasst hat. Im klassischen Modus bleibt das Original-Level erhalten.
+    /// </summary>
+    public int TrainerLevelKorrigieren(string? ortId, int eintragLevel, bool istArena = false)
+    {
+        // Klassischer Modus: keine Änderung
+        if (!IstGenerierteKartenModus || AktuelleGenerierteKarte == null)
+            return Math.Max(2, eintragLevel);
+
+        var (min, max) = EbenenLevelBerechnen(ortId ?? string.Empty, istArena);
+        if (min <= 0)  // Ort nicht in Reihenfolge gefunden – Original beibehalten
+            return Math.Max(2, eintragLevel);
+
+        int ebenenLevel = (min + max) / 2;
+        // Wenn das gespeicherte Level fehlt (<=1) oder mehr als 4 Stufen von der Ebene abweicht,
+        // erzwinge das Ebenen-Level. Sonst behalte das (bereits passende) Generator-Level.
+        if (eintragLevel <= 1 || Math.Abs(eintragLevel - ebenenLevel) > 4)
+            return Math.Max(2, ebenenLevel);
+        return Math.Max(2, eintragLevel);
+    }
+
     // GenerierteArenaKampfStarten wird nicht mehr benötigt –
     // der normale ArenaKampfStarten in Weltkarte.razor übernimmt das.
 
@@ -1115,9 +1140,18 @@ public class GameService
             };
         }
 
+        // Ort des Trainers ermitteln (Trainer stehen auf Routen, nicht zwingend am Spieler-Ort)
+        var trainerOrt = AlleOrte.FirstOrDefault(o =>
+            o.Trainer.Any(tr => tr.Id == effektiverTrainer.Id))
+            ?? AktuellerOrt;
+        var trainerOrtId = trainerOrt?.Id;
+
+        // Trainer-Monster-Level nach Ebene korrigieren (zuverlässige Skalierung wie bei Wilden)
+        foreach (var m in effektiverTrainer.Team)
+            m.Level = TrainerLevelKorrigieren(trainerOrtId, m.Level, istArena: false);
+
         var ersteMonsterId = effektiverTrainer.Team[0].MonsterId;
         var spezies = TrainerMonsterSpeziesWählen(ersteMonsterId, effektiverTrainer.Team[0]);
-        // Level kommt direkt aus Team-Eintrag (im generierten Modus bereits vom Generator gesetzt)
         var gegner = MonsterInstanz.VonSpezies(spezies, effektiverTrainer.Team[0].Level, AlleAttacken);
 
         // Monster als gesehen markieren
@@ -1155,8 +1189,12 @@ public class GameService
 
         var erstesGegnerMonster = ort.Arena.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
+
+        // Arena-Monster-Level nach Ebene korrigieren (Arena-Bonus, zuverlässige Skalierung)
+        foreach (var m in ort.Arena.Team)
+            m.Level = TrainerLevelKorrigieren(ort.Id, m.Level, istArena: true);
+
         var spezies = TrainerMonsterSpeziesWählen(erstesGegnerMonster.MonsterId, erstesGegnerMonster);
-        // Level kommt direkt aus Arena-Team (im generierten Modus bereits vom Generator gesetzt)
         var gegner = MonsterInstanz.VonSpezies(spezies, erstesGegnerMonster.Level, AlleAttacken);
 
         // Arena als Trainer-Kampf mit Orden-Belohnung
@@ -2730,10 +2768,29 @@ public class GameService
     }
 
         // ── Wilde Begegnung ───────────────────────────────────────────────────────
-    public bool ZufallsBegegnungPrüfen(Ort ort) => ort.WildMonster.Any() || Einstellungen.WildModus != WildMonsterModus.RouteGenau;
+    public bool ZufallsBegegnungPrüfen(Ort ort) => ort.WildMonster.Any() ||
+        Einstellungen.WildModus == WildMonsterModus.ZufälligNurRegion ||
+        Einstellungen.WildModus == WildMonsterModus.Zufällig ||
+        Einstellungen.WildModus == WildMonsterModus.ZufälligMitLegär;
     public WildBegegnung? ZufälligesWildMonster(Ort ort)
     {
         var modus = Einstellungen.WildModus;
+
+        // Zufällig nur diese Region
+        if (modus == WildMonsterModus.ZufälligNurRegion)
+        {
+            var regionPrefix = Spieler.AktuellerOrt?.Length >= 3 ? Spieler.AktuellerOrt[..3] : "KAN";
+            var regionMonsterIds = AlleOrte
+                .Where(o => o.Id.StartsWith(regionPrefix, StringComparison.OrdinalIgnoreCase))
+                .SelectMany(o => o.WildMonster.Select(w => w.MonsterId))
+                .Distinct().ToHashSet();
+            var regionPool = AlleMonster.Where(m => regionMonsterIds.Contains(m.Id) && m.Fangrate > 3).ToList();
+            if (!regionPool.Any()) regionPool = AlleMonster.Where(m => m.Fangrate > 3).ToList();
+            var spezies = regionPool[_rng.Next(regionPool.Count)];
+            int minLvl = ort.WildMonster.Any() ? ort.WildMonster.Min(w => w.MinLevel) : 2;
+            int maxLvl = ort.WildMonster.Any() ? ort.WildMonster.Max(w => w.MaxLevel) : 60;
+            return new WildBegegnung { MonsterId = spezies.Id, MinLevel = minLvl, MaxLevel = maxLvl, Chance = 100 };
+        }
 
         // Zufällig (alle Generationen) oder Zufällig + Legendäre
         if (modus == WildMonsterModus.Zufällig || modus == WildMonsterModus.ZufälligMitLegär)
@@ -2832,6 +2889,19 @@ public class GameService
             }
             var fallback = AlleMonster.Where(m => m.Fangrate > 3).ToList();
             return fallback.Any() ? fallback[_rng.Next(fallback.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        if (modus == TrainerMonsterModus.WildeNurRegion)
+        {
+            // Wilde Monster nur aus der aktuellen Region (wie ZufälligNurRegion bei Wildnis)
+            return regionPool.Any() ? regionPool[_rng.Next(regionPool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
+        }
+
+        if (modus == TrainerMonsterModus.WildeAlleGenerationen)
+        {
+            // Wilde Monster aus allen Generationen (wie Zufällig bei Wildnis)
+            var pool = AlleMonster.Where(m => m.Fangrate > 3).ToList();
+            return pool.Any() ? pool[_rng.Next(pool.Count)] : AlleMonster[_rng.Next(AlleMonster.Count)];
         }
 
         // Genau: definiertes Monster

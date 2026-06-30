@@ -607,18 +607,21 @@ public enum StarterModus
 
 public enum WildMonsterModus
 {
-    RouteGenau,         // Nur Monster die für diese Route definiert sind
-    Zufällig,           // Zufällige Monster aus der gesamten Liste
-    ZufälligMitLegär   // Zufällige Monster inkl. Legendäre
+    RouteGenau,             // Nur Monster die für diese Route definiert sind
+    ZufälligNurRegion,      // Zufällige Monster nur aus der aktuellen Region
+    Zufällig,               // Zufällige Monster aus allen Generationen
+    ZufälligMitLegär       // Zufällige Monster inkl. Legendäre
 }
 
 public enum TrainerMonsterModus
 {
-    Genau,                      // Trainer hat definierte Monster
-    Zufällig,                   // Trainer hat zufällige Monster aus der Region (Level beibehalten)
-    ZufälligMitTypen,           // Trainer hat zufällige Monster mit gleichen Typen aus der Region
-    ZufälligAlleRegionen,       // Trainer hat zufällige Monster aus allen Regionen (Level beibehalten)
-    ZufälligMitTypenAlleRegionen // Trainer hat zufällige Monster mit gleichen Typen aus allen Regionen
+    Genau,                          // Trainer hat definierte Monster
+    Zufällig,                       // Trainer hat zufällige Monster aus der Region (Level beibehalten)
+    ZufälligMitTypen,               // Trainer hat zufällige Monster mit gleichen Typen aus der Region
+    ZufälligAlleRegionen,           // Trainer hat zufällige Monster aus allen Regionen (Level beibehalten)
+    ZufälligMitTypenAlleRegionen,   // Trainer hat zufällige Monster mit gleichen Typen aus allen Regionen
+    WildeNurRegion,                 // Trainer hat wilde Monster nur aus der aktuellen Region
+    WildeAlleGenerationen           // Trainer hat wilde Monster aus allen Generationen
 }
 
 public class SpielEinstellungen
