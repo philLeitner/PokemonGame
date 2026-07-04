@@ -842,22 +842,7 @@
                                 <span>Zufällige Monster mit gleichen Typen aus allen Regionen.</span>
                             </div>
                         </div>
-                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.WildeNurRegion ? "aktiv" : "")"
-                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.WildeNurRegion; Game.Notify(); }">
-                            <div class="wo-icon">🗺️</div>
-                            <div class="wo-text">
-                                <strong>Wilde Monster (nur diese Region)</strong>
-                                <span>Trainer kämpfen mit zufälligen wilden Monstern aus der aktuellen Region.</span>
-                            </div>
-                        </div>
-                        <div class="wizard-option @(Game.Einstellungen.TrainerModus == TrainerMonsterModus.WildeAlleGenerationen ? "aktiv" : "")"
-                             @onclick="() => { Game.Einstellungen.TrainerModus = TrainerMonsterModus.WildeAlleGenerationen; Game.Notify(); }">
-                            <div class="wo-icon">🌍</div>
-                            <div class="wo-text">
-                                <strong>Wilde Monster (alle Generationen)</strong>
-                                <span>Trainer kämpfen mit zufälligen wilden Monstern aus allen Generationen.</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             }
