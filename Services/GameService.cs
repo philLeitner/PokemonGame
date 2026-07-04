@@ -2878,6 +2878,19 @@ public class GameService
 
         // RouteGenau: Original-Logik
         if (!ort.WildMonster.Any()) return null;
+
+        // Legendäre/Einzigartige Monster (Fangrate ≤ 3) haben im Route-genau-Modus 100% Begegnungsgarantie
+        // Sie kommen nur auf einer einzigen Route vor, also wenn man dort ist, trifft man sie garantiert
+        var legendärAufRoute = ort.WildMonster
+            .Where(w => AlleMonster.FirstOrDefault(m => m.Id == w.MonsterId)?.Fangrate <= 3)
+            .ToList();
+        if (legendärAufRoute.Any())
+        {
+            // 100% Chance: immer das Legendäre Monster als Begegnung wählen
+            return legendärAufRoute[_rng.Next(legendärAufRoute.Count)];
+        }
+
+        // Normale gewichtete Auswahl für nicht-legendäre Monster
         int gesamt = ort.WildMonster.Sum(w => w.Chance);
         int würfel = _rng.Next(1, gesamt + 1);
         int kumuliert = 0;

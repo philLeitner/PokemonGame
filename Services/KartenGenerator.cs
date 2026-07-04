@@ -149,6 +149,11 @@ public class KartenGenerator
                 Team = t.Team.Select(m => new MonsterTeamEintrag { MonsterId = m.MonsterId, Level = m.Level }).ToList()
             }).ToList();
             var wildPool = regCfg.MonsterPool;
+            // Legendäre/Einzigartige Monster (Chance <= 3) separieren – werden später einzeln verteilt
+            var legendärePool = wildPool.Where(e => e.Chance <= 3).ToList();
+            var normalePool = wildPool.Where(e => e.Chance > 3).ToList();
+            // Tracking: welche Legendären bereits auf einer Route platziert wurden
+            var platzierteLegendäre = new HashSet<string>();
 
             // ─── HTML-Algorithmus: Ebenen generieren ─────────────────────────
             var ebenen = GeneriereEbenenStruktur(rng, total, bossCount, städteProBoss, totalCitiesWanted);
@@ -356,7 +361,25 @@ public class KartenGenerator
                     farbe = eb.IstSackgasse ? "gray" : "green";
                     int trainerAnz = eb.IstSackgasse ? 1 : rng.Next(1, 4);
                     trainer = HoleTrainerFürLevel(trainerPool, dist, rng, trainerAnz, trainerAnz);
-                    wildMonster = HoleWildMonsterFürLevel(wildPool, dist, rng, 2, 5);
+                    wildMonster = HoleWildMonsterFürLevel(normalePool.Any() ? normalePool : wildPool, dist, rng, 2, 5);
+                    // Legendäre Monster: genau 1 pro Region auf einer einzigen Route (spätere Ebenen bevorzugt)
+                    if (legendärePool.Any() && dist >= 8)
+                    {
+                        var verfügbar = legendärePool.Where(l => !platzierteLegendäre.Contains(l.Id)).ToList();
+                        if (verfügbar.Any() && rng.Next(100) < 40) // 40% Chance pro passende Route
+                        {
+                            var legend = verfügbar[rng.Next(verfügbar.Count)];
+                            platzierteLegendäre.Add(legend.Id);
+                            int targetLevel = 2 + (int)(dist * 1.8);
+                            wildMonster.Add(new WildBegegnung
+                            {
+                                MonsterId = legend.Id,
+                                MinLevel = Math.Max(targetLevel, 40),
+                                MaxLevel = Math.Max(targetLevel + 5, 50),
+                                Chance = 255 // 100% Begegnung im Route-genau-Modus (wird später speziell behandelt)
+                            });
+                        }
+                    }
                 }
 
                 var ort = new Ort
@@ -379,6 +402,39 @@ public class KartenGenerator
 
                 ebeneZuOrt[eb.Id] = ort;
                 ergebnis.Add(ort);
+            }
+
+            // Noch nicht platzierte Legendäre auf späte Routen verteilen (garantiert alle vorkommen)
+            var nichtPlatziert = legendärePool.Where(l => !platzierteLegendäre.Contains(l.Id)).ToList();
+            if (nichtPlatziert.Any())
+            {
+                // Späte Routen (hohe Distanz) als Kandidaten
+                var routenOrte = ergebnis.Where(o => o.Typ == "route" && o.WildMonster.Any()).ToList();
+                var späteRouten = routenOrte
+                    .Where(o => meta.OrtDistanzen.ContainsKey(o.Id) || true) // alle Routen
+                    .OrderByDescending(o => {
+                        if (distanzen.Count == 0) return 0;
+                        var eb2 = ebenen.FirstOrDefault(e => ebeneZuOrtId.ContainsKey(e.Id) && ebeneZuOrtId[e.Id] == o.Id);
+                        return eb2 != null && distanzen.ContainsKey(eb2.Id) ? distanzen[eb2.Id] : 0;
+                    }).ToList();
+                int idx = 0;
+                foreach (var legend in nichtPlatziert)
+                {
+                    if (idx >= späteRouten.Count) idx = 0; // Wrap-around falls mehr Legendäre als Routen
+                    var zielOrt = späteRouten[idx];
+                    int targetLevel = 40;
+                    if (zielOrt.WildMonster.Any())
+                        targetLevel = Math.Max(40, zielOrt.WildMonster.Max(w => w.MaxLevel));
+                    zielOrt.WildMonster.Add(new WildBegegnung
+                    {
+                        MonsterId = legend.Id,
+                        MinLevel = targetLevel,
+                        MaxLevel = targetLevel + 10,
+                        Chance = 255
+                    });
+                    platzierteLegendäre.Add(legend.Id);
+                    idx++;
+                }
             }
 
             // Verbindungen setzen (Nord/Süd/Ost/West)
