@@ -1314,7 +1314,11 @@ public class GameService
         {
             Notify();
             await Task.Delay(800);
-            await GegnerZug();
+            // Wenn Gegner schon zuerst angegriffen hat, nur Runden-Ende
+            if (!spielerZuerst)
+                await RundenEnde();
+            else
+                await GegnerZug();
             return;
         }
 
@@ -1395,7 +1399,56 @@ public class GameService
             return;
         }
 
+        // Wenn Gegner bereits zuerst angegriffen hat (Initiative), darf er NICHT nochmal angreifen.
+        // Nur Runden-Ende (Status-Schaden) durchführen.
+        if (!spielerZuerst)
+        {
+            await RundenEnde();
+            return;
+        }
+
         await GegnerZug();
+    }
+
+    /// <summary>Runden-Ende: Status-Schaden, Ohnmacht-Prüfung, nächste Runde.</summary>
+    private async Task RundenEnde()
+    {
+        if (AktuellerKampf == null) return;
+        var spielerMon = AktuellerKampf.SpielerMonster;
+        var gegnerMon = AktuellerKampf.GegnerMonster;
+
+        // Status-Schaden am Ende der Runde (Vergiftung, Verbrennung)
+        StatusSchadenRunde(spielerMon, AktuellerKampf.Log);
+        StatusSchadenRunde(gegnerMon, AktuellerKampf.Log);
+
+        Notify();
+        await Task.Delay(800);
+
+        if (gegnerMon.IstOhnmächtig)
+        {
+            await KampfGewonnen();
+            return;
+        }
+
+        if (spielerMon.IstOhnmächtig)
+        {
+            var nächstes = Spieler.Team.FirstOrDefault(m => m != spielerMon && !m.IstOhnmächtig);
+            if (nächstes != null)
+            {
+                AktuellerKampf.Log.Add($"💀 {spielerMon.AngezeigterName} ist ohnmächtig!");
+                AktuellerKampf.Log.Add("Wähle dein nächstes Monster!");
+                AktuellerKampf.Phase = KampfPhase.MonsterWechsel;
+                Notify();
+            }
+            else
+            {
+                KampfVerloren();
+            }
+            return;
+        }
+
+        AktuellerKampf.Phase = KampfPhase.SpielerZug;
+        Notify();
     }
 
     private async Task GegnerZug()
@@ -1403,14 +1456,6 @@ public class GameService
         if (AktuellerKampf == null) return;
         var spielerMon = AktuellerKampf.SpielerMonster;
         var gegnerMon = AktuellerKampf.GegnerMonster;
-
-        // ImmerErstangriff-Relikt: Spieler greift immer zuerst an → Gegner-Zug überspringen wenn Spieler noch am Leben
-        if (Einstellungen.HatRelikt(ReliktTyp.ImmerErstangriff) && !spielerMon.IstOhnmächtig)
-        {
-            AktuellerKampf.Phase = KampfPhase.SpielerZug;
-            Notify();
-            return;
-        }
 
         // Status-Effekt des Gegners prüfen
         if (!StatusErlaubtAngriff(gegnerMon, AktuellerKampf.Log))
