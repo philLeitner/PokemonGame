@@ -1372,16 +1372,17 @@ public class GameService
             if (spielerMon.IstTeleportFlucht)
             {
                 spielerMon.IstTeleportFlucht = false;
+                // KampfTyp VOR KampfBeenden() speichern, da AktuellerKampf danach null ist
+                var kampfTyp = AktuellerKampf.Typ;
                 Notify();
                 await Task.Delay(800);
-                if (AktuellerKampf.Typ == KampfTyp.Wild)
+                if (kampfTyp == KampfTyp.Wild)
                 {
                     KampfBeenden();
                 }
                 else
                 {
                     // Im Trainerkampf: Kampf beenden + zum letzten Monster-Center teleportieren
-                    AktuellerKampf.Log.Add("🌀 Teleport! Du wurdest zum letzten Monster-Center zurückgebracht!");
                     KampfBeenden();
                     // Letztes Monster-Center finden und teleportieren
                     var letztesCenterOrt = AlleOrte.FirstOrDefault(o => o.HatMonsterCenter && o.Id == LetztesCenterOrtId)
