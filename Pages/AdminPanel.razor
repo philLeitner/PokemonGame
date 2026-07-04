@@ -335,11 +335,21 @@
     }
 
     // ── Orden ─────────────────────────────────────────────────────────────────
+    // Hilfsmethode: Orden-Name → Arena-OrtId (für BesiegteArenen-Sync)
+    private string? OrdenNameZuArenaId(string ordenName)
+        => Game.AlleOrte.FirstOrDefault(o => o.Arena?.OrdenName == ordenName)?.Id;
+
     private void OrdenToggle(string ordenName)
     {
         if (!Game.Spieler.Orden.Contains(ordenName))
         {
             Game.Spieler.Orden.Add(ordenName);
+            // Im generierten Modus: auch BesiegteArenen synchronisieren
+            if (Game.AktuelleGenerierteKarte != null)
+            {
+                var arenaId = OrdenNameZuArenaId(ordenName);
+                if (arenaId != null) Game.AktuelleGenerierteKarte.BesiegteArenen.Add(arenaId);
+            }
             Game.Notify();
         }
     }
@@ -347,25 +357,52 @@
     private void OrdenEntfernen(string ordenName)
     {
         Game.Spieler.Orden.Remove(ordenName);
+        // Im generierten Modus: auch BesiegteArenen synchronisieren
+        if (Game.AktuelleGenerierteKarte != null)
+        {
+            var arenaId = OrdenNameZuArenaId(ordenName);
+            if (arenaId != null) Game.AktuelleGenerierteKarte.BesiegteArenen.Remove(arenaId);
+        }
         Game.Notify();
     }
 
     private void Alle8KantoOrden()
     {
-        var kantoOrden = Game.AlleOrte
-            .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
-            .Select(o => o.Arena!.OrdenName)
-            .Distinct();
-        foreach (var o in kantoOrden)
-            if (!Game.Spieler.Orden.Contains(o))
-                Game.Spieler.Orden.Add(o);
-        Game.Notify();
-        ZeigeMeldung("✅ Alle 8 Kanto-Orden hinzugefügt!");
+        // Im generierten Modus: alle Arenen der aktuellen Karte
+        if (Game.IstGenerierteKartenModus && Game.AktuelleGenerierteKarte != null)
+        {
+            var alleArenaOrte = Game.AlleOrte
+                .Where(o => o.Arena != null && Game.AktuelleGenerierteKarte.BossIds.Contains(o.Id))
+                .ToList();
+            foreach (var arenaOrt in alleArenaOrte)
+            {
+                if (!Game.Spieler.Orden.Contains(arenaOrt.Arena!.OrdenName))
+                    Game.Spieler.Orden.Add(arenaOrt.Arena.OrdenName);
+                Game.AktuelleGenerierteKarte.BesiegteArenen.Add(arenaOrt.Id);
+            }
+            Game.Notify();
+            ZeigeMeldung($"✅ Alle {alleArenaOrte.Count} Arenen-Orden hinzugefügt!");
+        }
+        else
+        {
+            // Klassischer Modus: Kanto-Orden
+            var kantoOrden = Game.AlleOrte
+                .Where(o => o.Arena != null && o.Id.StartsWith("KAN-") && o.Arena.OrdenNr >= 1 && o.Arena.OrdenNr <= 8)
+                .Select(o => o.Arena!.OrdenName)
+                .Distinct();
+            foreach (var o in kantoOrden)
+                if (!Game.Spieler.Orden.Contains(o))
+                    Game.Spieler.Orden.Add(o);
+            Game.Notify();
+            ZeigeMeldung("✅ Alle 8 Kanto-Orden hinzugefügt!");
+        }
     }
 
     private void AlleOrdenEntfernen()
     {
         Game.Spieler.Orden.Clear();
+        // Im generierten Modus: auch BesiegteArenen leeren
+        Game.AktuelleGenerierteKarte?.BesiegteArenen.Clear();
         Game.Notify();
         ZeigeMeldung("🗑️ Alle Orden entfernt.");
     }
