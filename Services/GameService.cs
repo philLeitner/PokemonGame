@@ -11,6 +11,8 @@ public class GameService
     private readonly HttpClient _http;
     private readonly LocalStorageService _ls;
     private readonly Random _rng = new();
+    /// <summary>Letzter Ort wo das Monster-Center genutzt wurde (für Teleport im Trainerkampf)</summary>
+    private string? LetztesCenterOrtId { get; set; }
     private const string LS_SAVEGAME = "monsterkampf_save";
     private const string LS_SAVEGAME_EIGENE_MAP = "monsterkampf_save_eigene_map";
 
@@ -1366,13 +1368,30 @@ public class GameService
                     VersuchemStatusEffektDirekt(gegnerMon, attacke.Statuseffekt, AktuellerKampf.Log);
             }
 
-            // Teleport: Spieler flieht (nur wilder Kampf)
+            // Teleport: Spieler flieht (Wildkampf) oder teleportiert zum letzten Center (Trainerkampf)
             if (spielerMon.IstTeleportFlucht)
             {
                 spielerMon.IstTeleportFlucht = false;
                 Notify();
                 await Task.Delay(800);
-                KampfBeenden();
+                if (AktuellerKampf.Typ == KampfTyp.Wild)
+                {
+                    KampfBeenden();
+                }
+                else
+                {
+                    // Im Trainerkampf: Kampf beenden + zum letzten Monster-Center teleportieren
+                    AktuellerKampf.Log.Add("🌀 Teleport! Du wurdest zum letzten Monster-Center zurückgebracht!");
+                    KampfBeenden();
+                    // Letztes Monster-Center finden und teleportieren
+                    var letztesCenterOrt = AlleOrte.FirstOrDefault(o => o.HatMonsterCenter && o.Id == LetztesCenterOrtId)
+                        ?? AlleOrte.FirstOrDefault(o => o.HatMonsterCenter);
+                    if (letztesCenterOrt != null)
+                    {
+                        Spieler.AktuellerOrt = letztesCenterOrt.Id;
+                        Notify();
+                    }
+                }
                 return;
             }
             // Roar/Brüller: Gegner flieht (nur wilder Kampf)
@@ -1420,6 +1439,10 @@ public class GameService
         // Status-Schaden am Ende der Runde (Vergiftung, Verbrennung)
         StatusSchadenRunde(spielerMon, AktuellerKampf.Log);
         StatusSchadenRunde(gegnerMon, AktuellerKampf.Log);
+
+        // Halteitem-Effekte: LeechHeal (Seegesang)
+        HalteItemRundenEffekt(spielerMon, AktuellerKampf.Log);
+        HalteItemRundenEffekt(gegnerMon, AktuellerKampf.Log);
 
         Notify();
         await Task.Delay(800);
@@ -1741,6 +1764,23 @@ public class GameService
                     foreach (var atk in ziel.Attacken) atk.AktuelleAp = atk.MaxAp;
                     AktuellerKampf.Log.Add($"{itemDef.Emoji} {ziel.AngezeigterName} vollständig geheilt!");
                     verwendet = true;
+                    break;
+                case "KampfStatBoost":
+                    if (!ziel.IstOhnmächtig)
+                    {
+                        int stufen = effekt.Stufen > 0 ? effekt.Stufen : 1;
+                        switch (effekt.Stat)
+                        {
+                            case "Angriff":            ziel.StatStufeAngriff            = Math.Min(6, ziel.StatStufeAngriff + stufen); break;
+                            case "Verteidigung":       ziel.StatStufeVerteidigung       = Math.Min(6, ziel.StatStufeVerteidigung + stufen); break;
+                            case "SpezialAngriff":     ziel.StatStufeSpAngriff          = Math.Min(6, ziel.StatStufeSpAngriff + stufen); break;
+                            case "SpezialVerteidigung":ziel.StatStufeSpVerteidigung     = Math.Min(6, ziel.StatStufeSpVerteidigung + stufen); break;
+                            case "Initiative":         ziel.StatStufeInitiative         = Math.Min(6, ziel.StatStufeInitiative + stufen); break;
+                            case "Genauigkeit":        ziel.StatStufeGenauigkeit        = Math.Min(6, ziel.StatStufeGenauigkeit + stufen); break;
+                        }
+                        AktuellerKampf.Log.Add($"{itemDef.Emoji} {itemDef.Name} verwendet! {ziel.AngezeigterName}'s {effekt.Stat} steigt!");
+                        verwendet = true;
+                    }
                     break;
                 default:
                     AktuellerKampf.Log.Add($"❌ {itemDef.Name} kann hier nicht verwendet werden!");
@@ -2606,15 +2646,10 @@ public class GameService
                 return true;
             }
 
-            // ─── TELEPORT (Flucht aus wildem Kampf) ──────────────────────────
+            // ─── TELEPORT (Flucht aus wildem Kampf / Teleport im Trainerkampf) ──
             case "MOV-0100": // Teleport
-                if (!istTrainerKampf)
-                {
-                    log.Add($"🌀 {angreifer.AngezeigterName} teleportiert sich weg!");
-                    angreifer.IstTeleportFlucht = true; // Signal für Flucht
-                }
-                else
-                    log.Add($"🌀 Teleport hat im Trainerkampf keine Wirkung!");
+                log.Add($"🌀 {angreifer.AngezeigterName} setzt Teleport ein!");
+                angreifer.IstTeleportFlucht = true; // Signal für Flucht/Teleport
                 return true;
 
             // ─── ROAR / BRÜLLER (Gegner flieht / wechselt) ─────────────────────
@@ -2992,6 +3027,8 @@ public class GameService
             return $"❌ Relikt: Monster-Center-Limit erreicht! Du hast das Center bereits {Spieler.CenterNutzungen}x benutzt (Limit: {centerMax})";
 
         if (!Spieler.Team.Any()) return "Dein Team ist leer.";
+        // Letzten Center-Ort merken für Teleport
+        LetztesCenterOrtId = Spieler.AktuellerOrt;
         foreach (var mon in Spieler.Team)
         {
             mon.AktuelleKp = mon.MaxKp;
@@ -3126,6 +3163,9 @@ public class GameService
             "HeilAlleStatus" => HeilAlleStatus(ziel),
             "HeilTeamAlles" => HeilTeamAlles(),
             "Entwicklungsstein" => SteinAnwenden(ziel, effekt.StatusTyp ?? ""),
+            "Vitamin" => VitaminAnwenden(ziel, effekt.Stat ?? "", def.Name, def.Emoji),
+            "StatBoost" => StatBoostAnwenden(ziel, effekt.Stat ?? "", effekt.Wert, def.Name, def.Emoji),
+            "Repellent" => RepellentAnwenden(effekt.Wert, def.Name, def.Emoji),
             _ => $"❓ {def.Name} hat keinen direkten Effekt."
         };
         if (!ergebnis.StartsWith("❌"))
@@ -3256,7 +3296,96 @@ public class GameService
         return $"✨ {mon.AngezeigterName} hat sich zu {neueSpezies.Name} entwickelt!";
     }
 
-    public string ItemAusrüsten(MonsterInstanz monster, string? itemId)
+    // ─── Neue Item-Hilfsmethoden ─────────────────────────────────────────────────
+
+    /// <summary>Vitamin anwenden: erhöht Basis-Stat dauerhaft (+10 EV-Punkte, max 10x pro Stat)</summary>
+    private string VitaminAnwenden(MonsterInstanz m, string stat, string name, string emoji)
+    {
+        if (m.IstOhnmächtig) return $"❌ {m.AngezeigterName} ist ohnmächtig!";
+        if (string.IsNullOrEmpty(stat)) return $"❌ Unbekannter Stat.";
+        if (!Spieler.VitaminZähler.ContainsKey(m.SpeziesId))
+            Spieler.VitaminZähler[m.SpeziesId] = new Dictionary<string, int>();
+        var zähler = Spieler.VitaminZähler[m.SpeziesId];
+        if (!zähler.ContainsKey(stat)) zähler[stat] = 0;
+        if (zähler[stat] >= 10) return $"❌ {m.AngezeigterName}'s {stat} kann nicht weiter gesteigert werden (max 10×)!";
+        zähler[stat]++;
+        // Stat dauerhaft erhöhen
+        switch (stat)
+        {
+            case "KP":                 m.MaxKp += 4; m.AktuelleKp = Math.Min(m.AktuelleKp + 4, m.MaxKp); break;
+            case "Angriff":            m.Angriff += 4; break;
+            case "Verteidigung":       m.Verteidigung += 4; break;
+            case "SpezialAngriff":     m.SpezialAngriff += 4; break;
+            case "SpezialVerteidigung":m.SpezialVerteidigung += 4; break;
+            case "Initiative":         m.Initiative += 4; break;
+        }
+        return $"✅ {emoji} {name} verwendet! {m.AngezeigterName}'s {stat} steigt dauerhaft! ({zähler[stat]}/10)";
+    }
+
+    /// <summary>StatBoost außerhalb Kampf: temporäre Stat-Erhöhung für nächsten Kampf (nicht implementiert als dauerhaft)</summary>
+    private string StatBoostAnwenden(MonsterInstanz m, string stat, int wert, string name, string emoji)
+    {
+        if (m.IstOhnmächtig) return $"❌ {m.AngezeigterName} ist ohnmächtig!";
+        switch (stat)
+        {
+            case "Angriff":            m.Angriff = Math.Min(999, m.Angriff + wert); break;
+            case "Verteidigung":       m.Verteidigung = Math.Min(999, m.Verteidigung + wert); break;
+            case "SpezialAngriff":     m.SpezialAngriff = Math.Min(999, m.SpezialAngriff + wert); break;
+            case "SpezialVerteidigung":m.SpezialVerteidigung = Math.Min(999, m.SpezialVerteidigung + wert); break;
+            case "Initiative":         m.Initiative = Math.Min(999, m.Initiative + wert); break;
+            default: return $"❓ Unbekannter Stat: {stat}";
+        }
+        return $"✅ {emoji} {name} verwendet! {m.AngezeigterName}'s {stat} steigt um {wert}!";
+    }
+
+    /// <summary>Repellent anwenden: verhindert Wildkämpfe für X Schritte</summary>
+    private string RepellentAnwenden(int schritte, string name, string emoji)
+    {
+        int s = schritte > 0 ? schritte : 100;
+        Spieler.RepellentSchritte = Math.Max(Spieler.RepellentSchritte, s);
+        return $"✅ {emoji} {name} verwendet! Wilde Monster meiden dich für {s} Schritte.";
+    }
+
+    /// <summary>Halteitem-Effekte pro Runde (LeechHeal, Giftstachel etc.)</summary>
+    private void HalteItemRundenEffekt(MonsterInstanz mon, List<string> log)
+    {
+        if (mon.GetrageneItemId == null) return;
+        var def = GetItemDef(mon.GetrageneItemId);
+        if (def?.Effekt == null) return;
+        switch (def.Effekt.Typ)
+        {
+            case "LeechHeal":
+                if (!mon.IstOhnmächtig && mon.AktuelleKp < mon.MaxKp)
+                {
+                    int heilung = Math.Max(1, mon.MaxKp / 16);
+                    mon.AktuelleKp = Math.Min(mon.MaxKp, mon.AktuelleKp + heilung);
+                    log.Add($"🌿 {mon.AngezeigterName}'s {def.Emoji} {def.Name} stellt {heilung} KP wieder her!");
+                }
+                break;
+            case "GiftHalte":
+                if (!mon.IstOhnmächtig && (mon.Status == null || mon.Status == "none"))
+                {
+                    mon.Status = "vergiftet";
+                    log.Add($"☠️ {mon.AngezeigterName} wurde durch {def.Emoji} {def.Name} vergiftet!");
+                }
+                break;
+        }
+    }
+
+    /// <summary>TypVerstärker-Bonus für Halteitem (wird in SchadenBerechnen aufgerufen)</summary>
+    public float GetHalteItemSchadenBonus(MonsterInstanz angreifer, string attackeTyp)
+    {
+        if (angreifer.GetrageneItemId == null) return 1f;
+        var def = GetItemDef(angreifer.GetrageneItemId);
+        if (def?.Effekt == null) return 1f;
+        if (def.Effekt.Typ == "TypVerstärker" && def.Effekt.StatusTyp == attackeTyp)
+            return 1.2f; // +20% Schaden für passenden Typ
+        if (def.Effekt.Typ == "AllTypVerstärker")
+            return 1.1f; // +10% für alle Typen
+        return 1f;
+    }
+
+        public string ItemAusrüsten(MonsterInstanz monster, string? itemId)
     {
         if (itemId == null)
         {

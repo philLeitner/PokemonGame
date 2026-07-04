@@ -923,10 +923,11 @@
     var ortRef2 = Game.AktuellerOrt ?? (ausgewähltOrt != null ? Game.AlleOrte.FirstOrDefault(o => o.Id == ausgewähltOrt.Id) : null);
     if (ortRef2 != null)
     {
-    // Im generierten Modus: Items aus AlleItems; klassisch: MarktAngebot
+    // Im generierten Modus: Items nach Orden filtern; klassisch: MarktAngebot
+    int aktuelleOrdenAnzahl = Game.Spieler.Orden.Count;
     var marktItemDefs = Game.IstGenerierteKartenModus
-        ? Game.AlleItems.Where(i => i.KaufPreis > 0).ToList()
-        : Game.AlleItems.Where(i => ortRef2.MarktAngebot.Any(s => s.Id == i.Id) || i.KaufPreis > 0).ToList();
+        ? Game.AlleItems.Where(i => i.KaufPreis > 0 && i.MinOrdenFürMarkt != 99 && i.MinOrdenFürMarkt <= aktuelleOrdenAnzahl).ToList()
+        : Game.AlleItems.Where(i => ortRef2.MarktAngebot.Any(s => s.Id == i.Id) || (i.KaufPreis > 0 && i.MinOrdenFürMarkt != 99 && i.MinOrdenFürMarkt <= aktuelleOrdenAnzahl)).ToList();
     var marktKategorien = marktItemDefs.Select(i => i.Kategorie).Distinct().OrderBy(k => k).ToList();
     <div class="meldung-overlay" @onclick="MarktSchließen">
         <div class="markt-box markt-box-neu" @onclick:stopPropagation="true">

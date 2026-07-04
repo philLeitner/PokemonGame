@@ -256,6 +256,10 @@ public class Spieler
     public HashSet<string> GefangeneMonsterProOrt { get; set; } = new();
     /// <summary>Anzahl der Monster-Center-Nutzungen (für CenterLimit-Relikt)</summary>
     public int CenterNutzungen { get; set; } = 0;
+    /// <summary>Vitamin-Nutzungen pro Monster und Stat (max 10×)</summary>
+    public Dictionary<string, Dictionary<string, int>> VitaminZähler { get; set; } = new();
+    /// <summary>Verbleibende Schritte bis Repellent abläuft (0 = inaktiv)</summary>
+    public int RepellentSchritte { get; set; } = 0;
 
     public MonsterInstanz? AktivesMonster
     {
@@ -305,6 +309,8 @@ public class ItemEffekt
     public int Wert { get; set; } = 0;
     public string? StatusTyp { get; set; } = null;
     public string? Stat { get; set; } = null;
+    public int Stufen { get; set; } = 1;          // für KampfStatBoost
+    public string? FangBonus { get; set; } = null; // WasserKäfer, Geschwächt, Heilen, Timer
 }
 public class ItemDef
 {
@@ -315,6 +321,7 @@ public class ItemDef
     public string Beschreibung { get; set; } = "";
     public int KaufPreis { get; set; } = 0;
     public int VerkaufPreis { get; set; } = 0;
+    public int MinOrdenFürMarkt { get; set; } = 0; // 0 = immer verfügbar, 99 = nicht im Markt
     public ItemEffekt Effekt { get; set; } = new();
 }
 public class ShopItem
