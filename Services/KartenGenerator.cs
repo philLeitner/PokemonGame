@@ -408,32 +408,37 @@ public class KartenGenerator
             var nichtPlatziert = legendärePool.Where(l => !platzierteLegendäre.Contains(l.Id)).ToList();
             if (nichtPlatziert.Any())
             {
-                // Späte Routen (hohe Distanz) als Kandidaten
-                var routenOrte = ergebnis.Where(o => o.Typ == "route" && o.WildMonster.Any()).ToList();
-                var späteRouten = routenOrte
-                    .Where(o => meta.OrtDistanzen.ContainsKey(o.Id) || true) // alle Routen
-                    .OrderByDescending(o => {
-                        if (distanzen.Count == 0) return 0;
-                        var eb2 = ebenen.FirstOrDefault(e => ebeneZuOrtId.ContainsKey(e.Id) && ebeneZuOrtId[e.Id] == o.Id);
-                        return eb2 != null && distanzen.ContainsKey(eb2.Id) ? distanzen[eb2.Id] : 0;
-                    }).ToList();
-                int idx = 0;
-                foreach (var legend in nichtPlatziert)
+                // Routen mit Wild-Monstern als Kandidaten, sortiert nach Distanz (höchste zuerst)
+                var routenOrte = ergebnis.Where(o => o.Typ == "route" && o.WildMonster.Count > 0).ToList();
+                if (routenOrte.Count > 0)
                 {
-                    if (idx >= späteRouten.Count) idx = 0; // Wrap-around falls mehr Legendäre als Routen
-                    var zielOrt = späteRouten[idx];
-                    int targetLevel = 40;
-                    if (zielOrt.WildMonster.Any())
-                        targetLevel = Math.Max(40, zielOrt.WildMonster.Max(w => w.MaxLevel));
-                    zielOrt.WildMonster.Add(new WildBegegnung
+                    // Sortiere nach Distanz absteigend (späteste Routen zuerst)
+                    var ortZuDistanz = new Dictionary<string, int>();
+                    foreach (var eb2 in ebenen)
                     {
-                        MonsterId = legend.Id,
-                        MinLevel = targetLevel,
-                        MaxLevel = targetLevel + 10,
-                        Chance = 255
-                    });
-                    platzierteLegendäre.Add(legend.Id);
-                    idx++;
+                        if (ebeneZuOrtId.TryGetValue(eb2.Id, out var oId) && distanzen.TryGetValue(eb2.Id, out int d))
+                            ortZuDistanz[oId] = d;
+                    }
+                    routenOrte = routenOrte.OrderByDescending(o => ortZuDistanz.GetValueOrDefault(o.Id, 0)).ToList();
+
+                    int idx = 0;
+                    foreach (var legend in nichtPlatziert)
+                    {
+                        if (idx >= routenOrte.Count) idx = 0;
+                        var zielOrt = routenOrte[idx];
+                        int targetLevel = 40;
+                        if (zielOrt.WildMonster.Count > 0)
+                            targetLevel = Math.Max(40, zielOrt.WildMonster.Max(w => w.MaxLevel));
+                        zielOrt.WildMonster.Add(new WildBegegnung
+                        {
+                            MonsterId = legend.Id,
+                            MinLevel = targetLevel,
+                            MaxLevel = targetLevel + 10,
+                            Chance = 255
+                        });
+                        platzierteLegendäre.Add(legend.Id);
+                        idx++;
+                    }
                 }
             }
 
