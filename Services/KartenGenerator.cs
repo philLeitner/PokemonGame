@@ -18,6 +18,10 @@ public class RegionConfig
     public List<ArenaLeiterConfig> Arenaleiter { get; set; } = new();
     public List<MonsterPoolEintrag> MonsterPool { get; set; } = new();
     public List<TrainerPoolEintrag> TrainerPool { get; set; } = new();
+    /// <summary>Name der bösen Organisation dieser Region (z.B. "Team Rocket", "Team Aqua")</summary>
+    public string BöseOrg { get; set; } = "";
+    /// <summary>Rivalen-Name dieser Region (z.B. "Blau", "Silver")</summary>
+    public string RivalName { get; set; } = "";
 }
 public class ArenaLeiterConfig
 {
@@ -84,6 +88,25 @@ public class KartenGenerator
     private static readonly char[] SeedChars =
         "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
     private static readonly string[] Dirs = { "left", "right", "up", "down" };
+
+    // ─── Zufällige deutsche Trainer-Namen ────────────────────────────────────
+    private static readonly string[] TrainerVornamen = {
+        "Karl", "Max", "Thomas", "Lukas", "Felix", "Jonas", "Lena", "Anna", "Lisa",
+        "Emma", "Mia", "Sophie", "Leon", "Tim", "Jan", "Nico", "Finn", "Ben",
+        "Moritz", "Paul", "Laura", "Julia", "Sarah", "Lea", "Marie", "Tobias",
+        "Stefan", "Markus", "Klaus", "Ralf", "Sven", "Dirk", "Uwe", "Hans",
+        "Werner", "Otto", "Kurt", "Petra", "Monika", "Ingrid", "Heike", "Claudia"
+    };
+    private static readonly string[] BöseVornamen = {
+        "Thomas", "Lukas", "Felix", "Jonas", "Max", "Karl", "Tim", "Jan",
+        "Nico", "Finn", "Ben", "Moritz", "Paul", "Leon", "Sven", "Ralf",
+        "Kurt", "Otto", "Hans", "Werner", "Dirk", "Uwe", "Stefan", "Markus",
+        "Tobias", "Heiko", "Bernd", "Günter", "Horst", "Manfred"
+    };
+    private static readonly string[] TrainerKlassen = {
+        "Trainer", "Wanderer", "Schüler", "Sportler", "Angler", "Bauer",
+        "Abenteurer", "Forscher", "Kämpfer", "Ranger"
+    };
     private static readonly Dictionary<string, string> Opposite = new()
     {
         {"left","right"},{"right","left"},{"up","down"},{"down","up"}
@@ -154,6 +177,15 @@ public class KartenGenerator
             var normalePool = wildPool.Where(e => e.Chance > 3).ToList();
             // Tracking: welche Legendären bereits auf einer Route platziert wurden
             var platzierteLegendäre = new HashSet<string>();
+
+            // Rival + Böse Org Konfiguration
+            string rivalName = regCfg.RivalName;
+            string böseOrg = regCfg.BöseOrg;
+            int rivalNr = 0;     // Zähler für Rival-Kämpfe
+            int böseOrgNr = 0;   // Zähler für Böse-Org-Kämpfe
+            int routeNr = 0;     // Zähler für Routen (für eindeutige IDs)
+            // Rival erscheint nach Arena 2, 4, 6 und nach Champion (alle ~2 Arenen)
+            var rivalNachArena = new HashSet<int> { 2, 4, 6, arenaCount };
 
             // ─── HTML-Algorithmus: Ebenen generieren ─────────────────────────
             var ebenen = GeneriereEbenenStruktur(rng, total, bossCount, städteProBoss, totalCitiesWanted);
@@ -307,6 +339,15 @@ public class KartenGenerator
                             .Take(2)
                             .ToList();
                         trainer.AddRange(zwischen);
+
+                        // Rival-Kampf nach bestimmten Arenen (nach Arena 2, 4, 6, letzter Arena)
+                        if (rivalNachArena.Contains(bossZähler))
+                        {
+                            rivalNr++;
+                            var rivalKampf = HoleRivalKampf(trainerPool, dist, rng, rivalName, regId, rivalNr);
+                            if (rivalKampf != null)
+                                trainer.Add(rivalKampf);
+                        }
                     }
                     else if (istVorletzter)
                     {
@@ -356,11 +397,21 @@ public class KartenGenerator
                 else
                 {
                     ebeneZähler++;
+                    routeNr++;
                     name = $"Ebene {ebeneZähler}";
                     typ = "route";
                     farbe = eb.IstSackgasse ? "gray" : "green";
                     int trainerAnz = eb.IstSackgasse ? 1 : rng.Next(1, 4);
-                    trainer = HoleTrainerFürLevel(trainerPool, dist, rng, trainerAnz, trainerAnz);
+                    trainer = HoleTrainerFürLevel(trainerPool, dist, rng, trainerAnz, trainerAnz, regId, routeNr);
+
+                    // Böse-Org-Trainer hinzufügen (20% Chance)
+                    var böserTrainer = HoleBöseOrgTrainer(trainerPool, dist, rng, böseOrg, regId, böseOrgNr);
+                    if (böserTrainer != null)
+                    {
+                        böseOrgNr++;
+                        trainer.Add(böserTrainer);
+                    }
+
                     wildMonster = HoleWildMonsterFürLevel(normalePool.Any() ? normalePool : wildPool, dist, rng, 2, 5);
                     // Legendäre Monster: genau 1 pro Region auf einer einzigen Route (spätere Ebenen bevorzugt)
                     if (legendärePool.Any() && dist >= 8)
@@ -1058,7 +1109,8 @@ public class KartenGenerator
 
     // ─── Trainer-Zuweisung (level-basiert) ───────────────────────────────────
     private static List<TrainerKampf> HoleTrainerFürLevel(
-        List<TrainerKampf> pool, int dist, Random rng, int min, int max)
+        List<TrainerKampf> pool, int dist, Random rng, int min, int max,
+        string regId = "", int routeNr = 0)
     {
         int targetLevel = Math.Max(2, 3 + (int)(dist * 1.8));
 
@@ -1072,18 +1124,102 @@ public class KartenGenerator
         int anzahl = min == max ? min : rng.Next(min, max + 1);
         var ausgewählt = kandidaten.OrderBy(_ => rng.Next()).Take(anzahl).ToList();
 
-        // Level ALLER Trainer-Monster auf targetLevel setzen (mit kleiner Variation)
+        // Level ALLER Trainer-Monster auf targetLevel setzen + zufällige deutsche Namen
+        int nameIdx = 0;
         foreach (var trainer in ausgewählt)
         {
             for (int i = 0; i < trainer.Team.Count; i++)
             {
-                // Erstes Monster: genau targetLevel, weitere: +0 bis +2
                 int variation = i == 0 ? 0 : rng.Next(0, 3);
                 trainer.Team[i].Level = Math.Max(2, targetLevel + variation);
             }
+            // Zufälligen deutschen Namen zuweisen
+            string zufallsName = TrainerVornamen[rng.Next(TrainerVornamen.Length)];
+            string zufallsKlasse = TrainerKlassen[rng.Next(TrainerKlassen.Length)];
+            trainer.Name = zufallsName;
+            trainer.Klasse = zufallsKlasse;
+            // Neue eindeutige ID damit kein Duplikat entsteht
+            trainer.Id = $"{regId}-TRAINER-{routeNr}-{nameIdx++}";
         }
 
         return ausgewählt;
+    }
+
+    // ─── Böse-Org-Trainer für eine Route generieren ──────────────────────────
+    private static TrainerKampf? HoleBöseOrgTrainer(
+        List<TrainerKampf> pool, int dist, Random rng,
+        string böseOrg, string regId, int routeNr)
+    {
+        if (string.IsNullOrEmpty(böseOrg)) return null;
+        // 20% Chance auf Böse-Org-Trainer pro Route
+        if (rng.Next(100) >= 20) return null;
+
+        int targetLevel = Math.Max(2, 3 + (int)(dist * 1.8));
+        var kandidaten = pool.Where(t => t.Team.Any()).ToList();
+        if (!kandidaten.Any()) return null;
+
+        var basis = kandidaten[rng.Next(kandidaten.Count)];
+        string böserName = BöseVornamen[rng.Next(BöseVornamen.Length)];
+
+        var böserTrainer = new TrainerKampf
+        {
+            Id = $"{regId}-BOESEORG-{routeNr}",
+            Name = böserName,
+            Klasse = böseOrg, // z.B. "Team Rocket"
+            Belohnung = basis.Belohnung + 50,
+            Dialogvor = $"Im Namen von {böseOrg} werde ich dich besiegen!",
+            DialogNach = $"Ich werde {böseOrg} nicht enttäuschen...",
+            MussBesiegt = false,
+            Team = basis.Team.Select(m => new MonsterTeamEintrag
+            {
+                MonsterId = m.MonsterId,
+                Level = Math.Max(2, targetLevel)
+            }).ToList()
+        };
+        return böserTrainer;
+    }
+
+    // ─── Rival-Kämpfe für eine Route generieren ──────────────────────────────
+    private static TrainerKampf? HoleRivalKampf(
+        List<TrainerKampf> pool, int dist, Random rng,
+        string rivalName, string regId, int rivalNr)
+    {
+        if (string.IsNullOrEmpty(rivalName)) return null;
+
+        int targetLevel = Math.Max(2, 3 + (int)(dist * 1.8));
+        // Rival hat 2-3 Monster
+        var kandidaten = pool.Where(t => t.Team.Any()).ToList();
+        if (!kandidaten.Any()) return null;
+
+        // Wähle 2-3 zufällige Monster aus dem Pool
+        int teamSize = rng.Next(2, 4);
+        var teamMonster = kandidaten
+            .OrderBy(_ => rng.Next())
+            .Take(teamSize)
+            .SelectMany(t => t.Team.Take(1))
+            .Select(m => new MonsterTeamEintrag
+            {
+                MonsterId = m.MonsterId,
+                Level = Math.Max(2, targetLevel + 1)
+            }).ToList();
+
+        if (!teamMonster.Any()) return null;
+
+        return new TrainerKampf
+        {
+            Id = $"{regId}-RIVAL-{rivalNr}",
+            Name = rivalName,
+            Klasse = "Rivale",
+            Belohnung = 300 + (rivalNr * 100),
+            Dialogvor = rivalNr == 1
+                ? $"Ich bin {rivalName}! Zeig mir was du kannst!"
+                : $"{rivalName}: Ich bin stärker als beim letzten Mal!",
+            DialogNach = rivalNr == 1
+                ? $"{rivalName}: Nicht schlecht... aber ich werde stärker!"
+                : $"{rivalName}: Du hast mich wieder besiegt... Ich trainiere weiter!",
+            MussBesiegt = true, // Rival blockiert Weiterreise
+            Team = teamMonster
+        };
     }
 
     private static List<WildBegegnung> HoleWildMonsterFürLevel(

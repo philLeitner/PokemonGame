@@ -3047,7 +3047,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Rocket",
+    "RivalName": "Blau"
   },
   {
     "Id": "JOH",
@@ -4825,7 +4827,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Rocket",
+    "RivalName": "Silver"
   },
   {
     "Id": "HOE",
@@ -7401,7 +7405,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Aqua",
+    "RivalName": "Wally"
   },
   {
     "Id": "SIN",
@@ -9651,7 +9657,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Galaxis",
+    "RivalName": "Barry"
   },
   {
     "Id": "UNO",
@@ -11131,7 +11139,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Plasma",
+    "RivalName": "Hugh"
   },
   {
     "Id": "KAL",
@@ -12779,7 +12789,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Flare",
+    "RivalName": "Serena"
   },
   {
     "Id": "ALO",
@@ -13831,7 +13843,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Skull",
+    "RivalName": "Hau"
   },
   {
     "Id": "GAL",
@@ -14873,7 +14887,9 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Rubin",
+    "RivalName": "Hop"
   },
   {
     "Id": "PAL",
@@ -15811,6 +15827,8 @@
           }
         ]
       }
-    ]
+    ],
+    "BöseOrg": "Team Stern",
+    "RivalName": "Arven"
   }
 ]

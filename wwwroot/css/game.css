@@ -274,7 +274,7 @@ body {
 }
 .ort-beschreibung { color: var(--text-mittel); margin-bottom: 1rem; }
 .ort-aktionen { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
-.btn-reisen, .btn-erkunden, .btn-trainer, .btn-arena {
+.btn-reisen, .btn-erkunden, .btn-trainer, .btn-arena, .btn-rival, .btn-boeseorg {
   padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600;
   border-radius: var(--radius); cursor: pointer; transition: all 0.2s; border: none;
   white-space: normal; word-break: break-word; text-align: left; line-height: 1.3;
@@ -297,6 +297,13 @@ body {
 .btn-arena:hover:not(:disabled) { background: linear-gradient(135deg, #92400e, #b45309); }
 .btn-arena.gewonnen { background: #166534; cursor: default; }
 .btn-arena:disabled { opacity: 0.7; }
+/* Rival-Button: Gold/Amber */
+.btn-rival { background: linear-gradient(135deg, #92400e, #b45309); color: #fef3c7; border: 1px solid #f59e0b; }
+.btn-rival:hover { background: linear-gradient(135deg, #b45309, #d97706); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(245,158,11,0.4); }
+.btn-rival.besiegt { background: #166534; cursor: default; color: #bbf7d0; border-color: #16a34a; }
+/* Böse-Org-Button: Dunkelrot/Lila */
+.btn-boeseorg { background: linear-gradient(135deg, #4c1d95, #6d28d9); color: #ede9fe; border: 1px solid #7c3aed; }
+.btn-boeseorg:hover { background: linear-gradient(135deg, #6d28d9, #7c3aed); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(124,58,237,0.4); }
 .btn-center { background: linear-gradient(135deg, #0e7490, #0891b2); color: white; padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; transition: all 0.2s; border: none; }
 .btn-center:hover { background: linear-gradient(135deg, #0891b2, #06b6d4); transform: translateY(-1px); }
 .btn-markt { background: linear-gradient(135deg, #7e22ce, #9333ea); color: white; padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; transition: all 0.2s; border: none; }

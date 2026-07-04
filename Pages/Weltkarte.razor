@@ -290,9 +290,24 @@
                                 @foreach (var trainer in ortRef3.Trainer.Where(t => !Game.Spieler.BesiegteTrainer.Contains(t.Id) && t.Klasse != "Arena" && t.Klasse != "Arena/Boss"))
                                 {
                                     var t2 = trainer;
-                                    <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
-                                        🧑 @t2.Klasse @t2.Name
-                                    </button>
+                                    @if (t2.Klasse == "Rivale")
+                                    {
+                                        <button class="btn-rival" @onclick="() => TrainerKämpfen(t2)">
+                                            ⚔️ Rivale: @t2.Name
+                                        </button>
+                                    }
+                                    else if (t2.Klasse.StartsWith("Team ") || t2.Klasse.StartsWith("Böse"))
+                                    {
+                                        <button class="btn-boeseorg" @onclick="() => TrainerKämpfen(t2)">
+                                            😈 @t2.Klasse: Böser @t2.Name
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn-trainer" @onclick="() => TrainerKämpfen(t2)">
+                                            🧑 @t2.Klasse @t2.Name
+                                        </button>
+                                    }
                                 }
                                 @if (ortRef3.Arena != null && !ortRef3.IstRivaleStadt)
                                 {

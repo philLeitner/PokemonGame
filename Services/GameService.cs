@@ -1107,14 +1107,49 @@ public class GameService
     }
 
     // Rivale Blau: Starter-Konter bestimmen (Pflanze→Feuer, Feuer→Wasser, Wasser→Pflanze)
-    private string RivaleBlauStarterKonter()
+    private string? RivaleStarterKonter(string starterId)
     {
-        return Spieler.StarterMonsterId switch
+        // Starter-Konter-Mapping für alle Regionen
+        // Feuer → Wasser, Wasser → Pflanze, Pflanze → Feuer
+        return starterId switch
         {
-            "PKM-0001" => "PKM-0004", // Spieler hat Bisasam (Pflanze) → Blau nimmt Glumanda (Feuer)
-            "PKM-0004" => "PKM-0007", // Spieler hat Glumanda (Feuer) → Blau nimmt Schiggy (Wasser)
-            "PKM-0007" => "PKM-0001", // Spieler hat Schiggy (Wasser) → Blau nimmt Bisasam (Pflanze)
-            _ => "PKM-0004"           // Fallback
+            // Kanto
+            "PKM-0001" => "PKM-0004", // Bisasam (Pflanze) → Glumanda (Feuer)
+            "PKM-0004" => "PKM-0007", // Glumanda (Feuer) → Schiggy (Wasser)
+            "PKM-0007" => "PKM-0001", // Schiggy (Wasser) → Bisasam (Pflanze)
+            // Johto
+            "PKM-0152" => "PKM-0155", // Endivie (Pflanze) → Feurigel (Feuer)
+            "PKM-0155" => "PKM-0158", // Feurigel (Feuer) → Karnimani (Wasser)
+            "PKM-0158" => "PKM-0152", // Karnimani (Wasser) → Endivie (Pflanze)
+            // Hoenn
+            "PKM-0252" => "PKM-0255", // Geckarbor (Pflanze) → Flemmli (Feuer)
+            "PKM-0255" => "PKM-0258", // Flemmli (Feuer) → Hydropi (Wasser)
+            "PKM-0258" => "PKM-0252", // Hydropi (Wasser) → Geckarbor (Pflanze)
+            // Sinnoh
+            "PKM-0387" => "PKM-0390", // Chelast (Pflanze) → Panflam (Feuer)
+            "PKM-0390" => "PKM-0393", // Panflam (Feuer) → Plinfa (Wasser)
+            "PKM-0393" => "PKM-0387", // Plinfa (Wasser) → Chelast (Pflanze)
+            // Einall
+            "PKM-0495" => "PKM-0498", // Serpifeu (Pflanze) → Floink (Feuer)
+            "PKM-0498" => "PKM-0501", // Floink (Feuer) → Ottaro (Wasser)
+            "PKM-0501" => "PKM-0495", // Ottaro (Wasser) → Serpifeu (Pflanze)
+            // Kalos
+            "PKM-0650" => "PKM-0653", // Igamaro (Pflanze) → Fynx (Feuer)
+            "PKM-0653" => "PKM-0656", // Fynx (Feuer) → Froxy (Wasser)
+            "PKM-0656" => "PKM-0650", // Froxy (Wasser) → Igamaro (Pflanze)
+            // Alola
+            "PKM-0722" => "PKM-0725", // Bauz (Pflanze) → Flamiau (Feuer)
+            "PKM-0725" => "PKM-0728", // Flamiau (Feuer) → Robball (Wasser)
+            "PKM-0728" => "PKM-0722", // Robball (Wasser) → Bauz (Pflanze)
+            // Galar
+            "PKM-0810" => "PKM-0813", // Chimpep (Pflanze) → Hopplo (Feuer)
+            "PKM-0813" => "PKM-0816", // Hopplo (Feuer) → Memmeon (Wasser)
+            "PKM-0816" => "PKM-0810", // Memmeon (Wasser) → Chimpep (Pflanze)
+            // Paldea
+            "PKM-0906" => "PKM-0909", // Felori (Pflanze) → Krokel (Feuer)
+            "PKM-0909" => "PKM-0912", // Krokel (Feuer) → Kwaks (Wasser)
+            "PKM-0912" => "PKM-0906", // Kwaks (Wasser) → Felori (Pflanze)
+            _ => null // Kein Konter bekannt
         };
     }
 
@@ -1127,27 +1162,30 @@ public class GameService
         var erstesGegnerMonster = trainer.Team.FirstOrDefault();
         if (erstesGegnerMonster == null) return;
 
-        // Rivale Blau: nur den Starter-Konter verwenden (1 Monster, nicht alle 3)
+        // Rivale: Starter-Konter-Logik für alle Regionen
         TrainerKampf effektiverTrainer = trainer;
-        if (trainer.Name == "Blau" && trainer.Klasse == "Rivale" && !string.IsNullOrEmpty(Spieler.StarterMonsterId))
+        if (trainer.Klasse == "Rivale" && !string.IsNullOrEmpty(Spieler.StarterMonsterId))
         {
-            var konterId = RivaleBlauStarterKonter();
-            // Erstelle eine Kopie des Trainers mit nur dem Konter-Monster
-            effektiverTrainer = new TrainerKampf
+            // Wenn Rival nur 1 Monster hat und es ein bekannter Starter ist, Konter-Logik anwenden
+            var konterId = RivaleStarterKonter(Spieler.StarterMonsterId);
+            if (konterId != null && trainer.Team.Count == 1)
             {
-                Id = trainer.Id,
-                Name = trainer.Name,
-                Klasse = trainer.Klasse,
-                Belohnung = trainer.Belohnung,
-                Dialogvor = trainer.Dialogvor,
-                DialogNach = trainer.DialogNach,
-                MussBesiegt = trainer.MussBesiegt,
-                SperrtRichtung = trainer.SperrtRichtung,
-                Team = new List<MonsterTeamEintrag>
+                effektiverTrainer = new TrainerKampf
                 {
-                    new MonsterTeamEintrag { MonsterId = konterId, Level = erstesGegnerMonster.Level }
-                }
-            };
+                    Id = trainer.Id,
+                    Name = trainer.Name,
+                    Klasse = trainer.Klasse,
+                    Belohnung = trainer.Belohnung,
+                    Dialogvor = trainer.Dialogvor,
+                    DialogNach = trainer.DialogNach,
+                    MussBesiegt = trainer.MussBesiegt,
+                    SperrtRichtung = trainer.SperrtRichtung,
+                    Team = new List<MonsterTeamEintrag>
+                    {
+                        new MonsterTeamEintrag { MonsterId = konterId, Level = erstesGegnerMonster.Level }
+                    }
+                };
+            }
         }
 
         // Ort des Trainers ermitteln (Trainer stehen auf Routen, nicht zwingend am Spieler-Ort)

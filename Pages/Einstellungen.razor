@@ -33,7 +33,7 @@
             @if (Game.Einstellungen.KartenModus == MapModus.EineRegion)
             {
                 <div class="gen-select-row">
-                    @for (int g = 1; g <= 8; g++)
+                    @for (int g = 1; g <= 9; g++)
                     {
                         int gen = g;
                         <button class="gen-btn @(Game.Einstellungen.RegionAuswahl == gen ? "active" : "")"
@@ -64,7 +64,7 @@
                         @onclick="() => { Game.Einstellungen.StarterRegion = 0; Game.Notify(); }">
                     Alle
                 </button>
-                @for (int g = 1; g <= 8; g++)
+                @for (int g = 1; g <= 9; g++)
                 {
                     int gen = g;
                     <button class="gen-btn @(Game.Einstellungen.StarterRegion == gen ? "active" : "")"
