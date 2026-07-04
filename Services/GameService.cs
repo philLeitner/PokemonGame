@@ -1027,7 +1027,7 @@ public class GameService
             .ToList();
         if (mussTrainer.Any())
         {
-            var namen = string.Join(", ", mussTrainer.Select(t => $"{t.Klasse} {t.Name}"));
+            var namen = string.Join(", ", mussTrainer.Select(t => t.Name));
             return $"⚔️ Zuerst besiegen: {namen}";
         }
 
@@ -1210,9 +1210,9 @@ public class GameService
             Typ = KampfTyp.Trainer,
             SpielerMonster = spielerMonster,
             GegnerMonster = gegner,
-            GegnerName = $"{effektiverTrainer.Klasse} {effektiverTrainer.Name}",
+            GegnerName = effektiverTrainer.Name,
             Phase = KampfPhase.Intro,
-            Log = new() { $"💬 {effektiverTrainer.Klasse} {effektiverTrainer.Name}: \"{effektiverTrainer.Dialogvor}\"" },
+            Log = new() { $"💬 {effektiverTrainer.Name}: \"{effektiverTrainer.Dialogvor}\"" },
             TrainerId = effektiverTrainer.Id,
             BelohnungGeld = effektiverTrainer.Belohnung,
             AktuellerTrainer = effektiverTrainer,
@@ -1262,9 +1262,9 @@ public class GameService
             Typ = KampfTyp.Arena,
             SpielerMonster = spielerMonster,
             GegnerMonster = gegner,
-            GegnerName = $"Arena-Leiter {ort.Arena.Leiter}",
+            GegnerName = ort.Arena.Leiter,
             Phase = KampfPhase.Intro,
-            Log = new() { $"🏆 Arena-Leiter {ort.Arena.Leiter} fordert dich heraus!" },
+            Log = new() { $"🏆 {ort.Arena.Leiter} fordert dich heraus!" },
             OrtId = ort.Id,
             BelohnungGeld = arenaTrainer.Belohnung,
             AktuellerTrainer = arenaTrainer,
