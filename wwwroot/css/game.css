@@ -215,13 +215,14 @@ body {
 .team-level { display: block; font-size: 0.7rem; color: var(--text-mittel); }
 .team-kp-balken { width: 60px; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
 .team-kp-text { font-size: 0.65rem; color: var(--text-mittel); white-space: nowrap; }
-.btn-hauptmenu, .btn-editor-klein {
+.btn-hauptmenu, .btn-editor-klein, .btn-pokedex-klein {
   padding: 0.6rem; font-size: 0.85rem; font-weight: 600;
   background: rgba(255,255,255,0.06); border: 1px solid var(--border);
   border-radius: var(--radius); color: var(--text-hell); cursor: pointer;
-  transition: background 0.2s; text-align: center;
+  transition: background 0.2s; text-align: center; width: 100%;
 }
-.btn-hauptmenu:hover, .btn-editor-klein:hover { background: rgba(255,255,255,0.12); }
+.btn-hauptmenu:hover, .btn-editor-klein:hover, .btn-pokedex-klein:hover { background: rgba(255,255,255,0.12); }
+.btn-pokedex-klein:disabled { opacity: 0.45; cursor: not-allowed; color: var(--text-dunkel); }
 .karte-bereich {
   flex: 1; padding: 1.5rem; overflow-y: auto;
   background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
