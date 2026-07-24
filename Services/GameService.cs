@@ -47,6 +47,8 @@ public class GameService
     public Ort? AktuellerOrt => AlleOrte.FirstOrDefault(o => o.Id == Spieler.AktuellerOrt);
     public bool DatenGeladen { get; private set; }
     public string LadeStatus { get; private set; } = "Initialisiere...";
+    // Speichert den vollständigen Fehlertext wenn das Laden fehlschlägt
+    public string? LadeFehler { get; private set; } = null;
     public bool HatSpeicherstand { get; private set; } = false;
     public SpielEinstellungen Einstellungen { get; private set; } = new();
     /// <summary>Maximale Team-Größe basierend auf aktiven Relikten (Standard: 6)</summary>
@@ -197,7 +199,12 @@ public class GameService
         }
         catch (Exception ex)
         {
-            LadeStatus = $"Fehler beim Laden: {ex.Message}";
+            // Kurzen Status für den Ladebildschirm setzen
+            LadeStatus = "Fehler beim Laden!";
+            // Vollständigen Fehlertext für den Detail-Button speichern
+            LadeFehler = $"{ex.GetType().Name}: {ex.Message}";
+            if (ex.InnerException != null)
+                LadeFehler += $"\n\nInner: {ex.InnerException.Message}";
         }
         Notify();
     }

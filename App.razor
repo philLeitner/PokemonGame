@@ -1,6 +1,7 @@
 @using MonsterKampf.Services
 @using MonsterKampf.Models
 @inject GameService Game
+@inject NavigationManager Nav
 @implements IDisposable
 
 <!-- Wird angezeigt, solange die Spieldaten (JSON) geladen werden -->
@@ -10,10 +11,31 @@
         <div class="loading-box">
             <div class="pokeball-anim">⚫</div>
             <h2>Monster Kampf</h2>
-            <p class="lade-text">@Game.LadeStatus</p>
-            <div class="lade-balken">
-                <div class="lade-fortschritt"></div>
-            </div>
+            <p class="lade-text @(Game.LadeFehler != null ? "lade-fehler-text" : "")">@Game.LadeStatus</p>
+
+            @if (Game.LadeFehler != null)
+            {
+                <!-- Fehler-Bereich: Wird nur angezeigt wenn ein Ladefehler aufgetreten ist -->
+                <div class="lade-fehler-bereich">
+                    <!-- Button zum Ein-/Ausblenden des Fehlerdetails -->
+                    <button class="btn-fehler-detail" @onclick="FehlerDetailToggle">
+                        @(fehlerDetailSichtbar ? "🔼 Fehler ausblenden" : "🔍 Fehler anzeigen")
+                    </button>
+                    @if (fehlerDetailSichtbar)
+                    {
+                        <!-- Vollständiger Fehlertext -->
+                        <pre class="fehler-detail-text">@Game.LadeFehler</pre>
+                    }
+                    <!-- Neu laden Button -->
+                    <button class="btn-neu-laden" @onclick="NeuLaden">🔄 Neu laden</button>
+                </div>
+            }
+            else
+            {
+                <div class="lade-balken">
+                    <div class="lade-fortschritt"></div>
+                </div>
+            }
         </div>
     </div>
 }
@@ -79,6 +101,9 @@ else
 }
 
 @code {
+    // Steuert ob der Fehlerdetail-Text sichtbar ist
+    private bool fehlerDetailSichtbar = false;
+
     // Wird aufgerufen, wenn die App startet. Lädt alle JSON-Daten (Monster, Attacken, Items).
     protected override async Task OnInitializedAsync()
     {
@@ -86,6 +111,12 @@ else
         Game.OnChange += StateHasChanged;
         await Game.DatenLadenAsync();
     }
+
+    // Fehlerdetail ein- oder ausblenden
+    private void FehlerDetailToggle() => fehlerDetailSichtbar = !fehlerDetailSichtbar;
+
+    // Seite neu laden (lädt die gesamte App neu)
+    private void NeuLaden() => Nav.NavigateTo(Nav.Uri, true);
 
     // Aufräumen: Event-Handler entfernen wenn die Komponente zerstört wird
     public void Dispose() => Game.OnChange -= StateHasChanged;
