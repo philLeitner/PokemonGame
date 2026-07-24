@@ -1848,14 +1848,17 @@ public class GameService
     // HP-Bonus:    <50%=+1, <25%=+2, <10%=+3
     // Status-Bonus: Schlaf/Einfrieren=+3, Gift/Lähmung/Verbrennung=+1
     // Fang: Ball-Kraft + Boni > Schutzwurf (0..Widerstand-1) → gefangen!
+    // Berechnet wie schwer ein Monster zu fangen ist (Widerstand 1-10)
     private int FangWiderstand(int fangrate)
     {
-        // Fangrate 255 → Widerstand 1 (sehr leicht zu fangen)
-        // Fangrate 45  → Widerstand 5 (normal)
-        // Fangrate 3   → Widerstand 10 (sehr selten)
+        // Fangrate 255 → Widerstand 1 (sehr leicht zu fangen, z.B. Taubsi)
+        // Fangrate 45  → Widerstand 5 (normal, z.B. Bisasam)
+        // Fangrate 3   → Widerstand 10 (sehr selten, z.B. Mewtu)
         int w = (int)Math.Round(10.0 - (fangrate / 255.0) * 9.0);
         return Math.Clamp(w, 1, 10);
     }
+
+    // ─── FANG-LOGIK: Hier wird berechnet ob ein Monster gefangen wird ───
     public async Task MonsterFangen(string ballId)
     {
         if (AktuellerKampf == null) return;
@@ -1883,9 +1886,11 @@ public class GameService
         AktuellerKampf.Log.Add($"{ballEmoji} Du wirfst einen {ballName} nach {gegner.Name}...");
         Notify();
         await Task.Delay(1200);
-        // ─ Widerstand berechnen ─
+        // ─ Widerstand berechnen (wie stark wehrt sich das Monster) ─
         int widerstand = FangWiderstand(gegner.Fangrate);
-        // ─ Ball-Kraft ─
+
+        // ─ Ball-Kraft: Welcher Ball wurde geworfen? ─
+        // Monsterball=1, Superball=2, Hyperball=4, Meisterball=99 (fängt immer)
         int ballKraft = ballId switch { "ITEM-012" => 2, "ITEM-013" => 4, "ITEM-014" => 99, _ => 1 };
         // BessereBallle-Upgrade: Monsterball wirkt wie Superball (+1)
         if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.BessereBallle) && ballKraft == 1) ballKraft = 2;
@@ -1893,10 +1898,13 @@ public class GameService
         if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.ProfiCatcher) && ballKraft == 2) ballKraft = 4;
         // BessereKugeln-Upgrade: alle Bälle +2 Fangkraft
         if (Spieler.ZähneWallet.HatUpgrade(ZähneUpgrade.BessereKugeln)) ballKraft += 2;
-        // ─ HP-Schwäche-Bonus ─
+        // ─ HP-Schwäche-Bonus: Weniger Leben = leichter zu fangen ─
+        // Unter 50% KP: +1, unter 25%: +2, unter 10%: +3
         float hpProzent = gegner.MaxKp > 0 ? (float)gegner.AktuelleKp / gegner.MaxKp : 1f;
         int hpBonus = hpProzent < 0.10f ? 3 : hpProzent < 0.25f ? 2 : hpProzent < 0.50f ? 1 : 0;
-        // ─ Status-Bonus ─
+
+        // ─ Status-Bonus: Statuseffekte erleichtern das Fangen ─
+        // Schlaf/Einfrieren: +3, Gift/Lähmung/Verbrennung: +1
         int statusBonus = gegner.Status is "eingeschlafen" or "eingefroren" ? 3
                         : gegner.Status is "vergiftet" or "gelähmt" or "verbrannt" ? 1 : 0;
         // LegendärBoost-Upgrade: +10% oder +20% Fangchance bei legendären Monstern (Fangrate <= 3)
@@ -2860,28 +2868,49 @@ public class GameService
         log.Add($"✨ {mon.AngezeigterName}s {statName} {richtung}{stufe}{attackeZusatz}!");
     }
 
+    // ─── HIER WIRD DER GESAMTE SCHADEN EINER ATTACKE BERECHNET ───
+    // Berücksichtigt: Level, Angriff/Verteidigung, Element-Typ, STAB-Bonus und Zufallsfaktor
     private int SchadenBerechnen(MonsterInstanz angreifer, MonsterInstanz verteidiger, AttackeInstanz attacke)
     {
+        // Attacken ohne Stärke (reine Status-Attacken) machen keinen Schaden
         if (attacke.Staerke == null || attacke.Staerke == 0) return 0;
+
+        // Physische Attacken nutzen Angriff/Verteidigung, Spezial-Attacken nutzen SpAngriff/SpVerteidigung
         int atkBasis = attacke.Kategorie == "Physisch" ? angreifer.Angriff : angreifer.SpezialAngriff;
         int defBasis = attacke.Kategorie == "Physisch" ? verteidiger.Verteidigung : verteidiger.SpezialVerteidigung;
+
+        // Stat-Stufen einberechnen (z.B. durch Heuler oder Silberblick veränderte Werte)
         int atkStufe = attacke.Kategorie == "Physisch" ? angreifer.StatStufeAngriff : angreifer.StatStufeSpAngriff;
         int defStufe = attacke.Kategorie == "Physisch" ? verteidiger.StatStufeVerteidigung : verteidiger.StatStufeSpVerteidigung;
         int atk = MonsterInstanz.MitStatStufe(atkBasis, atkStufe);
         int def = MonsterInstanz.MitStatStufe(defBasis, defStufe);
-        // Verbrennung: Angriff halbiert
+
+        // Verbrennung halbiert den physischen Angriff des Angreifers
         if (angreifer.Status == "verbrannt" && attacke.Kategorie == "Physisch") atk /= 2;
+
+        // Element-Effektivität berechnen (z.B. Feuer gegen Blatt = 2x, Feuer gegen Wasser = 0.5x)
         float multi = TypeChart.GetVerteidigungsMultiplikator(attacke.Typ, verteidiger.Typen);
+
+        // STAB (Same Type Attack Bonus): Eigener Typ = +50% Schaden
         float stab = angreifer.Typen.Contains(attacke.Typ) ? 1.5f : 1f;
+
+        // Zufallsfaktor: Schaden variiert zwischen 85% und 100%
         float zufall = (_rng.Next(85, 101)) / 100f;
+
+        // Genauigkeits-Prüfung: Trifft die Attacke überhaupt?
         if (attacke.Genauigkeit.HasValue && _rng.Next(1, 101) > attacke.Genauigkeit.Value)
         {
             AktuellerKampf?.Log.Add($"💨 {angreifer.AngezeigterName} hat nicht getroffen!");
             return 0;
         }
+
+        // Die klassische Pokémon-Schadensformel
         float schaden = ((2f * angreifer.Level / 5f + 2f) * attacke.Staerke.Value * atk / Math.Max(1, def)) / 50f + 2f;
+
+        // Alle Multiplikatoren (Typ-Effektivität, STAB, Zufall) anwenden. Mindestschaden = 1
         int ergebnis2 = Math.Max(1, (int)(schaden * multi * stab * zufall));
-        // DoppelterSchaden-Relikt: Spieler erhält doppelten Schaden
+
+        // DoppelterSchaden-Relikt: Spieler erhält doppelten Schaden (Hardcore-Modus)
         if (Einstellungen.HatRelikt(ReliktTyp.DoppelterSchaden) && AktuellerKampf != null && verteidiger == AktuellerKampf.SpielerMonster)
             ergebnis2 *= 2;
         return ergebnis2;

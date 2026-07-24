@@ -14,12 +14,15 @@
     var gegnerMon = kampf.GegnerMonster;
 }
 
+<!-- Hauptcontainer für den gesamten Kampf-Bildschirm -->
 <div class="kampf-screen">
-    <!-- Kampf-Arena -->
+    <!-- Container für die visuelle Kampf-Arena (Gegner oben, Spieler unten) -->
     <div class="kampf-arena">
-        <!-- Gegner oben -->
+        <!-- Oberer Bereich: Gegnerisches Monster mit Infos -->
         <div class="gegner-bereich">
+            <!-- Info-Leiste des Gegners: Name, Level, Status-Effekt, Typen, KP-Balken -->
             <div class="monster-info-leiste gegner-leiste">
+                <!-- Name und Level des Gegners -->
                 <div class="monster-name-zeile">
                     <span class="monster-name">@gegnerMon.Name</span>
                     <span class="monster-level">Lv.@gegnerMon.Level</span>
@@ -28,6 +31,7 @@
                         <span class="status-badge status-@gegnerMon.Status">@StatusEmoji(gegnerMon.Status) @StatusLabel(gegnerMon.Status)</span>
                     }
                 </div>
+                <!-- Typ-Badges des Gegners (z.B. Feuer, Wasser) -->
                 <div class="monster-typen">
                     @foreach (var typ in gegnerMon.Typen)
                     {
@@ -36,6 +40,7 @@
                         </span>
                     }
                 </div>
+                <!-- KP-Balken des Gegners (Lebenspunkte) -->
                 <div class="kp-leiste-container">
                     <span class="kp-label">KP</span>
                     <div class="kp-leiste">
@@ -46,6 +51,7 @@
                     <span class="kp-zahl">@gegnerMon.AktuelleKp/@gegnerMon.MaxKp</span>
                 </div>
             </div>
+            <!-- Bild (Sprite) des gegnerischen Monsters -->
             <div class="monster-sprite gegner-sprite">
                 <img src="@gegnerMon.BildUrl" alt="@gegnerMon.Name" class="monster-bild-sprite"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
@@ -58,8 +64,9 @@
             </div>
         </div>
 
-        <!-- Spieler unten -->
+        <!-- Unterer Bereich: Eigenes Monster des Spielers -->
         <div class="spieler-bereich">
+            <!-- Bild (Sprite) des eigenen Monsters -->
             <div class="monster-sprite spieler-sprite">
                 <img src="@spielerMon.BildUrl" alt="@spielerMon.Name" class="monster-bild-sprite"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
@@ -70,7 +77,9 @@
                     <span class="monster-emoji-gross spieler-emoji">@GetTypEmoji(spielerMon.Typen.FirstOrDefault() ?? "")</span>
                 </div>
             </div>
+            <!-- Info-Leiste des eigenen Monsters: Name, Level, Status, Typen, KP, EP -->
             <div class="monster-info-leiste spieler-leiste">
+                <!-- Name und Level des eigenen Monsters -->
                 <div class="monster-name-zeile">
                     <span class="monster-name">@spielerMon.AngezeigterName</span>
                     <span class="monster-level">Lv.@spielerMon.Level</span>
@@ -79,6 +88,7 @@
                         <span class="status-badge status-@spielerMon.Status">@StatusEmoji(spielerMon.Status) @StatusLabel(spielerMon.Status)</span>
                     }
                 </div>
+                <!-- Typ-Badges des eigenen Monsters -->
                 <div class="monster-typen">
                     @foreach (var typ in spielerMon.Typen)
                     {
@@ -87,6 +97,7 @@
                         </span>
                     }
                 </div>
+                <!-- KP-Balken des eigenen Monsters (Lebenspunkte) -->
                 <div class="kp-leiste-container">
                     <span class="kp-label">KP</span>
                     <div class="kp-leiste">
@@ -96,6 +107,7 @@
                     </div>
                     <span class="kp-zahl">@spielerMon.AktuelleKp/@spielerMon.MaxKp</span>
                 </div>
+                <!-- EP-Balken: Erfahrungspunkte bis zum nächsten Level-Up -->
                 <div class="exp-leiste-container">
                     <div class="exp-leiste">
                         <div class="exp-fill" style="width: @ExpProzent(spielerMon)%"></div>
@@ -105,7 +117,7 @@
         </div>
     </div>
 
-    <!-- Zeitlimit-Anzeige -->
+    <!-- Timer-Anzeige: Wird angezeigt wenn ein Zeitlimit für den Zug aktiv ist -->
     @if (kampf.ZeitlimitAktiv && !kampf.ZeitlimitAbgelaufen && kampf.Phase == KampfPhase.SpielerZug)
     {
         int minuten = kampf.ZeitlimitSekunden / 60;
@@ -116,7 +128,7 @@
         </div>
     }
 
-    <!-- Kampf-Log -->
+    <!-- Kampf-Log: Textverlauf des Kampfes (z.B. "Glumanda setzt Tackle ein!") -->
     <div class="kampf-log" @ref="logRef">
         @foreach (var eintrag in kampf.Log)
         {
@@ -124,9 +136,10 @@
         }
     </div>
 
-    <!-- Aktions-Bereich -->
+    <!-- Aktions-Bereich: Buttons für Angriff, Item, Wechseln, Fliehen -->
     <div class="aktions-bereich">
 
+        <!-- Kampf-Ergebnis: Sieg oder Niederlage -->
         @if (kampf.Phase == KampfPhase.Beendet)
         {
             <div class="kampf-ergebnis @(kampf.SpielerGewonnen ? "gewonnen" : "verloren")">

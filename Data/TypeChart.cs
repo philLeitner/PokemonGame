@@ -34,8 +34,12 @@ public static class TypeChart
         { "Dunkel",  "🌑" }, { "Stahl",   "⚙️" }, { "Fee",     "✨" },
     };
 
-    // Effektivitäts-Matrix: [Angreifer][Verteidiger] = Multiplikator
-    // 0 = keine Wirkung, 0.5 = nicht sehr effektiv, 1 = normal, 2 = sehr effektiv
+    // ─── ELEMENT-EFFEKTIVITÄTS-TABELLE ───
+    // Bestimmt wie viel Schaden ein Element-Typ gegen einen anderen macht.
+    // Beispiel: Feuer (Brennen) gegen Blatt = 2x Schaden (sehr effektiv)
+    //           Feuer (Brennen) gegen Wasser (Tropfen) = 0.5x Schaden (nicht sehr effektiv)
+    // [Angreifer][Verteidiger] = Multiplikator
+    // 0 = keine Wirkung, 0.5 = halber Schaden, 1 = normal, 2 = doppelter Schaden
     private static readonly Dictionary<string, Dictionary<string, float>> Matrix = new()
     {
         ["Normal"] = new() {
@@ -122,12 +126,14 @@ public static class TypeChart
         return 1f;
     }
 
+    // Wenn ein Monster zwei Typen hat (z.B. Wasser+Boden), werden beide Multiplikatoren multipliziert.
+    // Beispiel: Blitz gegen Wasser+Boden = 2x * 0x = 0 (keine Wirkung)
     /// <summary>Kombinierter Multiplikator gegen einen Dual-Typen Verteidiger</summary>
     public static float GetVerteidigungsMultiplikator(string angreifer, List<string> verteidigerTypen)
     {
         float result = 1f;
         foreach (var vt in verteidigerTypen)
-            result *= GetMultiplikator(angreifer, vt);
+            result *= GetMultiplikator(angreifer, vt); // Jeden Typ einzeln prüfen und multiplizieren
         return result;
     }
 

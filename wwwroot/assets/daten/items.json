@@ -1665,7 +1665,7 @@
     "VerkaufPreis": 10000,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 9999
+      "FangBonus": "9999"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1679,7 +1679,7 @@
     "VerkaufPreis": 100,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 1
+      "FangBonus": "1"
     },
     "MinOrdenFürMarkt": 0
   },
@@ -1693,7 +1693,7 @@
     "VerkaufPreis": 500,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 4
+      "FangBonus": "4"
     },
     "MinOrdenFürMarkt": 2
   },
@@ -1707,7 +1707,7 @@
     "VerkaufPreis": 500,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 3
+      "FangBonus": "3"
     },
     "MinOrdenFürMarkt": 2
   },
@@ -1721,7 +1721,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 1
+      "FangBonus": "1"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1735,7 +1735,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 2
+      "FangBonus": "2"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1749,7 +1749,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 2
+      "FangBonus": "2"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1763,7 +1763,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 8
+      "FangBonus": "8"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1777,7 +1777,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 4
+      "FangBonus": "4"
     },
     "MinOrdenFürMarkt": 99
   },
@@ -1791,7 +1791,7 @@
     "VerkaufPreis": 300,
     "Effekt": {
       "Typ": "Fangen",
-      "FangBonus": 3
+      "FangBonus": "3"
     },
     "MinOrdenFürMarkt": 99
   },

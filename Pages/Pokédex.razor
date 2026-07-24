@@ -2,9 +2,11 @@
 @inject GameService Game
 @implements IDisposable
 
+<!-- Hauptcontainer für den gesamten Pokédex-Bildschirm -->
 <div class="pokedex-screen">
 
     <!-- ── Header ── -->
+    <!-- Kopfzeile: Zurück-Button, Überschrift, Anzahl gefangener Monster -->
     <div class="pokedex-header">
         <button class="btn-zurueck" @onclick="Game.ZuWeltkarte">← Zurück</button>
         <h2>📖 Monsterübersicht</h2>
@@ -12,6 +14,7 @@
     </div>
 
     <!-- ── Filter-Leiste ── -->
+    <!-- Suchfeld (Name/Nummer), Typ-Dropdown und "Nur gefangen"-Checkbox -->
     <div class="pokedex-filter-bar">
         <input class="pokedex-suchfeld" type="text" placeholder="🔍 Name oder #Nr. suchen..."
                @bind="suchText" @bind:event="oninput" />
@@ -28,6 +31,7 @@
     </div>
 
     <!-- ── Region-Chips ── -->
+    <!-- Filter-Buttons für die einzelnen Regionen (z.B. Kanto, Johto, Hoenn) -->
     <div class="pokedex-region-filter">
         <span class="region-filter-label">Region:</span>
         @foreach (var region in AlleRegionen)
@@ -42,9 +46,10 @@
     </div>
 
     <!-- ── Haupt-Bereich ── -->
+    <!-- Zweispaltiges Layout: Links das Monster-Gitter, rechts die Detailansicht -->
     <div class="pokedex-inhalt">
 
-        <!-- Links: Monster-Gitter -->
+        <!-- Links: Monster-Gitter (Kästchen für jedes Monster) -->
         <div class="pokedex-gitter-wrapper">
             <div class="pokedex-gitter">
                 @{
@@ -129,7 +134,7 @@
             </div>
         </div>
 
-        <!-- Rechts: Detail-Panel -->
+        <!-- Rechts: Detail-Panel (Zeigt alle Infos zum ausgewählten Monster: Stats, Attacken, Entwicklung) -->
         <div class="pokedex-detail">
             @if (ausgewähltMon == null)
             {

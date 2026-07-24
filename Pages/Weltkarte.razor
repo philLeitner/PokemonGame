@@ -4,9 +4,11 @@
 @using MonsterKampf.Services
 @using MonsterKampf.Models
 
+<!-- Hauptcontainer für den Weltkarten-Bildschirm -->
 <div class="weltkarte-screen">
-    <!-- Linke Sidebar: Spieler-Info -->
+    <!-- Linke Seitenleiste: Spieler-Infos, Team, Rucksack, Speichern/Laden, Navigation -->
     <div class="sidebar">
+        <!-- Spieler-Info: Name, Geld, Orden-Anzeige -->
         <div class="spieler-info">
             <h3>🎮 @Game.Spieler.Name</h3>
             <p class="geld">💰 @Game.Spieler.Geld Münzen</p>
@@ -22,6 +24,7 @@
             </div>
         </div>
 
+        <!-- Team-Liste: Alle Monster im aktiven Team (max. 6), per Drag & Drop sortierbar -->
         <div class="team-liste">
             <h4>Mein Team <span class="team-anzahl">(@Game.Spieler.Team.Count/6)</span></h4>
             @for (int ti = 0; ti < Game.Spieler.Team.Count; ti++)
@@ -49,7 +52,7 @@
             }
         </div>
 
-        <!-- Rucksack-Button -->
+        <!-- Rucksack-Button: Öffnet das Inventar (nur sichtbar wenn Items vorhanden) -->
         @if (Game.Spieler.Inventar.Any())
         {
             <button class="btn-rucksack" @onclick="RucksackOeffnen">
@@ -107,7 +110,7 @@
         <button class="btn-admin-klein" @onclick="Game.ZuAdminPanel">🔧 Admin</button>
     </div>
 
-    <!-- Hauptbereich: Karte + Ort-Details -->
+    <!-- Rechter Hauptbereich: Karte und Ort-Details -->
     <div class="karte-bereich">
         <h2 class="karte-titel">
             @if (Game.IstGenerierteKartenModus)
@@ -128,10 +131,10 @@
             }
         </h2>
 
-        <!-- Minimap + Ort-Details nebeneinander -->
+        <!-- Layout-Container: Minimap links, Ort-Details rechts -->
         <div class="karte-haupt-layout">
 
-        <!-- 3x3 Minimap -->
+        <!-- Das 3x3 Navigations-Raster (Minimap): Zeigt den aktuellen Ort und die 4 Nachbarorte -->
         <div class="minimap-container">
         @{
             var aktOrt = Game.AktuellerOrt;

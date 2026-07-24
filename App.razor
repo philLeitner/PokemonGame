@@ -3,6 +3,7 @@
 @inject GameService Game
 @implements IDisposable
 
+<!-- Wird angezeigt, solange die Spieldaten (JSON) geladen werden -->
 @if (!Game.DatenGeladen)
 {
     <div class="loading-screen">
@@ -18,24 +19,29 @@
 }
 else
 {
+    <!-- Router: Je nach aktueller Spielphase wird die entsprechende Seite (Komponente) geladen -->
     @switch (Game.Phase)
     {
         case SpielPhase.Hauptmenü:
             <MonsterKampf.Pages.Hauptmenü />
             break;
         case SpielPhase.StarterWahl:
+            <!-- Starter-Auswahl: Spieler wählt sein erstes Monster -->
             <MonsterKampf.Pages.StarterWahl />
             break;
         case SpielPhase.Weltkarte:
+            <!-- Weltkarte: Hauptspielbereich mit Minimap und Navigation -->
             <MonsterKampf.Pages.Weltkarte />
             break;
         case SpielPhase.Kampf:
+            <!-- Kampf-Bildschirm: Rundenbasierter Kampf gegen Gegner -->
             <MonsterKampf.Pages.Kampf />
             break;
         case SpielPhase.Einstellungen:
             <MonsterKampf.Pages.Einstellungen />
             break;
         case SpielPhase.ZähneShop:
+            <!-- Zähne-Shop: Hier können Upgrades mit Zähnen gekauft werden -->
             <MonsterKampf.Pages.ZähneShop />
             break;
         case SpielPhase.EigeneMapStart:
@@ -45,21 +51,25 @@ else
             <MonsterKampf.Pages.AdminPanel />
             break;
         case SpielPhase.Pokédex:
+            <!-- Pokédex: Übersicht aller Monster mit Filter und Detailansicht -->
             <MonsterKampf.Pages.Pokédex />
             break;
         case SpielPhase.MonsterEditor:
             <MonsterKampf.Pages.MonsterEditor />
             break;
         case SpielPhase.RegionsWahl:
+            <!-- Regionswahl: Spieler wählt die nächste Spielregion -->
             <MonsterKampf.Pages.RegionsWahl />
             break;
         case SpielPhase.NachArenaLeiter:
+            <!-- Nach dem Arena-Leiter: Belohnungen und Weiter-Optionen -->
             <MonsterKampf.Pages.NachArenaLeiter />
             break;
         case SpielPhase.StarterWahlNeuRegion:
             <MonsterKampf.Pages.NachArenaLeiter />
             break;
         case SpielPhase.LigaAbschluss:
+            <!-- Liga-Abschluss: Alle Arenen einer Region wurden besiegt -->
             <MonsterKampf.Pages.LigaAbschluss />
             break;
         default:
@@ -69,11 +79,14 @@ else
 }
 
 @code {
+    // Wird aufgerufen, wenn die App startet. Lädt alle JSON-Daten (Monster, Attacken, Items).
     protected override async Task OnInitializedAsync()
     {
+        // Auf Änderungen im GameService reagieren und die UI neu rendern
         Game.OnChange += StateHasChanged;
         await Game.DatenLadenAsync();
     }
 
+    // Aufräumen: Event-Handler entfernen wenn die Komponente zerstört wird
     public void Dispose() => Game.OnChange -= StateHasChanged;
 }
