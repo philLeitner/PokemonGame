@@ -6,6 +6,75 @@
     <title>Monster Kampf</title>
     <base href="/" />
     <link rel="stylesheet" href="css/game.css" />
+    <style>
+        /* Blazor Fehler-UI - überschreibt den Standard-Stil */
+        #blazor-error-ui {
+            background: #1a1a2e;
+            border-top: 2px solid #e94560;
+            bottom: 0;
+            box-shadow: 0 -4px 20px rgba(233,69,96,0.3);
+            display: none;
+            left: 0;
+            padding: 0.75rem 1.25rem;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            color: #eaeaea;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        #blazor-error-ui .fehler-zeile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        #blazor-error-ui .fehler-titel {
+            color: #f87171;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        #blazor-error-ui .reload {
+            background: #e94560;
+            color: white;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        #blazor-error-ui .btn-detail {
+            background: rgba(248,113,113,0.15);
+            border: 1px solid rgba(248,113,113,0.4);
+            color: #f87171;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        #blazor-error-ui .dismiss {
+            margin-left: auto;
+            cursor: pointer;
+            color: #a0a0b0;
+            font-size: 1.1rem;
+            padding: 0 0.25rem;
+        }
+        #blazor-error-detail {
+            display: none;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(248,113,113,0.3);
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            color: #fca5a5;
+            font-size: 0.75rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -17,10 +86,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Blazor Fehler-Balken: erscheint automatisch bei Runtime-Fehlern -->
     <div id="blazor-error-ui">
-        Ein Fehler ist aufgetreten. <a href="" class="reload">Neu laden</a>
-        <a class="dismiss">🗙</a>
+        <div class="fehler-zeile">
+            <span class="fehler-titel">⚠️ Ein Fehler ist aufgetreten</span>
+            <button class="btn-detail" onclick="toggleFehlerDetail()">🔍 Details</button>
+            <a href="" class="reload">🔄 Neu laden</a>
+            <a class="dismiss" onclick="document.getElementById('blazor-error-ui').style.display='none'">🗙</a>
+        </div>
+        <div id="blazor-error-detail"></div>
     </div>
+
     <script src="_framework/blazor.webassembly.js"></script>
     <script>
         // JSON-Download via Blazor JS-Interop
@@ -35,6 +112,31 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         };
+
+        // Fehlerdetail ein-/ausblenden
+        function toggleFehlerDetail() {
+            const detail = document.getElementById('blazor-error-detail');
+            detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Blazor-Fehler abfangen und im Detail-Bereich anzeigen
+        window.addEventListener('error', function(e) {
+            const detail = document.getElementById('blazor-error-detail');
+            if (detail) {
+                detail.textContent = (detail.textContent ? detail.textContent + '\n\n' : '')
+                    + 'Error: ' + e.message
+                    + '\nFile: ' + e.filename
+                    + '\nLine: ' + e.lineno;
+            }
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            const detail = document.getElementById('blazor-error-detail');
+            if (detail) {
+                detail.textContent = (detail.textContent ? detail.textContent + '\n\n' : '')
+                    + 'Unhandled Promise: ' + (e.reason?.message || e.reason || 'Unknown');
+            }
+        });
     </script>
 </body>
 </html>
