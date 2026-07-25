@@ -1,0 +1,2395 @@
+[
+  {
+    "Id": "ITEM-001",
+    "Name": "Trank R",
+    "Emoji": "🧪",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 20 KP (Trank R).",
+    "KaufPreis": 300,
+    "VerkaufPreis": 150,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 20
+    },
+    "MinOrdenFürMarkt": 0
+  },
+  {
+    "Id": "ITEM-002",
+    "Name": "Trank UR",
+    "Emoji": "💊",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 50 KP (Trank UR).",
+    "KaufPreis": 700,
+    "VerkaufPreis": 350,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-003",
+    "Name": "Trank S",
+    "Emoji": "💉",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 200 KP (Trank S).",
+    "KaufPreis": 1200,
+    "VerkaufPreis": 600,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 200
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "ITEM-004",
+    "Name": "Trank SR",
+    "Emoji": "🔮",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt alle KP vollständig (Trank SR).",
+    "KaufPreis": 2500,
+    "VerkaufPreis": 1250,
+    "Effekt": {
+      "Typ": "HeilKPVoll",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 6
+  },
+  {
+    "Id": "ITEM-005",
+    "Name": "Beleber",
+    "Emoji": "⭐",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Belebt ein besiegtes Monster mit 50% KP wieder.",
+    "KaufPreis": 1500,
+    "VerkaufPreis": 750,
+    "Effekt": {
+      "Typ": "Beleben",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "ITEM-006",
+    "Name": "Top-Beleber",
+    "Emoji": "🌟",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Belebt ein besiegtes Monster mit vollen KP wieder.",
+    "KaufPreis": 4000,
+    "VerkaufPreis": 2000,
+    "Effekt": {
+      "Typ": "BelebenVoll",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 7
+  },
+  {
+    "Id": "ITEM-007",
+    "Name": "Elixier",
+    "Emoji": "🫧",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Stellt 10 AP aller Attacken eines Monsters wieder her.",
+    "KaufPreis": 1500,
+    "VerkaufPreis": 750,
+    "Effekt": {
+      "Typ": "HeilAP",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "ITEM-008",
+    "Name": "Top-Elixier",
+    "Emoji": "✨",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Stellt alle AP aller Attacken eines Monsters wieder her.",
+    "KaufPreis": 4500,
+    "VerkaufPreis": 2250,
+    "Effekt": {
+      "Typ": "HeilAPVoll",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 6
+  },
+  {
+    "Id": "ITEM-011",
+    "Name": "Monsterball R",
+    "Emoji": "⚪",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Normaler Monsterball. Fangrate: 1×.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 1
+    },
+    "MinOrdenFürMarkt": 0
+  },
+  {
+    "Id": "ITEM-012",
+    "Name": "Monsterball UR",
+    "Emoji": "🔵",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Verbesserter Monsterball. Fangrate: 1.5×.",
+    "KaufPreis": 600,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 15
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-013",
+    "Name": "Monsterball S",
+    "Emoji": "🔴",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Sehr guter Monsterball. Fangrate: 2×.",
+    "KaufPreis": 1200,
+    "VerkaufPreis": 600,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 20
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "ITEM-014",
+    "Name": "Monsterball SR",
+    "Emoji": "🟣",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Fängt jedes Monster garantiert. Fangrate: 100%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 5000,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 100
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-015",
+    "Name": "Monsterball (Netz)",
+    "Emoji": "🕸️",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Besserer Ball für Wasser- und Käfer-Typen. Fangrate: 3×.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 30
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "ITEM-016",
+    "Name": "Monsterball (Tauch)",
+    "Emoji": "🌊",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Besserer Ball für Wasser-Typen. Fangrate: 3.5×.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 35
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "ITEM-017",
+    "Name": "Monsterball (Heil)",
+    "Emoji": "💚",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Heilt das gefangene Monster vollständig.",
+    "KaufPreis": 300,
+    "VerkaufPreis": 150,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-018",
+    "Name": "Monsterball (Luxus)",
+    "Emoji": "🖤",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Erhöht die Freundschaft des gefangenen Monsters.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "ITEM-021",
+    "Name": "Antidot",
+    "Emoji": "💚",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt Vergiftung eines Monsters.",
+    "KaufPreis": 100,
+    "VerkaufPreis": 50,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Vergiftet"
+    },
+    "MinOrdenFürMarkt": 0
+  },
+  {
+    "Id": "ITEM-022",
+    "Name": "Brandschutz",
+    "Emoji": "🧯",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt Verbrennung eines Monsters.",
+    "KaufPreis": 250,
+    "VerkaufPreis": 125,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Verbrannt"
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-023",
+    "Name": "Eis-Heiler",
+    "Emoji": "🌡️",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt Einfrieren eines Monsters.",
+    "KaufPreis": 250,
+    "VerkaufPreis": 125,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Eingefroren"
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-024",
+    "Name": "Paralyseheiler",
+    "Emoji": "⚡",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt Lähmung eines Monsters.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Gelähmt"
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-025",
+    "Name": "Weckstoff",
+    "Emoji": "☕",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Weckt ein schlafendes Monster auf.",
+    "KaufPreis": 250,
+    "VerkaufPreis": 125,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Schläft"
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-026",
+    "Name": "Vollaroma",
+    "Emoji": "🌸",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt alle Statusprobleme eines Monsters.",
+    "KaufPreis": 600,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "HeilAlleStatus",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-027",
+    "Name": "Hyperaroma",
+    "Emoji": "🌺",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt alle Statusprobleme und alle KP des gesamten Teams.",
+    "KaufPreis": 2800,
+    "VerkaufPreis": 1400,
+    "Effekt": {
+      "Typ": "HeilTeamAlles",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 5
+  },
+  {
+    "Id": "ITEM-031",
+    "Name": "Angriffswert+",
+    "Emoji": "⚔️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht den Angriff des Trägers um 10% im Kampf.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Angriff",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-032",
+    "Name": "Verteidigungswert+",
+    "Emoji": "🛡️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Verteidigung des Trägers um 10% im Kampf.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Verteidigung",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-033",
+    "Name": "Sp.Angriff+",
+    "Emoji": "🔥",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht den Spezialangriff des Trägers um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "SpezialAngriff",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-034",
+    "Name": "Sp.Verteidigung+",
+    "Emoji": "💎",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Spezialverteidigung des Trägers um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "SpezialVerteidigung",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-035",
+    "Name": "Initiative+",
+    "Emoji": "💨",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Initiative des Trägers um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Initiative",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-036",
+    "Name": "Linksbandage",
+    "Emoji": "🩹",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Heilt am Ende jeder Runde 1/16 der max. KP.",
+    "KaufPreis": 3000,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "RegenKP",
+      "Wert": 6
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-037",
+    "Name": "Schalenamulette",
+    "Emoji": "🐚",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Reduziert erlittenen Schaden um 12%.",
+    "KaufPreis": 3500,
+    "VerkaufPreis": 1750,
+    "Effekt": {
+      "Typ": "SchadenReduzierung",
+      "Wert": 12
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-038",
+    "Name": "Wahl-Schal",
+    "Emoji": "🧣",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Spezialangriff um 50%, aber nur eine Attacke wählbar.",
+    "KaufPreis": 5000,
+    "VerkaufPreis": 2500,
+    "Effekt": {
+      "Typ": "WahlBoost",
+      "Stat": "SpezialAngriff",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-039",
+    "Name": "Wahl-Band",
+    "Emoji": "🎗️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Angriff um 50%, aber nur eine Attacke wählbar.",
+    "KaufPreis": 5000,
+    "VerkaufPreis": 2500,
+    "Effekt": {
+      "Typ": "WahlBoost",
+      "Stat": "Angriff",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-040",
+    "Name": "Kraftring",
+    "Emoji": "💪",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Verdoppelt EXP-Gewinn nach dem Kampf.",
+    "KaufPreis": 4000,
+    "VerkaufPreis": 2000,
+    "Effekt": {
+      "Typ": "ExpBoost",
+      "Wert": 100
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-041",
+    "Name": "Glücks-Ei",
+    "Emoji": "🥚",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht EXP-Gewinn um 50%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 5000,
+    "Effekt": {
+      "Typ": "ExpBoost",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-042",
+    "Name": "Beeren-Juice",
+    "Emoji": "🍓",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Heilt automatisch 50 KP wenn unter 50% KP.",
+    "KaufPreis": 1500,
+    "VerkaufPreis": 750,
+    "Effekt": {
+      "Typ": "AutoHeil",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-051",
+    "Name": "Monsterflöte",
+    "Emoji": "🎵",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Weckt schlafende Monster auf (ganzes Team).",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "HeilTeamStatus",
+      "StatusTyp": "Schläft"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-052",
+    "Name": "Münze",
+    "Emoji": "🪙",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Kann im Spielcasino verwendet werden.",
+    "KaufPreis": 50,
+    "VerkaufPreis": 25,
+    "Effekt": {
+      "Typ": "Keine",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 0
+  },
+  {
+    "Id": "ITEM-053",
+    "Name": "Rätselei",
+    "Emoji": "🔮",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Ein mysteriöses Item. Wer weiß was es tut?",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "Effekt": {
+      "Typ": "Keine",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-054",
+    "Name": "Abenteuer-Karte",
+    "Emoji": "🗺️",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Zeigt die gesamte Karte deines Abenteuers.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 0,
+    "Effekt": {
+      "Typ": "ZeigeKarte",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "stein-mond",
+    "Name": "Mondstein",
+    "Emoji": "🌙",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Nidorina, Piepi).",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "mondstein"
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "stein-feuer",
+    "Name": "Feuerstein",
+    "Emoji": "🔥",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Vulpix, Fukano).",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "feuerstein"
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "stein-wasser",
+    "Name": "Wasserstein",
+    "Emoji": "💧",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Quaputzi, Muschas).",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "wasserstein"
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "stein-blatt",
+    "Name": "Blattstein",
+    "Emoji": "🍃",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Duflor, Owei).",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "blattstein"
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "stein-donner",
+    "Name": "Donnerstein",
+    "Emoji": "⚡",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Pikachu, Voltobal).",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "donnerstein"
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "stein-sonne",
+    "Name": "Sonnenstein",
+    "Emoji": "☀️",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Sonnkern).",
+    "KaufPreis": 2500,
+    "VerkaufPreis": 1250,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "sonnenstein"
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "stein-glan",
+    "Name": "Glanstein",
+    "Emoji": "✨",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Togetic, Roselia).",
+    "KaufPreis": 2500,
+    "VerkaufPreis": 1250,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "glanstein"
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "stein-finster",
+    "Name": "Finsterstein",
+    "Emoji": "🌑",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus (z.B. Kramurx, Lampent).",
+    "KaufPreis": 2500,
+    "VerkaufPreis": 1250,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "finsterstein"
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "stein-eis",
+    "Name": "Eisstein",
+    "Emoji": "❄️",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Löst Entwicklung bei bestimmten Monstern aus.",
+    "KaufPreis": 2500,
+    "VerkaufPreis": 1250,
+    "Effekt": {
+      "Typ": "Entwicklungsstein",
+      "Wert": 0,
+      "StatusTyp": "eisstein"
+    },
+    "MinOrdenFürMarkt": 4
+  },
+  {
+    "Id": "ITEM-009",
+    "Name": "Beeren-Saft",
+    "Emoji": "🍓",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 20 KP.",
+    "KaufPreis": 100,
+    "VerkaufPreis": 50,
+    "MinOrdenFürMarkt": 0,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-010",
+    "Name": "Frischer Wassertrank",
+    "Emoji": "💧",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 50 KP.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 50
+    }
+  },
+  {
+    "Id": "ITEM-010B",
+    "Name": "Sodawasser",
+    "Emoji": "🥤",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 60 KP.",
+    "KaufPreis": 300,
+    "VerkaufPreis": 150,
+    "MinOrdenFürMarkt": 2,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 60
+    }
+  },
+  {
+    "Id": "ITEM-010C",
+    "Name": "Limonade",
+    "Emoji": "🍋",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 80 KP.",
+    "KaufPreis": 350,
+    "VerkaufPreis": 175,
+    "MinOrdenFürMarkt": 2,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 80
+    }
+  },
+  {
+    "Id": "ITEM-010D",
+    "Name": "Kokosmilch",
+    "Emoji": "🥥",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 100 KP.",
+    "KaufPreis": 600,
+    "VerkaufPreis": 300,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 100
+    }
+  },
+  {
+    "Id": "ITEM-019",
+    "Name": "Wiederholball",
+    "Emoji": "🔄",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Besonders effektiv bei Monstern die man schon kennt. Fangrate: 3×.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 30
+    }
+  },
+  {
+    "Id": "ITEM-020",
+    "Name": "Timerball",
+    "Emoji": "⏱️",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Wird mit jeder Kampfrunde effektiver. Max. Fangrate: 4×.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 4,
+    "Effekt": {
+      "Typ": "Fangen",
+      "Wert": 20,
+      "FangBonus": "Timer"
+    }
+  },
+  {
+    "Id": "ITEM-028",
+    "Name": "Gegengift",
+    "Emoji": "💜",
+    "Kategorie": "Statusprobleme",
+    "Beschreibung": "Heilt Vergiftung und starke Vergiftung.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "MinOrdenFürMarkt": 0,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0,
+      "StatusTyp": "Vergiftet"
+    }
+  },
+  {
+    "Id": "ITEM-031B",
+    "Name": "X-Angriff",
+    "Emoji": "⚔️",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht den Angriff im Kampf um 1 Stufe.",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "Angriff",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-032B",
+    "Name": "X-Verteidigung",
+    "Emoji": "🛡️",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht die Verteidigung im Kampf um 1 Stufe.",
+    "KaufPreis": 550,
+    "VerkaufPreis": 275,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "Verteidigung",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-033B",
+    "Name": "X-Sp.Angriff",
+    "Emoji": "🔮",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht den Sp.Angriff im Kampf um 1 Stufe.",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "MinOrdenFürMarkt": 2,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "SpezialAngriff",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-034B",
+    "Name": "X-Sp.Verteidigung",
+    "Emoji": "💎",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht die Sp.Verteidigung im Kampf um 1 Stufe.",
+    "KaufPreis": 550,
+    "VerkaufPreis": 275,
+    "MinOrdenFürMarkt": 2,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "SpezialVerteidigung",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-035B",
+    "Name": "X-Initiative",
+    "Emoji": "💨",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht die Initiative im Kampf um 1 Stufe.",
+    "KaufPreis": 350,
+    "VerkaufPreis": 175,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "Initiative",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-035C",
+    "Name": "X-Genauigkeit",
+    "Emoji": "🎯",
+    "Kategorie": "Kampfitems",
+    "Beschreibung": "Erhöht die Genauigkeit im Kampf um 1 Stufe.",
+    "KaufPreis": 950,
+    "VerkaufPreis": 475,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "KampfStatBoost",
+      "Stat": "Genauigkeit",
+      "Stufen": 1
+    }
+  },
+  {
+    "Id": "ITEM-039B",
+    "Name": "Wahl-Brille",
+    "Emoji": "👓",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Sp.Angriff um 50%, aber nur eine Attacke wählbar.",
+    "KaufPreis": 5000,
+    "VerkaufPreis": 2500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "WahlBoost",
+      "Stat": "SpezialAngriff",
+      "Wert": 50
+    }
+  },
+  {
+    "Id": "ITEM-043",
+    "Name": "Seegesang",
+    "Emoji": "🎵",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Stellt nach jedem Angriff 1/8 des angerichteten Schadens als KP wieder her.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2000,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "LeechHeal",
+      "Wert": 12
+    }
+  },
+  {
+    "Id": "ITEM-044",
+    "Name": "Fokus-Band",
+    "Emoji": "🎽",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "10% Chance, einen K.O.-Treffer mit 1 KP zu überleben.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "FokusBand",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-045",
+    "Name": "Fokus-Schärpe",
+    "Emoji": "🥋",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Überlebt einmalig garantiert einen K.O.-Treffer mit 1 KP (wenn volle KP).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2000,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "FokusSchärpe",
+      "Wert": 1
+    }
+  },
+  {
+    "Id": "ITEM-046",
+    "Name": "Blendpuder",
+    "Emoji": "✨",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Senkt die Treffergenauigkeit des Gegners um 10%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "Ausweichen",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-047",
+    "Name": "Angriffs-Verstärker",
+    "Emoji": "🗡️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Angriff dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Angriff",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-048",
+    "Name": "Verteidigungs-Verstärker",
+    "Emoji": "🛡️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Verteidigung dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Verteidigung",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-049",
+    "Name": "Sp.Angriff-Verstärker",
+    "Emoji": "🔮",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Sp.Angriff dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "SpezialAngriff",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-050",
+    "Name": "Sp.Verteidigung-Verstärker",
+    "Emoji": "💎",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Sp.Verteidigung dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "SpezialVerteidigung",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-050B",
+    "Name": "Initiative-Verstärker",
+    "Emoji": "💨",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Initiative dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Initiative",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-050C",
+    "Name": "KP-Verstärker",
+    "Emoji": "❤️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht max. KP dauerhaft um 10%.",
+    "KaufPreis": 2000,
+    "VerkaufPreis": 1000,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "KP",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-056",
+    "Name": "Glücksamulett",
+    "Emoji": "🍀",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Verdoppelt das Preisgeld nach Kämpfen.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "GeldBoost",
+      "Wert": 100
+    }
+  },
+  {
+    "Id": "ITEM-055",
+    "Name": "Fluchtseil",
+    "Emoji": "🧵",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Flieht sofort aus einem wilden Kampf.",
+    "KaufPreis": 550,
+    "VerkaufPreis": 275,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "Flucht",
+      "Wert": 0
+    }
+  },
+  {
+    "Id": "ITEM-057",
+    "Name": "Repellent",
+    "Emoji": "🚫",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Verhindert für kurze Zeit wilde Monster-Begegnungen (100 Schritte).",
+    "KaufPreis": 350,
+    "VerkaufPreis": 175,
+    "MinOrdenFürMarkt": 1,
+    "Effekt": {
+      "Typ": "Repellent",
+      "Wert": 100
+    }
+  },
+  {
+    "Id": "ITEM-058",
+    "Name": "Super-Repellent",
+    "Emoji": "⛔",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Verhindert für längere Zeit wilde Monster-Begegnungen (200 Schritte).",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "MinOrdenFürMarkt": 2,
+    "Effekt": {
+      "Typ": "Repellent",
+      "Wert": 200
+    }
+  },
+  {
+    "Id": "ITEM-059",
+    "Name": "Max-Repellent",
+    "Emoji": "🔕",
+    "Kategorie": "Sonstiges",
+    "Beschreibung": "Verhindert für sehr lange Zeit wilde Monster-Begegnungen (250 Schritte).",
+    "KaufPreis": 700,
+    "VerkaufPreis": 350,
+    "MinOrdenFürMarkt": 3,
+    "Effekt": {
+      "Typ": "Repellent",
+      "Wert": 250
+    }
+  },
+  {
+    "Id": "ITEM-080",
+    "Name": "Proteinriegel",
+    "Emoji": "💪",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht Angriff dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "Angriff",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-081",
+    "Name": "Eisen",
+    "Emoji": "⚙️",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht Verteidigung dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "Verteidigung",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-082",
+    "Name": "Kalzium",
+    "Emoji": "🦴",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht Sp.Angriff dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "SpezialAngriff",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-083",
+    "Name": "Zink",
+    "Emoji": "🔬",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht Sp.Verteidigung dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "SpezialVerteidigung",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-084",
+    "Name": "Kohlenhydrat",
+    "Emoji": "🏃",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht Initiative dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "Initiative",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-085",
+    "Name": "KP-Plus",
+    "Emoji": "❤️",
+    "Kategorie": "Vitamine",
+    "Beschreibung": "Erhöht max. KP dauerhaft (max. 10× verwendbar).",
+    "KaufPreis": 9800,
+    "VerkaufPreis": 4900,
+    "MinOrdenFürMarkt": 5,
+    "Effekt": {
+      "Typ": "Vitamin",
+      "Stat": "KP",
+      "Wert": 10
+    }
+  },
+  {
+    "Id": "ITEM-060",
+    "Name": "Mysteriöse Platte",
+    "Emoji": "📜",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Normal-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Normal",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-061",
+    "Name": "Schwarzer Gürtel",
+    "Emoji": "🥊",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Kampf-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Kampf",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-062",
+    "Name": "Scharfes Schnabel",
+    "Emoji": "🦅",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Flug-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Flug",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-063",
+    "Name": "Giftstachel",
+    "Emoji": "☠️",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Gift-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Gift",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-064",
+    "Name": "Weicher Sand",
+    "Emoji": "🏜️",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Boden-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Boden",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-065",
+    "Name": "Harter Stein",
+    "Emoji": "🪨",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Gestein-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Gestein",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-066",
+    "Name": "Silber-Puder",
+    "Emoji": "🦋",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Käfer-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Käfer",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-067",
+    "Name": "Bannfluch-Amulett",
+    "Emoji": "👻",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Geist-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Geist",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-068",
+    "Name": "Metallmantel",
+    "Emoji": "⚙️",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Stahl-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Stahl",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-069",
+    "Name": "Holzkohle",
+    "Emoji": "🔥",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Feuer-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Feuer",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-070",
+    "Name": "Mystik-Wasser",
+    "Emoji": "💧",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Wasser-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Wasser",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-071",
+    "Name": "Wunderknolle",
+    "Emoji": "🌿",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Pflanze-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Pflanze",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-072",
+    "Name": "Magnet",
+    "Emoji": "🧲",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Elektro-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Elektro",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-073",
+    "Name": "Verdreh-Löffel",
+    "Emoji": "🥄",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Psycho-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Psycho",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-074",
+    "Name": "Eis-Kristall",
+    "Emoji": "🧊",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Eis-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Eis",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-075",
+    "Name": "Drachenzahn",
+    "Emoji": "🐉",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Drachen-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Drache",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-076",
+    "Name": "Schwarze Brille",
+    "Emoji": "🕶️",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Unlicht-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Unlicht",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-077",
+    "Name": "Feenstaub",
+    "Emoji": "🧚",
+    "Kategorie": "Typverstärker",
+    "Beschreibung": "Verstärkt Fee-Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "MinOrdenFürMarkt": 99,
+    "Effekt": {
+      "Typ": "TypVerstärker",
+      "StatusTyp": "Fee",
+      "Wert": 20
+    }
+  },
+  {
+    "Id": "ITEM-090",
+    "Name": "Äther",
+    "Emoji": "💧",
+    "Kategorie": "PP-Items",
+    "Beschreibung": "Stellt 10 PP einer Attacke wieder her.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 600,
+    "Effekt": {
+      "Typ": "HeilPP",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-091",
+    "Name": "Top-Äther",
+    "Emoji": "💧",
+    "Kategorie": "PP-Items",
+    "Beschreibung": "Stellt alle PP einer Attacke wieder her.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "HeilPP",
+      "Wert": 999
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-092",
+    "Name": "PP-Plus",
+    "Emoji": "⬆️",
+    "Kategorie": "PP-Items",
+    "Beschreibung": "Erhöht die maximalen PP einer Attacke dauerhaft.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 4900,
+    "Effekt": {
+      "Typ": "PPPlus",
+      "Wert": 1
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-093",
+    "Name": "PP-Max",
+    "Emoji": "⬆️",
+    "Kategorie": "PP-Items",
+    "Beschreibung": "Erhöht die PP einer Attacke auf das Maximum.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 9800,
+    "Effekt": {
+      "Typ": "PPPlus",
+      "Wert": 999
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-094",
+    "Name": "Seltene Bonbons",
+    "Emoji": "🍬",
+    "Kategorie": "PP-Items",
+    "Beschreibung": "Erhöht das Level des Monsters um 1.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 4800,
+    "Effekt": {
+      "Typ": "LevelUp",
+      "Wert": 1
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-095",
+    "Name": "Energie-Pulver",
+    "Emoji": "🌿",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 50 KP. Bitterer Geschmack senkt Freundschaft.",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-096",
+    "Name": "Energie-Wurzel",
+    "Emoji": "🌿",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 200 KP. Bitterer Geschmack senkt Freundschaft.",
+    "KaufPreis": 800,
+    "VerkaufPreis": 400,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 200
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-097",
+    "Name": "Heilpulver",
+    "Emoji": "🌿",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt alle Statusprobleme. Bitterer Geschmack.",
+    "KaufPreis": 450,
+    "VerkaufPreis": 225,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-098",
+    "Name": "Beleberkraut",
+    "Emoji": "🌿",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Belebt ein ohnmächtiges Monster. Bitterer Geschmack.",
+    "KaufPreis": 2800,
+    "VerkaufPreis": 1400,
+    "Effekt": {
+      "Typ": "Beleben",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 3
+  },
+  {
+    "Id": "ITEM-099",
+    "Name": "Moomoo-Milch",
+    "Emoji": "🥛",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt 100 KP.",
+    "KaufPreis": 500,
+    "VerkaufPreis": 250,
+    "Effekt": {
+      "Typ": "HeilKP",
+      "Wert": 100
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-100",
+    "Name": "Lava-Keks",
+    "Emoji": "🍪",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt alle Statusprobleme.",
+    "KaufPreis": 350,
+    "VerkaufPreis": 175,
+    "Effekt": {
+      "Typ": "HeilStatus",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-101",
+    "Name": "Heiliger Staub",
+    "Emoji": "✨",
+    "Kategorie": "Heilitems",
+    "Beschreibung": "Heilt alle Monster vollständig und stellt alle PP wieder her.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 10000,
+    "Effekt": {
+      "Typ": "AllesHeilen",
+      "Wert": 0
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-110",
+    "Name": "Meisterball",
+    "Emoji": "🟣",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Fängt jedes Monster ohne Ausnahme.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 10000,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "9999"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-111",
+    "Name": "Premierball",
+    "Emoji": "⚪",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Ein besonderer Ball ohne Fangbonus.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "1"
+    },
+    "MinOrdenFürMarkt": 0
+  },
+  {
+    "Id": "ITEM-112",
+    "Name": "Schnellball",
+    "Emoji": "🟡",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance in der ersten Runde des Kampfes.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "4"
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-113",
+    "Name": "Finsterball",
+    "Emoji": "⚫",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance in Höhlen und nachts.",
+    "KaufPreis": 1000,
+    "VerkaufPreis": 500,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "3"
+    },
+    "MinOrdenFürMarkt": 2
+  },
+  {
+    "Id": "ITEM-114",
+    "Name": "Freundesball",
+    "Emoji": "🟢",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Gefangene Monster sind von Anfang an freundlicher.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "1"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-115",
+    "Name": "Schwerball",
+    "Emoji": "⚫",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance bei schweren Monstern.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "2"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-116",
+    "Name": "Mondball",
+    "Emoji": "🌙",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance bei Monstern die sich mit Mondstein entwickeln.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "2"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-117",
+    "Name": "Liebesball",
+    "Emoji": "🩷",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance bei Monstern des entgegengesetzten Geschlechts.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "8"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-118",
+    "Name": "Levelball",
+    "Emoji": "🔴",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance bei Monstern mit niedrigerem Level als das eigene.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "4"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-119",
+    "Name": "Köderball",
+    "Emoji": "🎣",
+    "Kategorie": "Monsterbälle",
+    "Beschreibung": "Höhere Fangchance bei Wasser- und Käfer-Monstern.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 300,
+    "Effekt": {
+      "Typ": "Fangen",
+      "FangBonus": "3"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-120",
+    "Name": "Lebens-Orb",
+    "Emoji": "🔮",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Schaden um 30%, kostet aber 10% KP pro Angriff.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 5000,
+    "Effekt": {
+      "Typ": "LebensOrb",
+      "Wert": 30
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-121",
+    "Name": "Experten-Gürtel",
+    "Emoji": "🥋",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Schaden bei sehr effektiven Attacken um 20%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 4000,
+    "Effekt": {
+      "Typ": "ExpertenGürtel",
+      "Wert": 20
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-122",
+    "Name": "Flammen-Orb",
+    "Emoji": "🔥",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Verbrennt den Träger am Ende jeder Runde.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatusOrb",
+      "Stat": "Verbrennung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-123",
+    "Name": "Gift-Orb",
+    "Emoji": "☠️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Vergiftet den Träger am Ende jeder Runde.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatusOrb",
+      "Stat": "Vergiftung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-124",
+    "Name": "Luftballon",
+    "Emoji": "🎈",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Träger ist immun gegen Boden-Attacken bis er getroffen wird.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Luftballon"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-125",
+    "Name": "Eject-Knopf",
+    "Emoji": "🔴",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Wechselt den Träger aus wenn er getroffen wird (einmalig).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "EjectKnopf"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-126",
+    "Name": "Rote Karte",
+    "Emoji": "🟥",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Zwingt den Gegner zum Wechseln wenn der Träger getroffen wird (einmalig).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "RoteKarte"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-127",
+    "Name": "Schuppenpanzer",
+    "Emoji": "🛡️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Schützt vor kritischen Treffern.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "KritSchutz"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-128",
+    "Name": "Immerstein",
+    "Emoji": "🪨",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Verhindert die Entwicklung des Trägers.",
+    "KaufPreis": 200,
+    "VerkaufPreis": 100,
+    "Effekt": {
+      "Typ": "Immerstein"
+    },
+    "MinOrdenFürMarkt": 1
+  },
+  {
+    "Id": "ITEM-129",
+    "Name": "Schnellkralle",
+    "Emoji": "⚡",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "20% Chance, zuerst anzugreifen unabhängig von der Initiative.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "Schnellkralle",
+      "Wert": 20
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-130",
+    "Name": "Königsstein",
+    "Emoji": "👑",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "30% Chance, den Gegner erschrecken zu lassen.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "Königsstein",
+      "Wert": 30
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-131",
+    "Name": "Muskelband",
+    "Emoji": "💪",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Verdoppelt Fleiß-Punkte, senkt aber die Initiative.",
+    "KaufPreis": 3000,
+    "VerkaufPreis": 1500,
+    "Effekt": {
+      "Typ": "Muskelband"
+    },
+    "MinOrdenFürMarkt": 5
+  },
+  {
+    "Id": "ITEM-132",
+    "Name": "Großwurzel",
+    "Emoji": "🌱",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Stärkt KP-saugende Attacken (z.B. Absorber) um 30%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Großwurzel",
+      "Wert": 30
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-133",
+    "Name": "Schicksal-Knoten",
+    "Emoji": "🔴",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Wenn der Träger verliebt wird, verliebt sich der Gegner auch.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "SchicksalKnoten"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-134",
+    "Name": "Schwarzer Schleim",
+    "Emoji": "🟢",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Heilt Gift-Typen um 1/8 KP pro Runde. Schadet anderen Typen.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "SchwarzerSchleim"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-135",
+    "Name": "Helles Pulver",
+    "Emoji": "✨",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Senkt die Genauigkeit des Gegners.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "GenauigkeitSenken",
+      "Wert": -1
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-136",
+    "Name": "Zellbatterie",
+    "Emoji": "🔋",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht den Angriff um 1 Stufe wenn der Träger von einer Elektro-Attacke getroffen wird.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Zellbatterie"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-137",
+    "Name": "Ringzielscheibe",
+    "Emoji": "🎯",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Hebt Typ-Immunitäten auf — alle Attacken treffen den Träger.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Ringzielscheibe"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-138",
+    "Name": "Absorb-Zwiebel",
+    "Emoji": "🧅",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Sp.Angriff um 1 Stufe wenn der Träger von einer Pflanze-Attacke getroffen wird.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "AbsorbZwiebel"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-140",
+    "Name": "Tiefseeschuppe",
+    "Emoji": "🐚",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Clamperl zu Gorebyss (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-141",
+    "Name": "Tiefsee-Zahn",
+    "Emoji": "🦷",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Clamperl zu Huntail (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-142",
+    "Name": "Drachenschuppe",
+    "Emoji": "🐉",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Seadra zu Kingdra (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-143",
+    "Name": "Upgrade",
+    "Emoji": "💾",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Porygon zu Porygon2 (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-144",
+    "Name": "Dubios-Disk",
+    "Emoji": "💿",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Porygon2 zu Porygon-Z (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-145",
+    "Name": "Elektriseur",
+    "Emoji": "⚡",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Elektek zu Elektivire (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-146",
+    "Name": "Magmariseur",
+    "Emoji": "🌋",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Magmar zu Magmortar (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-147",
+    "Name": "Protektor",
+    "Emoji": "🛡️",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Rhydon zu Rhyperior (beim Tausch).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-148",
+    "Name": "Rasierklinge",
+    "Emoji": "🔪",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Sneasel zu Weavile (beim Levelaufstieg nachts).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-149",
+    "Name": "Rasierstein",
+    "Emoji": "💎",
+    "Kategorie": "Entwicklungssteine",
+    "Beschreibung": "Entwickelt Porygon zu Porygon2 (beim Levelaufstieg).",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2100,
+    "Effekt": {
+      "Typ": "Entwicklung"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-150",
+    "Name": "Perle",
+    "Emoji": "🔵",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Eine schöne Perle. Kann für viel Geld verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 700,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-151",
+    "Name": "Großperle",
+    "Emoji": "🔵",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Eine sehr große Perle. Kann für viel Geld verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 4000,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-152",
+    "Name": "Sternenstaub",
+    "Emoji": "⭐",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Feiner Sternenstaub. Kann verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-153",
+    "Name": "Sternenstück",
+    "Emoji": "⭐",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Ein wertvolles Stück eines Sterns. Kann teuer verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 9800,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-154",
+    "Name": "Goldklumpen",
+    "Emoji": "🟡",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Ein wertvoller Goldklumpen. Kann für viel Geld verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 10000,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-155",
+    "Name": "Kleiner Pilz",
+    "Emoji": "🍄",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Ein kleiner Pilz. Kann verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 500,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-156",
+    "Name": "Großer Pilz",
+    "Emoji": "🍄",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Ein großer, seltener Pilz. Kann teuer verkauft werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 5000,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-157",
+    "Name": "Herzschuppe",
+    "Emoji": "💗",
+    "Kategorie": "Verkaufsitems",
+    "Beschreibung": "Eine herzförmige Schuppe. Kann beim Attacken-Erinnerer eingetauscht werden.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 100,
+    "Effekt": null,
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-160",
+    "Name": "Seelenperle",
+    "Emoji": "🔔",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Das Monster gewinnt Freundschaft schneller.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Seelenperle"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-161",
+    "Name": "Linkes Ohr",
+    "Emoji": "👂",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Ausweich-Stufe des Trägers um 1.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "StatBoost",
+      "Stat": "Ausweichen",
+      "Wert": 1
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-162",
+    "Name": "Scope-Linse",
+    "Emoji": "🔭",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Kritische-Treffer-Rate des Trägers.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2000,
+    "Effekt": {
+      "Typ": "KritBoost",
+      "Wert": 1
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-163",
+    "Name": "Breite Linse",
+    "Emoji": "🔭",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht die Genauigkeit aller Attacken des Trägers um 10%.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2000,
+    "Effekt": {
+      "Typ": "GenauigkeitBoost",
+      "Wert": 10
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-164",
+    "Name": "Zoom-Linse",
+    "Emoji": "🔭",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Genauigkeit wenn der Träger nach dem Gegner angreift.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 2000,
+    "Effekt": {
+      "Typ": "ZoomLinse",
+      "Wert": 20
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-165",
+    "Name": "Schleier",
+    "Emoji": "🌫️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Schützt das Monster vor Stat-Senkungen durch den Gegner.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "Schleier"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-166",
+    "Name": "Schleier-Tuch",
+    "Emoji": "🌫️",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Schützt das Monster vor Verwirrung.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "SchleierTuch"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-167",
+    "Name": "Weißes Kraut",
+    "Emoji": "🌿",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Stellt gesenkte Stats einmalig wieder her.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 1000,
+    "Effekt": {
+      "Typ": "WeißesKraut"
+    },
+    "MinOrdenFürMarkt": 99
+  },
+  {
+    "Id": "ITEM-168",
+    "Name": "Wahl-Schal (Tempo)",
+    "Emoji": "🧣",
+    "Kategorie": "Ausrüstung",
+    "Beschreibung": "Erhöht Initiative um 50%, aber nur eine Attacke wählbar.",
+    "KaufPreis": 0,
+    "VerkaufPreis": 5000,
+    "Effekt": {
+      "Typ": "WahlItem",
+      "Stat": "Initiative",
+      "Wert": 50
+    },
+    "MinOrdenFürMarkt": 99
+  }
+]
